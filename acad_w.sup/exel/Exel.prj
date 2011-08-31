@@ -1,0 +1,21 @@
+;;; VLisp project file [V2.0] Exel saved to:[./Exel] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  Exel
+  :OWN-LIST
+  ("../UTILS/ACAD_SUP_DIR"
+    "read_exel_setup_lst"
+    "utils_xls"
+    "../UTILS/Sistjemy schisljenija"
+    "graph"
+  )
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

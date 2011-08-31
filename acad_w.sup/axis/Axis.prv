@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] AXIS saved to:[./AXIS] at:[5/17/09] 
+(PRV-DEF (:target . "../../vlx/Axis.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "AXIS.PRJ"))
+	 (:require-file-list (:DCL "Axis.dcl"))
+	 (:ob-directory . "../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

@@ -1,0 +1,152 @@
+;;;(princ "\nЗагружаю Layer/vp_layer      ")
+(princ (strcat "\nЗагружаю " (acad_sup) "/" "Layer/vp_layer      "))
+
+;;;;;;("vl_fr" "Заморозка отмеченных слоев для данного порта просмотра." "Слои")
+(defun c:vl_fr (/ e_list len cur la lay_li)
+  (err-init '("cmdecho"))
+  (set-sys-var-lst '(("cmdecho" 0)))
+  (princ
+    "\nЗаморозка отмеченных слоев для данного порта просмотра."
+  )
+  (setq e_list (ssget))
+  (setq len (sslength e_list))
+  (setq cur 0)
+  (while (< cur len)
+    (setq la (cdr (assoc 8 (entget (ssname e_list cur)))))
+    (setq lay_li (cons la lay_li))
+    (setq cur (+ cur 1))
+  )
+  (setq lay_li (bin_or lay_li))
+  (command "._vplayer")
+  (mapcar
+    (function
+      (lambda
+	(el)
+	 (command "_Freeze" el "")
+      )
+    )
+    lay_li
+  )
+  (if_cmd_active)
+  (err-handle "")
+)
+
+;;;;;;("vl_th" "Разморозка отмеченных слоев для даного порта просмотра." "Слои")
+(defun c:vl_th (/ e_list len cur la lay_li)
+  (err-init '("cmdecho"))
+  (set-sys-var-lst '(("cmdecho" 0)))
+  (princ
+    "\nРазморозка отмеченных слоев для даноого порта просмотра."
+  )
+  (setq e_list (ssget))
+  (setq len (sslength e_list))
+  (setq cur 0)
+  (while (< cur len)
+    (setq la (cdr (assoc 8 (entget (ssname e_list cur)))))
+    (setq lay_li (cons la lay_li))
+    (setq cur (+ cur 1))
+  )
+  (setq lay_li (bin_or lay_li))
+  (command "._vplayer")
+  (mapcar
+    (function
+      (lambda
+	(el)
+	 (command "_thaw" el "")
+      )
+    )
+    lay_li
+  )
+  (if_cmd_active)
+  (err-handle "")
+)
+
+;;;;;;("vl_fr_w" "Замораживание всех за исключением выбранных слоев для данного порта." "Слои")
+(defun c:vl_fr_w (/ e_list len cur la lay_li)
+  (err-init '("cmdecho"))
+  (set-sys-var-lst '(("cmdecho" 0)))
+  (princ
+    "Замораживание всех за исключением выбранных слоев для данного порта."
+  )
+  (setq e_list (ssget))
+  (setq len (sslength e_list))
+  (setq cur 0)
+  (while (< cur len)
+    (setq la (cdr (assoc 8 (entget (ssname e_list cur)))))
+    (setq lay_li (cons la lay_li))
+    (setq cur (+ cur 1))
+  )
+  (setq lay_li (bin_or lay_li))
+  (command "._vplayer" "_freeze" "~")
+  (if_cmd_active)
+  (command "._vplayer")
+  (mapcar
+    (function
+      (lambda (el)
+	(command "_thaw" el "")
+      )
+    )
+    lay_li
+  )
+  (if_cmd_active)
+  (err-handle "")
+)
+
+;;;;;;("vl_th_all" "Разморозка всех слоев для данного порта просмотра." "Слои")
+(defun c:vl_th_all ()
+  (err-init '("cmdecho"))
+  (set-sys-var-lst '(("cmdecho" 0)))
+  (princ
+    "\nРазморозка всех слоев для данного порта просмотра."
+  )
+  (command "_vplayer" "_thaw" "~")
+  (if_cmd_active)
+  (err-handle "")
+)
+
+;;;;;;("vl_fr_w+_d"
+;;;;;;"Разморозка для определенного порта просмотра отмеченного слоя\n
+;;;;;;и слоя, начинающегося с тех же символов что и у отмеченного слоя,\n
+;;;;;;и оканчивающегося на \"_d\"." "Слои")
+(defun c:vl_fr_w+_d (/ ed en la la_d)
+  (err-init '("cmdecho"))
+  (set-sys-var-lst '(("cmdecho" 0)))
+  (princ
+    "\nЗамораживание всех за исключением выбраного и заканчивающегося на _d для данного порта."
+  )
+  (if (= 1 (getvar "tilemode"))
+    (setvar "tilemode" 0)
+  )
+  (command "._mspace")
+  (if_cmd_active)
+  (setq	en   (car (entsel "\nВыберите примитив:"))
+	ed   (entget en)
+	la_d (cdr (assoc 8 ed))
+  )
+  (cond
+    ((wcmatch (strcase la_d) (strcase "*_d"))
+     (setq la (substr la_d 1 (- (strlen la_d) (strlen "_d"))))
+     (command "._vplayer" "_Freeze" "*"	"_Current" "_Thaw" la "_Current" "_Thaw" la_d "_Current")
+    )
+    ((null (wcmatch (strcase la_d) (strcase "*_d")))
+     (command "._vplayer"
+	      "_Freeze"
+	      "*"
+	      "_Current"
+	      "_Thaw"
+	      la_d
+	      "_Current"
+	      "_Thaw"
+	      (strcat la_d "_d")
+	      "_Current"
+     )
+    )
+  )
+  (if_cmd_active)
+  (err-handle "")
+)
+
+(princ "\t...загружен.\n")
+ ;|«Visual LISP© Format Options»
+(105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
+;*** НЕ добавляйте текст под комментариями! ***|;

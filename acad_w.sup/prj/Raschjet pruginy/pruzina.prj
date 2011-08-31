@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] pruzina saved to:[C:/Program Files/MNASoft/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet pruginy] at:[5/18/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  pruzina
+  :OWN-LIST
+  ("Raschjet_pruginy" "Prugina")
+  :FAS-DIRECTORY
+  "../../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

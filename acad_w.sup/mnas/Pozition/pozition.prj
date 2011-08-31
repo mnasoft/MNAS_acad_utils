@@ -1,0 +1,20 @@
+;;; VLisp project file [V2.0] pozition saved to:[C:/Program Files/MNASoft/MNAS_acad_utils/acad_w.sup/mnas/Pozition] at:[10/27/10] 
+(VLISP-PROJECT-LIST
+  :name
+  pozition
+  :own-list
+  ("../../utils/acad_sup_dir"
+    "pozition_export"		   "pozition_dlg"
+    "../../Utils/system_registry"  "../../utils/dlg_utils"
+    "pozition_abbrev"
+   )
+  :fas-directory
+  "../../../vlisp.tmp"
+  :tmp-directory
+  "../../../vlisp.tmp"
+  :project-keys
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :context-id
+  :AUTOLISP
+)
+;;; EOF

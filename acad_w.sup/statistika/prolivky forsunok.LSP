@@ -1,0 +1,42 @@
+(setq
+  ras	     (assoc '(1 . "080038027") prolivki)
+  no_r1_r2   (cdr (assoc 4 ras))
+  r1	     (mapcar (function cadr) no_r1_r2)
+  r1+2	     (mapcar (function caddr) no_r1_r2)
+  r1_max     (apply (function max) r1)
+  r1_min     (apply (function min) r1)
+  r1+2_max   (apply (function max) r1+2)
+  r1+2_min   (apply (function min) r1+2)
+  delta_r1+2 (- r1+2_max r1+2_min)
+  delta_r1   (- r1_max r1_min)
+)
+
+(setq
+  prolivki
+   '(((1 . "080038027")
+      (2 . "10.08.2000")
+      (3 . "Продувка форснуок с обратным клапаном при tт=29C")
+      (4
+       ("011" 75.0 393.0)
+       ("019" 76.3 398.0)
+       ("02" 72.0 396.0)
+       ("10" 72.0 398.0)
+       ("06" 72.0 398.0)
+       ("05" 75.0 398.0)
+       ("7" 78.0 401.0)
+       ("03" 75.0 393.0)
+       ("020" 77.0 396.0)
+       ("022" 78.0 401.0)
+       ("014" 70.0 390.0)
+       ("018" 73.0 393.0)
+       ("04" 73.0 388.0)
+       ("016" 75.6 398.0)
+       ("015" 74.0 398.0)
+       ("013" 72.0 401.0)
+      )
+     )
+    )
+)
+ ;|«Visual LISP© Format Options»
+(72 2 5 2 nil "end of" 60 15 0 0 0 T T nil T)
+;*** DO NOT add text below the comment! ***|;

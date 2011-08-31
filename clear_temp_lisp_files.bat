@@ -1,0 +1,1 @@
+del /S  *._* *.bak *.fas *.ob *.pdb *.*~ 

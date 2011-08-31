@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] lines saved to:[./LINES] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  lines
+  :OWN-LIST
+  ("../utils/ACAD_SUP_DIR" "linetype" "LINES" "LINE_1" "../UTILS/ASIST" "../UTILS/DXF")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

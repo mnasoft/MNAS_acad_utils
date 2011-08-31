@@ -1,0 +1,20 @@
+;;; VLisp project file [V2.0] rou saved to:[./DIMS/rou] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  rou
+  :OWN-LIST
+  ("../../UTILS/ACAD_SUP_DIR"
+    "rou"		      "rou_draw"		"../../UTILS/STRING"
+    "../../MATR/VECTOR"	      "../../UTILS/red_list"	"rou_update_ver"
+    "../../UTILS/stl_text"    "../../UTILS/ERR"
+   )
+  :FAS-DIRECTORY
+  "../../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

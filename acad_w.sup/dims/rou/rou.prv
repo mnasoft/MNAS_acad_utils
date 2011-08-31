@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] rou saved to:[./DIMS/rou] at:[1/25/04] 
+(PRV-DEF (:target . "../../../Vlx/rou.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "rou.prj"))
+	 (:require-file-list (:DCL "rou.dcl"))
+	 (:ob-directory . "../../../Vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

@@ -1,0 +1,17 @@
+;;; VLisp project file [V2.0] Dim_style saved to:[C:/Program Files/MNASoft/MNAS_acad_utils/acad_w.sup/dims/dim_style] at:[3/29/11] 
+(VLISP-PROJECT-LIST
+  :NAME
+  Dim_style
+  :OWN-LIST
+  ("dim_override_like_ARX"
+    "dim_override" "dim_style" "../../utils/acad_sup_dir" "../../utils/STRING" "../../utils/stl_text")
+  :FAS-DIRECTORY
+  "../../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

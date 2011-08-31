@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] SMESITEL_vla saved to:[./Smesitel_vla] at:[1/29/06] 
+(PRV-DEF (:target . "../../Vlx/SMESITEL_vla.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "SMESITEL_vla.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

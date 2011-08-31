@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] f_otv saved to:[./Otvjerstija] at:[4/28/05] 
+(PRV-DEF (:target . "../../Vlx/f_otv.VLX")
+	 (:active-x . T)
+	 (:separate-namespace)
+	 (:protected . T)
+	 (:load-file-list (:prj "f_otv.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../../Vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

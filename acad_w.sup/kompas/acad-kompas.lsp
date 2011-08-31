@@ -1,0 +1,258 @@
+;;;(princ "\nЗагружаю Kompas/acad-kompas  ")
+(princ (strcat "\nЗагружаю " (acad_sup) "/" "Kompas/acad-kompas  "))
+
+(defun val (value) (princ value fl))
+
+(defun coma () (val " , "))
+(defun val_c (value) (val value) (coma))
+(defun p_coma () (val " ;"))
+(defun cr () (val "\n"))
+
+(defun pt (point)
+  (val_c (car point))
+  (val (cadr point))
+)
+
+(defun ent_sf (/ col lt la tbl)
+  (setq
+    col	(cdr (assoc 62 ed))
+    lt	(cdr (assoc 6 ed))
+    la	(cdr (assoc 8 ed))
+    tbl	(tblsearch "LAYER" la)
+    col	(cond ((null col)
+	       (cdr (assoc 62 tbl))
+	      )
+	      ((= col 0) 7)
+	      (t col)
+	)
+    lt	(cond
+	  ((null lt)
+	   (cdr (assoc 6 tbl))
+	  )
+	  (t lt)
+	)
+  )
+  (cond
+    ((= (substr lt 1 6) "CENTER")
+     (val " , Atr = 3 ")
+    )
+    ((= (substr lt 1 6) "HIDDEN")
+     (val " , Atr = 4 ")
+    )
+    ((= col 7)
+     (val " , Atr = 1 ")
+    )
+  )
+)
+
+(defun line_sf (/ pt_1 pt_2)
+  (val "LINE = ")
+  (setq	pt_1 (cdr (assoc 10 ed))
+	pt_2 (cdr (assoc 11 ed))
+	
+  )
+  (setq
+    pt_1 (TRANS pt_1 0 1)
+    pt_2 (TRANS pt_2 0 1)
+  );;; Поворот в UCS
+  (pt pt_1)
+  (coma)
+  (pt pt_2)
+  (ent_sf)
+  (p_coma)
+  (cr)
+)
+
+(defun circle_sf (/ pt_1 r d_210 n_ar i)
+  (setq
+    pt_1  (cdr (assoc 10 ed))
+    r	  (cdr (assoc 40 ed))
+    d_210 (cdr (assoc 210 ed))
+  )
+  (setq
+    pt_1 (TRANS pt_1 0 1)
+    d_210 (TRANS d_210 0 1)
+  );;; Поворот в UCS
+  (cond
+    ((equal (caddr d_210) 1.0 0.0001)
+     (val "CIRCLE = ")
+     (pt pt_1)
+     (coma)
+     (val r)
+     (ent_sf)
+     (p_coma)
+     (cr)
+    )
+    ((equal (caddr d_210) 0.0 0.0001)
+     (val "LINE = ")
+     (pt (trans (polar pt_1 0.0 r) en 0))
+     (coma)
+     (pt (trans (polar pt_1 pi r) en 0))
+     (ent_sf)
+     (p_coma)
+     (cr)
+    )
+    (t
+     (setq
+       n_ar 12
+       i 0
+     )
+     (command
+       "_pline"
+       ".xy"
+       "_non"
+       (trans (polar pt_1 (* 0 2.0 (/ pi n_ar)) r) en 0)
+       "0"
+       "_arc"
+     )
+     (while (< i n_ar)
+       (command
+	 "_second"
+	 ".xy"
+	 "_non"
+	 (trans (polar pt_1 (* (+ 0.5 i) 2.0 (/ pi n_ar)) r) en 0)
+	 ".xy"
+	 "_non"
+	 (trans (polar pt_1 (* (1+ i) 2.0 (/ pi n_ar)) r) en 0)
+       )
+       (setq i (1+ i))
+     )
+     (command "cl")
+     (setq ss (ssadd (entlast) ss))
+    )
+  )
+)
+
+(defun arc_sf (/ pt_1 r a_s a_e p_s p_e d_210 n_ar i a_delta)
+  (setq
+    pt_1  (cdr (assoc 10 ed))
+    r	  (cdr (assoc 40 ed))
+    a_s	  (cdr (assoc 50 ed))
+    a_e	  (cdr (assoc 51 ed))
+    p_s	  (polar pt_1 a_s r)
+    p_e	  (polar pt_1 a_e r)
+    d_210 (cdr (assoc 210 ed))
+  )
+  
+  (setq
+    pt_1 (TRANS pt_1 0 1)
+    d_210 (TRANS d_210 0 1)
+  );;; Поворот в UCS
+  
+  (cond
+    ((equal (caddr d_210) 1.0 0.0001)
+     (val "ARC = ")
+     (pt pt_1)
+     (coma)
+     (val_c r)
+     (pt p_s)
+     (coma)
+     (pt p_e)
+     (coma)
+     (val "+1")
+     (ent_sf)
+     (p_coma)
+     (cr)
+    )
+    ((equal (caddr d_210) 0.0 0.0001)
+     (val "LINE = ")
+     (pt (trans (polar pt_1 a_s r) en 0))
+     (coma)
+     (pt (trans (polar pt_1 a_e r) en 0))
+     (ent_sf)
+     (p_coma)
+     (cr)
+    )
+    (t
+     (setq
+       a_delta
+	(if (> a_e a_s)
+	  (- a_e a_s)
+	  (+ pi pi (- a_e a_s))
+	)
+       n_ar
+	(1+ (fix (/ a_delta (/ pi 6.0))))
+       i 0
+     )
+     (command
+       "_pline"
+       ".xy"
+       "_non"
+       (trans (polar pt_1 a_s r) en 0)
+       "0"
+       "_arc"
+     )
+     (while (< i n_ar)
+       (command
+	 "_second"
+	 ".xy"
+	 "_non"
+	 (trans
+	   (polar pt_1 (+ a_s (* (+ 0.5 i) (/ a_delta n_ar))) r)
+	   en
+	   0
+	 )
+	 ".xy"
+	 "_non"
+	 (trans
+	   (polar pt_1 (+ a_s (* (1+ i) (/ a_delta n_ar))) r)
+	   en
+	   0
+	 )
+       )
+       (setq i (1+ i))
+     )
+     (command "")
+     (setq ss (ssadd (entlast) ss))
+    )
+  )
+)
+
+(defun insert_sf (/ en_last)
+  (setq
+    sc_x (cdr (assoc 41 ed))
+    sc_y (cdr (assoc 42 ed))
+    sc_z (cdr (assoc 43 ed))
+  )
+  (cond
+    ((= sc_x sc_y sc_z)
+     (setq en_last (entlast))
+     (command "_explode" en)
+     (setq en_last (entnext en_last))
+     (while en_last
+       (setq
+	 ss	 (ssadd en_last ss)
+	 en_last (entnext en_last)
+       )
+     )
+    )
+  )
+)
+(defun pline_sf	(/ en_last)
+  (setq en_last (entlast))
+  (command "_explode" en)
+  (setq en_last (entnext en_last))
+  (while en_last
+    (setq
+      ss      (ssadd en_last ss)
+      en_last (entnext en_last)
+    )
+  )
+)
+(defun out_my_err (str)
+  (setq *error* old_err)
+  (print str)
+  (command "_undo" "_end")
+  (close fl)
+  (command "_u" "_u")
+  (alert
+    "Разработал Матвеев Н.А.\nтелефоны:\nрабочий (0512)29-74-11\nдомашний (0512)22-88-73"
+  )
+  (setvar "cmdecho" echo)
+  (princ)
+)
+
+(princ "\t...загружен.\n")
+;|«Visual LISP© Format Options»
+(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
+;*** DO NOT add text below the comment! ***|;

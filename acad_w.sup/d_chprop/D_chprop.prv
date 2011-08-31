@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] D_chprop saved to:[C:/acad_w.sup/d_chprop] at:[6/19/10] 
+(PRV-DEF (:target . "../../vlx/D_chprop.VLX")
+	 (:active-x . T)
+	 (:separate-namespace)
+	 (:protected . T)
+	 (:load-file-list (:prj "D_chprop.prj"))
+	 (:require-file-list (:DCL "D_chprop.dcl"))
+	 (:ob-directory . "../../Vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

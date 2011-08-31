@@ -1,0 +1,2 @@
+
+(VLISP-PROJECT-LIST :NAME EXEL_READ_WRITE :OWN-LIST ("Wri_exel_samp" "read_exel_setup_lst" "Rad_exel_samp" "my_read_exel" "my_write_exel" "utils_xls" "../../UTILS/Sistjemy schisljenija" "../../UTILS/ACAD_SUP_DIR" "graph") :FAS-DIRECTORY "C:\\vlisp.tmp" :TMP-DIRECTORY "C:\\vlisp.tmp" :PROJECT-KEYS (:BUILD (:STANDARD) :MERGED nil :SAFE-MODE T :MSGLEVEL 1) :CONTEXT-ID :AUTOLISP) 

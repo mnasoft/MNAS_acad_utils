@@ -1,0 +1,141 @@
+;;;(princ "\nÇàãðóæàþ Kompas/Kompas-acad  ")
+(princ (strcat "\nÇàãðóæàþ " (acad_sup) "/" "Kompas/Kompas-acad  "))
+
+(defun km:atr_dwg (/ value)
+  (setq
+    value      (mapcar 'read l_str)
+    curr_color (cadr value)
+  )
+)
+
+(defun km:hatch_dwg (/ do_it)
+  (setq do_it t)
+  (while do_it
+    (setq l_str (str_token (km:read-from-file) " ,=\t\n"))
+    (if	(= (car l_str) "End_obj")
+      (setq do_it nil)
+    )
+  )
+)
+
+(defun km:line_dwg (/ p1 p2 value)
+  (setq	value (mapcar 'read l_str)
+	p1    (list (nth 1 value) (nth 2 value) 0.0)
+	p2    (list (nth 3 value) (nth 4 value) 0.0)
+  )
+  (entmake
+    (list
+      (cons 0 "LINE")
+      (cons 8 no_view)
+      (cons 10 p1)
+      (cons 11 p2)
+      (cons 62 (km:atrib_for_ent))
+    )
+  )
+)
+
+(defun km:circle_dwg (/ value pc r)
+  (setq
+    value (mapcar 'read l_str)
+    pc	  (list (nth 1 value) (nth 2 value) 0.0)
+    r	  (nth 3 value)
+  )
+  (entmake
+    (list
+      (cons 0 "CIRCLE")
+      (cons 8 no_view)
+      (cons 10 pc)
+      (cons 40 r)
+      (cons 62 (km:atrib_for_ent))
+    )
+  )
+)
+
+
+(defun km:arc_dwg (/ value pc r dir ps pe as ae)
+  (setq
+    value (mapcar 'read l_str)
+    pc	  (list (nth 1 value) (nth 2 value) 0.0)
+    r	  (nth 3 value)
+    dir	  (nth 8 value)
+  )
+  (cond
+    ((= dir 1)
+     (setq
+       ps (list (nth 4 value) (nth 5 value) 0.0)
+       pe (list (nth 6 value) (nth 7 value) 0.0)
+     )
+    )
+    ((= dir -1)
+     (setq
+       ps (list (nth 6 value) (nth 7 value) 0.0)
+       pe (list (nth 4 value) (nth 5 value) 0.0)
+     )
+    )
+  )
+  (setq
+    as (angle pc ps)
+    ae (angle pc pe)
+  )
+  (entmake
+    (list
+      (cons 0 "ARC")
+      (cons 8 no_view)
+      (cons 10 pc)
+      (cons 40 r)
+      (cons 50 as)
+      (cons 51 ae)
+      (cons 62 (km:atrib_for_ent))
+    )
+  )
+)
+
+(defun km:read-from-file (/ ch do_while buff reading_char)
+  (setq
+    reading_char t
+    buff ""
+    do_while t
+  )
+  (while do_while
+    (setq ch (read-char fl))
+    (cond
+      (
+       (= ch nil)
+       (setq
+	 do_while nil
+	 eof t
+       )
+      )
+      (
+       (= (chr ch) ";")
+       (setq do_while nil)
+      )
+      (
+       (= (chr ch) "[")
+       (setq reading_char nil)
+      )
+      (
+       (= (chr ch) "]")
+       (setq reading_char t)
+      )
+      (
+       reading_char
+       (setq buff (strcat buff (chr ch)))
+      )
+    )
+  )
+  buff
+)
+
+(defun km:atrib_for_ent	(/ value)
+  (setq value (member "Atr" l_str))
+  (if value
+    (read (cadr value))
+    curr_color
+  )
+)
+
+(princ "\t...çàãðóæåí.\n")
+;|«Visual LISP© Format Options»
+(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
+;*** DO NOT add text below the comment! ***|;

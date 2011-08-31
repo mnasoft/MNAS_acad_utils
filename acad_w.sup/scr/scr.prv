@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] Scr saved to:[./SCR] at:[7/16/01] 
+(PRV-DEF (:target . "../../vlx/scr.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "scr.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../../Vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

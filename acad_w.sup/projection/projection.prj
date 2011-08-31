@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] projection saved to:[./Projection] at:[7/10/08] 
+(VLISP-PROJECT-LIST
+  :NAME
+  projection
+  :OWN-LIST
+  ("projection" "../utils/draw")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

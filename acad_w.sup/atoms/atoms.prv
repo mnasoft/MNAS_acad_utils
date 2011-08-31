@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] atoms saved to:[./ATOMS] at:[7/16/01] 
+(PRV-DEF (:target . "../../vlx/atoms.VLX")
+	 (:active-x . T)
+	 (:separate-namespace)
+	 (:protected . T)
+	 (:load-file-list (:prj "atoms.prj"))
+	 (:require-file-list (:DCL "Atoms.dcl"))
+	 (:ob-directory . "../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

@@ -1,0 +1,17 @@
+;;; VLisp project file [V2.0] rename_vl_prj saved to:[./PRJ/prj] at:[2/17/08] 
+(VLISP-PROJECT-LIST
+  :NAME
+  rename_vl_prj
+  :OWN-LIST
+  ("projects"
+    "../rename_ru_eng/rename_ru_eng" "func_prj"	"func_new" "func_new1" "prj_main" "prv_main")
+  :FAS-DIRECTORY
+  "../../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

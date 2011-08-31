@@ -1,0 +1,13 @@
+(defun c:ctr()
+  (setq r (getdist "\n¬ведите радиус:"))
+  (setq pnt (getpoint "\n¬ведите точку:" ))
+  (setq ed_line (CAR(entsel "\n”кажите линию:")))
+  (entmake (list
+	     (cons 0 "CIRCLE")
+	     (cons 10 pnt)
+	     (cons 40 r)
+	   )
+  )
+  (command "_offset" r ed_line pnt "_exit")
+)
+;(entmake (list	     (cons 0 "LINE")	     (cons 10 pnt)	     (cons 11 (list 0 0 0))	   )  )

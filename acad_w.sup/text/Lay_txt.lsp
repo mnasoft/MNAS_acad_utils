@@ -1,0 +1,93 @@
+;;;(princ "\nЗагружаю text/Lay_txt.lsp")
+(princ (strcat "\nЗагружаю " (acad_sup) "/" "text/Lay_txt.lsp"))
+
+;;;;;;("l_text"
+;;;;;;"Создает текстовый примитив, значением которого является имя слой,\n
+;;;;;;на котором находится ссылочный примитив." "Тексты")
+(defun c:l_text	(/ dat dt en go_exit la pt pt_xy)
+  (err-init '("cmdecho"))
+  (set-sys-var-lst '(("cmdecho" 0)))
+  (while (null go_exit)
+    (setq
+      en (car (entsel "\nПримитив для подписи его слоя:"))
+    )
+    (if	en
+      (setq
+	dt    (entget en)
+	pt_xy (getpoint "\nКоординаты текста:")
+      )
+    )
+    (if	(and en pt_xy)
+      (progn
+	(setq
+	  la  (cdr (assoc 8 dt))
+	  pt  (cdr (assoc 10 dt))
+	  dat
+	      (list
+		(cons 0 "Text")
+		(cons 1 la)
+		(cons 8 la)
+		(cons 7 (getvar "textstyle"))
+		(cons 40 (getvar "textsize"))
+		(cons 50 0.0)
+		(list
+		  10
+		  (car pt_xy)
+		  (cadr pt_xy)
+		  (if (caddr pt)
+		    (caddr pt)
+		    0.0
+		  )
+		)
+	      )
+	)
+	(entmake dat)
+      )
+      (setq go_exit t)
+    )
+  )
+  (princ)
+  (err-handle "")
+)
+
+
+
+
+;;;;;;("z_text" "Создает текст, значением которого является координата z." "Тексты")
+(defun c:z_text	(/ go_exit pt pt_xy)
+  (err-init '("cmdecho"))
+  (set-sys-var-lst '(("cmdecho" 0)))
+  (while (null go_exit)
+    (setq pt (getpoint "\nТочка для отображения координаты Z:"))
+    (if	pt
+      (setq pt_xy (getpoint "\nКоординаты текста:"))
+    )
+    (if	(and pt pt_xy)
+      (progn
+	(setq
+	  dat
+	   (list
+	     (cons 0 "Text")
+	     (cons 1 (RTOS (CADDR PT)))
+	     (cons 7 (getvar "textstyle"))
+	     (cons 40 (getvar "textsize"))
+	     (cons 50 0.0)
+	     (list
+	       10
+	       (car pt_xy)
+	       (cadr pt_xy)
+	       (caddr pt)
+	     )
+	   )
+	)
+	(entmake dat)
+      )
+      (setq go_exit t)
+    )
+  )
+  (err-handle "")
+)
+(princ "\t...загружен.\n")
+ ;|«Visual LISP© Format Options»
+(72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
+;*** DO NOT add text below the comment! ***|;

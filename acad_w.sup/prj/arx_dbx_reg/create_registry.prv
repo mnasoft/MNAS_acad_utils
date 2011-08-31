@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] create_registry saved to:[./PRJ/arx_dbx_reg] at:[5/17/09] 
+(PRV-DEF (:target . "../../../vlx/create_registry.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "create_reg.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

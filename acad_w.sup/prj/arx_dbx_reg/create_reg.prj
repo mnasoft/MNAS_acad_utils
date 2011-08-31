@@ -1,0 +1,15 @@
+;;; VLisp project file [V2.0] create_reg saved to:[./PRJ/arx_dbx_reg] at:[3/10/08] 
+(VLISP-PROJECT-LIST :NAME
+		    create_reg
+		    :OWN-LIST
+		    ("../../utils/ACAD_SUP_DIR" "arx_dbx_reg" "MNAS_ARX_DBX_16" "MNAS_ARX_DBX_17")
+		    :FAS-DIRECTORY
+		    "../../../vlisp.tmp"
+		    :TMP-DIRECTORY
+		    "../../../vlisp.tmp"
+		    :PROJECT-KEYS
+		    (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+		    :CONTEXT-ID
+		    :AUTOLISP
+)
+;;; EOF

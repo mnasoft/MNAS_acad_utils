@@ -1,0 +1,21 @@
+;;; VLisp project file [V2.0] AXIS saved to:[C:/acad_w.sup/AXIS] at:[5/17/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  AXIS
+  :OWN-LIST
+  ("../UTILS/ACAD_SUP_DIR"
+    "Axis_cmd"		 "Axis_ea"	      "Axis_util"	   "../utils/draw"
+    "../UTILS/DXF"	 "Graph_analitic"     "Graph_block"	   "Graph_main"
+    "Graph_pline"	 "Graph_poitn_type"   "Image"		   "sub_div"
+    "../UTILS/XDATA"	 "../UTILS/dlg_utils"
+   )
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

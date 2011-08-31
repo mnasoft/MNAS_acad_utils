@@ -1,0 +1,57 @@
+;;;(princ "\nЗагружаю Scr/Scr.lsp")
+(princ (strcat "\nЗагружаю " (acad_sup) "/" "Scr/Scr.lsp"))
+
+;;;;;;("scr"
+;;;;;;"Программа для применения определенного сценария к файлам.\n
+;;;;;;должна сканировать содержимое определенного каталога и сртоить сценарий." "not defined")
+(defun c:scr(/ f i old_err dwg_name direct names)
+  (setq names (list
+        "\nШаблон имени с расшерением .dwg :"
+        "\nсостав пакета:"
+      )
+  )
+  (setq old_err *error* *error* err)
+  (if
+    (null
+      (setq dwg_name (getstring (nth 0 names)))
+      )
+    (exit)
+  )
+  (setq direct "")
+  (command "sh" (strcat "dir /s " dwg_name ".dwg >list"))
+  (command "_qsave")
+  (if
+    (null
+      (setq sc_item (getstring t (nth 1 names )))
+    )
+    (exit)
+  )
+  (if (null(setq fi (open "list" "r")))(exit))
+  (if (null(setq fo(open "1.scr" "w")))(exit))
+  (while
+    (setq str(read-line fi))
+    (cond
+      (
+        (= (substr str 1 13) "directory of ")
+        (setq direct (substr str 14))
+      )
+      ( (= (substr str 10 3) "dwg")
+        (setq i 0)
+        (while
+          (/= (substr str (setq i (1+ i)) 1) " ")
+        )
+        (princ (strcat "_open " direct "\\" (substr str 1 (1- i))  " " sc_item " _qsave\n") fo)
+      )
+    )
+  )
+  (close fi)
+  (close fo)
+  (setq *error* old_err)
+  (command "_script" "1")
+)
+
+(princ "\t...загружен.\n")
+
+;|«Visual LISP© Format Options»
+(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
+;*** DO NOT add text below the comment! ***|;

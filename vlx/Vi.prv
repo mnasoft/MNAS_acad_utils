@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] Vi saved to:[C:/Vlx] at:[5/12/00] 
+(PRV-DEF (:target . "Vi.VLX")
+	 (:active-x . T)
+	 (:separate-namespace)
+	 (:protected . T)
+	 (:load-file-list (:prj "C:/ACAD_W.SUP/PRJ/VI/Vi.prj"))
+	 (:require-file-list)
+	 (:ob-directory)
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

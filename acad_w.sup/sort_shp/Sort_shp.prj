@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] Sort_shp saved to:[./Sort_shp] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  Sort_shp
+  :OWN-LIST
+  ("../utils/ACAD_SUP_DIR" "sort_shp" "../UTILS/STRING")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

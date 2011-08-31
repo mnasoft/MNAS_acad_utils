@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] f_otv saved to:[./Otvjerstija] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  f_otv
+  :OWN-LIST
+  ("../utils/ACAD_SUP_DIR" "f_otv")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

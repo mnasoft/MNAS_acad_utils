@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] fors_rh saved to:[./Fors_rh] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  fors_rh
+  :OWN-LIST
+  ("../UTILS/ACAD_SUP_DIR" "ras_har_lic" "ras_har_gas" "../axis/sub_div")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

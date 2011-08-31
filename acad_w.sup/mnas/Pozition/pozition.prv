@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] pozition saved to:[./MNAS/Pozition] at:[2/14/08] 
+(PRV-DEF (:target . "../../../Vlx/pozition.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "pozition.prj"))
+	 (:require-file-list (:DCL "pozition.dcl"))
+	 (:ob-directory . "../../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

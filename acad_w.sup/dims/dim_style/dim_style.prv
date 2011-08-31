@@ -1,0 +1,12 @@
+;;; файл сценария сборки Visual LISP [V1.0] Dim_style saved to:[C:/Program Files/MNASoft/MNAS_acad_utils/acad_w.sup/dims/dim_style] at:[3/29/11] 
+(PRV-DEF (:target . "../../../vlx/dim_style.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "dim_style.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

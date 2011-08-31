@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] lines saved to:[./LINES] at:[7/16/01] 
+(PRV-DEF (:target . "../../Vlx/lines.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "lines.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../../Vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

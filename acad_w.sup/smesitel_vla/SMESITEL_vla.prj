@@ -1,0 +1,21 @@
+;;; VLisp project file [V2.0] SMESITEL_vla saved to:[./Smesitel_vla] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  SMESITEL_vla
+  :OWN-LIST
+  ("../UTILS/ACAD_SUP_DIR"
+    "section"		   "sech_by_lenght"
+    "../UTILS/vla-utils"   "../UTILS/Asist"
+    "../UTILS/draw"	   "Mixer_section"
+    "../UTILS/ERR"
+   )
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

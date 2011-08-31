@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] D_chprop saved to:[./D_CHPROP] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  D_chprop
+  :OWN-LIST
+  ("../UTILS/ACAD_SUP_DIR" "D_CHPROP" "../UTILS/dlg_utils")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

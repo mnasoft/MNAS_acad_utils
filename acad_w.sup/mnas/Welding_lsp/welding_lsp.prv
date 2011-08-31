@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] welding saved to:[./MNAS/Welding_lsp] at:[2/14/08] 
+(PRV-DEF (:target . "../../../Vlx/welding_lsp.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "welding_lsp.prj"))
+	 (:require-file-list (:DCL "welding.dcl"))
+	 (:ob-directory . "../../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

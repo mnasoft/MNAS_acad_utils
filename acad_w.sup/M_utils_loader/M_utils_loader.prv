@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] M_utils_loader saved to:[C:/MNAS_acad_db17_utils/acad_w.sup/M_utils_loader] at:[3/29/11] 
+(PRV-DEF (:target . "../../vlx/M_utils_loader.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "M_utils_loader.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] Dopusk saved to:[./DOPUSK] at:[9/18/08] 
+(PRV-DEF (:target . "../../Vlx/Dopusk.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "Dopusk.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../../Vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

@@ -1,0 +1,17 @@
+;;; VLisp project file [V2.0] axis_podp saved to:[./AXIS] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  axis_podp
+  :OWN-LIST
+  ("../UTILS/ACAD_SUP_DIR"
+    "axis_podp"	"Axis_util" "sub_div" "../UTILS/draw" "../utils/DXF" "../UTILS/XDATA" "../MATR/VECTOR")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

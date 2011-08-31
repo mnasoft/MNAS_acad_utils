@@ -1,0 +1,240 @@
+(princ "\nЗагружаю ... MNASoft_18.mnl")
+
+(defun ai_ffile (app)
+  (or (findfile (strcat app ".vlx"));;; Добавлено мною
+      (findfile (strcat app ".fas"));;; Добавлено мною
+      (findfile (strcat app ".lsp"))
+      (findfile (strcat app ".exp"))
+      (findfile (strcat app ".exe"))
+      (findfile (strcat app ".arx"))
+      (findfile app)
+  )
+)
+
+;;;Функция для определения пкти к файлу /rus_cmd_opechatka.lsp загружающему функцию autoload_cmds_and_op-cmds.
+(defun MNAS_ArxPrj (/ LOADER )
+(setq
+    LOADER
+     (vl-registry-read
+       (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\MNASoft\\" (substr (getvar "acadver") 1 2))
+       "ROOT"
+     )
+  )
+  (if (null LOADER)
+    (setq
+    LOADER
+     (vl-registry-read
+       (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MNASoft\\" (substr (getvar "acadver") 1 2))
+       "ROOT"
+     )
+  )
+    
+  )
+  (VL-STRING-TRANSLATE
+    "\\"
+    "/"
+    (cond
+      ((null LOADER)
+       (strcat "C:" "\\" "MNAS_acad_db17_utils" "\\")
+      )
+      (
+       t
+       (strcat (VL-FILENAME-DIRECTORY LOADER) "\\")
+      )
+    )
+  )
+)
+
+(load (strcat (MNAS_ArxPrj) "acad_w.sup/Utils/acad_sup_dir.lsp")
+      "Message from M_utility.mnl\nФайл .../acad_w.sup/Utils/acad_sup_dir.lsp не найден."
+)
+
+(load (strcat (MNAS_ArxPrj_acad_w) "/opechatka/rus_cmd_opechatka.lsp")
+      "Message from M_utility.mnl\nФайл .../acad_w.sup/opechatka/rus_cmd_opechatka.lsp не найден."
+)
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/M_utils_loader")
+  '("MNASoft-registry-uninstall" "MNASoft-registry-install")
+)
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/provoloka") '("prov"))
+
+;;Абревиатуры команд.
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/abrev")
+  '("pur" "ra" "rg" "rga" "sk" "tm" "vs" "z" "za" "zc" "zd" "ze" "zp" "zv" "zw"	"fr" "f"
+    "chd" "ch" "s" "l" "a" "o" "c" "e" "co" "cp" "m" "ro" "gr_on_off" "tr" "ex" "rec" "mi"
+    "el" "br" "u" "undo" "sc" "oops" "di" "id" "ma" "le"
+    "op" "h" "dt" "pe" "bo" "ar" "li" "x" "j" "b" "ps" "ms"
+   )
+);;Абревиатуры команд.
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/acad_pgp")
+  '("acad_pgp")
+);;Абревиатуры команд.
+
+
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/pipe") '("pipe"))
+
+
+;(load "c:/vlx/usadka.vlx")
+;(autoload_cmds_and_op-cmds "c:/vlx/usadka" '("усадка"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/add_prefix") '("add_3d_prefix"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/atoms") '("atoms"))
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/axis") 
+  '("a1" "an" "a2" "a2t" "a2xyn_t" "a2xy_t" "a3" "a4" "a5" "a6"	"an" "ax" "c1" "c2" "c3" "c4" "ea" "epr"
+    "im")
+)
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/f_otv") 
+  '("f_kolca")
+)
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/axis_podp") '("ax_shcala"))
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/big_fnt")
+  '("draw_font" "ins_lit")
+)
+
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/Change")
+  '("block_block" "block_point" "ch_wid" "point_block")
+)
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/Circles")
+  '("ax_a" "ax_c" "ax_ca" "cl_els" "cl_s" "c_axis" "c_d" "c_el"	"c_ex"
+    "c_r" "c_sc")
+)
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/Clock")
+  '("clock_off" "clock_on")
+)
+
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/D_chprop") '("dch"))
+
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/Dims")
+  '("index" "index_ru" "index_en"    "ins_blk"  "bas"	     "poz"	"up"	   "bot"
+    "d_up"     "cut"	  "look"     "obj_data"	"dwg_put"  "dwg_get"
+    "welding" "DUMBELLS-TST" "DUMBELLS-INFO" "make_dim_styles" "MNAS_DIM_STYLE_ADD"
+   )
+)
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/Dim_style")
+  '(
+    "MNASAddDimStyle"
+    "MNASsetDimtxt"
+    "MNASsetDimsd1"
+    "MNASsetDimsd2"
+    "MNASsetDimatfit"
+    "MNASsetDimtoh"
+    "MNASsetDimtad"
+    "MNASsetDimtmove"
+    "MNASsetDimtofl"
+    "MNASsetDimjust"
+	
+	"create_dim_styles"
+	"DIM-SD_SE"
+	"dim-rad-rad"
+	"dim-rad-hor"
+	"dim-toh"
+   )
+)
+
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/rou") '("rou_i2"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/rou_1") '("rou"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/Dopusk") '("dop"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/Dxf") '("obj" "nobj" "objxd" "nobjxd"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/Edit") '("mr" "mcp" "off" "ofd" "cr"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/Entmake") '("ems" "eml"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/Exel") '("exel_read" ))
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/For_lic")
+  '("for_proect" "for_prover" "for_prov" "gr" "pr1" "pr2" "rep")
+)
+
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/format") '("format"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/fors_rh") '("ras_har_lic" "ras_har_gas"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/graf") '("graf"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/kompas") '("kompas_in" "kompas_out"))
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/layer")
+	  '("bl_all_on"	 "bl_all_th"  "bl_fr"	   "bl_off"
+	    "cl_sw_d"	 "cl_s_d"     "lay"	   "la_dhv"
+	    "llay"	 "ml_off"     "ml_on"	   "ml_off_c"
+	    "ml_on_c"	 "rgb"	      "sl_fr"	   "sl_lo"
+	    "sl_off"	 "sl_on"      "sl_th"	   "sl_un"
+	    "svl_fr"	 "svl_th"     "vl_fr"	   "vl_fr_w"
+	    "vl_fr_w+_d" "vl_s_d"     "vl_th"	   "vl_th_all"
+	    "am_la"
+	   )
+)
+
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/lines")
+	  '("d_chamf" "d_off" "d_otv" "d_rez" "exl" "xt" "ltp" "r_off" "z0")
+)
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/lopatka") '("lo"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/point") '("pd" "xy" "xy_sc" "rot_p"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/rename") '("ren"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/scr") '("scr"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/sort_shp") '("sort_shp"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/spec") '("spec"))
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/text")
+  '("&A&B&C"	"ate"	    "de"	"l_text"    "stl"	"te"	    "pos_export"
+    "te%%c"	"te+"	    "te++"	"te-"	    "te+kvsk"	"te-kvsk"   "to_15"	"z_text"
+    "x45%%d"	"te_*"	    "text_export"	    "te_<>_"
+   )
+)
+
+
+
+
+(autoload_cmds_and_op-cmds  (strcat (MNAS_ArxPrj_vlx) "/SMESITEL_vla")  '("prep:sm" "clear:sm" "dr:sech" "dr:sm" "vla-obj"))
+
+(autoload_cmds_and_op-cmds  (strcat (MNAS_ArxPrj_vlx) "/man")  '("man"))
+
+(autoload_cmds_and_op-cmds  (strcat (MNAS_ArxPrj_vlx) "/hpgl")  '("hpgl_in"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/pozition") '("edpos" "ep"  "pozition_set_text_scale" "pos_export"))
+
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/welding") '("edweld" "es"  "ed-weld-txt" "est"))
+
+(princ "\nMNASoft_18.mnl загружен.\n")
+;|«Visual LISP© Format Options»
+(105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
+;*** DO NOT add text below the comment! ***|;

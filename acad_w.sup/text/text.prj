@@ -1,0 +1,24 @@
+;;; VLisp project file [V2.0] text saved to:[./TEXT] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  text
+  :OWN-LIST
+  ("Text_pozition"
+    "../UTILS/ACAD_SUP_DIR"  "Rjedaktirovanije tjekstov"
+    "naklon _15gr"	     "Lay_txt"
+    "TEXT"		     "STL"
+    "../UTILS/DXF"	     "../UTILS/prin"
+    "../UTILS/STRING"	     "Skobka"
+    "Text_export"	     "../UTILS/stl_text"
+    "../UTILS/ERR"	     "../utils/system_registry"
+   )
+  :FAS-DIRECTORY
+  "../../Vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../Vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

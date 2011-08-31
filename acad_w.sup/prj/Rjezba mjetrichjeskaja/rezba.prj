@@ -1,0 +1,2 @@
+
+(VLISP-PROJECT-LIST :NAME REZBA :OWN-LIST ("Raschjet profilja mjetrichjeskoj rjezby po GOST 9150-81" "../../UTILS/draw") :FAS-DIRECTORY "C:\\vlisp.tmp" :TMP-DIRECTORY "C:\\vlisp.tmp" :PROJECT-KEYS (:BUILD (:STANDARD) :MERGED nil :SAFE-MODE T :MSGLEVEL 1) :CONTEXT-ID :AUTOLISP) 

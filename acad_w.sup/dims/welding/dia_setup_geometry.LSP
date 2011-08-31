@@ -1,0 +1,38 @@
+(setq
+  ll_wg_setup
+   '(
+     ("wg:размер_стрелки" "5.")
+     ("wg:угол_раскрытия_стрелки" "10.")
+     ("wg:угол_хвоста_стрелки" "60.")
+     ("wg:направление_стрелки" "0")
+     ("wg:высота_текста" "3.5")
+     ("wg:расст_полка-верхний_текст" "1.75")
+     ("wg:расст_полка-нижний_текст" "1.75")
+     ("wg:радиус_по_контуру" "1.5")
+    )
+)
+
+(defun weld:setup_geometry()
+  (setq	arrow_dcl_id
+	 (load_dialog
+	   (strcat (acad_sup) "/DIMS/welding/welding.dcl")
+	 )
+  )
+  (if (< arrow_dcl_id 0)
+    (exit)
+  )
+  (if (not (new_dialog "welding_geometry" arrow_dcl_id))
+    (exit)
+  )
+  (wt:init)
+  (wt:setup_ac)
+
+  (setq act (start_dialog))
+  (cond
+    ((= act 0) t)
+    ((= act 1) t)
+  
+  )
+  (unload_dialog arrow_dcl_id)
+ 
+ ) 

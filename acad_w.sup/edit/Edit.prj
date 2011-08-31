@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] EDIT saved to:[./Edit] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  EDIT
+  :OWN-LIST
+  ("../utils/ACAD_SUP_DIR" "EDIT")
+  :FAS-DIRECTORY
+  "../../Vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../Vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

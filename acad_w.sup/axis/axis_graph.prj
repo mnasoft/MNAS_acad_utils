@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] axis_graph saved to:[./AXIS] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  axis_graph
+  :OWN-LIST
+  ("Graph_analitic")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

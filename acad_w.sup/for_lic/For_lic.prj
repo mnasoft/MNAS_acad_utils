@@ -1,0 +1,17 @@
+;;; VLisp project file [V2.0] For_lic saved to:[./FOR_LIC] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  For_lic
+  :OWN-LIST
+  ("../UTILS/ACAD_SUP_DIR"
+    "for_prover" "provjerka" "projekt" "formuly" "../Funktcii/Trigonomjetrichjeskije")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

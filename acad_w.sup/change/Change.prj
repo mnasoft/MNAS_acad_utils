@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] Change saved to:[./CHANGE] at:[5/16/09] 
+(VLISP-PROJECT-LIST
+  :NAME
+  Change
+  :OWN-LIST
+  ("../utils/ACAD_SUP_DIR" "CH_WID" "POINT_BLOCK" "../UTILS/draw" "../UTILS/DXF")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

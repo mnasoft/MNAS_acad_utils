@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] razvertka saved to:[C:/MNAS_acad_db17_utils/acad_w.sup/razvertka] at:[7/10/10] 
+(PRV-DEF (:target . "../../vlx/razvertka.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "razvertka.prj"))
+	 (:require-file-list (:txt "razvertka.sld"))
+	 (:ob-directory . "../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

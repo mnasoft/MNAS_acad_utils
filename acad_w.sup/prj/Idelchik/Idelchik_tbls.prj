@@ -1,0 +1,2 @@
+
+(VLISP-PROJECT-LIST :NAME IDELCHIK_TBLS :OWN-LIST ("../../matr/MATR" "../../MATR/Vychisljenije osrjednjajuschjej funktcii" "koeff_cinematic_vjazkost") :FAS-DIRECTORY nil :TMP-DIRECTORY nil :PROJECT-KEYS (:BUILD (:STANDARD)) :CONTEXT-ID :AUTOLISP) 

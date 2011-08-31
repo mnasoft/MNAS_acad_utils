@@ -1,0 +1,13 @@
+(defun dr:spline(pts col / arr len pline)
+  (setq	len (length pts)
+	arr (vlax-make-safearray vlax-vbDouble (cons 0 (- (* 3 len) 1)))
+  )
+  (while (>= (setq len (1- len)) 0)
+    (vlax-safearray-put-element arr (+ 0 (* 3 len)) (car (nth len pts)))
+    (vlax-safearray-put-element arr (+ 1 (* 3 len)) (cadr (nth len pts)))
+    (vlax-safearray-put-element arr (+ 2 (* 3 len)) (caddr (nth len pts)))
+  )
+  (setq pline (vla-AddSpline(AcadAppDocSpace) arr (vlax-3d-point 0.0 0.0 0.0) (vlax-3d-point 0.0 0.0 0.0)))
+  (if (and (>= col 0) (<= col 256))(vla-put-color pline col))
+  pline
+)

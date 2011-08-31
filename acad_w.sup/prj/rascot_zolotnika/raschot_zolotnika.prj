@@ -1,0 +1,2 @@
+
+(VLISP-PROJECT-LIST :NAME RASCHOT_ZOLOTNIKA :OWN-LIST ("../../AXIS/sub_div" "../../MATR/MATR" "../../MATR/Vychisljenije osrjednjajuschjej funktcii" "../../Mjetod polovinnogo djeljenija/Polovinnoje djeljenije 1" "../../Otvjerstija/f_otv" "havisude" "gt25000") :FAS-DIRECTORY "C:\\vlisp.tmp" :TMP-DIRECTORY "C:\\vlisp.tmp" :PROJECT-KEYS (:BUILD (:STANDARD) :MERGED nil :SAFE-MODE T :MSGLEVEL 1) :CONTEXT-ID :AUTOLISP) 

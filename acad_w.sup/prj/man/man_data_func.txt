@@ -1,0 +1,374 @@
+C:/MNAS_acad_db17_utils/acad_w.sup/Acaddoc.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/BL_PUR.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/INET.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/KO.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/LITERA.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prv.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/abrev/Abrev.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/abrev/gr_on_off.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/acad_pgp/PGP_abrev.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/add_prefix/Add_prefix.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/atoms/ATOMS.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/Axis_cmd.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/Axis_ea.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/axis_graph_main.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/axis_podp.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/Axis_util.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/Graph_analitic.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/Graph_block.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/Graph_main.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/Graph_pline.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/Graph_poitn_type.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/Image.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/axis/sub_div.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/big_fnt/LITERA.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/change/CH_WID.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/change/POINT_BLOCK.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/circles/CIRCLES.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/circles/Circles_2.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/circles/sort_point.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/clock/CLOCK.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/abc.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/abc_dialog.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/DIM_FROM.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/cut/cut.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/dim_style/dim_override.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/dim_style/dim_style.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/dim_style/tmp.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/look/look.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/rou/rou.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/rou/rou_draw.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/rou/rou_stp.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/rou/rou_update_ver.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/rou_1/dim_vars.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/rou_1/rou_draw_i3.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/rou_1/rou_i3.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/welding/dia_arrow.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/welding/dia_setup_geometry.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/welding/Dia_welding.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/welding/draw_arrow.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/welding/tmp.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/welding/welding.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dims/welding/welding_data.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dopusk/DOP.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dopusk/DOP_DATA.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dopusk/DOP_DATA_new.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dopusk/DOP_DATA_new_01.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/dopusk/get_dop_from_mechanical.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/dopusk/test_dop.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/dxf/dxf_cmd.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/d_chprop/D_CHPROP.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/edit/EDIT.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/entmake/entmake.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/exel/graph.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/exel/read_exel_setup_lst.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/exel/read_scalc.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/exel/utils_xls.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/format/add_dop_sht_dlg.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/format/block_create.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/format/dop_dlg.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/format/FORMAT.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/format/format_draw.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/format/geom_util.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/fors_rh/ras_har_gas.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/fors_rh/ras_har_lic.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/for_lic/formuly.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/for_lic/for_prover.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/for_lic/projekt.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/for_lic/provjerka.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/for_lic/tmp.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/funktcii/Trigonomjetrichjeskije.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/funktcii/ActivX/mtext_to_word.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/funktcii/ActivX/reactor.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/funktcii/Fizichjeskije/Par.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/funktcii/Fizichjeskije/Phizich.lsp
+;;;f;;;("g_usp()" "Ускорение свободного падения[м/с^2].")
+;;;f;;;("T_abs0[C] ()"	"Абсолютный ноль в градусах цельсиях.")
+;;;f;;; ("T[K]->t[C] ( T[K] )" "Перевод температуры из кельвинов в градусы цельсия.")
+;;;f;;; ("t[C]->T[K] (t[C])"  "Перевод температуры из градусов цельсия в кельвины.")
+;;;f;;; ("p_atm ()" "Нормальное атмосферное давление [Па].")
+;;;f;;; ("kg/cm2->Pa (kg/cm2)" "Перевод давления из кг/см^2 в Па.")
+;;;f;;; ("Pa->kg/cm2 (Pa)" "Перевод давления из Па в кг/см^2.")
+;;;f;;; ("p_izb->p_abs( p_izb )" "Перевод избыточного давления в абсолютное [Па].")
+;;;f;;; ("p_izb[kg/cm2]->p_abs[Pa] ( p_izb )" "Перевод избыточного давления [кг/см^2] в абсолютное [Па].")
+;;;f;;; ("ro(P mu Rmu Temperatura)" "Плотность по P mu Rmu Temperatura")
+C:/MNAS_acad_db17_utils/acad_w.sup/funktcii/Regystry/registry.lsp
+;;;f;;;("string-subst-all(new_substr olg_sustr str)"
+;;;f;;;"Производит замену всех вхождений olg_sustr на new_substr для строки str.")
+C:/MNAS_acad_db17_utils/acad_w.sup/graf/GRAF.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/hpgl/HPGL.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/izmjeritjelnaja mashina/read_mea.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/izmjeritjelnaja mashina/spline.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/izmjeritjelnaja mashina/Mea/123.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/kompas/acad-kompas.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/kompas/kompas-acad.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/kompas/KOMPAS.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/layer/bl_layer.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/layer/cur_layer.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/layer/layer.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/layer/md_layer.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/layer/nent_lay.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/layer/sh_layer.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/layer/vp_layer.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/lines/LINES.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/lines/linetype.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/lines/LINE_1.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/lines/LINE_2.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/lopatka/draw_lop.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/lopatka/Lopatka.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/lopatka/Lop_func.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/matr/CHH.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/matr/EX.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/matr/MATR.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/matr/M_PREOBR.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/matr/SLIDE.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/matr/VECTOR.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/matr/Vychisljenije osrjednjajuschjej funktcii.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/mjetod pokoordinatnogo spuska/Mjetod pokoordinatnogo spuska.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/mjetod polovinnogo djeljenija/Polovinnoje djeljenije 1.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/mjetod polovinnogo djeljenija/Polovinnoje djeljenije.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/mnas/Pozition/pozition_abbrev.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/mnas/Pozition/pozition_dlg.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/mnas/Pozition/pozition_export.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/mnas/Pozition/pozition_sort.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/mnas/Welding/welding_dlg.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/mnas/Welding/weld_abbrev.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/mnas/Welding/Weld_text_dlg.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/M_utils_loader/M_utils_loader.lsp
+;;;f;;;("registry-dir"
+;;;f;;;"Выполняет чтение подключей для строк содержащих ключи реестра.\n
+;;;f;;;Возвращает список подключей реестра.\n
+;;;f;;;Параметры:\n
+;;;f;;;str-lst - содержит список ключей реестра.\n
+;;;f;;;Пример использования 1:\n
+;;;f;;;(registry-dir '(\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Pozition\"))\n
+;;;f;;;Результат работы 1:\n
+;;;f;;;'(\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Pozition\\Groups\"\n
+;;;f;;;  \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Pozition\\Commands\"\n
+;;;f;;; )\n
+;;;f;;;"
+;;;f;;;)
+C:/MNAS_acad_db17_utils/acad_w.sup/M_utils_loader/M_utils_LoaderAppRegistryData.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/M_utils_loader/M_utils_LoaderARXInstall.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/M_utils_loader/M_utils_LoaderCommands.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/M_utils_loader/M_utils_LoaderDBXInstall.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/opechatka/rus_cmd_opechatka.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/optimalnoje raspololjenije okrugnostjej/okrugnost po tochkam.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/otvjerstija/f_otv.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/piping/Piping.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/point/points.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/lst.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Temperaturnyj_napor.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/arx_dbx_reg/arx_dbx_reg.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/arx_dbx_reg/MNAS_ARX_DBX_16.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/arx_dbx_reg/MNAS_ARX_DBX_17.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Check_Inters/ck.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/CHtjenije iz Exel/graph.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/CHtjenije iz Exel/my_read_exel.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/CHtjenije iz Exel/my_write_exel.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/CHtjenije iz Exel/Rad_exel_samp.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/CHtjenije iz Exel/read_exel_setup_lst.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/CHtjenije iz Exel/read_me.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/CHtjenije iz Exel/utils_xls.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/CHtjenije iz Exel/Wri_exel_samp.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Idelchik/koeff_cinematic_vjazkost.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/man/create_html_all_command_list.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/man/man.lsp
+;;;f;;;("man-rebuild"
+;;;f;;;"Prj - man.\n
+;;;f;;;File - man.lsp.
+;;;f;;;Производит извлечение справочной информации из файлов *.lsp")
+;;;f;;;("dir_recursive" "Рекурсивный поиск всех каталогов начиная с каталога directory.")
+;;;f;;;("fname_recursive"
+;;;f;;;"Рекурсивный поиск всех имен файлов с маской fn_mask начиная с каталога directory.")
+;;;f;;;("find_line_by_mask"
+;;;f;;;"Производит поиск строк в файле с именем fname,\n
+;;;f;;;удовлетворяющих маске mask и производит их запись в файл с дескриптором  f_out.\n
+;;;f;;;Файл f_out должен быть открыт по записи.")
+;;;f;;;("find-line-by_mask-in_directory_files"
+;;;f;;;"Производит поиск строк, удовлетворяющих маске str_mask,\n
+;;;f;;;в файлах с маской имени файла file_mask\n
+;;;f;;;начиная с коталога directory рекурсивно вглубь по дереву каталогов\n
+;;;f;;;и выводит строки, найденные в файлах, в выходной файл с именем fn_out.")
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/man/man_data_base.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/man/man_data_base_func.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/man/Type_command_list.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Ostcill/osc.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Ostcill/osct_1.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Postrojenije Zavisimostjej vrjednyh vybrosov/banzaj1.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/prj/func_new.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/prj/func_new1.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/prj/func_prj.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/prj/prj_main.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/prj/projects.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/prj/prv_main.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/prj/tmp.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Provoloka/Provoloka.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/CP_CH4.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/F-ly pjerjeschjeta gaz smjesi.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/Gasodin_functions.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/Pereschet.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/Raschet_smesi_0.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/Raschet_teplojomkosti.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/Raschjet smjesi.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/Smjeshjenije_sostavov.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/Sostavy smjesjej.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/Tablitca gazov.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/Tablitca Mjendjeljejeva.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza/Tablitsa_teplojomkostej.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet gaza_0/Raschet_smesi.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet pruginy/Prugina.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet pruginy/Raschjet_pruginy.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Raschjet ugla vyhoda strui vozduha iz TVF/Ugol vyhoda vozduha iz TVF.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/rascot_zolotnika/gt25000.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/rascot_zolotnika/havisude.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/rename_ru_eng/rename_ru_eng.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Rjezba mjetrichjeskaja/Raschjet profilja mjetrichjeskoj rjezby po GOST 9150-81.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Spring/Spring.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Temperetche_In_smesitel/tmp.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Tr_inch/tr_inch.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/prj/Zavihritel/ZAV_1.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/projection/projection.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/provoloka/provoloka.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/razvertka/razvertka.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/rename/rename.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/scr/Scr.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/smesitel_vla/Mixer_section.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/smesitel_vla/sech_by_lenght.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/smesitel_vla/section.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/sort_shp/sort_shp.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/spec/Baza_dannyh.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/spec/bd_naimjenovanije.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/spec/Dialog_Color.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/spec/Dialog_Nastrojka.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/spec/Dialog_pozicija.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/spec/func1.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/spec/func2.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/spec/func3.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/spec/func4.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/spec/Naimjenovanije.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/spec/Specif.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/statistika/123.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/statistika/koeff studenta.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/statistika/kriterij grubsa.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/statistika/prolivky forsunok.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/statistika/Statistika.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/statistika/Utuchnennye pyfchenyja vjazkosty.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/text/Lay_txt.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/text/naklon _15gr.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/text/Rjedaktirovanije tjekstov.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/text/Skobka.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/text/STL.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/text/TEXT.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/text/Text_export.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/text/Text_extract.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/text/Text_pozition.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/tmp/al.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/tmp/equal_area.LSP
+;;;f;;;("equal_area_radius"
+;;;f;;;  "Делит кольцо между максимальным радиусом rb и минимальным радиусом rm на n равновеликих по площади частей и выводит i-товый радиус.
+;;;f;;; При значении i=0 выводится внутренний радиус.
+;;;f;;; При значении i=n выводится наружный радиус.
+;;;f;;; rb > rm.
+;;;f;;; Наример, для того чтобы рассчитать радиусы для постановки 5-ти термопар при rm=802.0;   rb 871.5.
+;;;f;;; Необходимо выполнить следующее:
+;;;f;;; (equal_area_radius 871.5 802.0 1 10)
+;;;f;;; (equal_area_radius 871.5 802.0 3 10)
+;;;f;;; (equal_area_radius 871.5 802.0 5 10)
+;;;f;;; (equal_area_radius 871.5 802.0 7 10)
+;;;f;;; (equal_area_radius 871.5 802.0 9 10)"
+;;;f;;;)
+;;;f;;;("equal_area_radius_n"  "Делит кольцо между максимальным радиусом rb и минимальным радиусом rm на n равновеликих по площади частей и выводит их радиусы.
+;;;f;;; 
+;;;f;;; rb > rm.
+;;;f;;; Наример, для того чтобы рассчитать радиусы для постановки 5-ти термопар при rm=802.0;   rb 871.5.
+;;;f;;; Неодходимо выполнить следующее:
+;;;f;;;(equal_area_radius_n 871.5 802.0 5)")
+C:/MNAS_acad_db17_utils/acad_w.sup/tmp/menu_load.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/tmp/new.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/tmp/test.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/tmp/tmp.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/acad_sup_dir.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/ASIST.lsp
+;;;f;;;("ss_to_list" "Преобразует набор примитивов в список, содержащий имена примитивов.")
+;;;f;;;("list_to_ss" "Преобразует список, содержащий имена примитивов в набор примитивов.")
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/Binary.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/dlg_utils.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/draw.lsp
+;;;f;;;("Space()" "Space определяет какое пространство (модели или листа) является текущим.\n
+;;;f;;;Возвращает:\n
+;;;f;;;1. nil - если текущим является пространство листа;\n
+;;;f;;;2. t   - если текущим является пространство модели.")
+;;;f;;;("AcadAppDocSpace()" "Создает глобальные переменные содержащие vla-объекты:\n
+;;;f;;;	1. Приложения Acad - *acad-App;\n
+;;;f;;;	2. Активного документа - *acad-Doc;\n
+;;;f;;;	3. Текущего пространства модели - *acad-M-Space;\n
+;;;f;;;	4. Текущего пространства листа - *acad-P-Space.\n
+;;;f;;;Возвращает указатель на текущее пространство (модели или листа).")
+;;;f;;;("dr:ch_prop(prop)" "dr:ch_prop(prop) - изменение свойств последнего созданного объекта.\n
+;;;f;;;(dr:ch_prop  '(( 8 . "1")(62 . 1)))")
+;;;f;;;("dr:point(pt col)"
+;;;f;;;"Создает точку в текущем прострпнстве.\n
+;;;f;;;   p - список, содержащий координаты точки;\n
+;;;f;;;   col - номер цвета, создаваемой точки.\n
+;;;f;;;(dr:point '(0.0 0.0 0.0) 2)\n
+;;;f;;;#<VLA-OBJECT IAcadPoint 0ed61fa4>")
+;;;f;;;("dr:line(pt1 pl2 col)" "Создает отрезок в текущем пространстве.\n
+;;;f;;;   pt1 - начальная точка отрезка;\n
+;;;f;;;   pt2 - конечная точка отрезка;\n
+;;;f;;;   col - цвет отрезка.\n
+;;;f;;;_$ (dr:line '(0.0 0.0 0.0) '(10.0 10.0 0.0) 256)\n
+;;;f;;;#<VLA-OBJECT IAcadLine 00f6c154>\n
+;;;f;;;Возвращает vla-объект, соответствующий нарисованному отрезку.")
+;;;f;;;("dr:pline(pts col)"
+;;;f;;;"Создает полилинию в текущем пространстве.\n
+;;;f;;;Эта полилиния может состоять только из прямолинейных сегментов.\n
+;;;f;;;   pts - список 2d точек;\n
+;;;f;;;   col - цвет полилинии.\n
+;;;f;;;_$ (dr:pline '((0.0 0.0) (10.0 10.0)(20.0 15.0)(30.0 5.0)) 1 )\n
+;;;f;;;#<VLA-OBJECT IAcadLWPolyline 0ed63ec4>\n
+;;;f;;;Возвращает vla-объект, соответствующий нарисованной полилинии.")
+;;;f;;;("dr:circle(pt r col)"
+;;;f;;;"Создает окружность в текущем пространстве.\n
+;;;f;;;   pt  - центр окружности;
+;;;f;;;   r   - радиус окружности;
+;;;f;;;   col - номер цвета  окружности.
+;;;f;;;_$ (dr:circle '(0.0 0.0 0.0) 10.0 256)\n
+;;;f;;;#<VLA-OBJECT IAcadCircle 0ed63fa4>\n
+;;;f;;;Возвращает vla-объект, соответствующий нарисованной окружности.\n")
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/DXF.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/ERR.lsp
+;;;f;;;("set-sys-var-lst (variable-lst)"
+;;;f;;;"Устанавливает значения системных переменных\n
+;;;f;;;variable-lst - список, каждый элемент которого должен содержать список, состоящий из:
+;;;f;;;1 строки - пердставляющей системную переменную ACAD;
+;;;f;;;2 значения, которое устанавливается для этой системной переменной.
+;;;f;;;(set-sys-var-lst '((\"cmdecho\" 1) (\"orthomode\" 0)))
+;;;f;;;")
+;;;f;;;("get-sys-var-lst (variable-lst)"
+;;;f;;;"Считывает значения системных переменных\n
+;;;f;;;variable-lst - список, каждый элемент которого строка - являющаяся системной переменной ACAD.
+;;;f;;;(get-sys-var-lst '(\"cmdecho\" \"orthomode\" ))
+;;;f;;;")
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/prin.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/red_list.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/Sistjemy schisljenija.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/stl_text.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/STRING.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/system_registry.lsp
+;;;f;;;("print-to-string" "Производит вывод цитируемого значения $val в строку,
+;;;f;;;в виде пригодном для последующего восстановдения значения функцией load-from-string.
+;;;f;;;
+;;;f;;;(setq value 1.0) (print-to-string 'value)
+;;;f;;;1.0
+;;;f;;;(setq VALUE '1.0)")
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/system_variable.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/vla-pline.lsp
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/vla-utils.lsp
+;;;f;;;("devide-list" "Разбивает список lst на группы по n элементов.")
+;;;f;;;("pnt-distance-short"
+;;;f;;;"Возвращает точку из списка точек pnt-lst-to,\n
+;;;f;;;расстояние до которой от точки pnt-from является наименьшим.")
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/vla.LSP
+C:/MNAS_acad_db17_utils/acad_w.sup/utils/XDATA.lsp

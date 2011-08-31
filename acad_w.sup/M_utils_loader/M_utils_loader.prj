@@ -1,0 +1,20 @@
+;;; VLisp project file [V2.0] M_utils_loader saved to:[C:/MNAS_acad_db17_utils/acad_w.sup/M_utils_loader] at:[10/23/10] 
+(VLISP-PROJECT-LIST
+  :NAME
+  M_utils_loader
+  :OWN-LIST
+  ("../UTILS/ACAD_SUP_DIR"
+    "M_utils_LoaderCommands"		 "M_utils_LoaderAppRegistryData"
+    "M_utils_loader"			 "M_utils_LoaderARXInstall"
+    "M_utils_LoaderDBXInstall"
+   )
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

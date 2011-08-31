@@ -1,0 +1,20 @@
+;;; VLisp project file [V2.0] welding_lsp saved to:[C:/MNAS_acad_db17_utils/acad_w.sup/mnas/Welding_lsp] at:[5/22/11] 
+(VLISP-PROJECT-LIST :NAME
+		    welding_lsp
+		    :OWN-LIST
+		    ("../../utils/ACAD_SUP_DIR"
+		      "../../utils/system_registry"			      "../../utils/dlg_utils"
+		      "../../utils/DXF"		  "welding_dlg"		      "weld_abbrev"
+		      "Weld_text_dlg"		  "get_dimstyle_hanlde"	      "../../utils/draw"
+		      "setup_lst"
+		     )
+		    :FAS-DIRECTORY
+		    "../../../vlisp.tmp"
+		    :TMP-DIRECTORY
+		    "../../../vlisp.tmp"
+		    :PROJECT-KEYS
+		    (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+		    :CONTEXT-ID
+		    :AUTOLISP
+)
+;;; EOF

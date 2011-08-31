@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] axis_podp saved to:[./AXIS] at:[6/24/07] 
+(PRV-DEF (:target . "../../vlx/axis_podp.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "axis_podp.prj"))
+	 (:require-file-list (:DCL "Axis_podp.dcl"))
+	 (:ob-directory . "../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF
