@@ -1,0 +1,35 @@
+Section "sh[xp]"
+  SetOutPath $INSTDIR
+  File .\acad.fnt\ES_DOS.shx
+  File .\acad.fnt\ES_OSE_D.shx
+  File .\acad.fnt\ES_OSE_T.shx
+  File .\acad.fnt\ES_OSR_D.shx
+  File .\acad.fnt\es_unicode.shx
+  File .\acad.fnt\es_win.shx
+  File .\acad.fnt\ES_WIN_D.shx
+  File .\acad.fnt\ES_WIN_T.shx
+  File .\acad.fnt\Kompas\Avb.shx
+  File .\acad.fnt\Kompas\B_ESKD.shp
+  File .\acad.fnt\Kompas\B_ESKD.shx
+  File .\acad.fnt\Kompas\GOST-UW.shx
+  File .\acad.fnt\Kompas\GOSTU.shx
+  File .\acad.fnt\Kompas\GOSTW.shx
+  File .\acad.fnt\Kompas\WIN_ESKD.shp
+  File .\acad.fnt\Kompas\WIN_ESKD.shx
+  File .\acad.fnt\MATVEEV.shx
+  File .\acad.fnt\MY_B_F.shx
+  File .\acad.fnt\shp\ES_DOS.shp
+  File .\acad.fnt\shp\ES_OSE_D.shp
+  File .\acad.fnt\shp\ES_OSE_T.shp
+  File .\acad.fnt\shp\ES_OSR_D.shp
+  File .\acad.fnt\shp\es_unicode.shp
+  File .\acad.fnt\shp\ES_WIN.shp
+  File .\acad.fnt\shp\ES_WIN_D.shp
+  File .\acad.fnt\shp\ES_WIN_T.shp
+  File .\acad.fnt\shp\MATVEEV.shp
+  File .\acad.fnt\shp\MY_B_F.shp
+  File .\acad.fnt\shp\TXT.shp
+  File .\acad.fnt\shp\txt8.shp
+  File .\acad.fnt\TXT.shx
+  File .\acad.fnt\txt8.shx
+SectionEnd
