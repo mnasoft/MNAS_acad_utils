@@ -1,2 +1,22 @@
-
-(VLISP-PROJECT-LIST :NAME RASCHOT_ZOLOTNIKA :OWN-LIST ("../../AXIS/sub_div" "../../MATR/MATR" "../../MATR/Vychisljenije osrjednjajuschjej funktcii" "../../Mjetod polovinnogo djeljenija/Polovinnoje djeljenije 1" "../../Otvjerstija/f_otv" "havisude" "gt25000") :FAS-DIRECTORY "C:\\vlisp.tmp" :TMP-DIRECTORY "C:\\vlisp.tmp" :PROJECT-KEYS (:BUILD (:STANDARD) :MERGED nil :SAFE-MODE T :MSGLEVEL 1) :CONTEXT-ID :AUTOLISP) 
+;;; VLisp project file [V2.0] raschot_zolotnika saved to:[C:/Program Files/MNASoft/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika] at:[3/31/11] 
+(VLISP-PROJECT-LIST
+  :NAME
+  raschot_zolotnika
+  :OWN-LIST
+  ("../../AXIS/sub_div"
+    "../../MATR/MATR"
+    "../../MATR/Vychisljenije osrjednjajuschjej funktcii"
+    "../../Mjetod polovinnogo djeljenija/Polovinnoje djeljenije 1"
+    "../../Otvjerstija/f_otv"			     "havisude"
+    "gt25000"					     "dg80L5"
+   )
+  :FAS-DIRECTORY
+  "../../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF
