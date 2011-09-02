@@ -68,6 +68,8 @@ Section "Start Menu Shortcuts"
   
 SectionEnd
 
+;---------------------------------------------------------------------------------------------------------
+
 
 Section "html"
   SetOutPath $INSTDIR\.\acad.help\bas
@@ -910,8 +912,6 @@ SectionEnd
 Section "log"
   SetOutPath $INSTDIR\.
   File .\Change.log
-  SetOutPath $INSTDIR\.
-  File .\plot.log
 SectionEnd
 Section "txt"
   SetOutPath $INSTDIR\.\acad_fnt
@@ -921,11 +921,7 @@ Section "txt"
   SetOutPath $INSTDIR\.\acad_w.sup\prj\man
   File .\acad_w.sup\prj\man\man_data_func.txt
   SetOutPath $INSTDIR\.
-  File .\inst.txt
-  SetOutPath $INSTDIR\.
   File .\README.txt
-  SetOutPath $INSTDIR\.
-  File .\un.inst.txt
   SetOutPath $INSTDIR\.\vlisp.tmp
   File .\vlisp.tmp\README.txt
 SectionEnd
@@ -1820,11 +1816,8 @@ Section "dwg"
   File .\acad_w.sup\WELD_TOP.dwg
 SectionEnd
 
-
-;---------------------------------------------------------------------------------------------------------
-
 ; Uninstaller
-
+;---------------------------------------------------------------------------------------------------------
 
 Section "un.html"
   Delete $INSTDIR\.\acad.help\bas\bas.html
@@ -2263,15 +2256,12 @@ Section "un.sld"
 SectionEnd
 Section "un.log"
   Delete $INSTDIR\.\Change.log
-  Delete $INSTDIR\.\plot.log
 SectionEnd
 Section "un.txt"
   Delete $INSTDIR\.\acad_fnt\ascii.txt
   Delete $INSTDIR\.\acad_w.sup\prj\man\man_data.txt
   Delete $INSTDIR\.\acad_w.sup\prj\man\man_data_func.txt
-  Delete $INSTDIR\.\inst.txt
   Delete $INSTDIR\.\README.txt
-  Delete $INSTDIR\.\un.inst.txt
   Delete $INSTDIR\.\vlisp.tmp\README.txt
 SectionEnd
 Section "un.bmp"
@@ -2736,6 +2726,7 @@ Section "un.dwg"
   Delete $INSTDIR\.\acad_w.sup\WELD_BOT.dwg
   Delete $INSTDIR\.\acad_w.sup\WELD_TOP.dwg
 SectionEnd
+
 
 ;---------------------------------------------------------------------------------------------------------
 Section "Uninstall"

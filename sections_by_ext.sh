@@ -1,17 +1,21 @@
+inst_fn="inst.tmp"
+un_inst_fn="un.inst.tmp"
+rm_dir_fn="rmdir.tmp"
+
 uninst_dirs()
 { 
 dirs=`ls -d */`
-echo "" > rmdir.txt
+echo "" > $rm_dir_fn
 for j in $dirs
 do
   stree=`find $j -type d | sort -r`
   for k in $stree
   do
-    echo "  RMDir  \$INSTDIR/$k" >> rmdir.txt
+    echo "  RMDir  \$INSTDIR/$k" >> $rm_dir_fn
   done
 done
-sed -i "s/\//\\\/g" rmdir.txt
-sed -i "s/[\]$//" rmdir.txt
+sed -i "s/\//\\\/g" $rm_dir_fn
+sed -i "s/[\]$//" $rm_dir_fn
 }
 
 inst_uninst_section_create()
@@ -49,11 +53,11 @@ inst_uninst_section_create()
 
 assa="html jpg js nsi png slb lsp mnl shp shx dcl lin bat INI EXE sld log txt bmp dat fnt glb hdx ijk mea prj prv sh VLX cui cuix fon ttf rtf dwg"
 
-echo >inst.txt
-echo >un.inst.txt
+echo >$inst_fn
+echo >$un_inst_fn
 for i in $assa 
 do  
-inst_uninst_section_create $i $i un.$i inst.txt un.inst.txt
+inst_uninst_section_create $i $i un.$i $inst_fn $un_inst_fn
 done
 
 uninst_dirs
