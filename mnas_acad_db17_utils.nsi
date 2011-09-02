@@ -46,13 +46,10 @@ Section "mnas_acad_db17_utils (required)"
   SetOutPath $INSTDIR
   
   ; Put file there
-  File "mnas_acad_db17_utils.nsi"
-  File /r *.VLX
- 
   
+
   ; Write the installation path into the registry
   WriteRegStr HKLM SOFTWARE\NSIS_mnas_acad_db17_utils_tst "Install_Dir" "$INSTDIR"
-  
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_db17_utils_tst" "DisplayName" "NSIS mnas_acad_db17_utils_tst"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_db17_utils_tst" "UninstallString" '"$INSTDIR\uninstall.exe"'
@@ -71,8 +68,127 @@ Section "Start Menu Shortcuts"
   
 SectionEnd
 
-; Optional section (can be disabled by the user)
 
+Section "html"
+  SetOutPath $INSTDIR\.\acad.help\bas
+  File .\acad.help\bas\bas.html
+  SetOutPath $INSTDIR\.\acad.help\cut
+  File .\acad.help\cut\cut.html
+  SetOutPath $INSTDIR\.\acad.help\ea
+  File .\acad.help\ea\ea.html
+  SetOutPath $INSTDIR\.\acad.help\format
+  File .\acad.help\format\format.html
+  SetOutPath $INSTDIR\.\acad.help\index
+  File .\acad.help\index\index.html
+  SetOutPath $INSTDIR\.\acad.help\index_en
+  File .\acad.help\index_en\index_en.html
+  SetOutPath $INSTDIR\.\acad.help\index_ru
+  File .\acad.help\index_ru\index_ru.html
+  SetOutPath $INSTDIR\.\acad.help\look
+  File .\acad.help\look\look.html
+  SetOutPath $INSTDIR\.\acad.help
+  File .\acad.help\mnasoft_command_list.html
+  SetOutPath $INSTDIR\.\acad.help
+  File .\acad.help\mnasoft_command_list_version_2.html
+  SetOutPath $INSTDIR\.\acad.help\poz
+  File .\acad.help\poz\poz.html
+  SetOutPath $INSTDIR\.\acad.help\rou
+  File .\acad.help\rou\rou.html
+  SetOutPath $INSTDIR\.\acad.help\sv
+  File .\acad.help\sv\sv.html
+  SetOutPath $INSTDIR\.
+  File .\CopyRight.html
+  SetOutPath $INSTDIR\.
+  File .\gpl-3.0-standalone.html
+SectionEnd
+Section "jpg"
+  SetOutPath $INSTDIR\.\acad.help\poz
+  File .\acad.help\poz\POZ_html_32f3d1ba.jpg
+  SetOutPath $INSTDIR\.\acad.help\poz
+  File .\acad.help\poz\POZ_html_59182332.jpg
+  SetOutPath $INSTDIR\.\acad.help\poz
+  File .\acad.help\poz\POZ_html_m392bf328.jpg
+  SetOutPath $INSTDIR\.\acad.help\poz
+  File .\acad.help\poz\POZ_html_m75ce748e.jpg
+  SetOutPath $INSTDIR\.\acad.help\rou
+  File .\acad.help\rou\rou_html_8db7857.jpg
+  SetOutPath $INSTDIR\.\acad.help\rou
+  File .\acad.help\rou\rou_html_m238631cb.jpg
+  SetOutPath $INSTDIR\.\acad.help\sv
+  File .\acad.help\sv\sv_html_145fc215.jpg
+  SetOutPath $INSTDIR\.\acad.help\sv
+  File .\acad.help\sv\sv_html_29ab39d9.jpg
+  SetOutPath $INSTDIR\.\acad.help\sv
+  File .\acad.help\sv\sv_html_59040b08.jpg
+  SetOutPath $INSTDIR\.\acad.help\sv
+  File .\acad.help\sv\sv_html_m1991ed58.jpg
+  SetOutPath $INSTDIR\.\acad.help\sv
+  File .\acad.help\sv\sv_html_m3ed5b477.jpg
+  SetOutPath $INSTDIR\.\acad.help\sv
+  File .\acad.help\sv\sv_html_m515fff5.jpg
+  SetOutPath $INSTDIR\.\acad_w.sup\smesitel_vla
+  File .\acad_w.sup\smesitel_vla\HWScan00002.jpg
+SectionEnd
+Section "js"
+  SetOutPath $INSTDIR\.\acad_setup_js
+  File .\acad_setup_js\acad_DWGSetup_Layer_Ltype_TextStyle_DimStyle.js
+  SetOutPath $INSTDIR\.\acad_setup_js
+  File .\acad_setup_js\DG.js
+  SetOutPath $INSTDIR\.\acad_setup_js
+  File .\acad_setup_js\setup_MNAS_acad_db16_utils.js
+  SetOutPath $INSTDIR\.\acad_setup_js
+  File .\acad_setup_js\setup_MNAS_acad_db17_utils.js
+  SetOutPath $INSTDIR\.\acad_setup_js
+  File .\acad_setup_js\VLISP_make_prv.js
+  SetOutPath $INSTDIR\.\acad_setup_js
+  File .\acad_setup_js\write_dopust.js
+SectionEnd
+Section "nsi"
+  SetOutPath $INSTDIR\.
+  File .\mnas_acad_db17_utils.nsi
+SectionEnd
+Section "png"
+  SetOutPath $INSTDIR\.\acad.help\bas
+  File .\acad.help\bas\bas_html_3688dde8.png
+  SetOutPath $INSTDIR\.\acad.help\cut
+  File .\acad.help\cut\cut_html_md5f7eb3.png
+  SetOutPath $INSTDIR\.\acad.help\format
+  File .\acad.help\format\format_html_637b65f8.png
+  SetOutPath $INSTDIR\.\acad.help\format
+  File .\acad.help\format\format_html_74c024b0.png
+  SetOutPath $INSTDIR\.\acad.help\format
+  File .\acad.help\format\format_html_7bcc0f33.png
+  SetOutPath $INSTDIR\.\acad.help\format
+  File .\acad.help\format\format_html_952dae8.png
+  SetOutPath $INSTDIR\.\acad.help\format
+  File .\acad.help\format\format_html_m1d185b37.png
+  SetOutPath $INSTDIR\.\acad.help\format
+  File .\acad.help\format\format_html_mdf4bec5.png
+  SetOutPath $INSTDIR\.\acad.help\index
+  File .\acad.help\index\index__6b43007c.png
+  SetOutPath $INSTDIR\.\acad.help\ins_lit
+  File .\acad.help\ins_lit\il.png
+  SetOutPath $INSTDIR\.\acad.help\look
+  File .\acad.help\look\look_html_m22518248.png
+  SetOutPath $INSTDIR\.\acad.help\poz
+  File .\acad.help\poz\POZ_html_7056f16b.png
+  SetOutPath $INSTDIR\.\acad.help
+  File .\acad.help\te+_before.png
+  SetOutPath $INSTDIR\.\acad.help
+  File .\acad.help\te+_rez.png
+  SetOutPath $INSTDIR\.\acad.help
+  File .\acad.help\te-_before.png
+  SetOutPath $INSTDIR\.\acad.help
+  File .\acad.help\te-_rez.png
+SectionEnd
+Section "slb"
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\CIRCLES.slb
+  SetOutPath $INSTDIR\.\acad_w.sup\lines
+  File .\acad_w.sup\lines\LINES.slb
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\LINES.slb
+SectionEnd
 Section "lsp"
   SetOutPath $INSTDIR\.\acad_w.sup\abrev
   File .\acad_w.sup\abrev\Abrev.lsp
@@ -449,6 +565,8 @@ Section "lsp"
   SetOutPath $INSTDIR\.\acad_w.sup\prj\Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF
   File .\acad_w.sup\prj\Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF\Ugol_vyhoda_vozduha_iz_TVF.lsp
   SetOutPath $INSTDIR\.\acad_w.sup\prj\rascot_zolotnika
+  File .\acad_w.sup\prj\rascot_zolotnika\dg80L5.lsp
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\rascot_zolotnika
   File .\acad_w.sup\prj\rascot_zolotnika\gt25000.lsp
   SetOutPath $INSTDIR\.\acad_w.sup\prj\rascot_zolotnika
   File .\acad_w.sup\prj\rascot_zolotnika\havisude.lsp
@@ -589,74 +707,884 @@ Section "lsp"
   SetOutPath $INSTDIR\.\acad_w.sup\utils
   File .\acad_w.sup\utils\XDATA.lsp
 SectionEnd
-
-Section "sh[xp]"
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\ES_DOS.shx
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\ES_OSE_D.shx
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\ES_OSE_T.shx
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\ES_OSR_D.shx
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\es_unicode.shx
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\es_win.shx
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\ES_WIN_D.shx
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\ES_WIN_T.shx
-  SetOutPath $INSTDIR\.\acad.fnt\Kompas
-  File .\acad.fnt\Kompas\Avb.shx
-  SetOutPath $INSTDIR\.\acad.fnt\Kompas
-  File .\acad.fnt\Kompas\B_ESKD.shp
-  SetOutPath $INSTDIR\.\acad.fnt\Kompas
-  File .\acad.fnt\Kompas\B_ESKD.shx
-  SetOutPath $INSTDIR\.\acad.fnt\Kompas
-  File .\acad.fnt\Kompas\GOST-UW.shx
-  SetOutPath $INSTDIR\.\acad.fnt\Kompas
-  File .\acad.fnt\Kompas\GOSTU.shx
-  SetOutPath $INSTDIR\.\acad.fnt\Kompas
-  File .\acad.fnt\Kompas\GOSTW.shx
-  SetOutPath $INSTDIR\.\acad.fnt\Kompas
-  File .\acad.fnt\Kompas\WIN_ESKD.shp
-  SetOutPath $INSTDIR\.\acad.fnt\Kompas
-  File .\acad.fnt\Kompas\WIN_ESKD.shx
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\MATVEEV.shx
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\MY_B_F.shx
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\ES_DOS.shp
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\ES_OSE_D.shp
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\ES_OSE_T.shp
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\ES_OSR_D.shp
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\es_unicode.shp
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\ES_WIN.shp
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\ES_WIN_D.shp
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\ES_WIN_T.shp
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\MATVEEV.shp
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\MY_B_F.shp
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\TXT.shp
-  SetOutPath $INSTDIR\.\acad.fnt\shp
-  File .\acad.fnt\shp\txt8.shp
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\TXT.shx
-  SetOutPath $INSTDIR\.\acad.fnt
-  File .\acad.fnt\txt8.shx
+Section "mnl"
+  SetOutPath $INSTDIR\.\acad.mnu
+  File .\acad.mnu\MNASoft.mnl
+  SetOutPath $INSTDIR\.\acad.mnu
+  File .\acad.mnu\MNASoft_18.mnl
 SectionEnd
-
+Section "shp"
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\B_ESKD.shp
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\WIN_ESKD.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\ES_DOS.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\ES_OSE_D.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\ES_OSE_T.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\ES_OSR_D.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\es_unicode.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\ES_WIN.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\ES_WIN_D.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\ES_WIN_T.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\MATVEEV.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\MY_B_F.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\TXT.shp
+  SetOutPath $INSTDIR\.\acad_fnt\shp
+  File .\acad_fnt\shp\txt8.shp
+SectionEnd
+Section "shx"
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\ES_DOS.shx
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\ES_OSE_D.shx
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\ES_OSE_T.shx
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\ES_OSR_D.shx
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\es_unicode.shx
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\es_win.shx
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\ES_WIN_D.shx
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\ES_WIN_T.shx
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\Avb.shx
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\B_ESKD.shx
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\GOST-UW.shx
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\GOSTU.shx
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\GOSTW.shx
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\WIN_ESKD.shx
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\MATVEEV.shx
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\MY_B_F.shx
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\TXT.shx
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\txt8.shx
+SectionEnd
+Section "dcl"
+  SetOutPath $INSTDIR\.\acad_w.sup\atoms
+  File .\acad_w.sup\atoms\ATOMS.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\axis
+  File .\acad_w.sup\axis\AXIS.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\axis
+  File .\acad_w.sup\axis\axis_graph.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\axis
+  File .\acad_w.sup\axis\Axis_podp.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\dims
+  File .\acad_w.sup\dims\abc.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\rou
+  File .\acad_w.sup\dims\rou\rou.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\rou_1
+  File .\acad_w.sup\dims\rou_1\rou.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\welding
+  File .\acad_w.sup\dims\welding\welding.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\dopusk
+  File .\acad_w.sup\dopusk\DOP.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\d_chprop
+  File .\acad_w.sup\d_chprop\D_CHPROP.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\exel
+  File .\acad_w.sup\exel\graph.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\Format.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\fors_rh
+  File .\acad_w.sup\fors_rh\fors_rh.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\for_prover.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\graf
+  File .\acad_w.sup\graf\GRAF.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\layer
+  File .\acad_w.sup\layer\rgb.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Pozition
+  File .\acad_w.sup\mnas\Pozition\pozition.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\welding.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\welding.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\CHtjenije_iz_Exel
+  File .\acad_w.sup\prj\CHtjenije_iz_Exel\graph.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\spec
+  File .\acad_w.sup\spec\Specification.dcl
+  SetOutPath $INSTDIR\.\acad_w.sup\text
+  File .\acad_w.sup\text\Text.dcl
+SectionEnd
+Section "lin"
+  SetOutPath $INSTDIR\.\acad_w.sup\lines
+  File .\acad_w.sup\lines\ESKD.lin
+SectionEnd
+Section "bat"
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\CAD_DXF.bat
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\FRG_DXF.bat
+  SetOutPath $INSTDIR\.\acad_w.sup\kompas
+  File .\acad_w.sup\kompas\CAD_SF.bat
+  SetOutPath $INSTDIR\.\acad_w.sup\kompas
+  File .\acad_w.sup\kompas\SF_CAD.bat
+  SetOutPath $INSTDIR\.
+  File .\clear_temp_lisp_files.bat
+SectionEnd
+Section "INI"
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\SF_DXF.INI
+SectionEnd
+Section "EXE"
+  SetOutPath $INSTDIR\.\vlx\KOMPAS
+  File .\vlx\KOMPAS\CAD_SF.EXE
+  SetOutPath $INSTDIR\.\vlx\KOMPAS
+  File .\vlx\KOMPAS\SF_CAD.EXE
+SectionEnd
+Section "sld"
+  SetOutPath $INSTDIR\.\acad_w.sup\big_fnt
+  File .\acad_w.sup\big_fnt\BIG_1.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\big_fnt
+  File .\acad_w.sup\big_fnt\BIG_2.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\for.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\lines
+  File .\acad_w.sup\lines\D_CHAMF.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\lines
+  File .\acad_w.sup\lines\D_OFF.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\lines
+  File .\acad_w.sup\lines\D_OTV.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\lines
+  File .\acad_w.sup\lines\D_REZ.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\lines
+  File .\acad_w.sup\lines\R_OFF.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\lopatka
+  File .\acad_w.sup\lopatka\LOPATKA.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\img_close_contur.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\img_katet.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\img_montaz.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\img_open_contur.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\img_plavn_bot.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\img_plavn_top.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\img_usilenie_bot.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\img_usilenie_top.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\img_close_contur.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\img_katet.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\img_montaz.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\img_open_contur.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\img_plavn_bot.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\img_plavn_top.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\img_usilenie_bot.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\img_usilenie_top.sld
+  SetOutPath $INSTDIR\.\acad_w.sup\razvertka
+  File .\acad_w.sup\razvertka\razvertka.sld
+SectionEnd
+Section "log"
+  SetOutPath $INSTDIR\.
+  File .\Change.log
+  SetOutPath $INSTDIR\.
+  File .\plot.log
+SectionEnd
+Section "txt"
+  SetOutPath $INSTDIR\.\acad_fnt
+  File .\acad_fnt\ascii.txt
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\man
+  File .\acad_w.sup\prj\man\man_data.txt
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\man
+  File .\acad_w.sup\prj\man\man_data_func.txt
+  SetOutPath $INSTDIR\.
+  File .\inst.txt
+  SetOutPath $INSTDIR\.
+  File .\README.txt
+  SetOutPath $INSTDIR\.
+  File .\un.inst.txt
+  SetOutPath $INSTDIR\.\vlisp.tmp
+  File .\vlisp.tmp\README.txt
+SectionEnd
+Section "bmp"
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\%%c.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\a1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\a2.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\a2t.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\a2xyn_t.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\a2xy_t.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\a3.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\a4.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\a5.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\a6.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\abc.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\al.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\array_3d.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ax.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ax_a.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ax_c.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ax_ca.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ax_shcala.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\bas.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\block_block.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\block_point.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\bl_all_on.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\bl_all_on_th.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\bl_all_th.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\bl_fr.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\bl_off.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\bot.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\c1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\c2.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\c3.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\c4.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\center_white.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ch_wid.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\cl_s.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\cl_sw_d.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\cl_s_d.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\cr.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\cut.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\c_axis.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\c_d.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\c_el.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\c_els.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\c_ex.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\c_r.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\c_sc.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\dch.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_100_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_10_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_15_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_10.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_100.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_15.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_2.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_20.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_25.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_2i5.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_4.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_40.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_5.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_50.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_20_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_25_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_2i5_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_2_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_40_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_4_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_50_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\DIMS_SCALE_5_1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\dim_ang_hor.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\Dim_Annotation_Rougness.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\dim_overide_cliar.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\dim_overirde_clear.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\dim_rad_aligh.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\dim_rad_hor.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\dim_te.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\dim_text_ob.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\Dim_Text_Oblique_15.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\dop.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\draw_font.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\d_chamf.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\d_off.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\d_otv.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\d_rez.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\d_up.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ea.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\Exchange_Kompas_In.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\Exchange_Kompas_Out.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\exchnge_exel_read.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\exchnge_exer_read.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\exl.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ext.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\Format_Create.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\gr_on_off.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\h45%%d.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\index.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ins_blk.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ins_lit.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\isoplane_left.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\isoplane_off.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\isoplane_right.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\isoplane_top.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\lay.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\la_dhv.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\look.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\mcp.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\mirror_3d.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ml_off.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ml_off_c.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ml_on.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ml_on_c.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\MNASAddDimStyle.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\MNASsetDimatfit.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\MNASsetDimjust.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\MNASsetDimsd1.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\MNASsetDimsd2.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\MNASsetDimtad.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\MNASsetDimtmove.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\MNASsetDimtofl.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\MNASsetDimtoh.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\MNAS_Layer_Text.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\mr.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\M_utility.ABREV_PANEL.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\M_utility.AXIS.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\M_utility.BIG_FNT.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\M_utility.CIRCLE.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ofd.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\off.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\point_block.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\poz.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\pur.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\pur2.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\rgb.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\rotate_3d.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\rougness.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\r_off.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\SetupDWG_Linetype.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\SetupDWG_Text_Style.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\sk.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\sl_fr.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\sl_lo.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\sl_off.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\sl_on.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\sl_th.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\sl_un.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\sv.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\svl_fr.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\svl_th.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\te%%c.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\te++.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\te++kvsk.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\te+.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\te+kvsk.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\te-%%c.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\te-.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\te-kvsk.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\text_export.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\te_zvezda.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\te__.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\tm.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ucs_z_30.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\up.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\vl_fr.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\vl_fr_w+d.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\vl_fr_w+_d.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\vl_fr_w.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\vl_s_d.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\vl_th.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\vl_th_all.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\vs.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\welding.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\white.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\wipeout.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\wipeout_off.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\wipeout_on.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\za.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\zc.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\zd.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\ze.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\zp.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\zv.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\zw.bmp
+  SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
+  File .\acad.mnu\Acad_mnu_icon\_a_b_c.bmp
+SectionEnd
+Section "dat"
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\N1.dat
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\N2.dat
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\RTM_1411-73_p.20_proekt1.dat
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\RTM_1411-73_p.20_prover1.dat
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\RTM_1411-73_p.22_proekt2.dat
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\RTM_1411-73_p.22_prover2.dat
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\RTM_1411-73_p.23_proekt3.dat
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\RTM_1411-73_p.23_prover3.dat
+SectionEnd
+Section "fnt"
+  SetOutPath $INSTDIR\.\vlx\KOMPAS
+  File .\vlx\KOMPAS\ESKD.fnt
+SectionEnd
+Section "glb"
+SectionEnd
+Section "hdx"
+  SetOutPath $INSTDIR\.\acad_w.sup\spec
+  File .\acad_w.sup\spec\Specification.hdx
+SectionEnd
+Section "ijk"
+  SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
+  File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10.ijk
+  SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
+  File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10n.ijk
+  SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
+  File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10_1.ijk
+SectionEnd
+Section "mea"
+  SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
+  File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\12-1.mea
+  SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
+  File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\4-1.mea
+  SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
+  File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\9.mea
+SectionEnd
+Section "prj"
+  SetOutPath $INSTDIR\.\acad_w.sup\abrev
+  File .\acad_w.sup\abrev\ABREV.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\acad_pgp
+  File .\acad_w.sup\acad_pgp\ACAD_PGP.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\add_prefix
+  File .\acad_w.sup\add_prefix\Add_prefix.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\atoms
+  File .\acad_w.sup\atoms\atoms.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\axis
+  File .\acad_w.sup\axis\AXIS.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\axis
+  File .\acad_w.sup\axis\axis_graph.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\axis
+  File .\acad_w.sup\axis\axis_podp.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\big_fnt
+  File .\acad_w.sup\big_fnt\big_fnt.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\change
+  File .\acad_w.sup\change\Change.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\circles
+  File .\acad_w.sup\circles\Circles.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\clock
+  File .\acad_w.sup\clock\Clock.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\dims
+  File .\acad_w.sup\dims\dims.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\dim_style
+  File .\acad_w.sup\dims\dim_style\dim_style.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\rou
+  File .\acad_w.sup\dims\rou\rou.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\rou_1
+  File .\acad_w.sup\dims\rou_1\rou_1.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\welding
+  File .\acad_w.sup\dims\welding\Welding1.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\dopusk
+  File .\acad_w.sup\dopusk\Dopusk.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\dxf
+  File .\acad_w.sup\dxf\dxf.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\d_chprop
+  File .\acad_w.sup\d_chprop\D_chprop.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\edit
+  File .\acad_w.sup\edit\Edit.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\entmake
+  File .\acad_w.sup\entmake\ENTMAKE.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\exel
+  File .\acad_w.sup\exel\Exel.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\format.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\fors_rh
+  File .\acad_w.sup\fors_rh\fors_rh.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\For_lic.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\funktcii\Fizichjeskije
+  File .\acad_w.sup\funktcii\Fizichjeskije\Phizich.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\graf
+  File .\acad_w.sup\graf\Graf.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\hpgl
+  File .\acad_w.sup\hpgl\HPGL.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina
+  File .\acad_w.sup\izmjeritjelnaja_mashina\read_mea.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\kompas
+  File .\acad_w.sup\kompas\kompas.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\layer
+  File .\acad_w.sup\layer\layer.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\lines
+  File .\acad_w.sup\lines\lines.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\lopatka
+  File .\acad_w.sup\lopatka\Lopatka.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\matr
+  File .\acad_w.sup\matr\MATR.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Pozition
+  File .\acad_w.sup\mnas\Pozition\pozition.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\welding.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\welding_lsp.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\M_utils_loader
+  File .\acad_w.sup\M_utils_loader\M_utils_loader.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\optimalnoje_raspololjenije_okrugnostjej
+  File .\acad_w.sup\optimalnoje_raspololjenije_okrugnostjej\circ_pnt.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\otvjerstija
+  File .\acad_w.sup\otvjerstija\f_otv.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\piping
+  File .\acad_w.sup\piping\piping.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\point
+  File .\acad_w.sup\point\point.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\arx_dbx_reg
+  File .\acad_w.sup\prj\arx_dbx_reg\create_reg.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\CHtjenije_iz_Exel
+  File .\acad_w.sup\prj\CHtjenije_iz_Exel\Exel_read_write.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\Idelchik
+  File .\acad_w.sup\prj\Idelchik\Idelchik_tbls.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\man
+  File .\acad_w.sup\prj\man\man.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\Ostcill
+  File .\acad_w.sup\prj\Ostcill\oscill.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\Postrojenije_Zavisimostjej_vrjednyh_vybrosov
+  File .\acad_w.sup\prj\Postrojenije_Zavisimostjej_vrjednyh_vybrosov\nox_co.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\prj
+  File .\acad_w.sup\prj\prj\rename_vl_prj.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\Raschjet_gaza
+  File .\acad_w.sup\prj\Raschjet_gaza\complex_gas.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\Raschjet_pruginy
+  File .\acad_w.sup\prj\Raschjet_pruginy\pruzina.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF
+  File .\acad_w.sup\prj\Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF\stream.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\rascot_zolotnika
+  File .\acad_w.sup\prj\rascot_zolotnika\raschot_zolotnika.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\rename_ru_eng
+  File .\acad_w.sup\prj\rename_ru_eng\rename_ru_eng.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\Rjezba_mjetrichjeskaja
+  File .\acad_w.sup\prj\Rjezba_mjetrichjeskaja\rezba.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\Water_Steam
+  File .\acad_w.sup\prj\Water_Steam\par.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\projection
+  File .\acad_w.sup\projection\projection.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\provoloka
+  File .\acad_w.sup\provoloka\provoloka.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\razvertka
+  File .\acad_w.sup\razvertka\razvertka.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\rename
+  File .\acad_w.sup\rename\rename.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\scr
+  File .\acad_w.sup\scr\scr.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\smesitel_vla
+  File .\acad_w.sup\smesitel_vla\SMESITEL_vla.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\sort_shp
+  File .\acad_w.sup\sort_shp\Sort_shp.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\spec
+  File .\acad_w.sup\spec\bd.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\spec
+  File .\acad_w.sup\spec\spec.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\text
+  File .\acad_w.sup\text\text.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\utils
+  File .\acad_w.sup\utils\RED_LIST.prj
+  SetOutPath $INSTDIR\.\acad_w.sup\utils
+  File .\acad_w.sup\utils\UTILS.prj
+SectionEnd
+Section "prv"
+  SetOutPath $INSTDIR\.\acad_w.sup\abrev
+  File .\acad_w.sup\abrev\Abrev.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\acad_pgp
+  File .\acad_w.sup\acad_pgp\ACAD_PGP.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\add_prefix
+  File .\acad_w.sup\add_prefix\Add_prefix.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\atoms
+  File .\acad_w.sup\atoms\atoms.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\axis
+  File .\acad_w.sup\axis\Axis.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\axis
+  File .\acad_w.sup\axis\axis_podp.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\big_fnt
+  File .\acad_w.sup\big_fnt\big_fnt.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\change
+  File .\acad_w.sup\change\Change.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\circles
+  File .\acad_w.sup\circles\CIRCLES.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\clock
+  File .\acad_w.sup\clock\Clock.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\dims
+  File .\acad_w.sup\dims\dims.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\dim_style
+  File .\acad_w.sup\dims\dim_style\dim_style.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\rou
+  File .\acad_w.sup\dims\rou\rou.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\rou_1
+  File .\acad_w.sup\dims\rou_1\rou_1.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\welding
+  File .\acad_w.sup\dims\welding\Welding1.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\dopusk
+  File .\acad_w.sup\dopusk\Dopusk.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\dxf
+  File .\acad_w.sup\dxf\dxf.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\d_chprop
+  File .\acad_w.sup\d_chprop\D_chprop.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\edit
+  File .\acad_w.sup\edit\EDIT.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\entmake
+  File .\acad_w.sup\entmake\ENTMAKE.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\exel
+  File .\acad_w.sup\exel\Exel.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\format.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\fors_rh
+  File .\acad_w.sup\fors_rh\fors_rh.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\For_lic.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\graf
+  File .\acad_w.sup\graf\Graf.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\hpgl
+  File .\acad_w.sup\hpgl\HPGL.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\kompas
+  File .\acad_w.sup\kompas\kompas.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\layer
+  File .\acad_w.sup\layer\layer.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\lines
+  File .\acad_w.sup\lines\lines.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\lopatka
+  File .\acad_w.sup\lopatka\Lopatka.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Pozition
+  File .\acad_w.sup\mnas\Pozition\pozition.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\welding.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\welding_lsp.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\M_utils_loader
+  File .\acad_w.sup\M_utils_loader\M_utils_loader.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\otvjerstija
+  File .\acad_w.sup\otvjerstija\f_otv.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\piping
+  File .\acad_w.sup\piping\pipe.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\point
+  File .\acad_w.sup\point\point.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\arx_dbx_reg
+  File .\acad_w.sup\prj\arx_dbx_reg\create_registry.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\man
+  File .\acad_w.sup\prj\man\man.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\provoloka
+  File .\acad_w.sup\provoloka\provoloka.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\razvertka
+  File .\acad_w.sup\razvertka\razvertka.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\rename
+  File .\acad_w.sup\rename\rename.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\scr
+  File .\acad_w.sup\scr\scr.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\smesitel_vla
+  File .\acad_w.sup\smesitel_vla\SMESITEL_vla.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\sort_shp
+  File .\acad_w.sup\sort_shp\Sort_shp.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\spec
+  File .\acad_w.sup\spec\spec.prv
+  SetOutPath $INSTDIR\.\acad_w.sup\text
+  File .\acad_w.sup\text\text.prv
+  SetOutPath $INSTDIR\.\vlx
+  File .\vlx\M_cmds.prv
+  SetOutPath $INSTDIR\.\vlx
+  File .\vlx\Vi.prv
+SectionEnd
+Section "sh"
+  SetOutPath $INSTDIR\.
+  File .\rename_suffix.sh
+  SetOutPath $INSTDIR\.
+  File .\sections_by_ext.sh
+SectionEnd
 Section "VLX"
   SetOutPath $INSTDIR\.\acad_w.sup\prj\arx_dbx_reg
   File .\acad_w.sup\prj\arx_dbx_reg\create_registry.VLX
@@ -674,6 +1602,8 @@ Section "VLX"
   File .\vlx\axis_podp.VLX
   SetOutPath $INSTDIR\.\vlx
   File .\vlx\big_fnt.VLX
+  SetOutPath $INSTDIR\.\vlx
+  File .\vlx\change.VLX
   SetOutPath $INSTDIR\.\vlx
   File .\vlx\Circles.VLX
   SetOutPath $INSTDIR\.\vlx
@@ -753,13 +1683,215 @@ Section "VLX"
   SetOutPath $INSTDIR\.\vlx
   File .\vlx\Welding1.VLX
 SectionEnd
+Section "cui"
+  SetOutPath $INSTDIR\.\acad.mnu
+  File .\acad.mnu\MNASoft.cui
+SectionEnd
+Section "cuix"
+  SetOutPath $INSTDIR\.\acad.mnu
+  File .\acad.mnu\MNASoft_18.cuix
+SectionEnd
+Section "fon"
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\GOST_A.fon
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\GOST_B.fon
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\Symbol_A.fon
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\Symbol_B.fon
+SectionEnd
+Section "ttf"
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\GOSTTypeB.ttf
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\GOST_A.ttf
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\Gost_a_drew.ttf
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\GOST_B.ttf
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\Symbol_A.ttf
+  SetOutPath $INSTDIR\.\acad_fnt\Kompas
+  File .\acad_fnt\Kompas\Symbol_B.ttf
+SectionEnd
+Section "rtf"
+  SetOutPath $INSTDIR\.
+  File .\CopyRight.rtf
+  SetOutPath $INSTDIR\.
+  File .\gpl-3.0.rtf
+SectionEnd
+Section "dwg"
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\ACAD.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\BASE.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\circles
+  File .\acad_w.sup\circles\CIRCLES.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\rou
+  File .\acad_w.sup\dims\rou\rou.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\dims\rou_1
+  File .\acad_w.sup\dims\rou_1\rou.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\dr_posadka.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\DOP_ARH.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\DOP_G_LT.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\DOP_G_RB.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\DOP_PRIM.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\DOP_PRM.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\DOP_TEXT.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\DOP_TMV.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\SHT_1.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\SHT_2.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\SHT_3.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\SHT_4.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\SHT_5.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\sogl.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\speciph_1.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\speciph_n.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\str.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\for_lic
+  File .\acad_w.sup\for_lic\for.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\lines
+  File .\acad_w.sup\lines\LINES.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\lopatka
+  File .\acad_w.sup\lopatka\1.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\lopatka
+  File .\acad_w.sup\lopatka\LOPATKA.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding
+  File .\acad_w.sup\mnas\Welding\weld_slides.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\mnas\Welding_lsp
+  File .\acad_w.sup\mnas\Welding_lsp\weld_slides.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\n_sher.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\n_sher_1.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\Provoloka.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\smesitel_vla
+  File .\acad_w.sup\smesitel_vla\Ris_1-readme.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\smesitel_vla
+  File .\acad_w.sup\smesitel_vla\Smes.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\smesitel_vla
+  File .\acad_w.sup\smesitel_vla\Smesitel_Test.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\smesitel_vla
+  File .\acad_w.sup\smesitel_vla\Smes_H70.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\smesitel_vla
+  File .\acad_w.sup\smesitel_vla\Smes_M80.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\smesitel_vla
+  File .\acad_w.sup\smesitel_vla\Smes_M80_recover.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\spec
+  File .\acad_w.sup\spec\Description_project_Spec_(Specification).dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\STR.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\STRELKA.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\STR_BIG.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\STR_I.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\STR_O.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\TRIANG.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\weld_arrow_bot.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\weld_arrow_top.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\WELD_BOT.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup
+  File .\acad_w.sup\WELD_TOP.dwg
+SectionEnd
 
 
-
-;--------------------------------
+;---------------------------------------------------------------------------------------------------------
 
 ; Uninstaller
 
+
+Section "un.html"
+  Delete $INSTDIR\.\acad.help\bas\bas.html
+  Delete $INSTDIR\.\acad.help\cut\cut.html
+  Delete $INSTDIR\.\acad.help\ea\ea.html
+  Delete $INSTDIR\.\acad.help\format\format.html
+  Delete $INSTDIR\.\acad.help\index\index.html
+  Delete $INSTDIR\.\acad.help\index_en\index_en.html
+  Delete $INSTDIR\.\acad.help\index_ru\index_ru.html
+  Delete $INSTDIR\.\acad.help\look\look.html
+  Delete $INSTDIR\.\acad.help\mnasoft_command_list.html
+  Delete $INSTDIR\.\acad.help\mnasoft_command_list_version_2.html
+  Delete $INSTDIR\.\acad.help\poz\poz.html
+  Delete $INSTDIR\.\acad.help\rou\rou.html
+  Delete $INSTDIR\.\acad.help\sv\sv.html
+  Delete $INSTDIR\.\CopyRight.html
+  Delete $INSTDIR\.\gpl-3.0-standalone.html
+SectionEnd
+Section "un.jpg"
+  Delete $INSTDIR\.\acad.help\poz\POZ_html_32f3d1ba.jpg
+  Delete $INSTDIR\.\acad.help\poz\POZ_html_59182332.jpg
+  Delete $INSTDIR\.\acad.help\poz\POZ_html_m392bf328.jpg
+  Delete $INSTDIR\.\acad.help\poz\POZ_html_m75ce748e.jpg
+  Delete $INSTDIR\.\acad.help\rou\rou_html_8db7857.jpg
+  Delete $INSTDIR\.\acad.help\rou\rou_html_m238631cb.jpg
+  Delete $INSTDIR\.\acad.help\sv\sv_html_145fc215.jpg
+  Delete $INSTDIR\.\acad.help\sv\sv_html_29ab39d9.jpg
+  Delete $INSTDIR\.\acad.help\sv\sv_html_59040b08.jpg
+  Delete $INSTDIR\.\acad.help\sv\sv_html_m1991ed58.jpg
+  Delete $INSTDIR\.\acad.help\sv\sv_html_m3ed5b477.jpg
+  Delete $INSTDIR\.\acad.help\sv\sv_html_m515fff5.jpg
+  Delete $INSTDIR\.\acad_w.sup\smesitel_vla\HWScan00002.jpg
+SectionEnd
+Section "un.js"
+  Delete $INSTDIR\.\acad_setup_js\acad_DWGSetup_Layer_Ltype_TextStyle_DimStyle.js
+  Delete $INSTDIR\.\acad_setup_js\DG.js
+  Delete $INSTDIR\.\acad_setup_js\setup_MNAS_acad_db16_utils.js
+  Delete $INSTDIR\.\acad_setup_js\setup_MNAS_acad_db17_utils.js
+  Delete $INSTDIR\.\acad_setup_js\VLISP_make_prv.js
+  Delete $INSTDIR\.\acad_setup_js\write_dopust.js
+SectionEnd
+Section "un.nsi"
+  Delete $INSTDIR\.\mnas_acad_db17_utils.nsi
+SectionEnd
+Section "un.png"
+  Delete $INSTDIR\.\acad.help\bas\bas_html_3688dde8.png
+  Delete $INSTDIR\.\acad.help\cut\cut_html_md5f7eb3.png
+  Delete $INSTDIR\.\acad.help\format\format_html_637b65f8.png
+  Delete $INSTDIR\.\acad.help\format\format_html_74c024b0.png
+  Delete $INSTDIR\.\acad.help\format\format_html_7bcc0f33.png
+  Delete $INSTDIR\.\acad.help\format\format_html_952dae8.png
+  Delete $INSTDIR\.\acad.help\format\format_html_m1d185b37.png
+  Delete $INSTDIR\.\acad.help\format\format_html_mdf4bec5.png
+  Delete $INSTDIR\.\acad.help\index\index__6b43007c.png
+  Delete $INSTDIR\.\acad.help\ins_lit\il.png
+  Delete $INSTDIR\.\acad.help\look\look_html_m22518248.png
+  Delete $INSTDIR\.\acad.help\poz\POZ_html_7056f16b.png
+  Delete $INSTDIR\.\acad.help\te+_before.png
+  Delete $INSTDIR\.\acad.help\te+_rez.png
+  Delete $INSTDIR\.\acad.help\te-_before.png
+  Delete $INSTDIR\.\acad.help\te-_rez.png
+SectionEnd
+Section "un.slb"
+  Delete $INSTDIR\.\acad_w.sup\CIRCLES.slb
+  Delete $INSTDIR\.\acad_w.sup\lines\LINES.slb
+  Delete $INSTDIR\.\acad_w.sup\LINES.slb
+SectionEnd
 Section "un.lsp"
   Delete $INSTDIR\.\acad_w.sup\abrev\Abrev.lsp
   Delete $INSTDIR\.\acad_w.sup\abrev\gr_on_off.lsp
@@ -948,6 +2080,7 @@ Section "un.lsp"
   Delete $INSTDIR\.\acad_w.sup\prj\Raschjet_pruginy\Prugina.lsp
   Delete $INSTDIR\.\acad_w.sup\prj\Raschjet_pruginy\Raschjet_pruginy.lsp
   Delete $INSTDIR\.\acad_w.sup\prj\Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF\Ugol_vyhoda_vozduha_iz_TVF.lsp
+  Delete $INSTDIR\.\acad_w.sup\prj\rascot_zolotnika\dg80L5.lsp
   Delete $INSTDIR\.\acad_w.sup\prj\rascot_zolotnika\gt25000.lsp
   Delete $INSTDIR\.\acad_w.sup\prj\rascot_zolotnika\havisude.lsp
   Delete $INSTDIR\.\acad_w.sup\prj\rename_ru_eng\rename_ru_eng.lsp
@@ -1019,43 +2152,466 @@ Section "un.lsp"
   Delete $INSTDIR\.\acad_w.sup\utils\vla.lsp
   Delete $INSTDIR\.\acad_w.sup\utils\XDATA.lsp
 SectionEnd
-
-
-Section "un.sh[xp]"
-  Delete $INSTDIR\.\acad.fnt\ES_DOS.shx
-  Delete $INSTDIR\.\acad.fnt\ES_OSE_D.shx
-  Delete $INSTDIR\.\acad.fnt\ES_OSE_T.shx
-  Delete $INSTDIR\.\acad.fnt\ES_OSR_D.shx
-  Delete $INSTDIR\.\acad.fnt\es_unicode.shx
-  Delete $INSTDIR\.\acad.fnt\es_win.shx
-  Delete $INSTDIR\.\acad.fnt\ES_WIN_D.shx
-  Delete $INSTDIR\.\acad.fnt\ES_WIN_T.shx
-  Delete $INSTDIR\.\acad.fnt\Kompas\Avb.shx
-  Delete $INSTDIR\.\acad.fnt\Kompas\B_ESKD.shp
-  Delete $INSTDIR\.\acad.fnt\Kompas\B_ESKD.shx
-  Delete $INSTDIR\.\acad.fnt\Kompas\GOST-UW.shx
-  Delete $INSTDIR\.\acad.fnt\Kompas\GOSTU.shx
-  Delete $INSTDIR\.\acad.fnt\Kompas\GOSTW.shx
-  Delete $INSTDIR\.\acad.fnt\Kompas\WIN_ESKD.shp
-  Delete $INSTDIR\.\acad.fnt\Kompas\WIN_ESKD.shx
-  Delete $INSTDIR\.\acad.fnt\MATVEEV.shx
-  Delete $INSTDIR\.\acad.fnt\MY_B_F.shx
-  Delete $INSTDIR\.\acad.fnt\shp\ES_DOS.shp
-  Delete $INSTDIR\.\acad.fnt\shp\ES_OSE_D.shp
-  Delete $INSTDIR\.\acad.fnt\shp\ES_OSE_T.shp
-  Delete $INSTDIR\.\acad.fnt\shp\ES_OSR_D.shp
-  Delete $INSTDIR\.\acad.fnt\shp\es_unicode.shp
-  Delete $INSTDIR\.\acad.fnt\shp\ES_WIN.shp
-  Delete $INSTDIR\.\acad.fnt\shp\ES_WIN_D.shp
-  Delete $INSTDIR\.\acad.fnt\shp\ES_WIN_T.shp
-  Delete $INSTDIR\.\acad.fnt\shp\MATVEEV.shp
-  Delete $INSTDIR\.\acad.fnt\shp\MY_B_F.shp
-  Delete $INSTDIR\.\acad.fnt\shp\TXT.shp
-  Delete $INSTDIR\.\acad.fnt\shp\txt8.shp
-  Delete $INSTDIR\.\acad.fnt\TXT.shx
-  Delete $INSTDIR\.\acad.fnt\txt8.shx
+Section "un.mnl"
+  Delete $INSTDIR\.\acad.mnu\MNASoft.mnl
+  Delete $INSTDIR\.\acad.mnu\MNASoft_18.mnl
 SectionEnd
-
+Section "un.shp"
+  Delete $INSTDIR\.\acad_fnt\Kompas\B_ESKD.shp
+  Delete $INSTDIR\.\acad_fnt\Kompas\WIN_ESKD.shp
+  Delete $INSTDIR\.\acad_fnt\shp\ES_DOS.shp
+  Delete $INSTDIR\.\acad_fnt\shp\ES_OSE_D.shp
+  Delete $INSTDIR\.\acad_fnt\shp\ES_OSE_T.shp
+  Delete $INSTDIR\.\acad_fnt\shp\ES_OSR_D.shp
+  Delete $INSTDIR\.\acad_fnt\shp\es_unicode.shp
+  Delete $INSTDIR\.\acad_fnt\shp\ES_WIN.shp
+  Delete $INSTDIR\.\acad_fnt\shp\ES_WIN_D.shp
+  Delete $INSTDIR\.\acad_fnt\shp\ES_WIN_T.shp
+  Delete $INSTDIR\.\acad_fnt\shp\MATVEEV.shp
+  Delete $INSTDIR\.\acad_fnt\shp\MY_B_F.shp
+  Delete $INSTDIR\.\acad_fnt\shp\TXT.shp
+  Delete $INSTDIR\.\acad_fnt\shp\txt8.shp
+SectionEnd
+Section "un.shx"
+  Delete $INSTDIR\.\acad_fnt\ES_DOS.shx
+  Delete $INSTDIR\.\acad_fnt\ES_OSE_D.shx
+  Delete $INSTDIR\.\acad_fnt\ES_OSE_T.shx
+  Delete $INSTDIR\.\acad_fnt\ES_OSR_D.shx
+  Delete $INSTDIR\.\acad_fnt\es_unicode.shx
+  Delete $INSTDIR\.\acad_fnt\es_win.shx
+  Delete $INSTDIR\.\acad_fnt\ES_WIN_D.shx
+  Delete $INSTDIR\.\acad_fnt\ES_WIN_T.shx
+  Delete $INSTDIR\.\acad_fnt\Kompas\Avb.shx
+  Delete $INSTDIR\.\acad_fnt\Kompas\B_ESKD.shx
+  Delete $INSTDIR\.\acad_fnt\Kompas\GOST-UW.shx
+  Delete $INSTDIR\.\acad_fnt\Kompas\GOSTU.shx
+  Delete $INSTDIR\.\acad_fnt\Kompas\GOSTW.shx
+  Delete $INSTDIR\.\acad_fnt\Kompas\WIN_ESKD.shx
+  Delete $INSTDIR\.\acad_fnt\MATVEEV.shx
+  Delete $INSTDIR\.\acad_fnt\MY_B_F.shx
+  Delete $INSTDIR\.\acad_fnt\TXT.shx
+  Delete $INSTDIR\.\acad_fnt\txt8.shx
+SectionEnd
+Section "un.dcl"
+  Delete $INSTDIR\.\acad_w.sup\atoms\ATOMS.dcl
+  Delete $INSTDIR\.\acad_w.sup\axis\AXIS.dcl
+  Delete $INSTDIR\.\acad_w.sup\axis\axis_graph.dcl
+  Delete $INSTDIR\.\acad_w.sup\axis\Axis_podp.dcl
+  Delete $INSTDIR\.\acad_w.sup\dims\abc.dcl
+  Delete $INSTDIR\.\acad_w.sup\dims\rou\rou.dcl
+  Delete $INSTDIR\.\acad_w.sup\dims\rou_1\rou.dcl
+  Delete $INSTDIR\.\acad_w.sup\dims\welding\welding.dcl
+  Delete $INSTDIR\.\acad_w.sup\dopusk\DOP.dcl
+  Delete $INSTDIR\.\acad_w.sup\d_chprop\D_CHPROP.dcl
+  Delete $INSTDIR\.\acad_w.sup\exel\graph.dcl
+  Delete $INSTDIR\.\acad_w.sup\format\Format.dcl
+  Delete $INSTDIR\.\acad_w.sup\fors_rh\fors_rh.dcl
+  Delete $INSTDIR\.\acad_w.sup\for_lic\for_prover.dcl
+  Delete $INSTDIR\.\acad_w.sup\graf\GRAF.dcl
+  Delete $INSTDIR\.\acad_w.sup\layer\rgb.dcl
+  Delete $INSTDIR\.\acad_w.sup\mnas\Pozition\pozition.dcl
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\welding.dcl
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\welding.dcl
+  Delete $INSTDIR\.\acad_w.sup\prj\CHtjenije_iz_Exel\graph.dcl
+  Delete $INSTDIR\.\acad_w.sup\spec\Specification.dcl
+  Delete $INSTDIR\.\acad_w.sup\text\Text.dcl
+SectionEnd
+Section "un.lin"
+  Delete $INSTDIR\.\acad_w.sup\lines\ESKD.lin
+SectionEnd
+Section "un.bat"
+  Delete $INSTDIR\.\acad_w.sup\CAD_DXF.bat
+  Delete $INSTDIR\.\acad_w.sup\FRG_DXF.bat
+  Delete $INSTDIR\.\acad_w.sup\kompas\CAD_SF.bat
+  Delete $INSTDIR\.\acad_w.sup\kompas\SF_CAD.bat
+  Delete $INSTDIR\.\clear_temp_lisp_files.bat
+SectionEnd
+Section "un.INI"
+  Delete $INSTDIR\.\acad_w.sup\SF_DXF.INI
+SectionEnd
+Section "un.EXE"
+  Delete $INSTDIR\.\vlx\KOMPAS\CAD_SF.EXE
+  Delete $INSTDIR\.\vlx\KOMPAS\SF_CAD.EXE
+SectionEnd
+Section "un.sld"
+  Delete $INSTDIR\.\acad_w.sup\big_fnt\BIG_1.sld
+  Delete $INSTDIR\.\acad_w.sup\big_fnt\BIG_2.sld
+  Delete $INSTDIR\.\acad_w.sup\for_lic\for.sld
+  Delete $INSTDIR\.\acad_w.sup\lines\D_CHAMF.sld
+  Delete $INSTDIR\.\acad_w.sup\lines\D_OFF.sld
+  Delete $INSTDIR\.\acad_w.sup\lines\D_OTV.sld
+  Delete $INSTDIR\.\acad_w.sup\lines\D_REZ.sld
+  Delete $INSTDIR\.\acad_w.sup\lines\R_OFF.sld
+  Delete $INSTDIR\.\acad_w.sup\lopatka\LOPATKA.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\img_close_contur.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\img_katet.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\img_montaz.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\img_open_contur.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\img_plavn_bot.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\img_plavn_top.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\img_usilenie_bot.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\img_usilenie_top.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\img_close_contur.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\img_katet.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\img_montaz.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\img_open_contur.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\img_plavn_bot.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\img_plavn_top.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\img_usilenie_bot.sld
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\img_usilenie_top.sld
+  Delete $INSTDIR\.\acad_w.sup\razvertka\razvertka.sld
+SectionEnd
+Section "un.log"
+  Delete $INSTDIR\.\Change.log
+  Delete $INSTDIR\.\plot.log
+SectionEnd
+Section "un.txt"
+  Delete $INSTDIR\.\acad_fnt\ascii.txt
+  Delete $INSTDIR\.\acad_w.sup\prj\man\man_data.txt
+  Delete $INSTDIR\.\acad_w.sup\prj\man\man_data_func.txt
+  Delete $INSTDIR\.\inst.txt
+  Delete $INSTDIR\.\README.txt
+  Delete $INSTDIR\.\un.inst.txt
+  Delete $INSTDIR\.\vlisp.tmp\README.txt
+SectionEnd
+Section "un.bmp"
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\%%c.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\a1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\a2.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\a2t.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\a2xyn_t.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\a2xy_t.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\a3.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\a4.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\a5.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\a6.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\abc.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\al.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\array_3d.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ax.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ax_a.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ax_c.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ax_ca.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ax_shcala.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\bas.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\block_block.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\block_point.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\bl_all_on.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\bl_all_on_th.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\bl_all_th.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\bl_fr.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\bl_off.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\bot.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\c1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\c2.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\c3.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\c4.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\center_white.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ch_wid.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\cl_s.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\cl_sw_d.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\cl_s_d.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\cr.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\cut.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\c_axis.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\c_d.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\c_el.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\c_els.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\c_ex.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\c_r.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\c_sc.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\dch.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_100_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_10_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_15_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_10.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_100.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_15.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_2.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_20.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_25.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_2i5.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_4.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_40.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_5.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_1_50.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_20_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_25_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_2i5_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_2_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_40_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_4_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_50_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\DIMS_SCALE_5_1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\dim_ang_hor.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\Dim_Annotation_Rougness.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\dim_overide_cliar.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\dim_overirde_clear.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\dim_rad_aligh.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\dim_rad_hor.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\dim_te.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\dim_text_ob.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\Dim_Text_Oblique_15.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\dop.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\draw_font.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\d_chamf.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\d_off.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\d_otv.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\d_rez.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\d_up.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ea.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\Exchange_Kompas_In.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\Exchange_Kompas_Out.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\exchnge_exel_read.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\exchnge_exer_read.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\exl.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ext.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\Format_Create.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\gr_on_off.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\h45%%d.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\index.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ins_blk.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ins_lit.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\isoplane_left.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\isoplane_off.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\isoplane_right.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\isoplane_top.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\lay.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\la_dhv.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\look.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\mcp.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\mirror_3d.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ml_off.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ml_off_c.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ml_on.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ml_on_c.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\MNASAddDimStyle.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\MNASsetDimatfit.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\MNASsetDimjust.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\MNASsetDimsd1.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\MNASsetDimsd2.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\MNASsetDimtad.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\MNASsetDimtmove.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\MNASsetDimtofl.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\MNASsetDimtoh.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\MNAS_Layer_Text.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\mr.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\M_utility.ABREV_PANEL.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\M_utility.AXIS.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\M_utility.BIG_FNT.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\M_utility.CIRCLE.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ofd.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\off.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\point_block.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\poz.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\pur.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\pur2.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\rgb.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\rotate_3d.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\rougness.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\r_off.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\SetupDWG_Linetype.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\SetupDWG_Text_Style.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\sk.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\sl_fr.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\sl_lo.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\sl_off.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\sl_on.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\sl_th.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\sl_un.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\sv.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\svl_fr.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\svl_th.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\te%%c.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\te++.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\te++kvsk.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\te+.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\te+kvsk.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\te-%%c.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\te-.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\te-kvsk.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\text_export.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\te_zvezda.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\te__.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\tm.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ucs_z_30.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\up.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\vl_fr.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\vl_fr_w+d.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\vl_fr_w+_d.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\vl_fr_w.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\vl_s_d.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\vl_th.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\vl_th_all.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\vs.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\welding.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\white.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\wipeout.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\wipeout_off.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\wipeout_on.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\za.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\zc.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\zd.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\ze.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\zp.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\zv.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\zw.bmp
+  Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\_a_b_c.bmp
+SectionEnd
+Section "un.dat"
+  Delete $INSTDIR\.\acad_w.sup\for_lic\N1.dat
+  Delete $INSTDIR\.\acad_w.sup\for_lic\N2.dat
+  Delete $INSTDIR\.\acad_w.sup\for_lic\RTM_1411-73_p.20_proekt1.dat
+  Delete $INSTDIR\.\acad_w.sup\for_lic\RTM_1411-73_p.20_prover1.dat
+  Delete $INSTDIR\.\acad_w.sup\for_lic\RTM_1411-73_p.22_proekt2.dat
+  Delete $INSTDIR\.\acad_w.sup\for_lic\RTM_1411-73_p.22_prover2.dat
+  Delete $INSTDIR\.\acad_w.sup\for_lic\RTM_1411-73_p.23_proekt3.dat
+  Delete $INSTDIR\.\acad_w.sup\for_lic\RTM_1411-73_p.23_prover3.dat
+SectionEnd
+Section "un.fnt"
+  Delete $INSTDIR\.\vlx\KOMPAS\ESKD.fnt
+SectionEnd
+Section "un.glb"
+SectionEnd
+Section "un.hdx"
+  Delete $INSTDIR\.\acad_w.sup\spec\Specification.hdx
+SectionEnd
+Section "un.ijk"
+  Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10.ijk
+  Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10n.ijk
+  Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10_1.ijk
+SectionEnd
+Section "un.mea"
+  Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\12-1.mea
+  Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\4-1.mea
+  Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\9.mea
+SectionEnd
+Section "un.prj"
+  Delete $INSTDIR\.\acad_w.sup\abrev\ABREV.prj
+  Delete $INSTDIR\.\acad_w.sup\acad_pgp\ACAD_PGP.prj
+  Delete $INSTDIR\.\acad_w.sup\add_prefix\Add_prefix.prj
+  Delete $INSTDIR\.\acad_w.sup\atoms\atoms.prj
+  Delete $INSTDIR\.\acad_w.sup\axis\AXIS.prj
+  Delete $INSTDIR\.\acad_w.sup\axis\axis_graph.prj
+  Delete $INSTDIR\.\acad_w.sup\axis\axis_podp.prj
+  Delete $INSTDIR\.\acad_w.sup\big_fnt\big_fnt.prj
+  Delete $INSTDIR\.\acad_w.sup\change\Change.prj
+  Delete $INSTDIR\.\acad_w.sup\circles\Circles.prj
+  Delete $INSTDIR\.\acad_w.sup\clock\Clock.prj
+  Delete $INSTDIR\.\acad_w.sup\dims\dims.prj
+  Delete $INSTDIR\.\acad_w.sup\dims\dim_style\dim_style.prj
+  Delete $INSTDIR\.\acad_w.sup\dims\rou\rou.prj
+  Delete $INSTDIR\.\acad_w.sup\dims\rou_1\rou_1.prj
+  Delete $INSTDIR\.\acad_w.sup\dims\welding\Welding1.prj
+  Delete $INSTDIR\.\acad_w.sup\dopusk\Dopusk.prj
+  Delete $INSTDIR\.\acad_w.sup\dxf\dxf.prj
+  Delete $INSTDIR\.\acad_w.sup\d_chprop\D_chprop.prj
+  Delete $INSTDIR\.\acad_w.sup\edit\Edit.prj
+  Delete $INSTDIR\.\acad_w.sup\entmake\ENTMAKE.prj
+  Delete $INSTDIR\.\acad_w.sup\exel\Exel.prj
+  Delete $INSTDIR\.\acad_w.sup\format\format.prj
+  Delete $INSTDIR\.\acad_w.sup\fors_rh\fors_rh.prj
+  Delete $INSTDIR\.\acad_w.sup\for_lic\For_lic.prj
+  Delete $INSTDIR\.\acad_w.sup\funktcii\Fizichjeskije\Phizich.prj
+  Delete $INSTDIR\.\acad_w.sup\graf\Graf.prj
+  Delete $INSTDIR\.\acad_w.sup\hpgl\HPGL.prj
+  Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\read_mea.prj
+  Delete $INSTDIR\.\acad_w.sup\kompas\kompas.prj
+  Delete $INSTDIR\.\acad_w.sup\layer\layer.prj
+  Delete $INSTDIR\.\acad_w.sup\lines\lines.prj
+  Delete $INSTDIR\.\acad_w.sup\lopatka\Lopatka.prj
+  Delete $INSTDIR\.\acad_w.sup\matr\MATR.prj
+  Delete $INSTDIR\.\acad_w.sup\mnas\Pozition\pozition.prj
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\welding.prj
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\welding_lsp.prj
+  Delete $INSTDIR\.\acad_w.sup\M_utils_loader\M_utils_loader.prj
+  Delete $INSTDIR\.\acad_w.sup\optimalnoje_raspololjenije_okrugnostjej\circ_pnt.prj
+  Delete $INSTDIR\.\acad_w.sup\otvjerstija\f_otv.prj
+  Delete $INSTDIR\.\acad_w.sup\piping\piping.prj
+  Delete $INSTDIR\.\acad_w.sup\point\point.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\arx_dbx_reg\create_reg.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\CHtjenije_iz_Exel\Exel_read_write.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\Idelchik\Idelchik_tbls.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\man\man.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\Ostcill\oscill.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\Postrojenije_Zavisimostjej_vrjednyh_vybrosov\nox_co.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\prj\rename_vl_prj.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\Raschjet_gaza\complex_gas.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\Raschjet_pruginy\pruzina.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF\stream.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\rascot_zolotnika\raschot_zolotnika.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\rename_ru_eng\rename_ru_eng.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\Rjezba_mjetrichjeskaja\rezba.prj
+  Delete $INSTDIR\.\acad_w.sup\prj\Water_Steam\par.prj
+  Delete $INSTDIR\.\acad_w.sup\projection\projection.prj
+  Delete $INSTDIR\.\acad_w.sup\provoloka\provoloka.prj
+  Delete $INSTDIR\.\acad_w.sup\razvertka\razvertka.prj
+  Delete $INSTDIR\.\acad_w.sup\rename\rename.prj
+  Delete $INSTDIR\.\acad_w.sup\scr\scr.prj
+  Delete $INSTDIR\.\acad_w.sup\smesitel_vla\SMESITEL_vla.prj
+  Delete $INSTDIR\.\acad_w.sup\sort_shp\Sort_shp.prj
+  Delete $INSTDIR\.\acad_w.sup\spec\bd.prj
+  Delete $INSTDIR\.\acad_w.sup\spec\spec.prj
+  Delete $INSTDIR\.\acad_w.sup\text\text.prj
+  Delete $INSTDIR\.\acad_w.sup\utils\RED_LIST.prj
+  Delete $INSTDIR\.\acad_w.sup\utils\UTILS.prj
+SectionEnd
+Section "un.prv"
+  Delete $INSTDIR\.\acad_w.sup\abrev\Abrev.prv
+  Delete $INSTDIR\.\acad_w.sup\acad_pgp\ACAD_PGP.prv
+  Delete $INSTDIR\.\acad_w.sup\add_prefix\Add_prefix.prv
+  Delete $INSTDIR\.\acad_w.sup\atoms\atoms.prv
+  Delete $INSTDIR\.\acad_w.sup\axis\Axis.prv
+  Delete $INSTDIR\.\acad_w.sup\axis\axis_podp.prv
+  Delete $INSTDIR\.\acad_w.sup\big_fnt\big_fnt.prv
+  Delete $INSTDIR\.\acad_w.sup\change\Change.prv
+  Delete $INSTDIR\.\acad_w.sup\circles\CIRCLES.prv
+  Delete $INSTDIR\.\acad_w.sup\clock\Clock.prv
+  Delete $INSTDIR\.\acad_w.sup\dims\dims.prv
+  Delete $INSTDIR\.\acad_w.sup\dims\dim_style\dim_style.prv
+  Delete $INSTDIR\.\acad_w.sup\dims\rou\rou.prv
+  Delete $INSTDIR\.\acad_w.sup\dims\rou_1\rou_1.prv
+  Delete $INSTDIR\.\acad_w.sup\dims\welding\Welding1.prv
+  Delete $INSTDIR\.\acad_w.sup\dopusk\Dopusk.prv
+  Delete $INSTDIR\.\acad_w.sup\dxf\dxf.prv
+  Delete $INSTDIR\.\acad_w.sup\d_chprop\D_chprop.prv
+  Delete $INSTDIR\.\acad_w.sup\edit\EDIT.prv
+  Delete $INSTDIR\.\acad_w.sup\entmake\ENTMAKE.prv
+  Delete $INSTDIR\.\acad_w.sup\exel\Exel.prv
+  Delete $INSTDIR\.\acad_w.sup\format\format.prv
+  Delete $INSTDIR\.\acad_w.sup\fors_rh\fors_rh.prv
+  Delete $INSTDIR\.\acad_w.sup\for_lic\For_lic.prv
+  Delete $INSTDIR\.\acad_w.sup\graf\Graf.prv
+  Delete $INSTDIR\.\acad_w.sup\hpgl\HPGL.prv
+  Delete $INSTDIR\.\acad_w.sup\kompas\kompas.prv
+  Delete $INSTDIR\.\acad_w.sup\layer\layer.prv
+  Delete $INSTDIR\.\acad_w.sup\lines\lines.prv
+  Delete $INSTDIR\.\acad_w.sup\lopatka\Lopatka.prv
+  Delete $INSTDIR\.\acad_w.sup\mnas\Pozition\pozition.prv
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\welding.prv
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\welding_lsp.prv
+  Delete $INSTDIR\.\acad_w.sup\M_utils_loader\M_utils_loader.prv
+  Delete $INSTDIR\.\acad_w.sup\otvjerstija\f_otv.prv
+  Delete $INSTDIR\.\acad_w.sup\piping\pipe.prv
+  Delete $INSTDIR\.\acad_w.sup\point\point.prv
+  Delete $INSTDIR\.\acad_w.sup\prj\arx_dbx_reg\create_registry.prv
+  Delete $INSTDIR\.\acad_w.sup\prj\man\man.prv
+  Delete $INSTDIR\.\acad_w.sup\provoloka\provoloka.prv
+  Delete $INSTDIR\.\acad_w.sup\razvertka\razvertka.prv
+  Delete $INSTDIR\.\acad_w.sup\rename\rename.prv
+  Delete $INSTDIR\.\acad_w.sup\scr\scr.prv
+  Delete $INSTDIR\.\acad_w.sup\smesitel_vla\SMESITEL_vla.prv
+  Delete $INSTDIR\.\acad_w.sup\sort_shp\Sort_shp.prv
+  Delete $INSTDIR\.\acad_w.sup\spec\spec.prv
+  Delete $INSTDIR\.\acad_w.sup\text\text.prv
+  Delete $INSTDIR\.\vlx\M_cmds.prv
+  Delete $INSTDIR\.\vlx\Vi.prv
+SectionEnd
+Section "un.sh"
+  Delete $INSTDIR\.\rename_suffix.sh
+  Delete $INSTDIR\.\sections_by_ext.sh
+SectionEnd
 Section "un.VLX"
   Delete $INSTDIR\.\acad_w.sup\prj\arx_dbx_reg\create_registry.VLX
   Delete $INSTDIR\.\vlx\Abrev.VLX
@@ -1065,6 +2621,7 @@ Section "un.VLX"
   Delete $INSTDIR\.\vlx\Axis.VLX
   Delete $INSTDIR\.\vlx\axis_podp.VLX
   Delete $INSTDIR\.\vlx\big_fnt.VLX
+  Delete $INSTDIR\.\vlx\change.VLX
   Delete $INSTDIR\.\vlx\Circles.VLX
   Delete $INSTDIR\.\vlx\Clock.VLX
   Delete $INSTDIR\.\vlx\dims.VLX
@@ -1105,17 +2662,82 @@ Section "un.VLX"
   Delete $INSTDIR\.\vlx\welding.VLX
   Delete $INSTDIR\.\vlx\Welding1.VLX
 SectionEnd
-
-
-Section "html"
-  SetOutPath $INSTDIR\.\acad_w.sup\dopusk
-  File /r .\acad.help\*.html
-  File /r .\acad.help\*.jpg
-  
+Section "un.cui"
+  Delete $INSTDIR\.\acad.mnu\MNASoft.cui
+SectionEnd
+Section "un.cuix"
+  Delete $INSTDIR\.\acad.mnu\MNASoft_18.cuix
+SectionEnd
+Section "un.fon"
+  Delete $INSTDIR\.\acad_fnt\Kompas\GOST_A.fon
+  Delete $INSTDIR\.\acad_fnt\Kompas\GOST_B.fon
+  Delete $INSTDIR\.\acad_fnt\Kompas\Symbol_A.fon
+  Delete $INSTDIR\.\acad_fnt\Kompas\Symbol_B.fon
+SectionEnd
+Section "un.ttf"
+  Delete $INSTDIR\.\acad_fnt\Kompas\GOSTTypeB.ttf
+  Delete $INSTDIR\.\acad_fnt\Kompas\GOST_A.ttf
+  Delete $INSTDIR\.\acad_fnt\Kompas\Gost_a_drew.ttf
+  Delete $INSTDIR\.\acad_fnt\Kompas\GOST_B.ttf
+  Delete $INSTDIR\.\acad_fnt\Kompas\Symbol_A.ttf
+  Delete $INSTDIR\.\acad_fnt\Kompas\Symbol_B.ttf
+SectionEnd
+Section "un.rtf"
+  Delete $INSTDIR\.\CopyRight.rtf
+  Delete $INSTDIR\.\gpl-3.0.rtf
+SectionEnd
+Section "un.dwg"
+  Delete $INSTDIR\.\acad_w.sup\ACAD.dwg
+  Delete $INSTDIR\.\acad_w.sup\BASE.dwg
+  Delete $INSTDIR\.\acad_w.sup\circles\CIRCLES.dwg
+  Delete $INSTDIR\.\acad_w.sup\dims\rou\rou.dwg
+  Delete $INSTDIR\.\acad_w.sup\dims\rou_1\rou.dwg
+  Delete $INSTDIR\.\acad_w.sup\dr_posadka.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\DOP_ARH.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\DOP_G_LT.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\DOP_G_RB.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\DOP_PRIM.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\DOP_PRM.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\DOP_TEXT.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\DOP_TMV.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\SHT_1.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\SHT_2.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\SHT_3.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\SHT_4.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\SHT_5.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\sogl.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\speciph_1.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\speciph_n.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\str.dwg
+  Delete $INSTDIR\.\acad_w.sup\for_lic\for.dwg
+  Delete $INSTDIR\.\acad_w.sup\lines\LINES.dwg
+  Delete $INSTDIR\.\acad_w.sup\lopatka\1.dwg
+  Delete $INSTDIR\.\acad_w.sup\lopatka\LOPATKA.dwg
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding\weld_slides.dwg
+  Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\weld_slides.dwg
+  Delete $INSTDIR\.\acad_w.sup\n_sher.dwg
+  Delete $INSTDIR\.\acad_w.sup\n_sher_1.dwg
+  Delete $INSTDIR\.\acad_w.sup\Provoloka.dwg
+  Delete $INSTDIR\.\acad_w.sup\smesitel_vla\Ris_1-readme.dwg
+  Delete $INSTDIR\.\acad_w.sup\smesitel_vla\Smes.dwg
+  Delete $INSTDIR\.\acad_w.sup\smesitel_vla\Smesitel_Test.dwg
+  Delete $INSTDIR\.\acad_w.sup\smesitel_vla\Smes_H70.dwg
+  Delete $INSTDIR\.\acad_w.sup\smesitel_vla\Smes_M80.dwg
+  Delete $INSTDIR\.\acad_w.sup\smesitel_vla\Smes_M80_recover.dwg
+  Delete $INSTDIR\.\acad_w.sup\spec\Description_project_Spec_(Specification).dwg
+  Delete $INSTDIR\.\acad_w.sup\STR.dwg
+  Delete $INSTDIR\.\acad_w.sup\STRELKA.dwg
+  Delete $INSTDIR\.\acad_w.sup\STR_BIG.dwg
+  Delete $INSTDIR\.\acad_w.sup\STR_I.dwg
+  Delete $INSTDIR\.\acad_w.sup\STR_O.dwg
+  Delete $INSTDIR\.\acad_w.sup\TRIANG.dwg
+  Delete $INSTDIR\.\acad_w.sup\weld_arrow_bot.dwg
+  Delete $INSTDIR\.\acad_w.sup\weld_arrow_top.dwg
+  Delete $INSTDIR\.\acad_w.sup\WELD_BOT.dwg
+  Delete $INSTDIR\.\acad_w.sup\WELD_TOP.dwg
 SectionEnd
 
-
-
+;---------------------------------------------------------------------------------------------------------
 Section "Uninstall"
   
   ; Remove registry keys
@@ -1125,14 +2747,8 @@ Section "Uninstall"
   ; Remove files and uninstaller
   Delete $INSTDIR\mnas_acad_db17_utils.nsi
   Delete $INSTDIR\uninstall.exe
-;--------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------------
 
-#  SetOutPath $TEMP
-
-
-  RMDir  $INSTDIR\acad.fnt\shp
-  RMDir  $INSTDIR\acad.fnt\Kompas
-  RMDir  $INSTDIR\acad.fnt
   RMDir  $INSTDIR\acad.help\sv
   RMDir  $INSTDIR\acad.help\rou
   RMDir  $INSTDIR\acad.help\poz
@@ -1148,6 +2764,9 @@ Section "Uninstall"
   RMDir  $INSTDIR\acad.help
   RMDir  $INSTDIR\acad.mnu\Acad_mnu_icon
   RMDir  $INSTDIR\acad.mnu
+  RMDir  $INSTDIR\acad_fnt\shp
+  RMDir  $INSTDIR\acad_fnt\Kompas
+  RMDir  $INSTDIR\acad_fnt
   RMDir  $INSTDIR\acad_setup_js
   RMDir  $INSTDIR\acad_w.sup\utils
   RMDir  $INSTDIR\acad_w.sup\tmp
@@ -1239,7 +2858,7 @@ Section "Uninstall"
   RMDir  $INSTDIR\vlx
 
 
-;--------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------------
   ; Remove shortcuts, if any
   Delete "$SMPROGRAMS\mnas_acad_db17_utils_tst\*.*"
 
