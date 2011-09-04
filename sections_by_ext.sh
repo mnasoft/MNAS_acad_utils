@@ -51,7 +51,7 @@ inst_uninst_section_create()
   sed -i "s/\//\\\/g" $sec_uninst_file
 }
 
-assa="html jpg js nsi png slb lsp mnl shp shx dcl lin bat INI EXE sld log txt bmp dat fnt glb hdx ijk mea prj prv sh VLX cui cuix fon ttf rtf dwg"
+assa="EXE INI VLX arx bat bmp cui cuix dat dbx dcl dwg fnt fon glb hdx html ijk jpg js lin log lsp mea mnl nsi png prj prv rtf sh shp shx slb sld ttf txt"
 
 echo >$inst_fn
 echo >$un_inst_fn

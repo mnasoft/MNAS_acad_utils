@@ -2,7 +2,7 @@
 		MNAS_acad_utils
 		для Администратора
 		
-1.1		Установите пакет MNAS_acad_utils-2.7.4_release.msi
+1.1		Установите пакет mnas_acad_db17_utils-2.7.6.1.exe
 
 1.2		Запустите ACAD.
 
@@ -33,7 +33,7 @@
 2.3		В диалоге, вызываемом при помощи команды _options добавьте пути 
         для поиска файлов поддержки ACAD:
 2.3.1   "C:\Program Files\MNASoft\MNAS_acad_utils" ;
-2.3.2   "C:\Program Files\MNASoft\MNAS_acad_utils\acad.fnt" ;
+2.3.2   "C:\Program Files\MNASoft\MNAS_acad_utils\acad_fnt" ;
 2.3.3   "C:\Program Files\MNASoft\MNAS_acad_utils\acad.fnt\kompas";
 2.3.4	"C:\Program Files\MNASoft\MNAS_acad_utils\acad.mnu\acad_mnu_icon" .
 
