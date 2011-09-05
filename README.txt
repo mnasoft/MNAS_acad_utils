@@ -34,7 +34,7 @@
         для поиска файлов поддержки ACAD:
 2.3.1   "C:\Program Files\MNASoft\MNAS_acad_utils" ;
 2.3.2   "C:\Program Files\MNASoft\MNAS_acad_utils\acad_fnt" ;
-2.3.3   "C:\Program Files\MNASoft\MNAS_acad_utils\acad.fnt\kompas";
+2.3.3   "C:\Program Files\MNASoft\MNAS_acad_utils\acad_fnt\kompas";
 2.3.4	"C:\Program Files\MNASoft\MNAS_acad_utils\acad.mnu\acad_mnu_icon" .
 
 2.4     При помощи команды _cui добавьте частичное меню:

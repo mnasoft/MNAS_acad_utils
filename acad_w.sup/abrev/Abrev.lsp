@@ -193,4 +193,9 @@
 ;;;;;;("ms" "Вызов команды _.mspace" "Аббревиатуры")
 (defun c:ms () (command "_.mspace") (princ))
 
+;;;;;;("git" "Вызов команды D:\\home\\_namatv\\Git\\git-bash.bat" "Аббревиатуры")
+(defun c:git()
+  (command "shell" "D:\\home\\_namatv\\Git\\git-bash.bat" )
+)
+
 (princ "\t...loaded.\n")
