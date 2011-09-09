@@ -8,7 +8,7 @@
 ;--------------------------------
 
 ; The name of the installer
-Name "mnas_acad_db17_utils"
+Name "mnas_acad_utils"
 
 
 
