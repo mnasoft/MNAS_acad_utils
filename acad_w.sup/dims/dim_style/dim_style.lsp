@@ -95,7 +95,7 @@
   )
 )
 
-(defun c:create_dim_styles (/ dstyle_size)
+(defun create_dim_styles (/ dstyle_size)
   (setq
     dstyle_size
      (list
@@ -146,8 +146,8 @@
 )
 
 (defun c:MNASAddDimStyle()
-  (c:create_dim_styles)
-  (command "_-DIMSTYLE" "_restore" "001_001")
+  (create_dim_styles)
+  (command "_-DIMSTYLE" "_restore" "0001_1")
   (princ)
 )
 

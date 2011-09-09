@@ -10,16 +10,27 @@
 ; The name of the installer
 Name "mnas_acad_db17_utils"
 
-VIProductVersion "2.7.6.1"
 
-VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductName" "MNAS_acad_db_17_utils"
-VIAddVersionKey /LANG=${LANG_ENGLISH} "Comments" "Äëÿ ðàáîòû ñ AutoCAD© (2007-2011)"
-VIAddVersionKey /LANG=${LANG_ENGLISH} "CompanyName" "MNASoft"
-VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalTrademarks" "Test Application is a trademark of Fake company"
-VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalCopyright" "GNU GPL v3.0"
-VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "Utils for AutoCAD© (2007-2011) "
+
+LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
+LoadLanguageFile "${NSISDIR}\Contrib\Language files\Russian.nlf"
+
+VIProductVersion "2.7.6.1"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductName" "Mnas_acad_utils"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "Comments" "Utils for work with AutoCAD© (2007-2011)"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "CompanyName" "Nick Matvyeyev (MNASoft)"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalTrademarks" "http:\\www.mnasoft.mksat.net"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalCopyright" "License: GNU GPL v3.0"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "Óòèëèòû äëÿ ðàáîòû ñ AutoCAD© (2007-2011)"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "2.7.6.1"
 
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "ProductName" "Mnas_acad_utils"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "Comments" "Óòèëèòû äëÿ ðàáîòû ñ AutoCAD© (2007-2011)"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "CompanyName" "Ìàòâååâ Íèêîëàé Àíàòîëüåâè÷ (MNASoft)"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "LegalTrademarks" "http:\\www.mnasoft.mksat.net"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "LegalCopyright" "Ðàñïðîñòðàíÿåòñÿ ïî ëèöåíçèè GNU GPL v3.0"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileDescription" "Óòèëèòû äëÿ ðàáîòû ñ AutoCAD© (2007-2011)"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileVersion" "2.7.6.1"
 
 
 ; The file to write
@@ -36,10 +47,12 @@ InstallDirRegKey HKLM "Software\MNASoft" "ROOT"
 ; Request application privileges for Windows Vista
 RequestExecutionLevel admin
 
+LicenseData ./gpl-3.0.txt
+
 ;______________________________________________________________________________
 
 ; Pages
-
+Page license
 Page components
 Page directory
 Page instfiles
@@ -92,21 +105,16 @@ Section "Start Menu Shortcuts"
 
 SectionEnd
 
-;---------------------------------------------------------------------------------------------------------
+;_Section_MNASoft_files_Start__________________________________________________
 
-
-
-Section "EXE"
+Section MNASoft_files
+  SectionIn RO
   SetOutPath $INSTDIR\.\vlx\KOMPAS
   File .\vlx\KOMPAS\CAD_SF.EXE
   SetOutPath $INSTDIR\.\vlx\KOMPAS
   File .\vlx\KOMPAS\SF_CAD.EXE
-SectionEnd
-Section "INI"
   SetOutPath $INSTDIR\.\acad_w.sup
   File .\acad_w.sup\SF_DXF.INI
-SectionEnd
-Section "VLX"
   SetOutPath $INSTDIR\.\acad_w.sup\prj\arx_dbx_reg
   File .\acad_w.sup\prj\arx_dbx_reg\create_registry.VLX
   SetOutPath $INSTDIR\.\vlx
@@ -203,14 +211,10 @@ Section "VLX"
   File .\vlx\welding.VLX
   SetOutPath $INSTDIR\.\vlx
   File .\vlx\Welding1.VLX
-SectionEnd
-Section "arx"
   SetOutPath $INSTDIR\.
   File .\MNASArx_Pozition_17.arx
   SetOutPath $INSTDIR\.
   File .\MNASArx_Welding_17.arx
-SectionEnd
-Section "bat"
   SetOutPath $INSTDIR\.\acad_w.sup
   File .\acad_w.sup\CAD_DXF.bat
   SetOutPath $INSTDIR\.\acad_w.sup
@@ -221,8 +225,6 @@ Section "bat"
   File .\acad_w.sup\kompas\SF_CAD.bat
   SetOutPath $INSTDIR\.
   File .\clear_temp_lisp_files.bat
-SectionEnd
-Section "bmp"
   SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
   File .\acad.mnu\Acad_mnu_icon\%%c.bmp
   SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
@@ -589,16 +591,10 @@ Section "bmp"
   File .\acad.mnu\Acad_mnu_icon\zw.bmp
   SetOutPath $INSTDIR\.\acad.mnu\Acad_mnu_icon
   File .\acad.mnu\Acad_mnu_icon\_a_b_c.bmp
-SectionEnd
-Section "cui"
   SetOutPath $INSTDIR\.\acad.mnu
   File .\acad.mnu\MNASoft.cui
-SectionEnd
-Section "cuix"
   SetOutPath $INSTDIR\.\acad.mnu
   File .\acad.mnu\MNASoft_18.cuix
-SectionEnd
-Section "dat"
   SetOutPath $INSTDIR\.\acad_w.sup\for_lic
   File .\acad_w.sup\for_lic\N1.dat
   SetOutPath $INSTDIR\.\acad_w.sup\for_lic
@@ -615,16 +611,12 @@ Section "dat"
   File .\acad_w.sup\for_lic\RTM_1411-73_p.23_proekt3.dat
   SetOutPath $INSTDIR\.\acad_w.sup\for_lic
   File .\acad_w.sup\for_lic\RTM_1411-73_p.23_prover3.dat
-SectionEnd
-Section "dbx"
   SetOutPath $INSTDIR\.
   File .\MNASDbx_Klejmo_17.dbx
   SetOutPath $INSTDIR\.
   File .\MNASDbx_Pozition_17.dbx
   SetOutPath $INSTDIR\.
   File .\MNASDbx_Welding_17.dbx
-SectionEnd
-Section "dcl"
   SetOutPath $INSTDIR\.\acad_w.sup\atoms
   File .\acad_w.sup\atoms\ATOMS.dcl
   SetOutPath $INSTDIR\.\acad_w.sup\axis
@@ -669,8 +661,6 @@ Section "dcl"
   File .\acad_w.sup\spec\Specification.dcl
   SetOutPath $INSTDIR\.\acad_w.sup\text
   File .\acad_w.sup\text\Text.dcl
-SectionEnd
-Section "dwg"
   SetOutPath $INSTDIR\.\acad_w.sup
   File .\acad_w.sup\ACAD.dwg
   SetOutPath $INSTDIR\.\acad_w.sup
@@ -767,12 +757,8 @@ Section "dwg"
   File .\acad_w.sup\WELD_BOT.dwg
   SetOutPath $INSTDIR\.\acad_w.sup
   File .\acad_w.sup\WELD_TOP.dwg
-SectionEnd
-Section "fnt"
   SetOutPath $INSTDIR\.\vlx\KOMPAS
   File .\vlx\KOMPAS\ESKD.fnt
-SectionEnd
-Section "fon"
   SetOutPath $INSTDIR\.\acad_fnt\Kompas
   File .\acad_fnt\Kompas\GOST_A.fon
   SetOutPath $INSTDIR\.\acad_fnt\Kompas
@@ -781,14 +767,8 @@ Section "fon"
   File .\acad_fnt\Kompas\Symbol_A.fon
   SetOutPath $INSTDIR\.\acad_fnt\Kompas
   File .\acad_fnt\Kompas\Symbol_B.fon
-SectionEnd
-Section "glb"
-SectionEnd
-Section "hdx"
   SetOutPath $INSTDIR\.\acad_w.sup\spec
   File .\acad_w.sup\spec\Specification.hdx
-SectionEnd
-Section "html"
   SetOutPath $INSTDIR\.\acad.help\bas
   File .\acad.help\bas\bas.html
   SetOutPath $INSTDIR\.\acad.help\cut
@@ -819,16 +799,12 @@ Section "html"
   File .\CopyRight.html
   SetOutPath $INSTDIR\.
   File .\gpl-3.0-standalone.html
-SectionEnd
-Section "ijk"
   SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
   File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10.ijk
   SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
   File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10n.ijk
   SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
   File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10_1.ijk
-SectionEnd
-Section "jpg"
   SetOutPath $INSTDIR\.\acad.help\poz
   File .\acad.help\poz\POZ_html_32f3d1ba.jpg
   SetOutPath $INSTDIR\.\acad.help\poz
@@ -855,8 +831,6 @@ Section "jpg"
   File .\acad.help\sv\sv_html_m515fff5.jpg
   SetOutPath $INSTDIR\.\acad_w.sup\smesitel_vla
   File .\acad_w.sup\smesitel_vla\HWScan00002.jpg
-SectionEnd
-Section "js"
   SetOutPath $INSTDIR\.\acad_setup_js
   File .\acad_setup_js\acad_DWGSetup_Layer_Ltype_TextStyle_DimStyle.js
   SetOutPath $INSTDIR\.\acad_setup_js
@@ -869,16 +843,10 @@ Section "js"
   File .\acad_setup_js\VLISP_make_prv.js
   SetOutPath $INSTDIR\.\acad_setup_js
   File .\acad_setup_js\write_dopust.js
-SectionEnd
-Section "lin"
   SetOutPath $INSTDIR\.\acad_w.sup\lines
   File .\acad_w.sup\lines\ESKD.lin
-SectionEnd
-Section "log"
   SetOutPath $INSTDIR\.
   File .\Change.log
-SectionEnd
-Section "lsp"
   SetOutPath $INSTDIR\.\acad_w.sup\abrev
   File .\acad_w.sup\abrev\Abrev.lsp
   SetOutPath $INSTDIR\.\acad_w.sup\abrev
@@ -1395,26 +1363,18 @@ Section "lsp"
   File .\acad_w.sup\utils\vla.lsp
   SetOutPath $INSTDIR\.\acad_w.sup\utils
   File .\acad_w.sup\utils\XDATA.lsp
-SectionEnd
-Section "mea"
   SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
   File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\12-1.mea
   SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
   File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\4-1.mea
   SetOutPath $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea
   File .\acad_w.sup\izmjeritjelnaja_mashina\Mea\9.mea
-SectionEnd
-Section "mnl"
   SetOutPath $INSTDIR\.\acad.mnu
   File .\acad.mnu\MNASoft.mnl
   SetOutPath $INSTDIR\.\acad.mnu
   File .\acad.mnu\MNASoft_18.mnl
-SectionEnd
-Section "nsi"
   SetOutPath $INSTDIR\.
   File .\mnas_acad_db17_utils.nsi
-SectionEnd
-Section "png"
   SetOutPath $INSTDIR\.\acad.help\bas
   File .\acad.help\bas\bas_html_3688dde8.png
   SetOutPath $INSTDIR\.\acad.help\cut
@@ -1447,8 +1407,6 @@ Section "png"
   File .\acad.help\te-_before.png
   SetOutPath $INSTDIR\.\acad.help
   File .\acad.help\te-_rez.png
-SectionEnd
-Section "prj"
   SetOutPath $INSTDIR\.\acad_w.sup\abrev
   File .\acad_w.sup\abrev\ABREV.prj
   SetOutPath $INSTDIR\.\acad_w.sup\acad_pgp
@@ -1585,8 +1543,6 @@ Section "prj"
   File .\acad_w.sup\utils\RED_LIST.prj
   SetOutPath $INSTDIR\.\acad_w.sup\utils
   File .\acad_w.sup\utils\UTILS.prj
-SectionEnd
-Section "prv"
   SetOutPath $INSTDIR\.\acad_w.sup\abrev
   File .\acad_w.sup\abrev\Abrev.prv
   SetOutPath $INSTDIR\.\acad_w.sup\acad_pgp
@@ -1685,20 +1641,14 @@ Section "prv"
   File .\vlx\M_cmds.prv
   SetOutPath $INSTDIR\.\vlx
   File .\vlx\Vi.prv
-SectionEnd
-Section "rtf"
   SetOutPath $INSTDIR\.
   File .\CopyRight.rtf
-  SetOutPath $INSTDIR\.
-  File .\gpl-3.0.rtf
-SectionEnd
-Section "sh"
   SetOutPath $INSTDIR\.
   File .\rename_suffix.sh
   SetOutPath $INSTDIR\.
   File .\sections_by_ext.sh
-SectionEnd
-Section "shp"
+  SetOutPath $INSTDIR\.
+  File .\section_one_by_ext.sh
   SetOutPath $INSTDIR\.\acad_fnt\Kompas
   File .\acad_fnt\Kompas\B_ESKD.shp
   SetOutPath $INSTDIR\.\acad_fnt\Kompas
@@ -1727,8 +1677,6 @@ Section "shp"
   File .\acad_fnt\shp\TXT.shp
   SetOutPath $INSTDIR\.\acad_fnt\shp
   File .\acad_fnt\shp\txt8.shp
-SectionEnd
-Section "shx"
   SetOutPath $INSTDIR\.\acad_fnt
   File .\acad_fnt\ES_DOS.shx
   SetOutPath $INSTDIR\.\acad_fnt
@@ -1765,16 +1713,12 @@ Section "shx"
   File .\acad_fnt\TXT.shx
   SetOutPath $INSTDIR\.\acad_fnt
   File .\acad_fnt\txt8.shx
-SectionEnd
-Section "slb"
   SetOutPath $INSTDIR\.\acad_w.sup
   File .\acad_w.sup\CIRCLES.slb
   SetOutPath $INSTDIR\.\acad_w.sup\lines
   File .\acad_w.sup\lines\LINES.slb
   SetOutPath $INSTDIR\.\acad_w.sup
   File .\acad_w.sup\LINES.slb
-SectionEnd
-Section "sld"
   SetOutPath $INSTDIR\.\acad_w.sup\big_fnt
   File .\acad_w.sup\big_fnt\BIG_1.sld
   SetOutPath $INSTDIR\.\acad_w.sup\big_fnt
@@ -1827,8 +1771,6 @@ Section "sld"
   File .\acad_w.sup\mnas\Welding_lsp\img_usilenie_top.sld
   SetOutPath $INSTDIR\.\acad_w.sup\razvertka
   File .\acad_w.sup\razvertka\razvertka.sld
-SectionEnd
-Section "ttf"
   SetOutPath $INSTDIR\.\acad_fnt\Kompas
   File .\acad_fnt\Kompas\GOSTTypeB.ttf
   SetOutPath $INSTDIR\.\acad_fnt\Kompas
@@ -1841,8 +1783,6 @@ Section "ttf"
   File .\acad_fnt\Kompas\Symbol_A.ttf
   SetOutPath $INSTDIR\.\acad_fnt\Kompas
   File .\acad_fnt\Kompas\Symbol_B.ttf
-SectionEnd
-Section "txt"
   SetOutPath $INSTDIR\.\acad_fnt
   File .\acad_fnt\ascii.txt
   SetOutPath $INSTDIR\.\acad_w.sup\prj\man
@@ -1850,23 +1790,22 @@ Section "txt"
   SetOutPath $INSTDIR\.\acad_w.sup\prj\man
   File .\acad_w.sup\prj\man\man_data_func.txt
   SetOutPath $INSTDIR\.
+  File .\gpl-3.0.txt
+  SetOutPath $INSTDIR\.
   File .\README.txt
   SetOutPath $INSTDIR\.\vlisp.tmp
   File .\vlisp.tmp\README.txt
 SectionEnd
 
+;_Section_MNASoft_files_END____________________________________________________
+
 ; Uninstaller
 ;______________________________________________________________________________
 
-
-Section "un.EXE"
+Section un.MNASoft_files
   Delete $INSTDIR\.\vlx\KOMPAS\CAD_SF.EXE
   Delete $INSTDIR\.\vlx\KOMPAS\SF_CAD.EXE
-SectionEnd
-Section "un.INI"
   Delete $INSTDIR\.\acad_w.sup\SF_DXF.INI
-SectionEnd
-Section "un.VLX"
   Delete $INSTDIR\.\acad_w.sup\prj\arx_dbx_reg\create_registry.VLX
   Delete $INSTDIR\.\vlx\Abrev.VLX
   Delete $INSTDIR\.\vlx\ACAD_PGP.VLX
@@ -1915,19 +1854,13 @@ Section "un.VLX"
   Delete $INSTDIR\.\vlx\text.VLX
   Delete $INSTDIR\.\vlx\welding.VLX
   Delete $INSTDIR\.\vlx\Welding1.VLX
-SectionEnd
-Section "un.arx"
   Delete $INSTDIR\.\MNASArx_Pozition_17.arx
   Delete $INSTDIR\.\MNASArx_Welding_17.arx
-SectionEnd
-Section "un.bat"
   Delete $INSTDIR\.\acad_w.sup\CAD_DXF.bat
   Delete $INSTDIR\.\acad_w.sup\FRG_DXF.bat
   Delete $INSTDIR\.\acad_w.sup\kompas\CAD_SF.bat
   Delete $INSTDIR\.\acad_w.sup\kompas\SF_CAD.bat
   Delete $INSTDIR\.\clear_temp_lisp_files.bat
-SectionEnd
-Section "un.bmp"
   Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\%%c.bmp
   Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\a1.bmp
   Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\a2.bmp
@@ -2111,14 +2044,8 @@ Section "un.bmp"
   Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\zv.bmp
   Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\zw.bmp
   Delete $INSTDIR\.\acad.mnu\Acad_mnu_icon\_a_b_c.bmp
-SectionEnd
-Section "un.cui"
   Delete $INSTDIR\.\acad.mnu\MNASoft.cui
-SectionEnd
-Section "un.cuix"
   Delete $INSTDIR\.\acad.mnu\MNASoft_18.cuix
-SectionEnd
-Section "un.dat"
   Delete $INSTDIR\.\acad_w.sup\for_lic\N1.dat
   Delete $INSTDIR\.\acad_w.sup\for_lic\N2.dat
   Delete $INSTDIR\.\acad_w.sup\for_lic\RTM_1411-73_p.20_proekt1.dat
@@ -2127,13 +2054,9 @@ Section "un.dat"
   Delete $INSTDIR\.\acad_w.sup\for_lic\RTM_1411-73_p.22_prover2.dat
   Delete $INSTDIR\.\acad_w.sup\for_lic\RTM_1411-73_p.23_proekt3.dat
   Delete $INSTDIR\.\acad_w.sup\for_lic\RTM_1411-73_p.23_prover3.dat
-SectionEnd
-Section "un.dbx"
   Delete $INSTDIR\.\MNASDbx_Klejmo_17.dbx
   Delete $INSTDIR\.\MNASDbx_Pozition_17.dbx
   Delete $INSTDIR\.\MNASDbx_Welding_17.dbx
-SectionEnd
-Section "un.dcl"
   Delete $INSTDIR\.\acad_w.sup\atoms\ATOMS.dcl
   Delete $INSTDIR\.\acad_w.sup\axis\AXIS.dcl
   Delete $INSTDIR\.\acad_w.sup\axis\axis_graph.dcl
@@ -2156,8 +2079,6 @@ Section "un.dcl"
   Delete $INSTDIR\.\acad_w.sup\prj\CHtjenije_iz_Exel\graph.dcl
   Delete $INSTDIR\.\acad_w.sup\spec\Specification.dcl
   Delete $INSTDIR\.\acad_w.sup\text\Text.dcl
-SectionEnd
-Section "un.dwg"
   Delete $INSTDIR\.\acad_w.sup\ACAD.dwg
   Delete $INSTDIR\.\acad_w.sup\BASE.dwg
   Delete $INSTDIR\.\acad_w.sup\circles\CIRCLES.dwg
@@ -2206,22 +2127,12 @@ Section "un.dwg"
   Delete $INSTDIR\.\acad_w.sup\weld_arrow_top.dwg
   Delete $INSTDIR\.\acad_w.sup\WELD_BOT.dwg
   Delete $INSTDIR\.\acad_w.sup\WELD_TOP.dwg
-SectionEnd
-Section "un.fnt"
   Delete $INSTDIR\.\vlx\KOMPAS\ESKD.fnt
-SectionEnd
-Section "un.fon"
   Delete $INSTDIR\.\acad_fnt\Kompas\GOST_A.fon
   Delete $INSTDIR\.\acad_fnt\Kompas\GOST_B.fon
   Delete $INSTDIR\.\acad_fnt\Kompas\Symbol_A.fon
   Delete $INSTDIR\.\acad_fnt\Kompas\Symbol_B.fon
-SectionEnd
-Section "un.glb"
-SectionEnd
-Section "un.hdx"
   Delete $INSTDIR\.\acad_w.sup\spec\Specification.hdx
-SectionEnd
-Section "un.html"
   Delete $INSTDIR\.\acad.help\bas\bas.html
   Delete $INSTDIR\.\acad.help\cut\cut.html
   Delete $INSTDIR\.\acad.help\ea\ea.html
@@ -2237,13 +2148,9 @@ Section "un.html"
   Delete $INSTDIR\.\acad.help\sv\sv.html
   Delete $INSTDIR\.\CopyRight.html
   Delete $INSTDIR\.\gpl-3.0-standalone.html
-SectionEnd
-Section "un.ijk"
   Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10.ijk
   Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10n.ijk
   Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\h10_1.ijk
-SectionEnd
-Section "un.jpg"
   Delete $INSTDIR\.\acad.help\poz\POZ_html_32f3d1ba.jpg
   Delete $INSTDIR\.\acad.help\poz\POZ_html_59182332.jpg
   Delete $INSTDIR\.\acad.help\poz\POZ_html_m392bf328.jpg
@@ -2257,22 +2164,14 @@ Section "un.jpg"
   Delete $INSTDIR\.\acad.help\sv\sv_html_m3ed5b477.jpg
   Delete $INSTDIR\.\acad.help\sv\sv_html_m515fff5.jpg
   Delete $INSTDIR\.\acad_w.sup\smesitel_vla\HWScan00002.jpg
-SectionEnd
-Section "un.js"
   Delete $INSTDIR\.\acad_setup_js\acad_DWGSetup_Layer_Ltype_TextStyle_DimStyle.js
   Delete $INSTDIR\.\acad_setup_js\DG.js
   Delete $INSTDIR\.\acad_setup_js\setup_MNAS_acad_db16_utils.js
   Delete $INSTDIR\.\acad_setup_js\setup_MNAS_acad_db17_utils.js
   Delete $INSTDIR\.\acad_setup_js\VLISP_make_prv.js
   Delete $INSTDIR\.\acad_setup_js\write_dopust.js
-SectionEnd
-Section "un.lin"
   Delete $INSTDIR\.\acad_w.sup\lines\ESKD.lin
-SectionEnd
-Section "un.log"
   Delete $INSTDIR\.\Change.log
-SectionEnd
-Section "un.lsp"
   Delete $INSTDIR\.\acad_w.sup\abrev\Abrev.lsp
   Delete $INSTDIR\.\acad_w.sup\abrev\gr_on_off.lsp
   Delete $INSTDIR\.\acad_w.sup\Acaddoc.lsp
@@ -2531,20 +2430,12 @@ Section "un.lsp"
   Delete $INSTDIR\.\acad_w.sup\utils\vla-utils.lsp
   Delete $INSTDIR\.\acad_w.sup\utils\vla.lsp
   Delete $INSTDIR\.\acad_w.sup\utils\XDATA.lsp
-SectionEnd
-Section "un.mea"
   Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\12-1.mea
   Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\4-1.mea
   Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\9.mea
-SectionEnd
-Section "un.mnl"
   Delete $INSTDIR\.\acad.mnu\MNASoft.mnl
   Delete $INSTDIR\.\acad.mnu\MNASoft_18.mnl
-SectionEnd
-Section "un.nsi"
   Delete $INSTDIR\.\mnas_acad_db17_utils.nsi
-SectionEnd
-Section "un.png"
   Delete $INSTDIR\.\acad.help\bas\bas_html_3688dde8.png
   Delete $INSTDIR\.\acad.help\cut\cut_html_md5f7eb3.png
   Delete $INSTDIR\.\acad.help\format\format_html_637b65f8.png
@@ -2561,8 +2452,6 @@ Section "un.png"
   Delete $INSTDIR\.\acad.help\te+_rez.png
   Delete $INSTDIR\.\acad.help\te-_before.png
   Delete $INSTDIR\.\acad.help\te-_rez.png
-SectionEnd
-Section "un.prj"
   Delete $INSTDIR\.\acad_w.sup\abrev\ABREV.prj
   Delete $INSTDIR\.\acad_w.sup\acad_pgp\ACAD_PGP.prj
   Delete $INSTDIR\.\acad_w.sup\add_prefix\Add_prefix.prj
@@ -2631,8 +2520,6 @@ Section "un.prj"
   Delete $INSTDIR\.\acad_w.sup\text\text.prj
   Delete $INSTDIR\.\acad_w.sup\utils\RED_LIST.prj
   Delete $INSTDIR\.\acad_w.sup\utils\UTILS.prj
-SectionEnd
-Section "un.prv"
   Delete $INSTDIR\.\acad_w.sup\abrev\Abrev.prv
   Delete $INSTDIR\.\acad_w.sup\acad_pgp\ACAD_PGP.prv
   Delete $INSTDIR\.\acad_w.sup\add_prefix\Add_prefix.prv
@@ -2682,16 +2569,10 @@ Section "un.prv"
   Delete $INSTDIR\.\acad_w.sup\text\text.prv
   Delete $INSTDIR\.\vlx\M_cmds.prv
   Delete $INSTDIR\.\vlx\Vi.prv
-SectionEnd
-Section "un.rtf"
   Delete $INSTDIR\.\CopyRight.rtf
-  Delete $INSTDIR\.\gpl-3.0.rtf
-SectionEnd
-Section "un.sh"
   Delete $INSTDIR\.\rename_suffix.sh
   Delete $INSTDIR\.\sections_by_ext.sh
-SectionEnd
-Section "un.shp"
+  Delete $INSTDIR\.\section_one_by_ext.sh
   Delete $INSTDIR\.\acad_fnt\Kompas\B_ESKD.shp
   Delete $INSTDIR\.\acad_fnt\Kompas\WIN_ESKD.shp
   Delete $INSTDIR\.\acad_fnt\shp\ES_DOS.shp
@@ -2706,8 +2587,6 @@ Section "un.shp"
   Delete $INSTDIR\.\acad_fnt\shp\MY_B_F.shp
   Delete $INSTDIR\.\acad_fnt\shp\TXT.shp
   Delete $INSTDIR\.\acad_fnt\shp\txt8.shp
-SectionEnd
-Section "un.shx"
   Delete $INSTDIR\.\acad_fnt\ES_DOS.shx
   Delete $INSTDIR\.\acad_fnt\ES_OSE_D.shx
   Delete $INSTDIR\.\acad_fnt\ES_OSE_T.shx
@@ -2726,13 +2605,9 @@ Section "un.shx"
   Delete $INSTDIR\.\acad_fnt\MY_B_F.shx
   Delete $INSTDIR\.\acad_fnt\TXT.shx
   Delete $INSTDIR\.\acad_fnt\txt8.shx
-SectionEnd
-Section "un.slb"
   Delete $INSTDIR\.\acad_w.sup\CIRCLES.slb
   Delete $INSTDIR\.\acad_w.sup\lines\LINES.slb
   Delete $INSTDIR\.\acad_w.sup\LINES.slb
-SectionEnd
-Section "un.sld"
   Delete $INSTDIR\.\acad_w.sup\big_fnt\BIG_1.sld
   Delete $INSTDIR\.\acad_w.sup\big_fnt\BIG_2.sld
   Delete $INSTDIR\.\acad_w.sup\for_lic\for.sld
@@ -2759,19 +2634,16 @@ Section "un.sld"
   Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\img_usilenie_bot.sld
   Delete $INSTDIR\.\acad_w.sup\mnas\Welding_lsp\img_usilenie_top.sld
   Delete $INSTDIR\.\acad_w.sup\razvertka\razvertka.sld
-SectionEnd
-Section "un.ttf"
   Delete $INSTDIR\.\acad_fnt\Kompas\GOSTTypeB.ttf
   Delete $INSTDIR\.\acad_fnt\Kompas\GOST_A.ttf
   Delete $INSTDIR\.\acad_fnt\Kompas\Gost_a_drew.ttf
   Delete $INSTDIR\.\acad_fnt\Kompas\GOST_B.ttf
   Delete $INSTDIR\.\acad_fnt\Kompas\Symbol_A.ttf
   Delete $INSTDIR\.\acad_fnt\Kompas\Symbol_B.ttf
-SectionEnd
-Section "un.txt"
   Delete $INSTDIR\.\acad_fnt\ascii.txt
   Delete $INSTDIR\.\acad_w.sup\prj\man\man_data.txt
   Delete $INSTDIR\.\acad_w.sup\prj\man\man_data_func.txt
+  Delete $INSTDIR\.\gpl-3.0.txt
   Delete $INSTDIR\.\README.txt
   Delete $INSTDIR\.\vlisp.tmp\README.txt
 SectionEnd
@@ -2784,16 +2656,12 @@ Section "Uninstall"
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_db17_utils_tst"
   
   DeleteRegKey HKLM SOFTWARE\MNASoft
-;  DeleteRegKey HKLM SOFTWARE\MNASoft\16
-;  DeleteRegKey HKLM SOFTWARE\MNASoft\17
-;  DeleteRegKey HKLM SOFTWARE\MNASoft\18
-;  DeleteRegKey HKLM SOFTWARE\MNASoft\19
-  
 
   ; Remove files and uninstaller
   Delete $INSTDIR\mnas_acad_db17_utils.nsi
   Delete $INSTDIR\uninstall.exe
-;---------------------------------------------------------------------------------------------------------
+  
+;_RMDir_Start_______________________________________________________________________
 
   RMDir  $INSTDIR\acad.help\sv
   RMDir  $INSTDIR\acad.help\rou
@@ -2902,9 +2770,9 @@ Section "Uninstall"
   RMDir  $INSTDIR\vlisp.tmp
   RMDir  $INSTDIR\vlx\KOMPAS
   RMDir  $INSTDIR\vlx
+  
+;_RMDir_End_________________________________________________________________________
 
-
-;______________________________________________________________________________
   ; Remove shortcuts, if any
   Delete "$SMPROGRAMS\mnas_acad_db17_utils\*.*"
 
