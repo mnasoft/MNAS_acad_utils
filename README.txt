@@ -2,7 +2,7 @@
 		MNAS_acad_utils
 		для Администратора
 		
-1.1		Установите пакет mnas_acad_db17_utils-2.7.6.1.exe
+1.1		Установите пакет mnas_acad_utils-2.7.7.0.exe
 
 1.2		Запустите ACAD.
 
