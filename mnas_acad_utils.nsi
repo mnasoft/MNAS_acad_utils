@@ -10,19 +10,19 @@
 ; The name of the installer
 Name "mnas_acad_utils"
 
-
+!define VERSION "2.7.7.0"
 
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\Russian.nlf"
 
-VIProductVersion "2.7.6.1"
+VIProductVersion "${VERSION}"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductName" "Mnas_acad_utils"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "Comments" "Utils for work with AutoCAD© (2007-2011)"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "CompanyName" "Nick Matvyeyev (MNASoft)"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalTrademarks" "http:\\www.mnasoft.mksat.net"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalCopyright" "License: GNU GPL v3.0"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "Утилиты для работы с AutoCAD© (2007-2011)"
-VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "2.7.7.0"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "${VERSION}"
 
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "ProductName" "Mnas_acad_utils"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "Comments" "Утилиты для работы с AutoCAD© (2007-2011)"
@@ -30,11 +30,11 @@ VIAddVersionKey /LANG=${LANG_RUSSIAN} "CompanyName" "Матвеев Николай Анатольевич
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "LegalTrademarks" "http:\\www.mnasoft.mksat.net"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "LegalCopyright" "Распространяется по лицензии GNU GPL v3.0"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileDescription" "Утилиты для работы с AutoCAD© (2007-2011)"
-VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileVersion" "2.7.7.0"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileVersion" "${VERSION}"
 
 
 ; The file to write
-OutFile "mnas_acad_db17_utils.exe"
+OutFile "mnas_acad_utils-${VERSION}.exe"
 
 ; The default installation directory
 InstallDir $PROGRAMFILES\MNASoft\MNAS_acad_utils
@@ -63,7 +63,7 @@ UninstPage instfiles
 ;______________________________________________________________________________
 
 ; The stuff to install
-Section "mnas_acad_db17_utils (required)"
+Section "mnas_acad_utils (required)"
 
   SectionIn RO
   
@@ -82,10 +82,10 @@ Section "mnas_acad_db17_utils (required)"
   WriteRegStr HKLM SOFTWARE\MNASoft\19 "ROOT" "$INSTDIR\"
   
   ; Write the uninstall keys for Windows
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_db17_utils" "DisplayName" "mnas_acad_db17_utils"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_db17_utils" "UninstallString" '"$INSTDIR\uninstall.exe"'
-  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_db17_utils" "NoModify" 1
-  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_db17_utils" "NoRepair" 1
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils" "DisplayName" "mnas_acad_utils"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils" "UninstallString" '"$INSTDIR\uninstall.exe"'
+  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils" "NoModify" 1
+  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils" "NoRepair" 1
   WriteUninstaller "uninstall.exe"
   
 SectionEnd
@@ -93,15 +93,15 @@ SectionEnd
 ; Optional section (can be disabled by the user)
 Section "Start Menu Shortcuts"
 
-  CreateDirectory "$SMPROGRAMS\mnas_acad_db17_utils"
+  CreateDirectory "$SMPROGRAMS\mnas_acad_utils"
   
-  CreateShortCut "$SMPROGRAMS\mnas_acad_db17_utils\Uninstall.lnk"               "$INSTDIR\uninstall.exe"           "" "$INSTDIR\uninstall.exe" 0
-  CreateShortCut "$SMPROGRAMS\mnas_acad_db17_utils\README.txt.lnk"              "$INSTDIR\README.txt"              "" "" 0  
-  CreateShortCut "$SMPROGRAMS\mnas_acad_db17_utils\Change.log.lnk"              "$INSTDIR\Change.log"              "" "" 0  
-  CreateShortCut "$SMPROGRAMS\mnas_acad_db17_utils\CopyRight.html.lnk"          "$INSTDIR\CopyRight.html"          "" "" 0  
-  CreateShortCut "$SMPROGRAMS\mnas_acad_db17_utils\CopyRight.rtf.lnk"           "$INSTDIR\CopyRight.rtf"           "" "" 0  
-  CreateShortCut "$SMPROGRAMS\mnas_acad_db17_utils\gpl-3.0.rtf.lnk"             "$INSTDIR\gpl-3.0.rtf"             "" "" 0  
-  CreateShortCut "$SMPROGRAMS\mnas_acad_db17_utils\gpl-3.0-standalone.html.lnk" "$INSTDIR\gpl-3.0-standalone.html" "" "" 0  
+  CreateShortCut "$SMPROGRAMS\mnas_acad_utils\Uninstall.lnk"               "$INSTDIR\uninstall.exe"           "" "$INSTDIR\uninstall.exe" 0
+  CreateShortCut "$SMPROGRAMS\mnas_acad_utils\README.txt.lnk"              "$INSTDIR\README.txt"              "" "" 0  
+  CreateShortCut "$SMPROGRAMS\mnas_acad_utils\Change.log.lnk"              "$INSTDIR\Change.log"              "" "" 0  
+  CreateShortCut "$SMPROGRAMS\mnas_acad_utils\CopyRight.html.lnk"          "$INSTDIR\CopyRight.html"          "" "" 0  
+  CreateShortCut "$SMPROGRAMS\mnas_acad_utils\CopyRight.rtf.lnk"           "$INSTDIR\CopyRight.rtf"           "" "" 0  
+  CreateShortCut "$SMPROGRAMS\mnas_acad_utils\gpl-3.0.rtf.lnk"             "$INSTDIR\gpl-3.0.rtf"             "" "" 0  
+  CreateShortCut "$SMPROGRAMS\mnas_acad_utils\gpl-3.0-standalone.html.lnk" "$INSTDIR\gpl-3.0-standalone.html" "" "" 0  
 
 SectionEnd
 
@@ -1374,7 +1374,7 @@ Section MNASoft_files
   SetOutPath $INSTDIR\.\acad.mnu
   File .\acad.mnu\MNASoft_18.mnl
   SetOutPath $INSTDIR\.
-  File .\mnas_acad_db17_utils.nsi
+  File .\mnas_acad_utils.nsi
   SetOutPath $INSTDIR\.\acad.help\bas
   File .\acad.help\bas\bas_html_3688dde8.png
   SetOutPath $INSTDIR\.\acad.help\cut
@@ -2435,7 +2435,7 @@ Section un.MNASoft_files
   Delete $INSTDIR\.\acad_w.sup\izmjeritjelnaja_mashina\Mea\9.mea
   Delete $INSTDIR\.\acad.mnu\MNASoft.mnl
   Delete $INSTDIR\.\acad.mnu\MNASoft_18.mnl
-  Delete $INSTDIR\.\mnas_acad_db17_utils.nsi
+  Delete $INSTDIR\.\mnas_acad_utils.nsi
   Delete $INSTDIR\.\acad.help\bas\bas_html_3688dde8.png
   Delete $INSTDIR\.\acad.help\cut\cut_html_md5f7eb3.png
   Delete $INSTDIR\.\acad.help\format\format_html_637b65f8.png
@@ -2653,12 +2653,12 @@ SectionEnd
 Section "Uninstall"
   
   ; Remove registry keys
-  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_db17_utils_tst"
+  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils_tst"
   
   DeleteRegKey HKLM SOFTWARE\MNASoft
 
   ; Remove files and uninstaller
-  Delete $INSTDIR\mnas_acad_db17_utils.nsi
+  Delete $INSTDIR\mnas_acad_utils.nsi
   Delete $INSTDIR\uninstall.exe
   
 ;_RMDir_Start_______________________________________________________________________
@@ -2774,10 +2774,10 @@ Section "Uninstall"
 ;_RMDir_End_________________________________________________________________________
 
   ; Remove shortcuts, if any
-  Delete "$SMPROGRAMS\mnas_acad_db17_utils\*.*"
+  Delete "$SMPROGRAMS\mnas_acad_utils\*.*"
 
   ; Remove directories used
-  RMDir "$SMPROGRAMS\mnas_acad_db17_utils"
+  RMDir "$SMPROGRAMS\mnas_acad_utils"
   
   RMDir "$INSTDIR"
 
