@@ -22,7 +22,7 @@ VIAddVersionKey /LANG=${LANG_ENGLISH} "CompanyName" "Nick Matvyeyev (MNASoft)"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalTrademarks" "http:\\www.mnasoft.mksat.net"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalCopyright" "License: GNU GPL v3.0"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "Утилиты для работы с AutoCAD© (2007-2011)"
-VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "2.7.6.1"
+VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "2.7.7.0"
 
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "ProductName" "Mnas_acad_utils"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "Comments" "Утилиты для работы с AutoCAD© (2007-2011)"
@@ -30,7 +30,7 @@ VIAddVersionKey /LANG=${LANG_RUSSIAN} "CompanyName" "Матвеев Николай Анатольевич
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "LegalTrademarks" "http:\\www.mnasoft.mksat.net"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "LegalCopyright" "Распространяется по лицензии GNU GPL v3.0"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileDescription" "Утилиты для работы с AutoCAD© (2007-2011)"
-VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileVersion" "2.7.6.1"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileVersion" "2.7.7.0"
 
 
 ; The file to write
