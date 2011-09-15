@@ -64,7 +64,7 @@
       )
       (
        t
-       (strcat (VL-FILENAME-DIRECTORY LOADER) "\\")
+       (strcat LOADER "\\")
       )
     )
   )

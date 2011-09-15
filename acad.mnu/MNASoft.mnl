@@ -12,8 +12,8 @@
 )
 
 ;;;Функция для определения пкти к файлу /rus_cmd_opechatka.lsp загружающему функцию autoload_cmds_and_op-cmds.
-(defun MNAS_ArxPrj (/ LOADER )
-(setq
+(defun MNAS_ArxPrj_root (/ LOADER)
+  (setq
     LOADER
      (vl-registry-read
        (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\MNASoft\\" (substr (getvar "acadver") 1 2))
@@ -39,7 +39,7 @@
       )
       (
        t
-       (strcat (VL-FILENAME-DIRECTORY LOADER) "\\")
+       (strcat LOADER "\\")
       )
     )
   )

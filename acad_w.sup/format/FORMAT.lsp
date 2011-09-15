@@ -3,16 +3,16 @@
 
 ;;;;;;("format" "Построение форматной рамки." "Размеры")
 (defun c:format	(/ ;
-		 f_key ; Ключ основной надписи
-		 f_val ; Тип основной надписи
-		 sht1_key ; Ключи  тегов в основной надписи
-		 sht1_key2 ; Наименования тегов в основной надписи
-		 kr_key ;
-		 kr_val ;
-		 for_name ; Ключ формата
-		 for_val ; Размеры форматов
-		 reg_root ; Корнь реестра для записи переменных параметров.
-		 format_registry ; Список содержащий значения параметров диалога по умолчанию.
+		 f_key ;		Список, содержащий ключи основных надписей: ("1" "2" "2аг" "2ат" "2бн" "2бч" "3")
+		 f_val ;		Список, содержащий полные наименования основных надписей.
+		 sht1_key ;		Ключи  тегов в основной надписи
+		 sht1_key2 ;		Наименования тегов в основной надписи
+		 kr_key ;		Список, содержащий допустимые кратности для форматов (строки).
+		 kr_val ;		Список, содержащий допустимые кратности для форматов (целочисленные).
+		 for_name ;		Список, содержащий имена форматов.
+		 for_val ;		Список, содержащий размеры форматов.
+		 reg_root ;		Корнь реестра для записи переменных параметров.
+		 format_registry ;	Список содержащий значения параметров диалога по умолчанию.
 		)
   (setq reg_root "HKEY_CURRENT_USER\\Software\\MNASoft\\Format")
   (setq	format_registry
@@ -180,42 +180,64 @@
   )
 )
 
-(defun zap_sht (en / str_1 ed enn)
+;;;Заполнение атрибутов штампа
+(defun zap_sht (en / str_1 ed enn do)
   (setq enn en)
-  (while
-    (= (cdr (assoc 0 (entget (setq en (entnext en))))) "ATTRIB")
-     (setq str_1 (cdr (assoc 2 (setq ed (entget en)))))
-     (MAPCAR (function zsht) sht1_key2 sht1_val)
+  (setq do t)
+  (while do
+    (setq en (entnext en))
+    (cond
+      ((null en)
+       (setq do nil)
+      )
+      ((= (cdr (assoc 0 (setq ed (entget en)))) "ATTRIB")
+       (setq str_1 (cdr (assoc 2 ed)))
+       (MAPCAR (function zsht) sht1_key2 sht1_val)
+      )
+      (t
+       (setq do nil)
+      )
+    )
   )
   (entupd enn)
 )
 
-(defun zap_form	(en / zsht str_1 ed)
-  (while
-    (= (cdr (assoc 0 (entget (setq en (entnext en))))) "ATTRIB")
-     (setq str_1 (cdr (assoc 2 (setq ed (entget en)))))
-     (if (= str_1 "FORMAT")
-       (progn
-	 (if (= kr_no 0)
-	   (entmod
-	     (subst (cons 1 (nth for_no for_name)) (assoc 1 ed) ed)
-	   )
-	   (entmod
-	     (subst (cons 1
-			  (strcat
-			    (nth for_no for_name)
-			    "x"
-			    (nth kr_no kr_key)
-			  )
-		    )
-		    (assoc 1 ed)
-		    ed
+;;;Заполнение атрибута FORMAT
+(defun zap_form	(en / zsht str_1 ed do)
+  (setq do t)
+  (while do
+    (setq en (entnext en))
+    (cond
+      ((null en)
+       (setq do nil)
+      )
+      ((= (cdr (assoc 0 (entget en))) "ATTRIB")
+       (setq str_1 (cdr (assoc 2 (setq ed (entget en)))))
+       (if (= str_1 "FORMAT")
+	 (progn
+	   (if (= kr_no 0)
+	     (entmod
+	       (subst (cons 1 (nth for_no for_name)) (assoc 1 ed) ed)
+	     )
+	     (entmod
+	       (subst
+		 (cons
+		   1
+		   (strcat (nth for_no for_name) "x" (nth kr_no kr_key))
+		 )
+		 (assoc 1 ed)
+		 ed
+	       )
 	     )
 	   )
+	   (entupd en)
 	 )
-	 (entupd en)
        )
-     )
+      )
+      (t
+       (setq do nil)
+      )
+    )
   )
 )
 
@@ -325,12 +347,26 @@
     (setq for (reverse for))
   )
   (draw_rect for p_start 7)
-  (draw_rect
-    (mapcar '- for '(25.0 10.0))
-    (mapcar '+ '(20.0 5.0 0.0) p_start)
-    1
+  (cond
+    ((= (nth f_no f_key) "2бч")
+     (draw_rect
+       (mapcar '- for '(25.0 10.0))
+       (mapcar '+ '(5.0 5.0 0.0) p_start)
+       1
+     )
+    )
+    (t
+     (draw_rect
+       (mapcar '- for '(25.0 10.0))
+       (mapcar '+ '(20.0 5.0 0.0) p_start)
+       1
+     )
+    )
   )
 )
+
+
+
 
 (defun draw_rect (for p0 col)
   (draw_line

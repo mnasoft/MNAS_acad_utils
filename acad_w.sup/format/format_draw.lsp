@@ -412,8 +412,24 @@
      )
     )
     ((= s1 "2αν")
+     (command
+       "_insert"
+       (strcat "*" (extend_path "/FORMAT/sht_5"))
+       "_non"
+       (polar p_start 0.0 (nth 0 for))
+       "1"
+       "0"
+     )
     )
     ((= s1 "2αχ")
+     (command
+       "_insert"
+       (strcat "*" (extend_path "/FORMAT/sht_6"))
+       "_non"
+       (polar p_start 0.0 (nth 0 for))
+       "1"
+       "0"
+     )
     )
     ((= s1 "3")
     )

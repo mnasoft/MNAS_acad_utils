@@ -12,8 +12,8 @@
 )
 
 ;;;Функция для определения пкти к файлу /rus_cmd_opechatka.lsp загружающему функцию autoload_cmds_and_op-cmds.
-(defun MNAS_ArxPrj (/ LOADER )
-(setq
+(defun MNAS_ArxPrj (/ LOADER)
+  (setq
     LOADER
      (vl-registry-read
        (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\MNASoft\\" (substr (getvar "acadver") 1 2))
@@ -22,13 +22,15 @@
   )
   (if (null LOADER)
     (setq
-    LOADER
-     (vl-registry-read
-       (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MNASoft\\" (substr (getvar "acadver") 1 2))
-       "ROOT"
-     )
-  )
-    
+      LOADER
+       (vl-registry-read
+	 (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MNASoft\\"
+		 (substr (getvar "acadver") 1 2)
+	 )
+	 "ROOT"
+       )
+    )
+
   )
   (VL-STRING-TRANSLATE
     "\\"
@@ -39,11 +41,12 @@
       )
       (
        t
-       (strcat (VL-FILENAME-DIRECTORY LOADER) "\\")
+       (strcat LOADER "\\")
       )
     )
   )
 )
+
 
 (load (strcat (MNAS_ArxPrj) "acad_w.sup/Utils/acad_sup_dir.lsp")
       "Message from M_utility.mnl\nФайл .../acad_w.sup/Utils/acad_sup_dir.lsp не найден."

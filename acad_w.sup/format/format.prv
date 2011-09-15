@@ -1,4 +1,4 @@
-;;; Visual LISP make file [V1.0] format saved to:[C:/MNAS_acad_db17_utils/acad_w.sup/format] at:[6/21/10] 
+;;; файл сценария сборки Visual LISP [V1.0] format saved to:[D:/home/_namatv/_private/exchange/MNAS_acad_db17_utils/acad_w.sup/format] at:[9/12/11] 
 (PRV-DEF (:target . "../../vlx/format.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
