@@ -10,7 +10,7 @@
 ; The name of the installer
 Name "mnas_acad_utils"
 
-!define VERSION "2.7.7.0"
+!define VERSION "2.7.7.1"
 
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\Russian.nlf"
@@ -661,6 +661,8 @@ Section MNASoft_files
   File .\acad_w.sup\spec\Specification.dcl
   SetOutPath $INSTDIR\.\acad_w.sup\text
   File .\acad_w.sup\text\Text.dcl
+  SetOutPath $INSTDIR\.\acad.help\ltp
+  File .\acad.help\ltp\ltp.dwg
   SetOutPath $INSTDIR\.\acad_w.sup
   File .\acad_w.sup\ACAD.dwg
   SetOutPath $INSTDIR\.\acad_w.sup
@@ -697,6 +699,8 @@ Section MNASoft_files
   File .\acad_w.sup\format\SHT_4.dwg
   SetOutPath $INSTDIR\.\acad_w.sup\format
   File .\acad_w.sup\format\SHT_5.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\format
+  File .\acad_w.sup\format\SHT_6.dwg
   SetOutPath $INSTDIR\.\acad_w.sup\format
   File .\acad_w.sup\format\sogl.dwg
   SetOutPath $INSTDIR\.\acad_w.sup\format
@@ -982,7 +986,7 @@ Section MNASoft_files
   SetOutPath $INSTDIR\.\acad_w.sup\format
   File .\acad_w.sup\format\dop_dlg.lsp
   SetOutPath $INSTDIR\.\acad_w.sup\format
-  File .\acad_w.sup\format\FORMAT.lsp
+  File .\acad_w.sup\format\format.lsp
   SetOutPath $INSTDIR\.\acad_w.sup\format
   File .\acad_w.sup\format\format_draw.lsp
   SetOutPath $INSTDIR\.\acad_w.sup\format
@@ -2079,6 +2083,7 @@ Section un.MNASoft_files
   Delete $INSTDIR\.\acad_w.sup\prj\CHtjenije_iz_Exel\graph.dcl
   Delete $INSTDIR\.\acad_w.sup\spec\Specification.dcl
   Delete $INSTDIR\.\acad_w.sup\text\Text.dcl
+  Delete $INSTDIR\.\acad.help\ltp\ltp.dwg
   Delete $INSTDIR\.\acad_w.sup\ACAD.dwg
   Delete $INSTDIR\.\acad_w.sup\BASE.dwg
   Delete $INSTDIR\.\acad_w.sup\circles\CIRCLES.dwg
@@ -2097,6 +2102,7 @@ Section un.MNASoft_files
   Delete $INSTDIR\.\acad_w.sup\format\SHT_3.dwg
   Delete $INSTDIR\.\acad_w.sup\format\SHT_4.dwg
   Delete $INSTDIR\.\acad_w.sup\format\SHT_5.dwg
+  Delete $INSTDIR\.\acad_w.sup\format\SHT_6.dwg
   Delete $INSTDIR\.\acad_w.sup\format\sogl.dwg
   Delete $INSTDIR\.\acad_w.sup\format\speciph_1.dwg
   Delete $INSTDIR\.\acad_w.sup\format\speciph_n.dwg
@@ -2239,7 +2245,7 @@ Section un.MNASoft_files
   Delete $INSTDIR\.\acad_w.sup\format\add_dop_sht_dlg.lsp
   Delete $INSTDIR\.\acad_w.sup\format\block_create.lsp
   Delete $INSTDIR\.\acad_w.sup\format\dop_dlg.lsp
-  Delete $INSTDIR\.\acad_w.sup\format\FORMAT.lsp
+  Delete $INSTDIR\.\acad_w.sup\format\format.lsp
   Delete $INSTDIR\.\acad_w.sup\format\format_draw.lsp
   Delete $INSTDIR\.\acad_w.sup\format\geom_util.lsp
   Delete $INSTDIR\.\acad_w.sup\fors_rh\ras_har_gas.lsp
@@ -2648,7 +2654,6 @@ Section un.MNASoft_files
   Delete $INSTDIR\.\vlisp.tmp\README.txt
 SectionEnd
 
-
 ;______________________________________________________________________________
 Section "Uninstall"
   
@@ -2666,6 +2671,7 @@ Section "Uninstall"
   RMDir  $INSTDIR\acad.help\sv
   RMDir  $INSTDIR\acad.help\rou
   RMDir  $INSTDIR\acad.help\poz
+  RMDir  $INSTDIR\acad.help\ltp
   RMDir  $INSTDIR\acad.help\look
   RMDir  $INSTDIR\acad.help\ins_lit
   RMDir  $INSTDIR\acad.help\index_ru

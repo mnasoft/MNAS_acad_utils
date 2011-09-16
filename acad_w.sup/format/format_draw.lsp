@@ -426,7 +426,7 @@
        "_insert"
        (strcat "*" (extend_path "/FORMAT/sht_6"))
        "_non"
-       (polar p_start 0.0 (nth 0 for))
+       p_start
        "1"
        "0"
      )

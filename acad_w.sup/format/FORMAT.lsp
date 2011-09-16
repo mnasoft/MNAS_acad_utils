@@ -12,7 +12,9 @@
 		 for_name ;		Список, содержащий имена форматов.
 		 for_val ;		Список, содержащий размеры форматов.
 		 reg_root ;		Корнь реестра для записи переменных параметров.
-		 format_registry ;	Список содержащий значения параметров диалога по умолчанию.
+		 format_registry ;	Список, содержащий значения параметров диалога по умолчанию.
+		 f_no;			Индекс основной надписи.
+		 kr_no;			Индекс для нахождения кратности формата.
 		)
   (setq reg_root "HKEY_CURRENT_USER\\Software\\MNASoft\\Format")
   (setq	format_registry
@@ -297,7 +299,9 @@
 )
 
 
-(defun f_list_act_no (value) (setq f_no (atoi value)))
+(defun f_list_act_no (value)
+  (setq f_no (atoi value))
+)
 
 
 (defun set_left	(/ for)
@@ -535,7 +539,7 @@
     (stl)
   )
   (setvar "cmdecho" 0)
-  ;(reg_read_default_lst reg_root dop_dlg_registry) ; По просьбе Давлеткужина
+     ;(reg_read_default_lst reg_root dop_dlg_registry) ; По просьбе Давлеткужина
   (reg_read_lst reg_root dop_dlg_registry) ; По просьбе Давлеткужина
   (load_format_dcl)
   (setq do_dialog t)
@@ -590,8 +594,23 @@
 	 (setq pick3 (ssadd))
        )
        (draw_shtamp)
-       (if dsht_3_val
-	 (draw_dop_sht pick3)
+       (setq s1 (nth f_no f_key))
+       (cond
+	 (
+	  (and dsht_3_val
+	       (or (= s1 "1")
+		   (= s1 "2")
+		   (= s1 "2аг")
+		   (= s1 "2ат")
+		   (= s1 "2бн")
+		   (= s1 "3")
+	       )
+	  )
+	  (draw_dop_sht pick3)
+	 )
+	 ((= s1 "2бч")
+	  t
+	 )
        )
        (add_xdata (ss_pick en1))
        (zap_sht (entlast))
