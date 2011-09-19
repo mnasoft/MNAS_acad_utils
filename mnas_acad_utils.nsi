@@ -75,11 +75,11 @@ Section "mnas_acad_utils (required)"
 
   ; Write the installation path into the registry
   
-  WriteRegStr HKLM SOFTWARE\MNASoft    "ROOT" "$INSTDIR\"
-  WriteRegStr HKLM SOFTWARE\MNASoft\16 "ROOT" "$INSTDIR\"
-  WriteRegStr HKLM SOFTWARE\MNASoft\17 "ROOT" "$INSTDIR\"
-  WriteRegStr HKLM SOFTWARE\MNASoft\18 "ROOT" "$INSTDIR\"
-  WriteRegStr HKLM SOFTWARE\MNASoft\19 "ROOT" "$INSTDIR\"
+  WriteRegStr HKLM SOFTWARE\MNASoft    "ROOT" "$INSTDIR"
+  WriteRegStr HKLM SOFTWARE\MNASoft\16 "ROOT" "$INSTDIR"
+  WriteRegStr HKLM SOFTWARE\MNASoft\17 "ROOT" "$INSTDIR"
+  WriteRegStr HKLM SOFTWARE\MNASoft\18 "ROOT" "$INSTDIR"
+  WriteRegStr HKLM SOFTWARE\MNASoft\19 "ROOT" "$INSTDIR"
   
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils" "DisplayName" "mnas_acad_utils"
