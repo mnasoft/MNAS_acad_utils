@@ -10,7 +10,7 @@
 ; The name of the installer
 Name "mnas_acad_utils"
 
-!define VERSION "2.7.7.2"
+!define VERSION "2.7.7.3"
 
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\Russian.nlf"
