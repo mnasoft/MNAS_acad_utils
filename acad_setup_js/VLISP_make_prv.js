@@ -12,10 +12,12 @@ function MakeVlispPRV()
 {
 //Производит компиляцию проектов PRV. Предполагается, что активизировано окно AutoCAD
     WriteWord("vlisp{ENTER}");
-	acad_w_path="C:\\MNAS_acad_db17_utils\\acad_w.sup\\";
+//	acad_w_path="C:\\MNAS_acad_db17_utils\\acad_w.sup\\";
+	acad_w_path="D:\\MNAS_acad_db17_utils\\acad_w.sup\\";
+	
 	WScript.Sleep(5000);
 	
-	MakePrv(acad_w_path + "spec\\srec.prv");
+	MakePrv(acad_w_path + "spec\\spec.prv");
 	MakePrv(acad_w_path + "razvertka\\razvertka.prv");
 	MakePrv(acad_w_path + "provoloka\\provoloka.prv");
     MakePrv(acad_w_path + "M_utils_loader\\M_utils_loader.prv");

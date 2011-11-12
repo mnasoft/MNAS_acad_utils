@@ -4,8 +4,8 @@
   text
   :OWN-LIST
   ("Text_pozition"
-    "../UTILS/ACAD_SUP_DIR"  "Rjedaktirovanije tjekstov"
-    "naklon _15gr"	     "Lay_txt"
+    "../UTILS/ACAD_SUP_DIR"  "Rjedaktirovanije_tjekstov"
+    "naklon_15gr"	     "Lay_txt"
     "TEXT"		     "STL"
     "../UTILS/DXF"	     "../UTILS/prin"
     "../UTILS/STRING"	     "Skobka"

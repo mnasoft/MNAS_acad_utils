@@ -20,7 +20,7 @@
 ;;;	    )
 ;;;	    str-lst
 ;;;    )
-  )
+;;;  )
   (registry-delete-recursive
     (mapcar (function (lambda (el)
 			(strcat el "\\Applications\\" "MNASArx_Pozition")
