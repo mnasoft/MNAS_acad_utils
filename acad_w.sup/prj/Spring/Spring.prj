@@ -1,0 +1,19 @@
+;;; VLisp project file [V2.0] Spring saved to:[D:/Developer/MNAS_acad_db17_utils/acad_w.sup/prj/Spring] at:[12/19/11] 
+(VLISP-PROJECT-LIST
+  :name
+  Spring
+  :own-list
+  ("D:/Developer/MNAS_acad_db17_utils/acad_w.sup/utils/dlg_utils"
+    "Spring"
+    "Spring_dia"
+  )
+  :fas-directory
+  nil
+  :tmp-directory
+  nil
+  :project-keys
+  (:BUILD (:standard))
+  :context-id
+  :AUTOLISP
+)
+;;; EOF
