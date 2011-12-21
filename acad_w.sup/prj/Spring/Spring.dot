@@ -1,0 +1,50 @@
+digraph spring
+{
+
+d  ; D1 ; D ; 
+n  ; n1 ; 
+t  ; L0 ; L4 ;
+G ; "[tau]" ;
+L  ;
+L1 ; S1 ;
+L2 ; S2 ;
+L3 ; S3 ;
+
+D  -> D1 ; d  -> D1 ;
+D1 -> D  ;
+
+n  -> n1 ; 
+n1 -> n  ; 
+
+n1 -> L ; D -> L ; t -> L;
+
+L1 -> S1 ; F1 ; tau1 ;
+L2 -> S2 ; F2 ; tau2 ;
+L3 -> S3 ; F3 ; tau3 ;
+
+n -> L4 ; d -> L4 ;
+
+t ->  L0 ; n -> L0 ; 
+S1 -> L1 ; L0 -> L1; 
+S2 -> L2 ; L0 -> L2; 
+S3 -> L3 ; L0 -> L3; 
+
+S2 -> h ; S1 -> h ;
+h -> C ; F1 -> C ; F2 -> C ;
+L0 -> t  ;
+
+D -> i ; d -> i ;
+L0 -> i1 ; D -> i1 ;
+
+i -> K1 ;
+i -> K2 ;
+
+G -> F1 ; d -> F1 ; S1 -> F1 ; D -> F1 ;  n -> F1 ;  K2 -> F1 ; 
+G -> F2 ; d -> F2 ; S2 -> F2 ; D -> F2 ;  n -> F2 ;  K2 -> F2 ; 
+G -> F3 ; d -> F3 ; S3 -> F3 ; D -> F3 ;  n -> F3 ;  K2 -> F3 ; 
+
+F1 -> tau1 ; D -> tau1 ; K1 -> tau1 ;  d -> tau1 ;
+F2 -> tau2 ; D -> tau2 ; K1 -> tau2 ;  d -> tau2 ;
+F3 -> tau3 ; D -> tau3 ; K1 -> tau3 ;  d -> tau3 ;
+
+}
