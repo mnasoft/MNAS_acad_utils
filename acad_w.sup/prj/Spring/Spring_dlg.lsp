@@ -78,26 +78,7 @@
 			 ;  (setvar "cmdecho" 1)
 )
 
-(defun action_d	()
-  (setq _d (read (get_tile "d")))
-  (setq D (read (get_tile "D")))
-  (setq D1 (+ D _d))
-  (set_tile "D1" (rtos D1))
-
-
-  (setq _n (read (get_tile "n")))
-  (setq L4 (* (+ _n 1.5) _d))
-  (set_tile "L4" (rtos L4))
-
-  (setq _t (read (get_tile "t")))
-  (setq L0 (+ (* _n _t) (* 1.5 _d)))
-  (set_tile "L0" (rtos L0))
-  
-  (show_d)
-
-)
-
-(defun actionD ()
+(defun actionD (/ D D1 _d)
   (setq _d (read (get_tile "d")))
   (setq D (read (get_tile "D")))
   (setq D1 (+ D _d))
@@ -106,7 +87,7 @@
   (show_d)
 )
 
-(defun actionD1	()
+(defun actionD1	(/ D D1 _d)
   (setq _d (read (get_tile "d")))
   (setq D1 (read (get_tile "D1")))
   (setq D (- D1 _d))
@@ -115,7 +96,7 @@
   (show_d)
 )
 
-(defun action_n1 ()
+(defun action_n1 (/ L4 _d _n _n1)
   (setq _n1 (read (get_tile "n1")))
   (setq _n (- _n1 2))
   (set_tile "n" (rtos _n))
@@ -125,7 +106,7 @@
   (set_tile "L4" (rtos L4))
 )
 
-(defun action_n	()
+(defun action_n	(/ L4 _d _n _n1)
   (setq _n (read (get_tile "n")))
   (setq _n1 (+ _n 2))
   (set_tile "n1" (rtos _n1))
@@ -135,7 +116,7 @@
   (set_tile "L4" (rtos L4))
 )
 
-(defun action_t	()
+(defun action_t	(/ L0 _d _n _t)
   (setq _t (read (get_tile "t")))
   (setq _d (read (get_tile "d")))
   (setq _n (read (get_tile "n")))
@@ -144,7 +125,7 @@
   (set_tile "L0" (rtos L0))
 )
 
-(defun actionL0	()
+(defun actionL0	(/ L0 _d _n _t)
   (setq L0 (read (get_tile "L0")))
   (setq _d (read (get_tile "d")))
   (setq _n (read (get_tile "n")))
@@ -153,7 +134,7 @@
   (set_tile "t" (rtos _t))
 )
 
-(defun actionS1	()
+(defun actionS1	(/ L0 L1 S1)
   (setq L0 (read (get_tile "L0")))
   (setq S1 (read (get_tile "S1")))
 
@@ -164,7 +145,7 @@
   (show_F1)
 )
 
-(defun actionL1	()
+(defun actionL1	(/ L0 L1 S1)
   (setq L0 (read (get_tile "L0")))
   (setq L1 (read (get_tile "L1")))
 
@@ -175,7 +156,7 @@
   (show_F1)
 )
 
-(defun actionS2	()
+(defun actionS2	(/ L0 L2 S2)
   (setq L0 (read (get_tile "L0")))
   (setq S2 (read (get_tile "S2")))
 
@@ -186,7 +167,7 @@
   (show_F2)
 )
 
-(defun actionL2	()
+(defun actionL2	(/ L0 L2 S2)
   (setq L0 (read (get_tile "L0")))
   (setq L2 (read (get_tile "L2")))
 
@@ -197,7 +178,7 @@
   (show_F2)
 )
 
-(defun actionS3	()
+(defun actionS3	(/ L0 L3 S3)
   (setq L0 (read (get_tile "L0")))
   (setq S3 (read (get_tile "S3")))
 
@@ -205,7 +186,7 @@
   (set_tile "L3" (rtos L3))
 )
 
-(defun actionL3	()
+(defun actionL3	(/ L0 L3 S3)
   (setq L0 (read (get_tile "L0")))
   (setq L3 (read (get_tile "L3")))
 
