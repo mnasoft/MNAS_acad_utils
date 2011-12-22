@@ -20,6 +20,10 @@
   (put "i" (/ (get "D") (get "d")))
 )
 
+(defun _i1 ()
+  (put "i1" (/ (get "L0") (get "D")))
+)
+
 (defun L0 ()
   (put "L0" (+ (* (get "n" ) (get "t")) (* 1.5 (get "d"))))
 )
@@ -123,78 +127,49 @@
    (put "tau3" (/ (* 2.55 (get "F3") (get "D") (get "K1")) (* d_sm d_sm d_sm)))
 )
 
-(defun action_d	() (D1) (L4) (L0) (_i) (K1) (K2) (L) )
-
-(defun actionD () (D1) (_i) (K1) (K2) (L) )
-
-(defun actionD1	() (D) (_i) (K1) (K2) (L) )
-
-(defun action_n1 () (_n) (L4) (L))
-
-(defun action_n () (_n1) (L4) (L))
-
-(defun action_t () (L0) (L) )
-
-(defun actionL0	() (_t) (L) )
-
-(defun actionS1	()
-  (L1)
-  (_h)
-  (_i)
-  (K1)
-  (K2)
-  (F1)
-  (_tau1)
+(defun C()
+  (put "C" (/ (- (get "F2") (get "F1")) (get "h")))
 )
 
-(defun actionL1	()
-  (S1)
-  (_h)
-  (_i)
-  (K1)
-  (K2)
-  (F1)
-  (_tau1)
+(defun m (/ _d _n1)
+  (setq
+    _d	(get "d")
+    _n1	(get "n1")
+  )
+  (put
+    "m"
+    (* 8.0e-6 pi _d _d 0.25 (get "L") (/ (- _n1 0.5) _n1))
+  )
 )
 
-(defun actionS2	()
-  (L2)
-  (_h)
-  (_i)
-  (K1)
-  (K2)
-  (F2)
-  (_tau2)
-)
 
-(defun actionL2	()
-  (S2)
-  (_h)
-  (_i)
-  (K1)
-  (K2)
-  (F2)
-  (_tau2)
-)
+(defun action_d	() (_t) (L4) (D1) (D) (_i1) (L) (_i) (K2) (F1) (F2) (F3) (K1) (_tau1) (_tau2) (_tau3) (C) (m) )
 
-(defun actionS3	()
-  (L3)
-  (_h)
-  (_i)
-  (K1)
-  (K2)
-  (F3)
-  (_tau3)
-)
+(defun actionD () (D1) (_i1) (L) (_i) (K2) (F1) (F2) (F3) (K1) (_tau1) (_tau2) (_tau3) (C) (m))
 
-(defun actionL3	()
-  (S3)
-  (_i)
-  (K1)
-  (K2)
-  (F3)
-  (_tau3)
-)
+(defun actionD1	() (D) (_i1) (L) (_i) (K2) (F1) (F2) (F3) (K1) (_tau1) (_tau2) (_tau3) (C) (m))
+
+(defun action_n1 () (_n) (L4) (L0) (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
+
+(defun action_n () (_n1) (L4) (L0) (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
+
+(defun action_t () (L) (L0) (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
+
+(defun actionL0	() (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
+
+(defun actionS1	() (L1) (_h) (F1) (_tau1) (C) (m))
+
+(defun actionL1	() (S1) (_h) (F1) (_tau1) (C) (m))
+
+(defun actionS2	() (L2) (_h) (F2) (_tau2) (C) (m))
+
+(defun actionL2	() (S2) (_h) (F2) (_tau2) (C) (m))
+
+(defun actionS3	() (L3) (F3) (_tau3)) 
+
+(defun actionL3	() (S3) (F3) (_tau3))
+
+(defun actionG () (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
 
 ;|«Visual LISP© Format Options»
 (72 2 25 2 nil "end of" 60 9 0 0 0 T T nil T)

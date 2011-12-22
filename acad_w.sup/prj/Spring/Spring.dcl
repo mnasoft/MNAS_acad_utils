@@ -77,6 +77,7 @@ spring : dialog
     : row
     {
       : edit_box {label ="L"; key ="L";}	//Длина проволоки развернутой пружины, мм
+      : edit_box {label ="m"; key ="m";}	//Масса пружины, кг
       : edit_box {label ="Sk"; key ="Sk";}	//Толщина конца опорного витка пружины, мм
     }
   }

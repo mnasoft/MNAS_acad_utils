@@ -62,6 +62,7 @@
     (action_tile "L2" "(actionL2)")
     (action_tile "S3" "(actionS3)")
     (action_tile "L3" "(actionL3)")
+    (action_tile "G"  "(actionG)")
 
     (action_tile "for_zap" "(done_dialog 6)")
     (action_tile "about" "(about)")
