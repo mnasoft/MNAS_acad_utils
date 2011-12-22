@@ -142,34 +142,38 @@
   )
 )
 
+(defun err()
+  (set_tile "error" (strcat (cadr(assoc $key setup_msg)) " = " $value))
+)
 
-(defun action_d	() (_t) (L4) (D1) (D) (_i1) (L) (_i) (K2) (F1) (F2) (F3) (K1) (_tau1) (_tau2) (_tau3) (C) (m) )
 
-(defun actionD () (D1) (_i1) (L) (_i) (K2) (F1) (F2) (F3) (K1) (_tau1) (_tau2) (_tau3) (C) (m))
+(defun action_d	() (err) (_t) (L4) (D1) (D) (_i1) (L) (_i) (K2) (F1) (F2) (F3) (K1) (_tau1) (_tau2) (_tau3) (C) (m) )
 
-(defun actionD1	() (D) (_i1) (L) (_i) (K2) (F1) (F2) (F3) (K1) (_tau1) (_tau2) (_tau3) (C) (m))
+(defun actionD () (err) (D1) (_i1) (L) (_i) (K2) (F1) (F2) (F3) (K1) (_tau1) (_tau2) (_tau3) (C) (m))
 
-(defun action_n1 () (_n) (L4) (L0) (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
+(defun actionD1	() (err) (D) (_i1) (L) (_i) (K2) (F1) (F2) (F3) (K1) (_tau1) (_tau2) (_tau3) (C) (m))
 
-(defun action_n () (_n1) (L4) (L0) (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
+(defun action_n1 () (err) (_n) (L4) (L0) (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
 
-(defun action_t () (L) (L0) (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
+(defun action_n () (err) (_n1) (L4) (L0) (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
 
-(defun actionL0	() (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
+(defun action_t () (err) (L) (L0) (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
 
-(defun actionS1	() (L1) (_h) (F1) (_tau1) (C) (m))
+(defun actionL0	() (err) (_t) (_i1) (L) (L1) (L2) (L3) (S1) (S2) (S3) (_h) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
 
-(defun actionL1	() (S1) (_h) (F1) (_tau1) (C) (m))
+(defun actionS1	() (err) (L1) (_h) (F1) (_tau1) (C) (m))
 
-(defun actionS2	() (L2) (_h) (F2) (_tau2) (C) (m))
+(defun actionL1	() (err) (S1) (_h) (F1) (_tau1) (C) (m))
 
-(defun actionL2	() (S2) (_h) (F2) (_tau2) (C) (m))
+(defun actionS2	() (err) (L2) (_h) (F2) (_tau2) (C) (m))
 
-(defun actionS3	() (L3) (F3) (_tau3)) 
+(defun actionL2	() (err) (S2) (_h) (F2) (_tau2) (C) (m))
 
-(defun actionL3	() (S3) (F3) (_tau3))
+(defun actionS3	() (err) (L3) (F3) (_tau3)) 
 
-(defun actionG () (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
+(defun actionL3	() (err) (S3) (F3) (_tau3))
+
+(defun actionG () (err) (F1) (F2) (F3) (_tau1) (_tau2) (_tau3) (C) (m))
 
 ;|«Visual LISP© Format Options»
 (72 2 25 2 nil "end of" 60 9 0 0 0 T T nil T)

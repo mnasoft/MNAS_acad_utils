@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] Spring saved to:[D:/Developer/MNAS_acad_db17_utils/acad_w.sup/prj/Spring] at:[12/22/11] 
+(PRV-DEF (:target . "../../../vlx/Spring.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "Spring.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF

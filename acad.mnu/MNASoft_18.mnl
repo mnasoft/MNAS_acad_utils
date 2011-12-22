@@ -237,6 +237,9 @@
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/welding") '("edweld" "es"  "ed-weld-txt" "est"))
 
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/Spring") '("spring"))
+
+
 (princ "\nMNASoft_18.mnl çàãðóæåí.\n")
 ;|«Visual LISP© Format Options»
 (105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
