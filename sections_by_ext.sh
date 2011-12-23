@@ -1,3 +1,9 @@
+# USAGE
+# sh < section_by_ext.sh
+
+#Extensions wich we can add to output files
+assa="EXE INI VLX arx bat bmp cui cuix dat dbx dcl dwg fnt fon glb hdx html ijk jpg js lin log lsp mea mnl nsi png prj prv rtf sh shp shx slb sld ttf txt dot pdf"
+
 inst_fn="inst.tmp"
 un_inst_fn="un.inst.tmp"
 rm_dir_fn="rmdir.tmp"
@@ -51,8 +57,7 @@ inst_uninst_section_create()
   sed -i "s/\//\\\/g" $sec_uninst_file
 }
 
-assa="EXE INI VLX arx bat bmp cui cuix dat dbx dcl dwg fnt fon glb hdx html ijk jpg js lin log lsp mea mnl nsi png prj prv rtf sh shp shx slb sld ttf txt"
-
+# Cleaning output files
 echo >$inst_fn
 echo >$un_inst_fn
 for i in $assa 
