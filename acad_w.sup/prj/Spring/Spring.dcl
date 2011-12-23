@@ -2,7 +2,7 @@ dcl_settings : default_dcl_settings { audit_level = 3; }
 
 spring : dialog
 {
-  label = "Расчет пружины по И ЖАКИ.102.044-93";
+  label = "Расчет пружины цилиндрической пружины сжатия";
   aspect_ratio = 0;
   :row
   {
