@@ -1,4 +1,4 @@
-;;; Visual LISP make file [V1.0] Spring saved to:[D:/Developer/MNAS_acad_db17_utils/acad_w.sup/prj/Spring] at:[1/1/12] 
+;;; Visual LISP make file [V1.0] Spring saved to:[D:/Developer/MNAS_acad_db17_utils/acad_w.sup/prj/Spring] at:[1/2/12] 
 (PRV-DEF (:target . "../../../vlx/Spring.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)

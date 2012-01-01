@@ -1,5 +1,5 @@
 ;;Функция выводит характеристики пружины в табличной форме для просмотра в интернет браузере.
-(defun print_html (/ fn)
+(defun print_html (/ fn fl)
   (setq
     fn (getfiled "Укажите файла для вывода" "Spring" "html" 1)
     fl (open fn "w")
@@ -68,8 +68,8 @@
 	     _n		 ; Количество полных витков;
 	     _t		 ; Шаг витков
 	     _d		 ; Диаметр проволоки
-	     P1	    P2	   P2_1	  P2_1_1 P2_2	P2_2_1 P2_2_2 P3
-	     P3_1   P3_1_1 P3_2	  P3_2_1 P3_2_2
+	     p1	    p2	   p2_1	  p2_1_1 p2_2	p2_2_1 p2_2_2 p3
+	     p3_1   p3_1_1 p3_2	  p3_2_1 p3_2_2
 	    )
   (setq p0 (getpoint "Начало пружины:"))
   (setq a (getangle p0 "Направление оси пружины:"))
@@ -148,7 +148,7 @@
 )
 
 
-(defun div_pnts	(p1 p2 n / lst)
+(defun div_pnts	(p1 p2 n / lst i )
   (setq	lst (cons p2 lst)
 	i   n
   )

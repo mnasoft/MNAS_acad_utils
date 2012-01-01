@@ -1,12 +1,12 @@
-;;; VLisp project file [V2.0] Spring saved to:[D:/Developer/MNAS_acad_db17_utils/acad_w.sup/prj/Spring] at:[1/1/12] 
+;;; VLisp project file [V2.0] Spring saved to:[D:/Developer/MNAS_acad_db17_utils/acad_w.sup/prj/Spring] at:[1/2/12] 
 (VLISP-PROJECT-LIST
   :NAME
   Spring
   :OWN-LIST
-  ("../../utils/draw"
-    "../../utils/acad_sup_dir" "../../utils//dlg_utils"
-    "./Spring"		       "./Spring_dlg"
-    "Spring_class"	       "Spring_actions"
+  ("../../utils/acad_sup_dir"
+    "../../utils/draw"	    "../../utils/dlg_utils"
+    "./Spring"		    "./Spring_dlg"
+    "Spring_class"	    "Spring_actions"
    )
   :FAS-DIRECTORY
   "../../../vlisp.tmp"
