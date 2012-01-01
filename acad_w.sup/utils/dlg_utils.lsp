@@ -32,7 +32,7 @@
   )
 )
 
-(defun action-tile_dlg (@setup_lst @setup_lst_name / rez)
+(defun action-tile_dlg (@setup_lst @setup_lst_name)
   (mapcar
     (function (lambda (el) (action_tile (car el) (strcat "(setq "@setup_lst_name " (action-save_dlg "  @setup_lst "))"))))
     (eval(read @setup_lst ))

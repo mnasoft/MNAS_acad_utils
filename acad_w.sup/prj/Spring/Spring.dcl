@@ -84,6 +84,7 @@ spring : dialog
   : cluster
   {
   : button {key = "Print"; label = "Print" ;}
+  : button {key = "Draw"; label = "Draw" ;}
   ok_cancel;
   : button {key = "about"; label = "О программе..." ;}
   : button {key = "help"; label = "Помощь" ;}

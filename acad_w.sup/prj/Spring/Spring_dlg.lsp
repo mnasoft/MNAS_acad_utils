@@ -31,8 +31,10 @@
      ("C" "")		 ; Жесткость пружины, Н/мм
      ("G" "72600.0")	 ; Модуль сдвига, МПа
      ("i1" "")		 ; Отношение длины пружины в свободном состоянии к её среднему диаметру
+     ("m" "")		 ; Масса пружины, кг
     )
 )
+
 
 (setq
   setup_msg
@@ -67,6 +69,7 @@
      ("C" "Жесткость пружины, Н/мм")
      ("G" "Модуль сдвига, МПа")
      ("i1" "Отношение длины пружины в свободном состоянии к её среднему диаметру")
+     ("m" "Масса пружины, кг")
     )
 )
 
@@ -78,7 +81,7 @@
       (exit)
     )
     (init_dlg setup_lst)
-    (action-tile_dlg "setup_lst" "setup_lst")
+    (action-tile_dlg-spring "setup_lst" "setup_lst")
 
     (action_tile "d" "(action_d)")
     (action_tile "D" "(actionD)")
@@ -100,11 +103,14 @@
     (action_tile "about" "(about)")
     (action_tile "help"  "(help (strcat (acad_sup) \"/prj/spring/spring.html\"))")
     (action_tile "Print" "(Print_html)")
+    (action_tile "Draw" "(done_dialog 2)")
+    
 
     (setq action (start_dialog))
     (cond
       ((= action 0) (setq do_dialog nil))
       ((= action 1) (setq do_dialog nil))
+      ((= action 2) (draw))
     )
   )
   (unload_dialog dcl_id)
@@ -112,6 +118,31 @@
 ;;;  (command "_.undo" "_end")
 ;;;  (setvar "cmdecho" 1)
 )
+
+;;Функция для сохранения списка параметров в переменной setup_lst.
+(defun stp_lst ()
+  (setq setup_lst (action-save_dlg setup_lst))
+)
+
+;;Функция выполняет сохрениение списка переменнных из setup_lst
+;;и заполняет строку статуса (тег error) диалога.
+(defun action-tile_dlg-spring (@setup_lst @setup_lst_name)
+  (mapcar
+    (function (lambda (el)
+		(action_tile
+		  (car el)
+		  (strcat "(err)"	    "(setq "
+			  @setup_lst_name   " (action-save_dlg "
+			  @setup_lst	    "))"
+			 )
+		)
+	      )
+    )
+    (eval (read @setup_lst))
+  )
+)
+
+(action-tile_dlg "setup_lst" "setup_lst")
 
 (defun about ()
   (alert (strcat "Расчет пружины сжатия " (about-GPL-string)))
