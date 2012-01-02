@@ -75,7 +75,7 @@ Section "mnas_acad_utils (required)"
   
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils" "DisplayName" "mnas_acad_utils"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils" "UninstallString" '"$INSTDIR\uninstall.exe"'
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils" "UninstallString" "$INSTDIR\uninstall.exe"
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils" "NoModify" 1
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils" "NoRepair" 1
   WriteUninstaller "uninstall.exe"
@@ -1872,6 +1872,8 @@ Section "txt"
   File .\acad_w.sup\prj\man\man_data.txt
   SetOutPath $INSTDIR\.\acad_w.sup\prj\man
   File .\acad_w.sup\prj\man\man_data_func.txt
+  SetOutPath $INSTDIR\.\acad_w.sup\prj\Spring
+  File .\acad_w.sup\prj\Spring\README.txt
   SetOutPath $INSTDIR\.
   File .\gpl-3.0.txt
   SetOutPath $INSTDIR\.
@@ -1892,6 +1894,7 @@ SectionEnd
 
 ; Uninstaller
 ;______________________________________________________________________________
+
 
 Section "un.EXE"
   Delete $INSTDIR\.\vlx\KOMPAS\CAD_SF.EXE
@@ -2816,6 +2819,7 @@ Section "un.txt"
   Delete $INSTDIR\.\acad_fnt\ascii.txt
   Delete $INSTDIR\.\acad_w.sup\prj\man\man_data.txt
   Delete $INSTDIR\.\acad_w.sup\prj\man\man_data_func.txt
+  Delete $INSTDIR\.\acad_w.sup\prj\Spring\README.txt
   Delete $INSTDIR\.\gpl-3.0.txt
   Delete $INSTDIR\.\README.txt
   Delete $INSTDIR\.\vlisp.tmp\README.txt
@@ -2831,7 +2835,7 @@ SectionEnd
 Section "Uninstall"
   
   ; Remove registry keys
-  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils_tst"
+  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\mnas_acad_utils"
   
   DeleteRegKey HKLM SOFTWARE\MNASoft
 
@@ -2950,7 +2954,7 @@ Section "Uninstall"
   RMDir  $INSTDIR\vlisp.tmp
   RMDir  $INSTDIR\vlx\KOMPAS
   RMDir  $INSTDIR\vlx
-  
+
 ;_RMDir_End_________________________________________________________________________
 
   ; Remove shortcuts, if any
@@ -2962,3 +2966,4 @@ Section "Uninstall"
   RMDir "$INSTDIR"
 
 SectionEnd
+
