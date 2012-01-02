@@ -9,14 +9,14 @@ un_inst_fn="un.inst.tmp"
 rm_dir_fn="rmdir.tmp"
 nsi_tmp="mnas_acad_utils.nsi.tmp"
 
-crete_nsi()
+create_nsi()
 {
 echo '; MNAS_acad_utils.nsi
 
 ; The name of the installer
 Name "mnas_acad_utils"
 
-!define VERSION "2.7.7.5"
+!define VERSION "2.7.7.6"
 
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\Russian.nlf"
@@ -214,4 +214,4 @@ inst_uninst_section_create $i $i un.$i $inst_fn $un_inst_fn
 done
 
 uninst_dirs
-crete_nsi
+create_nsi
