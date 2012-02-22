@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] filter saved to:[E:/Data/Develop/MNAS_acad_db17_utils/acad_w.sup/prj/Filter] at:[2/20/12] 
+(VLISP-PROJECT-LIST
+  :name
+  filter
+  :own-list
+  ("../../utils/ASIST" "filter")
+  :fas-directory
+  nil
+  :tmp-directory
+  nil
+  :project-keys
+  (:BUILD (:standard))
+  :context-id
+  :AUTOLISP
+)
+;;; EOF
