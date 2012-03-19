@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] moment saved to:[D:/home/_namatv/Develop/MNAS_acad_db17_utils/acad_w.sup/prj/moment_zatjazki] at:[3/15/12] 
+(VLISP-PROJECT-LIST
+  :NAME
+  moment
+  :OWN-LIST
+  ("moment" "../../utils//ASIST")
+  :FAS-DIRECTORY
+  nil
+  :TMP-DIRECTORY
+  nil
+  :PROJECT-KEYS
+  (:BUILD (:standard))
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF
