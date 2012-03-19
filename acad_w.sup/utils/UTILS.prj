@@ -1,2 +1,17 @@
-
-(VLISP-PROJECT-LIST :NAME UTILS :OWN-LIST ("ACAD_SUP_DIR" "vla-pline" "vla-utils" "Asist" "ERR" "Xdata" "Dxf" "String" "Binary" "draw" "prin") :FAS-DIRECTORY "C:\\vlisp.tmp" :TMP-DIRECTORY "C:\\vlisp.tmp" :PROJECT-KEYS (:BUILD (:STANDARD) :MERGED nil :SAFE-MODE T :MSGLEVEL 1) :CONTEXT-ID :AUTOLISP) 
+;;; VLisp project file [V2.0] UTILS saved to:[D:/home/_namatv/Develop/MNAS_acad_db17_utils/acad_w.sup/utils] at:[3/19/12] 
+(VLISP-PROJECT-LIST
+  :name
+  UTILS
+  :own-list
+  ("ACAD_SUP_DIR"
+    "vla-pline"	"vla-utils" "Asist" "ERR" "Xdata" "Dxf"	"String" "Binary" "draw" "prin"	"html")
+  :fas-directory
+  "C:\\vlisp.tmp"
+  :tmp-directory
+  "C:\\vlisp.tmp"
+  :project-keys
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :context-id
+  :AUTOLISP
+)
+;;; EOF
