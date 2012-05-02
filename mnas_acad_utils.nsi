@@ -1855,6 +1855,8 @@ Section "sh"
   SetOutPath $INSTDIR\.
   File .\sections_by_ext.sh
   SetOutPath $INSTDIR\.
+  File .\section_ext.sh
+  SetOutPath $INSTDIR\.
   File .\section_one_by_ext.sh
 SectionEnd
 Section "shp"
@@ -2942,6 +2944,7 @@ Section "un.sh"
   Delete $INSTDIR\.\edit.sh
   Delete $INSTDIR\.\rename_suffix.sh
   Delete $INSTDIR\.\sections_by_ext.sh
+  Delete $INSTDIR\.\section_ext.sh
   Delete $INSTDIR\.\section_one_by_ext.sh
 SectionEnd
 Section "un.shp"

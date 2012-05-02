@@ -1,23 +1,7 @@
+#!/bin/bash
+
 # USAGE
 # . section_one_by_ext.sh
-
-#Extensions wich we can add to output files
-assa="EXE INI VLX arx bat bmp cui cuix dat dbx dcl dwg fnt fon glb hdx html ijk jpg js lin log lsp mea mnl nsi png prj prv rtf sh shp shx slb sld ttf txt dot pdf"
-
-inst_fn="inst.tmp"
-un_inst_fn="un.inst.tmp"
-rm_dir_fn="rmdir.tmp"
-
-uninst_dirs()
-{
-  local d_name
-  stree=`find . -type d -and ! -path "./.git*" -and ! -name "." | sort -r`
-  for k in $stree
-  do
-    d_name=`echo $k | sed -e 's/^.\///;s/\//\\\/g'`
-    echo "  RMDir  \$INSTDIR\\$d_name" >> $rm_dir_fn
-  done
-}
 
 inst_uninst_section_one_create()
 {
@@ -27,13 +11,13 @@ inst_uninst_section_one_create()
   sec_inst_file="$4"    #"inst.txt"
   sec_uninst_file="$5"  #"un.inst.txt"
   
-  local assa
+  local f_ext
   
 #  echo "Section \"$sec_inst_name\"" >>$sec_inst_file
 
-  assa=`find . -name "*.$file_ext"`
+  f_ext=`find . -name "*.$file_ext"`
   
-  for i in $assa
+  for i in $f_ext
   do
     dn=`dirname $i`
     echo "  SetOutPath \$INSTDIR/$dn"
@@ -46,7 +30,7 @@ inst_uninst_section_one_create()
 
 #  echo "Section \"$sec_uninst_name\"" >>$sec_uninst_file
   
-  for i in $assa
+  for i in $f_ext
   do
     echo "  Delete \$INSTDIR/$i"
   done >>$sec_uninst_file
@@ -56,22 +40,29 @@ inst_uninst_section_one_create()
   sed -i "s/\//\\\/g" $sec_uninst_file
 }
 
-# Cleaning output files
-echo >$inst_fn
-echo >$un_inst_fn
-echo >$rm_dir_fn
+make_nsi_one_sec()
+{
+# Loading common variables and functions
+  . ./section_ext.sh
+  
+  cleaning_output_files
 
-echo "Section MNASoft_files" >>$inst_fn
-echo "  SectionIn RO" >>$inst_fn
+  echo "Section MNASoft_files" >>$inst_fn
+  echo "  SectionIn RO" >>$inst_fn
 
-echo "Section un.MNASoft_files" >>$un_inst_fn
+  echo "Section un.MNASoft_files" >>$un_inst_fn
 
-for i in $assa 
-do  
-  inst_uninst_section_one_create $i $i un.$i $inst_fn $un_inst_fn
-done
+  for i in $f_ext 
+  do  
+    inst_uninst_section_one_create $i $i un.$i $inst_fn $un_inst_fn
+  done
 
-echo 'SectionEnd' >>$inst_fn
-echo 'SectionEnd' >>$un_inst_fn
+  echo 'SectionEnd' >>$inst_fn
+  echo 'SectionEnd' >>$un_inst_fn
 
-uninst_dirs
+  uninst_dirs
+
+  create_nsi
+}
+
+make_nsi_one_sec
