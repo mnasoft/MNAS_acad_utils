@@ -163,25 +163,8 @@ uninst_dirs()
   for k in $stree
   do
     d_name=`echo $k | sed -e 's/^.\///;s/\//\\\/g'`
-#   d_name=`echo $k | sed -e 's/^.\///'`
     echo "  RMDir  \$INSTDIR\\$d_name" >> $rm_dir_fn
   done
-}
-
-uninst_dirs_01()
-{ 
-dirs=`ls -d */`
-echo "" > $rm_dir_fn
-for j in $dirs
-do
-  stree=`find $j -type d | sort -r`
-  for k in $stree
-  do
-    echo "  RMDir  \$INSTDIR/$k" >> $rm_dir_fn
-  done
-done
-sed -i "s/\//\\\/g" $rm_dir_fn
-sed -i "s/[\]$//" $rm_dir_fn
 }
 
 inst_uninst_section_create()
