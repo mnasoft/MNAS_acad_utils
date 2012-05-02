@@ -1,5 +1,5 @@
 # USAGE
-# sh < section_one_by_ext.sh
+# . section_one_by_ext.sh
 
 #Extensions wich we can add to output files
 assa="EXE INI VLX arx bat bmp cui cuix dat dbx dcl dwg fnt fon glb hdx html ijk jpg js lin log lsp mea mnl nsi png prj prv rtf sh shp shx slb sld ttf txt dot pdf"
@@ -9,6 +9,18 @@ un_inst_fn="un.inst.tmp"
 rm_dir_fn="rmdir.tmp"
 
 uninst_dirs()
+{
+  local d_name
+  stree=`find . -type d -and ! -path "./.git*" -and ! -name "." | sort -r`
+  for k in $stree
+  do
+    d_name=`echo $k | sed -e 's/^.\///;s/\//\\\/g'`
+#   d_name=`echo $k | sed -e 's/^.\///'`
+    echo "  RMDir  \$INSTDIR\\$d_name" >> $rm_dir_fn
+  done
+}
+
+uninst_dirs_01()
 { 
 dirs=`ls -d */`
 echo "" > $rm_dir_fn
@@ -64,6 +76,7 @@ inst_uninst_section_one_create()
 # Cleaning output files
 echo >$inst_fn
 echo >$un_inst_fn
+echo >$rm_dir_fn
 
 echo "Section MNASoft_files" >>$inst_fn
 echo "  SectionIn RO" >>$inst_fn
@@ -72,7 +85,7 @@ echo "Section un.MNASoft_files" >>$un_inst_fn
 
 for i in $assa 
 do  
-inst_uninst_section_one_create $i $i un.$i $inst_fn $un_inst_fn
+  inst_uninst_section_one_create $i $i un.$i $inst_fn $un_inst_fn
 done
 
 echo 'SectionEnd' >>$inst_fn

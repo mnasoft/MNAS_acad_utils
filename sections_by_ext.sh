@@ -1,5 +1,5 @@
 # USAGE
-# . ./sections_by_ext.sh
+# . sections_by_ext.sh
 
 #Extensions wich we can add to output files
 assa="EXE INI VLX arx bat bmp cui cuix dat dbx dcl dwg fnt fon glb hdx html ijk jpg js lin log lsp mea mnl nsi png prj prv rtf sh shp shx slb sld ttf txt dot pdf"
@@ -157,6 +157,18 @@ SectionEnd
 }
 
 uninst_dirs()
+{
+  local d_name
+  stree=`find . -type d -and ! -path "./.git*" -and ! -name "." | sort -r`
+  for k in $stree
+  do
+    d_name=`echo $k | sed -e 's/^.\///;s/\//\\\/g'`
+#   d_name=`echo $k | sed -e 's/^.\///'`
+    echo "  RMDir  \$INSTDIR\\$d_name" >> $rm_dir_fn
+  done
+}
+
+uninst_dirs_01()
 { 
 dirs=`ls -d */`
 echo "" > $rm_dir_fn
