@@ -90,6 +90,107 @@
   )
 )
 
+;;;;;;("xtcen"
+;;;;;;"Производится проецирование выбранных линий на плоскость Z=0.\n
+;;;;;;Дораоботать для проецирования и других типов примитивов\n
+;;;;;;для любой плоскости.(текущей ПСК)." "Измени")
+(defun c:xtcen (/ ss_cut_edges li dl cur num en ed pt1 pt2 pt_1 pt_2)
+  (command "_.undo" "_begin")
+  (setq
+    li		 (get_center_lines)
+    ss_cut_edges (get_cut_edges)
+  )
+  (setq dl (getdist "\nВведите расстояние:"))
+  (command "_zoom" "_e")
+
+  (do_ext_lines (* dl 0.1) li)
+  
+  (command "_trim" ss_cut_edges "")
+  (setq cur 0)
+  (setq num (sslength li))
+  (while (< cur num)
+    (setq
+      en   (ssname li cur)
+      ed   (entget en)
+      pt1  (cdr (assoc 10 ed))
+      pt2  (cdr (assoc 11 ed))
+    )
+    (command pt1 pt2)
+    (setq cur (+ cur 1))
+  )
+  (command "")
+  (do_ext_lines dl li)
+  (command "_zoom" "_p")
+  (command "_.undo" "_end")
+)
+
+(defun get_center_lines()
+  (ssget
+       "X"
+       (list
+	 (cons 0 "LINE")
+	 (cons -4 "<OR")
+	 (cons 6 "CENTER")
+	 (cons 6 "CENTER2")
+	 (cons 6 "CENTER4")
+	 (cons 6 "CENTERX2")
+	 (cons 6 "CENTERX4")
+	 (cons -4 "OR>")
+       )
+     )
+)
+
+(defun get_cut_edges ()
+  (ssget
+    "X"
+    (list
+      (cons -4 "<AND")
+      (cons -4 "<OR")
+      (cons 0 "LINE")
+      (cons 0 "ARC")
+      (cons 0 "CIRCLE")
+      (cons 0 "SPLINE")
+      (cons 0 "LWPOLYLINE")
+      (cons 0 "ELLIPSE")
+      (cons -4 "OR>")
+      (cons -4 "<NOT")
+      (cons 6 "CENTER")
+      (cons -4 "NOT>")
+      (cons -4 "<NOT")
+      (cons 6 "CENTER2")
+      (cons -4 "NOT>")
+      (cons -4 "<NOT")
+      (cons 6 "CENTER4")
+      (cons -4 "NOT>")
+      (cons -4 "<NOT")
+      (cons 6 "CENTERX2")
+      (cons -4 "NOT>")
+      (cons -4 "<NOT")
+      (cons 6 "CENTERX4")
+      (cons -4 "NOT>")
+      (cons -4 "AND>")
+    )
+  )
+)
+
+(defun do_ext_lines (dl li / cur  ed en  num pt1 pt2 pt_1 pt_2)
+  (setq cur 0)
+  (setq num (sslength li))
+  (while (< cur num)
+    (setq
+      en   (ssname li cur)
+      ed   (entget en)
+      pt1  (cdr (assoc 10 ed))
+      pt2  (cdr (assoc 11 ed))
+      pt_1 (polar pt2 (angle pt1 pt2) dl)
+      pt_2 (polar pt1 (angle pt2 pt1) dl)
+      ed   (dsubst ed (list (cons 10 pt_1) (cons 11 pt_2)))
+    )
+    (entmod ed)
+    (setq cur (+ cur 1))
+  )
+)
+
 (princ "\t...загружен.\n")
 ;|«Visual LISP© Format Options»
 (72 2 20 2 nil "end of" 60 9 0 0 0 T T nil T)
