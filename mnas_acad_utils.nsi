@@ -3,7 +3,7 @@
 ; The name of the installer
 Name "mnas_acad_utils"
 
-!define VERSION "2.7.7.6"
+!define VERSION "2.7.7.7"
 
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\Russian.nlf"
@@ -795,19 +795,11 @@ Section "dwg"
   SetOutPath $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti
   File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Akkumuljator_04.dwg
   SetOutPath $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakClosed_01.dwg
-  SetOutPath $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakClosed_02.dwg
-  SetOutPath $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakOpen_01.dwg
-  SetOutPath $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakOpen_02.dwg
-  SetOutPath $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakOpen_03.dwg
-  SetOutPath $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakOpen_04.dwg
+  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\Gidrobak.dwg
   SetOutPath $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti
   File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\UkazatelUrovnja_01.dwg
+  SetOutPath $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem
+  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\GidroPnevmo.dwg
   SetOutPath $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Klapany
   File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Klapany\Klapan_01.dwg
   SetOutPath $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry
@@ -2395,13 +2387,9 @@ Section "un.dwg"
   Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Akkumuljator_02.dwg
   Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Akkumuljator_03.dwg
   Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Akkumuljator_04.dwg
-  Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakClosed_01.dwg
-  Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakClosed_02.dwg
-  Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakOpen_01.dwg
-  Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakOpen_02.dwg
-  Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakOpen_03.dwg
-  Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\GidrobakOpen_04.dwg
+  Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\Gidrobaki\Gidrobak.dwg
   Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Emkosti\UkazatelUrovnja_01.dwg
+  Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\GidroPnevmo.dwg
   Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Klapany\Klapan_01.dwg
   Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_01.dwg
   Delete $INSTDIR\.\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_02.dwg
