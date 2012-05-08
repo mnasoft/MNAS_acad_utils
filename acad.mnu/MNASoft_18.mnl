@@ -201,7 +201,7 @@
 
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/lines")
-	  '("d_chamf" "d_off" "d_otv" "d_rez" "exl" "xt" "ltp" "r_off" "z0")
+	  '("d_chamf" "d_off" "d_otv" "d_rez" "exl" "xt" "xtcen" "cxt" "ltp" "r_off" "z0")
 )
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/lopatka") '("lo"))

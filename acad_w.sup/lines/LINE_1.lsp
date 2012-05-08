@@ -94,16 +94,19 @@
 ;;;;;;"Производится проецирование выбранных линий на плоскость Z=0.\n
 ;;;;;;Дораоботать для проецирования и других типов примитивов\n
 ;;;;;;для любой плоскости.(текущей ПСК)." "Измени")
-(defun c:xtcen (/ ss_cut_edges li dl cur num en ed pt1 pt2 pt_1 pt_2)
+(defun c:xtcen (/ ss_cut_edges li dl cur num en ed pt1 pt2 pt_1 pt_2 pbox)
   (command "_.undo" "_begin")
+  (setq pbox (getvar "pickbox"))
   (setq
     li		 (get_center_lines)
     ss_cut_edges (get_cut_edges)
   )
   (setq dl (getdist "\nВведите расстояние:"))
-  (command "_zoom" "_e")
-
+  
   (do_ext_lines (* dl 0.1) li)
+  
+  (command "_zoom" "_e")
+  (command "_redraw")
   
   (command "_trim" ss_cut_edges "")
   (setq cur 0)
@@ -121,6 +124,7 @@
   (command "")
   (do_ext_lines dl li)
   (command "_zoom" "_p")
+  (setvar "pickbox" pbox)
   (command "_.undo" "_end")
 )
 
@@ -190,6 +194,14 @@
     (setq cur (+ cur 1))
   )
 )
+
+(defun c:cxt ()
+  (c:ltp)
+  (c:rgb)
+  (c:xtcen)
+;;;  (command "pur")
+)
+
 
 (princ "\t...загружен.\n")
 ;|«Visual LISP© Format Options»
