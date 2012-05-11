@@ -91,9 +91,7 @@
 )
 
 ;;;;;;("xtcen"
-;;;;;;"Производится проецирование выбранных линий на плоскость Z=0.\n
-;;;;;;Дораоботать для проецирования и других типов примитивов\n
-;;;;;;для любой плоскости.(текущей ПСК)." "Измени")
+;;;;;;"Удлинение всех осевых линий за границы контура на определенное расстояние." "Измени")
 (defun c:xtcen (/ ss_cut_edges li dl cur num en ed pt1 pt2 pt_1 pt_2 pbox)
   (command "_.undo" "_begin")
   (setq pbox (getvar "pickbox"))
@@ -128,6 +126,12 @@
   (command "_.undo" "_end")
 )
 
+
+;;;f;;;("get_center_lines" "Возвращает набор выбора из отрезков, имеющих осевой тип линии.
+;;;f;;;Пример использования:
+;;;f;;;(get_center_lines)
+;;;f;;;<Selection set: db>
+;;;f;;;")
 (defun get_center_lines()
   (ssget
        "X"
@@ -143,7 +147,11 @@
        )
      )
 )
-
+;;;f;;;("get_cut_edges" "Возвращает набор выбора из отрезков, дуг, окружностей, полилиний, эллипсов, имеющих не осевой тип линии.
+;;;f;;;Пример использования:
+;;;f;;;(get_cut_edges)
+;;;f;;;<Selection set: df>
+;;;f;;;")
 (defun get_cut_edges ()
   (ssget
     "X"
@@ -177,12 +185,12 @@
   )
 )
 
-(defun do_ext_lines (dl li / cur  ed en  num pt1 pt2 pt_1 pt_2)
+(defun do_ext_lines (dl ss / cur  ed en  num pt1 pt2 pt_1 pt_2)
   (setq cur 0)
-  (setq num (sslength li))
+  (setq num (sslength ss))
   (while (< cur num)
     (setq
-      en   (ssname li cur)
+      en   (ssname ss cur)
       ed   (entget en)
       pt1  (cdr (assoc 10 ed))
       pt2  (cdr (assoc 11 ed))
@@ -195,13 +203,10 @@
   )
 )
 
-(defun c:cxt ()
-  (c:ltp)
-  (c:rgb)
-  (c:xtcen)
-;;;  (command "pur")
-)
 
+(defun c:cxt ()
+  (command "_script" (strcat (acad_sup) "/lines/cxt.scr"))  
+)
 
 (princ "\t...загружен.\n")
 ;|«Visual LISP© Format Options»

@@ -2021,6 +2021,10 @@ Section "dot"
 SectionEnd
 Section "pdf"
 SectionEnd
+Section "scr"
+  SetOutPath $INSTDIR\.\acad_w.sup\lines
+  File .\acad_w.sup\lines\cxt.scr
+SectionEnd
 
 ;_Section_MNASoft_files_END____________________________________________________
 
@@ -3027,6 +3031,9 @@ Section "un.dot"
   Delete $INSTDIR\.\acad_w.sup\prj\Spring\Spring_base_tree.dot
 SectionEnd
 Section "un.pdf"
+SectionEnd
+Section "un.scr"
+  Delete $INSTDIR\.\acad_w.sup\lines\cxt.scr
 SectionEnd
 
 ;______________________________________________________________________________
