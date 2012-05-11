@@ -920,32 +920,144 @@ Section "hdx"
   File .\acad_w.sup\spec\Specification.hdx
 SectionEnd
 Section "html"
+  SetOutPath $INSTDIR\.\acad.help\a
+  File .\acad.help\a\a.html
+  SetOutPath $INSTDIR\.\acad.help\ar
+  File .\acad.help\ar\ar.html
+  SetOutPath $INSTDIR\.\acad.help\b
+  File .\acad.help\b\b.html
   SetOutPath $INSTDIR\.\acad.help\bas
   File .\acad.help\bas\bas.html
+  SetOutPath $INSTDIR\.\acad.help\bo
+  File .\acad.help\bo\bo.html
+  SetOutPath $INSTDIR\.\acad.help\br
+  File .\acad.help\br\br.html
+  SetOutPath $INSTDIR\.\acad.help\c
+  File .\acad.help\c\c.html
+  SetOutPath $INSTDIR\.\acad.help\ch
+  File .\acad.help\ch\ch.html
+  SetOutPath $INSTDIR\.\acad.help\chd
+  File .\acad.help\chd\chd.html
+  SetOutPath $INSTDIR\.\acad.help\co
+  File .\acad.help\co\co.html
+  SetOutPath $INSTDIR\.\acad.help\cp
+  File .\acad.help\cp\cp.html
   SetOutPath $INSTDIR\.\acad.help\cut
   File .\acad.help\cut\cut.html
+  SetOutPath $INSTDIR\.\acad.help\di
+  File .\acad.help\di\di.html
+  SetOutPath $INSTDIR\.\acad.help\dt
+  File .\acad.help\dt\dt.html
+  SetOutPath $INSTDIR\.\acad.help\e
+  File .\acad.help\e\e.html
   SetOutPath $INSTDIR\.\acad.help\ea
   File .\acad.help\ea\ea.html
+  SetOutPath $INSTDIR\.\acad.help\el
+  File .\acad.help\el\el.html
+  SetOutPath $INSTDIR\.\acad.help\ex
+  File .\acad.help\ex\ex.html
+  SetOutPath $INSTDIR\.\acad.help\f
+  File .\acad.help\f\f.html
   SetOutPath $INSTDIR\.\acad.help\format
   File .\acad.help\format\format.html
+  SetOutPath $INSTDIR\.\acad.help\fr
+  File .\acad.help\fr\fr.html
+  SetOutPath $INSTDIR\.\acad.help\git
+  File .\acad.help\git\git.html
+  SetOutPath $INSTDIR\.\acad.help\gr_on_off
+  File .\acad.help\gr_on_off\gr_on_off.html
+  SetOutPath $INSTDIR\.\acad.help\h
+  File .\acad.help\h\h.html
+  SetOutPath $INSTDIR\.\acad.help\id
+  File .\acad.help\id\id.html
   SetOutPath $INSTDIR\.\acad.help\index
   File .\acad.help\index\index.html
   SetOutPath $INSTDIR\.\acad.help\index_en
   File .\acad.help\index_en\index_en.html
   SetOutPath $INSTDIR\.\acad.help\index_ru
   File .\acad.help\index_ru\index_ru.html
+  SetOutPath $INSTDIR\.\acad.help\j
+  File .\acad.help\j\j.html
+  SetOutPath $INSTDIR\.\acad.help\l
+  File .\acad.help\l\l.html
+  SetOutPath $INSTDIR\.\acad.help\le
+  File .\acad.help\le\le.html
+  SetOutPath $INSTDIR\.\acad.help\li
+  File .\acad.help\li\li.html
   SetOutPath $INSTDIR\.\acad.help\look
   File .\acad.help\look\look.html
+  SetOutPath $INSTDIR\.\acad.help\m
+  File .\acad.help\m\m.html
+  SetOutPath $INSTDIR\.\acad.help\ma
+  File .\acad.help\ma\ma.html
+  SetOutPath $INSTDIR\.\acad.help\mi
+  File .\acad.help\mi\mi.html
   SetOutPath $INSTDIR\.\acad.help
   File .\acad.help\mnasoft_command_list.html
-  SetOutPath $INSTDIR\.\acad.help
-  File .\acad.help\mnasoft_command_list_version_2.html
+  SetOutPath $INSTDIR\.\acad.help\ms
+  File .\acad.help\ms\ms.html
+  SetOutPath $INSTDIR\.\acad.help\o
+  File .\acad.help\o\o.html
+  SetOutPath $INSTDIR\.\acad.help\oops
+  File .\acad.help\oops\oops.html
+  SetOutPath $INSTDIR\.\acad.help\op
+  File .\acad.help\op\op.html
+  SetOutPath $INSTDIR\.\acad.help\pe
+  File .\acad.help\pe\pe.html
   SetOutPath $INSTDIR\.\acad.help\poz
   File .\acad.help\poz\poz.html
+  SetOutPath $INSTDIR\.\acad.help\ps
+  File .\acad.help\ps\ps.html
+  SetOutPath $INSTDIR\.\acad.help\pur
+  File .\acad.help\pur\pur.html
+  SetOutPath $INSTDIR\.\acad.help\ra
+  File .\acad.help\ra\ra.html
+  SetOutPath $INSTDIR\.\acad.help\rec
+  File .\acad.help\rec\rec.html
+  SetOutPath $INSTDIR\.\acad.help\rg
+  File .\acad.help\rg\rg.html
+  SetOutPath $INSTDIR\.\acad.help\rga
+  File .\acad.help\rga\rga.html
+  SetOutPath $INSTDIR\.\acad.help\ro
+  File .\acad.help\ro\ro.html
   SetOutPath $INSTDIR\.\acad.help\rou
   File .\acad.help\rou\rou.html
+  SetOutPath $INSTDIR\.\acad.help\s
+  File .\acad.help\s\s.html
+  SetOutPath $INSTDIR\.\acad.help\sc
+  File .\acad.help\sc\sc.html
+  SetOutPath $INSTDIR\.\acad.help\sk
+  File .\acad.help\sk\sk.html
   SetOutPath $INSTDIR\.\acad.help\sv
   File .\acad.help\sv\sv.html
+  SetOutPath $INSTDIR\.\acad.help\tm
+  File .\acad.help\tm\tm.html
+  SetOutPath $INSTDIR\.\acad.help\tr
+  File .\acad.help\tr\tr.html
+  SetOutPath $INSTDIR\.\acad.help\u
+  File .\acad.help\u\u.html
+  SetOutPath $INSTDIR\.\acad.help\undo
+  File .\acad.help\undo\undo.html
+  SetOutPath $INSTDIR\.\acad.help\vs
+  File .\acad.help\vs\vs.html
+  SetOutPath $INSTDIR\.\acad.help\x
+  File .\acad.help\x\x.html
+  SetOutPath $INSTDIR\.\acad.help\z
+  File .\acad.help\z\z.html
+  SetOutPath $INSTDIR\.\acad.help\za
+  File .\acad.help\za\za.html
+  SetOutPath $INSTDIR\.\acad.help\zc
+  File .\acad.help\zc\zc.html
+  SetOutPath $INSTDIR\.\acad.help\zd
+  File .\acad.help\zd\zd.html
+  SetOutPath $INSTDIR\.\acad.help\ze
+  File .\acad.help\ze\ze.html
+  SetOutPath $INSTDIR\.\acad.help\zp
+  File .\acad.help\zp\zp.html
+  SetOutPath $INSTDIR\.\acad.help\zv
+  File .\acad.help\zv\zv.html
+  SetOutPath $INSTDIR\.\acad.help\zw
+  File .\acad.help\zw\zw.html
   SetOutPath $INSTDIR\.
   File .\CopyRight.html
   SetOutPath $INSTDIR\.
@@ -2459,19 +2571,75 @@ Section "un.hdx"
   Delete $INSTDIR\.\acad_w.sup\spec\Specification.hdx
 SectionEnd
 Section "un.html"
+  Delete $INSTDIR\.\acad.help\a\a.html
+  Delete $INSTDIR\.\acad.help\ar\ar.html
+  Delete $INSTDIR\.\acad.help\b\b.html
   Delete $INSTDIR\.\acad.help\bas\bas.html
+  Delete $INSTDIR\.\acad.help\bo\bo.html
+  Delete $INSTDIR\.\acad.help\br\br.html
+  Delete $INSTDIR\.\acad.help\c\c.html
+  Delete $INSTDIR\.\acad.help\ch\ch.html
+  Delete $INSTDIR\.\acad.help\chd\chd.html
+  Delete $INSTDIR\.\acad.help\co\co.html
+  Delete $INSTDIR\.\acad.help\cp\cp.html
   Delete $INSTDIR\.\acad.help\cut\cut.html
+  Delete $INSTDIR\.\acad.help\di\di.html
+  Delete $INSTDIR\.\acad.help\dt\dt.html
+  Delete $INSTDIR\.\acad.help\e\e.html
   Delete $INSTDIR\.\acad.help\ea\ea.html
+  Delete $INSTDIR\.\acad.help\el\el.html
+  Delete $INSTDIR\.\acad.help\ex\ex.html
+  Delete $INSTDIR\.\acad.help\f\f.html
   Delete $INSTDIR\.\acad.help\format\format.html
+  Delete $INSTDIR\.\acad.help\fr\fr.html
+  Delete $INSTDIR\.\acad.help\git\git.html
+  Delete $INSTDIR\.\acad.help\gr_on_off\gr_on_off.html
+  Delete $INSTDIR\.\acad.help\h\h.html
+  Delete $INSTDIR\.\acad.help\id\id.html
   Delete $INSTDIR\.\acad.help\index\index.html
   Delete $INSTDIR\.\acad.help\index_en\index_en.html
   Delete $INSTDIR\.\acad.help\index_ru\index_ru.html
+  Delete $INSTDIR\.\acad.help\j\j.html
+  Delete $INSTDIR\.\acad.help\l\l.html
+  Delete $INSTDIR\.\acad.help\le\le.html
+  Delete $INSTDIR\.\acad.help\li\li.html
   Delete $INSTDIR\.\acad.help\look\look.html
+  Delete $INSTDIR\.\acad.help\m\m.html
+  Delete $INSTDIR\.\acad.help\ma\ma.html
+  Delete $INSTDIR\.\acad.help\mi\mi.html
   Delete $INSTDIR\.\acad.help\mnasoft_command_list.html
-  Delete $INSTDIR\.\acad.help\mnasoft_command_list_version_2.html
+  Delete $INSTDIR\.\acad.help\ms\ms.html
+  Delete $INSTDIR\.\acad.help\o\o.html
+  Delete $INSTDIR\.\acad.help\oops\oops.html
+  Delete $INSTDIR\.\acad.help\op\op.html
+  Delete $INSTDIR\.\acad.help\pe\pe.html
   Delete $INSTDIR\.\acad.help\poz\poz.html
+  Delete $INSTDIR\.\acad.help\ps\ps.html
+  Delete $INSTDIR\.\acad.help\pur\pur.html
+  Delete $INSTDIR\.\acad.help\ra\ra.html
+  Delete $INSTDIR\.\acad.help\rec\rec.html
+  Delete $INSTDIR\.\acad.help\rg\rg.html
+  Delete $INSTDIR\.\acad.help\rga\rga.html
+  Delete $INSTDIR\.\acad.help\ro\ro.html
   Delete $INSTDIR\.\acad.help\rou\rou.html
+  Delete $INSTDIR\.\acad.help\s\s.html
+  Delete $INSTDIR\.\acad.help\sc\sc.html
+  Delete $INSTDIR\.\acad.help\sk\sk.html
   Delete $INSTDIR\.\acad.help\sv\sv.html
+  Delete $INSTDIR\.\acad.help\tm\tm.html
+  Delete $INSTDIR\.\acad.help\tr\tr.html
+  Delete $INSTDIR\.\acad.help\u\u.html
+  Delete $INSTDIR\.\acad.help\undo\undo.html
+  Delete $INSTDIR\.\acad.help\vs\vs.html
+  Delete $INSTDIR\.\acad.help\x\x.html
+  Delete $INSTDIR\.\acad.help\z\z.html
+  Delete $INSTDIR\.\acad.help\za\za.html
+  Delete $INSTDIR\.\acad.help\zc\zc.html
+  Delete $INSTDIR\.\acad.help\zd\zd.html
+  Delete $INSTDIR\.\acad.help\ze\ze.html
+  Delete $INSTDIR\.\acad.help\zp\zp.html
+  Delete $INSTDIR\.\acad.help\zv\zv.html
+  Delete $INSTDIR\.\acad.help\zw\zw.html
   Delete $INSTDIR\.\CopyRight.html
   Delete $INSTDIR\.\gpl-3.0-standalone.html
 SectionEnd
@@ -3163,19 +3331,76 @@ Section "Uninstall"
   RMDir  $INSTDIR\acad_fnt
   RMDir  $INSTDIR\acad.mnu\Acad_mnu_icon
   RMDir  $INSTDIR\acad.mnu
+  RMDir  $INSTDIR\acad.help\zw
+  RMDir  $INSTDIR\acad.help\zv
+  RMDir  $INSTDIR\acad.help\zp
+  RMDir  $INSTDIR\acad.help\ze
+  RMDir  $INSTDIR\acad.help\zd
+  RMDir  $INSTDIR\acad.help\zc
+  RMDir  $INSTDIR\acad.help\za
+  RMDir  $INSTDIR\acad.help\z
+  RMDir  $INSTDIR\acad.help\x
+  RMDir  $INSTDIR\acad.help\vs
+  RMDir  $INSTDIR\acad.help\undo
+  RMDir  $INSTDIR\acad.help\u
+  RMDir  $INSTDIR\acad.help\tr
+  RMDir  $INSTDIR\acad.help\tm
   RMDir  $INSTDIR\acad.help\sv
+  RMDir  $INSTDIR\acad.help\sk
+  RMDir  $INSTDIR\acad.help\sc
+  RMDir  $INSTDIR\acad.help\s
   RMDir  $INSTDIR\acad.help\rou
+  RMDir  $INSTDIR\acad.help\ro
+  RMDir  $INSTDIR\acad.help\rga
+  RMDir  $INSTDIR\acad.help\rg
+  RMDir  $INSTDIR\acad.help\rec
+  RMDir  $INSTDIR\acad.help\ra
+  RMDir  $INSTDIR\acad.help\pur
+  RMDir  $INSTDIR\acad.help\ps
   RMDir  $INSTDIR\acad.help\poz
+  RMDir  $INSTDIR\acad.help\pe
+  RMDir  $INSTDIR\acad.help\op
+  RMDir  $INSTDIR\acad.help\oops
+  RMDir  $INSTDIR\acad.help\o
+  RMDir  $INSTDIR\acad.help\ms
+  RMDir  $INSTDIR\acad.help\mi
+  RMDir  $INSTDIR\acad.help\ma
+  RMDir  $INSTDIR\acad.help\m
   RMDir  $INSTDIR\acad.help\ltp
   RMDir  $INSTDIR\acad.help\look
+  RMDir  $INSTDIR\acad.help\li
+  RMDir  $INSTDIR\acad.help\le
+  RMDir  $INSTDIR\acad.help\l
+  RMDir  $INSTDIR\acad.help\j
   RMDir  $INSTDIR\acad.help\ins_lit
   RMDir  $INSTDIR\acad.help\index_ru
   RMDir  $INSTDIR\acad.help\index_en
   RMDir  $INSTDIR\acad.help\index
+  RMDir  $INSTDIR\acad.help\id
+  RMDir  $INSTDIR\acad.help\h
+  RMDir  $INSTDIR\acad.help\gr_on_off
+  RMDir  $INSTDIR\acad.help\git
+  RMDir  $INSTDIR\acad.help\fr
   RMDir  $INSTDIR\acad.help\format
+  RMDir  $INSTDIR\acad.help\f
+  RMDir  $INSTDIR\acad.help\ex
+  RMDir  $INSTDIR\acad.help\el
   RMDir  $INSTDIR\acad.help\ea
+  RMDir  $INSTDIR\acad.help\e
+  RMDir  $INSTDIR\acad.help\dt
+  RMDir  $INSTDIR\acad.help\di
   RMDir  $INSTDIR\acad.help\cut
+  RMDir  $INSTDIR\acad.help\cp
+  RMDir  $INSTDIR\acad.help\co
+  RMDir  $INSTDIR\acad.help\chd
+  RMDir  $INSTDIR\acad.help\ch
+  RMDir  $INSTDIR\acad.help\c
+  RMDir  $INSTDIR\acad.help\br
+  RMDir  $INSTDIR\acad.help\bo
   RMDir  $INSTDIR\acad.help\bas
+  RMDir  $INSTDIR\acad.help\b
+  RMDir  $INSTDIR\acad.help\ar
+  RMDir  $INSTDIR\acad.help\a
   RMDir  $INSTDIR\acad.help
 
 ;_RMDir_End_________________________________________________________________________

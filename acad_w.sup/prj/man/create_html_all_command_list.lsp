@@ -1,13 +1,9 @@
 (defun create_cmd_html (/ fl)
   (load (strcat (acad_sup) "\\prj\\man\\man_data_base.lsp")) ;;;
-  (setq fl (open (strcat (acad_help) "\\cmd.html") "w")) ;;;
-  
-  (princ (javascript-show_hide-string) fl)
+  (setq fl (open (strcat (acad_help) "\\mnasoft_command_list.html") "w")) ;;; cmd.html
 
-;;;  (mapcar
-;;;    (function MNAS_command_help_tag_href)
-;;;    MNAS_command_help
-;;;  )
+  (princ (create-html-header) fl)
+  (princ (javascript-show_hide-string) fl)
   
   (mapcar
     (function MNAS_command_help_tag_01)
@@ -24,14 +20,12 @@
      (cdr el)
   )
 
-  (princ "<DIV><A href='javascript: show_hide(id)' onclick=\"show_hide('"
-	 fl
-  )
+  (princ "\n  <DIV>\n    <A href='javascript: show_hide(id)' onclick=\"show_hide('" fl)
   (princ tag fl)
   (princ "')\" ><H2>" fl)
   (princ tag fl)
-  (princ "</H2></A></DIV>\n" fl)
-  (princ "<DIV Name='" fl)
+  (princ "</H2></A>\n  </DIV>" fl)
+  (princ "\n  <DIV Name='" fl)
   (princ tag fl)
   (princ "' ID='" fl)
   (princ tag fl)
@@ -42,16 +36,16 @@
       (lambda (el)
 	(princ
 	  (strcat
-	    "<P><A HREF=\"./"
+	    "    <P>\n      <A HREF=\"./"
 	    (car el)
 	    "/"
 	    (car el)
-	    ".html\"\n"
+	    ".html\""
 	    "\tNAME=\"command_"
 	    (car el)
 	    "\"> "
 	    (car el)
-	    " </A> - "
+	    " </A>\n        - "
 	    (STRING-SUBST-ALL "</P><P>" "\n" (cadr el))
 	    "</P>\n"
 	  )
@@ -62,7 +56,7 @@
     command-list
   )
 
-  (princ "</DIV>" fl)
+  (princ "  </DIV>" fl)
 
 
   (princ)
@@ -81,22 +75,55 @@
   string
 )
 
+(defun create-html-header ()
+  (strcat
+    "<HTML>"                                                                          "\n"
+    "  <HEAD>"                                                                        "\n"
+    "    <META HTTP-EQUIV=\"CONTENT-TYPE\" CONTENT=\"text/html; charset=1251\">"      "\n"
+    "    <TITLE>Перечень команд пакета MNAS_acad_utils функций по категориям</TITLE>" "\n"
+    "    <META NAME=\"AUTHOR\" CONTENT=\"Николай Матвеев\">"                          "\n"
+    "    <META NAME=\"CREATED\" CONTENT=\"" (type-html-date) "\">"                    "\n"
+    "  </HEAD>"                                                                       "\n"
+    ""                                                                                "\n"
+    "  <BODY LANG=\"ru-RU\" DIR=\"LTR\">"                                             "\n"
+    "  <H1>"                                                                          "\n"
+    "    <P>Перечень команд пакета MNAS_acad_utils функций по категориям<P>"          "\n"
+    "  </H1>"                                                                         "\n"
+    "  <BR />"                                                                        "\n"
+   )
+)
+
+(defun type-html-date (/ date-time)
+  (setq
+    date-time (getvar "cdate")
+    date (fix date-time )
+    time (fix (* 1e8 (- date-time date)))
+  )
+  (strcat
+    (itoa date)
+    ";"
+    (itoa time)
+  )
+)
+
 (defun javascript-show_hide-string ()
   (strcat
-    "<script><!--                            \n"
-    "function show_hide(id)                  \n"
-    "{                                       \n"
-    "var id = document.getElementById(id) ;  \n"
-    "    if (id.style.display == \"none\")   \n"
-    "    {                                   \n"
-    "        id.style.display = \"block\";   \n"
-    "    }                                   \n"
-    "    else                                \n"
-    "    {                                   \n"
-    "        id.style.display = \"none\";    \n"
-    "    }                                   \n"
-    "}                                       \n"
-    "--></script>                            \n"
+    "  <script>"                                   "\n"
+    "    <!--"                                     "\n"
+    "    function show_hide(id)"                   "\n"
+    "    {"                                        "\n"
+    "      var id = document.getElementById(id) ;" "\n"
+    "      if (id.style.display == \"none\")"      "\n"
+    "      {"                                      "\n"
+    "        id.style.display = \"block\";"        "\n"
+    "      }"                                      "\n"
+    "      else"                                   "\n"
+    "      {"                                      "\n"
+    "        id.style.display = \"none\";"         "\n"
+    "      }"                                      "\n"
+    "    }"                                        "\n"
+    "    -->"                                      "\n"
+    "  </script>"                                  "\n"
    )
 )
 
@@ -149,39 +176,6 @@
   )
   new_lst
 )
-
-;;;(defun MNAS_command_help_tag_href (el)
-;;;  (princ
-;;;    (strcat
-;;;      "<P><A HREF=\"./"
-;;;      (car el)
-;;;      "/"
-;;;      (car el)
-;;;      ".html\"\n"
-;;;      "\tNAME=\"command_"
-;;;      (car el)
-;;;      "\"> "
-;;;      (car el)
-;;;      " </A> - "
-;;;      (STRING-SUBST-ALL "</P><P>" "\n" (cadr el) )
-;;;      "</P>\n"
-;;;    )
-;;;    fl
-;;;  )
-;;;  (princ)
-;;;)
-
-;;;(setq
-;;;    fn (getfiled
-;;;	 "Select a Lisp File"
-;;;	 "c:/program files/ <AutoCAD installation directory>/support/"
-;;;	 "lsp"
-;;;	 1
-;;;       )
-;;;    fl (open fn "w")
-;;;  )
-;;;(print new_lst fl)
-;;;(close fl)
 
 ;|«Visual LISP© Format Options»
 (72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
