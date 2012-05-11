@@ -1,1 +1,1 @@
-del /S  *._* *.bak *.fas *.ob *.pdb *.*~ 
+del /S  *._* *.bak *.fas *.ob *.pdb *.*~ *._lo
