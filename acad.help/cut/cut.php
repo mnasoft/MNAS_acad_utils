@@ -48,13 +48,13 @@
 </P>
 <P STYLE="margin-bottom: 0in">Смотри также команды:</P>
 <UL>
-	<LI><P STYLE="margin-bottom: 0in"><A HREF="../index/index.html">INDEX</A>;</P>
-	<LI><P STYLE="margin-bottom: 0in"><A HREF="../index_en/index_en.html">INDEX_EN</A>;</P>
-	<LI><P STYLE="margin-bottom: 0in"><A HREF="../index_ru/index_ru.html">INDEX_RU</A>;</P>
-	<LI><P STYLE="margin-bottom: 0in"><A HREF="../bas/bas.html">BAS</A>;</P>
-	<LI><P STYLE="margin-bottom: 0in"><A HREF="../look/look.html">LOOK</A>;</P>
+	<LI><P STYLE="margin-bottom: 0in"><A HREF="../index/index.php">INDEX</A>;</P>
+	<LI><P STYLE="margin-bottom: 0in"><A HREF="../index_en/index_en.php">INDEX_EN</A>;</P>
+	<LI><P STYLE="margin-bottom: 0in"><A HREF="../index_ru/index_ru.php">INDEX_RU</A>;</P>
+	<LI><P STYLE="margin-bottom: 0in"><A HREF="../bas/bas.php">BAS</A>;</P>
+	<LI><P STYLE="margin-bottom: 0in"><A HREF="../look/look.php">LOOK</A>;</P>
 	<LI><P STYLE="margin-bottom: 0in"><A HREF="">CUT</A>.</P>
 </UL>
-<P STYLE="margin-bottom: 0in"><A HREF="../mnasoft_command_list.html">К оглавлению...</A>.</P>
+<P STYLE="margin-bottom: 0in"><A HREF="../mnasoft_command_list.php">К оглавлению...</A>.</P>
 </BODY>
 </HTML>

@@ -7,14 +7,14 @@
   <BODY LANG="ru-RU">
     <H1><P>zv - Изменение области просмотра таким образом, чтобы стала отображаться максимальная область, не требующая регенерации.<P></H1>
     <p>Смотри также команды:
-    <a href="../z/z.html">z</a>,
-    <a href="../za/za.html">za</a>,
-    <a href="../zc/zc.html">zc</a>,
-    <a href="../zd/zd.html">zd</a>,
-    <a href="../ze/ze.html">ze</a>,
-    <a href="../zp/zp.html">zp</a>,
-    <a href="../zv/zv.html">zv</a>,
-    <a href="../zw/zw.html">zw</a>.
-    <p><a href="../mnasoft_command_list.html">Перейти к оглавлению</a><p>
+    <a href="../z/z.php">z</a>,
+    <a href="../za/za.php">za</a>,
+    <a href="../zc/zc.php">zc</a>,
+    <a href="../zd/zd.php">zd</a>,
+    <a href="../ze/ze.php">ze</a>,
+    <a href="../zp/zp.php">zp</a>,
+    <a href="../zv/zv.php">zv</a>,
+    <a href="../zw/zw.php">zw</a>.
+    <p><a href="../mnasoft_command_list.php">Перейти к оглавлению</a><p>
   </BODY>
 </HTML>

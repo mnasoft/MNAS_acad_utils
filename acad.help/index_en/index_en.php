@@ -23,11 +23,11 @@
 </P>
 <P STYLE="margin-bottom: 0cm">Смотри также команды:</P>
 <UL>
-	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../index/index.html">INDEX</A>;</P>
-	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../index_ru/index_ru.html">INDEX_RU</A>;</P>
-	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../bas/bas.html">BAS</A>;</P>
-	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../look/look.html">LOOK</A>;</P>
-	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../cut/cut.html">CUT</A>.</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../index/index.php">INDEX</A>;</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../index_ru/index_ru.php">INDEX_RU</A>;</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../bas/bas.php">BAS</A>;</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../look/look.php">LOOK</A>;</P>
+	<LI><P STYLE="margin-bottom: 0cm"><A HREF="../cut/cut.php">CUT</A>.</P>
 </UL>
 </BODY>
 </HTML>

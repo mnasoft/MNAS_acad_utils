@@ -24,11 +24,11 @@
 </P>
 <P STYLE="margin-bottom: 0in">Смотри также команды:</P>
 <UL>
-	<LI><P STYLE="margin-bottom: 0in"><A HREF="../index/index.html">INDEX</A>;</P>
-	<LI><P STYLE="margin-bottom: 0in"><A HREF="../index_en/index_en.html">INDEX_EN</A>;</P>
-	<LI><P STYLE="margin-bottom: 0in"><A HREF="../bas/bas.html">BAS</A>;</P>
-	<LI><P STYLE="margin-bottom: 0in"><A HREF="../look/look.html">LOOK</A>;</P>
-	<LI><P STYLE="margin-bottom: 0in"><A HREF="../cut/cut.html">CUT</A>.</P>
+	<LI><P STYLE="margin-bottom: 0in"><A HREF="../index/index.php">INDEX</A>;</P>
+	<LI><P STYLE="margin-bottom: 0in"><A HREF="../index_en/index_en.php">INDEX_EN</A>;</P>
+	<LI><P STYLE="margin-bottom: 0in"><A HREF="../bas/bas.php">BAS</A>;</P>
+	<LI><P STYLE="margin-bottom: 0in"><A HREF="../look/look.php">LOOK</A>;</P>
+	<LI><P STYLE="margin-bottom: 0in"><A HREF="../cut/cut.php">CUT</A>.</P>
 </UL>
 <P STYLE="margin-bottom: 0in"><BR>
 </P>

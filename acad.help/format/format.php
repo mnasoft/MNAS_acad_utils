@@ -62,7 +62,7 @@
 <P ALIGN=CENTER><IMG SRC="format_html_637b65f8.png" NAME="Графический объект6" ALIGN=BOTTOM WIDTH=694 HEIGHT=498 BORDER=0></P>
 <P ALIGN=CENTER>Рисунок 6 - результат работы программы.</P>
 
-<P><A HREF="../mnasoft_command_list.html">К оглавлению...</A></P>
+<P><A HREF="../mnasoft_command_list.php">К оглавлению...</A></P>
 
 </BODY>
 </HTML>

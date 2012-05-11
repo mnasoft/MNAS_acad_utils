@@ -4,7 +4,7 @@
 # sections_by_ext.sh and section_one_by_ext.sh
 
 # Extensions wich we can add to output files
-f_ext="EXE INI VLX arx bat bmp cui cuix dat dbx dcl dwg fnt fon glb hdx html ijk jpg js lin log lsp mea mnl nsi png prj prv rtf sh shp shx slb sld ttf txt dot pdf scr"
+f_ext="EXE INI VLX arx bat bmp cui cuix dat dbx dcl dwg fnt fon glb hdx html ijk jpg js lin log lsp mea mnl nsi php png prj prv rtf sh shp shx slb sld ttf txt dot pdf scr"
 
 #Temporare file variables
 inst_fn="inst.tmp"
