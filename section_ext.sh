@@ -20,9 +20,9 @@ uninst_dirs()
   stree=`find . -type d -and ! -path "./.git*" -and ! -name "." | sort -r`
   for k in $stree
   do
-    d_name=`echo $k | sed -e 's/^.\///;s/\//\\\/g'`
-    echo "  RMDir  \$INSTDIR\\$d_name" >> $rm_dir_fn
+    echo "  RMDir  \$INSTDIR/${k}" >> $rm_dir_fn
   done
+  sed -i "s/\/\.\//\//g;s/\//\\\/g" $rm_dir_fn
 }
 
 # Cleaning output files
