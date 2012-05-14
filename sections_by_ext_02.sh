@@ -27,7 +27,6 @@ make_nsi_multi_sec()
   inst_uninst_sections.exe <files_by_ext.tmp
   
   echo 'Converting slash types         at' `date`
-
  
   sed -i "s/\/\.\//\//g;s/\//\\\/g" $inst_fn
   sed -i "s/\/\.\//\//g;s/\//\\\/g" $un_inst_fn
