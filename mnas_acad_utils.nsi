@@ -365,100 +365,28 @@ SectionEnd
 Section "dwg"
   SetOutPath $INSTDIR\acad_w.sup\spec
   File .\acad_w.sup\spec\Description_project_Spec_(Specification).dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_10.dwg
   SetOutPath $INSTDIR\acad_w.sup\smesitel_vla
   File .\acad_w.sup\smesitel_vla\Smes_H70.dwg
   SetOutPath $INSTDIR\acad_w.sup\smesitel_vla
   File .\acad_w.sup\smesitel_vla\Smes_M80.dwg
   SetOutPath $INSTDIR\acad_w.sup\lopatka
   File .\acad_w.sup\lopatka\1.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\IstochnikiPitanija
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\IstochnikiPitanija\IstochniiPitanija_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli\Nagrevatel_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli\Ohladitel_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Izmeritel_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Ventili
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Ventili\Ventil_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Klapany
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Klapany\Klapan_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Rashodomer_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Kompressor_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Termometry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Termometry\Termometr_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry\Manometr_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_01.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_11.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\SHT_1.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\speciph_1.dwg
   SetOutPath $INSTDIR\acad_w.sup
   File .\acad_w.sup\n_sher_1.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\IstochnikiPitanija
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\IstochnikiPitanija\IstochnikPitanija_02.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli\Nagrevatel_02.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli\Ohladitel_02.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Izmeritel_02.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Ventili
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Ventili\Ventil_02.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Rashodomer_02.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Termometry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Termometry\Termometr_02.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry\Manometr_02.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_02.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_02.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\SHT_2.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry\Manometr_03.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_03.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_03.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\SHT_3.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_04.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_04.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\SHT_4.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_05.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_05.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\SHT_5.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_06.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_06.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\SHT_6.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_07.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_08.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_09.dwg
   SetOutPath $INSTDIR\acad_w.sup
   File .\acad_w.sup\STRELKA.dwg
   SetOutPath $INSTDIR\acad_w.sup\lopatka
@@ -499,26 +427,14 @@ Section "dwg"
   File .\acad_w.sup\format\DOP_TEXT.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\DOP_TMV.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\UslovnyeOboznachenija.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Prochee
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Prochee\NapravlenijeTechenija.dwg
   SetOutPath $INSTDIR\acad_w.sup
   File .\acad_w.sup\dr_posadka.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Prochee
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Prochee\Forsunka.dwg
   SetOutPath $INSTDIR\acad_w.sup
   File .\acad_w.sup\Provoloka.dwg
   SetOutPath $INSTDIR\acad_w.sup\smesitel_vla
   File .\acad_w.sup\smesitel_vla\Ris_1-readme.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Prochee
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Prochee\Zabornik.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Izmeritel.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\sogl.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Ventili
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Ventili\Ventil.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\speciph_n.dwg
   SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem
@@ -529,18 +445,12 @@ Section "dwg"
   File .\acad.help\ltp\ltp.dwg
   SetOutPath $INSTDIR\acad_w.sup
   File .\acad_w.sup\n_sher.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Rashodomer.dwg
   SetOutPath $INSTDIR\acad_w.sup\prj\Filter
   File .\acad_w.sup\prj\Filter\filter.dwg
   SetOutPath $INSTDIR\acad_w.sup\smesitel_vla
   File .\acad_w.sup\smesitel_vla\Smes_M80_recover.dwg
   SetOutPath $INSTDIR\acad_w.sup\for_lic
   File .\acad_w.sup\for_lic\for.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Termometry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Termometry\Termometr.dwg
-  SetOutPath $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry
-  File .\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry\Manometr.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\str.dwg
   SetOutPath $INSTDIR\acad_w.sup\mnas\Welding
@@ -2265,53 +2175,17 @@ Section "un.jpg"
 SectionEnd
 Section "un.dwg"
   Delete $INSTDIR\acad_w.sup\spec\Description_project_Spec_(Specification).dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_10.dwg
   Delete $INSTDIR\acad_w.sup\smesitel_vla\Smes_H70.dwg
   Delete $INSTDIR\acad_w.sup\smesitel_vla\Smes_M80.dwg
   Delete $INSTDIR\acad_w.sup\lopatka\1.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\IstochnikiPitanija\IstochniiPitanija_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli\Nagrevatel_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli\Ohladitel_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Izmeritel_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Ventili\Ventil_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Klapany\Klapan_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Rashodomer_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Kompressor_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Termometry\Termometr_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry\Manometr_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_01.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_11.dwg
   Delete $INSTDIR\acad_w.sup\format\SHT_1.dwg
   Delete $INSTDIR\acad_w.sup\format\speciph_1.dwg
   Delete $INSTDIR\acad_w.sup\n_sher_1.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\IstochnikiPitanija\IstochnikPitanija_02.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli\Nagrevatel_02.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli\Ohladitel_02.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Izmeritel_02.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Ventili\Ventil_02.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Rashodomer_02.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Termometry\Termometr_02.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry\Manometr_02.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_02.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_02.dwg
   Delete $INSTDIR\acad_w.sup\format\SHT_2.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry\Manometr_03.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_03.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_03.dwg
   Delete $INSTDIR\acad_w.sup\format\SHT_3.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_04.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_04.dwg
   Delete $INSTDIR\acad_w.sup\format\SHT_4.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_05.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_05.dwg
   Delete $INSTDIR\acad_w.sup\format\SHT_5.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry\Filtr_06.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_06.dwg
   Delete $INSTDIR\acad_w.sup\format\SHT_6.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_07.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_08.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\Nasos_09.dwg
   Delete $INSTDIR\acad_w.sup\STRELKA.dwg
   Delete $INSTDIR\acad_w.sup\lopatka\LOPATKA.dwg
   Delete $INSTDIR\acad_w.sup\format\DOP_G_RB.dwg
@@ -2332,27 +2206,18 @@ Section "un.dwg"
   Delete $INSTDIR\acad_w.sup\WELD_BOT.dwg
   Delete $INSTDIR\acad_w.sup\format\DOP_TEXT.dwg
   Delete $INSTDIR\acad_w.sup\format\DOP_TMV.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\UslovnyeOboznachenija.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Prochee\NapravlenijeTechenija.dwg
   Delete $INSTDIR\acad_w.sup\dr_posadka.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Prochee\Forsunka.dwg
   Delete $INSTDIR\acad_w.sup\Provoloka.dwg
   Delete $INSTDIR\acad_w.sup\smesitel_vla\Ris_1-readme.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Prochee\Zabornik.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Izmeritel.dwg
   Delete $INSTDIR\acad_w.sup\format\sogl.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Ventili\Ventil.dwg
   Delete $INSTDIR\acad_w.sup\format\speciph_n.dwg
   Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\GidroPnevmo.dwg
   Delete $INSTDIR\acad_w.sup\weld_arrow_top.dwg
   Delete $INSTDIR\acad.help\ltp\ltp.dwg
   Delete $INSTDIR\acad_w.sup\n_sher.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Rashodomer.dwg
   Delete $INSTDIR\acad_w.sup\prj\Filter\filter.dwg
   Delete $INSTDIR\acad_w.sup\smesitel_vla\Smes_M80_recover.dwg
   Delete $INSTDIR\acad_w.sup\for_lic\for.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Termometry\Termometr.dwg
-  Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry\Manometr.dwg
   Delete $INSTDIR\acad_w.sup\format\str.dwg
   Delete $INSTDIR\acad_w.sup\mnas\Welding\weld_slides.dwg
   Delete $INSTDIR\acad_w.sup\mnas\Welding_lsp\weld_slides.dwg
@@ -3272,17 +3137,6 @@ Section "Uninstall"
   RMDir  $INSTDIR\acad_w.sup\add_prefix
   RMDir  $INSTDIR\acad_w.sup\acad_pgp
   RMDir  $INSTDIR\acad_w.sup\abrev
-  RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Ventili
-  RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Termometry
-  RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija\Manometry
-  RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\SredstvaIzmerenija
-  RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Prochee
-  RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy\IstochnikiPitanija
-  RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Nasosy
-  RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Ohladiteli
-  RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery\Filtry
-  RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Konditcionery
-  RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\Klapany
   RMDir  $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem
   RMDir  $INSTDIR\acad_w.sup\M_utils_loader
   RMDir  $INSTDIR\acad_w.sup
