@@ -10,7 +10,7 @@ f_ext="EXE INI VLX arx bat bmp cui cuix dat dbx dcl dwg fnt fon glb hdx html ijk
 inst_fn="inst.tmp"
 un_inst_fn="un.inst.tmp"
 rm_dir_fn="rmdir.tmp"
-nsi_tmp="mnas_acad_utils.nsi.tmp"
+nsi_tmp="mnas_acad_utils.nsi"
 
 uninst_dirs()
 {
@@ -41,7 +41,7 @@ echo '; MNAS_acad_utils.nsi
 ; The name of the installer
 Name "mnas_acad_utils"
 
-!define VERSION "2.7.7.7"
+!define VERSION "2.7.7.8"
 
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\Russian.nlf"
@@ -129,6 +129,7 @@ Section "Start Menu Shortcuts"
   CreateShortCut "$SMPROGRAMS\mnas_acad_utils\README.txt.lnk"              "$INSTDIR\README.txt"              "" "" 0  
   CreateShortCut "$SMPROGRAMS\mnas_acad_utils\Change.log.lnk"              "$INSTDIR\Change.log"              "" "" 0  
   CreateShortCut "$SMPROGRAMS\mnas_acad_utils\CopyRight.html.lnk"          "$INSTDIR\CopyRight.html"          "" "" 0  
+  CreateShortCut "$SMPROGRAMS\mnas_acad_utils\Mnasoft_command_list.html.lnk" "$INSTDIR\acad.help\mnasoft_command_list.html"          "" "" 0  
   CreateShortCut "$SMPROGRAMS\mnas_acad_utils\CopyRight.rtf.lnk"           "$INSTDIR\CopyRight.rtf"           "" "" 0  
   CreateShortCut "$SMPROGRAMS\mnas_acad_utils\gpl-3.0.rtf.lnk"             "$INSTDIR\gpl-3.0.rtf"             "" "" 0  
   CreateShortCut "$SMPROGRAMS\mnas_acad_utils\gpl-3.0-standalone.html.lnk" "$INSTDIR\gpl-3.0-standalone.html" "" "" 0  
