@@ -1,6 +1,6 @@
 (defun create_cmd_html (/ fl)
   (load (strcat (acad_sup) "\\prj\\man\\man_data_base.lsp")) ;;;
-  (setq fl (open (strcat (acad_help) "\\mnasoft_command_list.php") "w")) ;;; cmd.html
+  (setq fl (open (strcat (acad_help) "\\mnasoft_command_list.html") "w")) ;;; cmd.html
 
   (princ (create-html-header) fl)
   (princ (javascript-show_hide-string) fl)
@@ -40,7 +40,7 @@
 	    (car el)
 	    "/"
 	    (car el)
-	    ".php\""
+	    ".html\""
 	    "\tNAME=\"command_"
 	    (car el)
 	    "\"> "

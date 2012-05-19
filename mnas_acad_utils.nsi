@@ -299,12 +299,34 @@ SectionEnd
 Section "png"
   SetOutPath $INSTDIR\acad.help\format
   File .\acad.help\format\format_html_74c024b0.png
+  SetOutPath $INSTDIR\acad.help\block_block
+  File .\acad.help\block_block\image001.png
+  SetOutPath $INSTDIR\acad.help\point_block
+  File .\acad.help\point_block\image001.png
+  SetOutPath $INSTDIR\acad.help\block_block
+  File .\acad.help\block_block\image002.png
+  SetOutPath $INSTDIR\acad.help\point_block
+  File .\acad.help\point_block\image002.png
+  SetOutPath $INSTDIR\acad.help\block_block
+  File .\acad.help\block_block\image003.png
+  SetOutPath $INSTDIR\acad.help\point_block
+  File .\acad.help\point_block\image003.png
   SetOutPath $INSTDIR\acad.help\format
   File .\acad.help\format\format_html_7bcc0f33.png
   SetOutPath $INSTDIR\acad.help\cut
   File .\acad.help\cut\cut_html_md5f7eb3.png
+  SetOutPath $INSTDIR\acad.help\block_block
+  File .\acad.help\block_block\image004.png
+  SetOutPath $INSTDIR\acad.help\point_block
+  File .\acad.help\point_block\image004.png
+  SetOutPath $INSTDIR\acad.help\block_block
+  File .\acad.help\block_block\image005.png
+  SetOutPath $INSTDIR\acad.help\point_block
+  File .\acad.help\point_block\image005.png
   SetOutPath $INSTDIR\acad.help\format
   File .\acad.help\format\format_html_mdf4bec5.png
+  SetOutPath $INSTDIR\acad.help\block_block
+  File .\acad.help\block_block\image006.png
   SetOutPath $INSTDIR\acad.help\format
   File .\acad.help\format\format_html_m1d185b37.png
   SetOutPath $INSTDIR\acad.help\look
@@ -2139,9 +2161,20 @@ Section "un.ttf"
 SectionEnd
 Section "un.png"
   Delete $INSTDIR\acad.help\format\format_html_74c024b0.png
+  Delete $INSTDIR\acad.help\block_block\image001.png
+  Delete $INSTDIR\acad.help\point_block\image001.png
+  Delete $INSTDIR\acad.help\block_block\image002.png
+  Delete $INSTDIR\acad.help\point_block\image002.png
+  Delete $INSTDIR\acad.help\block_block\image003.png
+  Delete $INSTDIR\acad.help\point_block\image003.png
   Delete $INSTDIR\acad.help\format\format_html_7bcc0f33.png
   Delete $INSTDIR\acad.help\cut\cut_html_md5f7eb3.png
+  Delete $INSTDIR\acad.help\block_block\image004.png
+  Delete $INSTDIR\acad.help\point_block\image004.png
+  Delete $INSTDIR\acad.help\block_block\image005.png
+  Delete $INSTDIR\acad.help\point_block\image005.png
   Delete $INSTDIR\acad.help\format\format_html_mdf4bec5.png
+  Delete $INSTDIR\acad.help\block_block\image006.png
   Delete $INSTDIR\acad.help\format\format_html_m1d185b37.png
   Delete $INSTDIR\acad.help\look\look_html_m22518248.png
   Delete $INSTDIR\acad.help\format\format_html_952dae8.png
@@ -3173,6 +3206,7 @@ Section "Uninstall"
   RMDir  $INSTDIR\acad.help\pur
   RMDir  $INSTDIR\acad.help\ps
   RMDir  $INSTDIR\acad.help\poz
+  RMDir  $INSTDIR\acad.help\point_block
   RMDir  $INSTDIR\acad.help\pe
   RMDir  $INSTDIR\acad.help\op
   RMDir  $INSTDIR\acad.help\oops
@@ -3212,6 +3246,7 @@ Section "Uninstall"
   RMDir  $INSTDIR\acad.help\c
   RMDir  $INSTDIR\acad.help\br
   RMDir  $INSTDIR\acad.help\bo
+  RMDir  $INSTDIR\acad.help\block_block
   RMDir  $INSTDIR\acad.help\bas
   RMDir  $INSTDIR\acad.help\b
   RMDir  $INSTDIR\acad.help\ar

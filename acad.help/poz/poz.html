@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>MNASoft.MNAS_acad_utils.POZ</title>
+  <meta name="author" content="Николай Матвеев">
+  <meta name="created" content="20120511;23010779">
+  <meta name="changedby" content="Николай Матвеев">
+  <meta name="changed" content="20120519;14370000">
+ </head>
+ <body lang="ru-RU">
+  <h1>POZ</h1>
+  <h2>Выполняет простановку позиций, обозначения мест клеймения, маркировки, обозначения пайки</h2>
+  <p>Опции команды написаны на транслите</p>
+  <p>Данная команда позволяет проставить графическое изображение сварного шва, паяного соединения,
+     клеймления и маркировки без надписей обозначений. Текст сварных и паяных соединений необходимо 
+	 вносить «однострочным» текстом.</p>
+  <h3>1 Простановка сварки (SVarka/SSVarka)</h3>
+  <p>Если необходимо проставить сварной шов «по контуру» вносим букву «К» (английский алфавит).<br />
+     Если нужен обычный сварной шов, то просто «Ввод».</p>
+  <code>
+  <pre>
+   Команда: poz
+   Strelka/SVarka/SSVarka/POint/&lt;Nothing&gt;:sv«Ввод»
+   Kontur/&lt;Nothing&gt;:k«Ввод»
+   Montaz/&lt;Nothing&gt;: «Ввод»
+   Kley/Pajka/&lt;Nothing&gt;: «Ввод»
+   Nothing/Circle/KLejmo/&lt;Polka&gt;: «Ввод»,
+   Начало выноски: «Первая точка»
+   Вторая точка: «Вторая точка»
+   Третья точка: «Третья точка»
+  </pre>
+  </code>
+  <p><br /><p>
+  <img src="POZ_html_7056f16b.png" width="1200" />
+  <p><br /><p>
+  <h3><p>2 Простановка клеймения</p></h3>
+  <code>
+  <pre>
+   Команда: poz
+   Strelka/SVarka/SSVarka/POint/&lt;Nothing&gt;:st«Ввод»
+   Kontur/&lt;Nothing&gt;: «Ввод»
+   Montaz/&lt;Nothing&gt;: «Ввод»
+   Kley/Pajka/&lt;Nothing&gt;: «Ввод»
+   Nothing/Circle/KLejmo/&lt;Polka&gt;:kl«Ввод»>
+   Начало выноски: «Первая точка»
+   Вторая точка: «Вторая точка»
+   Третья точка: «Третья точка»
+  </pre>
+  </code>
+  <p><br /><p>
+  <p><img src="POZ_html_59182332.jpg" name="Графический объект2" width="1200" /> </p>
+  <p><br /><p>
+  <h3>3 Простановка маркировки</h3>
+  <code>
+  <pre>
+   Команда:POZ
+   STrelka/SVarka/SSVarka/POint/&lt;Nothing&gt;:st или po«Ввод»
+   Kontur/&lt;Nothing&gt;: «Ввод»
+   Montaz/&lt;Nothing&gt;: «Ввод»
+   Kley/Pajka/&lt;Nothing&gt;: «Ввод»
+   Nothing/Circle/KLejmo/&lt;Polka&gt;:c«Ввод»
+   Начало выноски: «Первая точка»
+   Вторая точка: «Вторая точка»
+   Третья точка: «Третья точка»
+  </pre>
+  </code>
+  <p><img src="POZ_html_m75ce748e.jpg" width="1200" /></p>
+  <p><br /></p>
+  <h3>4 Простановка паяного соединения</h3>
+  <code>
+  <pre>
+   Команда: poz
+   STrelka/SVarka/SSVarka/POint/&lt;Nothing&gt;:st«Ввод»
+   Kontur/&lt;Nothing&gt;: «Ввод»
+   Montaz/&lt;Nothing&gt;: «Ввод»
+   Kley/Pajka/&lt;Nothing&gt;:p«Ввод»
+   Nothing/Circle/KLejmo/&lt;Polka&gt;: «Ввод»
+   Начало выноски: «Первая точка»
+   Вторая точка: «Вторая точка»
+   Третья точка: «Третья точка»
+  </pre>
+  </code>
+  <p><img src="POZ_html_32f3d1ba.jpg" width="1200" /></p>
+  <h3>5 Простановка выносной линии для позиций.</h3>
+  <code>
+  <pre>
+   Команда:POZ
+   STrelka/SVarka/SSVarka/POint/&lt;Nothing&gt;: po«Ввод»
+   Kontur/&lt;Nothing&gt;: «Ввод»
+   Montaz/&lt;Nothing&gt;: «Ввод»
+   Kley/Pajka/&lt;Nothing&gt;: «Ввод»
+   Nothing/Circle/KLejmo/&lt;Polka&gt;: «Ввод»
+   Начало выноски: «Первая точка»
+   Вторая точка: «Вторая точка»
+   Третья точка: «Третья точка»
+  </pre>
+  </code>
+  <p><img src="POZ_html_m392bf328.jpg" width="1200" /></p>
+  <p><br /></p>
+  <p><a href="../mnasoft_command_list.html">К оглавлению...</a>.</p>
+ </body>
+</html>
