@@ -304,14 +304,26 @@ Section "png"
   File .\acad.help\block_block\image001.png
   SetOutPath $INSTDIR\acad.help\point_block
   File .\acad.help\point_block\image001.png
+  SetOutPath $INSTDIR\acad.help\dch
+  File .\acad.help\dch\dch_01.png
+  SetOutPath $INSTDIR\acad.help\cr
+  File .\acad.help\cr\cr_01.png
   SetOutPath $INSTDIR\acad.help\block_block
   File .\acad.help\block_block\image002.png
   SetOutPath $INSTDIR\acad.help\point_block
   File .\acad.help\point_block\image002.png
+  SetOutPath $INSTDIR\acad.help\dch
+  File .\acad.help\dch\dch_02.png
+  SetOutPath $INSTDIR\acad.help\cr
+  File .\acad.help\cr\cr_02.png
   SetOutPath $INSTDIR\acad.help\block_block
   File .\acad.help\block_block\image003.png
   SetOutPath $INSTDIR\acad.help\point_block
   File .\acad.help\point_block\image003.png
+  SetOutPath $INSTDIR\acad.help\dch
+  File .\acad.help\dch\dch_03.png
+  SetOutPath $INSTDIR\acad.help\cr
+  File .\acad.help\cr\cr_03.png
   SetOutPath $INSTDIR\acad.help\format
   File .\acad.help\format\format_html_7bcc0f33.png
   SetOutPath $INSTDIR\acad.help\cut
@@ -320,14 +332,22 @@ Section "png"
   File .\acad.help\block_block\image004.png
   SetOutPath $INSTDIR\acad.help\point_block
   File .\acad.help\point_block\image004.png
+  SetOutPath $INSTDIR\acad.help\dch
+  File .\acad.help\dch\dch_04.png
+  SetOutPath $INSTDIR\acad.help\cr
+  File .\acad.help\cr\cr_04.png
   SetOutPath $INSTDIR\acad.help\block_block
   File .\acad.help\block_block\image005.png
   SetOutPath $INSTDIR\acad.help\point_block
   File .\acad.help\point_block\image005.png
+  SetOutPath $INSTDIR\acad.help\cr
+  File .\acad.help\cr\cr_05.png
   SetOutPath $INSTDIR\acad.help\format
   File .\acad.help\format\format_html_mdf4bec5.png
   SetOutPath $INSTDIR\acad.help\block_block
   File .\acad.help\block_block\image006.png
+  SetOutPath $INSTDIR\acad.help\cr
+  File .\acad.help\cr\cr_06.png
   SetOutPath $INSTDIR\acad.help\format
   File .\acad.help\format\format_html_m1d185b37.png
   SetOutPath $INSTDIR\acad.help\look
@@ -468,6 +488,8 @@ Section "dwg"
   File .\acad_w.sup\weld_arrow_top.dwg
   SetOutPath $INSTDIR\acad.help\ltp
   File .\acad.help\ltp\ltp.dwg
+  SetOutPath $INSTDIR\acad.help\cr
+  File .\acad.help\cr\cr.dwg
   SetOutPath $INSTDIR\acad_w.sup
   File .\acad_w.sup\n_sher.dwg
   SetOutPath $INSTDIR\acad_w.sup\prj\Filter
@@ -772,6 +794,8 @@ Section "html"
   File .\acad.help\h\h.html
   SetOutPath $INSTDIR\acad.help\ch
   File .\acad.help\ch\ch.html
+  SetOutPath $INSTDIR\acad.help\dch
+  File .\acad.help\dch\dch.html
   SetOutPath $INSTDIR\acad.help\di
   File .\acad.help\di\di.html
   SetOutPath $INSTDIR\acad.help\li
@@ -820,6 +844,8 @@ Section "html"
   File .\acad.help\ar\ar.html
   SetOutPath $INSTDIR\acad.help\br
   File .\acad.help\br\br.html
+  SetOutPath $INSTDIR\acad.help\cr
+  File .\acad.help\cr\cr.html
   SetOutPath $INSTDIR\acad.help\fr
   File .\acad.help\fr\fr.html
   SetOutPath $INSTDIR\acad.help\tr
@@ -2176,18 +2202,28 @@ Section "un.png"
   Delete $INSTDIR\acad.help\format\format_html_74c024b0.png
   Delete $INSTDIR\acad.help\block_block\image001.png
   Delete $INSTDIR\acad.help\point_block\image001.png
+  Delete $INSTDIR\acad.help\dch\dch_01.png
+  Delete $INSTDIR\acad.help\cr\cr_01.png
   Delete $INSTDIR\acad.help\block_block\image002.png
   Delete $INSTDIR\acad.help\point_block\image002.png
+  Delete $INSTDIR\acad.help\dch\dch_02.png
+  Delete $INSTDIR\acad.help\cr\cr_02.png
   Delete $INSTDIR\acad.help\block_block\image003.png
   Delete $INSTDIR\acad.help\point_block\image003.png
+  Delete $INSTDIR\acad.help\dch\dch_03.png
+  Delete $INSTDIR\acad.help\cr\cr_03.png
   Delete $INSTDIR\acad.help\format\format_html_7bcc0f33.png
   Delete $INSTDIR\acad.help\cut\cut_html_md5f7eb3.png
   Delete $INSTDIR\acad.help\block_block\image004.png
   Delete $INSTDIR\acad.help\point_block\image004.png
+  Delete $INSTDIR\acad.help\dch\dch_04.png
+  Delete $INSTDIR\acad.help\cr\cr_04.png
   Delete $INSTDIR\acad.help\block_block\image005.png
   Delete $INSTDIR\acad.help\point_block\image005.png
+  Delete $INSTDIR\acad.help\cr\cr_05.png
   Delete $INSTDIR\acad.help\format\format_html_mdf4bec5.png
   Delete $INSTDIR\acad.help\block_block\image006.png
+  Delete $INSTDIR\acad.help\cr\cr_06.png
   Delete $INSTDIR\acad.help\format\format_html_m1d185b37.png
   Delete $INSTDIR\acad.help\look\look_html_m22518248.png
   Delete $INSTDIR\acad.help\format\format_html_952dae8.png
@@ -2261,6 +2297,7 @@ Section "un.dwg"
   Delete $INSTDIR\acad_w.sup\UslovnyeOboznachenijaPnevmoGidroShem\GidroPnevmo.dwg
   Delete $INSTDIR\acad_w.sup\weld_arrow_top.dwg
   Delete $INSTDIR\acad.help\ltp\ltp.dwg
+  Delete $INSTDIR\acad.help\cr\cr.dwg
   Delete $INSTDIR\acad_w.sup\n_sher.dwg
   Delete $INSTDIR\acad_w.sup\prj\Filter\filter.dwg
   Delete $INSTDIR\acad_w.sup\smesitel_vla\Smes_M80_recover.dwg
@@ -2420,6 +2457,7 @@ Section "un.html"
   Delete $INSTDIR\acad.help\rg\rg.html
   Delete $INSTDIR\acad.help\h\h.html
   Delete $INSTDIR\acad.help\ch\ch.html
+  Delete $INSTDIR\acad.help\dch\dch.html
   Delete $INSTDIR\acad.help\di\di.html
   Delete $INSTDIR\acad.help\li\li.html
   Delete $INSTDIR\acad.help\mi\mi.html
@@ -2444,6 +2482,7 @@ Section "un.html"
   Delete $INSTDIR\acad.help\zp\zp.html
   Delete $INSTDIR\acad.help\ar\ar.html
   Delete $INSTDIR\acad.help\br\br.html
+  Delete $INSTDIR\acad.help\cr\cr.html
   Delete $INSTDIR\acad.help\fr\fr.html
   Delete $INSTDIR\acad.help\tr\tr.html
   Delete $INSTDIR\acad.help\pur\pur.html
@@ -3256,7 +3295,9 @@ Section "Uninstall"
   RMDir  $INSTDIR\acad.help\e
   RMDir  $INSTDIR\acad.help\dt
   RMDir  $INSTDIR\acad.help\di
+  RMDir  $INSTDIR\acad.help\dch
   RMDir  $INSTDIR\acad.help\cut
+  RMDir  $INSTDIR\acad.help\cr
   RMDir  $INSTDIR\acad.help\cp
   RMDir  $INSTDIR\acad.help\co
   RMDir  $INSTDIR\acad.help\chd
