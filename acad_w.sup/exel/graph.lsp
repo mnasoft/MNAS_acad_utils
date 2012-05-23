@@ -195,3 +195,48 @@
   (setq lst_sh (reverse lst_sh))
   (subst_by_key "sheets" (list "0" lst_sh) setup_lst)
 )
+
+(defun select_colunm (lst n1 n2)
+  (mapcar
+    (function
+      (lambda (el)
+	(list (nth n1 el) (nth n2 el) )
+	)
+    )
+    lst
+  )
+)
+
+(defun select_by_type (lst / lst_rez)
+  (mapcar
+    (function
+      (lambda (el)
+	(if
+	  (apply (function =) (cons T (mapcar (function is_real) el)))
+	   (setq lst_rez (append lst_rez (list el)))
+	)
+      )
+    )
+    lst
+  )
+  lst_rez
+)
+
+
+(defun is_real(n)
+  (= ' real (type n))
+)
+  
+(setq a0 (select_by_type (select_colunm alsp_nm 4 0)))
+(setq a1 (select_by_type (select_colunm alsp_nm 4 1)))
+(setq a2 (select_by_type (select_colunm alsp_nm 4 2)))
+(setq a3 (select_by_type (select_colunm alsp_nm 4 3)))
+(setq a5 (select_by_type (select_colunm alsp_nm 4 5)))
+(setq a6 (select_by_type (select_colunm alsp_nm 4 6)))
+(setq a7 (select_by_type (select_colunm alsp_nm 4 7)))
+(setq a8 (select_by_type (select_colunm alsp_nm 4 8)))
+(setq a9 (select_by_type (select_colunm alsp_nm 4 9)))
+
+;|«Visual LISP© Format Options»
+(72 2 20 2 nil "end of" 60 9 0 0 0 T T nil T)
+;*** НЕ добавляйте текст под комментариями! ***|;
