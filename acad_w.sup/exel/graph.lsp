@@ -37,7 +37,8 @@
 )
   (setq do_dialog t)
   (setq	dcl_id (load_dialog
-		 (strcat (acad_sup) "/PRJ/CHtjenije iz Exel/graph.DCL")
+		 (strcat (acad_sup) "/exel/graph.DCL")
+		 
 	       )
   )
   (while do_dialog
@@ -74,7 +75,7 @@
 	      (subst_by_key
 		"xsl_file_name"
 		(cond
-		  ((getfiled "Выберите таблицу Exel" "" "xls" 0))
+		  ((getfiled "Выберите таблицу Exel" "" "xls;xlsx" 0))
 		  (t "")
 		)
 		exelread::setup_lst
