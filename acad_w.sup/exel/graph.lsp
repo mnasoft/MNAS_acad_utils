@@ -28,19 +28,23 @@
 
 ;;;;;;("exel_read" "Чтение данных из Exel" "Обмен")
 (defun c:exel_read
-		  (/ do_dialog ; Признак выхода из диалога
-		   dcl_id ; Идентификатор диалога
-		   oex ;"Excel.Application"
-		   wbs ;"Workbooks"
-		   awb ;активная рабочая книга
-		   shs ;"Sheets"
+		   (/			;
+		    do_dialog		; - Признак выхода из диалога
+		    dcl_id		; - Идентификатор диалога
+		    oex			; - "Excel.Application"
+		    wbs			; - "Workbooks"
+		    awb			; - Активная рабочая книга
+		    shs			; - "Sheets"
+		    csh			; -		
+		    ac			; - Акция диалога
+		    cell_lt		; - Левая верхняя ячейка
+		    cell_rb		; - Правая нижняя ячейка
+;;; Globals:
+;;; EXELREAD::DIA_POS - Координаты диалога.
+;;; EXELREAD::SETUP_LST - Список с настройками диалога.
 )
   (setq do_dialog t)
-  (setq	dcl_id (load_dialog
-		 (strcat (acad_sup) "/exel/graph.DCL")
-		 
-	       )
-  )
+  (setq dcl_id (load_dialog (strcat (acad_sup) "/exel/graph.DCL")))
   (while do_dialog
     (if	(not (new_dialog "exelread" dcl_id "" exelread::dia_pos))
       (exit)
@@ -82,33 +86,67 @@
 	      )
        )
       )
-      ((= ac 3) ; open
+      ((= ac 3)				; open
        (setq exelread::setup_lst
 	      (ac_open exelread::setup_lst)
        )
       )
 
-      ((= ac 4) ; read
+      ((= ac 4)				; read
        (print "ac = 4")
        (setq exelread::setup_lst (ac_open exelread::setup_lst))
       )
 
-      ((= ac 5) ; close
+      ((= ac 5)				; close
        (vlax-invoke-method oex "Quit")
       )
-      ((= ac 6) ; bt_read
+      ((= ac 6)				; bt_read
        (print "ac = 6")
        (setq shs (vlax-get-property awb "Worksheets"))
        (setq csh (vlax-get-property shs "Item" (1+ (atoi (cadr (assoc "sheets" exelread::setup_lst))))))
        (setq cell_lt (cadr (assoc "start_cell" exelread::setup_lst))
 	     cell_rb (cadr (assoc "end_cell" exelread::setup_lst))
        )
-       (vl-doc-set (read (cadr (assoc "autolisp_name" exelread::setup_lst))) (read_csh csh cell_lt cell_rb))
+       (vl-doc-set
+	 (read (cadr (assoc "autolisp_name" exelread::setup_lst)))
+	 (read_csh csh cell_lt cell_rb)
+       )
       )
     )
   )
   (unload_dialog dcl_id)
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 (defun exelread::init (setup_lst)
   (mapcar
@@ -239,5 +277,5 @@
 (setq a9 (select_by_type (select_colunm alsp_nm 4 9)))
 
 ;|«Visual LISP© Format Options»
-(72 2 20 2 nil "end of" 60 9 0 0 0 T T nil T)
+(120 2 40 2 nil "end of" 100 9 0 0 0 T T nil T)
 ;*** НЕ добавляйте текст под комментариями! ***|;
