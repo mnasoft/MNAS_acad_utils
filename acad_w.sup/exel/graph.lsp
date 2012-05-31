@@ -1,13 +1,18 @@
-;;; Написать функцию выделяющую из списка указанные столбцы
-;;;_$ (select_column '((0.0 -10.0 -1.0 -2.0)
-;;;	      (1.0 -9.0 -0.9 -1.377)
-;;;	      (2.0 -8.0 -0.8 -0.896)
-;;;	      (3.0 -7.0 -0.7 -0.539)
-;;;	      (4.0 -6.0 -0.6 -0.288)
-;;;	      (5.0 -5.0 -0.5 -0.125)
-;;;	     )
-;;;	    '(3 1 3)
-;;;)
+;;;f;;;("select_column" "Выполняет выборку из списка, указанных столбцыов.\n
+;;;f;;;Аргументы:
+;;;f;;;matrix - список, состояший из списков.\n
+;;;f;;;lst    - список, содержащий номера отбираемых столбцов.\n
+;;;f;;;Пример использования:
+;;;f;;;_$ (select_column '((0.0 -10.0 -1.0 -2.0)
+;;;f;;;	      (1.0 -9.0 -0.9 -1.377)
+;;;f;;;	      (2.0 -8.0 -0.8 -0.896)
+;;;f;;;	      (3.0 -7.0 -0.7 -0.539)
+;;;f;;;	      (4.0 -6.0 -0.6 -0.288)
+;;;f;;;	      (5.0 -5.0 -0.5 -0.125)
+;;;f;;;	     )
+;;;f;;;	    '(3 1)
+;;;f;;;)
+;;;f;;;")
 (defun select_column (matrix lst)
   (mapcar
     (function
@@ -117,37 +122,6 @@
   (unload_dialog dcl_id)
 )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 (defun exelread::init (setup_lst)
   (mapcar
     (function
@@ -189,7 +163,6 @@
 	  setup_lst
   )
 )
-
 
 ;;;_$ (subst_by_key "xsl_file_name" "D:\\Documents and Settings\\namatv\\Рабочий стол\\1.xls" '(("xsl_file_name" "") ("ByRow" "0") ("ByColumn" "1") ("start_cell" "A1") ("end_cell" "IV65536") ("autolisp_name" "Alsp_nm") ("sheets" "0" ("")) ("error" "")))
 ;;;(("xsl_file_name" "D:\\Documents and Settings\\namatv\\Рабочий стол\\1.xls") ("ByRow" "0") ("ByColumn" "1") ("start_cell" "A1") ("end_cell" "IV65536") ("autolisp_name" "Alsp_nm") ("sheets" "0" ("")) ("error" ""))
@@ -260,7 +233,6 @@
   )
   lst_rez
 )
-
 
 (defun is_real(n)
   (= ' real (type n))
