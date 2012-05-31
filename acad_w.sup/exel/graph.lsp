@@ -1,13 +1,18 @@
-;;; Написать функцию выделяющую из списка указанные столбцы
-;;;_$ (select_column '((0.0 -10.0 -1.0 -2.0)
-;;;	      (1.0 -9.0 -0.9 -1.377)
-;;;	      (2.0 -8.0 -0.8 -0.896)
-;;;	      (3.0 -7.0 -0.7 -0.539)
-;;;	      (4.0 -6.0 -0.6 -0.288)
-;;;	      (5.0 -5.0 -0.5 -0.125)
-;;;	     )
-;;;	    '(3 1 3)
-;;;)
+;;;f;;;("select_column" "Выполняет выборку из списка, указанных столбцыов.\n
+;;;f;;;Аргументы:
+;;;f;;;matrix - список, состояший из списков.\n
+;;;f;;;lst    - список, содержащий номера отбираемых столбцов.\n
+;;;f;;;Пример использования:
+;;;f;;;_$ (select_column '((0.0 -10.0 -1.0 -2.0)
+;;;f;;;	      (1.0 -9.0 -0.9 -1.377)
+;;;f;;;	      (2.0 -8.0 -0.8 -0.896)
+;;;f;;;	      (3.0 -7.0 -0.7 -0.539)
+;;;f;;;	      (4.0 -6.0 -0.6 -0.288)
+;;;f;;;	      (5.0 -5.0 -0.5 -0.125)
+;;;f;;;	     )
+;;;f;;;	    '(3 1)
+;;;f;;;)
+;;;f;;;")
 (defun select_column (matrix lst)
   (mapcar
     (function
@@ -28,19 +33,23 @@
 
 ;;;;;;("exel_read" "Чтение данных из Exel" "Обмен")
 (defun c:exel_read
-		  (/ do_dialog ; Признак выхода из диалога
-		   dcl_id ; Идентификатор диалога
-		   oex ;"Excel.Application"
-		   wbs ;"Workbooks"
-		   awb ;активная рабочая книга
-		   shs ;"Sheets"
+		   (/			;
+		    do_dialog		; - Признак выхода из диалога
+		    dcl_id		; - Идентификатор диалога
+		    oex			; - "Excel.Application"
+		    wbs			; - "Workbooks"
+		    awb			; - Активная рабочая книга
+		    shs			; - "Sheets"
+		    csh			; -		
+		    ac			; - Акция диалога
+		    cell_lt		; - Левая верхняя ячейка
+		    cell_rb		; - Правая нижняя ячейка
+;;; Globals:
+;;; EXELREAD::DIA_POS - Координаты диалога.
+;;; EXELREAD::SETUP_LST - Список с настройками диалога.
 )
   (setq do_dialog t)
-  (setq	dcl_id (load_dialog
-		 (strcat (acad_sup) "/exel/graph.DCL")
-		 
-	       )
-  )
+  (setq dcl_id (load_dialog (strcat (acad_sup) "/exel/graph.DCL")))
   (while do_dialog
     (if	(not (new_dialog "exelread" dcl_id "" exelread::dia_pos))
       (exit)
@@ -82,28 +91,31 @@
 	      )
        )
       )
-      ((= ac 3) ; open
+      ((= ac 3)				; open
        (setq exelread::setup_lst
 	      (ac_open exelread::setup_lst)
        )
       )
 
-      ((= ac 4) ; read
+      ((= ac 4)				; read
        (print "ac = 4")
        (setq exelread::setup_lst (ac_open exelread::setup_lst))
       )
 
-      ((= ac 5) ; close
+      ((= ac 5)				; close
        (vlax-invoke-method oex "Quit")
       )
-      ((= ac 6) ; bt_read
+      ((= ac 6)				; bt_read
        (print "ac = 6")
        (setq shs (vlax-get-property awb "Worksheets"))
        (setq csh (vlax-get-property shs "Item" (1+ (atoi (cadr (assoc "sheets" exelread::setup_lst))))))
        (setq cell_lt (cadr (assoc "start_cell" exelread::setup_lst))
 	     cell_rb (cadr (assoc "end_cell" exelread::setup_lst))
        )
-       (vl-doc-set (read (cadr (assoc "autolisp_name" exelread::setup_lst))) (read_csh csh cell_lt cell_rb))
+       (vl-doc-set
+	 (read (cadr (assoc "autolisp_name" exelread::setup_lst)))
+	 (read_csh csh cell_lt cell_rb)
+       )
       )
     )
   )
@@ -151,7 +163,6 @@
 	  setup_lst
   )
 )
-
 
 ;;;_$ (subst_by_key "xsl_file_name" "D:\\Documents and Settings\\namatv\\Рабочий стол\\1.xls" '(("xsl_file_name" "") ("ByRow" "0") ("ByColumn" "1") ("start_cell" "A1") ("end_cell" "IV65536") ("autolisp_name" "Alsp_nm") ("sheets" "0" ("")) ("error" "")))
 ;;;(("xsl_file_name" "D:\\Documents and Settings\\namatv\\Рабочий стол\\1.xls") ("ByRow" "0") ("ByColumn" "1") ("start_cell" "A1") ("end_cell" "IV65536") ("autolisp_name" "Alsp_nm") ("sheets" "0" ("")) ("error" ""))
@@ -223,7 +234,6 @@
   lst_rez
 )
 
-
 (defun is_real(n)
   (= ' real (type n))
 )
@@ -239,5 +249,5 @@
 (setq a9 (select_by_type (select_colunm alsp_nm 4 9)))
 
 ;|«Visual LISP© Format Options»
-(72 2 20 2 nil "end of" 60 9 0 0 0 T T nil T)
+(120 2 40 2 nil "end of" 100 9 0 0 0 T T nil T)
 ;*** НЕ добавляйте текст под комментариями! ***|;
