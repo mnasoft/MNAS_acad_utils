@@ -1,0 +1,20 @@
+;;; VLisp project file [V2.0] kollektor saved to:[D:/home/_namatv/Develop/MNAS_acad_utils/acad_w.sup/kollektor] at:[5/31/12] 
+(VLISP-PROJECT-LIST
+  :name
+  kollektor
+  :own-list
+  ("../axis/sub_div"
+    "../funktcii/Fizichjeskije/Phizich"
+    "D:/home/_namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/ASIST"
+    "kollector"
+  )
+  :fas-directory
+  nil
+  :tmp-directory
+  nil
+  :project-keys
+  (:BUILD (:standard))
+  :context-id
+  :AUTOLISP
+)
+;;; EOF
