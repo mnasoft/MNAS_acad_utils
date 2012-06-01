@@ -18,3 +18,13 @@
   )
   l_pts
 )
+
+(defun sub-div-n (n / i lst)
+  (setq i 1)
+  (setq lst nil)
+  (while (<= i n)
+    (setq lst (append lst (list i)))
+    (setq i (1+ i))
+  )
+  lst
+)

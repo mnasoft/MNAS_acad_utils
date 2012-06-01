@@ -21,7 +21,7 @@
   (setq end_dist (vlax-curve-getDistAtParam curve-obj end_param))
   (setq len (- end_dist start_dist))
   (setq n (fix (/ len (/ d k_shag))))
-  (setq lst (foo_1 (sub_div n)))
+  (setq lst (foo_1 (sub-div-n n)))
 
   (setq
     pnt_lst_1
@@ -55,15 +55,7 @@
 )
 
 
-(defun sub_div (n / i lst)
-  (setq i 1)
-  (setq lst nil)
-  (while (<= i n)
-    (setq lst (append lst (list i)))
-    (setq i (1+ i))
-  )
-  lst
-)
+
 
 (defun foo_1 (lst / end start)
   (setq start 0)

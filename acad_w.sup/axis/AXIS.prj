@@ -6,7 +6,7 @@
   ("../UTILS/ACAD_SUP_DIR"
     "Axis_cmd"		 "Axis_ea"	      "Axis_util"	   "../utils/draw"
     "../UTILS/DXF"	 "Graph_analitic"     "Graph_block"	   "Graph_main"
-    "Graph_pline"	 "Graph_poitn_type"   "Image"		   "sub_div"
+    "Graph_pline"	 "Graph_poitn_type"   "Image"		   "../utils/sub_div"
     "../UTILS/XDATA"	 "../UTILS/dlg_utils"
    )
   :FAS-DIRECTORY

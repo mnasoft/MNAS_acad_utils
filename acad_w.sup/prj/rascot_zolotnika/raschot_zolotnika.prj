@@ -1,9 +1,9 @@
-;;; VLisp project file [V2.0] raschot_zolotnika saved to:[C:/Program Files/MNASoft/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika] at:[3/31/11] 
+;;; VLisp project file [V2.0] raschot_zolotnika saved to:[./acad_w.sup/prj/rascot_zolotnika] at:[3/31/11] 
 (VLISP-PROJECT-LIST
   :NAME
   raschot_zolotnika
   :OWN-LIST
-  ("../../AXIS/sub_div"
+  ("../../utils/sub_div"
     "../../MATR/MATR"
     "../../MATR/Vychisljenije osrjednjajuschjej funktcii"
     "../../Mjetod polovinnogo djeljenija/Polovinnoje djeljenije 1"
