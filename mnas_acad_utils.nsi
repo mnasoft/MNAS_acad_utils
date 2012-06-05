@@ -654,6 +654,8 @@ Section "prj"
   File .\acad_w.sup\prj\Filter\filter.prj
   SetOutPath $INSTDIR\acad_w.sup\layer
   File .\acad_w.sup\layer\layer.prj
+  SetOutPath $INSTDIR\acad_w.sup\kollector
+  File .\acad_w.sup\kollector\kollector.prj
   SetOutPath $INSTDIR\acad_w.sup\prj\Raschjet_gaza
   File .\acad_w.sup\prj\Raschjet_gaza\complex_gas.prj
   SetOutPath $INSTDIR\acad_w.sup\kompas
@@ -1718,6 +1720,8 @@ Section "lsp"
   File .\acad_w.sup\prj\Temperaturnyj_napor.lsp
   SetOutPath $INSTDIR\acad_w.sup\funktcii\ActivX
   File .\acad_w.sup\funktcii\ActivX\reactor.lsp
+  SetOutPath $INSTDIR\acad_w.sup\kollector
+  File .\acad_w.sup\kollector\kollector.lsp
   SetOutPath $INSTDIR\acad_w.sup\fors_rh
   File .\acad_w.sup\fors_rh\ras_har_gas.lsp
   SetOutPath $INSTDIR\acad_w.sup\kompas
@@ -1800,8 +1804,8 @@ Section "lsp"
   File .\acad_w.sup\mnas\Welding_lsp\weld_abbrev.lsp
   SetOutPath $INSTDIR\acad_w.sup\mnas\Pozition
   File .\acad_w.sup\mnas\Pozition\pozition_abbrev.lsp
-  SetOutPath $INSTDIR\acad_w.sup\axis
-  File .\acad_w.sup\axis\sub_div.lsp
+  SetOutPath $INSTDIR\acad_w.sup\utils
+  File .\acad_w.sup\utils\sub_div.lsp
   SetOutPath $INSTDIR\acad_w.sup\text
   File .\acad_w.sup\text\Rjedaktirovanije_tjekstov.lsp
   SetOutPath $INSTDIR\acad_w.sup\prj\Raschjet_gaza
@@ -2384,6 +2388,7 @@ Section "un.prj"
   Delete $INSTDIR\acad_w.sup\M_utils_loader\M_utils_loader.prj
   Delete $INSTDIR\acad_w.sup\prj\Filter\filter.prj
   Delete $INSTDIR\acad_w.sup\layer\layer.prj
+  Delete $INSTDIR\acad_w.sup\kollector\kollector.prj
   Delete $INSTDIR\acad_w.sup\prj\Raschjet_gaza\complex_gas.prj
   Delete $INSTDIR\acad_w.sup\kompas\kompas.prj
   Delete $INSTDIR\acad_w.sup\circles\Circles.prj
@@ -2925,6 +2930,7 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\spec\Dialog_Color.lsp
   Delete $INSTDIR\acad_w.sup\prj\Temperaturnyj_napor.lsp
   Delete $INSTDIR\acad_w.sup\funktcii\ActivX\reactor.lsp
+  Delete $INSTDIR\acad_w.sup\kollector\kollector.lsp
   Delete $INSTDIR\acad_w.sup\fors_rh\ras_har_gas.lsp
   Delete $INSTDIR\acad_w.sup\kompas\acad-kompas.lsp
   Delete $INSTDIR\acad_w.sup\M_utils_loader\M_utils_LoaderCommands.lsp
@@ -2966,7 +2972,7 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\mnas\Welding\weld_abbrev.lsp
   Delete $INSTDIR\acad_w.sup\mnas\Welding_lsp\weld_abbrev.lsp
   Delete $INSTDIR\acad_w.sup\mnas\Pozition\pozition_abbrev.lsp
-  Delete $INSTDIR\acad_w.sup\axis\sub_div.lsp
+  Delete $INSTDIR\acad_w.sup\utils\sub_div.lsp
   Delete $INSTDIR\acad_w.sup\text\Rjedaktirovanije_tjekstov.lsp
   Delete $INSTDIR\acad_w.sup\prj\Raschjet_gaza\Smjeshjenije_sostavov.lsp
   Delete $INSTDIR\acad_w.sup\prj\Raschjet_gaza\Tablitca_gazov.lsp
@@ -3194,6 +3200,7 @@ Section "Uninstall"
   RMDir  $INSTDIR\acad_w.sup\lines
   RMDir  $INSTDIR\acad_w.sup\layer
   RMDir  $INSTDIR\acad_w.sup\kompas
+  RMDir  $INSTDIR\acad_w.sup\kollector
   RMDir  $INSTDIR\acad_w.sup\izmjeritjelnaja_mashina\Mea
   RMDir  $INSTDIR\acad_w.sup\izmjeritjelnaja_mashina
   RMDir  $INSTDIR\acad_w.sup\hpgl

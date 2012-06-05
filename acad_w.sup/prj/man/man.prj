@@ -1,9 +1,14 @@
-;;; VLisp project file [V2.0] man saved to:[C:/MNAS_acad_db17_utils/acad_w.sup/prj/man] at:[11/6/10] 
+;;; VLisp project file [V2.0] man saved to:[./acad_w.sup/prj/man] at:[6/1/12] 
 (VLISP-PROJECT-LIST
   :NAME
   man
   :OWN-LIST
-  ("Type_command_list" "../../utils/ACAD_SUP_DIR" "man" "create_html_all_command_list")
+  ("Type_command_list"
+    "../../utils/ACAD_SUP_DIR"
+    "man"
+    "create_html_all_command_list"
+    "../../utils/Debug"
+  )
   :FAS-DIRECTORY
   "../../../vlisp.tmp"
   :TMP-DIRECTORY

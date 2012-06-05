@@ -82,7 +82,13 @@
   (strcat (MNAS_ArxPrj_root) "vlx")
 )
 
-(defun acad_sup () (MNAS_ArxPrj_acad_w))
+(defun acad_sup	()
+  (if MNASOFT-DEBUG
+    MNASOFT-DEBUG-PATH
+    (MNAS_ArxPrj_acad_w)
+  )
+)
+
 (defun acad_help() (MNAS_ArxPrj_acad_help))
 
 ;;;(is_path_full (cdr (assoc 2 (cadr ll2))))
