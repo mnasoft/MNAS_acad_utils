@@ -1,9 +1,13 @@
-;;; VLisp project file [V2.0] razvertka saved to:[./PRJ/razvertka] at:[7/10/08] 
+;;; VLisp project file [V2.0] razvertka saved to:[D:/MNAS_acad_utils/acad_w.sup/razvertka] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
   razvertka
   :OWN-LIST
-  ("../utils/ACAD_SUP_DIR" "../UTILS/draw" "razvertka")
+  ("../utils/ACAD_SUP_DIR"
+    "../utils/Debug"
+    "../UTILS/draw"
+    "razvertka"
+  )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

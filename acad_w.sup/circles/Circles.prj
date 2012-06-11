@@ -1,10 +1,13 @@
-;;; VLisp project file [V2.0] CIRCLES saved to:[./CIRCLES] at:[5/16/09] 
+;;; VLisp project file [V2.0] Circles saved to:[D:/MNAS_acad_utils/acad_w.sup/circles] at:[6/8/12] 
 (VLISP-PROJECT-LIST
   :NAME
-  CIRCLES
+  Circles
   :OWN-LIST
   ("../utils/ACAD_SUP_DIR"
-    "CIRCLES" "Circles_2" "../UTILS/ASIST" "../UTILS/DXF" "../UTILS/draw" "sort_point")
+    "../utils/Debug"	 "CIRCLES"	      "Circles_2"
+    "../UTILS/ASIST"	 "../UTILS/DXF"	      "../UTILS/draw"
+    "sort_point"
+   )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

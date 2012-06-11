@@ -502,6 +502,8 @@ C:/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderCommands.lsp
 ;;;;;;)
 C:/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderDBXInstall.lsp
 C:/Develop/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka.lsp
+;;;;;;("translit" "¬ыполн€ет транслитерацию с английской раскладки в русскую." "–едактировани€ текста"
+;;;;;;)
 C:/Develop/MNAS_acad_utils/acad_w.sup/optimalnoje_raspololjenije_okrugnostjej/okrugnost_po_tochkam.lsp
 ;;;;;;("find_arc_by_cir_and_points" "not defined" "not defined")
 ;;;;;;("find_arc_by_points"

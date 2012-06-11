@@ -1,9 +1,13 @@
-;;; VLisp project file [V2.0] D_chprop saved to:[./D_CHPROP] at:[5/16/09] 
+;;; VLisp project file [V2.0] D_chprop saved to:[D:/MNAS_acad_utils/acad_w.sup/d_chprop] at:[6/8/12] 
 (VLISP-PROJECT-LIST
   :NAME
   D_chprop
   :OWN-LIST
-  ("../UTILS/ACAD_SUP_DIR" "D_CHPROP" "../UTILS/dlg_utils")
+  ("../UTILS/ACAD_SUP_DIR"
+    "../utils/Debug"
+    "D_CHPROP"
+    "../UTILS/dlg_utils"
+  )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

@@ -1,12 +1,14 @@
-;;; VLisp project file [V2.0] layer saved to:[./LAYER] at:[5/16/09] 
+;;; VLisp project file [V2.0] layer saved to:[D:/MNAS_acad_utils/acad_w.sup/layer] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
   layer
   :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
-    "layer"		 "md_layer"	      "bl_layer"	   "vp_layer"
-    "sh_layer"		 "cur_layer"	      "nent_lay"	   "../UTILS/Binary"
-    "../UTILS/red_list"	 "../UTILS/ERR"	      "../Utils/system_registry"
+    "../utils/Debug"	  "layer"		"md_layer"
+    "bl_layer"		  "vp_layer"		"sh_layer"
+    "cur_layer"		  "nent_lay"		"../UTILS/Binary"
+    "../UTILS/red_list"	  "../UTILS/ERR"
+    "../Utils/system_registry"
    )
   :FAS-DIRECTORY
   "../../vlisp.tmp"

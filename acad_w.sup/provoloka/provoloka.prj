@@ -1,9 +1,14 @@
-;;; VLisp project file [V2.0] provoloka saved to:[./acad_w.sup/provoloka] at:[6/1/12] 
+;;; VLisp project file [V2.0] provoloka saved to:[D:/MNAS_acad_utils/acad_w.sup/provoloka] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
   provoloka
   :OWN-LIST
-  ("../utils/acad_sup_dir" "../utils/sub_div" "../utils/draw" "provoloka")
+  ("../utils/ACAD_SUP_DIR"
+    "../utils/Debug"
+    "../utils/sub_div"
+    "../utils/draw"
+    "provoloka"
+  )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

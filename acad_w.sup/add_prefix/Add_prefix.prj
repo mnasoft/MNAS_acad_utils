@@ -3,7 +3,7 @@
   :NAME
   Add_prefix
   :OWN-LIST
-  ("../utils/ACAD_SUP_DIR" "Add_prefix")
+  ("../utils/ACAD_SUP_DIR" "Add_prefix" "../utils/Debug")
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

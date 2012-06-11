@@ -1,11 +1,14 @@
-;;; VLisp project file [V2.0] M_utils_loader saved to:[D:/MNAS_acad_db17_utils/acad_w.sup/M_utils_loader] at:[11/12/11] 
+;;; VLisp project file [V2.0] M_utils_loader saved to:[D:/MNAS_acad_utils/acad_w.sup/M_utils_loader] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
   M_utils_loader
   :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
-    "M_utils_loader"			 "M_utils_LoaderCommands"
-    "M_utils_LoaderAppRegistryData"	 "M_utils_LoaderARXInstall"
+    "../utils/Debug"
+    "M_utils_loader"
+    "M_utils_LoaderCommands"
+    "M_utils_LoaderAppRegistryData"
+    "M_utils_LoaderARXInstall"
     "M_utils_LoaderDBXInstall"
    )
   :FAS-DIRECTORY

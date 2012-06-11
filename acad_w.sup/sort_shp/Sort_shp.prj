@@ -1,9 +1,13 @@
-;;; VLisp project file [V2.0] Sort_shp saved to:[./Sort_shp] at:[5/16/09] 
+;;; VLisp project file [V2.0] Sort_shp saved to:[D:/MNAS_acad_utils/acad_w.sup/sort_shp] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
   Sort_shp
   :OWN-LIST
-  ("../utils/ACAD_SUP_DIR" "sort_shp" "../UTILS/STRING")
+  ("../utils/ACAD_SUP_DIR"
+    "../utils/Debug"
+    "sort_shp"
+    "../UTILS/STRING"
+  )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

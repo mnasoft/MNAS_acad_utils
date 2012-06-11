@@ -1,9 +1,9 @@
-;;; VLisp project file [V2.0] EDIT saved to:[./Edit] at:[5/16/09] 
+;;; VLisp project file [V2.0] Edit saved to:[D:/MNAS_acad_utils/acad_w.sup/edit] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
-  EDIT
+  Edit
   :OWN-LIST
-  ("../utils/ACAD_SUP_DIR" "EDIT")
+  ("../utils/ACAD_SUP_DIR" "../utils/Debug" "EDIT")
   :FAS-DIRECTORY
   "../../Vlisp.tmp"
   :TMP-DIRECTORY

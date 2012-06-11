@@ -1,9 +1,13 @@
-;;; VLisp project file [V2.0] HPGL saved to:[./HPGL] at:[5/16/09] 
+;;; VLisp project file [V2.0] HPGL saved to:[D:/MNAS_acad_utils/acad_w.sup/hpgl] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
   HPGL
   :OWN-LIST
-  ("../utils/ACAD_SUP_DIR" "HPGL" "../UTILS/draw")
+  ("../utils/ACAD_SUP_DIR"
+    "../utils/Debug"
+    "HPGL"
+    "../UTILS/draw"
+  )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

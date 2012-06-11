@@ -1,16 +1,17 @@
-;;; VLisp project file [V2.0] text saved to:[./TEXT] at:[5/16/09] 
+;;; VLisp project file [V2.0] text saved to:[D:/MNAS_acad_utils/acad_w.sup/text] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
   text
   :OWN-LIST
-  ("Text_pozition"
-    "../UTILS/ACAD_SUP_DIR"  "Rjedaktirovanije_tjekstov"
-    "naklon_15gr"	     "Lay_txt"
-    "TEXT"		     "STL"
-    "../UTILS/DXF"	     "../UTILS/prin"
-    "../UTILS/STRING"	     "Skobka"
-    "Text_export"	     "../UTILS/stl_text"
-    "../UTILS/ERR"	     "../utils/system_registry"
+  ("../UTILS/ACAD_SUP_DIR"
+    "../utils/Debug"	    "Text_pozition"
+    "Rjedaktirovanije_tjekstov"
+    "naklon_15gr"	    "Lay_txt"
+    "TEXT"		    "STL"
+    "../UTILS/DXF"	    "../UTILS/prin"
+    "../UTILS/STRING"	    "Skobka"
+    "Text_export"	    "../UTILS/stl_text"
+    "../UTILS/ERR"	    "../utils/system_registry"
    )
   :FAS-DIRECTORY
   "../../Vlisp.tmp"

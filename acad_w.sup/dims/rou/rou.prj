@@ -3,7 +3,7 @@
   :NAME
   rou
   :OWN-LIST
-  ("../../UTILS/ACAD_SUP_DIR"
+  ("../../UTILS/ACAD_SUP_DIR" "../../utils/Debug"
     "rou"		      "rou_draw"		"../../UTILS/STRING"
     "../../MATR/VECTOR"	      "../../UTILS/red_list"	"rou_update_ver"
     "../../UTILS/stl_text"    "../../UTILS/ERR"

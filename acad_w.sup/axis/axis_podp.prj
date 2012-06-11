@@ -1,9 +1,13 @@
-;;; VLisp project file [V2.0] axis_podp saved to:[./acad_w.sup/axis] at:[6/1/12] 
+;;; VLisp project file [V2.0] axis_podp saved to:[D:/MNAS_acad_utils/acad_w.sup/axis] at:[6/8/12] 
 (VLISP-PROJECT-LIST
   :NAME
   axis_podp
   :OWN-LIST
-  ("../UTILS/ACAD_SUP_DIR" "../utils/sub_div" "axis_podp" "Axis_util" "../UTILS/draw" "../utils/DXF" "../UTILS/XDATA" "../MATR/VECTOR")
+  ("../UTILS/ACAD_SUP_DIR"
+    "../utils/Debug"	  "../utils/sub_div"	"axis_podp"
+    "Axis_util"		  "../UTILS/draw"	"../utils/DXF"
+    "../UTILS/XDATA"	  "../MATR/VECTOR"
+   )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

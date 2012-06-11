@@ -1,10 +1,13 @@
-;;; VLisp project file [V2.0] Dim_style saved to:[C:/Program Files/MNASoft/MNAS_acad_utils/acad_w.sup/dims/dim_style] at:[3/29/11] 
+;;; VLisp project file [V2.0] dim_style saved to:[D:/MNAS_acad_utils/acad_w.sup/dims/dim_style] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
-  Dim_style
+  dim_style
   :OWN-LIST
-  ("dim_override_like_ARX"
-    "dim_override" "dim_style" "../../utils/acad_sup_dir" "../../utils/STRING" "../../utils/stl_text")
+  ("../../utils/ACAD_SUP_DIR"
+    "../../utils/Debug"		"dim_override_like_ARX"
+    "dim_override"		"dim_style"
+    "../../utils/STRING"	"../../utils/stl_text"
+   )
   :FAS-DIRECTORY
   "../../../vlisp.tmp"
   :TMP-DIRECTORY

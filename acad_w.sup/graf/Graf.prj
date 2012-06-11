@@ -1,9 +1,9 @@
-;;; VLisp project file [V2.0] Graf saved to:[./GRAF] at:[5/16/09] 
+;;; VLisp project file [V2.0] Graf saved to:[D:/MNAS_acad_utils/acad_w.sup/graf] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
   Graf
   :OWN-LIST
-  ("../utils/ACAD_SUP_DIR" "GRAF")
+  ("../utils/ACAD_SUP_DIR" "../utils/Debug" "GRAF")
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

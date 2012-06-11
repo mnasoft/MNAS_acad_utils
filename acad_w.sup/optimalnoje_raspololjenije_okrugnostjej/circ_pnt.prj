@@ -1,2 +1,18 @@
-
-(VLISP-PROJECT-LIST :NAME CIRC_PNT :OWN-LIST ("okrugnost po tochkam" "../Mjetod pokoordinatnogo spuska/Mjetod pokoordinatnogo spuska") :FAS-DIRECTORY "C:\\vlisp.tmp" :TMP-DIRECTORY "C:\\vlisp.tmp" :PROJECT-KEYS (:BUILD (:STANDARD) :MERGED nil :SAFE-MODE T :MSGLEVEL 1) :CONTEXT-ID :AUTOLISP) 
+;;; VLisp project file [V2.0] circ_pnt saved to:[D:/MNAS_acad_utils/acad_w.sup/optimalnoje_raspololjenije_okrugnostjej] at:[6/9/12] 
+(VLISP-PROJECT-LIST
+  :NAME
+  circ_pnt
+  :OWN-LIST
+  ("D:/MNAS_acad_utils/acad_w.sup/mjetod_pokoordinatnogo_spuska/Mjetod_pokoordinatnogo_spuska"
+    "okrugnost_po_tochkam"
+  )
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

@@ -1,10 +1,13 @@
-;;; VLisp project file [V2.0] spec saved to:[C:/MNAS_acad_db17_utils/acad_w.sup/spec] at:[1/23/11] 
+;;; VLisp project file [V2.0] spec saved to:[D:/MNAS_acad_utils/acad_w.sup/spec] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
   spec
   :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
-    "Specif" "func1" "func2" "func3" "func4" "../UTILS/red_list" "../UTILS/stl_text" "../UTILS/STRING")
+    "../utils/Debug"	"Specif"	    "func1"
+    "func2"		"func3"		    "func4"
+    "../UTILS/red_list"	"../UTILS/stl_text" "../UTILS/STRING"
+   )
   :FAS-DIRECTORY
   "../../Vlisp.tmp"
   :TMP-DIRECTORY

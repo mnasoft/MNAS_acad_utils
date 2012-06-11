@@ -1,10 +1,14 @@
-;;; VLisp project file [V2.0] Exel saved to:[D:/MNAS_acad_db17_utils/acad_w.sup/Exel] at:[11/13/11] 
+;;; VLisp project file [V2.0] Exel saved to:[D:/MNAS_acad_utils/acad_w.sup/exel] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
   Exel
   :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
-    "read_exel_setup_lst" "utils_xls" "../utils//ASIST"	"../utils//Sistjemy_schisljenija" "graph")
+    "../utils/Debug"		 "read_exel_setup_lst"
+    "utils_xls"			 "../utils//ASIST"
+    "../utils//Sistjemy_schisljenija"
+    "graph"
+   )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

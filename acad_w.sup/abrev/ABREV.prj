@@ -3,7 +3,7 @@
   :NAME
   abrev
   :OWN-LIST
-  ("../UTILS/ACAD_SUP_DIR" "Abrev" "gr_on_off")
+  ("../UTILS/ACAD_SUP_DIR" "Abrev" "gr_on_off" "../utils/Debug")
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

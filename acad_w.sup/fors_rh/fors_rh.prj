@@ -1,9 +1,14 @@
-;;; VLisp project file [V2.0] fors_rh saved to:[./Fors_rh] at:[5/16/09] 
+;;; VLisp project file [V2.0] fors_rh saved to:[D:/MNAS_acad_utils/acad_w.sup/fors_rh] at:[6/9/12] 
 (VLISP-PROJECT-LIST
   :NAME
   fors_rh
   :OWN-LIST
-  ("../UTILS/ACAD_SUP_DIR" "ras_har_lic" "ras_har_gas" "../axis/sub_div")
+  ("../UTILS/ACAD_SUP_DIR"
+    "../utils/Debug"
+    "../utils/sub_div"
+    "ras_har_lic"
+    "ras_har_gas"
+  )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY
