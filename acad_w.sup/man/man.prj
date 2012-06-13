@@ -1,18 +1,18 @@
-;;; VLisp project file [V2.0] man saved to:[./acad_w.sup/prj/man] at:[6/1/12] 
+;;; VLisp project file [V2.0] man saved to:[./acad_w.sup/man] at:[6/13/12] 
 (VLISP-PROJECT-LIST
   :NAME
   man
   :OWN-LIST
-  ("Type_command_list"
-    "../../utils/ACAD_SUP_DIR"
+  ("../utils/ACAD_SUP_DIR"
+    "../utils/Debug"
+    "Type_command_list"
     "man"
     "create_html_all_command_list"
-    "../../utils/Debug"
   )
   :FAS-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../vlisp.tmp"
   :TMP-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../vlisp.tmp"
   :PROJECT-KEYS
   (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID

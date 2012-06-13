@@ -8,7 +8,7 @@
 	   "Ўкалы"
 	  )
   )
-  (load(strcat (acad_sup) "/prj/man/man_data_base.lsp" ))
+  (load(strcat (acad_sup) "/man/man_data_base.lsp" ))
   (setq i 0)
   (mapcar
     (function

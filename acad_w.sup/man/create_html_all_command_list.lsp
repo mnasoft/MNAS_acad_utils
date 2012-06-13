@@ -1,6 +1,6 @@
 (defun create_cmd_html (/ fl)
-  (load (strcat (acad_sup) "\\prj\\man\\man_data_base.lsp")) ;;;
-  (setq fl (open (strcat (acad_help) "\\mnasoft_command_list.html") "w")) ;;; cmd.html
+  (load (strcat (acad_sup) "/man/man_data_base.lsp")) ;;;
+  (setq fl (open (strcat (acad_help) "/mnasoft_command_list.html") "w")) ;;; cmd.html
 
   (princ (create-html-header) fl)
   (princ (javascript-show_hide-string) fl)
@@ -129,7 +129,7 @@
 
 
 (defun re_sotr_by_type ( / mnas_command_help new_lst )
-  (load (strcat (acad_sup) "\\prj\\man\\man_data_base.lsp"))
+  (load (strcat (acad_sup) "/man/man_data_base.lsp"))
   (setq	MNAS_command_help
 	 (vl-sort
 	   MNAS_command_help
