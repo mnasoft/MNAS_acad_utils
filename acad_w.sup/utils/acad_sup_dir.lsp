@@ -22,16 +22,16 @@
     (strcat
       acad_path
       (MNAS_ArxPrj_root)
-      "acad.fnt"
+      "\\acad.fnt"
       ";"
       (MNAS_ArxPrj_root)
       "acad.fnt\\Kompas"
       ";"
       (MNAS_ArxPrj_root)
-      "acad_w.sup"
+      "\\acad_w.sup"
       ";"
       (MNAS_ArxPrj_root)
-      "Acad.mnu\\Acad_mnu_icon"
+      "\\Acad.mnu\\Acad_mnu_icon"
       ";"
     )
   )
@@ -59,35 +59,31 @@
     "\\"
     "/"
     (cond
-      ((null LOADER)
-       (strcat "C:" "\\" "MNAS_acad_db17_utils" "\\")
-      )
       (
-       t
-       (strcat LOADER "\\")
+       mnasoft-debug
+       mnasoft-debug-path
       )
+      ((null LOADER)
+       (strcat "C:" "\\" "MNAS_acad_db17_utils")
+      )
+      (t LOADER)
     )
   )
 )
 
 (defun MNAS_ArxPrj_acad_w ()
-  (strcat (MNAS_ArxPrj_root) "acad_w.sup")
+  (strcat (MNAS_ArxPrj_root) "\\" "acad_w.sup")
 )
 
 (defun MNAS_ArxPrj_acad_help ()
-  (strcat (MNAS_ArxPrj_root) "acad.help")
+  (strcat (MNAS_ArxPrj_root) "\\" "acad.help")
 )
 
 (defun MNAS_ArxPrj_vlx ()
-  (strcat (MNAS_ArxPrj_root) "vlx")
+  (strcat (MNAS_ArxPrj_root) "\\" "vlx")
 )
 
-(defun acad_sup	()
-  (if MNASOFT-DEBUG
-    MNASOFT-DEBUG-PATH
-    (MNAS_ArxPrj_acad_w)
-  )
-)
+(defun acad_sup	() (MNAS_ArxPrj_acad_w))
 
 (defun acad_help() (MNAS_ArxPrj_acad_help))
 

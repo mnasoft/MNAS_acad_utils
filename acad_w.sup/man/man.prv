@@ -1,11 +1,11 @@
-;;; файл сценария сборки Visual LISP [V1.0] man saved to:[C:/MNAS_acad_db17_utils/acad_w.sup/prj/man] at:[10/25/10] 
-(PRV-DEF (:target . "../../../vlx/man.VLX")
+;;; Visual LISP make file [V1.0] man saved to:[D:/MNAS_acad_utils/acad_w.sup/man] at:[6/13/12] 
+(prv-def (:target . "../../vlx/man.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "man.prj"))
 	 (:require-file-list)
-	 (:ob-directory . "../../../vlisp.tmp")
+	 (:ob-directory . "../../vlisp.tmp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )
