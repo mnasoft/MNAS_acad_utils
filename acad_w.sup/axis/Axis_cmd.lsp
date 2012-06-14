@@ -49,24 +49,25 @@
 2) ось Y;
 3) имя переменной, которое содержит список точек.
 Чтобы преобразовать отрезок в ось нужно воспользоваться командой ea.
-"
-  )
+" )
   (setq	scx (sh:get (sh:sel "Ось X"))
 	scy (sh:get (sh:sel "Ось Y"))
 	str (getstring "\nИмя переменной содержащей список точек:")
   )
-  
+
   (setq
     i_colors 0
-    colors '(1 2 3 4 5 6 7 25 45 65 85 105 125 145 165 185 205 225 245))
-  (print (vl-doc-ref(read str)))
-  (setq	pts (vl-doc-ref(read str)))    
+    colors
+     '(1 2 3 4 5 6 7 25 45 65 85 105 125 145 165 185 205 225 245)
+  )
+  (print (vl-doc-ref (read str)))
+  (setq pts (vl-doc-ref (read str)))
 
   (setq	pts (transpon pts)
 	x   (car pts)
 	a   (cdr pts)
   )
-  
+
   (mapcar
     (function
       (lambda (el / p)
@@ -93,6 +94,7 @@
     a
   )
 )
+
 
 ;;;;;;("a2"
 ;;;;;;"Построение точки в координатах шкалы.\n
@@ -395,5 +397,5 @@
 (princ "\t...загружен.\n")
 
 ;|«Visual LISP© Format Options»
-(72 2 10 2 nil "end of " 60 15 0 0 0 T T nil T)
+(120 2 40 2 nil "end of" 100 15 2 1 0 T T nil T)
 ;*** DO NOT add text below the comment! ***|;

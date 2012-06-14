@@ -628,8 +628,8 @@ Section "prj"
   File .\acad_w.sup\prj\Ostcill\oscill.prj
   SetOutPath $INSTDIR\acad_w.sup\prj\Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF
   File .\acad_w.sup\prj\Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF\stream.prj
-  SetOutPath $INSTDIR\acad_w.sup\prj\man
-  File .\acad_w.sup\prj\man\man.prj
+  SetOutPath $INSTDIR\acad_w.sup\man
+  File .\acad_w.sup\man\man.prj
   SetOutPath $INSTDIR\acad_w.sup\projection
   File .\acad_w.sup\projection\projection.prj
   SetOutPath $INSTDIR\acad_w.sup\mnas\Pozition
@@ -876,6 +876,8 @@ Section "html"
   File .\acad.help\git\git.html
   SetOutPath $INSTDIR\acad.help\ins_lit
   File .\acad.help\ins_lit\ins_lit.html
+  SetOutPath $INSTDIR\acad.help\translit
+  File .\acad.help\translit\translit.html
   SetOutPath $INSTDIR\acad.help
   File .\acad.help\mnasoft_command_list.html
   SetOutPath $INSTDIR\acad.help\cut
@@ -1412,6 +1414,8 @@ Section "lsp"
   File .\acad_w.sup\d_chprop\D_CHPROP.lsp
   SetOutPath $INSTDIR\acad_w.sup\matr
   File .\acad_w.sup\matr\M_PREOBR.lsp
+  SetOutPath $INSTDIR\acad_w.sup\utils
+  File .\acad_w.sup\utils\ACAD_SUP_DIR.lsp
   SetOutPath $INSTDIR\acad_w.sup\matr
   File .\acad_w.sup\matr\VECTOR.lsp
   SetOutPath $INSTDIR\acad_w.sup\utils
@@ -1496,8 +1500,8 @@ Section "lsp"
   File .\acad_w.sup\axis\Graph_analitic.lsp
   SetOutPath $INSTDIR\acad_w.sup\exel
   File .\acad_w.sup\exel\read_scalc.lsp
-  SetOutPath $INSTDIR\acad_w.sup\prj\man
-  File .\acad_w.sup\prj\man\man_data_base_func.lsp
+  SetOutPath $INSTDIR\acad_w.sup\man
+  File .\acad_w.sup\man\man_data_base_func.lsp
   SetOutPath $INSTDIR\acad_w.sup\lopatka
   File .\acad_w.sup\lopatka\Lop_func.lsp
   SetOutPath $INSTDIR\acad_w.sup
@@ -1550,8 +1554,8 @@ Section "lsp"
   File .\acad_w.sup\axis\Graph_poitn_type.lsp
   SetOutPath $INSTDIR\acad_w.sup\lines
   File .\acad_w.sup\lines\linetype.lsp
-  SetOutPath $INSTDIR\acad_w.sup\prj\man
-  File .\acad_w.sup\prj\man\man_data_base.lsp
+  SetOutPath $INSTDIR\acad_w.sup\man
+  File .\acad_w.sup\man\man_data_base.lsp
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\block_create.lsp
   SetOutPath $INSTDIR\acad_w.sup\abrev
@@ -1588,6 +1592,8 @@ Section "lsp"
   File .\acad_w.sup\prj\Spring\Spring.lsp
   SetOutPath $INSTDIR\acad_w.sup\dims
   File .\acad_w.sup\dims\abc_dialog.lsp
+  SetOutPath $INSTDIR\acad_w.sup\utils
+  File .\acad_w.sup\utils\Debug.lsp
   SetOutPath $INSTDIR\acad_w.sup\funktcii\Fizichjeskije
   File .\acad_w.sup\funktcii\Fizichjeskije\Phizich.lsp
   SetOutPath $INSTDIR\acad_w.sup\prj\Tr_inch
@@ -1642,8 +1648,8 @@ Section "lsp"
   File .\acad_w.sup\M_utils_loader\M_utils_LoaderARXInstall.lsp
   SetOutPath $INSTDIR\acad_w.sup\optimalnoje_raspololjenije_okrugnostjej
   File .\acad_w.sup\optimalnoje_raspololjenije_okrugnostjej\okrugnost_po_tochkam.lsp
-  SetOutPath $INSTDIR\acad_w.sup\prj\man
-  File .\acad_w.sup\prj\man\man.lsp
+  SetOutPath $INSTDIR\acad_w.sup\man
+  File .\acad_w.sup\man\man.lsp
   SetOutPath $INSTDIR\acad_w.sup\axis
   File .\acad_w.sup\axis\Graph_main.lsp
   SetOutPath $INSTDIR\acad_w.sup\axis
@@ -1712,8 +1718,6 @@ Section "lsp"
   File .\acad_w.sup\layer\cur_layer.lsp
   SetOutPath $INSTDIR\acad_w.sup\text
   File .\acad_w.sup\text\naklon_15gr.lsp
-  SetOutPath $INSTDIR\acad_w.sup\utils
-  File .\acad_w.sup\utils\acad_sup_dir.lsp
   SetOutPath $INSTDIR\acad_w.sup\spec
   File .\acad_w.sup\spec\Dialog_Color.lsp
   SetOutPath $INSTDIR\acad_w.sup\prj
@@ -1770,10 +1774,10 @@ Section "lsp"
   File .\acad_w.sup\tmp\test.lsp
   SetOutPath $INSTDIR\acad_w.sup\utils
   File .\acad_w.sup\utils\red_list.lsp
-  SetOutPath $INSTDIR\acad_w.sup\prj\man
-  File .\acad_w.sup\prj\man\Type_command_list.lsp
-  SetOutPath $INSTDIR\acad_w.sup\prj\man
-  File .\acad_w.sup\prj\man\create_html_all_command_list.lsp
+  SetOutPath $INSTDIR\acad_w.sup\man
+  File .\acad_w.sup\man\Type_command_list.lsp
+  SetOutPath $INSTDIR\acad_w.sup\man
+  File .\acad_w.sup\man\create_html_all_command_list.lsp
   SetOutPath $INSTDIR\acad_w.sup\prj
   File .\acad_w.sup\prj\lst.lsp
   SetOutPath $INSTDIR\acad_w.sup\mnas\Welding
@@ -1920,10 +1924,10 @@ Section "txt"
   File .\vlisp.tmp\README.txt
   SetOutPath $INSTDIR\acad_w.sup\std_features
   File .\acad_w.sup\std_features\README.txt
-  SetOutPath $INSTDIR\acad_w.sup\prj\man
-  File .\acad_w.sup\prj\man\man_data.txt
-  SetOutPath $INSTDIR\acad_w.sup\prj\man
-  File .\acad_w.sup\prj\man\man_data_func.txt
+  SetOutPath $INSTDIR\acad_w.sup\man
+  File .\acad_w.sup\man\man_data.txt
+  SetOutPath $INSTDIR\acad_w.sup\man
+  File .\acad_w.sup\man\man_data_func.txt
   SetOutPath $INSTDIR\acad_fnt
   File .\acad_fnt\ascii.txt
 SectionEnd
@@ -1980,8 +1984,8 @@ Section "prv"
   File .\acad_w.sup\dopusk\Dopusk.prv
   SetOutPath $INSTDIR\acad_w.sup\exel
   File .\acad_w.sup\exel\Exel.prv
-  SetOutPath $INSTDIR\acad_w.sup\prj\man
-  File .\acad_w.sup\prj\man\man.prv
+  SetOutPath $INSTDIR\acad_w.sup\man
+  File .\acad_w.sup\man\man.prv
   SetOutPath $INSTDIR\acad_w.sup\mnas\Pozition
   File .\acad_w.sup\mnas\Pozition\pozition.prv
   SetOutPath $INSTDIR\acad_w.sup\axis
@@ -2375,7 +2379,7 @@ Section "un.prj"
   Delete $INSTDIR\acad_w.sup\exel\Exel.prj
   Delete $INSTDIR\acad_w.sup\prj\Ostcill\oscill.prj
   Delete $INSTDIR\acad_w.sup\prj\Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF\stream.prj
-  Delete $INSTDIR\acad_w.sup\prj\man\man.prj
+  Delete $INSTDIR\acad_w.sup\man\man.prj
   Delete $INSTDIR\acad_w.sup\projection\projection.prj
   Delete $INSTDIR\acad_w.sup\mnas\Pozition\pozition.prj
   Delete $INSTDIR\acad_w.sup\prj\Postrojenije_Zavisimostjej_vrjednyh_vybrosov\nox_co.prj
@@ -2502,6 +2506,7 @@ Section "un.html"
   Delete $INSTDIR\CopyRight.html
   Delete $INSTDIR\acad.help\git\git.html
   Delete $INSTDIR\acad.help\ins_lit\ins_lit.html
+  Delete $INSTDIR\acad.help\translit\translit.html
   Delete $INSTDIR\acad.help\mnasoft_command_list.html
   Delete $INSTDIR\acad.help\cut\cut.html
   Delete $INSTDIR\acad.help\u\u.html
@@ -2776,6 +2781,7 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\dopusk\DOP.lsp
   Delete $INSTDIR\acad_w.sup\d_chprop\D_CHPROP.lsp
   Delete $INSTDIR\acad_w.sup\matr\M_PREOBR.lsp
+  Delete $INSTDIR\acad_w.sup\utils\ACAD_SUP_DIR.lsp
   Delete $INSTDIR\acad_w.sup\matr\VECTOR.lsp
   Delete $INSTDIR\acad_w.sup\utils\ERR.lsp
   Delete $INSTDIR\acad_w.sup\matr\MATR.lsp
@@ -2818,7 +2824,7 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\fors_rh\ras_har_lic.lsp
   Delete $INSTDIR\acad_w.sup\axis\Graph_analitic.lsp
   Delete $INSTDIR\acad_w.sup\exel\read_scalc.lsp
-  Delete $INSTDIR\acad_w.sup\prj\man\man_data_base_func.lsp
+  Delete $INSTDIR\acad_w.sup\man\man_data_base_func.lsp
   Delete $INSTDIR\acad_w.sup\lopatka\Lop_func.lsp
   Delete $INSTDIR\acad_w.sup\Acaddoc.lsp
   Delete $INSTDIR\acad_w.sup\prj\Ostcill\osc.lsp
@@ -2845,7 +2851,7 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\izmjeritjelnaja_mashina\spline.lsp
   Delete $INSTDIR\acad_w.sup\axis\Graph_poitn_type.lsp
   Delete $INSTDIR\acad_w.sup\lines\linetype.lsp
-  Delete $INSTDIR\acad_w.sup\prj\man\man_data_base.lsp
+  Delete $INSTDIR\acad_w.sup\man\man_data_base.lsp
   Delete $INSTDIR\acad_w.sup\format\block_create.lsp
   Delete $INSTDIR\acad_w.sup\abrev\gr_on_off.lsp
   Delete $INSTDIR\acad_w.sup\spec\Specif.lsp
@@ -2864,6 +2870,7 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\piping\Piping.lsp
   Delete $INSTDIR\acad_w.sup\prj\Spring\Spring.lsp
   Delete $INSTDIR\acad_w.sup\dims\abc_dialog.lsp
+  Delete $INSTDIR\acad_w.sup\utils\Debug.lsp
   Delete $INSTDIR\acad_w.sup\funktcii\Fizichjeskije\Phizich.lsp
   Delete $INSTDIR\acad_w.sup\prj\Tr_inch\tr_inch.lsp
   Delete $INSTDIR\acad_w.sup\prj\CHtjenije_iz_Exel\graph.lsp
@@ -2891,7 +2898,7 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\M_utils_loader\M_utils_LoaderDBXInstall.lsp
   Delete $INSTDIR\acad_w.sup\M_utils_loader\M_utils_LoaderARXInstall.lsp
   Delete $INSTDIR\acad_w.sup\optimalnoje_raspololjenije_okrugnostjej\okrugnost_po_tochkam.lsp
-  Delete $INSTDIR\acad_w.sup\prj\man\man.lsp
+  Delete $INSTDIR\acad_w.sup\man\man.lsp
   Delete $INSTDIR\acad_w.sup\axis\Graph_main.lsp
   Delete $INSTDIR\acad_w.sup\axis\axis_graph_main.lsp
   Delete $INSTDIR\acad_w.sup\prj\prj\prj_main.lsp
@@ -2926,7 +2933,6 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\layer\vp_layer.lsp
   Delete $INSTDIR\acad_w.sup\layer\cur_layer.lsp
   Delete $INSTDIR\acad_w.sup\text\naklon_15gr.lsp
-  Delete $INSTDIR\acad_w.sup\utils\acad_sup_dir.lsp
   Delete $INSTDIR\acad_w.sup\spec\Dialog_Color.lsp
   Delete $INSTDIR\acad_w.sup\prj\Temperaturnyj_napor.lsp
   Delete $INSTDIR\acad_w.sup\funktcii\ActivX\reactor.lsp
@@ -2955,8 +2961,8 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\mnas\Pozition\pozition_sort.lsp
   Delete $INSTDIR\acad_w.sup\tmp\test.lsp
   Delete $INSTDIR\acad_w.sup\utils\red_list.lsp
-  Delete $INSTDIR\acad_w.sup\prj\man\Type_command_list.lsp
-  Delete $INSTDIR\acad_w.sup\prj\man\create_html_all_command_list.lsp
+  Delete $INSTDIR\acad_w.sup\man\Type_command_list.lsp
+  Delete $INSTDIR\acad_w.sup\man\create_html_all_command_list.lsp
   Delete $INSTDIR\acad_w.sup\prj\lst.lsp
   Delete $INSTDIR\acad_w.sup\mnas\Welding\setup_lst.lsp
   Delete $INSTDIR\acad_w.sup\mnas\Welding_lsp\setup_lst.lsp
@@ -3037,8 +3043,8 @@ Section "un.txt"
   Delete $INSTDIR\acad_w.sup\prj\Spring\README.txt
   Delete $INSTDIR\vlisp.tmp\README.txt
   Delete $INSTDIR\acad_w.sup\std_features\README.txt
-  Delete $INSTDIR\acad_w.sup\prj\man\man_data.txt
-  Delete $INSTDIR\acad_w.sup\prj\man\man_data_func.txt
+  Delete $INSTDIR\acad_w.sup\man\man_data.txt
+  Delete $INSTDIR\acad_w.sup\man\man_data_func.txt
   Delete $INSTDIR\acad_fnt\ascii.txt
 SectionEnd
 Section "un.prv"
@@ -3068,7 +3074,7 @@ Section "un.prv"
   Delete $INSTDIR\acad_w.sup\clock\Clock.prv
   Delete $INSTDIR\acad_w.sup\dopusk\Dopusk.prv
   Delete $INSTDIR\acad_w.sup\exel\Exel.prv
-  Delete $INSTDIR\acad_w.sup\prj\man\man.prv
+  Delete $INSTDIR\acad_w.sup\man\man.prv
   Delete $INSTDIR\acad_w.sup\mnas\Pozition\pozition.prv
   Delete $INSTDIR\acad_w.sup\axis\axis_podp.prv
   Delete $INSTDIR\acad_w.sup\sort_shp\Sort_shp.prv
@@ -3164,7 +3170,6 @@ Section "Uninstall"
   RMDir  $INSTDIR\acad_w.sup\prj\rascot_zolotnika
   RMDir  $INSTDIR\acad_w.sup\prj\prj
   RMDir  $INSTDIR\acad_w.sup\prj\moment_zatjazki
-  RMDir  $INSTDIR\acad_w.sup\prj\man
   RMDir  $INSTDIR\acad_w.sup\prj\arx_dbx_reg
   RMDir  $INSTDIR\acad_w.sup\prj\Zavihritel
   RMDir  $INSTDIR\acad_w.sup\prj\Water_Steam
@@ -3196,6 +3201,7 @@ Section "Uninstall"
   RMDir  $INSTDIR\acad_w.sup\mjetod_polovinnogo_djeljenija
   RMDir  $INSTDIR\acad_w.sup\mjetod_pokoordinatnogo_spuska
   RMDir  $INSTDIR\acad_w.sup\matr
+  RMDir  $INSTDIR\acad_w.sup\man
   RMDir  $INSTDIR\acad_w.sup\lopatka
   RMDir  $INSTDIR\acad_w.sup\lines
   RMDir  $INSTDIR\acad_w.sup\layer
@@ -3255,6 +3261,7 @@ Section "Uninstall"
   RMDir  $INSTDIR\acad.help\vs
   RMDir  $INSTDIR\acad.help\undo
   RMDir  $INSTDIR\acad.help\u
+  RMDir  $INSTDIR\acad.help\translit
   RMDir  $INSTDIR\acad.help\tr
   RMDir  $INSTDIR\acad.help\tm
   RMDir  $INSTDIR\acad.help\sv
