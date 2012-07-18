@@ -2,28 +2,28 @@
 ;;; где на первом месте идет строка, а на втором столбец.
 ;;;_$ (строка_xls->точка "S2")
 ;;;(2 19)
-(defun строка_xls->точка (str / lst_09 lst_AZ)
-  (mapcar
-    (function
-      (lambda (el)
-	(cond
-	  ((and (>= el (ascii "A")) (<= el (ascii "Z")))
-	   (setq lst_AZ
-		  (cons (- el 64) lst_AZ)
+(DEFUN строка_xls->точка (str / lst_09 lst_az)
+  (MAPCAR
+    (FUNCTION
+      (LAMBDA (el)
+	(COND
+	  ((AND (>= el (ASCII "A")) (<= el (ASCII "Z")))
+	   (SETQ lst_az
+		  (CONS (- el 64) lst_az)
 	   )
 	  )
-	  ((and (>= el (ascii "0")) (<= el (ascii "9")))
-	   (setq lst_09
-		  (cons (- el 48) lst_09)
+	  ((AND (>= el (ASCII "0")) (<= el (ASCII "9")))
+	   (SETQ lst_09
+		  (CONS (- el 48) lst_09)
 	   )
 	  )
 	)
-	t
+	T
       )
     )
-    (reverse (VL-STRING->LIST (strcase str)))
+    (REVERSE (VL-STRING->LIST (STRCASE str)))
   )
-  (list (композиция_по_основанию lst_09 10) (композиция_по_основанию lst_az 26))
+  (LIST (композиция_по_основанию lst_09 10) (композиция_по_основанию lst_az 26))
 )
 
 ;;;Преобразует строку символов str, представляющую целое число,
@@ -34,23 +34,26 @@
 ;;;27
 ;;;_$ (СТРОКА_XLS->ЦЕЛОЕ "IV" "A" 26)
 ;;;256
-(defun строка_xls->целое (str							;Преобразуемая строка
-			  base_chr						;Начальноый символ в системе счисления
-			  base							;основание системы счисления
+(DEFUN строка_xls->целое
+			 (str		;Преобразуемая строка
+			  base_chr	;Начальноый символ в системе счисления
+			  base		;основание системы счисления
 			  / delta)
-  (setq delta (1- (ascii base_chr)))
+  (SETQ delta (1- (ASCII base_chr)))
   (композиция_по_основанию
-    (mapcar
-      (function
-	(lambda	(el)
+    (MAPCAR
+      (FUNCTION
+	(LAMBDA	(el)
 	  (- el delta)
 	)
       )
-      (vl-string->list str)
+      (VL-STRING->LIST str)
     )
     base
   )
 )
+
+
 
 
 ;;;Производит преобразование целого числа в строку символов.
@@ -67,15 +70,15 @@
 ;;;"AA"
 ;;;_$ (целое->строка_xls 256 "A" 26)
 ;;;"IV"
-(defun целое->строка_xls (i							; преобразуемое число
-			  base_chr						; Начальный символ системы счисления
-			  base							; основание системы счисления
+(DEFUN целое->строка_xls (i		; преобразуемое число
+			  base_chr	; Начальный символ системы счисления
+			  base		; основание системы счисления
 			 )
-  (apply
-    (function strcat)
-    (mapcar
-      (function
-	(lambda	(el)
+  (APPLY
+    (FUNCTION STRCAT)
+    (MAPCAR
+      (FUNCTION
+	(LAMBDA	(el)
 	  (целое->символ_xls el base_chr)
 	)
       )
@@ -89,10 +92,10 @@
 ;;;"@"
 ;;;_$ (целое->символ_xls 1 "A")
 ;;;"A"
-(defun целое->символ_xls (i							; преобразуемое число
-			  base_chr						; Начальный символ системы счисления
-			  )
-  (chr (+ (ascii base_chr) i -1))
+(DEFUN целое->символ_xls (i		; преобразуемое число
+			  base_chr	; Начальный символ системы счисления
+			 )
+  (CHR (+ (ASCII base_chr) i -1))
 )
 
 ;;;Используется внутренне функцией целое->строка_xls.
@@ -106,30 +109,30 @@
 ;;;(24 26 10 26 13)
 ;;;_$ (преобразование_к_безнулевому_виду '(1 0 0 1 0 1) 2)
 ;;;(1 1 2 2 1)
-(defun преобразование_к_безнулевому_виду (lst basa / n_null ln i lst1 lst_1 val)
-  (while (setq n_null (поиск_первого_нуля lst 0))
-    (setq
-      ln   (length lst)
+(DEFUN преобразование_к_безнулевому_виду (lst basa / n_null ln i lst1 lst_1 val)
+  (WHILE (SETQ n_null (поиск_первого_нуля lst 0))
+    (SETQ
+      ln   (LENGTH lst)
       i	   ln
       lst1 nil
     )
-    (while (>= (setq i (1- i)) 0)
-      (cond
+    (WHILE (>= (SETQ i (1- i)) 0)
+      (COND
 	((= i n_null)
-	 (setq val basa)
+	 (SETQ val basa)
 	)
 	((= i (1- n_null))
-	 (setq val (1- (nth i lst)))
+	 (SETQ val (1- (NTH i lst)))
 	)
-	(t
-	 (setq val (nth i lst))
+	(T
+	 (SETQ val (NTH i lst))
 	)
       )
-      (setq lst1 (cons val lst1))
+      (SETQ lst1 (CONS val lst1))
     )
-    (if	(= (car lst1) 0)
-      (setq lst (cdr lst1))
-      (setq lst lst1)
+    (IF	(= (CAR lst1) 0)
+      (SETQ lst (CDR lst1))
+      (SETQ lst lst1)
     )
   )
   lst
@@ -146,29 +149,29 @@
 ;;;4
 ;;;_$ (поиск_первого_нуля '(1 0 3 4) 2)
 ;;;nil
-(defun поиск_первого_нуля (lst							;Список.
-			   n_start						;Номер элемента с которого начинается поиск.
+(DEFUN поиск_первого_нуля (lst		;Список.
+			   n_start	;Номер элемента с которого начинается поиск.
 			   / do_while rez ln)
-  (setq
-    ln	     (length lst)
+  (SETQ
+    ln	     (LENGTH lst)
     do_while (< n_start ln)
   )
-  (while do_while
-    (cond
-      ((= 0 (nth n_start lst))
-       (setq
+  (WHILE do_while
+    (COND
+      ((= 0 (NTH n_start lst))
+       (SETQ
 	 do_while nil
 	 rez n_start
        )
       )
       ((= n_start ln)
-       (setq
+       (SETQ
 	 do_while nil
 	 rez nil
        )
       )
       ((< n_start ln)
-       (setq
+       (SETQ
 	 n_start (1+ n_start)
        )
       )
@@ -178,115 +181,209 @@
 )
 
 ;;;Производит чтение данных из таблицы Exel
-(defun read_exel
-		 (xls_tbl_pathname						;Путь и имя файла читаемой таблицы Exel
-		  sheet_no							;Номер страницы для чтения данных
-		  cell_lt							; Левая верхняя ячейка
-		  cell_rb							; Правая нижняя ячейка
-		  / oex								;"Excel.Application"
-		  wbs								;"Workbooks"
-		  awb								;активная рабочая книга
-		  shs								;"Sheets"
-		  csh								;Текущий лист
-		  matrix							;результирующая матрица
+(DEFUN read_exel
+		 (xls_tbl_pathname	;Путь и имя файла читаемой таблицы Exel
+		  sheet_no		;Номер страницы для чтения данных
+		  cell_lt		; Левая верхняя ячейка
+		  cell_rb		; Правая нижняя ячейка
+		  / oex			;"Excel.Application"
+		  wbs			;"Workbooks"
+		  awb			;активная рабочая книга
+		  shs			;"Sheets"
+		  csh			;Текущий лист
+		  matrix		;результирующая матрица
 )
-  (vl-load-com)
-  (setq oex (vlax-get-or-create-object "Excel.Application"))
-  (vlax-put-property oex "Visible" :vlax-true)
+  (VL-LOAD-COM)
+  (SETQ oex (VLAX-GET-OR-CREATE-OBJECT "Excel.Application"))
+  (VLAX-PUT-PROPERTY oex "Visible" :VLAX-TRUE)
 
-  (setq wbs (vlax-get-property oex "Workbooks"))
-  (setq	awb (vlax-invoke-method
+  (SETQ wbs (VLAX-GET-PROPERTY oex "Workbooks"))
+  (SETQ	awb (VLAX-INVOKE-METHOD
 	      wbs
 	      "Open"
 	      xls_tbl_pathname
 	    )
   )
-  (setq shs (vlax-get-property awb "Worksheets"))
-  (setq csh (vlax-get-property shs "Item" sheet_no))
-										;(vlax-put-property csh "Name" "Cool")
-  (setq	matrix
+  (SETQ shs (VLAX-GET-PROPERTY awb "Worksheets"))
+  (SETQ csh (VLAX-GET-PROPERTY shs "Item" sheet_no))
+					;(vlax-put-property csh "Name" "Cool")
+  (SETQ	matrix
 	 (read_csh csh cell_lt cell_rb)
   )
-  (vlax-invoke-method oex "Quit")
+  (VLAX-INVOKE-METHOD oex "Quit")
 )
 
 ;;; Чтение текущего листа
 ;;; (read_csh csh "A1" "B3")
-(defun read_csh	(csh								; Текущий лист Exel
-		 cell_lt							; Левая верхняя ячейка
-		 cell_rb							; Правая нижняя ячейка
-		 / cell								;текущая ячейка
-		 column_row							;результирующая матрица
-		 do_column							;признак выхода из цикла по колонкам строки
-		 do_row								;признак выхода из цикла по строкам
-		 i_column							;текущая колонка
-		 i_row								;текущая строка
-		 pnt_lt								;Координаты левой верхней ячейки
-		 pnt_rb								;Координаты правой нижней  ячейки
-		 row_list							;список содержащий элементы текущей строки
-		 var								;вариант находящийся в ячейке cell
-		 var_type							;тип варианта
-		 var_val							;значение варианта
+(DEFUN read_csh	(csh			; Текущий лист Exel
+		 cell_lt		; Левая верхняя ячейка
+		 cell_rb		; Правая нижняя ячейка
+		 /			;
+		 cell			;текущая ячейка
+		 column_row		;результирующая матрица
+		 do_column		;признак выхода из цикла по колонкам строки
+		 do_row			;признак выхода из цикла по строкам
+		 i_column		;текущая колонка
+		 i_row			;текущая строка
+		 pnt_lt			;Координаты левой верхней ячейки
+		 pnt_rb			;Координаты правой нижней  ячейки
+		 row_list		;список содержащий элементы текущей строки
+		 var			;вариант находящийся в ячейке cell
+		 var_type		;тип варианта
+		 var_val		;значение варианта
 )
-  (setq
+  (SETQ
     pnt_lt     (строка_xls->точка cell_lt)
     pnt_rb     (строка_xls->точка cell_rb)
-    i_row      (car pnt_lt)
-    do_row     t
+    i_row      (CAR pnt_lt)
+    do_row     T
     column_row nil
   )
-  (while do_row
-    (setq i_column (cadr pnt_lt))
-    (setq cell
-		   (vlax-variant-value
-		     (vlax-invoke-method
-		       csh
-		       "Evaluate"
-		       (strcat (целое->строка_xls i_column "A" 26) (itoa i_row))
-		     )
-		   )
-	  var	   (vlax-get-property cell "Value")
-	  var_type (vlax-variant-type var)
-	  var_val  (vlax-variant-value var)
-	  do_row   var_val
-    )										; определение того, является-ли начало строки пустой
-    (setq
-      do_column	t
+  (WHILE do_row
+    (SETQ
+      i_column (CADR pnt_lt)
+      cell     (vlax-variant-value
+		 (vlax-invoke-method
+		   csh
+		   "Evaluate"
+		   (STRCAT (целое->строка_xls i_column "A" 26) (ITOA i_row))
+		 )
+	       )
+      var      (vlax-get-property cell "Value")
+      var_type (vlax-variant-type var)
+      var_val  (vlax-variant-value var)
+      do_row   var_val
+    )					; определение того, является-ли начало строки пустой
+    (SETQ
+      do_column	T
       row_list nil
     )
-    (while do_column
-      (setq cell      (vlax-variant-value
-			(vlax-invoke-method csh "Evaluate" (strcat (целое->строка_xls i_column "A" 26) (itoa i_row)))
-		      )
-	    var	      (vlax-get-property cell "Value")
-	    var_type  (vlax-variant-type var)
-	    var_val   (vlax-variant-value var)
-	    do_column var_val
+    (WHILE do_column
+      (SETQ
+	cell	  (vlax-variant-value
+		    (vlax-invoke-method
+		      csh
+		      "Evaluate"
+		      (STRCAT (целое->строка_xls i_column "A" 26) (ITOA i_row))
+		    )
+		  )
+	var	  (vlax-get-property cell "Value")
+	var_type  (vlax-variant-type var)
+	var_val	  (vlax-variant-value var)
+	do_column var_val
       )
-      (if var_val
-	(setq row_list (append row_list (list var_val)))
+      (IF var_val
+	(SETQ row_list (APPEND row_list (LIST var_val)))
       )
-      (cond
-	((and (< i_column 256) (< i_column (cadr pnt_rb)))
-	 (setq i_column (1+ i_column))
+      (COND
+	((AND (< i_column 256) (< i_column (CADR pnt_rb)))
+	 (SETQ i_column (1+ i_column))
 	)
-	(t
-	 (setq do_column nil)
+	(T
+	 (SETQ do_column nil)
 	)
       )
     )
-    (if	row_list
-      (setq column_row (append column_row (list row_list)))
+    (IF	row_list
+      (SETQ column_row (APPEND column_row (LIST row_list)))
     )
 
-    (cond
-      ((and (< i_row 65536) (< i_row (car pnt_rb)))
-       (setq i_row (1+ i_row))
+    (COND
+      ((AND (< i_row 65536) (< i_row (CAR pnt_rb)))
+       (SETQ i_row (1+ i_row))
       )
-      (t
-       (setq do_row nil)
+      (T
+       (SETQ do_row nil)
       )
     )
   )
   column_row
 )
+
+(DEFUN read-exel-sheet-by-row (csh	; Текущий лист Exel
+			       cell_lt	; Левая верхняя ячейка
+			       cell_rb	; Правая нижняя ячейка
+			       /	;
+			       cell	;текущая ячейка
+			       row_column ;результирующая матрица
+			       do_column ;признак выхода из цикла по колонкам строки
+			       do_row	;признак выхода из цикла по строкам
+			       i_column	;текущая колонка
+			       i_row	;текущая строка
+			       pnt_lt	;Координаты левой верхней ячейки
+			       pnt_rb	;Координаты правой нижней  ячейки
+			       col_list	;список содержащий элементы текущего столбца
+			       var	;вариант находящийся в ячейке cell
+			       var_type	;тип варианта
+			       var_val	;значение варианта
+			      )
+  (SETQ
+    pnt_lt     (строка_xls->точка cell_lt)
+    pnt_rb     (строка_xls->точка cell_rb)
+    i_column   (CADR pnt_lt)
+    do_column  T
+    row_column nil
+  )
+  (WHILE do_column
+    (SETQ
+      i_row (CAR pnt_lt)
+      cell     (vlax-variant-value
+		 (vlax-invoke-method
+		   csh
+		   "Evaluate"
+		   (STRCAT (целое->строка_xls i_column "A" 26) (ITOA i_row))
+		 )
+	       )
+      var      (vlax-get-property cell "Value")
+      var_type (vlax-variant-type var)
+      var_val  (vlax-variant-value var)
+      do_column   var_val
+    )					; определение того, является-ли начало строки пустой
+    (SETQ
+      do_row	T
+      col_list nil
+    )
+    (WHILE do_row
+      (SETQ
+	cell	  (vlax-variant-value
+		    (vlax-invoke-method
+		      csh
+		      "Evaluate"
+		      (STRCAT (целое->строка_xls i_column "A" 26) (ITOA i_row))
+		    )
+		  )
+	var	  (vlax-get-property cell "Value")
+	var_type  (vlax-variant-type var)
+	var_val	  (vlax-variant-value var)
+	do_column var_val
+      )
+      (IF var_val
+	(SETQ col_list (APPEND col_list (LIST var_val)))
+      )
+      (COND
+	((AND (< i_column 16000) (< i_column (CADR pnt_rb)))
+	 (SETQ i_column (1+ i_column))
+	)
+	(T
+	 (SETQ do_column nil)
+	)
+      )
+    )
+    (IF	row_list
+      (SETQ column_row (APPEND column_row (LIST row_list)))
+    )
+
+    (COND
+      ((AND (< i_row 65536) (< i_row (CAR pnt_rb)))
+       (SETQ i_row (1+ i_row))
+      )
+      (T
+       (SETQ do_row nil)
+      )
+    )
+  )
+  row_column
+)
+;|«Visual LISP© Format Options»
+(120 2 40 2 nil "end of" 100 9 2 1 0 T T nil T)
+;*** DO NOT add text below the comment! ***|;
