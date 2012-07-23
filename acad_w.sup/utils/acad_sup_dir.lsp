@@ -72,15 +72,15 @@
 )
 
 (defun MNAS_ArxPrj_acad_w ()
-  (strcat (MNAS_ArxPrj_root) "\\" "acad_w.sup")
+  (strcat (MNAS_ArxPrj_root) "/" "acad_w.sup")
 )
 
 (defun MNAS_ArxPrj_acad_help ()
-  (strcat (MNAS_ArxPrj_root) "\\" "acad.help")
+  (strcat (MNAS_ArxPrj_root) "/" "acad.help")
 )
 
 (defun MNAS_ArxPrj_vlx ()
-  (strcat (MNAS_ArxPrj_root) "\\" "vlx")
+  (strcat (MNAS_ArxPrj_root) "/" "vlx")
 )
 
 (defun acad_sup	() (MNAS_ArxPrj_acad_w))
