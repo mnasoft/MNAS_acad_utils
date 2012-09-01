@@ -24,7 +24,7 @@
 	   Сайт: http://notepad-plus-plus.org/
       	   Степень необходимости: не обязательно.
 0.2.2	Получение исходных файлов
-	Исходные файлы можно получитьт с сайта: https://github.com/mnasoft/MNAS_acad_utils:
+	Исходные файлы можно получитьт с сайта: https://github.com/mnasoft/MNAS_acad_utils :
 	a) в виде zip-архива.
 	   После скачивания zip-архива необходимо выполнить его распаковку;
 	b) в виде git-репозитория git://github.com/mnasoft/MNAS_acad_utils.git.

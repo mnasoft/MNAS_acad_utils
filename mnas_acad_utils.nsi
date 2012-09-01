@@ -1414,8 +1414,6 @@ Section "lsp"
   File .\acad_w.sup\d_chprop\D_CHPROP.lsp
   SetOutPath $INSTDIR\acad_w.sup\matr
   File .\acad_w.sup\matr\M_PREOBR.lsp
-  SetOutPath $INSTDIR\acad_w.sup\utils
-  File .\acad_w.sup\utils\ACAD_SUP_DIR.lsp
   SetOutPath $INSTDIR\acad_w.sup\matr
   File .\acad_w.sup\matr\VECTOR.lsp
   SetOutPath $INSTDIR\acad_w.sup\utils
@@ -1718,6 +1716,8 @@ Section "lsp"
   File .\acad_w.sup\layer\cur_layer.lsp
   SetOutPath $INSTDIR\acad_w.sup\text
   File .\acad_w.sup\text\naklon_15gr.lsp
+  SetOutPath $INSTDIR\acad_w.sup\utils
+  File .\acad_w.sup\utils\acad_sup_dir.lsp
   SetOutPath $INSTDIR\acad_w.sup\spec
   File .\acad_w.sup\spec\Dialog_Color.lsp
   SetOutPath $INSTDIR\acad_w.sup\prj
@@ -2781,7 +2781,6 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\dopusk\DOP.lsp
   Delete $INSTDIR\acad_w.sup\d_chprop\D_CHPROP.lsp
   Delete $INSTDIR\acad_w.sup\matr\M_PREOBR.lsp
-  Delete $INSTDIR\acad_w.sup\utils\ACAD_SUP_DIR.lsp
   Delete $INSTDIR\acad_w.sup\matr\VECTOR.lsp
   Delete $INSTDIR\acad_w.sup\utils\ERR.lsp
   Delete $INSTDIR\acad_w.sup\matr\MATR.lsp
@@ -2933,6 +2932,7 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\layer\vp_layer.lsp
   Delete $INSTDIR\acad_w.sup\layer\cur_layer.lsp
   Delete $INSTDIR\acad_w.sup\text\naklon_15gr.lsp
+  Delete $INSTDIR\acad_w.sup\utils\acad_sup_dir.lsp
   Delete $INSTDIR\acad_w.sup\spec\Dialog_Color.lsp
   Delete $INSTDIR\acad_w.sup\prj\Temperaturnyj_napor.lsp
   Delete $INSTDIR\acad_w.sup\funktcii\ActivX\reactor.lsp
