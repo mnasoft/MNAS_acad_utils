@@ -13,56 +13,61 @@ function MakeVlispPRV()
 //Производит компиляцию проектов PRV. Предполагается, что активизировано окно AutoCAD
     WriteWord("vlisp{ENTER}");
 //	acad_w_path="C:\\MNAS_acad_db17_utils\\acad_w.sup\\";
-	acad_w_path="D:\\MNAS_acad_db17_utils\\acad_w.sup\\";
+	acad_w_path="c:\\users\\namatv\\Develop\\MNAS_acad_utils\\acad_w.sup\\";
 	
 	WScript.Sleep(5000);
 	
-	MakePrv(acad_w_path + "spec\\spec.prv");
-	MakePrv(acad_w_path + "razvertka\\razvertka.prv");
-	MakePrv(acad_w_path + "provoloka\\provoloka.prv");
-    MakePrv(acad_w_path + "M_utils_loader\\M_utils_loader.prv");
-    MakePrv(acad_w_path + "ABREV\\Abrev.prv");
-    MakePrv(acad_w_path + "Acad_pgp\\ACAD_PGP.prv");
-    MakePrv(acad_w_path + "Add_prefix\\Add_prefix.prv");
-    MakePrv(acad_w_path + "ATOMS\\atoms.prv");
-    MakePrv(acad_w_path + "AXIS\\Axis.prv");
-    MakePrv(acad_w_path + "AXIS\\axis_podp.prv");
-    MakePrv(acad_w_path + "Big_fnt\\big_fnt.prv");
-    MakePrv(acad_w_path + "CHANGE\\Change.prv");
-    MakePrv(acad_w_path + "CIRCLES\\CIRCLES.PRV");
-    MakePrv(acad_w_path + "CLOCK\\Clock.prv");
-    MakePrv(acad_w_path + "DIMS\\dims.prv");
-    MakePrv(acad_w_path + "DIMS\\rou\\rou.prv");
-    MakePrv(acad_w_path + "DIMS\\rou_1\\rou_1.prv");
-    MakePrv(acad_w_path + "DIMS\\welding\\Welding1.prv");
+MakePrv(acad_w_path + "abrev\\Abrev.prv");
+MakePrv(acad_w_path + "acad_pgp\\ACAD_PGP.prv");
+MakePrv(acad_w_path + "add_prefix\\Add_prefix.prv");
+MakePrv(acad_w_path + "atoms\\atoms.prv");
+MakePrv(acad_w_path + "axis\\Axis.prv");
+MakePrv(acad_w_path + "axis\\axis_podp.prv");
+MakePrv(acad_w_path + "big_fnt\\big_fnt.prv");
+MakePrv(acad_w_path + "change\\Change.prv");
+MakePrv(acad_w_path + "circles\\CIRCLES.prv");
+MakePrv(acad_w_path + "clock\\Clock.prv");
+MakePrv(acad_w_path + "dims\\dims.prv");
+MakePrv(acad_w_path + "dims\\dim_style\\dim_style.prv");
+MakePrv(acad_w_path + "dims\\rou\\rou.prv");
+MakePrv(acad_w_path + "dims\\rou_1\\rou_1.prv");
+MakePrv(acad_w_path + "dims\\welding\\Welding1.prv");
 
-    MakePrv(acad_w_path + "Dxf\\dxf.prv");
-    MakePrv(acad_w_path + "D_CHPROP\\D_chprop.prv");
-    MakePrv(acad_w_path + "Edit\\EDIT.PRV");
-    MakePrv(acad_w_path + "ENTMAKE\\ENTMAKE.prv");
-    MakePrv(acad_w_path + "Exel\\Exel.prv");
-    MakePrv(acad_w_path + "Format\\format.prv");
-    MakePrv(acad_w_path + "Fors_rh\\fors_rh.prv");
-    MakePrv(acad_w_path + "FOR_LIC\\For_lic.prv");
-    MakePrv(acad_w_path + "GRAF\\Graf.prv");
-    MakePrv(acad_w_path + "HPGL\\HPGL.prv");
-    MakePrv(acad_w_path + "KOMPAS\\kompas.prv");
-    MakePrv(acad_w_path + "LAYER\\layer.prv");
-    MakePrv(acad_w_path + "LINES\\lines.prv");
-    MakePrv(acad_w_path + "LOPATKA\\Lopatka.prv");
-    MakePrv(acad_w_path + "MNAS\\Pozition\\pozition.prv");
-    MakePrv(acad_w_path + "MNAS\\Welding\\welding.prv");
-    MakePrv(acad_w_path + "Otvjerstija\\f_otv.prv");
-    MakePrv(acad_w_path + "Piping\\pipe.prv");
-    MakePrv(acad_w_path + "point\\point.prv");
-    MakePrv(acad_w_path + "PRJ\\man\\man.prv");
-    MakePrv(acad_w_path + "RENAME\\rename.prv");
-    MakePrv(acad_w_path + "SCR\\scr.prv");
-    MakePrv(acad_w_path + "Smesitel_vla\\SMESITEL_vla.prv");
-    MakePrv(acad_w_path + "Sort_shp\\Sort_shp.prv");
-    MakePrv(acad_w_path + "TEXT\\text.prv");
+MakePrv(acad_w_path + "dxf\\dxf.prv");
+MakePrv(acad_w_path + "d_chprop\\D_chprop.prv");
+MakePrv(acad_w_path + "edit\\EDIT.prv");
+MakePrv(acad_w_path + "entmake\\ENTMAKE.prv");
+MakePrv(acad_w_path + "exel\\Exel.prv");
+MakePrv(acad_w_path + "format\\format.prv");
+MakePrv(acad_w_path + "fors_rh\\fors_rh.prv");
+MakePrv(acad_w_path + "for_lic\\For_lic.prv");
+MakePrv(acad_w_path + "graf\\Graf.prv");
+MakePrv(acad_w_path + "hpgl\\HPGL.prv");
+MakePrv(acad_w_path + "kompas\\kompas.prv");
+MakePrv(acad_w_path + "layer\\layer.prv");
+MakePrv(acad_w_path + "lines\\lines.prv");
+MakePrv(acad_w_path + "lopatka\\Lopatka.prv");
+MakePrv(acad_w_path + "man\\man.prv");
+MakePrv(acad_w_path + "mnas\\Pozition\\pozition.prv");
+MakePrv(acad_w_path + "mnas\\Welding\\welding.prv");
+MakePrv(acad_w_path + "mnas\\Welding_lsp\\welding_lsp.prv");
 
-    MakePrv(acad_w_path + "DOPUSK\\Dopusk.prv");
+MakePrv(acad_w_path + "otvjerstija\\f_otv.prv");
+MakePrv(acad_w_path + "piping\\pipe.prv");
+MakePrv(acad_w_path + "point\\point.prv");
+MakePrv(acad_w_path + "prj\\arx_dbx_reg\\create_registry.prv");
+MakePrv(acad_w_path + "prj\\Spring\\Spring.prv");
+MakePrv(acad_w_path + "provoloka\\provoloka.prv");
+MakePrv(acad_w_path + "razvertka\\razvertka.prv");
+MakePrv(acad_w_path + "rename\\rename.prv");
+MakePrv(acad_w_path + "scr\\scr.prv");
+MakePrv(acad_w_path + "smesitel_vla\\SMESITEL_vla.prv");
+MakePrv(acad_w_path + "sort_shp\\Sort_shp.prv");
+MakePrv(acad_w_path + "spec\\spec.prv");
+MakePrv(acad_w_path + "text\\text.prv");
+
+MakePrv(acad_w_path + "dopusk\\Dopusk.prv");
+//MakePrv(acad_w_path + "M_utils_loader\\M_utils_loader.prv");
 }
 
 function WriteWord(str) 

@@ -1,32 +1,32 @@
-dcl_settings : default_dcl_settings { audit_level = 3; }
+п»їdcl_settings : default_dcl_settings { audit_level = 3; }
 
 mnas_weld_main : dialog
 {
-	label = "Редактирование швов сварных";
+	label = "Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ С€РІРѕРІ СЃРІР°СЂРЅС‹С…";
 	initial_focus = "top_text" ;
 	: row
 	{
 		: column
 		{
-			: edit_box { key = "top_text"; label = "Обозначение"; }
-			: edit_box { key = "bot_text"; label = "Категория и комплекс"; }
+			: edit_box { key = "top_text"; label = "РћР±РѕР·РЅР°С‡РµРЅРёРµ"; }
+			: edit_box { key = "bot_text"; label = "РљР°С‚РµРіРѕСЂРёСЏ Рё РєРѕРјРїР»РµРєСЃ"; }
 		}
 		: column
 		{
-			: edit_box { key = "nomer"; label = "Номер"; }
-			: edit_box { key = "kolichestvo"; label = "Кол-во"; }
+			: edit_box { key = "nomer"; label = "РќРѕРјРµСЂ"; }
+			: edit_box { key = "kolichestvo"; label = "РљРѕР»-РІРѕ"; }
 		}
 		: column
 		{
-			: popup_list { key = "dim_style"; label = "Стиль"; }
-			: toggle  { key = "tgl_ob_side"; label = "С обратной стороны"; }
+			: popup_list { key = "dim_style"; label = "РЎС‚РёР»СЊ"; }
+			: toggle  { key = "tgl_ob_side"; label = "РЎ РѕР±СЂР°С‚РЅРѕР№ СЃС‚РѕСЂРѕРЅС‹"; }
 		}
 	}
 	: row
 	{
 		: boxed_column
 		{
-		label = "Обозначение, категория и комплекс";
+		label = "РћР±РѕР·РЅР°С‡РµРЅРёРµ, РєР°С‚РµРіРѕСЂРёСЏ Рё РєРѕРјРїР»РµРєСЃ";
 			: row
 			{
 				: popup_list { key = "wedl_standard"; width=16;}
@@ -43,7 +43,7 @@ mnas_weld_main : dialog
 		}
 		: boxed_row
 		{
-			label="Катет";
+			label="РљР°С‚РµС‚";
 			: toggle { key = "tgl_katet" ; }
 			: image {aspect_ratio=1; width=8;  key = "img_katet";}
 			: edit_box { key = "str_katet" ; }
@@ -51,7 +51,7 @@ mnas_weld_main : dialog
 		}
 		: boxed_row
 		{
-			label="Прерывистый";
+			label="РџСЂРµСЂС‹РІРёСЃС‚С‹Р№";
 			: edit_box { key = "str_provar" ; }
 			: column
 			{
@@ -73,7 +73,7 @@ mnas_weld_main : dialog
 	{
 		: boxed_row
 		{
-		label="Вспомогательные знаки";
+		label="Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ Р·РЅР°РєРё";
 			: column
 			{
 				: row
@@ -101,21 +101,21 @@ mnas_weld_main : dialog
 		}
 		: boxed_row
 		{
-			label="Стрелка";
+			label="РЎС‚СЂРµР»РєР°";
 			: radio_column
 			{
-				: radio_button { key = "rb_clock" ; label = "По часовой"; }
-				: radio_button { key = "rb_unclock" ; label = "Против часовой";}
+				: radio_button { key = "rb_clock" ; label = "РџРѕ С‡Р°СЃРѕРІРѕР№"; }
+				: radio_button { key = "rb_unclock" ; label = "РџСЂРѕС‚РёРІ С‡Р°СЃРѕРІРѕР№";}
 			}
 		}
 		: boxed_row
 		{
-			label="Присоединение";
+			label="РџСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ";
 			: radio_column
 			{
 
-				: radio_button { key = "rb_prisoed_left" ; label = "Слева"; }
-				: radio_button { key = "rb_prisoed_right" ; label = "Справа"; }
+				: radio_button { key = "rb_prisoed_left" ; label = "РЎР»РµРІР°"; }
+				: radio_button { key = "rb_prisoed_right" ; label = "РЎРїСЂР°РІР°"; }
 			}
 		}
 		: column
@@ -137,10 +137,10 @@ mnas_weld_main : dialog
 
 mnas_weld_setup : dialog
 {
-	label = "Редактирование швов сварных";
+	label = "Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ С€РІРѕРІ СЃРІР°СЂРЅС‹С…";
 	initial_focus = "top_text" ;
-	: edit_box { key = "m_PntTxtTop"; label = "m_PntTxtTop"; } // Координата y
-	: edit_box { key = "m_PntTxtBot"; label = "m_PntTxtBot"; } // Координата y
+	: edit_box { key = "m_PntTxtTop"; label = "m_PntTxtTop"; } // РљРѕРѕСЂРґРёРЅР°С‚Р° y
+	: edit_box { key = "m_PntTxtBot"; label = "m_PntTxtBot"; } // РљРѕРѕСЂРґРёРЅР°С‚Р° y
 	
 	: edit_box { key = "m_AngArrowFront"; label = "m_AngArrowFront"; }
 	: edit_box { key = "m_AngArrowBack"; label = "m_AngArrowBack"; }
@@ -162,7 +162,7 @@ mnas_weld_ch_text : dialog
   : edit_box
   {
     key = "dim_string";
-    label = "Разм. текст:";
+    label = "Р Р°Р·Рј. С‚РµРєСЃС‚:";
     edit_width = 60;
     fixed_width = true;
     allow_accept = true;
@@ -170,7 +170,7 @@ mnas_weld_ch_text : dialog
   : edit_box
   {
     key = "dim_string_1";
-    label = "Разм. текст:";
+    label = "Р Р°Р·Рј. С‚РµРєСЃС‚:";
     edit_width = 60;
     fixed_width = true;
   }

@@ -1,19 +1,19 @@
-dcl_settings : default_dcl_settings { audit_level = 3; }
+п»їdcl_settings : default_dcl_settings { audit_level = 3; }
 
 rgb : dialog
 {
-label = "Изменение свойств объектов";aspect_ratio = 0;
-//: button { key ="b_1_1";label= "Сохранить настройки";}
-: toggle { key = "t_1_1"; label= "Все слои";}
+label = "РР·РјРµРЅРµРЅРёРµ СЃРІРѕР№СЃС‚РІ РѕР±СЉРµРєС‚РѕРІ";aspect_ratio = 0;
+//: button { key ="b_1_1";label= "РЎРѕС…СЂР°РЅРёС‚СЊ РЅР°СЃС‚СЂРѕР№РєРё";}
+: toggle { key = "t_1_1"; label= "Р’СЃРµ СЃР»РѕРё";}
 : boxed_radio_column
   {
    : radio_button
-   { key="rb_1_1"  ;label="Схема 1 (5  цветов)"; }
+   { key="rb_1_1"  ;label="РЎС…РµРјР° 1 (5  С†РІРµС‚РѕРІ)"; }
    : radio_button
-   { key="rb_1_2"  ;label="Схема 2 (14 цветов)"; }
+   { key="rb_1_2"  ;label="РЎС…РµРјР° 2 (14 С†РІРµС‚РѕРІ)"; }
   }
-  : edit_box { key = "eb_1_1"; label="Шаблон исключений"; allow_accept = true;}
-  : edit_box { key = "eb_1_2"; label="начальный номер"; allow_accept = true;}
-  : edit_box { key = "eb_1_3"; label="перемешивание"; allow_accept = true;}
+  : edit_box { key = "eb_1_1"; label="РЁР°Р±Р»РѕРЅ РёСЃРєР»СЋС‡РµРЅРёР№"; allow_accept = true;}
+  : edit_box { key = "eb_1_2"; label="РЅР°С‡Р°Р»СЊРЅС‹Р№ РЅРѕРјРµСЂ"; allow_accept = true;}
+  : edit_box { key = "eb_1_3"; label="РїРµСЂРµРјРµС€РёРІР°РЅРёРµ"; allow_accept = true;}
   ok_cancel_help_errtile; 
 }

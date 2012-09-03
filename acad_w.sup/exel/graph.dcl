@@ -1,4 +1,4 @@
-dcl_settings : default_dcl_settings { audit_level = 3;}
+п»їdcl_settings : default_dcl_settings { audit_level = 3;}
 
 edit_box_35_10 : edit_box {fixed_width=true; width=35; edit_width=10;}
 popup_list_14 : popup_list {fixed_width = true; edit_width=14;}
@@ -6,7 +6,7 @@ popup_list_14 : popup_list {fixed_width = true; edit_width=14;}
 exelread : dialog
 {
  fixed_width_font = true;
- label = "Чтение данных из таблицы Exel";
+ label = "Р§С‚РµРЅРёРµ РґР°РЅРЅС‹С… РёР· С‚Р°Р±Р»РёС†С‹ Exel";
  : row 
  {
   : edit_box {key="xsl_file_name"; label="FileName";}
@@ -45,74 +45,74 @@ exelread : dialog
  errtile;
 }
 
-шероховатость : dialog
+С€РµСЂРѕС…РѕРІР°С‚РѕСЃС‚СЊ : dialog
 {
  fixed_width_font = true;
- label = "Простановка шероховатостей (ГОСТ 2789-73)";
+ label = "РџСЂРѕСЃС‚Р°РЅРѕРІРєР° С€РµСЂРѕС…РѕРІР°С‚РѕСЃС‚РµР№ (Р“РћРЎРў 2789-73)";
  aspect_ratio = 0;
  : boxed_row
  {
-  label="Параметр и ряд";
+  label="РџР°СЂР°РјРµС‚СЂ Рё СЂСЏРґ";
   : radio_row
   {: radio_button {key="rb_1_Ra"; label="Ra";}
    : radio_button {key="rb_1_Rz"; label="Rz";}
   }
-  : popup_list_14 {key ="pl_1_RaRz"; label="Ряд";}
+  : popup_list_14 {key ="pl_1_RaRz"; label="Р СЏРґ";}
  }
  :  boxed_column
- {label="Значение параметра";
+ {label="Р—РЅР°С‡РµРЅРёРµ РїР°СЂР°РјРµС‚СЂР°";
   : row
   {: toggle{key="tgl_1_max_val";}
-   : edit_box_35_10 {label="Максимальное"; key="eb_1_max_val";}
+   : edit_box_35_10 {label="РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ"; key="eb_1_max_val";}
    : popup_list_14 {key ="pl_1_max_val"; }
   }
   : row
   {: toggle{key="tgl_1_min_val";}
-   : edit_box_35_10 {label="Минимальное"; key="eb_1_min_val";}
+   : edit_box_35_10 {label="РњРёРЅРёРјР°Р»СЊРЅРѕРµ"; key="eb_1_min_val";}
    : popup_list_14 {key ="pl_1_min_val"; }
   }
   : row
   {: toggle{key="tgl_1_spos_pol";}
-   : edit_box_35_10 {label="Способ получения"; key="eb_1_spos_pol";}
+   : edit_box_35_10 {label="РЎРїРѕСЃРѕР± РїРѕР»СѓС‡РµРЅРёСЏ"; key="eb_1_spos_pol";}
    : popup_list_14 {key ="pl_1_spos_pol";}
   }
  }
  : row
  {
  : boxed_radio_column
-  {label="Снятие осн. м-ла";
-   : radio_button   { key="rb_1_osn_ml_sn";label="Есть";}
-   : radio_button   { key="rb_1_osn_ml_nesn";label="Нет";}
-   : radio_button   { key="rb_1_osn_ml_neobr";label="Необработка";}
+  {label="РЎРЅСЏС‚РёРµ РѕСЃРЅ. Рј-Р»Р°";
+   : radio_button   { key="rb_1_osn_ml_sn";label="Р•СЃС‚СЊ";}
+   : radio_button   { key="rb_1_osn_ml_nesn";label="РќРµС‚";}
+   : radio_button   { key="rb_1_osn_ml_neobr";label="РќРµРѕР±СЂР°Р±РѕС‚РєР°";}
   }
  : boxed_radio_column
- {label="Скобки вокруг ";
-  : radio_button {key="rb_1_bez_sk"; label="Без  скобок";}
-  : radio_button {key="rb_1_kr_sk"; label="Круглые ()";}
-  : radio_button {key="rb_1_kv_sk"; label="Квадратные []";}
+ {label="РЎРєРѕР±РєРё РІРѕРєСЂСѓРі ";
+  : radio_button {key="rb_1_bez_sk"; label="Р‘РµР·  СЃРєРѕР±РѕРє";}
+  : radio_button {key="rb_1_kr_sk"; label="РљСЂСѓРіР»С‹Рµ ()";}
+  : radio_button {key="rb_1_kv_sk"; label="РљРІР°РґСЂР°С‚РЅС‹Рµ []";}
   }
  }
  : row
  {: boxed_column
-  {: toggle{key="tgl_1_po_konturu"; label="По контуру"; }
-   : toggle{key="tgl_1_perevern"; label="Перевернутый";}
+  {: toggle{key="tgl_1_po_konturu"; label="РџРѕ РєРѕРЅС‚СѓСЂСѓ"; }
+   : toggle{key="tgl_1_perevern"; label="РџРµСЂРµРІРµСЂРЅСѓС‚С‹Р№";}
   }
   : boxed_row
-  {label="Напр. неровностей";
+  {label="РќР°РїСЂ. РЅРµСЂРѕРІРЅРѕСЃС‚РµР№";
    : toggle{key="tgl_1_napr_miko_ner"; }
    : popup_list {key ="pl_1_napr_miko_ner"; }
   }
  }
  : boxed_row
- {label="Масштаб";
+ {label="РњР°СЃС€С‚Р°Р±";
  : edit_box {key="eb_1_masht";}
- : button {key="bt_1_masht"; label="По разм.стилю";}
+ : button {key="bt_1_masht"; label="РџРѕ СЂР°Р·Рј.СЃС‚РёР»СЋ";}
  : popup_list {key ="pl_1_masht"; }
  }
  : row
- {: button {key="bt_1_1"; label="Проставить";}
-  : button {key="bt_1_2"; label="Выбрать";}
-  : button {key="bt_1_3"; label="Обновить";}
+ {: button {key="bt_1_1"; label="РџСЂРѕСЃС‚Р°РІРёС‚СЊ";}
+  : button {key="bt_1_2"; label="Р’С‹Р±СЂР°С‚СЊ";}
+  : button {key="bt_1_3"; label="РћР±РЅРѕРІРёС‚СЊ";}
  }
  ok_cancel;
  errtile;

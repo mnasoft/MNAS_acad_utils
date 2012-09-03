@@ -1,4 +1,4 @@
-atoms : dialog
+п»їatoms : dialog
 {
   label = "Atoms-family";
   : edit_box  { key = "e_1_1";}
@@ -8,7 +8,7 @@ atoms : dialog
     {
       :row
       {
-        : button { key = "b_1_14l"; label = "Имя Т | Т Имя";}
+        : button { key = "b_1_14l"; label = "РРјСЏ Рў | Рў РРјСЏ";}
         : text {key= "t_1_1l"; width=5;}
       }
       : edit_box  { key = "e_1_2l";}
@@ -19,7 +19,7 @@ atoms : dialog
     {
       :row
       {
-        : button { key = "b_1_14r"; label = "Имя Т | Т Имя";}
+        : button { key = "b_1_14r"; label = "РРјСЏ Рў | Рў РРјСЏ";}
         : text {key= "t_1_1r"; width=5;}
       }
       : edit_box  { key = "e_1_2r";}
@@ -28,18 +28,18 @@ atoms : dialog
     }
     : column
     {
-      : button { key = "b_1_11"; label = " Считать ";}
-      : button { key = "b_1_15"; label = " Очистить";}
+      : button { key = "b_1_11"; label = " РЎС‡РёС‚Р°С‚СЊ ";}
+      : button { key = "b_1_15"; label = " РћС‡РёСЃС‚РёС‚СЊ";}
       : button { key = "b_1_10"; label = "<---- Del";}
-      : button { key = "b_1_7"; label = "Записать ";}
-      : button { key = "b_1_8"; label = "Прочитать";}
-      : button { key = "b_1_12"; label = "Сохранить";}
-      : button { key = "b_1_13"; label = "Загрузить";}
-      : button { key = "b_1_16"; label = " Удалить ";}
+      : button { key = "b_1_7"; label = "Р—Р°РїРёСЃР°С‚СЊ ";}
+      : button { key = "b_1_8"; label = "РџСЂРѕС‡РёС‚Р°С‚СЊ";}
+      : button { key = "b_1_12"; label = "РЎРѕС…СЂР°РЅРёС‚СЊ";}
+      : button { key = "b_1_13"; label = "Р—Р°РіСЂСѓР·РёС‚СЊ";}
+      : button { key = "b_1_16"; label = " РЈРґР°Р»РёС‚СЊ ";}
 
       : button { key = "b_1_9"; label = "<-- Copy ";}
-      : button { key = "b_1_2"; label = "U   Т!=Т ";}
-      : button { key = "b_1_3"; label = "П   Т!=Т ";}
+      : button { key = "b_1_2"; label = "U   Рў!=Рў ";}
+      : button { key = "b_1_3"; label = "Рџ   Рў!=Рў ";}
       : button { key = "b_1_4"; label = "  <----> ";}
     }
   }

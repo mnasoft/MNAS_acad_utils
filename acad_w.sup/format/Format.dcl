@@ -1,32 +1,32 @@
-dcl_settings : default_dcl_settings { audit_level = 3; }
+п»їdcl_settings : default_dcl_settings { audit_level = 3; }
 
 form : dialog
 {
-  label = "Выбор формата";
+  label = "Р’С‹Р±РѕСЂ С„РѕСЂРјР°С‚Р°";
   aspect_ratio = 0;
   : row
   {
 	  : cluster
     { : boxed_column
-      { label = "Формат";
+      { label = "Р¤РѕСЂРјР°С‚";
         : list_box { key = "for_list"; }
         : text { key = "for_edit"; width = 5; fixed_width = true; }
 			}
 		}
 		: cluster
     { : boxed_column
-      { label = "Кратность";
+      { label = "РљСЂР°С‚РЅРѕСЃС‚СЊ";
         : list_box { key = "kr_list"; }
         : text { key = "kr_edit"; width = 5; }
 		  }
   	}
   }
   : boxed_radio_row
-  { label = "Расположение вдоль стороны";
-    : radio_button {label ="длинной"; key = "long_side"; is_tab_stop = false; }
-    : radio_button {label ="короткой";key = "short_side";is_tab_stop = false; }
+  { label = "Р Р°СЃРїРѕР»РѕР¶РµРЅРёРµ РІРґРѕР»СЊ СЃС‚РѕСЂРѕРЅС‹";
+    : radio_button {label ="РґР»РёРЅРЅРѕР№"; key = "long_side"; is_tab_stop = false; }
+    : radio_button {label ="РєРѕСЂРѕС‚РєРѕР№";key = "short_side";is_tab_stop = false; }
   }
-  : cluster{: boxed_row {label = "Размер "; : text { key="razmer"; width = 5;}}}
+  : cluster{: boxed_row {label = "Р Р°Р·РјРµСЂ "; : text { key="razmer"; width = 5;}}}
   ok_cancel;
   errtile;
 }
@@ -34,57 +34,57 @@ form : dialog
 sht1 : dialog
 {
 	aspect_ratio = 0;
-	label = "Заполнение штампа";
+	label = "Р—Р°РїРѕР»РЅРµРЅРёРµ С€С‚Р°РјРїР°";
 	: column
 	{
 		: boxed_column
 		{
-	 		label = "Основная графа";
-      : edit_box { key = "sht1_1"; label = "Наименование"; }
-      : edit_box { key = "sht1_2"; label = "Обозначение "; }
-      : edit_box { key = "sht1_3"; label = "Материал    "; }
+	 		label = "РћСЃРЅРѕРІРЅР°СЏ РіСЂР°С„Р°";
+      : edit_box { key = "sht1_1"; label = "РќР°РёРјРµРЅРѕРІР°РЅРёРµ"; }
+      : edit_box { key = "sht1_2"; label = "РћР±РѕР·РЅР°С‡РµРЅРёРµ "; }
+      : edit_box { key = "sht1_3"; label = "РњР°С‚РµСЂРёР°Р»    "; }
 		}
 		: boxed_row
 		{
-			label = "Справ No и Перв. прим.";
-      : edit_box { key = "sht1_24"; label = "Справ No"; }
-      : edit_box { key = "sht1_25"; label = "Перв. прим."; }
+			label = "РЎРїСЂР°РІ No Рё РџРµСЂРІ. РїСЂРёРј.";
+      : edit_box { key = "sht1_24"; label = "РЎРїСЂР°РІ No"; }
+      : edit_box { key = "sht1_25"; label = "РџРµСЂРІ. РїСЂРёРј."; }
 		}
 		: row
 		{
 			: boxed_column
 			{
-				label = "Исполнители";
-        : edit_box { key = "sht1_11_1"; label = "Разраб. "; width = 20; }
-        : edit_box { key = "sht1_11_2"; label = "Провер. "; width = 20; }
-        : edit_box { key = "sht1_11_3"; label = "Т.контр."; width = 20; }
+				label = "РСЃРїРѕР»РЅРёС‚РµР»Рё";
+        : edit_box { key = "sht1_11_1"; label = "Р Р°Р·СЂР°Р±. "; width = 20; }
+        : edit_box { key = "sht1_11_2"; label = "РџСЂРѕРІРµСЂ. "; width = 20; }
+        : edit_box { key = "sht1_11_3"; label = "Рў.РєРѕРЅС‚СЂ."; width = 20; }
 				: row
 				{
           : edit_box { key = "sht1_10"; width = 8; }
           : edit_box { key = "sht1_11_4"; width = 12; }
 				}
-        : edit_box { key = "sht1_11_5"; label = "Н.контр."; }
-        : edit_box { key = "sht1_11_6"; label = "Утвердил"; }
+        : edit_box { key = "sht1_11_5"; label = "Рќ.РєРѕРЅС‚СЂ."; }
+        : edit_box { key = "sht1_11_6"; label = "РЈС‚РІРµСЂРґРёР»"; }
 			}
 			: boxed_column
-      { label = "Прочие графы";
+      { label = "РџСЂРѕС‡РёРµ РіСЂР°С„С‹";
 				: boxed_row
-        { label = "Литера";
+        { label = "Р›РёС‚РµСЂР°";
           : edit_box { key = "sht1_4_1"; width=5; fixed_width = true; }
           : edit_box { key = "sht1_4_2"; width=5; fixed_width = true; }
           : edit_box { key = "sht1_4_3"; width=5; fixed_width = true; }
 				}
 				: row
 				{
-          : edit_box { key = "sht1_5"; label = "Масса"; }
-          : edit_box { key = "sht1_6"; label = "Масшт"; }
+          : edit_box { key = "sht1_5"; label = "РњР°СЃСЃР°"; }
+          : edit_box { key = "sht1_6"; label = "РњР°СЃС€С‚"; }
 				}
 				: boxed_row
 				{
-          : edit_box { key = "sht1_7"; label = "Лист"; }
-          : edit_box { key = "sht1_8"; label = "Листов";}
+          : edit_box { key = "sht1_7"; label = "Р›РёСЃС‚"; }
+          : edit_box { key = "sht1_8"; label = "Р›РёСЃС‚РѕРІ";}
 				}
-        : edit_box { key = "sht1_9"; label = "Индекс предпр."; }
+        : edit_box { key = "sht1_9"; label = "РРЅРґРµРєСЃ РїСЂРµРґРїСЂ."; }
 			}
 		}
 	}
@@ -95,9 +95,9 @@ sht1 : dialog
 forma : dialog
 {
 	aspect_ratio = 0;
-	label = "Выбор основной надписи";
+	label = "Р’С‹Р±РѕСЂ РѕСЃРЅРѕРІРЅРѕР№ РЅР°РґРїРёСЃРё";
 	: boxed_column
-  { label = "Форма - для чего прим.    | лист";
+  { label = "Р¤РѕСЂРјР° - РґР»СЏ С‡РµРіРѕ РїСЂРёРј.    | Р»РёСЃС‚";
     : list_box { key = "f_list"; width = 40; }
 	}
 	ok_cancel;
@@ -107,11 +107,11 @@ forma : dialog
 dop_dlg : dialog
 {
   aspect_ratio = 0;
-  label = "Выбор дополнительных штампов";
+  label = "Р’С‹Р±РѕСЂ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… С€С‚Р°РјРїРѕРІ";
   : row
   {
     : boxed_column
-    { label = "Выбраны";
+    { label = "Р’С‹Р±СЂР°РЅС‹";
     : list_box { key = "dop_dlg_2"; width = 20; }
     }
     : column
@@ -122,15 +122,15 @@ dop_dlg : dialog
       spacer_1;    
     }
     : boxed_column
-    { label = "Имеются в наличии";
+    { label = "РРјРµСЋС‚СЃСЏ РІ РЅР°Р»РёС‡РёРё";
       : list_box { key = "dop_dlg_1"; width = 20; }
     }
   }
   :row
   {
-    : button { label ="Добавить"; key = "dop_dlg_5"; }
-    : button { label ="Удалить"; key = "dop_dlg_6"; }
-    : button { label ="Редактировать"; key = "dop_dlg_7"; }
+    : button { label ="Р”РѕР±Р°РІРёС‚СЊ"; key = "dop_dlg_5"; }
+    : button { label ="РЈРґР°Р»РёС‚СЊ"; key = "dop_dlg_6"; }
+    : button { label ="Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ"; key = "dop_dlg_7"; }
   }
   ok_cancel;
   errtile;
@@ -139,15 +139,15 @@ dop_dlg : dialog
 add_dop_sht_dlg : dialog
 {
 	aspect_ratio = 0;
-	label = "Выбор дополнительных штампов";
-  : edit_box { key = "add_dop_sht_dlg_1"; label = "Имя штампа"; }
-  : edit_box { key = "add_dop_sht_dlg_2"; label = "Имя файла"; }
+	label = "Р’С‹Р±РѕСЂ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… С€С‚Р°РјРїРѕРІ";
+  : edit_box { key = "add_dop_sht_dlg_1"; label = "РРјСЏ С€С‚Р°РјРїР°"; }
+  : edit_box { key = "add_dop_sht_dlg_2"; label = "РРјСЏ С„Р°Р№Р»Р°"; }
   : radio_column
   {
-    : radio_button {label = "Право_низ"; key = "add_dop_sht_dlg_3";}
-    : radio_button {label = "Право_верх"; key = "add_dop_sht_dlg_4";}
-    : radio_button {label = "Лево_верх"; key = "add_dop_sht_dlg_5";}
-    : radio_button {label = "Лево_низ"; key = "add_dop_sht_dlg_6";}
+    : radio_button {label = "РџСЂР°РІРѕ_РЅРёР·"; key = "add_dop_sht_dlg_3";}
+    : radio_button {label = "РџСЂР°РІРѕ_РІРµСЂС…"; key = "add_dop_sht_dlg_4";}
+    : radio_button {label = "Р›РµРІРѕ_РІРµСЂС…"; key = "add_dop_sht_dlg_5";}
+    : radio_button {label = "Р›РµРІРѕ_РЅРёР·"; key = "add_dop_sht_dlg_6";}
   }
 	ok_cancel;
 	errtile;
@@ -156,7 +156,7 @@ add_dop_sht_dlg : dialog
 sht_main : dialog
 {
 	aspect_ratio = 0;
-	label = "Заполнение штампа";
+	label = "Р—Р°РїРѕР»РЅРµРЅРёРµ С€С‚Р°РјРїР°";
 	: row
 	{
 		: column
@@ -164,57 +164,57 @@ sht_main : dialog
 			: row
 			{
 				: boxed_column
-        { label = "Формат и кратность";
+        { label = "Р¤РѕСЂРјР°С‚ Рё РєСЂР°С‚РЅРѕСЃС‚СЊ";
           :text { key = "format_text"; width = 25; }
           :text { key = "dir_sht"; width = 5; }
-          : button { label = "Выбор формта..."; mnemonic = "B"; key = "format"; }
+          : button { label = "Р’С‹Р±РѕСЂ С„РѕСЂРјС‚Р°..."; mnemonic = "B"; key = "format"; }
 				}
 				: column
 				{
 					: button
-          { key = "ed_1"; label = "Заполнение..."; }
-          : button { key = "ed_3"; label = "Сохранить настр."; }
-          : button { key = "ed_4"; label = "Выбрать"; }
+          { key = "ed_1"; label = "Р—Р°РїРѕР»РЅРµРЅРёРµ..."; }
+          : button { key = "ed_3"; label = "РЎРѕС…СЂР°РЅРёС‚СЊ РЅР°СЃС‚СЂ."; }
+          : button { key = "ed_4"; label = "Р’С‹Р±СЂР°С‚СЊ"; }
 				}
 			}
 			: boxed_row
-      { label = "Деление на зоны";
+      { label = "Р”РµР»РµРЅРёРµ РЅР° Р·РѕРЅС‹";
 				: radio_column
 					{
-            : radio_button { label ="Есть"; key = "Dz_y"; is_tab_stop = false; }
-            : radio_button { label ="Нет "; key = "Dz_n"; is_tab_stop = false; }
+            : radio_button { label ="Р•СЃС‚СЊ"; key = "Dz_y"; is_tab_stop = false; }
+            : radio_button { label ="РќРµС‚ "; key = "Dz_n"; is_tab_stop = false; }
 				}
 				: column
 				{
-          : edit_box { key = "z_1"; label = "Нач. цифра"; }
-          : edit_box { key = "z_A"; label = "Нач. буква"; }
+          : edit_box { key = "z_1"; label = "РќР°С‡. С†РёС„СЂР°"; }
+          : edit_box { key = "z_A"; label = "РќР°С‡. Р±СѓРєРІР°"; }
 				}
 			}
       : boxed_column
-      { label = "Номер формы (тип штампа)";
+      { label = "РќРѕРјРµСЂ С„РѕСЂРјС‹ (С‚РёРї С€С‚Р°РјРїР°)";
         : popup_list {label = "";
           tabs = "5 22 45"; 
-          list="1\tчертежи и схемы\t(первый лист)\n2\tтекст.констр.док.\t(первый лист)\n2аг\tчетрежи и схемы\t(последующий лист)\n2ат\tтекст.констр.док.\t(последующий лист)\n2бн\tтекст.констр.док.\t(нечетный лист)\n2бч\tтекст.констр.док.\t(четный лист)\n3\tтолько рамка\t(ЛУ)";
+          list="1\tС‡РµСЂС‚РµР¶Рё Рё СЃС…РµРјС‹\t(РїРµСЂРІС‹Р№ Р»РёСЃС‚)\n2\tС‚РµРєСЃС‚.РєРѕРЅСЃС‚СЂ.РґРѕРє.\t(РїРµСЂРІС‹Р№ Р»РёСЃС‚)\n2Р°Рі\tС‡РµС‚СЂРµР¶Рё Рё СЃС…РµРјС‹\t(РїРѕСЃР»РµРґСѓСЋС‰РёР№ Р»РёСЃС‚)\n2Р°С‚\tС‚РµРєСЃС‚.РєРѕРЅСЃС‚СЂ.РґРѕРє.\t(РїРѕСЃР»РµРґСѓСЋС‰РёР№ Р»РёСЃС‚)\n2Р±РЅ\tС‚РµРєСЃС‚.РєРѕРЅСЃС‚СЂ.РґРѕРє.\t(РЅРµС‡РµС‚РЅС‹Р№ Р»РёСЃС‚)\n2Р±С‡\tС‚РµРєСЃС‚.РєРѕРЅСЃС‚СЂ.РґРѕРє.\t(С‡РµС‚РЅС‹Р№ Р»РёСЃС‚)\n3\tС‚РѕР»СЊРєРѕ СЂР°РјРєР°\t(Р›РЈ)";
           key = "sht_list";}
       }
       : boxed_row
-      { label = "Начало штампа";
-        : button { label = "Указание..."; key = "pick"; }
+      { label = "РќР°С‡Р°Р»Рѕ С€С‚Р°РјРїР°";
+        : button { label = "РЈРєР°Р·Р°РЅРёРµ..."; key = "pick"; }
         : edit_box { key = "X0"; label = "X="; }
         : edit_box { key = "Y0"; label = "Y="; }
 			}
 		}
 		: boxed_column
-    { label = "Дополнительные графы";
+    { label = "Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РіСЂР°С„С‹";
       : list_box { key = "dop_list"; }
-      : button { key = "dop_edit"; label = "Редактирование..."; }
+      : button { key = "dop_edit"; label = "Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ..."; }
 		}
 	}
   : row
   {
-    : button { label ="Заполнить"; key = "for_zap";}
+    : button { label ="Р—Р°РїРѕР»РЅРёС‚СЊ"; key = "for_zap";}
     ok_cancel;
-    : button { label ="О программе..."; key = "about";}
+    : button { label ="Рћ РїСЂРѕРіСЂР°РјРјРµ..."; key = "about";}
   }
 	errtile;
 }

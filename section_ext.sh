@@ -41,7 +41,7 @@ echo '; MNAS_acad_utils.nsi
 ; The name of the installer
 Name "mnas_acad_utils"
 
-!define VERSION "2.7.7.8"
+!define VERSION "3.0.0.0"
 
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\Russian.nlf"
@@ -56,11 +56,11 @@ VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "Утилиты для работы с Au
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "${VERSION}"
 
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "ProductName" "Mnas_acad_utils"
-VIAddVersionKey /LANG=${LANG_RUSSIAN} "Comments" "Утилиты для работы с AutoCAD© (2007-2011)"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "Comments" "Утилиты для работы с AutoCAD© (2013)"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "CompanyName" "Матвеев Николай Анатольевич (MNASoft)"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "LegalTrademarks" "http:\\www.mnasoft.mksat.net"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "LegalCopyright" "Распространяется по лицензии GNU GPL v3.0"
-VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileDescription" "Утилиты для работы с AutoCAD© (2007-2011)"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileDescription" "Утилиты для работы с AutoCAD© (2013)"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileVersion" "${VERSION}"
 
 

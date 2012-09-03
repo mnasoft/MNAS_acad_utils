@@ -1,8 +1,8 @@
-dcl_settings : default_dcl_settings { audit_level = 3; }
+п»їdcl_settings : default_dcl_settings { audit_level = 3; }
 
 mnas_pos_main : dialog
 {
-	label = "Редактирование позиций";
+	label = "Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РїРѕР·РёС†РёР№";
 	initial_focus = "text" ;
 	: row
 	{

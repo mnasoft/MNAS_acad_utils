@@ -1,4 +1,4 @@
-dcl_settings : default_dcl_settings { audit_level = 3; }
+п»їdcl_settings : default_dcl_settings { audit_level = 3; }
 
 chgtextt : dialog
 {
@@ -9,7 +9,7 @@ chgtextt : dialog
   : edit_box
   {
     key = "dim_string";
-    label = "Разм. текст:";
+    label = "Р Р°Р·Рј. С‚РµРєСЃС‚:";
     edit_width = 60;
     fixed_width = true;
     allow_accept = true;

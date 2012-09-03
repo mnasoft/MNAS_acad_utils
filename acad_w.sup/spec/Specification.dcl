@@ -1,55 +1,55 @@
-dcl_settings : default_dcl_settings { audit_level = 3; }
+п»їdcl_settings : default_dcl_settings { audit_level = 3; }
 
-позиция : dialog
+РїРѕР·РёС†РёСЏ : dialog
 {
- label = "Редактирование и простановка позиций спецификаций";
+ label = "Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ Рё РїСЂРѕСЃС‚Р°РЅРѕРІРєР° РїРѕР·РёС†РёР№ СЃРїРµС†РёС„РёРєР°С†РёР№";
  aspect_ratio = 0;
  : row
  {
   : column
   {
-   : edit_box {label = "Текст";        edit_width = 25; key="e_1_0"; mnemonic="т";}
+   : edit_box {label = "РўРµРєСЃС‚";        edit_width = 25; key="e_1_0"; mnemonic="С‚";}
    spacer_1;
-   : edit_box {label = "Спецификация"; edit_width = 25; key="e_1_1"; mnemonic="ц";}
-   : edit_box {label = "Вариант";      edit_width = 25; key="e_1_2"; mnemonic="В";}
+   : edit_box {label = "РЎРїРµС†РёС„РёРєР°С†РёСЏ"; edit_width = 25; key="e_1_1"; mnemonic="С†";}
+   : edit_box {label = "Р’Р°СЂРёР°РЅС‚";      edit_width = 25; key="e_1_2"; mnemonic="Р’";}
    : popup_list
    {
-    label = "Раздел";
+    label = "Р Р°Р·РґРµР»";
     key="p_1_1";
-    mnemonic="д";
+    mnemonic="Рґ";
     edit_width=25;
    }
    spacer_1;
-   : edit_box {label = "Формат";       edit_width = 25; key="e_1_4"; mnemonic="Ф";}
-   : edit_box {label = "Зона";         edit_width = 25; key="e_1_5"; mnemonic="а";}
-   : edit_box {label = "Позиция";      edit_width = 25; key="e_1_6"; mnemonic="П";}
-   : edit_box {label = "Обозначение";  edit_width = 25; key="e_1_7"; mnemonic="О";}
-   : edit_box {label = "Наименование"; edit_width = 25; key="e_1_8"; mnemonic="м";}
-   : edit_box {label = "Количество";   edit_width = 25; key="e_1_9"; mnemonic="л";}
-   : edit_box {label = "Примечание";   edit_width = 25; key="e_1_10"; mnemonic="ч";}
+   : edit_box {label = "Р¤РѕСЂРјР°С‚";       edit_width = 25; key="e_1_4"; mnemonic="Р¤";}
+   : edit_box {label = "Р—РѕРЅР°";         edit_width = 25; key="e_1_5"; mnemonic="Р°";}
+   : edit_box {label = "РџРѕР·РёС†РёСЏ";      edit_width = 25; key="e_1_6"; mnemonic="Рџ";}
+   : edit_box {label = "РћР±РѕР·РЅР°С‡РµРЅРёРµ";  edit_width = 25; key="e_1_7"; mnemonic="Рћ";}
+   : edit_box {label = "РќР°РёРјРµРЅРѕРІР°РЅРёРµ"; edit_width = 25; key="e_1_8"; mnemonic="Рј";}
+   : edit_box {label = "РљРѕР»РёС‡РµСЃС‚РІРѕ";   edit_width = 25; key="e_1_9"; mnemonic="Р»";}
+   : edit_box {label = "РџСЂРёРјРµС‡Р°РЅРёРµ";   edit_width = 25; key="e_1_10"; mnemonic="С‡";}
   }
   : column
   {
    children_alignment=left;
-   : button { label="Заполнить";  mnemonic="З"; key="b_1_1";} 
-   : edit_box {label = "Масштаб"; edit_width = 5; key="e_1_11"; mnemonic="ш";}
+   : button { label="Р—Р°РїРѕР»РЅРёС‚СЊ";  mnemonic="Р—"; key="b_1_1";} 
+   : edit_box {label = "РњР°СЃС€С‚Р°Р±"; edit_width = 5; key="e_1_11"; mnemonic="С€";}
 
    : popup_list
    {
-    label="Тип";
+    label="РўРёРї";
     key="p_1_2";
-    list="Ничего\nТочка\nСтрелка";  
+    list="РќРёС‡РµРіРѕ\nРўРѕС‡РєР°\nРЎС‚СЂРµР»РєР°";  
     edit_width=10;
-    mnemonic="и";
+    mnemonic="Рё";
    }
 
-   : button { label="Создать";  key="b_1_5"; mnemonic="С";}
-   : button { label="Выбрать";  key="b_1_6"; mnemonic="ы";}
-   : button { label="Обновить"; key="b_1_7"; mnemonic="б";}
-   : button { label="Уд|Восст";  key="b_1_8"; mnemonic="У";}
-   : button { label="Настроить";  key="b_1_9"; mnemonic="Н";}
-   : button { label="Спецификация";  key="b_1_10";}
-   : button { label="Настр. цвет";  key="b_1_11";}
+   : button { label="РЎРѕР·РґР°С‚СЊ";  key="b_1_5"; mnemonic="РЎ";}
+   : button { label="Р’С‹Р±СЂР°С‚СЊ";  key="b_1_6"; mnemonic="С‹";}
+   : button { label="РћР±РЅРѕРІРёС‚СЊ"; key="b_1_7"; mnemonic="Р±";}
+   : button { label="РЈРґ|Р’РѕСЃСЃС‚";  key="b_1_8"; mnemonic="РЈ";}
+   : button { label="РќР°СЃС‚СЂРѕРёС‚СЊ";  key="b_1_9"; mnemonic="Рќ";}
+   : button { label="РЎРїРµС†РёС„РёРєР°С†РёСЏ";  key="b_1_10";}
+   : button { label="РќР°СЃС‚СЂ. С†РІРµС‚";  key="b_1_11";}
   }
  }
  spacer_1;
@@ -57,7 +57,7 @@ dcl_settings : default_dcl_settings { audit_level = 3; }
  errtile;
 }
 
-настройка : dialog
+РЅР°СЃС‚СЂРѕР№РєР° : dialog
 {
  : row
  {
@@ -65,52 +65,52 @@ dcl_settings : default_dcl_settings { audit_level = 3; }
   {
    : boxed_column
    {
-    label="Параметры простановки";
+    label="РџР°СЂР°РјРµС‚СЂС‹ РїСЂРѕСЃС‚Р°РЅРѕРІРєРё";
     : radio_column
     { 
-     : radio_button {key="r_2_1"; label="a) Начало+полка"; mnemonic="a";}
-     : radio_button {key="r_2_2"; label="b) Линия начало+направление"; mnemonic="b";}
-     : radio_button {key="r_2_3"; label="c) Линия+центр начало"; mnemonic="c";}
-     : radio_button {key="r_2_4"; label="d) Четноугольник начало_направление"; mnemonic="d";}
-     : radio_button {key="r_2_5"; label="e) Четноугольник+центр начало"; mnemonic="e";}
+     : radio_button {key="r_2_1"; label="a) РќР°С‡Р°Р»Рѕ+РїРѕР»РєР°"; mnemonic="a";}
+     : radio_button {key="r_2_2"; label="b) Р›РёРЅРёСЏ РЅР°С‡Р°Р»Рѕ+РЅР°РїСЂР°РІР»РµРЅРёРµ"; mnemonic="b";}
+     : radio_button {key="r_2_3"; label="c) Р›РёРЅРёСЏ+С†РµРЅС‚СЂ РЅР°С‡Р°Р»Рѕ"; mnemonic="c";}
+     : radio_button {key="r_2_4"; label="d) Р§РµС‚РЅРѕСѓРіРѕР»СЊРЅРёРє РЅР°С‡Р°Р»Рѕ_РЅР°РїСЂР°РІР»РµРЅРёРµ"; mnemonic="d";}
+     : radio_button {key="r_2_5"; label="e) Р§РµС‚РЅРѕСѓРіРѕР»СЊРЅРёРє+С†РµРЅС‚СЂ РЅР°С‡Р°Р»Рѕ"; mnemonic="e";}
    }
    : row
    {
-    : button { label="Задать";    key="b_2_1"; mnemonic="З";}
-    : button { label="Показать";  key="b_2_2"; mnemonic="П";}
+    : button { label="Р—Р°РґР°С‚СЊ";    key="b_2_1"; mnemonic="Р—";}
+    : button { label="РџРѕРєР°Р·Р°С‚СЊ";  key="b_2_2"; mnemonic="Рџ";}
    }
   }//boxed_column
   : boxed_row
-   {label="Направление полки";
-    : button { label="Задать";  key="b_2_4";}
-    : button { label="Показать";  key="b_2_5";}
+   {label="РќР°РїСЂР°РІР»РµРЅРёРµ РїРѕР»РєРё";
+    : button { label="Р—Р°РґР°С‚СЊ";  key="b_2_4";}
+    : button { label="РџРѕРєР°Р·Р°С‚СЊ";  key="b_2_5";}
    }
   }
   : column
   {
    : boxed_column
-   {label="Сортировка позиций";
+   {label="РЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕР·РёС†РёР№";
     : radio_column
     {   
-    : radio_button {key="r_2_6"; label="f) Не требуется"; mnemonic="f";}
-    : radio_button {key="r_2_7"; label="g) По позиции"; mnemonic="g";}
-    : radio_button {key="r_2_8"; label="h) По \"машпроектовски\""; mnemonic="h";}
-    : radio_button {key="r_2_9"; label="i) По обозначению"; mnemonic="i";}
+    : radio_button {key="r_2_6"; label="f) РќРµ С‚СЂРµР±СѓРµС‚СЃСЏ"; mnemonic="f";}
+    : radio_button {key="r_2_7"; label="g) РџРѕ РїРѕР·РёС†РёРё"; mnemonic="g";}
+    : radio_button {key="r_2_8"; label="h) РџРѕ \"РјР°С€РїСЂРѕРµРєС‚РѕРІСЃРєРё\""; mnemonic="h";}
+    : radio_button {key="r_2_9"; label="i) РџРѕ РѕР±РѕР·РЅР°С‡РµРЅРёСЋ"; mnemonic="i";}
     }
    }
    : boxed_column
-   {label="Тип чертежа";
+   {label="РўРёРї С‡РµСЂС‚РµР¶Р°";
     : radio_column
     {   
-    : radio_button {key="r_2_10"; label="j) Без спецификации"; mnemonic="j";}
-    : radio_button {key="r_2_11"; label="k) Со спецификацией"; mnemonic="k";}
+    : radio_button {key="r_2_10"; label="j) Р‘РµР· СЃРїРµС†РёС„РёРєР°С†РёРё"; mnemonic="j";}
+    : radio_button {key="r_2_11"; label="k) РЎРѕ СЃРїРµС†РёС„РёРєР°С†РёРµР№"; mnemonic="k";}
     }
    }
    : boxed_column
-   {label="Автоматическое заполнение";
-    : toggle { label="Поля текст"; key="t_2_1"; mnemonic="П";}
-    : toggle { label="Наименования по обозначению"; key="t_2_2"; mnemonic="б";}
-    : toggle { label="Поля позиции"; key="t_2_3"; mnemonic="з";}
+   {label="РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ";
+    : toggle { label="РџРѕР»СЏ С‚РµРєСЃС‚"; key="t_2_1"; mnemonic="Рџ";}
+    : toggle { label="РќР°РёРјРµРЅРѕРІР°РЅРёСЏ РїРѕ РѕР±РѕР·РЅР°С‡РµРЅРёСЋ"; key="t_2_2"; mnemonic="Р±";}
+    : toggle { label="РџРѕР»СЏ РїРѕР·РёС†РёРё"; key="t_2_3"; mnemonic="Р·";}
    }
   }//column
  }//row
@@ -118,28 +118,28 @@ dcl_settings : default_dcl_settings { audit_level = 3; }
  errtile;
 }
 
-спец : dialog
+СЃРїРµС† : dialog
 {
  : row
  {
   : popup_list
   {
-   label="Спецификация";
+   label="РЎРїРµС†РёС„РёРєР°С†РёСЏ";
    key="p_3_1";
    list="1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19";  
    edit_width=10;
-   mnemonic="и";
+   mnemonic="Рё";
   }
   : popup_list
   {
-   label="Вариант";
+   label="Р’Р°СЂРёР°РЅС‚";
    key="p_3_2";
    list="1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19";  
    edit_width=10;
   }
   : popup_list
   {
-   label="Раздел";
+   label="Р Р°Р·РґРµР»";
    key="p_3_3";
    list="1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19";  
    edit_width=10;
@@ -157,57 +157,57 @@ dcl_settings : default_dcl_settings { audit_level = 3; }
  
   : column
   {
-   : button { label="Доб_пер";      key="b_3_1"; mnemonic="Д";}
-   : button { label="Доб_пос";      key="b_3_2"; mnemonic="с";}
-   : button { label="Удалить";      key="b_3_3"; mnemonic="У";}
-   : button { label="Редакт.";      key="b_3_4"; mnemonic="Р";}
-   : button { label="Сорт.";        key="b_3_5"; mnemonic="Р";}
-   : button { label="Выбрать";      key="b_3_6"; mnemonic="Р";}
-   : button { label="Расст. поз.";  key="b_3_7"; mnemonic="Р";}
+   : button { label="Р”РѕР±_РїРµСЂ";      key="b_3_1"; mnemonic="Р”";}
+   : button { label="Р”РѕР±_РїРѕСЃ";      key="b_3_2"; mnemonic="СЃ";}
+   : button { label="РЈРґР°Р»РёС‚СЊ";      key="b_3_3"; mnemonic="РЈ";}
+   : button { label="Р РµРґР°РєС‚.";      key="b_3_4"; mnemonic="Р ";}
+   : button { label="РЎРѕСЂС‚.";        key="b_3_5"; mnemonic="Р ";}
+   : button { label="Р’С‹Р±СЂР°С‚СЊ";      key="b_3_6"; mnemonic="Р ";}
+   : button { label="Р Р°СЃСЃС‚. РїРѕР·.";  key="b_3_7"; mnemonic="Р ";}
    : button { label="<";            key="b_3_8"; mnemonic="<";}
    : button { label=">";            key="b_3_9"; mnemonic=">";}
   }
  }
  : column
  {
-   : edit_box {label = "Формат";       edit_width = 25; key="e_3_4"; mnemonic="Ф";}
-   : edit_box {label = "Зона";         edit_width = 25; key="e_3_5"; mnemonic="а";}
-   : edit_box {label = "Позиция";      edit_width = 25; key="e_3_6"; mnemonic="П";}
-   : edit_box {label = "Обозначение";  edit_width = 25; key="e_3_7"; mnemonic="О";}
-   : edit_box {label = "Наименование"; edit_width = 25; key="e_3_8"; mnemonic="м";}
-   : edit_box {label = "Количество";   edit_width = 25; key="e_3_9"; mnemonic="л";}
-   : edit_box {label = "Примечание";   edit_width = 25; key="e_3_10"; mnemonic="ч";}
+   : edit_box {label = "Р¤РѕСЂРјР°С‚";       edit_width = 25; key="e_3_4"; mnemonic="Р¤";}
+   : edit_box {label = "Р—РѕРЅР°";         edit_width = 25; key="e_3_5"; mnemonic="Р°";}
+   : edit_box {label = "РџРѕР·РёС†РёСЏ";      edit_width = 25; key="e_3_6"; mnemonic="Рџ";}
+   : edit_box {label = "РћР±РѕР·РЅР°С‡РµРЅРёРµ";  edit_width = 25; key="e_3_7"; mnemonic="Рћ";}
+   : edit_box {label = "РќР°РёРјРµРЅРѕРІР°РЅРёРµ"; edit_width = 25; key="e_3_8"; mnemonic="Рј";}
+   : edit_box {label = "РљРѕР»РёС‡РµСЃС‚РІРѕ";   edit_width = 25; key="e_3_9"; mnemonic="Р»";}
+   : edit_box {label = "РџСЂРёРјРµС‡Р°РЅРёРµ";   edit_width = 25; key="e_3_10"; mnemonic="С‡";}
    }
  : row { ok_cancel;}
  errtile;
 }
 
-цвет : dialog
+С†РІРµС‚ : dialog
 {
- label="Настройка цветов для спецификации";
+ label="РќР°СЃС‚СЂРѕР№РєР° С†РІРµС‚РѕРІ РґР»СЏ СЃРїРµС†РёС„РёРєР°С†РёРё";
  children_fixed_height=true;
  children_fixed_width=true;
  : row
  {
-  : button { key="b_4_1"; label="Отметка начала"; width=25; }
+  : button { key="b_4_1"; label="РћС‚РјРµС‚РєР° РЅР°С‡Р°Р»Р°"; width=25; }
   : text   { key="t_4_1"; width=10;}
   : image_button { key="i_4_1"; height = 2; width=10; }
  }
  : row
  {
-  : button { key="b_4_2"; label="Линия выноски"; width=25; }
+  : button { key="b_4_2"; label="Р›РёРЅРёСЏ РІС‹РЅРѕСЃРєРё"; width=25; }
   : text   { key="t_4_2"; width=10; }
   : image_button { key="i_4_2"; height = 2; width=10;}
  }
  : row
  {
-  : button { key="b_4_3"; label="Плока"; width=25;}
+  : button { key="b_4_3"; label="РџР»РѕРєР°"; width=25;}
   : text   { key="t_4_3"; width=10; }
   : image_button { key="i_4_3"; height = 2; width=10; }
  }
  : row
  {
-  : button { key="b_4_4"; label="Текст позиции"; width=25;}
+  : button { key="b_4_4"; label="РўРµРєСЃС‚ РїРѕР·РёС†РёРё"; width=25;}
   : text   { key="t_4_4"; width=10; }
   : image_button { key="i_4_4"; height = 2; width=10;}
  }
@@ -216,26 +216,26 @@ dcl_settings : default_dcl_settings { audit_level = 3; }
  ok_cancel;
 }
 
-база_данных : dialog
+Р±Р°Р·Р°_РґР°РЅРЅС‹С… : dialog
 {
- label = "База данных документов";
+ label = "Р‘Р°Р·Р° РґР°РЅРЅС‹С… РґРѕРєСѓРјРµРЅС‚РѕРІ";
  : boxed_column 
- {label = "Шаблоны поиска";
+ {label = "РЁР°Р±Р»РѕРЅС‹ РїРѕРёСЃРєР°";
   : row
   {
    : column
    {
-    : text { label="Формат";}
+    : text { label="Р¤РѕСЂРјР°С‚";}
     : edit_box { key="e_5_1"; value="*"; }
    }
    : column 
    {
-    : text { label="Обозначение";}
+    : text { label="РћР±РѕР·РЅР°С‡РµРЅРёРµ";}
     : edit_box  {key="e_5_2"; value="*"; }
    }
    :column 
    {  
-    : text { label="Наименование";}
+    : text { label="РќР°РёРјРµРЅРѕРІР°РЅРёРµ";}
     : edit_box  { key="e_5_3"; value="*"; }
    }
   }
@@ -243,12 +243,12 @@ dcl_settings : default_dcl_settings { audit_level = 3; }
   {
    :column 
    {  
-    : text { label="Примечание";}
+    : text { label="РџСЂРёРјРµС‡Р°РЅРёРµ";}
     : edit_box  { key="e_5_4"; value="*"; }
    }
    :column 
    {  
-    : text { label="Описание";}
+    : text { label="РћРїРёСЃР°РЅРёРµ";}
     : edit_box  { key="e_5_5"; value="*"; }
    }
   }
@@ -264,22 +264,22 @@ dcl_settings : default_dcl_settings { audit_level = 3; }
  {
   : boxed_column
   {
-   label="Запись";
-   : edit_box  { label="Формат"; key="e_5_6";}
-   : edit_box  { label="Обозначение"; key="e_5_7";}
-   : edit_box  { label="Наименование"; key="e_5_8";}
-   : edit_box  { label="Материал"; key="e_5_9";}
-   : edit_box  { label="Примечание"; key="e_5_10";}
-   : edit_box  { label="Описание"; key="e_5_11";}
+   label="Р—Р°РїРёСЃСЊ";
+   : edit_box  { label="Р¤РѕСЂРјР°С‚"; key="e_5_6";}
+   : edit_box  { label="РћР±РѕР·РЅР°С‡РµРЅРёРµ"; key="e_5_7";}
+   : edit_box  { label="РќР°РёРјРµРЅРѕРІР°РЅРёРµ"; key="e_5_8";}
+   : edit_box  { label="РњР°С‚РµСЂРёР°Р»"; key="e_5_9";}
+   : edit_box  { label="РџСЂРёРјРµС‡Р°РЅРёРµ"; key="e_5_10";}
+   : edit_box  { label="РћРїРёСЃР°РЅРёРµ"; key="e_5_11";}
   }
  : boxed_column
   {
-   label="Действия";
-   : button  { label="Добавить"; key="b_5_1";}
-   : button  { label="Удалить"; key="b_5_2";}
-   : button  { label="Обновить"; key="b_5_3";}
-   : button  { label="Вып. запрос"; key="b_5_4";}
-   : button  { label="Сохранить"; key="b_5_5";}
+   label="Р”РµР№СЃС‚РІРёСЏ";
+   : button  { label="Р”РѕР±Р°РІРёС‚СЊ"; key="b_5_1";}
+   : button  { label="РЈРґР°Р»РёС‚СЊ"; key="b_5_2";}
+   : button  { label="РћР±РЅРѕРІРёС‚СЊ"; key="b_5_3";}
+   : button  { label="Р’С‹Рї. Р·Р°РїСЂРѕСЃ"; key="b_5_4";}
+   : button  { label="РЎРѕС…СЂР°РЅРёС‚СЊ"; key="b_5_5";}
   } 
  }
  spacer_1;

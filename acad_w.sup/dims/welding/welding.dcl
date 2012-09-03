@@ -1,117 +1,117 @@
-dcl_settings : default_dcl_settings { audit_level = 3; }
+п»їdcl_settings : default_dcl_settings { audit_level = 3; }
 welding_geometry : dialog
-{  label = "Вид стрелки";
- : edit_box  {key ="wg:размер_стрелки" ; label= "Размер стрелки";}
- : edit_box  {key ="wg:угол_раскрытия_стрелки"; label= "Угол раскрытия";}
- : edit_box  {key ="wg:угол_хвоста_стрелки"; label= "Угол  закрытия";}
+{  label = "Р’РёРґ СЃС‚СЂРµР»РєРё";
+ : edit_box  {key ="wg:СЂР°Р·РјРµСЂ_СЃС‚СЂРµР»РєРё" ; label= "Р Р°Р·РјРµСЂ СЃС‚СЂРµР»РєРё";}
+ : edit_box  {key ="wg:СѓРіРѕР»_СЂР°СЃРєСЂС‹С‚РёСЏ_СЃС‚СЂРµР»РєРё"; label= "РЈРіРѕР» СЂР°СЃРєСЂС‹С‚РёСЏ";}
+ : edit_box  {key ="wg:СѓРіРѕР»_С…РІРѕСЃС‚Р°_СЃС‚СЂРµР»РєРё"; label= "РЈРіРѕР»  Р·Р°РєСЂС‹С‚РёСЏ";}
  
  : row
- { ok_cancel; : button {key ="b_1_1";  label= "По умолчанию";}}
+ { ok_cancel; : button {key ="b_1_1";  label= "РџРѕ СѓРјРѕР»С‡Р°РЅРёСЋ";}}
  errtile;
 }
 
 po_konturu_sutup : dialog
-{  label = "По контуру";
- : edit_box  {key ="e_2_1"; label= "По контуру";}
+{  label = "РџРѕ РєРѕРЅС‚СѓСЂСѓ";
+ : edit_box  {key ="e_2_1"; label= "РџРѕ РєРѕРЅС‚СѓСЂСѓ";}
  : row
- { ok_cancel; : button {key ="b_2_1";  label= "По умолчанию";}}
+ { ok_cancel; : button {key ="b_2_1";  label= "РџРѕ СѓРјРѕР»С‡Р°РЅРёСЋ";}}
  errtile;
 }
 
 welding_text : dialog
 {
   aspect_ratio = 0;
-  label = "Сварка";
+  label = "РЎРІР°СЂРєР°";
   initial_focus = "accept";
-  : edit_box  {key ="wt:надстрочник";label= "Надстрочник"; }
-  : edit_box  {key ="wt:подстрочник";label= "Подстрочник"; }
+  : edit_box  {key ="wt:РЅР°РґСЃС‚СЂРѕС‡РЅРёРє";label= "РќР°РґСЃС‚СЂРѕС‡РЅРёРє"; }
+  : edit_box  {key ="wt:РїРѕРґСЃС‚СЂРѕС‡РЅРёРє";label= "РџРѕРґСЃС‚СЂРѕС‡РЅРёРє"; }
   : row
   {
     : boxed_radio_row
-    { label= "Разворот стрелки";
-      : radio_button {key="wt:разв_стрелки_по_часам"; label = "По часовой";}
-      : radio_button {key="wt:разв_стрелки_против_часов"; label = "Против часовой";}
+    { label= "Р Р°Р·РІРѕСЂРѕС‚ СЃС‚СЂРµР»РєРё";
+      : radio_button {key="wt:СЂР°Р·РІ_СЃС‚СЂРµР»РєРё_РїРѕ_С‡Р°СЃР°Рј"; label = "РџРѕ С‡Р°СЃРѕРІРѕР№";}
+      : radio_button {key="wt:СЂР°Р·РІ_СЃС‚СЂРµР»РєРё_РїСЂРѕС‚РёРІ_С‡Р°СЃРѕРІ"; label = "РџСЂРѕС‚РёРІ С‡Р°СЃРѕРІРѕР№";}
     }
     : boxed_radio_row
-    { label= "Сторона";
-      : radio_button {key="wt:сторона_указываемыя"; label = "Указываемая";}
-      : radio_button {key="wt:сторона_оборотная"; label = "Оборотная";}
+    { label= "РЎС‚РѕСЂРѕРЅР°";
+      : radio_button {key="wt:СЃС‚РѕСЂРѕРЅР°_СѓРєР°Р·С‹РІР°РµРјС‹СЏ"; label = "РЈРєР°Р·С‹РІР°РµРјР°СЏ";}
+      : radio_button {key="wt:СЃС‚РѕСЂРѕРЅР°_РѕР±РѕСЂРѕС‚РЅР°СЏ"; label = "РћР±РѕСЂРѕС‚РЅР°СЏ";}
     }
   }  
   : row
   {
     : boxed_radio_row
-    { label= "По контуру";
-      : radio_button {key="wt:по_контуру_замкнутому"; label = "Замкнутому";}
-      : radio_button {key="wt:по_контуру_разамкнутому"; label = "Разамкнутому";}
-      : radio_button {key="wt:по_контуру_по_линии"; label = "По линии";}
+    { label= "РџРѕ РєРѕРЅС‚СѓСЂСѓ";
+      : radio_button {key="wt:РїРѕ_РєРѕРЅС‚СѓСЂСѓ_Р·Р°РјРєРЅСѓС‚РѕРјСѓ"; label = "Р—Р°РјРєРЅСѓС‚РѕРјСѓ";}
+      : radio_button {key="wt:РїРѕ_РєРѕРЅС‚СѓСЂСѓ_СЂР°Р·Р°РјРєРЅСѓС‚РѕРјСѓ"; label = "Р Р°Р·Р°РјРєРЅСѓС‚РѕРјСѓ";}
+      : radio_button {key="wt:РїРѕ_РєРѕРЅС‚СѓСЂСѓ_РїРѕ_Р»РёРЅРёРё"; label = "РџРѕ Р»РёРЅРёРё";}
     }
     : boxed_radio_row
-    { label= "Монтажный";
-      : radio_button {key="wt:монтажный_да"; label = "Да";}
-      : radio_button {key="wt:монтажный_нет"; label = "Нет";}
+    { label= "РњРѕРЅС‚Р°Р¶РЅС‹Р№";
+      : radio_button {key="wt:РјРѕРЅС‚Р°Р¶РЅС‹Р№_РґР°"; label = "Р”Р°";}
+      : radio_button {key="wt:РјРѕРЅС‚Р°Р¶РЅС‹Р№_РЅРµС‚"; label = "РќРµС‚";}
     }
   }
   : boxed_row
-  { label = "Надстрочник";
+  { label = "РќР°РґСЃС‚СЂРѕС‡РЅРёРє";
     : boxed_row
-    { label="Об. стандарта";
-      : toggle {key = "wt:обозн_стандарта"; } 
-      : popup_list {key = "wt:список_обозн_стандартаpтов";}
+    { label="РћР±. СЃС‚Р°РЅРґР°СЂС‚Р°";
+      : toggle {key = "wt:РѕР±РѕР·РЅ_СЃС‚Р°РЅРґР°СЂС‚Р°"; } 
+      : popup_list {key = "wt:СЃРїРёСЃРѕРє_РѕР±РѕР·РЅ_СЃС‚Р°РЅРґР°СЂС‚Р°pС‚РѕРІ";}
     }
     : boxed_row
-    { label="Об. шва";
-      : toggle {key = "wt:обозн_шва"; }
-      : popup_list    {  key = "wt:список_обозн_швов";}
+    { label="РћР±. С€РІР°";
+      : toggle {key = "wt:РѕР±РѕР·РЅ_С€РІР°"; }
+      : popup_list    {  key = "wt:СЃРїРёСЃРѕРє_РѕР±РѕР·РЅ_С€РІРѕРІ";}
     }
     : boxed_row
-    { label="Способ св.";
-      : toggle {key = "wt:спос_сварки";} 
-      : popup_list    {  key = "wt:список_спос_сварки";}
+    { label="РЎРїРѕСЃРѕР± СЃРІ.";
+      : toggle {key = "wt:СЃРїРѕСЃ_СЃРІР°СЂРєРё";} 
+      : popup_list    {  key = "wt:СЃРїРёСЃРѕРє_СЃРїРѕСЃ_СЃРІР°СЂРєРё";}
     }
     : boxed_row
-    {label="Катет";
-      : toggle {key = "wt:катет_t"; } 
-      : edit_box {  key = "wt:катет_eb";}
+    {label="РљР°С‚РµС‚";
+      : toggle {key = "wt:РєР°С‚РµС‚_t"; } 
+      : edit_box {  key = "wt:РєР°С‚РµС‚_eb";}
     }
     : boxed_row
-    { label="Доп. знаки";
-      : popup_list {key = "wt:надстр_список_доп_знаков"; width =15;}
+    { label="Р”РѕРї. Р·РЅР°РєРё";
+      : popup_list {key = "wt:РЅР°РґСЃС‚СЂ_СЃРїРёСЃРѕРє_РґРѕРї_Р·РЅР°РєРѕРІ"; width =15;}
     }
     : boxed_row
-    {label="Шерох.";
-      : toggle {key = "wt:надстр_шерох_t"; } 
-      : edit_box {  key = "wt:надстр_шерох_eb";}
+    {label="РЁРµСЂРѕС….";
+      : toggle {key = "wt:РЅР°РґСЃС‚СЂ_С€РµСЂРѕС…_t"; } 
+      : edit_box {  key = "wt:РЅР°РґСЃС‚СЂ_С€РµСЂРѕС…_eb";}
     }
   }
   : boxed_row
-  { label = "Подстрочник";
+  { label = "РџРѕРґСЃС‚СЂРѕС‡РЅРёРє";
     : boxed_row
-    { label = "Категория";
-      : toggle {key = "wt:категория"; }
-      : popup_list    {  key = "wt:список_категорий";}
+    { label = "РљР°С‚РµРіРѕСЂРёСЏ";
+      : toggle {key = "wt:РєР°С‚РµРіРѕСЂРёСЏ"; }
+      : popup_list    {  key = "wt:СЃРїРёСЃРѕРє_РєР°С‚РµРіРѕСЂРёР№";}
     }
     : boxed_row
-    { label = "Комплекс";
-      : toggle {key = "wt:комплекс"; }
-      : popup_list {key = "wt:список_комплексов";}
+    { label = "РљРѕРјРїР»РµРєСЃ";
+      : toggle {key = "wt:РєРѕРјРїР»РµРєСЃ"; }
+      : popup_list {key = "wt:СЃРїРёСЃРѕРє_РєРѕРјРїР»РµРєСЃРѕРІ";}
     }
     : boxed_row
-    { label="Доп. знаки";
-      : popup_list {key = "wt:подстр_список_доп_знаков"; width =15;}
+    { label="Р”РѕРї. Р·РЅР°РєРё";
+      : popup_list {key = "wt:РїРѕРґСЃС‚СЂ_СЃРїРёСЃРѕРє_РґРѕРї_Р·РЅР°РєРѕРІ"; width =15;}
     }
     : boxed_row
-    { label="Шерох.";
-      : toggle {key = "wt:подстр_шерох_t"; }
-      : edit_box {  key = "wt:подстр_шерох_eb";}
+    { label="РЁРµСЂРѕС….";
+      : toggle {key = "wt:РїРѕРґСЃС‚СЂ_С€РµСЂРѕС…_t"; }
+      : edit_box {  key = "wt:РїРѕРґСЃС‚СЂ_С€РµСЂРѕС…_eb";}
     }
   }
   : row
-  { : button {key="Нарисовать"; label="Нарисовать";}
-    : button {key="Настройка"; label="Настройка";}
-    : button {key="Сохранить"; label="Сохранить";}
-    : button {key="Выбрать"; label="Выбрать";}
-    : button {key="Обновить"; label="Обновить";}
+  { : button {key="РќР°СЂРёСЃРѕРІР°С‚СЊ"; label="РќР°СЂРёСЃРѕРІР°С‚СЊ";}
+    : button {key="РќР°СЃС‚СЂРѕР№РєР°"; label="РќР°СЃС‚СЂРѕР№РєР°";}
+    : button {key="РЎРѕС…СЂР°РЅРёС‚СЊ"; label="РЎРѕС…СЂР°РЅРёС‚СЊ";}
+    : button {key="Р’С‹Р±СЂР°С‚СЊ"; label="Р’С‹Р±СЂР°С‚СЊ";}
+    : button {key="РћР±РЅРѕРІРёС‚СЊ"; label="РћР±РЅРѕРІРёС‚СЊ";}
   }
   ok_cancel;
   errtile;

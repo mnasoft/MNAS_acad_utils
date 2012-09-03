@@ -1,61 +1,61 @@
-dcl_settings : default_dcl_settings { audit_level = 3; }
+п»їdcl_settings : default_dcl_settings { audit_level = 3; }
 
 dchprop : dialog
-{	label = "Изменение свойств объектов";aspect_ratio = 0;
+{	label = "РР·РјРµРЅРµРЅРёРµ СЃРІРѕР№СЃС‚РІ РѕР±СЉРµРєС‚РѕРІ";aspect_ratio = 0;
 	: row
 	{
-		: button { key ="a1";label= "Выбор объектов";width=20;}
-		: button { key="a16";label="Установить свойства";width=20;}
+		: button { key ="a1";label= "Р’С‹Р±РѕСЂ РѕР±СЉРµРєС‚РѕРІ";width=20;}
+		: button { key="a16";label="РЈСЃС‚Р°РЅРѕРІРёС‚СЊ СЃРІРѕР№СЃС‚РІР°";width=20;}
 	}
 	: boxed_row
 	{ : column
 		{ : row
 			{ : toggle {key = "a7";}
-				: button { key = "a4";label ="Слой"; width=12; }
+				: button { key = "a4";label ="РЎР»РѕР№"; width=12; }
 				: edit_box { key = "a10";width=15;}
 			}
 			: row
 			{ : toggle { key = "a8";}
-				: button { key = "a5";label = "Тип линии";width=12;}
+				: button { key = "a5";label = "РўРёРї Р»РёРЅРёРё";width=12;}
 				: edit_box { key = "a11"; width=15;}
 			}
 			: row
 			{	: toggle { key = "a9";}
-				: button { key = "a6";label ="Цвет";width=12;}
+				: button { key = "a6";label ="Р¦РІРµС‚";width=12;}
 				: edit_box { key = "a12";width=15;}
 			}
 		}
 		: column
-		{ : button { key = "a13";label = "По объекту";width=15;}
-			: button { key = "a14";label = "По генерации";width=15;}
-			: button { key = "a15";label = "Уст. св-ва";width=15;}
+		{ : button { key = "a13";label = "РџРѕ РѕР±СЉРµРєС‚Сѓ";width=15;}
+			: button { key = "a14";label = "РџРѕ РіРµРЅРµСЂР°С†РёРё";width=15;}
+			: button { key = "a15";label = "РЈСЃС‚. СЃРІ-РІР°";width=15;}
 		}
 	}
   : row
-  { : button { key = "a17";label ="Осевая";width=12;}
-    : button { key = "a18";label ="Белая";width=12;}
-    : button { key = "a19";label ="ПОСЛОЮ";width=12;}
+  { : button { key = "a17";label ="РћСЃРµРІР°СЏ";width=12;}
+    : button { key = "a18";label ="Р‘РµР»Р°СЏ";width=12;}
+    : button { key = "a19";label ="РџРћРЎР›РћР®";width=12;}
   }
-  : row { ok_cancel; : button { key = "a20";label ="О программе"; } }
+  : row { ok_cancel; : button { key = "a20";label ="Рћ РїСЂРѕРіСЂР°РјРјРµ"; } }
   errtile;
 }
 
 linetype : dialog
-{	label = "Выбор типа линии";aspect_ratio = 0;
+{	label = "Р’С‹Р±РѕСЂ С‚РёРїР° Р»РёРЅРёРё";aspect_ratio = 0;
 	: list_box { key="b4";}
 	: boxed_row
 	{
-		label = "Тип линии";
+		label = "РўРёРї Р»РёРЅРёРё";
 		: text {key="b7";width = 15;fixed_width = true;}
 	}
 	ok_cancel_help; errtile;
 }
 
 layertype : dialog
-{	label = "Выбор слоя";aspect_ratio = 0;
+{	label = "Р’С‹Р±РѕСЂ СЃР»РѕСЏ";aspect_ratio = 0;
 	: list_box { key="c4";}
 	: boxed_row
-	{	label = "Слой";
+	{	label = "РЎР»РѕР№";
 		: text {key="c5";width = 15;fixed_width = true;}
 	}
 	ok_cancel; errtile;

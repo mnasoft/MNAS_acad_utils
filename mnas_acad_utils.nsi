@@ -3,7 +3,7 @@
 ; The name of the installer
 Name "mnas_acad_utils"
 
-!define VERSION "2.7.7.8"
+!define VERSION "3.0.0.0"
 
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\Russian.nlf"
@@ -18,11 +18,11 @@ VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "Утилиты для работы с Au
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "${VERSION}"
 
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "ProductName" "Mnas_acad_utils"
-VIAddVersionKey /LANG=${LANG_RUSSIAN} "Comments" "Утилиты для работы с AutoCAD© (2007-2011)"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "Comments" "Утилиты для работы с AutoCAD© (2013)"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "CompanyName" "Матвеев Николай Анатольевич (MNASoft)"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "LegalTrademarks" "http:\\www.mnasoft.mksat.net"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "LegalCopyright" "Распространяется по лицензии GNU GPL v3.0"
-VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileDescription" "Утилиты для работы с AutoCAD© (2007-2011)"
+VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileDescription" "Утилиты для работы с AutoCAD© (2013)"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileVersion" "${VERSION}"
 
 
@@ -133,8 +133,6 @@ Section "VLX"
   SetOutPath $INSTDIR\vlx
   File .\vlx\For_lic.VLX
   SetOutPath $INSTDIR\vlx
-  File .\vlx\change.VLX
-  SetOutPath $INSTDIR\vlx
   File .\vlx\dim_style.VLX
   SetOutPath $INSTDIR\vlx
   File .\vlx\rename.VLX
@@ -208,6 +206,8 @@ Section "VLX"
   File .\vlx\Add_prefix.VLX
   SetOutPath $INSTDIR\acad_w.sup\prj\arx_dbx_reg
   File .\acad_w.sup\prj\arx_dbx_reg\create_registry.VLX
+  SetOutPath $INSTDIR\vlx
+  File .\vlx\create_registry.VLX
 SectionEnd
 Section "mea"
   SetOutPath $INSTDIR\acad_w.sup\izmjeritjelnaja_mashina\Mea
@@ -534,6 +534,8 @@ Section "sh"
   File .\section_one_by_ext.sh
   SetOutPath $INSTDIR\.
   File .\sections_by_ext.sh
+  SetOutPath $INSTDIR\acad_setup_js
+  File .\acad_setup_js\VLISP_make_prv.sh
   SetOutPath $INSTDIR\.
   File .\rename_suffix.sh
 SectionEnd
@@ -2118,7 +2120,6 @@ Section "un.VLX"
   Delete $INSTDIR\vlx\SMESITEL_vla.VLX
   Delete $INSTDIR\vlx\spec.VLX
   Delete $INSTDIR\vlx\For_lic.VLX
-  Delete $INSTDIR\vlx\change.VLX
   Delete $INSTDIR\vlx\dim_style.VLX
   Delete $INSTDIR\vlx\rename.VLX
   Delete $INSTDIR\vlx\pipe.VLX
@@ -2156,6 +2157,7 @@ Section "un.VLX"
   Delete $INSTDIR\vlx\f_otv.VLX
   Delete $INSTDIR\vlx\Add_prefix.VLX
   Delete $INSTDIR\acad_w.sup\prj\arx_dbx_reg\create_registry.VLX
+  Delete $INSTDIR\vlx\create_registry.VLX
 SectionEnd
 Section "un.mea"
   Delete $INSTDIR\acad_w.sup\izmjeritjelnaja_mashina\Mea\12-1.mea
@@ -2329,6 +2331,7 @@ Section "un.sh"
   Delete $INSTDIR\section_ext.sh
   Delete $INSTDIR\section_one_by_ext.sh
   Delete $INSTDIR\sections_by_ext.sh
+  Delete $INSTDIR\acad_setup_js\VLISP_make_prv.sh
   Delete $INSTDIR\rename_suffix.sh
 SectionEnd
 Section "un.nsi"
