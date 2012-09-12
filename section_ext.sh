@@ -126,7 +126,7 @@ Section "Start Menu Shortcuts"
   CreateDirectory "$SMPROGRAMS\mnas_acad_utils"
   
   CreateShortCut "$SMPROGRAMS\mnas_acad_utils\Uninstall.lnk"               "$INSTDIR\uninstall.exe"           "" "$INSTDIR\uninstall.exe" 0
-  CreateShortCut "$SMPROGRAMS\mnas_acad_utils\README.txt.lnk"              "$INSTDIR\README.txt"              "" "" 0  
+  CreateShortCut "$SMPROGRAMS\mnas_acad_utils\README.html.lnk"              "$INSTDIR\README.html"              "" "" 0  
   CreateShortCut "$SMPROGRAMS\mnas_acad_utils\Change.log.lnk"              "$INSTDIR\Change.log"              "" "" 0  
   CreateShortCut "$SMPROGRAMS\mnas_acad_utils\CopyRight.html.lnk"          "$INSTDIR\CopyRight.html"          "" "" 0  
   CreateShortCut "$SMPROGRAMS\mnas_acad_utils\Mnasoft_command_list.html.lnk" "$INSTDIR\acad.help\mnasoft_command_list.html"          "" "" 0  
