@@ -1,12 +1,11 @@
-;;; VLisp project file [V2.0] raschot_zolotnika saved to:[./acad_w.sup/prj/rascot_zolotnika] at:[3/31/11] 
+;;; VLisp project file [V2.0] raschot_zolotnika saved to:[O:/Develop/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika] at:[10/7/12] 
 (VLISP-PROJECT-LIST
   :NAME
   raschot_zolotnika
   :OWN-LIST
   ("../../utils/sub_div"
-    "../../MATR/MATR"
-    "../../MATR/Vychisljenije osrjednjajuschjej funktcii"
-    "../../Mjetod polovinnogo djeljenija/Polovinnoje djeljenije 1"
+    "../../MATR/MATR"				     "../../matr/Vychisljenije_osrjednjajuschjej_funktcii"
+    "../../mjetod_polovinnogo_djeljenija/Polovinnoje_djeljenije_1"
     "../../Otvjerstija/f_otv"			     "havisude"
     "gt25000"					     "dg80L5"
    )

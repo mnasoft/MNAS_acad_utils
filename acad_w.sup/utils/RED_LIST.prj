@@ -1,2 +1,16 @@
-
-(VLISP-PROJECT-LIST :NAME RED_LIST :OWN-LIST ("red_list") :FAS-DIRECTORY "C:\\vlisp.tmp" :TMP-DIRECTORY "C:\\vlisp.tmp" :PROJECT-KEYS (:BUILD (:STANDARD) :MERGED nil :SAFE-MODE T :MSGLEVEL 1) :CONTEXT-ID :AUTOLISP) 
+;;; VLisp project file [V2.0] RED_LIST saved to:[O:/Develop/MNAS_acad_utils/acad_w.sup/utils] at:[10/7/12] 
+(VLISP-PROJECT-LIST
+  :NAME
+  RED_LIST
+  :OWN-LIST
+  ("red_list")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

@@ -1,2 +1,19 @@
-
-(VLISP-PROJECT-LIST :NAME COMPLEX_GAS :OWN-LIST ("F-ly pjerjeschjeta gaz smjesi" "Tablitca gazov" "Tablitca Mjendjeljejeva" "Raschjet smjesi" "Sostavy smjesjej" "../../UTILS/Binary" "Smjeshjenije_sostavov") :FAS-DIRECTORY "C:\\vlisp.tmp" :TMP-DIRECTORY "C:\\vlisp.tmp" :PROJECT-KEYS (:BUILD (:STANDARD) :MERGED nil :SAFE-MODE T :MSGLEVEL 1) :CONTEXT-ID :AUTOLISP) 
+;;; VLisp project file [V2.0] complex_gas saved to:[O:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza] at:[10/7/12] 
+(VLISP-PROJECT-LIST
+  :NAME
+  complex_gas
+  :OWN-LIST
+  ("F-ly_pjerjeschjeta_gaz_smjesi"
+    "Tablitca_gazov"		  "Tablitca_Mjendjeljejeva"	"Raschjet_smjesi"
+    "Sostavy_smjesjej"		  "../../UTILS/Binary"		"Smjeshjenije_sostavov"
+   )
+  :FAS-DIRECTORY
+  "../../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

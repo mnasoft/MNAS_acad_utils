@@ -1,11 +1,9 @@
-;;; VLisp project file [V2.0] circ_pnt saved to:[D:/MNAS_acad_utils/acad_w.sup/optimalnoje_raspololjenije_okrugnostjej] at:[6/9/12] 
+;;; VLisp project file [V2.0] circ_pnt saved to:[O:/Develop/MNAS_acad_utils/acad_w.sup/optimalnoje_raspololjenije_okrugnostjej] at:[10/7/12] 
 (VLISP-PROJECT-LIST
   :NAME
   circ_pnt
   :OWN-LIST
-  ("D:/MNAS_acad_utils/acad_w.sup/mjetod_pokoordinatnogo_spuska/Mjetod_pokoordinatnogo_spuska"
-    "okrugnost_po_tochkam"
-  )
+  ("../mjetod_pokoordinatnogo_spuska/Mjetod_pokoordinatnogo_spuska" "okrugnost_po_tochkam")
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

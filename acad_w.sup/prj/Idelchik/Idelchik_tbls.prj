@@ -1,2 +1,16 @@
-
-(VLISP-PROJECT-LIST :NAME IDELCHIK_TBLS :OWN-LIST ("../../matr/MATR" "../../MATR/Vychisljenije osrjednjajuschjej funktcii" "koeff_cinematic_vjazkost") :FAS-DIRECTORY nil :TMP-DIRECTORY nil :PROJECT-KEYS (:BUILD (:STANDARD)) :CONTEXT-ID :AUTOLISP) 
+;;; VLisp project file [V2.0] Idelchik_tbls saved to:[O:/Develop/MNAS_acad_utils/acad_w.sup/prj/Idelchik] at:[10/7/12] 
+(VLISP-PROJECT-LIST
+  :NAME
+  Idelchik_tbls
+  :OWN-LIST
+  ("../../matr/MATR" "../../matr/Vychisljenije_osrjednjajuschjej_funktcii" "koeff_cinematic_vjazkost")
+  :FAS-DIRECTORY
+  "../../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

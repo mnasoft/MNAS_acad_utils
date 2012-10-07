@@ -1,2 +1,19 @@
-
-(VLISP-PROJECT-LIST :NAME PAR :OWN-LIST ("../../MATR/MATR" "../../MATR/Vychisljenije osrjednjajuschjej funktcii" "../../Funktcii/Fizichjeskije/Par") :FAS-DIRECTORY "C:\\vlisp.tmp" :TMP-DIRECTORY "C:\\vlisp.tmp" :PROJECT-KEYS (:BUILD (:STANDARD) :MERGED nil :SAFE-MODE T :MSGLEVEL 1) :CONTEXT-ID :AUTOLISP) 
+;;; VLisp project file [V2.0] par saved to:[O:/Develop/MNAS_acad_utils/acad_w.sup/prj/Water_Steam] at:[10/7/12] 
+(VLISP-PROJECT-LIST
+  :NAME
+  par
+  :OWN-LIST
+  ("../../MATR/MATR"
+    "../../matr/Vychisljenije_osrjednjajuschjej_funktcii"
+    "../../Funktcii/Fizichjeskije/Par"
+  )
+  :FAS-DIRECTORY
+  "../../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

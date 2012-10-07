@@ -223,12 +223,12 @@
   )
 
   (setq gg_lst (ndiv_min_max g_g-min g_g-max 100))
-  (mapcar
-    (function
-      (lambda (el))
-
-    )
-  )
+;;;  (mapcar
+;;;    (function
+;;;      (lambda (el))
+;;;
+;;;    )
+;;;  )
 
 
 )
