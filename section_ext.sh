@@ -41,7 +41,7 @@ echo '; MNAS_acad_utils.nsi
 ; The name of the installer
 Name "mnas_acad_utils"
 
-!define VERSION "3.0.0.0"
+!define VERSION "3.0.0.1"
 
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\Russian.nlf"
