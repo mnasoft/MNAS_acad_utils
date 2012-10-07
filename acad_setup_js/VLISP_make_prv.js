@@ -13,7 +13,9 @@ function MakeVlispPRV()
 //Производит компиляцию проектов PRV. Предполагается, что активизировано окно AutoCAD
     WriteWord("vlisp{ENTER}");
 //	acad_w_path="C:\\MNAS_acad_db17_utils\\acad_w.sup\\";
-	acad_w_path="c:\\users\\namatv\\Develop\\MNAS_acad_utils\\acad_w.sup\\";
+//	acad_w_path="c:\\users\\namatv\\Develop\\MNAS_acad_utils\\acad_w.sup\\";
+//	acad_w_path="E:\\Data\\Develop\\MNAS_acad_utils\\acad_w.sup\\"
+	acad_w_path="O:\\Develop\\MNAS_acad_utils\\acad_w.sup\\"
 	
 	WScript.Sleep(5000);
 	
@@ -51,7 +53,7 @@ MakePrv(acad_w_path + "man\\man.prv");
 MakePrv(acad_w_path + "mnas\\Pozition\\pozition.prv");
 MakePrv(acad_w_path + "mnas\\Welding\\welding.prv");
 MakePrv(acad_w_path + "mnas\\Welding_lsp\\welding_lsp.prv");
-
+MakePrv(acad_w_path + "M_utils_loader\\M_utils_loader.prv");
 MakePrv(acad_w_path + "otvjerstija\\f_otv.prv");
 MakePrv(acad_w_path + "piping\\pipe.prv");
 MakePrv(acad_w_path + "point\\point.prv");
@@ -67,8 +69,10 @@ MakePrv(acad_w_path + "spec\\spec.prv");
 MakePrv(acad_w_path + "text\\text.prv");
 
 MakePrv(acad_w_path + "dopusk\\Dopusk.prv");
-//MakePrv(acad_w_path + "M_utils_loader\\M_utils_loader.prv");
 }
+
+
+
 
 function WriteWord(str) 
 {
