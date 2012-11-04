@@ -1,5 +1,5 @@
 (SETQ
-  mnasoft-debug	     T
+  mnasoft-debug	     nil
 ;;;  mnasoft-debug-path "C:\\Develop\\MNAS_acad_utils"
   mnasoft-debug-path "C:\\Users\\namatv\\Develop\\MNAS_acad_utils"
 ;;;  mnasoft-debug-path "D:\\Develop\\MNAS_acad_utils"

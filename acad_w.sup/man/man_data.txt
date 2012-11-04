@@ -1,557 +1,14 @@
-D:/MNAS_acad_utils\acad_w.sup/Acaddoc.lsp
-D:/MNAS_acad_utils\acad_w.sup/BL_PUR.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/Acaddoc.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/BL_PUR.lsp
 ;;;;;;("bl_pur" "not defined" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/KO.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/INET.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/KO.lsp
 ;;;;;;("ptt" "Функция по проецированию на конус" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/LITERA.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/LITERA.lsp
 ;;;;;;("ins_lit" "not defined" "Большой шрифт")
-D:/MNAS_acad_utils\acad_w.sup/prj.lsp
-D:/MNAS_acad_utils\acad_w.sup/prv.lsp
-D:/MNAS_acad_utils\acad_w.sup/INET.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/lst.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Temperaturnyj_napor.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/prj/func_new.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/prj/func_new1.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/prj/func_prj.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/prj/prj_main.lsp
-;;;;;;("prj_main"
-;;;;;;"Проект предназначен\n
-;;;;;;для переименования всех файлов входящих в проект\n
-;;;;;;и каталогов в которых они находятся из русской кодировки в латинскую\n
-;;;;;;и сохранения путей к файлам проекта в относительном виде.\n
-;;;;;;\n
-;;;;;;Указания к применению.\n
-;;;;;;1) Выполните следующую команду Shell для каталога, содержащего файлы проектов:\n
-;;;;;;DIR /S /B *.prj >list_prj\n
-;;;;;;2) Выполните команду prj_main. В далоговом окне выберите образованный вновь файл list_prj.\n
-;;;;;;В результате выполнения команды на консоль ACAD будет выведен список файлов,\n
-;;;;;;содержащий полные имена файлов проектов. Имена фойлов будут заключены в кавычки.
-;;;;;;3) Скопируйте имена файлов проектов из консоли ACAD в файл projects.lsp взамен находящегося там списка.
-;;;;;;После загрузки projects.lsp файла глобальная переменная g:fn_full_prj_lst должна содержать список проектов.\n
-;;;;;;4) Загрузите все файлы проекта rename_vl_prj.prj.\n
-;;;;;;5) Выполните в консоли Visual Lisp функцию (make_lst g:fn_full_prj_lst)." "not defined")
-D:/MNAS_acad_utils\acad_w.sup/prj/prj/projects.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/prj/prv_main.lsp
-;;;;;;("prv_main"
-;;;;;;"
-;;;;;;Формирует строки для вставки в файл C:/Acad.mnu/acad_setup/VLISP_make_prv.js,\n
-;;;;;;служащий для пакетной перекомпиляции prv-проектов prv.\n
-;;;;;;Указания к применению.\n
-;;;;;;1) Выполните следующую команду Shell для каталога, содержащего файлы prv-проектов:\n
-;;;;;;DIR /S /B *.prv >list_prv\n
-;;;;;;2) Выполните команду prv_main. В далоговом окне выберите образованный вновь файл list_prv.\n
-;;;;;;В результате выполнения команды на консоль ACAD будет выведен список файлов,\n
-;;;;;;содержащий полные имена файлов проектов. Имена фойлов будут заключены в кавычки и оформлены как вызов функции.\n
-;;;;;;3) Скопируйте результат вывода из консоли ACAD в файл C:/Acad.mnu/acad_setup/VLISP_make_prv.js.
-;;;;;;4) Запустите на выполнение C:/Acad.mnu/acad_setup/VLISP_make_prv.js.
-;;;;;;5) Выполните в консоли Visual Lisp функцию (make_lst g:fn_full_prj_lst).
-;;;;;;" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/prj/prj/tmp.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Filter/filter.LSP
-D:/MNAS_acad_utils\acad_w.sup/prj/Spring/Spring.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Spring/Spring_actions.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Spring/Spring_class.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Spring/Spring_dia.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Spring/Spring_dlg.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/CHtjenije_iz_Exel/graph.lsp
-;;;;;;("exelread" "Производит чтение из Exel." "Обмен")
-D:/MNAS_acad_utils\acad_w.sup/prj/CHtjenije_iz_Exel/my_read_exel.lsp
-;;;;;;("read_exel" "Чтение их Exel." "Обмен")
-D:/MNAS_acad_utils\acad_w.sup/prj/CHtjenije_iz_Exel/my_write_exel.lsp
-;;;;;;("write_exel" "Запись в таблицу Exel." "Обмен")
-D:/MNAS_acad_utils\acad_w.sup/prj/CHtjenije_iz_Exel/Rad_exel_samp.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/CHtjenije_iz_Exel/read_exel_setup_lst.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/CHtjenije_iz_Exel/read_me.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/CHtjenije_iz_Exel/utils_xls.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/CHtjenije_iz_Exel/Wri_exel_samp.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/arx_dbx_reg/arx_dbx_reg.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/arx_dbx_reg/MNAS_ARX_DBX_16.lsp
-;;;;;;("mnas_arx_dbx_registry_16" "Формирует reg-файл, предназначенный для внесения в проект Visual Studio Net информации о командах пакета MNAS_cad_utils." "Настройка")
-D:/MNAS_acad_utils\acad_w.sup/prj/arx_dbx_reg/MNAS_ARX_DBX_17.lsp
-;;;;;;("mnas_arx_dirs" "Возвращает информацию о каталогах ARX, установленных в системе программ AutoCAD, на основании данных из системного реестра." "Настройка")
-;;;;;;("mnas_dbx_dirs" "Возвращает информацию о каталогах DBX, установленных в системе программ AutoCAD, на основании данных из системного реестра." "Настройка")
-;;;;;;("mnas_arx_dbx_registry_17" "Формирует reg-файл, предназначенный для внесения в проект Visual Studio Net информации о командах пакета MNAS_cad_utils." "Настройка")
-D:/MNAS_acad_utils\acad_w.sup/prj/Postrojenije_Zavisimostjej_vrjednyh_vybrosov/banzaj1.lsp
-;;;;;;("culc_co_nox" "not defined" "not defined")
-;;;;;;("sech" "not defined" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/prj/Check_Inters/ck.lsp
-;;;;;;("ck_cl" "not defined" "not defined")
-;;;;;;("ck" "not defined" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/CP_CH4.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/F-ly_pjerjeschjeta_gaz_smjesi.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/Gasodin_functions.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/Raschet_smesi_0.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/Raschet_teplojomkosti.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/Raschjet_smjesi.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/Smjeshjenije_sostavov.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/Sostavy_smjesjej.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/Tablitca_gazov.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/Tablitca_Mjendjeljejeva.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/Tablitsa_teplojomkostej.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza/Pereschet.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/rascot_zolotnika/dg80L5.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/rascot_zolotnika/gt25000.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/rascot_zolotnika/havisude.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Idelchik/koeff_cinematic_vjazkost.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/moment_zatjazki/moment.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Ostcill/osc.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Ostcill/osct_1.lsp
-;;;;;;("read_dat" "not defined" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/prj/Provoloka/Provoloka.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_pruginy/Prugina.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_pruginy/Raschjet_pruginy.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_gaza_0/Raschet_smesi.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Rjezba_mjetrichjeskaja/Raschjet_profilja_mjetrichjeskoj_rjezby_po_GOST_9150-81.lsp
-;;;;;;("rezba_out" "not defined" "not defined")
-;;;;;;("rezba_in" "not defined" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/prj/rename_ru_eng/rename_ru_eng.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Temperetche_In_smesitel/tmp.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Tr_inch/tr_inch.lsp
-;;;;;;("tr_inch" "not defined" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/prj/Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF/Ugol_vyhoda_vozduha_iz_TVF.lsp
-D:/MNAS_acad_utils\acad_w.sup/prj/Zavihritel/ZAV_1.lsp
-;;;;;;("завихритель" "not defined" "Расчеты")
-D:/MNAS_acad_utils\acad_w.sup/smesitel_vla/Mixer_section.lsp
-;;;;;;("prep:sm" "Подготовка данных для построения смесителя. См. команду dr:sm." "Смеситель")
-;;;;;;("dr:sm"
-;;;;;;"Проект Smesitel_vla.\n
-;;;;;;	Проект предназначен для проектирования линейчатого каркаса смесителя жаровой трубы.\n
-;;;;;;	Проект определяет следующие команды:\n
-;;;;;;		prep:sm    - подготовка данных для построения сместеля;\n
-;;;;;;		dr:sm      - отрисовка смесителя по подготовленным данным;\n
-;;;;;;		dr:sech    - отрисовка одиночного сечения по длине;\n
-;;;;;;		clear:sm   - очистка списка образующий, сохраняемых в расширенном словаре;
-;;;;;;		vla-obj    - предназначена для замены одной из образующих смесителя.\n
-;;;;;;\n
-;;;;;;	Проект определяет следующие переменные, используемые для хренения образующих и геометрических параметров смесителя:\n
-;;;;;;		v_pl_axis      - ось смесителя;\n
-;;;;;;\n
-;;;;;;		v_spl_top      - верхняя образующая смесителя;\n
-;;;;;;		v_spl_bot      - нижняя образующая смесителя;\n
-;;;;;;\n
-;;;;;;		v_l_axis       - ось абсцисс для зависимостей следующих ниже;\n
-;;;;;;\n
-;;;;;;		v_spl_l_bok    - боковая образующая смесителя;\n
-;;;;;;		v_spl_r_top    - радиус верхней образующей;\n
-;;;;;;		v_spl_kr_bot   - кривизна нижней образующей;\n
-;;;;;;		v_spl_r_kt     - радиус перехода от боковой образующей к верхней образующей;\n
-;;;;;;		v_spl_r_kb     - радиус перехода от боковой образующей к нижней образующей;\n
-;;;;;;		v_spl_alfa_bok - зависимость угла, выраженную в градусах, между осью абсцисс сечения и перпендикуляром, опущенным из центра координат сечения на боковую образующую.\n
-;;;;;;\n
-;;;;;;		Площади поперечных сечений смесителя находятся в переменной area_lst.\n
-;;;;;;		Длины полупериметров поперечных сечений находятся в переменной length_lst.\n
-;;;;;;		Для построения графиков зависимостей площади поперечного сечения и полупериметров следует воспользоваться командой a1.\n
-;;;;;;" "Смеситель")
-D:/MNAS_acad_utils\acad_w.sup/smesitel_vla/sech_by_lenght.lsp
-;;;;;;("dr:sech" "Построение одиночного сечения смесителя." "Смеситель")
-D:/MNAS_acad_utils\acad_w.sup/smesitel_vla/section.lsp
-;;;;;;("clear:sm"
-;;;;;;"Данная команда является частью проекта smesitel_vla.\n
-;;;;;;Команда производит очистку данных, связанных с приложением smesitel_vla.\n
-;;;;;;В процессе загрузки приложения производится попытка считывания приватных данных из расширенного словаря smesitel_vla.\n
-;;;;;;Эти данные представляют ссылки на метки объектов, представляющих образующие смесителя.\n
-;;;;;;Если в предыдущем сеанре редактирования данного файла образующие были задны при помощи команды prep:sm -
-;;;;;;в новой сессии они будут определены при загрузке приложения.
-;;;;;;См. команду dr:sm." "Смеситель")
-D:/MNAS_acad_utils\acad_w.sup/lopatka/draw_lop.lsp
-D:/MNAS_acad_utils\acad_w.sup/lopatka/Lopatka.lsp
-;;;;;;("lo" "Построение профиля лопатки." "Расчеты")
-D:/MNAS_acad_utils\acad_w.sup/lopatka/Lop_func.lsp
-D:/MNAS_acad_utils\acad_w.sup/circles/CIRCLES.lsp
-;;;;;;("c_r" "Построение окружности по радиусу и центральной точке." "Отверстия")
-;;;;;;("c_d" "Построение окружности по диаметру и центральной точке." "Отверстия")
-;;;;;;("cl_s" "Построение группы окружностей, имеющих один центр." "Отверстия")
-;;;;;;("ax_c" "Построение окружности с осями." "Отверстия")
-;;;;;;("ax_a" "Построение дуги с осями." "Отверстия")
-;;;;;;("ax_ca" "Построение окружности и дуги с осями." "Отверстия")
-;;;;;;("c_axis" "Построение осей для отмеченных окружностей и дуг." "Отверстия")
-;;;;;;("p_axis" "Построение осей для отмеченных окружностей и дуг." "Отверстия")
-;;;;;;("c_el" "Построение проекции окружности." "Отверстия")
-;;;;;;("cl_els" "Построение проекциий окружностей на заданную ось." "Отверстия")
-D:/MNAS_acad_utils\acad_w.sup/circles/Circles_2.lsp
-;;;;;;("c_ex" "Построение сопряжения двух окружностей большим радиусом." "Отверстия")
-D:/MNAS_acad_utils\acad_w.sup/circles/sort_point.lsp
-D:/MNAS_acad_utils\acad_w.sup/spec/Baza_dannyh.lsp
-D:/MNAS_acad_utils\acad_w.sup/spec/bd_naimjenovanije.lsp
-D:/MNAS_acad_utils\acad_w.sup/spec/Dialog_Color.lsp
-D:/MNAS_acad_utils\acad_w.sup/spec/Dialog_Nastrojka.lsp
-D:/MNAS_acad_utils\acad_w.sup/spec/Dialog_pozicija.lsp
-D:/MNAS_acad_utils\acad_w.sup/spec/func1.lsp
-D:/MNAS_acad_utils\acad_w.sup/spec/func2.lsp
-D:/MNAS_acad_utils\acad_w.sup/spec/func3.lsp
-D:/MNAS_acad_utils\acad_w.sup/spec/func4.lsp
-D:/MNAS_acad_utils\acad_w.sup/spec/Naimjenovanije.lsp
-D:/MNAS_acad_utils\acad_w.sup/spec/Specif.lsp
-;;;;;;("spec" "Функция простановки позиций." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/format/add_dop_sht_dlg.lsp
-D:/MNAS_acad_utils\acad_w.sup/format/block_create.lsp
-;;;;;;("make_ublock"
-;;;;;;"Создает непоменованный блок" "Объекты")
-D:/MNAS_acad_utils\acad_w.sup/format/dop_dlg.lsp
-D:/MNAS_acad_utils\acad_w.sup/format/FORMAT.lsp
-;;;;;;("format" "Построение форматной рамки." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/format/format_draw.lsp
-D:/MNAS_acad_utils\acad_w.sup/format/geom_util.lsp
-D:/MNAS_acad_utils\acad_w.sup/for_lic/formuly.lsp
-;;;;;;("pr1" "Первый проход." "Расчеты")
-;;;;;;("pr2" "Второй проход." "Расчеты")
-;;;;;;("rep" "Формула повторений." "Расчеты")
-D:/MNAS_acad_utils\acad_w.sup/for_lic/for_prover.lsp
-;;;;;;("for_prov"
-;;;;;;  "Проверочный расчет жидкотопливной форсунки
-;;;;;;Ввод данных выполняется в диалоговом режиме." "Расчеты" )
-D:/MNAS_acad_utils\acad_w.sup/for_lic/projekt.lsp
-;;;;;;("for_proect" "Проектиоровочный расчет жидкотопливной форсунки." "Расчеты")
-;;;;;;("gr" "Программа для построения графика." "Шкалы")
-D:/MNAS_acad_utils\acad_w.sup/for_lic/provjerka.lsp
-;;;;;;("for_prover" "Проверочный расчет жидкотопливной форсунки." "Расчеты")
-D:/MNAS_acad_utils\acad_w.sup/for_lic/tmp.lsp
-D:/MNAS_acad_utils\acad_w.sup/lines/LINES.lsp
-;;;;;;("r_off"
-;;;;;;"Линия в направлении (ang+dir_0) из точки, лежащей на перпедикуляре к dir_0\n
-;;;;;;проходящем через p0 на расстоянии rad, проекция линии на направление dir_0\n
-;;;;;;равна off." "Отверстия")
-;;;;;;("d_off"
-;;;;;;"Линия в направлении (ang+dir_0) из точки, лежащей на перпедикуляре к dir_0\n
-;;;;;;проходящем через p0 на расстоянии rad, проекция линии на направление dir_0\n
-;;;;;;равна off ; зеркальная к ней ; и линия замыкающая концы этих линий." "Отверстия")
-;;;;;;("d_otv" "Отверстие без фаски." "Отверстия")
-;;;;;;("d_chamf" "Отверстие с фаской." "Отверстия")
-;;;;;;("d_rez" "Построение резьбового отверстия" "Отверстия")
-D:/MNAS_acad_utils\acad_w.sup/lines/linetype.lsp
-;;;;;;("ltp" "Загрузка шрифтов линий." "Настройка")
-D:/MNAS_acad_utils\acad_w.sup/lines/LINE_1.lsp
-;;;;;;("xt" "Удлинение|укорачивание выбранных отрезков в оба конца на dl." "Измени")
-;;;;;;("exl" "Удлинение|укорачивание отрезка в одну сторону на dl." "Измени")
-;;;;;;("z0"
-;;;;;;"Производится проецирование выбранных линий на плоскость Z=0.\n
-;;;;;;Дораоботать для проецирования и других типов примитивов\n
-;;;;;;для любой плоскости.(текущей ПСК)." "Измени")
-;;;;;;("xtcen"
-;;;;;;"Удлинение всех осевых линий за границы контура на определенное расстояние." "Измени")
-D:/MNAS_acad_utils\acad_w.sup/lines/LINE_2.lsp
-D:/MNAS_acad_utils\acad_w.sup/graf/GRAF.lsp
-;;;;;;("graf" "Построение графика." "Шкалы")
-D:/MNAS_acad_utils\acad_w.sup/graf/point_to_xsl.LSP
-D:/MNAS_acad_utils\acad_w.sup/dims/abc.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/abc_dialog.lsp
-;;;;;;("index_ru" "Переключает символы для баз, направлений взгляда и разрезов на русский алфавит." "Размеры")
-;;;;;;("index_en" "Переключает символы для баз, направлений взгляда и разрезов на английский алфавит." "Размеры" )
-;;;;;;("index" "Выводит на экран диалоговое окно, позволяющее задать символ и индекс для генерируемых впоследствии обозначений баз, направления взгляда, разреза." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/dims/DIM_FROM.lsp
-;;;;;;("ins_blk" "Вставка блока с масштабом равным масштабу размеров." "Размеры")
-;;;;;;("bas" "Простановка баз." "Размеры")
-;;;;;;("poz" "Простановка позиций, обозначения мест клеймения, маркировки, обозначения пайки." "Размеры")
-;;;;;;("up"
-;;;;;;"Проставляет текст над размерной линией.\n
-;;;;;;1) Задается линия посредством указания двух точек.\n
-;;;;;;2) Генерируется текст на некотором расстоянии над этой линией.\n
-;;;;;;Примечание:\n
-;;;;;;1) Текст вводить в диалоговом окне.\n
-;;;;;;2) Ввести параметры расположения текста.\n
-;;;;;;2.1) расстояние от линии.\n
-;;;;;;2.2) центрирование относительно введенных точек."
-;;;;;;"Размеры")
-;;;;;;("bot" "Простановка текста под полкой." "Размеры")
-;;;;;;("d_up" "Обновление свойств размеров по свойствам стилей, в которых они были созданы." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/dims/rou/rou.lsp
-;;;;;;("rou_i2" "Простановка обозначения шероховатости." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/dims/rou/rou_draw.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/rou/rou_stp.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/rou/rou_update_ver.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/rou_1/dim_vars.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/rou_1/rou_draw_i3.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/rou_1/rou_i3.lsp
-;;;;;;("rou" "Простановка обозначения шероховатости." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/dims/welding/dia_arrow.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/welding/dia_setup_geometry.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/welding/Dia_welding.lsp
-;;;;;;("welding" "Построение обозначения сварочных швов. Не закончена." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/dims/welding/draw_arrow.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/welding/tmp.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/welding/welding.lsp
-;;;;;;("welding" "Построение обозначения сварочных швов. Не закончена." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/dims/welding/welding_data.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/cut/cut.lsp
-;;;;;;("cut" "Построение обозначения разреза или сечения." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/dims/dim_style/dim_override.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/dim_style/dim_override_like_ARX.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/dim_style/dim_style.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/dim_style/tmp.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/dim_style/tmp_1.lsp
-D:/MNAS_acad_utils\acad_w.sup/dims/look/look.lsp
-;;;;;;("look" "Построение обозначения вида." "Размеры")
-;;;;;;("obj_data" "Возвращает ldata данные, связанные с выбранным примитивом, из расширенного словаря." "Объекты")
-;;;;;;("dwg_put" "not defined" "not defined")
-;;;;;;("dwg_get" "not defined" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/mnas/Welding/setup_lst.lsp
-D:/MNAS_acad_utils\acad_w.sup/mnas/Welding/welding_dlg.lsp
-D:/MNAS_acad_utils\acad_w.sup/mnas/Welding/weld_abbrev.lsp
-D:/MNAS_acad_utils\acad_w.sup/mnas/Welding/Weld_text_dlg.lsp
-D:/MNAS_acad_utils\acad_w.sup/mnas/Welding_lsp/get_dimstyle_hanlde.lsp
-;;;;;;("wlc" "Команда для создания обозначения выноски, обозначающей сварку." "Размеры")
-;;;;;;("wle" "Команда для редактировани обозначения выноски, обозначающей сварку." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/mnas/Welding_lsp/setup_lst.lsp
-D:/MNAS_acad_utils\acad_w.sup/mnas/Welding_lsp/welding_dlg.lsp
-D:/MNAS_acad_utils\acad_w.sup/mnas/Welding_lsp/weld_abbrev.lsp
-D:/MNAS_acad_utils\acad_w.sup/mnas/Welding_lsp/Weld_text_dlg.lsp
-D:/MNAS_acad_utils\acad_w.sup/mnas/Pozition/pozition_abbrev.lsp
-D:/MNAS_acad_utils\acad_w.sup/mnas/Pozition/pozition_dlg.lsp
-;;;;;;("edpos"
-;;;;;;"
-;;;;;;Диалог для редактирования позиций. Объект MNASPozition.\n
-;;;;;;   Select  - выбор позиции для редактирования;\n
-;;;;;;   Apply   - применение для текущей редактирумой позиции изменений, выполненных в диалоге;\n
-;;;;;;   M_ApplY - позволяет применить свойства текущей позиции к выбранным позициям;\n
-;;;;;;   On      - включает перенос всех свойств для операции, выполняемой по M_Apply;\n
-;;;;;;   Off     - исключает перенос всех свойств для операции, выполняемой по M_Apply.
-;;;;;; Выполнение M_Apply сразу после Off не произведет никаких видимых изменений.\n
-;;;;;;   Default - сбрасывает цвет текста, масштаб текста, удлинение полкии,
-;;;;;; параметры для выполнения операции M_Aplly в значения по умолчанию.
-;;;;;;" "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/mnas/Pozition/pozition_export.lsp
-;;;;;;("pos_export"
-;;;;;;"Производит выгрузку текста позиций в файл." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/mnas/Pozition/pozition_sort.lsp
-D:/MNAS_acad_utils\acad_w.sup/kompas/acad-kompas.lsp
-D:/MNAS_acad_utils\acad_w.sup/kompas/kompas-acad.lsp
-D:/MNAS_acad_utils\acad_w.sup/kompas/KOMPAS.lsp
-;;;;;;("kompas_in" "Импорт из сиситемы КОМПАС V4." "Обмен")
-;;;;;;("kompas_out" "Экспорт в систему КОМПАС V4." "Обмен")
-D:/MNAS_acad_utils\acad_w.sup/std_features/nut.LSP
-D:/MNAS_acad_utils\acad_w.sup/atoms/ATOMS.lsp
-;;;;;;("atoms" "Команда для просмотра загруженных команд функций и атомов." "not defined")
-D:/MNAS_acad_utils\acad_w.sup/axis/Axis_ea.lsp
-;;;;;;("ea"
-;;;;;;"Производит преобразование примитивов типа LINE в примитив			
-;;;;;; с расширенными данными типа \"SHCKALA\".\n
-;;;;;; Расширенные даные имеют следующий вид:\n
-;;;;;;(-3
-;;;;;;  (\"SHCKALA\"      ; - имя приложения\n
-;;;;;;    (1002 . \"{\")
-;;;;;;    (1040 . 0.0)    ; - значение по шкале в начальной точке отрезка\n
-;;;;;;    (1040 . 100.0)  ; - значение по шкале в конечной точке отрезка\n
-;;;;;;    (1070 . 0)      ; - тип шкалы: 0-пропорциональная; 1-логарифмическая\n
-;;;;;;    (1000 . \"xx\") ; - имя шкалы\n
-;;;;;;    (1002 . \"}\")
-;;;;;;  )
-;;;;;;)"
-;;;;;;"Шкалы")
-D:/MNAS_acad_utils\acad_w.sup/axis/axis_graph_main.lsp
-D:/MNAS_acad_utils\acad_w.sup/axis/axis_podp.lsp
-;;;;;;("ax_shcala" "Производит подпись шкалы." "Шкалы")
-D:/MNAS_acad_utils\acad_w.sup/axis/Axis_util.lsp
-D:/MNAS_acad_utils\acad_w.sup/axis/Graph_analitic.lsp
-D:/MNAS_acad_utils\acad_w.sup/axis/Graph_block.lsp
-D:/MNAS_acad_utils\acad_w.sup/axis/Graph_main.lsp
-;;;;;;("ax" "not defined" "Шкалы")
-D:/MNAS_acad_utils\acad_w.sup/axis/Graph_pline.lsp
-D:/MNAS_acad_utils\acad_w.sup/axis/Graph_poitn_type.lsp
-D:/MNAS_acad_utils\acad_w.sup/axis/Image.lsp
-;;;;;;("im" "not defined" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/axis/Axis_cmd.lsp
-;;;;;;("a1"
-;;;;;;"Построение полилинии в координатах двух шкал.\n
-;;;;;; Задаются:\n
-;;;;;; 1) ось Х;\n
-;;;;;; 2) ось Y;\n
-;;;;;; 3) имя переменной, которое содержит список точек." "Шкалы")
-;;;;;;("an" "Построение семейства полилиний в координатах двух шкал.\n
-;;;;;;Задаются:\n
-;;;;;; 1) ось Х;\n
-;;;;;; 2) ось Y;\n
-;;;;;; 3) имя переменной, которое содержит список точек.\n
-;;;;;;Примечание: чтобы преобразовать отрезок в ось нужно воспользоваться командой ea." "Шкалы")
-;;;;;;("a2"
-;;;;;;"Построение точки в координатах шкалы.\n
-;;;;;; Задаются:\n
-;;;;;; 1) ось Х;\n
-;;;;;; 2) координата X." "Шкалы")
-;;;;;;("a2t"
-;;;;;;"Построение точки в координатах шкалы и нанесение текста.\n
-;;;;;; Задаются:\n
-;;;;;; 1) ось Х;\n
-;;;;;; 2) координата X." "Шкалы")
-;;;;;;("a2xy_t"
-;;;;;;"Построение линий в координатах шкалы и нанесение текста.\n
-;;;;;; Задаются:\n
-;;;;;; 1) ось Х;\n
-;;;;;; 2) ось Y;\n
-;;;;;; 3) координата X." "Шкалы")
-;;;;;;("a2xyn_t"
-;;;;;;"Построение сетки в координатах 2-х шкал и нанесение текста.\n
-;;;;;; Задаются:\n
-;;;;;; 1) ось Х;\n
-;;;;;; 2) ось Y;\n
-;;;;;; 3) координата X." "Шкалы")
-;;;;;;("a4"
-;;;;;;"Построение точек в координатах двух шкал.\n
-;;;;;; Задаются:\n
-;;;;;; 1) ось Х;\n
-;;;;;; 2) ось Y;\n
-;;;;;; 3) точка в координатах шкал X-Y." "Шкалы")
-;;;;;;("a5"
-;;;;;;"Перевод точек из координат двух шкал в координаты экрана.\n
-;;;;;; Задаются:\n
-;;;;;; 1) ось Х;\n
-;;;;;; 2) ось Y;\n
-;;;;;; 3) точка в координатах шкал X-Y." "Шкалы")
-;;;;;;("a6"
-;;;;;;"Перевод точек из координат одной пары шкал\n
-;;;;;; в координаты другой пары шкал.\n
-;;;;;; Задаются:\n
-;;;;;; 1) ось Х по которой берутся точки;\n
-;;;;;; 2) ось Y по которой берутся точки;\n
-;;;;;; 3) ось Х в которой строятся точки;\n
-;;;;;; 4) ось Y в которой строятся точки;\n
-;;;;;; 5) точка в координатах шкал X-Y." "Шкалы")
-;;;;;;("c1" "Построение точки на шкале по значению." "Шкалы")
-;;;;;;("c2" "Определение значения на шкале по точке." "Шкалы")
-;;;;;;("c3" "Построение точки в координатах 2-х шкал." "Шкалы")
-;;;;;;("c4" "Выводит координаты отмеченных точек." "Шкалы")
-D:/MNAS_acad_utils\acad_w.sup/dopusk/DOP.lsp
-;;;;;;("dop"
-;;;;;;"Добавление к тексту размерного примитива
-;;;;;; обозначения квалитета и значений предельных отклонений." "Размеры")
-D:/MNAS_acad_utils\acad_w.sup/dopusk/DOP_DATA.lsp
-D:/MNAS_acad_utils\acad_w.sup/dopusk/DOP_DATA_new.lsp
-D:/MNAS_acad_utils\acad_w.sup/dopusk/DOP_DATA_new_01.lsp
-D:/MNAS_acad_utils\acad_w.sup/dopusk/get_dop_from_mechanical.lsp
-D:/MNAS_acad_utils\acad_w.sup/dopusk/test_dop.lsp
-D:/MNAS_acad_utils\acad_w.sup/d_chprop/D_CHPROP.lsp
-;;;;;;("dch" "Программа управления свойствами объектов." "Измени")
-D:/MNAS_acad_utils\acad_w.sup/fors_rh/ras_har_gas.lsp
-;;;;;;("ras_har_gas" "Вычисление расходной характеристики газовой форсунки." "Расчеты")
-D:/MNAS_acad_utils\acad_w.sup/fors_rh/ras_har_lic.lsp
-;;;;;;("ras_har_lic"
-;;;;;;"Вычисление расходной характеристики жидкостной форсунки." "Расчеты")
-D:/MNAS_acad_utils\acad_w.sup/exel/graph.lsp
-;;;;;;("exel_read" "Чтение данных из Exel" "Обмен")
-D:/MNAS_acad_utils\acad_w.sup/exel/read_exel_setup_lst.lsp
-D:/MNAS_acad_utils\acad_w.sup/exel/read_scalc.lsp
-D:/MNAS_acad_utils\acad_w.sup/exel/utils_xls.lsp
-D:/MNAS_acad_utils\acad_w.sup/layer/bl_layer.lsp
-;;;;;;("bl_off"
-;;;;;;"Выключает слой, входящий в блок, при указании на объект в составе блока." "Слои")
-;;;;;;("bl_fr"
-;;;;;;  "Замораживает слой, входящий в блок, при указании на объект в составе блока." "Слои")
-;;;;;;("bl_all_on" "Включает все слои, входящие в состав блока." "Слои")
-;;;;;;("bl_all_th" "Размораживает все слои, входящие в состав блока." "Слои")
-D:/MNAS_acad_utils\acad_w.sup/layer/cur_layer.lsp
-;;;;;;("vl_s_d"
-;;;;;;"Создание замороженного во всех портах просмотра и (или)\n
-;;;;;;установка в текущее значение слоя,\n
-;;;;;;с именем слоя отмеченного примитива + \"_d\"." "Слои")
-;;;;;;("cl_s_d"
-;;;;;;"Создание и (или) установка в текущее значение слоя
-;;;;;;с именем слоя, отмеченного примитива + \"_d\"." "Слои")
-;;;;;;("cl_sw_d"
-;;;;;;"Установка в текущее значение слоя с именем слоя,\n
-;;;;;;отмеченного примитива без окончания \"_d\"." "Слои")
-D:/MNAS_acad_utils\acad_w.sup/layer/layer.lsp
-;;;;;;("lay" "Команда управления слоями\n
-;;;;;; В зависимости от опций позволяет:\n
-;;;;;; 1)  Set - устанавливать текущий слой;\n
-;;;;;; 2)  OFF - выключать отмеченные слои слои,\n
-;;;;;; 3)  WO	 - выключать все слои за исключением отмеченных;\n
-;;;;;; 4)  FR	 - замораживать отмеченные слои;\n
-;;;;;; 5)  WFr - замораживать все слои за исключением отмеченных;\n
-;;;;;; 6)  LO	 - блокировать отмеченные слои;\n
-;;;;;; 7)  WL  - блокировать все слои за исключением отмеченных;\n
-;;;;;; 8)  Un	 - разблокировать отмеченные слои;\n
-;;;;;; 9)  Col	 - задавать цвет для отмеченных слоев;\n
-;;;;;; 10) AO  - включать все слои;\n
-;;;;;; 11) AT	 - размораживать все слои;\n
-;;;;;; 12) AU	 - разблокировать все слои;\n
-;;;;;; 13) Exit - выходить из команды управления слоями." "Слои")
-;;;;;;("rgb" "Команда раскраски слоев." "Слои")
-;;;;;;("la_dhv" "Добавляет слои \"d\", \"h\", \"v\"." "Настройка")
-D:/MNAS_acad_utils\acad_w.sup/layer/md_layer.lsp
-;;;;;;("ml_off"
-;;;;;;"Выключает слои со вспомогательными элементами,\n заканчивающимися на \"*work\"." "Слои")
-;;;;;;("ml_on"
-;;;;;;  "Включает слои со вспомогательными элементами,\n заканчивающимися на \"*work\"." "Слои")
-;;;;;;("ml_on_c" "not defined" "Слои")
-;;;;;;("ml_off_c" "not defined" "Слои")
-;;;;;;("am_la" "not defined" "Слои")
-D:/MNAS_acad_utils\acad_w.sup/layer/nent_lay.lsp
-;;;;;;("llay" "not defined" "Слои")
-D:/MNAS_acad_utils\acad_w.sup/layer/sh_layer.lsp
-;;;;;;("sl_on" "Включение слоев по шаблону." "Слои")
-;;;;;;("sl_off" "Выключение слоев по шаблону." "Слои")
-;;;;;;("sl_th" "Размораживание слоев по шаблону." "Слои")
-;;;;;;("sl_fr" "Замораживание слоев по шаблону." "Слои")
-;;;;;;("sl_lo" "Блокировка слоев по шаблону." "Слои")
-;;;;;;("sl_un" "Блокировка слоев по шаблону." "Слои")
-;;;;;;("svl_th" "Размораживание слоев по шаблону для данного порта просмотра." "Слои")
-;;;;;;("svl_fr" "Замораживание слоев по шаблону для данного порта просмотра." "Слои")
-D:/MNAS_acad_utils\acad_w.sup/layer/vp_layer.lsp
-;;;;;;("vl_fr" "Заморозка отмеченных слоев для данного порта просмотра." "Слои")
-;;;;;;("vl_th" "Разморозка отмеченных слоев для даного порта просмотра." "Слои")
-;;;;;;("vl_fr_w" "Замораживание всех за исключением выбранных слоев для данного порта." "Слои")
-;;;;;;("vl_th_all" "Разморозка всех слоев для данного порта просмотра." "Слои")
-;;;;;;("vl_fr_w+_d"
-;;;;;;"Разморозка для определенного порта просмотра отмеченного слоя\n
-;;;;;;и слоя, начинающегося с тех же символов что и у отмеченного слоя,\n
-;;;;;;и оканчивающегося на \"_d\"." "Слои")
-D:/MNAS_acad_utils\acad_w.sup/text/Lay_txt.lsp
-;;;;;;("l_text"
-;;;;;;"Создает текстовый примитив, значением которого является имя слой,\n
-;;;;;;на котором находится ссылочный примитив." "Тексты")
-;;;;;;("z_text" "Создает текст, значением которого является координата z." "Тексты")
-D:/MNAS_acad_utils\acad_w.sup/text/naklon_15gr.lsp
-;;;;;;("to_15" "Наклоняет текстовый примитив на угол в 15 грд." "Тексты")
-D:/MNAS_acad_utils\acad_w.sup/text/Rjedaktirovanije_tjekstov.lsp
-;;;;;;("de"
-;;;;;;"Вызывает диалог для редактирования текста примитивов следуюших типов:
-;;;;;;MTEXT, TEXT, DIMENSION." "Тексты")
-;;;;;;("ate" "Редактирование атрибута." "Тексты")
-D:/MNAS_acad_utils\acad_w.sup/text/Skobka.lsp
-;;;;;;("te+" "Добавляет круглые скобки вокруг текста размерного примитива." "Тексты")
-;;;;;;("te+" "Добавляет круглые скобки увеличенного размера вокруг текста размерного примитива." "Тексты")
-;;;;;;("te+kvsk" "Добавляет квадратные скобки вокруг текста размерного примитива." "Тексты")
-;;;;;;("te++kvsk" "Добавляет квадратные скобки увеличенного размера вокруг текста размерного примитива." "Тексты")
-;;;;;;("te-" "Удаляет круглые скобки, находившиеся вокруг текста размерного примитива." "Тексты")
-;;;;;;("te-kvsk" "Удаляет квадратные скобки, находившиеся вокруг текста размерного примитива." "Тексты")
-;;;;;;("te%%c" "Добавляет знак диаметра перед текстом размерного примитива." "Тексты")
-;;;;;;("te-%%c" "Удаляет знак диаметра, находившийся перед текстом размерного примитива." "Тексты")
-;;;;;;("x45%%d" "Добавляет знак \"на 45 градусов\" после текста размерного примитива." "Тексты")
-;;;;;;("&A&B&C" "Добавляет к тексту размерного примитива обозначение предельных отклонений." "Тексты")
-;;;;;;("te_*" "Добавляет к тексту размерного примитива значок звездочка." "Тексты")
-;;;;;;("te_<>_" "Добавляет для неразрывные пробелы вокруг текста размера." "Тексты")
-D:/MNAS_acad_utils\acad_w.sup/text/STL.lsp
-;;;;;;("stl"
-;;;;;;"Устанавливает в зависимости от платформы ситль текста T на основании шрифтов:\n
-;;;;;;\"es_***,my_b_f\"." "Настройка")
-D:/MNAS_acad_utils\acad_w.sup/text/TEXT.lsp
-;;;;;;("te"
-;;;;;;"Производит редактирование текстов и текстов размерных примитивов." "Тексты")
-D:/MNAS_acad_utils\acad_w.sup/text/Text_export.lsp
-;;;;;;("text_export" "Экспортирует текст примитмвов во внешний файл." "Тексты")
-D:/MNAS_acad_utils\acad_w.sup/text/Text_extract.lsp
-;;;;;;("text_extract" "not defined" "Тексты")
-D:/MNAS_acad_utils\acad_w.sup/text/Text_pozition.lsp
-;;;;;;("pos_export"
-;;;;;;"Производит выгрузку текста позиций в файл." "Тексты")
-D:/MNAS_acad_utils\acad_w.sup/izmjeritjelnaja_mashina/read_mea.lsp
-;;;;;;("read_mea"
-;;;;;;"Импортирование точек, заданных в формате mea (Измерительной машины MISTRAL)." "Обмен")
-D:/MNAS_acad_utils\acad_w.sup/izmjeritjelnaja_mashina/spline.lsp
-D:/MNAS_acad_utils\acad_w.sup/izmjeritjelnaja_mashina/Mea/123.lsp
-D:/MNAS_acad_utils\acad_w.sup/funktcii/11.LSP
-D:/MNAS_acad_utils\acad_w.sup/funktcii/Trigonomjetrichjeskije.lsp
-D:/MNAS_acad_utils\acad_w.sup/funktcii/ActivX/mtext_to_word.lsp
-D:/MNAS_acad_utils\acad_w.sup/funktcii/ActivX/reactor.lsp
-D:/MNAS_acad_utils\acad_w.sup/funktcii/Fizichjeskije/Par.lsp
-D:/MNAS_acad_utils\acad_w.sup/funktcii/Fizichjeskije/Phizich.lsp
-D:/MNAS_acad_utils\acad_w.sup/funktcii/Regystry/registry.lsp
-D:/MNAS_acad_utils\acad_w.sup/statistika/123.lsp
-D:/MNAS_acad_utils\acad_w.sup/statistika/koeff_studenta.lsp
-D:/MNAS_acad_utils\acad_w.sup/statistika/kriterij_grubsa.lsp
-D:/MNAS_acad_utils\acad_w.sup/statistika/prolivky_forsunok.lsp
-D:/MNAS_acad_utils\acad_w.sup/statistika/Statistika.lsp
-D:/MNAS_acad_utils\acad_w.sup/statistika/Utuchnennye_pyfchenyja_vjazkosty.lsp
-D:/MNAS_acad_utils\acad_w.sup/abrev/Abrev.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prv.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/abrev/Abrev.lsp
 ;;;;;;("pur" "Очистка всех неиспользуемых элементов из секции таблиц." "Аббревиатуры")
 ;;;;;;("ra" "Перерисовка всех видовых экранов." "Аббревиатуры")
 ;;;;;;("rg" "Регенерация чертежа." "Аббревиатуры")
@@ -615,54 +72,123 @@ D:/MNAS_acad_utils\acad_w.sup/abrev/Abrev.lsp
 ;;;;;;("ps" "Вызов команды _.pspace" "Аббревиатуры")
 ;;;;;;("ms" "Вызов команды _.mspace" "Аббревиатуры")
 ;;;;;;("git" "Вызов команды D:\\home\\_namatv\\Git\\git-bash.bat" "Аббревиатуры")
-D:/MNAS_acad_utils\acad_w.sup/abrev/gr_on_off.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/abrev/gr_on_off.lsp
 ;;;;;;("gr_on_off"
 ;;;;;;"Включение|Отключение выбора групп объектов
 ;;;;;; (см. системную переменную pickstyle)." "Аббревиатуры")
-D:/MNAS_acad_utils\acad_w.sup/utils/ASIST.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/Binary.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/dlg_utils.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/draw.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/DXF.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/ERR.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/html.LSP
-D:/MNAS_acad_utils\acad_w.sup/utils/prin.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/red_list.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/Sistjemy_schisljenija.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/stl_text.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/STRING.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/sub_div.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/system_registry.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/system_variable.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/vla-pline.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/vla-utils.lsp
-;;;;;;("vla-obj" "Возвращает имя vla объекта." "Объекты")
-D:/MNAS_acad_utils\acad_w.sup/utils/vla.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/XDATA.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/ACAD_SUP_DIR.lsp
-D:/MNAS_acad_utils\acad_w.sup/utils/Debug.lsp
-D:/MNAS_acad_utils\acad_w.sup/add_prefix/Add_prefix.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/acad_pgp/PGP_abrev.lsp
+;;;;;;("acad_pgp"
+;;;;;;"Производит поиск и разбор файла acad.pgp,
+;;;;;; применяющегося для задания абревиатур команд в текущей версии ACAD
+;;;;;; для текушего пользователя.
+;;;;;; Выводит на экран содержимое разобранного pgp файла.
+;;;;;; После каждой аббревиатуры, найденной в исходном файле,
+;;;;;; добавляется абревиатура набранная по тем же клавишам но в русской раскладке.
+;;;;;; Исходный pgp файл не изменяется.
+;;;;;; Изменения, при необходимости, следует вносить вручную,
+;;;;;; копируя результат работы программы поверх содержимого исходного pgp файла." "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/add_prefix/Add_prefix.lsp
 ;;;;;;("add_3d_prefix"
 ;;;;;;"Добавление к именам файлов каталога приставки \"3d_\",
 ;;;;;; кроме файлов начинающихся с \"am_*\", \"sol_*\", \"dwg_*\", \"3d_*\"."
 ;;;;;; "not defined")
-D:/MNAS_acad_utils\acad_w.sup/tmp/al.lsp
-D:/MNAS_acad_utils\acad_w.sup/tmp/equal_area.lsp
-D:/MNAS_acad_utils\acad_w.sup/tmp/menu_load.lsp
-D:/MNAS_acad_utils\acad_w.sup/tmp/new.lsp
-D:/MNAS_acad_utils\acad_w.sup/tmp/test.lsp
-D:/MNAS_acad_utils\acad_w.sup/tmp/tmp.lsp
-D:/MNAS_acad_utils\acad_w.sup/matr/CHH.lsp
-;;;;;;("chh" "Команда для изменения свойств примитива основываясь на DXF кодах." "Измени")
-D:/MNAS_acad_utils\acad_w.sup/matr/EX.lsp
-;;;;;;("sc_sl" "not defined" "not defined")
-;;;;;;("test" "not defined" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/matr/MATR.lsp
-D:/MNAS_acad_utils\acad_w.sup/matr/M_PREOBR.lsp
-D:/MNAS_acad_utils\acad_w.sup/matr/SLIDE.lsp
-D:/MNAS_acad_utils\acad_w.sup/matr/VECTOR.lsp
-D:/MNAS_acad_utils\acad_w.sup/matr/Vychisljenije_osrjednjajuschjej_funktcii.lsp
-D:/MNAS_acad_utils\acad_w.sup/change/CH_WID.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/atoms/ATOMS.lsp
+;;;;;;("atoms" "Команда для просмотра загруженных команд функций и атомов." "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/axis/Axis_cmd.lsp
+;;;;;;("a1"
+;;;;;;"Построение полилинии в координатах двух шкал.\n
+;;;;;; Задаются:\n
+;;;;;; 1) ось Х;\n
+;;;;;; 2) ось Y;\n
+;;;;;; 3) имя переменной, которое содержит список точек." "Шкалы")
+;;;;;;("an" "Построение семейства полилиний в координатах двух шкал.\n
+;;;;;;Задаются:\n
+;;;;;; 1) ось Х;\n
+;;;;;; 2) ось Y;\n
+;;;;;; 3) имя переменной, которое содержит список точек.\n
+;;;;;;Примечание: чтобы преобразовать отрезок в ось нужно воспользоваться командой ea." "Шкалы")
+;;;;;;("a2"
+;;;;;;"Построение точки в координатах шкалы.\n
+;;;;;; Задаются:\n
+;;;;;; 1) ось Х;\n
+;;;;;; 2) координата X." "Шкалы")
+;;;;;;("a2t"
+;;;;;;"Построение точки в координатах шкалы и нанесение текста.\n
+;;;;;; Задаются:\n
+;;;;;; 1) ось Х;\n
+;;;;;; 2) координата X." "Шкалы")
+;;;;;;("a2xy_t"
+;;;;;;"Построение линий в координатах шкалы и нанесение текста.\n
+;;;;;; Задаются:\n
+;;;;;; 1) ось Х;\n
+;;;;;; 2) ось Y;\n
+;;;;;; 3) координата X." "Шкалы")
+;;;;;;("a2xyn_t"
+;;;;;;"Построение сетки в координатах 2-х шкал и нанесение текста.\n
+;;;;;; Задаются:\n
+;;;;;; 1) ось Х;\n
+;;;;;; 2) ось Y;\n
+;;;;;; 3) координата X." "Шкалы")
+;;;;;;("a4"
+;;;;;;"Построение точек в координатах двух шкал.\n
+;;;;;; Задаются:\n
+;;;;;; 1) ось Х;\n
+;;;;;; 2) ось Y;\n
+;;;;;; 3) точка в координатах шкал X-Y." "Шкалы")
+;;;;;;("a5"
+;;;;;;"Перевод точек из координат двух шкал в координаты экрана.\n
+;;;;;; Задаются:\n
+;;;;;; 1) ось Х;\n
+;;;;;; 2) ось Y;\n
+;;;;;; 3) точка в координатах шкал X-Y." "Шкалы")
+;;;;;;("a6"
+;;;;;;"Перевод точек из координат одной пары шкал\n
+;;;;;; в координаты другой пары шкал.\n
+;;;;;; Задаются:\n
+;;;;;; 1) ось Х по которой берутся точки;\n
+;;;;;; 2) ось Y по которой берутся точки;\n
+;;;;;; 3) ось Х в которой строятся точки;\n
+;;;;;; 4) ось Y в которой строятся точки;\n
+;;;;;; 5) точка в координатах шкал X-Y." "Шкалы")
+;;;;;;("c1" "Построение точки на шкале по значению." "Шкалы")
+;;;;;;("c2" "Определение значения на шкале по точке." "Шкалы")
+;;;;;;("c3" "Построение точки в координатах 2-х шкал." "Шкалы")
+;;;;;;("c4" "Выводит координаты отмеченных точек." "Шкалы")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/axis/Axis_ea.lsp
+;;;;;;("ea"
+;;;;;;"Производит преобразование примитивов типа LINE в примитив			
+;;;;;; с расширенными данными типа \"SHCKALA\".\n
+;;;;;; Расширенные даные имеют следующий вид:\n
+;;;;;;(-3
+;;;;;;  (\"SHCKALA\"      ; - имя приложения\n
+;;;;;;    (1002 . \"{\")
+;;;;;;    (1040 . 0.0)    ; - значение по шкале в начальной точке отрезка\n
+;;;;;;    (1040 . 100.0)  ; - значение по шкале в конечной точке отрезка\n
+;;;;;;    (1070 . 0)      ; - тип шкалы: 0-пропорциональная; 1-логарифмическая\n
+;;;;;;    (1000 . \"xx\") ; - имя шкалы\n
+;;;;;;    (1002 . \"}\")
+;;;;;;  )
+;;;;;;)"
+;;;;;;"Шкалы")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/axis/axis_graph_main.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/axis/axis_podp.lsp
+;;;;;;("ax_shcala" "Производит подпись шкалы." "Шкалы")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/axis/Axis_util.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/axis/Graph_analitic.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/axis/Graph_block.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/axis/Graph_main.lsp
+;;;;;;("ax" "not defined" "Шкалы")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/axis/Graph_pline.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/axis/Graph_poitn_type.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/axis/Image.lsp
+;;;;;;("im" "not defined" "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/big_fnt/LITERA.lsp
+;;;;;;("ins_lit"
+;;;;;;"Отрисовка символов большого шрифта,
+;;;;;; связанных с определенным символом для букв латинского алфавита." "Большой шрифт")
+;;;;;;("draw_font"
+;;;;;;"Отрисовка символов шрифта (256 символов)." "Большой шрифт")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/change/CH_WID.lsp
 ;;;;;;("ch_wid"
 ;;;;;;"Обводка примитивов.
 ;;;;;; Описание :
@@ -676,21 +202,97 @@ D:/MNAS_acad_utils\acad_w.sup/change/CH_WID.lsp
 ;;;;;; Исходные примитивы не удаляются.
 ;;;;;; При обводке примитивов типа SPLINE может измениться форма полилинии,
 ;;;;;; если точки исходного SPLINE имели различный вес или если он был замкнутым." "Измени")
-D:/MNAS_acad_utils\acad_w.sup/change/POINT_BLOCK.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/change/POINT_BLOCK.lsp
 ;;;;;;("point_block" "Преобразование точки в блок." "Измени")
 ;;;;;;("block_point" "Преобразование блока в точку." "Измени")
 ;;;;;;("block_block" "Преобразование блока в блок." "Измени")
-D:/MNAS_acad_utils\acad_w.sup/clock/CLOCK.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/circles/CIRCLES.lsp
+;;;;;;("c_r" "Построение окружности по радиусу и центральной точке." "Отверстия")
+;;;;;;("c_d" "Построение окружности по диаметру и центральной точке." "Отверстия")
+;;;;;;("cl_s" "Построение группы окружностей, имеющих один центр." "Отверстия")
+;;;;;;("ax_c" "Построение окружности с осями." "Отверстия")
+;;;;;;("ax_a" "Построение дуги с осями." "Отверстия")
+;;;;;;("ax_ca" "Построение окружности и дуги с осями." "Отверстия")
+;;;;;;("c_axis" "Построение осей для отмеченных окружностей и дуг." "Отверстия")
+;;;;;;("p_axis" "Построение осей для отмеченных окружностей и дуг." "Отверстия")
+;;;;;;("c_el" "Построение проекции окружности." "Отверстия")
+;;;;;;("cl_els" "Построение проекциий окружностей на заданную ось." "Отверстия")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/circles/Circles_2.lsp
+;;;;;;("c_ex" "Построение сопряжения двух окружностей большим радиусом." "Отверстия")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/circles/sort_point.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/clock/CLOCK.lsp
 ;;;;;;("clock_off" "Выключение часов." "not defined")
 ;;;;;;("clock_on" "Включение часов." "not defined")
-D:/MNAS_acad_utils\acad_w.sup/dxf/dxf_cmd.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/abc.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/abc_dialog.lsp
+;;;;;;("index_ru" "Переключает символы для баз, направлений взгляда и разрезов на русский алфавит." "Размеры")
+;;;;;;("index_en" "Переключает символы для баз, направлений взгляда и разрезов на английский алфавит." "Размеры" )
+;;;;;;("index" "Выводит на экран диалоговое окно, позволяющее задать символ и индекс для генерируемых впоследствии обозначений баз, направления взгляда, разреза." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/DIM_FROM.lsp
+;;;;;;("ins_blk" "Вставка блока с масштабом равным масштабу размеров." "Размеры")
+;;;;;;("bas" "Простановка баз." "Размеры")
+;;;;;;("poz" "Простановка позиций, обозначения мест клеймения, маркировки, обозначения пайки." "Размеры")
+;;;;;;("up"
+;;;;;;"Проставляет текст над размерной линией.\n
+;;;;;;1) Задается линия посредством указания двух точек.\n
+;;;;;;2) Генерируется текст на некотором расстоянии над этой линией.\n
+;;;;;;Примечание:\n
+;;;;;;1) Текст вводить в диалоговом окне.\n
+;;;;;;2) Ввести параметры расположения текста.\n
+;;;;;;2.1) расстояние от линии.\n
+;;;;;;2.2) центрирование относительно введенных точек."
+;;;;;;"Размеры")
+;;;;;;("bot" "Простановка текста под полкой." "Размеры")
+;;;;;;("d_up" "Обновление свойств размеров по свойствам стилей, в которых они были созданы." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/cut/cut.lsp
+;;;;;;("cut" "Построение обозначения разреза или сечения." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_override.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_override_like_ARX.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_style.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/dim_style/tmp.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/dim_style/tmp_1.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/look/look.lsp
+;;;;;;("look" "Построение обозначения вида." "Размеры")
+;;;;;;("obj_data" "Возвращает ldata данные, связанные с выбранным примитивом, из расширенного словаря." "Объекты")
+;;;;;;("dwg_put" "not defined" "not defined")
+;;;;;;("dwg_get" "not defined" "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/rou/rou.lsp
+;;;;;;("rou_i2" "Простановка обозначения шероховатости." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/rou/rou_draw.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/rou/rou_stp.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/rou/rou_update_ver.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/rou_1/dim_vars.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/rou_1/rou_draw_i3.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/rou_1/rou_i3.lsp
+;;;;;;("rou" "Простановка обозначения шероховатости." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/dia_arrow.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/dia_setup_geometry.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/Dia_welding.lsp
+;;;;;;("welding" "Построение обозначения сварочных швов. Не закончена." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/draw_arrow.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/tmp.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/welding.lsp
+;;;;;;("welding" "Построение обозначения сварочных швов. Не закончена." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/welding_data.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dopusk/DOP.lsp
+;;;;;;("dop"
+;;;;;;"Добавление к тексту размерного примитива
+;;;;;; обозначения квалитета и значений предельных отклонений." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dopusk/DOP_DATA.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dopusk/DOP_DATA_new.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dopusk/DOP_DATA_new_01.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dopusk/get_dop_from_mechanical.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dopusk/test_dop.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/dxf/dxf_cmd.lsp
 ;;;;;;("obj" "Возвращает данные выбранного примитива." "Объекты")
 ;;;;;;("nobj" "Возвращает данные выбранного подпримитива." "Объекты")
 ;;;;;;("objxd"
 ;;;;;;"Возвращает данные и расширенные данные выбранного примитива." "Объекты")
 ;;;;;;("nobjxd"
 ;;;;;;"Возвращает данные и расширенные данные выбранного подпримитива." "Объекты")
-D:/MNAS_acad_utils\acad_w.sup/edit/EDIT.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/d_chprop/D_CHPROP.lsp
+;;;;;;("dch" "Программа управления свойствами объектов." "Измени")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/edit/EDIT.lsp
 ;;;;;;("mr" "Перемещение и поворот." "Измени")
 ;;;;;;("mcp" "Копирование и перемещение." "Измени")
 ;;;;;;("off"
@@ -698,83 +300,166 @@ D:/MNAS_acad_utils\acad_w.sup/edit/EDIT.lsp
 ;;;;;;("ofd"
 ;;;;;;"Команда offset с УСТАНОВКОЙ свойств элемента в текущие с вводом половинного значения." "Измени")
 ;;;;;;("cr" "Множественный поворот с копированием вокруг точки." "Измени")
-D:/MNAS_acad_utils\acad_w.sup/entmake/entmake.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/entmake/entmake.lsp
 ;;;;;;("ems"
 ;;;;;;"Сохранение объектов во внешнем dat файле в формате, выводимом командой entmake." "Обмен")
 ;;;;;;("eml"
 ;;;;;;"Вставка объектов, хранящихся в dat файле в формате entmake." "Обмен")
-D:/MNAS_acad_utils\acad_w.sup/otvjerstija/f_otv.lsp
-;;;;;;("f_kolca" "Вычисление площади кольца." "Расчеты")
-D:/MNAS_acad_utils\acad_w.sup/hpgl/HPGL.lsp
-D:/MNAS_acad_utils\acad_w.sup/kollector/kollector.lsp
-D:/MNAS_acad_utils\acad_w.sup/big_fnt/LITERA.lsp
-;;;;;;("ins_lit"
-;;;;;;"Отрисовка символов большого шрифта,
-;;;;;; связанных с определенным символом для букв латинского алфавита." "Большой шрифт")
-;;;;;;("draw_font"
-;;;;;;"Отрисовка символов шрифта (256 символов)." "Большой шрифт")
-D:/MNAS_acad_utils\acad_w.sup/mjetod_pokoordinatnogo_spuska/Mjetod_pokoordinatnogo_spuska.lsp
-D:/MNAS_acad_utils\acad_w.sup/M_utils_loader/M_utils_loader.lsp
-D:/MNAS_acad_utils\acad_w.sup/M_utils_loader/M_utils_LoaderAppRegistryData.lsp
-D:/MNAS_acad_utils\acad_w.sup/M_utils_loader/M_utils_LoaderARXInstall.lsp
-D:/MNAS_acad_utils\acad_w.sup/M_utils_loader/M_utils_LoaderCommands.lsp
-;;;;;;("MNASoft-registry-uninstall"
-;;;;;;"Команда MNASoft-registry-uninstall () выполняет очистку системного реестра от записех приложения MNASoft."
-;;;;;;"Настройка"
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/exel/graph.lsp
+;;;;;;("exel_read" "Чтение данных из Exel" "Обмен")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/exel/read_exel_setup_lst.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/exel/read_scalc.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/exel/tmp.LSP
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/exel/utils_xls.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/format/add_dop_sht_dlg.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/format/block_create.lsp
+;;;;;;("make_ublock"
+;;;;;;"Создает непоменованный блок" "Объекты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/format/dop_dlg.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/format/FORMAT.lsp
+;;;;;;("format" "Построение форматной рамки." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/format/format_draw.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/format/geom_util.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/fors_rh/ras_har_gas.lsp
+;;;;;;("ras_har_gas" "Вычисление расходной характеристики газовой форсунки." "Расчеты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/fors_rh/ras_har_lic.lsp
+;;;;;;("ras_har_lic"
+;;;;;;"Вычисление расходной характеристики жидкостной форсунки." "Расчеты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/for_lic/formuly.lsp
+;;;;;;("pr1" "Первый проход." "Расчеты")
+;;;;;;("pr2" "Второй проход." "Расчеты")
+;;;;;;("rep" "Формула повторений." "Расчеты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/for_lic/for_prover.lsp
+;;;;;;("for_prov"
+;;;;;;  "Проверочный расчет жидкотопливной форсунки
+;;;;;;Ввод данных выполняется в диалоговом режиме." "Расчеты" )
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/for_lic/projekt.lsp
+;;;;;;("for_proect" "Проектиоровочный расчет жидкотопливной форсунки." "Расчеты")
+;;;;;;("gr" "Программа для построения графика." "Шкалы")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/for_lic/provjerka.lsp
+;;;;;;("for_prover" "Проверочный расчет жидкотопливной форсунки." "Расчеты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/for_lic/tmp.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/funktcii/11.LSP
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/funktcii/Trigonomjetrichjeskije.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/funktcii/ActivX/mtext_to_word.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/funktcii/ActivX/reactor.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/funktcii/Fizichjeskije/Par.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/funktcii/Fizichjeskije/Phizich.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/funktcii/Regystry/registry.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/graf/GRAF.lsp
+;;;;;;("graf" "Построение графика." "Шкалы")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/graf/point_to_xsl.LSP
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/hpgl/HPGL.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/izmjeritjelnaja_mashina/read_mea.lsp
+;;;;;;("read_mea"
+;;;;;;"Импортирование точек, заданных в формате mea (Измерительной машины MISTRAL)." "Обмен")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/izmjeritjelnaja_mashina/spline.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/izmjeritjelnaja_mashina/Mea/123.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/kollector/kollector.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/kompas/acad-kompas.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/kompas/kompas-acad.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/kompas/KOMPAS.lsp
+;;;;;;("kompas_in" "Импорт из сиситемы КОМПАС V4." "Обмен")
+;;;;;;("kompas_out" "Экспорт в систему КОМПАС V4." "Обмен")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/layer/bl_layer.lsp
+;;;;;;("bl_off"
+;;;;;;"Выключает слой, входящий в блок, при указании на объект в составе блока." "Слои")
+;;;;;;("bl_fr"
+;;;;;;  "Замораживает слой, входящий в блок, при указании на объект в составе блока." "Слои")
+;;;;;;("bl_all_on" "Включает все слои, входящие в состав блока." "Слои")
+;;;;;;("bl_all_th" "Размораживает все слои, входящие в состав блока." "Слои")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/layer/cur_layer.lsp
+;;;;;;("vl_s_d"
+;;;;;;"Создание замороженного во всех портах просмотра и (или)\n
+;;;;;;установка в текущее значение слоя,\n
+;;;;;;с именем слоя отмеченного примитива + \"_d\"." "Слои")
+;;;;;;("cl_s_d"
+;;;;;;"Создание и (или) установка в текущее значение слоя
+;;;;;;с именем слоя, отмеченного примитива + \"_d\"." "Слои")
+;;;;;;("cl_sw_d"
+;;;;;;"Установка в текущее значение слоя с именем слоя,\n
+;;;;;;отмеченного примитива без окончания \"_d\"." "Слои")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/layer/layer.lsp
+;;;;;;("lay" "Команда управления слоями\n
+;;;;;; В зависимости от опций позволяет:\n
+;;;;;; 1)  Set - устанавливать текущий слой;\n
+;;;;;; 2)  OFF - выключать отмеченные слои слои,\n
+;;;;;; 3)  WO	 - выключать все слои за исключением отмеченных;\n
+;;;;;; 4)  FR	 - замораживать отмеченные слои;\n
+;;;;;; 5)  WFr - замораживать все слои за исключением отмеченных;\n
+;;;;;; 6)  LO	 - блокировать отмеченные слои;\n
+;;;;;; 7)  WL  - блокировать все слои за исключением отмеченных;\n
+;;;;;; 8)  Un	 - разблокировать отмеченные слои;\n
+;;;;;; 9)  Col	 - задавать цвет для отмеченных слоев;\n
+;;;;;; 10) AO  - включать все слои;\n
+;;;;;; 11) AT	 - размораживать все слои;\n
+;;;;;; 12) AU	 - разблокировать все слои;\n
+;;;;;; 13) Exit - выходить из команды управления слоями." "Слои")
+;;;;;;("rgb" "Команда раскраски слоев." "Слои")
+;;;;;;("la_dhv" "Добавляет слои \"d\", \"h\", \"v\"." "Настройка")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/layer/md_layer.lsp
+;;;;;;("ml_off"
+;;;;;;"Выключает слои со вспомогательными элементами,\n заканчивающимися на \"*work\"." "Слои")
+;;;;;;("ml_on"
+;;;;;;  "Включает слои со вспомогательными элементами,\n заканчивающимися на \"*work\"." "Слои")
+;;;;;;("ml_on_c" "not defined" "Слои")
+;;;;;;("ml_off_c" "not defined" "Слои")
+;;;;;;("am_la" "not defined" "Слои")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/layer/nent_lay.lsp
+;;;;;;("llay" "not defined" "Слои")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/layer/sh_layer.lsp
+;;;;;;("sl_on" "Включение слоев по шаблону." "Слои")
+;;;;;;("sl_off" "Выключение слоев по шаблону." "Слои")
+;;;;;;("sl_th" "Размораживание слоев по шаблону." "Слои")
+;;;;;;("sl_fr" "Замораживание слоев по шаблону." "Слои")
+;;;;;;("sl_lo" "Блокировка слоев по шаблону." "Слои")
+;;;;;;("sl_un" "Блокировка слоев по шаблону." "Слои")
+;;;;;;("svl_th" "Размораживание слоев по шаблону для данного порта просмотра." "Слои")
+;;;;;;("svl_fr" "Замораживание слоев по шаблону для данного порта просмотра." "Слои")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/layer/vp_layer.lsp
+;;;;;;("vl_fr" "Заморозка отмеченных слоев для данного порта просмотра." "Слои")
+;;;;;;("vl_th" "Разморозка отмеченных слоев для даного порта просмотра." "Слои")
+;;;;;;("vl_fr_w" "Замораживание всех за исключением выбранных слоев для данного порта." "Слои")
+;;;;;;("vl_th_all" "Разморозка всех слоев для данного порта просмотра." "Слои")
+;;;;;;("vl_fr_w+_d"
+;;;;;;"Разморозка для определенного порта просмотра отмеченного слоя\n
+;;;;;;и слоя, начинающегося с тех же символов что и у отмеченного слоя,\n
+;;;;;;и оканчивающегося на \"_d\"." "Слои")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/lines/LINES.lsp
+;;;;;;("r_off"
+;;;;;;"Линия в направлении (ang+dir_0) из точки, лежащей на перпедикуляре к dir_0\n
+;;;;;;проходящем через p0 на расстоянии rad, проекция линии на направление dir_0\n
+;;;;;;равна off." "Отверстия")
+;;;;;;("d_off"
+;;;;;;"Линия в направлении (ang+dir_0) из точки, лежащей на перпедикуляре к dir_0\n
+;;;;;;проходящем через p0 на расстоянии rad, проекция линии на направление dir_0\n
+;;;;;;равна off ; зеркальная к ней ; и линия замыкающая концы этих линий." "Отверстия")
+;;;;;;("d_otv" "Отверстие без фаски." "Отверстия")
+;;;;;;("d_chamf" "Отверстие с фаской." "Отверстия")
+;;;;;;("d_rez" "Построение резьбового отверстия" "Отверстия")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/lines/linetype.lsp
+;;;;;;("ltp" "Загрузка шрифтов линий." "Настройка")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/lines/LINE_1.lsp
+;;;;;;("xt" "Удлинение|укорачивание выбранных отрезков в оба конца на dl." "Измени")
+;;;;;;("exl" "Удлинение|укорачивание отрезка в одну сторону на dl." "Измени")
+;;;;;;("z0"
+;;;;;;"Производится проецирование выбранных линий на плоскость Z=0.\n
+;;;;;;Дораоботать для проецирования и других типов примитивов\n
+;;;;;;для любой плоскости.(текущей ПСК)." "Измени")
+;;;;;;("xtcen"
+;;;;;;"Удлинение всех осевых линий за границы контура на определенное расстояние." "Измени")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/lines/LINE_2.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/lines/line_concat.lsp
+;;;;;;("j_lns"
+;;;;;;  "Выполняет объединение отрезков, замещая смежные и совпадающие части нескольких отрезков одним отрезком."
+;;;;;;  "Измени"
 ;;;;;;)
-;;;;;;("MNASoft-registry-install"
-;;;;;;"Команда MNASoft-registry-uninstall () выполняет добавление данных, необходимых для загрузки по требованию команд, написанных с использованием OARX из пакета MNAS_acad_utils."
-;;;;;;"Настройка"
-;;;;;;)
-D:/MNAS_acad_utils\acad_w.sup/M_utils_loader/M_utils_LoaderDBXInstall.lsp
-D:/MNAS_acad_utils\acad_w.sup/optimalnoje_raspololjenije_okrugnostjej/okrugnost_po_tochkam.lsp
-;;;;;;("find_arc_by_cir_and_points" "not defined" "not defined")
-;;;;;;("find_arc_by_points"
-;;;;;;"Производит поиск окружности, проходящей через несколько точек.\n
-;;;;;;Расстояние от которой до определенного" "not defined")
-D:/MNAS_acad_utils\acad_w.sup/acad_pgp/PGP_abrev.lsp
-;;;;;;("acad_pgp"
-;;;;;;"Производит поиск и разбор файла acad.pgp,
-;;;;;; применяющегося для задания абревиатур команд в текущей версии ACAD
-;;;;;; для текушего пользователя.
-;;;;;; Выводит на экран содержимое разобранного pgp файла.
-;;;;;; После каждой аббревиатуры, найденной в исходном файле,
-;;;;;; добавляется абревиатура набранная по тем же клавишам но в русской раскладке.
-;;;;;; Исходный pgp файл не изменяется.
-;;;;;; Изменения, при необходимости, следует вносить вручную,
-;;;;;; копируя результат работы программы поверх содержимого исходного pgp файла." "not defined")
-D:/MNAS_acad_utils\acad_w.sup/piping/Piping.lsp
-;;;;;;("pipe" "Построение трубопровода по точкам." "not defined")
-D:/MNAS_acad_utils\acad_w.sup/point/points.lsp
-;;;;;;("pd" "Настройка размеров и стиля отображения точки." "Настройка")
-;;;;;;("xy" "Точка по приращениям." "Точки")
-;;;;;;("xy_sc" "Точка по приращениям и масштабам." "Точки")
-;;;;;;("rot_p" "Точка повернутая с масштабом." "Точки")
-D:/MNAS_acad_utils\acad_w.sup/mjetod_polovinnogo_djeljenija/Polovinnoje_djeljenije.lsp
-D:/MNAS_acad_utils\acad_w.sup/mjetod_polovinnogo_djeljenija/Polovinnoje_djeljenije_1.lsp
-D:/MNAS_acad_utils\acad_w.sup/projection/projection.lsp
-;;;;;;("spl-proj" "Проецирование 3d сплайна на плоскость XY." "Измени")
-D:/MNAS_acad_utils\acad_w.sup/provoloka/provoloka.lsp
-;;;;;;("prov" "Генерирует образующие для построения изображения закрученной проволоки." "Измени")
-D:/MNAS_acad_utils\acad_w.sup/razvertka/razvertka.lsp
-D:/MNAS_acad_utils\acad_w.sup/rename/rename.lsp
-;;;;;;("ren"
-;;;;;;"Транслитерация имен слоев и стилей на английский алфавит." "not defined")
-D:/MNAS_acad_utils\acad_w.sup/opechatka/rus_cmd_opechatka.lsp
-;;;;;;("translit" "Выполняет транслитерацию с английской раскладки в русскую." "Редактирования текста"
-;;;;;;)
-D:/MNAS_acad_utils\acad_w.sup/scr/Scr.lsp
-;;;;;;("scr"
-;;;;;;"Программа для применения определенного сценария к файлам.\n
-;;;;;;должна сканировать содержимое определенного каталога и сртоить сценарий." "not defined")
-D:/MNAS_acad_utils\acad_w.sup/sort_shp/sort_shp.lsp
-;;;;;;("sort_shp" "Cортировка символов находящихся в shp - файле." "not defined")
-D:/MNAS_acad_utils\acad_w.sup/man/man_data_base.lsp
-D:/MNAS_acad_utils\acad_w.sup/man/man_data_base_func.lsp
-D:/MNAS_acad_utils\acad_w.sup/man/Type_command_list.lsp
-;;;;;;("check_command_category_list" "Проверяет правильность написания справки в lsp-файлах. Выводит перечень неправильных описаний." "Справка")
-D:/MNAS_acad_utils\acad_w.sup/man/create_html_all_command_list.lsp
-D:/MNAS_acad_utils\acad_w.sup/man/man.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/lopatka/draw_lop.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/lopatka/Lopatka.lsp
+;;;;;;("lo" "Построение профиля лопатки." "Расчеты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/lopatka/Lop_func.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/man/create_html_all_command_list.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/man/man.lsp
 ;;;;;;("man"
 ;;;;;;"
 ;;;;;;Команда отображения справочной информации по командам, определенным пользователем.\n
@@ -786,3 +471,325 @@ D:/MNAS_acad_utils\acad_w.sup/man/man.lsp
 ;;;;;; файле /man/man_data_base.lsp последний считанный список и найти соответствующую ему запись
 ;;;;;; в файле /man/man_data.txt ошибка будет ниже.
 ;;;;;;" "Справка")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/man/man_data_base.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/man/man_data_base_func.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/man/Type_command_list.lsp
+;;;;;;("check_command_category_list" "Проверяет правильность написания справки в lsp-файлах. Выводит перечень неправильных описаний." "Справка")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/matr/CHH.lsp
+;;;;;;("chh" "Команда для изменения свойств примитива основываясь на DXF кодах." "Измени")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/matr/EX.lsp
+;;;;;;("sc_sl" "not defined" "not defined")
+;;;;;;("test" "not defined" "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/matr/MATR.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/matr/M_PREOBR.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/matr/SLIDE.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/matr/VECTOR.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/matr/Vychisljenije_osrjednjajuschjej_funktcii.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mjetod_pokoordinatnogo_spuska/Mjetod_pokoordinatnogo_spuska.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mjetod_polovinnogo_djeljenija/Polovinnoje_djeljenije.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mjetod_polovinnogo_djeljenija/Polovinnoje_djeljenije_1.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_abbrev.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_dlg.lsp
+;;;;;;("edpos"
+;;;;;;"
+;;;;;;Диалог для редактирования позиций. Объект MNASPozition.\n
+;;;;;;   Select  - выбор позиции для редактирования;\n
+;;;;;;   Apply   - применение для текущей редактирумой позиции изменений, выполненных в диалоге;\n
+;;;;;;   M_ApplY - позволяет применить свойства текущей позиции к выбранным позициям;\n
+;;;;;;   On      - включает перенос всех свойств для операции, выполняемой по M_Apply;\n
+;;;;;;   Off     - исключает перенос всех свойств для операции, выполняемой по M_Apply.
+;;;;;; Выполнение M_Apply сразу после Off не произведет никаких видимых изменений.\n
+;;;;;;   Default - сбрасывает цвет текста, масштаб текста, удлинение полкии,
+;;;;;; параметры для выполнения операции M_Aplly в значения по умолчанию.
+;;;;;;" "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_export.lsp
+;;;;;;("pos_export"
+;;;;;;"Производит выгрузку текста позиций в файл." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_sort.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding/setup_lst.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding/welding_dlg.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding/weld_abbrev.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding/Weld_text_dlg.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/get_dimstyle_hanlde.lsp
+;;;;;;("wlc" "Команда для создания обозначения выноски, обозначающей сварку." "Размеры")
+;;;;;;("wle" "Команда для редактировани обозначения выноски, обозначающей сварку." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/setup_lst.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/welding_dlg.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/weld_abbrev.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/Weld_text_dlg.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_loader.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderAppRegistryData.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderARXInstall.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderCommands.lsp
+;;;;;;("MNASoft-registry-uninstall"
+;;;;;;"Команда MNASoft-registry-uninstall () выполняет очистку системного реестра от записех приложения MNASoft."
+;;;;;;"Настройка"
+;;;;;;)
+;;;;;;("MNASoft-registry-install"
+;;;;;;"Команда MNASoft-registry-uninstall () выполняет добавление данных, необходимых для загрузки по требованию команд, написанных с использованием OARX из пакета MNAS_acad_utils."
+;;;;;;"Настройка"
+;;;;;;)
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderDBXInstall.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka.lsp
+;;;;;;("translit" "Выполняет транслитерацию с английской раскладки в русскую." "Редактирования текста"
+;;;;;;)
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/optimalnoje_raspololjenije_okrugnostjej/okrugnost_po_tochkam.lsp
+;;;;;;("find_arc_by_cir_and_points" "not defined" "not defined")
+;;;;;;("find_arc_by_points"
+;;;;;;"Производит поиск окружности, проходящей через несколько точек.\n
+;;;;;;Расстояние от которой до определенного" "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/otvjerstija/f_otv.lsp
+;;;;;;("f_kolca" "Вычисление площади кольца." "Расчеты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/piping/Piping.lsp
+;;;;;;("pipe" "Построение трубопровода по точкам." "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/point/points.lsp
+;;;;;;("pd" "Настройка размеров и стиля отображения точки." "Настройка")
+;;;;;;("xy" "Точка по приращениям." "Точки")
+;;;;;;("xy_sc" "Точка по приращениям и масштабам." "Точки")
+;;;;;;("rot_p" "Точка повернутая с масштабом." "Точки")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/lst.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Temperaturnyj_napor.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/arx_dbx_reg/arx_dbx_reg.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/arx_dbx_reg/MNAS_ARX_DBX_16.lsp
+;;;;;;("mnas_arx_dbx_registry_16" "Формирует reg-файл, предназначенный для внесения в проект Visual Studio Net информации о командах пакета MNAS_cad_utils." "Настройка")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/arx_dbx_reg/MNAS_ARX_DBX_17.lsp
+;;;;;;("mnas_arx_dirs" "Возвращает информацию о каталогах ARX, установленных в системе программ AutoCAD, на основании данных из системного реестра." "Настройка")
+;;;;;;("mnas_dbx_dirs" "Возвращает информацию о каталогах DBX, установленных в системе программ AutoCAD, на основании данных из системного реестра." "Настройка")
+;;;;;;("mnas_arx_dbx_registry_17" "Формирует reg-файл, предназначенный для внесения в проект Visual Studio Net информации о командах пакета MNAS_cad_utils." "Настройка")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Check_Inters/ck.lsp
+;;;;;;("ck_cl" "not defined" "not defined")
+;;;;;;("ck" "not defined" "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/graph.lsp
+;;;;;;("exelread" "Производит чтение из Exel." "Обмен")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/my_read_exel.lsp
+;;;;;;("read_exel" "Чтение их Exel." "Обмен")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/my_write_exel.lsp
+;;;;;;("write_exel" "Запись в таблицу Exel." "Обмен")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/Rad_exel_samp.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/read_exel_setup_lst.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/read_me.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/utils_xls.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/Wri_exel_samp.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Filter/filter.LSP
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Idelchik/koeff_cinematic_vjazkost.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/moment_zatjazki/moment.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Ostcill/osc.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Ostcill/osct_1.lsp
+;;;;;;("read_dat" "not defined" "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Postrojenije_Zavisimostjej_vrjednyh_vybrosov/banzaj1.lsp
+;;;;;;("culc_co_nox" "not defined" "not defined")
+;;;;;;("sech" "not defined" "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/func_new.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/func_new1.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/func_prj.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/prj_main.lsp
+;;;;;;("prj_main"
+;;;;;;"Проект предназначен\n
+;;;;;;для переименования всех файлов входящих в проект\n
+;;;;;;и каталогов в которых они находятся из русской кодировки в латинскую\n
+;;;;;;и сохранения путей к файлам проекта в относительном виде.\n
+;;;;;;\n
+;;;;;;Указания к применению.\n
+;;;;;;1) Выполните следующую команду Shell для каталога, содержащего файлы проектов:\n
+;;;;;;DIR /S /B *.prj >list_prj\n
+;;;;;;2) Выполните команду prj_main. В далоговом окне выберите образованный вновь файл list_prj.\n
+;;;;;;В результате выполнения команды на консоль ACAD будет выведен список файлов,\n
+;;;;;;содержащий полные имена файлов проектов. Имена фойлов будут заключены в кавычки.
+;;;;;;3) Скопируйте имена файлов проектов из консоли ACAD в файл projects.lsp взамен находящегося там списка.
+;;;;;;После загрузки projects.lsp файла глобальная переменная g:fn_full_prj_lst должна содержать список проектов.\n
+;;;;;;4) Загрузите все файлы проекта rename_vl_prj.prj.\n
+;;;;;;5) Выполните в консоли Visual Lisp функцию (make_lst g:fn_full_prj_lst)." "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/projects.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/prv_main.lsp
+;;;;;;("prv_main"
+;;;;;;"
+;;;;;;Формирует строки для вставки в файл C:/Acad.mnu/acad_setup/VLISP_make_prv.js,\n
+;;;;;;служащий для пакетной перекомпиляции prv-проектов prv.\n
+;;;;;;Указания к применению.\n
+;;;;;;1) Выполните следующую команду Shell для каталога, содержащего файлы prv-проектов:\n
+;;;;;;DIR /S /B *.prv >list_prv\n
+;;;;;;2) Выполните команду prv_main. В далоговом окне выберите образованный вновь файл list_prv.\n
+;;;;;;В результате выполнения команды на консоль ACAD будет выведен список файлов,\n
+;;;;;;содержащий полные имена файлов проектов. Имена фойлов будут заключены в кавычки и оформлены как вызов функции.\n
+;;;;;;3) Скопируйте результат вывода из консоли ACAD в файл C:/Acad.mnu/acad_setup/VLISP_make_prv.js.
+;;;;;;4) Запустите на выполнение C:/Acad.mnu/acad_setup/VLISP_make_prv.js.
+;;;;;;5) Выполните в консоли Visual Lisp функцию (make_lst g:fn_full_prj_lst).
+;;;;;;" "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/tmp.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Provoloka/Provoloka.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/CP_CH4.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/F-ly_pjerjeschjeta_gaz_smjesi.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Gasodin_functions.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Pereschet.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Raschet_smesi_0.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Raschet_teplojomkosti.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Raschjet_smjesi.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Smjeshjenije_sostavov.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Sostavy_smjesjej.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Tablitca_gazov.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Tablitca_Mjendjeljejeva.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Tablitsa_teplojomkostej.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza_0/Raschet_smesi.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_pruginy/Prugina.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_pruginy/Raschjet_pruginy.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF/Ugol_vyhoda_vozduha_iz_TVF.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika/dg80L5.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika/gt25000.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika/havisude.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/rename_ru_eng/rename_ru_eng.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Rjezba_mjetrichjeskaja/Raschjet_profilja_mjetrichjeskoj_rjezby_po_GOST_9150-81.lsp
+;;;;;;("rezba_out" "not defined" "not defined")
+;;;;;;("rezba_in" "not defined" "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Spring/Spring.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Spring/Spring_actions.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Spring/Spring_class.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Spring/Spring_dia.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Spring/Spring_dlg.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Temperetche_In_smesitel/tmp.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Tr_inch/tr_inch.lsp
+;;;;;;("tr_inch" "not defined" "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/prj/Zavihritel/ZAV_1.lsp
+;;;;;;("завихритель" "not defined" "Расчеты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/projection/projection.lsp
+;;;;;;("spl-proj" "Проецирование 3d сплайна на плоскость XY." "Измени")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/provoloka/provoloka.lsp
+;;;;;;("prov" "Генерирует образующие для построения изображения закрученной проволоки." "Измени")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/razvertka/razvertka.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/rename/rename.lsp
+;;;;;;("ren"
+;;;;;;"Транслитерация имен слоев и стилей на английский алфавит." "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/scr/Scr.lsp
+;;;;;;("scr"
+;;;;;;"Программа для применения определенного сценария к файлам.\n
+;;;;;;должна сканировать содержимое определенного каталога и сртоить сценарий." "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/smesitel_vla/Mixer_section.lsp
+;;;;;;("prep:sm" "Подготовка данных для построения смесителя. См. команду dr:sm." "Смеситель")
+;;;;;;("dr:sm"
+;;;;;;"Проект Smesitel_vla.\n
+;;;;;;	Проект предназначен для проектирования линейчатого каркаса смесителя жаровой трубы.\n
+;;;;;;	Проект определяет следующие команды:\n
+;;;;;;		prep:sm    - подготовка данных для построения сместеля;\n
+;;;;;;		dr:sm      - отрисовка смесителя по подготовленным данным;\n
+;;;;;;		dr:sech    - отрисовка одиночного сечения по длине;\n
+;;;;;;		clear:sm   - очистка списка образующий, сохраняемых в расширенном словаре;
+;;;;;;		vla-obj    - предназначена для замены одной из образующих смесителя.\n
+;;;;;;\n
+;;;;;;	Проект определяет следующие переменные, используемые для хренения образующих и геометрических параметров смесителя:\n
+;;;;;;		v_pl_axis      - ось смесителя;\n
+;;;;;;\n
+;;;;;;		v_spl_top      - верхняя образующая смесителя;\n
+;;;;;;		v_spl_bot      - нижняя образующая смесителя;\n
+;;;;;;\n
+;;;;;;		v_l_axis       - ось абсцисс для зависимостей следующих ниже;\n
+;;;;;;\n
+;;;;;;		v_spl_l_bok    - боковая образующая смесителя;\n
+;;;;;;		v_spl_r_top    - радиус верхней образующей;\n
+;;;;;;		v_spl_kr_bot   - кривизна нижней образующей;\n
+;;;;;;		v_spl_r_kt     - радиус перехода от боковой образующей к верхней образующей;\n
+;;;;;;		v_spl_r_kb     - радиус перехода от боковой образующей к нижней образующей;\n
+;;;;;;		v_spl_alfa_bok - зависимость угла, выраженную в градусах, между осью абсцисс сечения и перпендикуляром, опущенным из центра координат сечения на боковую образующую.\n
+;;;;;;\n
+;;;;;;		Площади поперечных сечений смесителя находятся в переменной area_lst.\n
+;;;;;;		Длины полупериметров поперечных сечений находятся в переменной length_lst.\n
+;;;;;;		Для построения графиков зависимостей площади поперечного сечения и полупериметров следует воспользоваться командой a1.\n
+;;;;;;" "Смеситель")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/smesitel_vla/sech_by_lenght.lsp
+;;;;;;("dr:sech" "Построение одиночного сечения смесителя." "Смеситель")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/smesitel_vla/section.lsp
+;;;;;;("clear:sm"
+;;;;;;"Данная команда является частью проекта smesitel_vla.\n
+;;;;;;Команда производит очистку данных, связанных с приложением smesitel_vla.\n
+;;;;;;В процессе загрузки приложения производится попытка считывания приватных данных из расширенного словаря smesitel_vla.\n
+;;;;;;Эти данные представляют ссылки на метки объектов, представляющих образующие смесителя.\n
+;;;;;;Если в предыдущем сеанре редактирования данного файла образующие были задны при помощи команды prep:sm -
+;;;;;;в новой сессии они будут определены при загрузке приложения.
+;;;;;;См. команду dr:sm." "Смеситель")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/sort_shp/sort_shp.lsp
+;;;;;;("sort_shp" "Cортировка символов находящихся в shp - файле." "not defined")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/spec/Baza_dannyh.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/spec/bd_naimjenovanije.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/spec/Dialog_Color.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/spec/Dialog_Nastrojka.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/spec/Dialog_pozicija.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/spec/func1.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/spec/func2.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/spec/func3.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/spec/func4.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/spec/Naimjenovanije.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/spec/Specif.lsp
+;;;;;;("spec" "Функция простановки позиций." "Размеры")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/statistika/123.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/statistika/koeff_studenta.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/statistika/kriterij_grubsa.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/statistika/prolivky_forsunok.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/statistika/Statistika.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/statistika/Utuchnennye_pyfchenyja_vjazkosty.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/std_features/nut.LSP
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/text/Lay_txt.lsp
+;;;;;;("l_text"
+;;;;;;"Создает текстовый примитив, значением которого является имя слой,\n
+;;;;;;на котором находится ссылочный примитив." "Тексты")
+;;;;;;("z_text" "Создает текст, значением которого является координата z." "Тексты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/text/naklon_15gr.lsp
+;;;;;;("to_15" "Наклоняет текстовый примитив на угол в 15 грд." "Тексты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/text/Rjedaktirovanije_tjekstov.lsp
+;;;;;;("de"
+;;;;;;"Вызывает диалог для редактирования текста примитивов следуюших типов:
+;;;;;;MTEXT, TEXT, DIMENSION." "Тексты")
+;;;;;;("ate" "Редактирование атрибута." "Тексты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/text/Skobka.lsp
+;;;;;;("te+" "Добавляет круглые скобки вокруг текста размерного примитива." "Тексты")
+;;;;;;("te+" "Добавляет круглые скобки увеличенного размера вокруг текста размерного примитива." "Тексты")
+;;;;;;("te+kvsk" "Добавляет квадратные скобки вокруг текста размерного примитива." "Тексты")
+;;;;;;("te++kvsk" "Добавляет квадратные скобки увеличенного размера вокруг текста размерного примитива." "Тексты")
+;;;;;;("te-" "Удаляет круглые скобки, находившиеся вокруг текста размерного примитива." "Тексты")
+;;;;;;("te-kvsk" "Удаляет квадратные скобки, находившиеся вокруг текста размерного примитива." "Тексты")
+;;;;;;("te%%c" "Добавляет знак диаметра перед текстом размерного примитива." "Тексты")
+;;;;;;("te-%%c" "Удаляет знак диаметра, находившийся перед текстом размерного примитива." "Тексты")
+;;;;;;("x45%%d" "Добавляет знак \"на 45 градусов\" после текста размерного примитива." "Тексты")
+;;;;;;("&A&B&C" "Добавляет к тексту размерного примитива обозначение предельных отклонений." "Тексты")
+;;;;;;("te_*" "Добавляет к тексту размерного примитива значок звездочка." "Тексты")
+;;;;;;("te_<>_" "Добавляет для неразрывные пробелы вокруг текста размера." "Тексты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/text/STL.lsp
+;;;;;;("stl"
+;;;;;;"Устанавливает в зависимости от платформы ситль текста T на основании шрифтов:\n
+;;;;;;\"es_***,my_b_f\"." "Настройка")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/text/TEXT.lsp
+;;;;;;("te"
+;;;;;;"Производит редактирование текстов и текстов размерных примитивов." "Тексты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/text/Text_export.lsp
+;;;;;;("text_export" "Экспортирует текст примитмвов во внешний файл." "Тексты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/text/Text_extract.lsp
+;;;;;;("text_extract" "not defined" "Тексты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/text/Text_pozition.lsp
+;;;;;;("pos_export"
+;;;;;;"Производит выгрузку текста позиций в файл." "Тексты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/tmp/al.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/tmp/equal_area.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/tmp/menu_load.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/tmp/new.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/tmp/test.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/tmp/tmp.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/acad_sup_dir.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/Asist.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/Binary.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/Debug.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/dlg_utils.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/draw.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/DXF.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/ERR.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/html.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/prin.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/red_list.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/Sistjemy_schisljenija.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/stl_text.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/STRING.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/sub_div.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/system_registry.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/system_variable.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/vla-pline.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/vla-utils.lsp
+;;;;;;("vla-obj-dump" "Выводит дамп объектавыбираемого из графического редактора." "Объекты")
+;;;;;;("vla-obj" "Возвращает имя vla объекта." "Объекты")
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/vla.lsp
+C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/utils/Xdata.lsp

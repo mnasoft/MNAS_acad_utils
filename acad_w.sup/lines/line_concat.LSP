@@ -211,7 +211,7 @@
 )
 
 ;;;;;;("j_lns"
-;;;;;;  "Выполняет объединение линий, замещая смежные и совпадающие промежутки одной линией."
+;;;;;;  "Выполняет объединение отрезков, замещая смежные и совпадающие части нескольких отрезков одним отрезком."
 ;;;;;;  "Измени"
 ;;;;;;)
 
@@ -268,13 +268,13 @@
 )
 
 
-;;;;;;(defun c:cccc()
-;;;;;;  (concatenate_two_lines
-;;;;;;    (vlax-ename->vla-object (car (entsel)))
-;;;;;;    (vlax-ename->vla-object (car (entsel)))
-;;;;;;    0.0001
-;;;;;;  )
-;;;;;;)
+;;;(defun c:cccc()
+;;;  (concatenate_two_lines
+;;;    (vlax-ename->vla-object (car (entsel)))
+;;;    (vlax-ename->vla-object (car (entsel)))
+;;;    0.0001
+;;;  )
+;;;)
 
 ;|«Visual LISP© Format Options»
 (120 2 40 2 nil "end of" 100 9 0 0 0 T T nil T)
