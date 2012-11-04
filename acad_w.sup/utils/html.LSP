@@ -59,24 +59,25 @@
   (princ "</tr>\n" fl)
 )
 
-(setq
-  fn "D:/home/_namatv/Site/Izdelija/Izdelije_Index.txt"
-  fl (open fn "r")
-  lst_izd nil
-)
+(defun Izdelije_Index ()
+  (setq
+    fn	    "D:/home/_namatv/Site/Izdelija/Izdelije_Index.txt"
+    fl	    (open fn "r")
+    lst_izd nil
+  )
 
-(while (setq str (read-line fl))
-  (setq lst_izd (append lst_izd (list (list str)) ))
-)
-(close fl)
+  (while (setq str (read-line fl))
+    (setq lst_izd (append lst_izd (list (list str))))
+  )
+  (close fl)
 
-(setq
-  fn "D:/home/_namatv/Site/Izdelija/Izdelije_Index.html"
-  fl (open fn "w")
+  (setq
+    fn "D:/home/_namatv/Site/Izdelija/Izdelije_Index.html"
+    fl (open fn "w")
+  )
+  (table "str_head" '("Изделие") lst_izd fl)
+  (close fl)
 )
-(table "str_head" '("Изделие")  lst_izd fl)
-(close fl)
-
 ;|«Visual LISP© Format Options»
 (105 2 40 2 nil "end of" 90 9 0 0 0 T T nil T)
 ;*** НЕ добавляйте текст под комментариями! ***|;

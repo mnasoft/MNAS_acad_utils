@@ -101,15 +101,15 @@
     (list (cons 1002 "}"))
   )
 )
-  
+
 (defun xdapp_xd_ (dapp)
   (reverse (cdr (reverse (cddr dapp))))
 )
-  
+
 (defun xdapplength (data)
   (length (cdr (xdget data)))
 )
-  
+
 (defun xdappsubst (data app xdapp / d dapp xd)
   (setq
     d	 (xdget data)
@@ -123,16 +123,13 @@
   )
   xd
 )
-  
+
 (defun _xd_appsubst (data app xda)
   (xdappsubst data app (_xd_xdapp xda app))
 )
-  
+
 (defun xdxdapp (xdata app)
   (assoc app (cdr xdata))
 )
 
 (princ "\t...çàãðóæåí.\n")
- ;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;

@@ -1,29 +1,28 @@
 (vl-load-com)
 
+;;;;;;("vla-obj-dump" "Выводит дамп объектавыбираемого из графического редактора." "Объекты")
+(defun c:vla-obj-dump ()
+  (vlax-dump-Object (vlax-ename->vla-object (car (entsel))) t)
+)
+
 ;;;;;;("vla-obj" "Возвращает имя vla объекта." "Объекты")
-(defun c:vla-obj(/ name)
+(defun c:vla-obj (/ name)
   (setq name (getstring "Введите имя переменной:"))
-  (set (read name ) (vlax-ename->vla-object (car(entsel ))))
+  (set (read name) (vlax-ename->vla-object (car (entsel))))
 )
 
 ;;;	Возвращает имя vla объекта.
-(defun vla-obj(vla-name)
-  (set (read vla-name) (vlax-ename->vla-object (car(entsel ))))
+(defun vla-obj (vla-name)
+  (set (read vla-name) (vlax-ename->vla-object (car (entsel))))
 )
 
 ;;; Определение расстояния от точки на кривой vobj-from,
 ;;; задаваемой параметром param, по перпендикуляру к кривой.
 (defun distance-from-curve-by-param-to-curve
-					     (vobj-from
-					      param
-					      vobj-to
-					      /
-					      pnt_at_param
-					;Точка на кривой соответствующая данному параметру
-					      FirstDeriv
-					; Первая производная на кривой по параметру
-					      SecondDeriv
-					; Вторая производная на кривой по параметру
+					     (vobj-from	     param	    vobj-to	   /
+					      pnt_at_param ;Точка на кривой соответствующая данному параметру
+					      FirstDeriv ; Первая производная на кривой по параметру
+					      SecondDeriv ; Вторая производная на кривой по параметру
 					      pnt_center ; Центр
 					      vobj-line ; Отрезок
 					      ang_int ;
@@ -41,7 +40,7 @@
 	pnt_first    (mapcar (function +) pnt_at_param FirstDeriv)
 	ang_first    (angle pnt_at_param pnt_first)
   )
-  	(cond
+  (cond
     (
      ;; Кривая не имеет центра крививизны
      (= (distance SecondDeriv '(0.0 0.0 0.0)) 0.0)
@@ -75,13 +74,13 @@
 			      'IntersectWith
 			      vobj-to
 			      acExtendThisEntity
-;			      acExtendBoth
+     ;			      acExtendBoth
 			    )
 			  )
 			)
-    pnt_inters (devide-list pnt_inters 3);
-    pnt_inters (distance-short pnt_at_param pnt_inters)
-    
+    pnt_inters		(devide-list pnt_inters 3) ;
+    pnt_inters		(distance-short pnt_at_param pnt_inters)
+
     ang_int		(angle pnt_at_param pnt_inters)
     ang_delta_int_first	(angle-normalize[-pi_pi] (- ang_int ang_first))
   )
@@ -95,13 +94,8 @@
 
 ;;	Возвращает расстояния от
 (defun distances-from-curve-to-curve-ndiv
-					  (vobj-from  ndiv
-     ; Количество делений
-					   vobj-to    /
-					   delta-param
-					   s-param    e-param
-					   pts
-					  )
+					  (vobj-from ndiv ; Количество делений
+					   vobj-to / delta-param s-param e-param pts)
   (setq	s-param	    (vlax-curve-getStartParam vobj-from)
 	e-param	    (vlax-curve-getEndParam vobj-from)
 	delta-param (/ (- e-param s-param) ndiv)
@@ -201,7 +195,3 @@
   )
   rez_ename
 )
-
-;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;

@@ -95,7 +95,7 @@
 (defun polar_dir_0 (p0 ang r dir_0)
   (polar p0 (+ ang dir_0) r)
 )
- 
+
 ;;	ins_block (p0 name sc dir_0)	- Ïğîèçâîäèò âñòàâêó áëîêà â ÷åğòåæ
 (defun ins_block (p0 name sc dir_0)
   (setq dir_0 (rtd dir_0))
@@ -146,7 +146,7 @@
   (setq p0 (get_dxf circ 10))
   (setq r (get_dxf circ 40))
   (setq p0 (trans p0 0 1))
-  (setq ang (angle p0 polus) )
+  (setq ang (angle p0 polus))
   (axis_ p0 r ang dl 0)
 )
 
@@ -207,9 +207,9 @@
   )
   (setq d_pc_1-pc_2 (distance pc_1 pc_2))
   (cond
-    ((and (<= (- d_pc_1-pc_2 (+ r_1 r_2)) 0.0 )
-	  (<= (- (max r_1 r_2) (+ d_pc_1-pc_2(min r_1 r_2))) 0.0 )
-	  )
+    ((and (<= (- d_pc_1-pc_2 (+ r_1 r_2)) 0.0)
+	  (<= (- (max r_1 r_2) (+ d_pc_1-pc_2 (min r_1 r_2))) 0.0)
+     )
      (setq
        p_perim (* 0.5 (+ d_pc_1-pc_2 r_1 r_2))
        alfa    (* 2.0
@@ -244,8 +244,9 @@
     i	  0
   )
   (while (< i sslen)
-    (setq ename_list (cons (ssname ss i) ename_list)
-	  i	    (1+ i)
+    (setq ename_list
+	   (cons (ssname ss i) ename_list)
+	  i (1+ i)
     )
   )
   ename_list
@@ -264,7 +265,6 @@
   ss
 )
 (princ "\t...çàãğóæåí.\n")
-;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
+ ;|«Visual LISP© Format Options»
+(120 2 5 2 nil "end of" 100 9 0 0 0 T T nil T)
 ;*** DO NOT add text below the comment! ***|;
-	
