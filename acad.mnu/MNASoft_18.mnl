@@ -201,7 +201,7 @@
 
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/lines")
-	  '("d_chamf" "d_off" "d_otv" "d_rez" "exl" "xt" "xtcen" "cxt" "ltp" "r_off" "z0")
+	  '("d_chamf" "d_off" "d_otv" "d_rez" "exl" "xt" "xtcen" "cxt" "ltp" "r_off" "z0" "j_lns")
 )
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/lopatka") '("lo"))
@@ -227,7 +227,7 @@
 
 
 
-(autoload_cmds_and_op-cmds  (strcat (MNAS_ArxPrj_vlx) "/SMESITEL_vla")  '("prep:sm" "clear:sm" "dr:sech" "dr:sm" "vla-obj"))
+(autoload_cmds_and_op-cmds  (strcat (MNAS_ArxPrj_vlx) "/SMESITEL_vla")  '("prep:sm" "clear:sm" "dr:sech" "dr:sm" "vla-obj" "vla-obj-dump"))
 
 (autoload_cmds_and_op-cmds  (strcat (MNAS_ArxPrj_vlx) "/man")  '("man"))
 
