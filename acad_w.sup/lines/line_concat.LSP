@@ -223,6 +223,7 @@
 		r_lst			; Промежуточный список в который  попадают не коллинеарные элементы
 		rez_lst			;
 )
+  (err-init '("cmdecho"))
   (setq	ss    (ssget '((0 . "LINE")))
 	i     (SSLENGTH ss)
 	delta 0.000001
@@ -265,6 +266,7 @@
     )
     rez_lst
   )
+  (err-handle "")
 )
 
 
