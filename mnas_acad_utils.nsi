@@ -758,6 +758,8 @@ Section "dcl"
   File .\acad_w.sup\axis\Axis_podp.dcl
   SetOutPath $INSTDIR\acad_w.sup\for_lic
   File .\acad_w.sup\for_lic\for_prover.dcl
+  SetOutPath $INSTDIR\acad_w.sup\lines
+  File .\acad_w.sup\lines\line_concat.dcl
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\Format.dcl
   SetOutPath $INSTDIR\acad_w.sup\text
@@ -2472,6 +2474,7 @@ Section "un.dcl"
   Delete $INSTDIR\acad_w.sup\mnas\Pozition\pozition.dcl
   Delete $INSTDIR\acad_w.sup\axis\Axis_podp.dcl
   Delete $INSTDIR\acad_w.sup\for_lic\for_prover.dcl
+  Delete $INSTDIR\acad_w.sup\lines\line_concat.dcl
   Delete $INSTDIR\acad_w.sup\format\Format.dcl
   Delete $INSTDIR\acad_w.sup\text\Text.dcl
   Delete $INSTDIR\acad_w.sup\dims\rou_1\rou.dcl
