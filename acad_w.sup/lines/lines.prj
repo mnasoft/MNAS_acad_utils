@@ -1,10 +1,11 @@
-;;; VLisp project file [V2.0] lines saved to:[C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/lines] at:[11/6/12] 
+;;; VLisp project file [V2.0] lines saved to:[C:/Users/namatv/Develop/MNAS_acad_utils/acad_w.sup/lines] at:[11/10/12] 
 (VLISP-PROJECT-LIST
   :NAME
   lines
   :OWN-LIST
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug" "linetype"	"LINES"	"LINE_1" "line_concat" "../UTILS/ASIST"	"../UTILS/DXF" "../utils//ERR")
+    "../utils/Debug" "linetype"	"LINES"	"LINE_1" "line_concat" "../UTILS/ASIST"	"../UTILS/DXF" "../utils//ERR"
+    "../utils/dlg_utils")
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY

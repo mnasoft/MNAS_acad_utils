@@ -56,21 +56,23 @@
   (distance pnt (vlax-curve-getClosestPointTo vname pnt ext))
 )
 
-;;;f;;;(
-;;;f;;;"concatenate_two_lines"
-;;;f;;;"
-;;;f;;;Выполняет объединение двух отрезков.
-;;;f;;;Возвращает список из удаляемых отрезков.
-;;;f;;;Параметры.
-;;;f;;;v_line_1 - Vla объект, предвтавляющий первый отрезок
-;;;f;;;v_line_2 - Vla объект, предвтавляющий второй отрезок
-;;;f;;;delta - Точность, максимальное расстояние между точкой и отрезком при котором они считаются совпадающими
-;;;f;;;"
-;;;f;;;)
+;;;f;;; (
+;;;f;;; "concatenate_two_lines"
+;;;f;;; "
+;;;f;;; Выполняет объединение двух отрезков.
+;;;f;;; Возвращает список из удаляемых отрезков.
+;;;f;;; Параметры.
+;;;f;;; v_line_1 - Vla объект, предвтавляющий первый отрезок
+;;;f;;; v_line_2 - Vla объект, предвтавляющий второй отрезок
+;;;f;;; delta - Точность, максимальное расстояние между точкой и отрезком при котором они считаются совпадающими
+;;;f;;; filter
+;;;f;;; "
+;;;f;;; )
 
 (defun concatenate_two_lines (v_line_1	; Vla объект, предвтавляющий первый отрезок
 			      v_line_2	; Vla объект, предвтавляющий второй отрезок
 			      delta	; Точность, максимальное расстояние между точкой и отрезком при котором они считаются совпадающими
+			      filter
 			      /		;
 			      LNS_CLNR	; признак коллинеарности отрезков
 			      VL1S	; Список координат начальной точки первого отрезка
@@ -81,6 +83,7 @@
 			      VL1S_ON_VL2 ; Начальная точка первого отрезка лежит на втором отрезке
 			      VL2E_ON_VL1 ; Конечная точка второго отрезка лежит на первом отрезке
 			      VL2S_ON_VL1 ; Начальная точка второго отрезка лежит на первом отрезке
+			      fltrd ;
 )
   (setq
     lns_clnr	(is-collinear v_line_1 v_line_2 delta)
@@ -92,19 +95,22 @@
     vl2e_on_vl1	(is-pnt-on-line vl2e v_line_1 delta)
     vl1s_on_vl2	(is-pnt-on-line vl1s v_line_2 delta)
     vl1e_on_vl2	(is-pnt-on-line vl1e v_line_2 delta)
+    fltrd	(not(is-prop-lst-same v_line_1 v_line_2 filter))
   )
   (cond
     ;;Нет коллинеарности отрезков
     ((not lns_clnr)
      nil
     )
+    ;; Фильтр по свойствам отрезков
+    (fltrd nil)
     ;; Первый отрезок полностью лежит на втором отрезке
-    ((and vl1s_on_vl2 vl1e_on_vl2)
+    ((and vl1s_on_vl2 vl1e_on_vl2 )
      (vlax-invoke-method v_line_1 'Delete)
      (list v_line_1)
     )
     ;; Второй отрезок полностью лежит на первом отрезке
-    ((and vl2s_on_vl1 vl2e_on_vl1)
+    ((and vl2s_on_vl1 vl2e_on_vl1 )
      (vlax-invoke-method v_line_2 'Delete)
      (list v_line_2)
     )
@@ -112,33 +118,69 @@
     ;; и
     ;; Конечная точка первого отрезка лежит на втором отрезке
     ((and (null vl2s_on_vl1) vl2e_on_vl1 (null vl1s_on_vl2) vl1e_on_vl2)
-     (vlax-put-property v_line_1 'EndPoint (vlax-get-property v_line_2 'StartPoint))
-     (vlax-invoke-method v_line_2 'Delete)
-     (list v_line_2)
+     (if (> (vlax-get-property v_line_1 'Length) (vlax-get-property v_line_2 'Length))
+       (progn
+	 (vlax-put-property v_line_1 'EndPoint (vlax-get-property v_line_2 'StartPoint))
+	 (vlax-invoke-method v_line_2 'Delete)
+	 (list v_line_2)
+       )
+       (progn
+	 (vlax-put-property v_line_2 'EndPoint (vlax-get-property v_line_1 'StartPoint))
+	 (vlax-invoke-method v_line_1 'Delete)
+	 (list v_line_1)
+       )
+     )
     )
     ;; Конечная точка второго отрезка лежит на первом отрезке
     ;; и
     ;; Начальная точка первого отрезка лежит на втором отрезке
     ((and (null vl2s_on_vl1) vl2e_on_vl1 vl1s_on_vl2 (null vl1e_on_vl2))
-     (vlax-put-property v_line_1 'StartPoint (vlax-get-property v_line_2 'StartPoint))
-     (vlax-invoke-method v_line_2 'Delete)
-     (list v_line_2)
+      (if (> (vlax-get-property v_line_1 'Length) (vlax-get-property v_line_2 'Length))
+	(progn
+	  (vlax-put-property v_line_1 'StartPoint (vlax-get-property v_line_2 'StartPoint))
+	  (vlax-invoke-method v_line_2 'Delete)
+	  (list v_line_2)
+	)
+	(progn
+	  (vlax-put-property v_line_2 'EndPoint (vlax-get-property v_line_1 'EndPoint))
+	  (vlax-invoke-method v_line_1 'Delete)
+	  (list v_line_1)
+	)
+      )
     )
     ;; Начальная точка второго отрезка лежит на первом отрезке
     ;; и
     ;; Конечная точка первого отрезка лежит на втором отрезке
     ((and vl2s_on_vl1 (null vl2e_on_vl1) (null vl1s_on_vl2) vl1e_on_vl2)
-     (vlax-put-property v_line_1 'EndPoint (vlax-get-property v_line_2 'EndPoint))
-     (vlax-invoke-method v_line_2 'Delete)
-     (list v_line_2)
+     (if (> (vlax-get-property v_line_1 'Length) (vlax-get-property v_line_2 'Length))
+       (progn
+	 (vlax-put-property v_line_1 'EndPoint (vlax-get-property v_line_2 'EndPoint))
+	 (vlax-invoke-method v_line_2 'Delete)
+	 (list v_line_2)
+       )
+       (progn
+	 (vlax-put-property v_line_2 'StartPoint (vlax-get-property v_line_1 'StartPoint))
+	 (vlax-invoke-method v_line_1 'Delete)
+	 (list v_line_1)
+       )
+     )
     )
     ;;Начальная точка второго отрезка лежит на первом отрезке
     ;; и
     ;;Начальная точка первого отрезка лежит на втором отрезке
     ((and vl2s_on_vl1 (null vl2e_on_vl1) vl1s_on_vl2 (null vl1e_on_vl2))
-     (vlax-put-property v_line_1 'StartPoint (vlax-get-property v_line_2 'EndPoint))
-     (vlax-invoke-method v_line_2 'Delete)
-     (list v_line_2)
+      (if (> (vlax-get-property v_line_1 'Length) (vlax-get-property v_line_2 'Length))
+	(progn
+	  (vlax-put-property v_line_1 'StartPoint (vlax-get-property v_line_2 'EndPoint))
+	  (vlax-invoke-method v_line_2 'Delete)
+	  (list v_line_2)
+	)
+	(progn
+	  (vlax-put-property v_line_2 'StartPoint (vlax-get-property v_line_1 'EndPoint))
+	  (vlax-invoke-method v_line_1 'Delete)
+	  (list v_line_1)
+	)
+      )
     )
     ;; Отрезки коллинеарны, но общих точек нет
     ((and (null vl2s_on_vl1) (null vl2e_on_vl1) (null vl1s_on_vl2) (null vl1e_on_vl2))
@@ -152,6 +194,42 @@
   )
 )
 
+;;; (is-prop-same(vlax-ename->vla-object (car (entsel ))) (vlax-ename->vla-object (car (entsel ))) 'LineType)
+;;; (is-prop-same(vlax-ename->vla-object (car (entsel ))) (vlax-ename->vla-object (car (entsel ))) 'TrueColor)
+(defun is-prop-same (vl1		; Первый vla-объект
+		     vl2		; Первый vla-объект
+		     pr			; Имя сравниваемого свойства
+		     /			;
+		     vc1		; vla-Цвет первого объекта
+		     vc2		; vla-Цвет второго объекта
+)
+  (cond
+    ((or (= pr 'Layer) (= pr 'LineType))
+     (eq (vlax-get-property vl1 pr) (vlax-get-property vl2 pr))
+    )
+    ((= pr 'TrueColor)
+     (setq vc1 (vlax-get-property vl1 'TrueColor)
+	   vc2 (vlax-get-property vl2 'TrueColor)
+     )
+     (and (= (vlax-get-property vc1 'Red) (vlax-get-property vc2 'Red))
+	  (= (vlax-get-property vc1 'Green) (vlax-get-property vc2 'Green))
+	  (= (vlax-get-property vc1 'Blue) (vlax-get-property vc2 'Blue))
+     )
+    )
+    (t)
+  )
+)
+
+;;;(is-prop-lst-same(vlax-ename->vla-object (car (entsel ))) (vlax-ename->vla-object (car (entsel ))) (list 'TrueColor 'Layer 'LineType))
+(defun is-prop-lst-same	(vl1		; Первый vla-объект
+			 vl2		; Первый vla-объект
+			 pr_lst		; Список тмен сравниваемых свойств
+			)
+  (apply (function and) (mapcar (function (lambda (el) (is-prop-same vl1 vl2 el))) pr_lst))
+)
+
+;;; Конкатенация коллинеарных отрезков заданных в списке vla_lst
+;;; delta - расстояние от точки одного отрезка до другого отрезка при котором считается, что точка лежит на отрезке.
 (defun concat_lst (vla_lst		; Список элементов для объединения
 		   delta		; Точность
 		   /			;
@@ -182,12 +260,11 @@
 		   )
 		 )
 	       )
-	       (concatenate_two_lines vli vlj delta)
+	       (concatenate_two_lines vli vlj delta filter)
 	     )
 	   )
 	)
       )
-
     )
     (mapcar
       (function
@@ -222,12 +299,15 @@
 		c_lst			; Промежуточный список, в который попадают коллинеарные элементы
 		r_lst			; Промежуточный список в который  попадают не коллинеарные элементы
 		rez_lst			;
+		filter			;
 )
   (err-init '("cmdecho"))
-  (setq	ss    (ssget '((0 . "LINE")))
-	i     (SSLENGTH ss)
-	delta 0.000001
+  (setq	ss     (ssget '((0 . "LINE")))
+	i      (SSLENGTH ss)
+	delta  0.000001
+	filter (line-concat-dlg)
   )
+
   (while (<= 0 (setq i (1- i)))
     (setq
       vla_lst
@@ -261,6 +341,18 @@
   (mapcar
     (function
       (lambda (el)
+	(setq el
+	       (vl-sort
+		 el
+		 (function
+		   (lambda (e1 e2)
+		     (>	(vlax-get-property e1 'Length)
+			(vlax-get-property e2 'Length)
+		     )
+		   )
+		 )
+	       )
+	)
 	(concat_lst el delta)
       )
     )
@@ -270,14 +362,74 @@
 )
 
 
+(defun line-concat-dlg (/ dcl_id	; id диалога
+			setup_lst	; список с параметрами диалога
+			line-concat-dlg_pos ; Положение диалога на экране
+			do_dialog	; признак продолжения выполнения диалога
+			rez ; возвращаемый фильтр
+)
+  (setq
+    setup_lst
+     (list
+       '("tgl_Layer" "0")
+       '("tgl_TrueColor" "0")
+       '("tgl_LineType" "0")
+     )
+    line-concat-dlg_pos
+     '(-1 -1)
+    do_dialog t
+  )
+  (load_dcl "/lines/line_concat.dcl")
+
+
+
+  (while do_dialog
+    (if	(not (new_dialog "line_concat" dcl_id "" dia_weld_pos))
+      (exit)
+    )
+    (init_dlg setup_lst)
+    (action-tile_dlg "setup_lst" "setup_lst")
+    (action_tile "about" "(about)")
+    (setq action (start_dialog))
+    (cond
+      ((= action 1)
+       (setq rez (ac_accept_do))
+       (setq do_dialog nil)
+      )
+      (
+       (= action 0)
+       (ac_cancel_do)
+       (setq do_dialog nil)
+      )
+      (setq do_dialog nil)
+    )
+  )
+  (unload_dialog dcl_id)
+  rez
+)
+
+(defun ac_accept_do (/ rez_lst)
+  (if (= "1" (cadr (assoc "tgl_Layer" setup_lst)))
+    (setq rez_lst (cons 'Layer rez_lst))
+  )
+  (if (= "1" (cadr (assoc "tgl_TrueColor" setup_lst)))
+    (setq rez_lst (cons 'TrueColor rez_lst))
+  )
+  (if (= "1" (cadr (assoc "tgl_LineType" setup_lst)))
+    (setq rez_lst (cons 'LineType rez_lst))
+  )
+  rez_lst
+)
+
+(defun ac_cancel_do ()
+  nil
+)
+
 ;;;(defun c:cccc()
 ;;;  (concatenate_two_lines
 ;;;    (vlax-ename->vla-object (car (entsel)))
 ;;;    (vlax-ename->vla-object (car (entsel)))
 ;;;    0.0001
+;;;    nil
 ;;;  )
 ;;;)
-
-;|«Visual LISP© Format Options»
-(120 2 40 2 nil "end of" 100 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
