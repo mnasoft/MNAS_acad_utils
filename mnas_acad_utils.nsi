@@ -110,102 +110,8 @@ Section "INI"
   File .\acad_w.sup\SF_DXF.INI
 SectionEnd
 Section "VLX"
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\rou_1.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Welding1.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\ENTMAKE.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\HPGL.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\ACAD_PGP.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\provoloka.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Lopatka.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\razvertka.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\SMESITEL_vla.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\spec.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\For_lic.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\dim_style.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\rename.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\pipe.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Graf.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\dxf.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\welding.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Spring.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\fors_rh.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Clock.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Dopusk.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Exel.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\man.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\pozition.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\axis_podp.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Sort_shp.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\D_chprop.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\welding_lsp.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\scr.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\M_utils_loader.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\layer.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\kompas.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Circles.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\lines.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Axis.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\dims.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\atoms.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\format.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Edit.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\big_fnt.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\point.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\text.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\rou.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Abrev.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\f_otv.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\Add_prefix.VLX
   SetOutPath $INSTDIR\acad_w.sup\prj\arx_dbx_reg
   File .\acad_w.sup\prj\arx_dbx_reg\create_registry.VLX
-  SetOutPath $INSTDIR\vlx
-  File .\vlx\create_registry.VLX
 SectionEnd
 Section "mea"
   SetOutPath $INSTDIR\acad_w.sup\izmjeritjelnaja_mashina\Mea
@@ -1408,6 +1314,8 @@ Section "lsp"
   File .\acad_w.sup\LITERA.lsp
   SetOutPath $INSTDIR\acad_w.sup\big_fnt
   File .\acad_w.sup\big_fnt\LITERA.lsp
+  SetOutPath $INSTDIR\acad_w.sup\utils
+  File .\acad_w.sup\utils\XDATA.lsp
   SetOutPath $INSTDIR\acad_w.sup\dopusk
   File .\acad_w.sup\dopusk\DOP_DATA.lsp
   SetOutPath $INSTDIR\acad_w.sup\change
@@ -1464,6 +1372,8 @@ Section "lsp"
   File .\acad_w.sup\INET.lsp
   SetOutPath $INSTDIR\acad_w.sup\edit
   File .\acad_w.sup\edit\EDIT.lsp
+  SetOutPath $INSTDIR\acad_w.sup\utils
+  File .\acad_w.sup\utils\ASIST.lsp
   SetOutPath $INSTDIR\acad_w.sup\text
   File .\acad_w.sup\text\TEXT.lsp
   SetOutPath $INSTDIR\acad_w.sup\matr
@@ -1510,8 +1420,6 @@ Section "lsp"
   File .\acad_w.sup\statistika\kriterij_grubsa.lsp
   SetOutPath $INSTDIR\acad_w.sup\M_utils_loader
   File .\acad_w.sup\M_utils_loader\M_utils_LoaderAppRegistryData.lsp
-  SetOutPath $INSTDIR\acad_w.sup\utils
-  File .\acad_w.sup\utils\Xdata.lsp
   SetOutPath $INSTDIR\acad_w.sup\dims\welding
   File .\acad_w.sup\dims\welding\welding_data.lsp
   SetOutPath $INSTDIR\acad_w.sup\statistika
@@ -1672,8 +1580,6 @@ Section "lsp"
   File .\acad_w.sup\M_utils_loader\M_utils_LoaderDBXInstall.lsp
   SetOutPath $INSTDIR\acad_w.sup\M_utils_loader
   File .\acad_w.sup\M_utils_loader\M_utils_LoaderARXInstall.lsp
-  SetOutPath $INSTDIR\acad_w.sup\utils
-  File .\acad_w.sup\utils\html.lsp
   SetOutPath $INSTDIR\acad_w.sup\optimalnoje_raspololjenije_okrugnostjej
   File .\acad_w.sup\optimalnoje_raspololjenije_okrugnostjej\okrugnost_po_tochkam.lsp
   SetOutPath $INSTDIR\acad_w.sup\man
@@ -1782,8 +1688,6 @@ Section "lsp"
   File .\acad_w.sup\prj\prj\projects.lsp
   SetOutPath $INSTDIR\acad_w.sup\point
   File .\acad_w.sup\point\points.lsp
-  SetOutPath $INSTDIR\acad_w.sup\lines
-  File .\acad_w.sup\lines\line_concat.lsp
   SetOutPath $INSTDIR\acad_w.sup\text
   File .\acad_w.sup\text\Text_extract.lsp
   SetOutPath $INSTDIR\acad_w.sup\prj\Raschjet_gaza
@@ -1810,8 +1714,6 @@ Section "lsp"
   File .\acad_w.sup\man\Type_command_list.lsp
   SetOutPath $INSTDIR\acad_w.sup\man
   File .\acad_w.sup\man\create_html_all_command_list.lsp
-  SetOutPath $INSTDIR\acad_w.sup\utils
-  File .\acad_w.sup\utils\Asist.lsp
   SetOutPath $INSTDIR\acad_w.sup\prj
   File .\acad_w.sup\prj\lst.lsp
   SetOutPath $INSTDIR\acad_w.sup\mnas\Welding
@@ -2135,54 +2037,7 @@ Section "un.INI"
   Delete $INSTDIR\acad_w.sup\SF_DXF.INI
 SectionEnd
 Section "un.VLX"
-  Delete $INSTDIR\vlx\rou_1.VLX
-  Delete $INSTDIR\vlx\Welding1.VLX
-  Delete $INSTDIR\vlx\ENTMAKE.VLX
-  Delete $INSTDIR\vlx\HPGL.VLX
-  Delete $INSTDIR\vlx\ACAD_PGP.VLX
-  Delete $INSTDIR\vlx\provoloka.VLX
-  Delete $INSTDIR\vlx\Lopatka.VLX
-  Delete $INSTDIR\vlx\razvertka.VLX
-  Delete $INSTDIR\vlx\SMESITEL_vla.VLX
-  Delete $INSTDIR\vlx\spec.VLX
-  Delete $INSTDIR\vlx\For_lic.VLX
-  Delete $INSTDIR\vlx\dim_style.VLX
-  Delete $INSTDIR\vlx\rename.VLX
-  Delete $INSTDIR\vlx\pipe.VLX
-  Delete $INSTDIR\vlx\Graf.VLX
-  Delete $INSTDIR\vlx\dxf.VLX
-  Delete $INSTDIR\vlx\welding.VLX
-  Delete $INSTDIR\vlx\Spring.VLX
-  Delete $INSTDIR\vlx\fors_rh.VLX
-  Delete $INSTDIR\vlx\Clock.VLX
-  Delete $INSTDIR\vlx\Dopusk.VLX
-  Delete $INSTDIR\vlx\Exel.VLX
-  Delete $INSTDIR\vlx\man.VLX
-  Delete $INSTDIR\vlx\pozition.VLX
-  Delete $INSTDIR\vlx\axis_podp.VLX
-  Delete $INSTDIR\vlx\Sort_shp.VLX
-  Delete $INSTDIR\vlx\D_chprop.VLX
-  Delete $INSTDIR\vlx\welding_lsp.VLX
-  Delete $INSTDIR\vlx\scr.VLX
-  Delete $INSTDIR\vlx\M_utils_loader.VLX
-  Delete $INSTDIR\vlx\layer.VLX
-  Delete $INSTDIR\vlx\kompas.VLX
-  Delete $INSTDIR\vlx\Circles.VLX
-  Delete $INSTDIR\vlx\lines.VLX
-  Delete $INSTDIR\vlx\Axis.VLX
-  Delete $INSTDIR\vlx\dims.VLX
-  Delete $INSTDIR\vlx\atoms.VLX
-  Delete $INSTDIR\vlx\format.VLX
-  Delete $INSTDIR\vlx\Edit.VLX
-  Delete $INSTDIR\vlx\big_fnt.VLX
-  Delete $INSTDIR\vlx\point.VLX
-  Delete $INSTDIR\vlx\text.VLX
-  Delete $INSTDIR\vlx\rou.VLX
-  Delete $INSTDIR\vlx\Abrev.VLX
-  Delete $INSTDIR\vlx\f_otv.VLX
-  Delete $INSTDIR\vlx\Add_prefix.VLX
   Delete $INSTDIR\acad_w.sup\prj\arx_dbx_reg\create_registry.VLX
-  Delete $INSTDIR\vlx\create_registry.VLX
 SectionEnd
 Section "un.mea"
   Delete $INSTDIR\acad_w.sup\izmjeritjelnaja_mashina\Mea\12-1.mea
@@ -2806,6 +2661,7 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\prj\arx_dbx_reg\MNAS_ARX_DBX_17.lsp
   Delete $INSTDIR\acad_w.sup\LITERA.lsp
   Delete $INSTDIR\acad_w.sup\big_fnt\LITERA.lsp
+  Delete $INSTDIR\acad_w.sup\utils\XDATA.lsp
   Delete $INSTDIR\acad_w.sup\dopusk\DOP_DATA.lsp
   Delete $INSTDIR\acad_w.sup\change\CH_WID.lsp
   Delete $INSTDIR\acad_w.sup\matr\SLIDE.lsp
@@ -2834,6 +2690,7 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\format\FORMAT.lsp
   Delete $INSTDIR\acad_w.sup\INET.lsp
   Delete $INSTDIR\acad_w.sup\edit\EDIT.lsp
+  Delete $INSTDIR\acad_w.sup\utils\ASIST.lsp
   Delete $INSTDIR\acad_w.sup\text\TEXT.lsp
   Delete $INSTDIR\acad_w.sup\matr\EX.lsp
   Delete $INSTDIR\acad_w.sup\dims\dim_style\dim_override_like_ARX.lsp
@@ -2857,7 +2714,6 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\prj\Raschjet_pruginy\Prugina.lsp
   Delete $INSTDIR\acad_w.sup\statistika\kriterij_grubsa.lsp
   Delete $INSTDIR\acad_w.sup\M_utils_loader\M_utils_LoaderAppRegistryData.lsp
-  Delete $INSTDIR\acad_w.sup\utils\Xdata.lsp
   Delete $INSTDIR\acad_w.sup\dims\welding\welding_data.lsp
   Delete $INSTDIR\acad_w.sup\statistika\koeff_studenta.lsp
   Delete $INSTDIR\acad_w.sup\prj\Raschjet_gaza\Tablitca_Mjendjeljejeva.lsp
@@ -2938,7 +2794,6 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\axis\Axis_util.lsp
   Delete $INSTDIR\acad_w.sup\M_utils_loader\M_utils_LoaderDBXInstall.lsp
   Delete $INSTDIR\acad_w.sup\M_utils_loader\M_utils_LoaderARXInstall.lsp
-  Delete $INSTDIR\acad_w.sup\utils\html.lsp
   Delete $INSTDIR\acad_w.sup\optimalnoje_raspololjenije_okrugnostjej\okrugnost_po_tochkam.lsp
   Delete $INSTDIR\acad_w.sup\man\man.lsp
   Delete $INSTDIR\acad_w.sup\axis\Graph_main.lsp
@@ -2993,7 +2848,6 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\prj\Spring\Spring_class.lsp
   Delete $INSTDIR\acad_w.sup\prj\prj\projects.lsp
   Delete $INSTDIR\acad_w.sup\point\points.lsp
-  Delete $INSTDIR\acad_w.sup\lines\line_concat.lsp
   Delete $INSTDIR\acad_w.sup\text\Text_extract.lsp
   Delete $INSTDIR\acad_w.sup\prj\Raschjet_gaza\Pereschet.lsp
   Delete $INSTDIR\acad_w.sup\smesitel_vla\sech_by_lenght.lsp
@@ -3007,7 +2861,6 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\utils\red_list.lsp
   Delete $INSTDIR\acad_w.sup\man\Type_command_list.lsp
   Delete $INSTDIR\acad_w.sup\man\create_html_all_command_list.lsp
-  Delete $INSTDIR\acad_w.sup\utils\Asist.lsp
   Delete $INSTDIR\acad_w.sup\prj\lst.lsp
   Delete $INSTDIR\acad_w.sup\mnas\Welding\setup_lst.lsp
   Delete $INSTDIR\acad_w.sup\mnas\Welding_lsp\setup_lst.lsp
