@@ -13,7 +13,8 @@ function MakeVlispPRV()
 //Производит компиляцию проектов PRV. Предполагается, что активизировано окно AutoCAD
     WriteWord("vlisp{ENTER}");
 //	acad_w_path="C:\\MNAS_acad_db17_utils\\acad_w.sup\\";
-	acad_w_path="C:\\Users\\namatv\\Develop\\MNAS_acad_utils\\acad_w.sup\\";
+//	acad_w_path="C:\\Users\\namatv\\Develop\\MNAS_acad_utils\\acad_w.sup\\";
+	acad_w_path="C:\\Develop\\MNAS_acad_utils\\acad_w.sup\\";
 //	acad_w_path="E:\\Data\\Develop\\MNAS_acad_utils\\acad_w.sup\\"
 //	acad_w_path="O:\\Develop\\MNAS_acad_utils\\acad_w.sup\\"
 	
