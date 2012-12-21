@@ -411,10 +411,21 @@
        "0"
      )
     )
+    (
+     (= s1 "2α")
+     (command
+       "_insert"
+       (strcat "*" (extend_path "/FORMAT/SHT_4_S"))
+       "_non"
+       (polar p_start 0.0 (nth 0 for))
+       "1"
+       "0"
+     )
+    )
     ((= s1 "2αν")
      (command
        "_insert"
-       (strcat "*" (extend_path "/FORMAT/sht_5"))
+       (strcat "*" (extend_path "/FORMAT/SHT_6_R"))
        "_non"
        (polar p_start 0.0 (nth 0 for))
        "1"
@@ -424,7 +435,7 @@
     ((= s1 "2αχ")
      (command
        "_insert"
-       (strcat "*" (extend_path "/FORMAT/sht_6"))
+       (strcat "*" (extend_path "/FORMAT/SHT_6_L"))
        "_non"
        p_start
        "1"
