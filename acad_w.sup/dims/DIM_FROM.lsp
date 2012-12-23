@@ -16,16 +16,16 @@
 
 ;;;;;;("bas" "Простановка баз." "Размеры")
 (defun c:bas (/ ort os sc p1 p2 r a1 p01 p02 p03 str old_err tst v_line v_polygon pnt_int)
-
   (setq	old_err	*error*
 	*error*	bas:n_err
   )
   (command "_.undo" "_begin")
   (setq
-    tst	(getvar "textstyle")
+    tst	(getvar "dimtxsty")
     ort	(getvar "orthomode")
     os	(getvar "osmode")
     sc	(getvar "dimscale")
+    v_dimtxt (getvar "dimtxt")
   )
   (if (= sc 0)
     (setq sc (getreal "\nEnter dimension scale:"))
@@ -34,7 +34,7 @@
   (command "_.ortho" "_off")
   (setq p1 (getpoint "\nPoint of basa:"))
   (setq p2 (getpoint p1 "\nCenter of rect:"))
-  (setq r (* sc 5.0))
+  (setq r (* sc v_dimtxt))
   (setq a1 (angle p1 p2))
   (setq p01 (polar p1 (+ a1 (dtr 90.)) (* sc 2.5)))
   (setq p02 (polar p01 (- a1 (dtr 90.)) (* sc 5.)))
@@ -61,8 +61,8 @@
 ;;;  (setq str (getstring 1 "\nВведите текст базы :"))
   (setq str (index:string))
   (index:add)
-  (setvar "textstyle" "t")
-  (command "_.text" "_j" "_mc" "_non" p2 r "0" str)
+;;;  (setvar "textstyle" "t")
+  (command "_.text" "_s" tst "_j" "_mc" "_non" p2 r "0" str)
   (vlax-put-property (vlax-ename->vla-object (entlast)) "Color" 1)
   (bas:n_err "")
 )
@@ -234,39 +234,35 @@
 ;;;;;;2.2) центрирование относительно введенных точек."
 ;;;;;;"Размеры")
 
-(defun c:up (/ ts ort os sc h p1 p2 p01 p02 str old_err)
-  (if (null (tblsearch "style" "t"))
-    (stl)
-  )
+(defun c:up (/ ts ort os v_dimscale h p1 p2 p01 p02 str old_err v_dimtxt v_dimtxsty)
   (setq
-    old_err *error*
-    *error* up:n_err
-    ort	    (getvar "orthomode")
-    os	    (getvar "osmode")
-    sc	    (getvar "dimscale")
-    ts	    (getvar "textstyle")
+    old_err    *error*
+    *error*    up:n_err
+    ort	       (getvar "orthomode")
+    os	       (getvar "osmode")
+    v_dimscale (getvar "dimscale")
+    v_dimtxt   (getvar "dimtxt")
+    v_dimtxsty (getvar "dimtxsty")
   )
   (if
-    (= sc 0)
-     (setq sc (getreal "\nМасштаб размеров:"))
+    (= v_dimscale 0)
+     (setq v_dimscale (getreal "\nМасштаб размеров:"))
   )
   (command "_.undo" "_begin")
   (setvar "osmode" 512)
   (setvar "orthomode" 0)
-  (setq	h   (* (getreal "\nМасштаб:") sc 3.5)
+  (setq	h   (* (getreal "\nМасштаб:") v_dimscale v_dimtxt)
 	p1  (getpoint "\nНачальная точка:")
 	p2  (getpoint p1 "\nКонечная точка:")
 	p01 (polar p1 (+ (angle p1 p2) (/ pi 2.)) (/ h 2.))
 	p02 (polar p01 (angle p1 p2) 10.)
 	str (getstring 1 "\nВведите текст :")
   )
-  (setvar "textstyle" "t")
-  (command "_.text" "_s" "t" "_non" p01 h "_non" p02 str)
+  (command "_.text" "_s" v_dimtxsty "_non" p01 h "_non" p02 str)
   (up:n_err "")
 )
 
 (defun up:n_err	(msg)
-  (setvar "textstyle" ts)
   (setvar "orthomode" ort)
   (setvar "osmode" os)
   (setq *error* old_err)
@@ -275,34 +271,33 @@
 )
 
 ;;;;;;("bot" "Простановка текста под полкой." "Размеры")
-(defun c:bot (/ ts ort os sc h p1 p2 p01 p02 str old_err)
-  (if (null (tblsearch "style" "t"))
-    (stl)
-  )
+(defun c:bot (/ ts ort os v_dimscale h p1 p2 p01 p02 str old_err)
   (setq
-    old_err *error*
-    *error* up:n_err
-    ort	    (getvar "orthomode")
-    os	    (getvar "osmode")
-    sc	    (getvar "dimscale")
-    ts	    (getvar "textstyle")
+    old_err    *error*
+    *error*    up:n_err
+    ort	       (getvar "orthomode")
+    os	       (getvar "osmode")
+    v_dimscale (getvar "dimscale")
+    v_dimtxt   (getvar "dimtxt")
+    v_dimtxsty (getvar "dimtxsty")
   )
-  (if (= sc 0)
-    (setq sc (getreal "\nМасштаб размеров:"))
+  (if (= v_dimscale 0)
+    (setq v_dimscale (getreal "\nМасштаб размеров:"))
   )
   (command "_.undo" "_begin")
   (setvar "osmode" 512)
   (setvar "orthomode" 0)
-  (setq	h   (* (getreal "\nМасштаб:") sc 3.5)
+  (setq	h   (* (getreal "\nМасштаб:") v_dimscale v_dimtxt)
 	p1  (getpoint "\nНачальная точка:")
 	p2  (getpoint p1 "\nУгол поворота:")
 	p01 (polar p1 (+ (angle p1 p2) (/ pi -2.)) (* h 1.5))
 	p02 (polar p01 (angle p1 p2) 10.)
 	str (getstring 1 "\nВведите текст :")
   )
-  (command "_.text" "_s" "t" "_non" p01 h "_non" p02 str)
+  (command "_.text" "_s" v_dimtxsty "_non" p01 h "_non" p02 str)
   (up:n_err "")
 )
+
 
 ;;;;;;("d_up" "Обновление свойств размеров по свойствам стилей, в которых они были созданы." "Размеры")
 (defun c:d_up (/ d_l st sub old_err)
