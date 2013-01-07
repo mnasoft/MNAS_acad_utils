@@ -72,7 +72,8 @@
   (princ)
 )
 
-(defun dr:arrow	(p_0 p_1 dang / p00 pl ang p_ar1 p_ar2 p_ar3 arr dir_text)
+(defun dr:arrow	(p_0 p_1 dang / p00 pl ang p_ar1 p_ar2 p_ar3 arr dir_text ;
+		 PTXT P_00 VID_TEXT)
   (setq
     p_00 (polar p_0 (angle p_1 p_0) lin_big)
     pl	 (vla-AddLightWeightPolyline

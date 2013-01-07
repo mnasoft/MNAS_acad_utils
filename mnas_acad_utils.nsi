@@ -465,6 +465,8 @@ Section "dwg"
   SetOutPath $INSTDIR\acad_w.sup
   File .\acad_w.sup\STR_I.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
+  File .\acad_w.sup\format\SHT_6_L.dwg
+  SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\DOP_PRIM.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\DOP_PRM.dwg
@@ -474,10 +476,14 @@ Section "dwg"
   File .\acad_w.sup\WELD_TOP.dwg
   SetOutPath $INSTDIR\acad_w.sup
   File .\acad_w.sup\STR.dwg
+  SetOutPath $INSTDIR\acad_w.sup\format
+  File .\acad_w.sup\format\SHT_6_R.dwg
   SetOutPath $INSTDIR\acad_w.sup\circles
   File .\acad_w.sup\circles\CIRCLES.dwg
   SetOutPath $INSTDIR\acad_w.sup\lines
   File .\acad_w.sup\lines\LINES.dwg
+  SetOutPath $INSTDIR\acad_w.sup\format
+  File .\acad_w.sup\format\SHT_4_S.dwg
   SetOutPath $INSTDIR\acad_w.sup\format
   File .\acad_w.sup\format\DOP_G_LT.dwg
   SetOutPath $INSTDIR\acad_w.sup
@@ -1460,8 +1466,6 @@ Section "lsp"
   File .\acad_w.sup\lines\LINES.lsp
   SetOutPath $INSTDIR\acad_w.sup\atoms
   File .\acad_w.sup\atoms\ATOMS.lsp
-  SetOutPath $INSTDIR\acad_w.sup\format
-  File .\acad_w.sup\format\FORMAT.lsp
   SetOutPath $INSTDIR\acad_w.sup
   File .\acad_w.sup\INET.lsp
   SetOutPath $INSTDIR\acad_w.sup\edit
@@ -1782,6 +1786,8 @@ Section "lsp"
   File .\acad_w.sup\prj\prj\projects.lsp
   SetOutPath $INSTDIR\acad_w.sup\point
   File .\acad_w.sup\point\points.lsp
+  SetOutPath $INSTDIR\acad_w.sup\format
+  File .\acad_w.sup\format\format.lsp
   SetOutPath $INSTDIR\acad_w.sup\text
   File .\acad_w.sup\text\Text_extract.lsp
   SetOutPath $INSTDIR\acad_w.sup\prj\Raschjet_gaza
@@ -2317,13 +2323,16 @@ Section "un.dwg"
   Delete $INSTDIR\acad_w.sup\TRIANG.dwg
   Delete $INSTDIR\acad_w.sup\format\DOP_ARH.dwg
   Delete $INSTDIR\acad_w.sup\STR_I.dwg
+  Delete $INSTDIR\acad_w.sup\format\SHT_6_L.dwg
   Delete $INSTDIR\acad_w.sup\format\DOP_PRIM.dwg
   Delete $INSTDIR\acad_w.sup\format\DOP_PRM.dwg
   Delete $INSTDIR\acad_w.sup\STR_O.dwg
   Delete $INSTDIR\acad_w.sup\WELD_TOP.dwg
   Delete $INSTDIR\acad_w.sup\STR.dwg
+  Delete $INSTDIR\acad_w.sup\format\SHT_6_R.dwg
   Delete $INSTDIR\acad_w.sup\circles\CIRCLES.dwg
   Delete $INSTDIR\acad_w.sup\lines\LINES.dwg
+  Delete $INSTDIR\acad_w.sup\format\SHT_4_S.dwg
   Delete $INSTDIR\acad_w.sup\format\DOP_G_LT.dwg
   Delete $INSTDIR\acad_w.sup\WELD_BOT.dwg
   Delete $INSTDIR\acad_w.sup\format\DOP_TEXT.dwg
@@ -2828,7 +2837,6 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\circles\CIRCLES.lsp
   Delete $INSTDIR\acad_w.sup\lines\LINES.lsp
   Delete $INSTDIR\acad_w.sup\atoms\ATOMS.lsp
-  Delete $INSTDIR\acad_w.sup\format\FORMAT.lsp
   Delete $INSTDIR\acad_w.sup\INET.lsp
   Delete $INSTDIR\acad_w.sup\edit\EDIT.lsp
   Delete $INSTDIR\acad_w.sup\utils\ASIST.lsp
@@ -2989,6 +2997,7 @@ Section "un.lsp"
   Delete $INSTDIR\acad_w.sup\prj\Spring\Spring_class.lsp
   Delete $INSTDIR\acad_w.sup\prj\prj\projects.lsp
   Delete $INSTDIR\acad_w.sup\point\points.lsp
+  Delete $INSTDIR\acad_w.sup\format\format.lsp
   Delete $INSTDIR\acad_w.sup\text\Text_extract.lsp
   Delete $INSTDIR\acad_w.sup\prj\Raschjet_gaza\Pereschet.lsp
   Delete $INSTDIR\acad_w.sup\smesitel_vla\sech_by_lenght.lsp

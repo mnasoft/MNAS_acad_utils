@@ -15,7 +15,7 @@
 
 
 ;;;;;;("bas" "Простановка баз." "Размеры")
-(defun c:bas (/ ort os sc p1 p2 r a1 p01 p02 p03 str old_err tst v_line v_polygon pnt_int)
+(defun c:bas (/ ort os sc p1 p2 r a1 p01 p02 p03 str old_err tst v_line v_polygon pnt_int v_dimtxt)
   (setq	old_err	*error*
 	*error*	bas:n_err
   )
