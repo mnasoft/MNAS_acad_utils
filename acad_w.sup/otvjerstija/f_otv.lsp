@@ -21,11 +21,18 @@
 
 ;;; Вычисляет площадь, эквивалентную площади последовательно расположенных сопротивлений.
 ;;; Предполагается, что среда протекающая через площади не сжимается.
-(defun f_ek_zikl (l_f			; - список, содержащий проходные сечения.
-		  /;
-		  zero;
+(defun f_ek_zikl (l_f ; - список, содержащий проходные сечения.
+		  /	;
+		  zero	;
 		 )
-  (mapcar (function (lambda(el) (if (ZEROP el) (setq zero t)) )) l_f)
+  (mapcar (function (lambda (el)
+		      (if (ZEROP el)
+			(setq zero t)
+		      )
+		    )
+	  )
+	  l_f
+  )
   (cond
     (zero 0.0)
     (t
@@ -50,8 +57,11 @@
 
 
 
+
+
+
 ;;;;;;("f_kolca" "Вычисление площади кольца." "Расчеты")
-(defun c:f_kolca ()
+(defun c:f_kolca (/ area p1 p1-p2 p2 p_mid p_mid-p_os p_os)
   (setq	p1	   (getpoint "Введите 1 точку на кольце:")
 	p2	   (getpoint p1 "Введите 2 точку на кольце:")
 	p_mid	   (mapcar
@@ -66,7 +76,7 @@
 	p_os	   (getpoint p_mid "Кратчайшее расстояние до оси:")
 	p1-p2	   (distance p1 p2)
 	p_mid-p_os (distance p_mid p_os)
-	area	   (* p1-p2 p_mid-p_os 2. pi)
+	area	   (* p1-p2 p_mid-p_os 2.0 pi)
   )
   (princ "\nДлина кольца p1-p2: ")
   (princ p1-p2)
@@ -77,7 +87,7 @@
   (princ)
 )
 
-(defun f_kolca ()
+(defun f_kolca (/ area p1 p1-p2 p2 p_mid p_mid-p_os p_os)
   (setq	p1	   (getpoint "Введите 1 точку на кольце:")
 	p2	   (getpoint p1 "Введите 2 точку на кольце:")
 	p_mid	   (mapcar
@@ -104,3 +114,6 @@
 )
 
 (princ "\t...загружен.\n")
+;|«Visual LISP© Format Options»
+(105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
+;*** DO NOT add text below the comment! ***|;
