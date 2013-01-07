@@ -62,28 +62,7 @@
 
 ;;;;;;("f_kolca" "Вычисление площади кольца." "Расчеты")
 (defun c:f_kolca (/ area p1 p1-p2 p2 p_mid p_mid-p_os p_os)
-  (setq	p1	   (getpoint "Введите 1 точку на кольце:")
-	p2	   (getpoint p1 "Введите 2 точку на кольце:")
-	p_mid	   (mapcar
-		     (function
-		       (lambda (el1 el2)
-			 (/ (+ el1 el2) 2.0)
-		       )
-		     )
-		     p1
-		     p2
-		   )
-	p_os	   (getpoint p_mid "Кратчайшее расстояние до оси:")
-	p1-p2	   (distance p1 p2)
-	p_mid-p_os (distance p_mid p_os)
-	area	   (* p1-p2 p_mid-p_os 2.0 pi)
-  )
-  (princ "\nДлина кольца p1-p2: ")
-  (princ p1-p2)
-  (princ "\nРадиус кольца p_mid-p_os: ")
-  (princ p_mid-p_os)
-  (princ "\nПлощадь: ")
-  (princ area)
+  (f_kolca)
   (princ)
 )
 
@@ -111,6 +90,38 @@
   (princ "\nПлощадь: ")
   (princ area)
   area
+)
+
+(defun c:f_zavihr (/ area p1 p1-p2 p2 p_mid p_mid-p_os p_os)
+  (setq	p1	   (getpoint "\nВведите 1 точку на кольце:")
+	p2	   (getpoint p1 "\nВведите 2 точку на кольце:")
+	p_mid	   (mapcar
+		     (function
+		       (lambda (el1 el2)
+			 (/ (+ el1 el2) 2.0)
+		       )
+		     )
+		     p1
+		     p2
+		   )
+	p_os	   (getpoint p_mid "\nКратчайшее расстояние до оси:")
+	p1-p2	   (distance p1 p2)
+	p_mid-p_os (distance p_mid p_os)
+	area	   (* p1-p2 p_mid-p_os 2. pi)
+	n_lop	   (getreal "\nКоличество лопаток завихрителя:")
+	delta_lop  (getreal "\nТолщина лопатки завихрителя:")
+	alfa	   (getangle p_os "\nУгол крутки лопаток:")
+
+  )
+  (princ "\nДлина кольца p1-p2: ")
+  (princ p1-p2)
+  (princ "\nРадиус кольца p_mid-p_os: ")
+  (princ p_mid-p_os)
+  (princ "\nПлощадь без учета крутки потока: ")
+  (princ area)
+  (princ "\nПлощадь завихрителя: ")
+  (princ (- (* area (cos alfa)) (* n_lop delta_lop p1-p2)))
+  (princ)
 )
 
 (princ "\t...загружен.\n")

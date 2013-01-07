@@ -98,7 +98,7 @@
 
 (autoload_cmds_and_op-cmds
   (strcat (MNAS_ArxPrj_vlx) "/f_otv") 
-  '("f_kolca")
+  '("f_kolca" "f_zavihr")
 )
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/axis_podp") '("ax_shcala"))
