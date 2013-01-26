@@ -239,6 +239,8 @@
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/Spring") '("spring"))
 
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/razvertka") '("razvertka" "r_cone" "r_cone_1"))
+
 (princ "\nMNASoft.mnl çàãðóæåí.\n")
 ;|«Visual LISP© Format Options»
 (105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
