@@ -239,7 +239,7 @@
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/Spring") '("spring"))
 
-(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/razvertka") '("razvertka" "r_cone" "r_cone_1"))
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/razvertka") '("razvertka" "r_cone"))
 
 (princ "\nMNASoft.mnl çàãðóæåí.\n")
 ;|«Visual LISP© Format Options»

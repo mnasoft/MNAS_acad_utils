@@ -118,27 +118,9 @@
 
 (defun c:r_cone (/ A1 A2 L1 L2 P0 P01 P02 P1 P2 R1 R2)
   (setq p01 (getpoint "\n¬ведите первую точку на оси конуса:" ))
-  (setq p02 (getpoint "\n¬ведите вторую точку на оси конуса:" ))
+  (setq p02 (getpoint p01 "\n¬ведите вторую точку на оси конуса:" ))
   (setq p1 (getpoint "\n¬ведите первую точку на образующей конуса:" ))
-  (setq p2 (getpoint "\n¬ведите вторую точку на оси конуса:" ))
-  (setq p0 (inters p01 p02 p1 p2 nil))
-  (setq
-    r1 (distance p0 p1); ƒлина первой образующей
-    r2 (distance p0 p2); ƒлина второй образующей
-    l1 (distance p1 (inters p1 (polar p1 (+ (* pi 0.5)(angle p01 p02)) (distance p01 p02) ) p01 p02 nil))
-    l2 (distance p2 (inters p2 (polar p2 (+ (* pi 0.5)(angle p01 p02)) (distance p01 p02) ) p01 p02 nil))
-    a1 (/ (* pi 2.0 l1) r1 )
-    a2 (/ (* pi 2.0 l2) r2 )
-  )
-  (dr:arc p0 r1 0 a1 2)
-  (dr:arc p0 r2 0 a2 2)
-)
-
-(defun c:r_cone_1 (/ A1 A2 L1 L2 P0 P01 P02 P1 P2 R1 R2)
-  (setq p01 (getpoint "¬ведите первую точку на оси конуса:" ))
-  (setq p02 (getpoint "¬ведите вторую точку на оси конуса:" ))
-  (setq p1 (getpoint "¬ведите первую точку на образующей конуса:" ))
-  (setq p2 (getpoint "¬ведите вторую точку на оси конуса:" ))
+  (setq p2 (getpoint p1 "\n¬ведите вторую точку на оси конуса:" ))
   (setq p0 (inters p01 p02 p1 p2 nil))
   (setq
     r1 (distance p0 p1); ƒлина первой образующей
