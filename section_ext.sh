@@ -11,6 +11,7 @@ inst_fn="inst.tmp"
 un_inst_fn="un.inst.tmp"
 rm_dir_fn="rmdir.tmp"
 nsi_tmp="mnas_acad_utils.nsi"
+UTILS_VERSION="3.0.0.2"
 
 uninst_dirs()
 {
@@ -40,9 +41,11 @@ echo '; MNAS_acad_utils.nsi
 
 ; The name of the installer
 Name "mnas_acad_utils"
+'   > $nsi_tmp
 
-!define VERSION "3.0.0.1"
+echo "!define VERSION \"$UTILS_VERSION\"" >> $nsi_tmp
 
+echo '
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\Russian.nlf"
 
@@ -136,7 +139,7 @@ Section "Start Menu Shortcuts"
 
 SectionEnd
 
-;_Section_MNASoft_files_Start__________________________________________________'  > $nsi_tmp
+;_Section_MNASoft_files_Start__________________________________________________'  >> $nsi_tmp
 
 cat inst.tmp >> $nsi_tmp
 
