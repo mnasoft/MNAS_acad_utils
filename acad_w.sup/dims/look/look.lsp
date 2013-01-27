@@ -5,8 +5,8 @@
 
 
 ;;;;;;("look" "Построение обозначения вида." "Размеры")
-(defun c:look (/ ort os sc p1 p2 dir_0 str p3 la_st old_err )
-   (if (null (tblsearch "style" "t"))
+(defun c:look (/ ort os sc p1 p2 dir_0 str p3 la_st old_err)
+  (if (null (tblsearch "style" "t"))
     (stl)
   )
   (setq
@@ -24,25 +24,25 @@
   (setvar "orthomode" 0)
   (setvar "osmode" 128)
   (setq p2 (getpoint p1 "\nНаправление стрелки:"))
-  (setq p1 (TRANS  p1 1 0))
-  (setq p2 (TRANS  p2 1 0))
+  (setq p1 (TRANS p1 1 0))
+  (setq p2 (TRANS p2 1 0))
   (setq dir_0 (angle p2 p1))
 ;;;  (setq str (getstring "\nТекст вида:"))
   (setq str (index:string))
   (index:add)
-  (look:draw p1 sc dir_0 str )
+  (look:draw p1 sc dir_0 str)
   (look:n_err "")
 )
 
 (defun look:n_err (msg)
-    (setvar "orthomode" ort)
-    (setvar "osmode" os)
-    (setq *error* old_err)
-    (if	(/= msg "Function cancelled")
-      (princ msg)
-    )
-    (princ)
+  (setvar "orthomode" ort)
+  (setvar "osmode" os)
+  (setq *error* old_err)
+  (if (/= msg "Function cancelled")
+    (princ msg)
   )
+  (princ)
+)
 
 (defun look:draw (pt	     sc		dir_0	   str	      /		 acadSpace  arr_len1
 		  arr_len2   arr_wid1	arr_wid2   pl	      pt1	 pt2	    txt_hi
@@ -51,13 +51,12 @@
   (setq dir_text (angle (trans (list 0.0 0.0 0.0) 1 0) (trans (list 1.0 0.0 0.0) 1 0)))
   (setq
     acadSpace	  (AcadAppDocSpace)
-    arr_len1	  5.0 ;Длина заостряющейся части стрелки
-    arr_len2	  9.0 ;Длина всей стрелки
-    txt_hi	  6.0 ;Высота текста
-    txt_offset_sc
-		  1.5 ; Коэффициент отстояния текста вида от стрелки
-    arr_wid1	  1.5 ;Наибольшая ширина стрелки
-    arr_wid2	  0.75 ;Ширина продолжения стрелки
+    arr_len1	  5.0				  ; Длина заостряющейся части стрелки
+    arr_len2	  9.0				  ; Длина всей стрелки
+    txt_hi	  7.0				  ; Высота текста
+    txt_offset_sc 1.25				  ; Коэффициент отстояния текста вида от стрелки
+    arr_wid1	  1.5				  ; Наибольшая ширина стрелки
+    arr_wid2	  0.75				  ; Ширина продолжения стрелки
   )
   (setq
     pt1	(polar pt dir_0 (* sc arr_len1))
@@ -93,7 +92,7 @@
      (and (>= (angle (TRANS p2 0 1) (TRANS p1 0 1)) (* pi 0.5))
 	  (<= (angle (TRANS p2 0 1) (TRANS p1 0 1)) (* pi 1.5))
      )
-	       ;dir_0
+						  ;dir_0
      (vlax-put
        vid_text
        "TextAlignmentPoint"
@@ -130,21 +129,24 @@
   (setq vid_text_handle (vla-get-Handle vid_text))
 
   (vlax-ldata-put vid_text "key_text" "look_arr_text") ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  (vlax-ldata-put vid_text "scale" sc) ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  (vlax-ldata-put vid_text "dwg_name" (vlax-ldata-get "Curr_dwg" "name" "")) ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  (vlax-ldata-put vid_text "text" str) ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  (vlax-ldata-put vid_text "scale" sc)		  ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  (vlax-ldata-put vid_text "dwg_name" (vlax-ldata-get "Curr_dwg" "name" ""))
+						  ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  (vlax-ldata-put vid_text "text" str)		  ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   (vlax-ldata-put vid_text "pl_handle" pl_handle) ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-  (vlax-ldata-put pl "key_text" "look_arrow") ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  (vlax-ldata-put pl "look_pt" pt) ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  (vlax-ldata-put pl "look_dir_0" dir_0) ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  (vlax-ldata-put pl "key_text" "look_arrow")	  ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  (vlax-ldata-put pl "look_pt" pt)		  ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  (vlax-ldata-put pl "look_dir_0" dir_0)	  ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   (vlax-ldata-put pl "vid_text_handle" vid_text_handle) ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 )
 
 
 ;;;;;;("obj_data" "Возвращает ldata данные, связанные с выбранным примитивом, из расширенного словаря." "Объекты")
 (defun c:obj_data ()
-  (vlax-ldata-list (vlax-ename->vla-object(car (entsel "Выберите примитив для просмотра его ldata :"))))
+  (vlax-ldata-list
+    (vlax-ename->vla-object (car (entsel "Выберите примитив для просмотра его ldata :")))
+  )
 )
 
 ;;;;;;("dwg_put" "not defined" "not defined")
@@ -152,8 +154,8 @@
   (setq	dwg_name  (getstring "Обозначение чертежа:")
 	dwg_scale (getreal "Масштаб чертежа:")
   )
-  (vlax-ldata-put "Curr_dwg" "name" dwg_name )
-  (vlax-ldata-put "Curr_dwg" "scale" dwg_scale )
+  (vlax-ldata-put "Curr_dwg" "name" dwg_name)
+  (vlax-ldata-put "Curr_dwg" "scale" dwg_scale)
 )
 
 ;;;;;;("dwg_get" "not defined" "not defined")
@@ -161,10 +163,8 @@
   (princ "\nCurr_dwg name:")
   (princ (vlax-ldata-get "Curr_dwg" "name" ""))
   (princ "\nCurr_dwg scale:")
-  (princ(vlax-ldata-get "Curr_dwg" "scale" 1.0))
+  (princ (vlax-ldata-get "Curr_dwg" "scale" 1.0))
 )
 
 (princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+
