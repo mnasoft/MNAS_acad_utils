@@ -161,7 +161,31 @@
 (defun c:op () (command "_.options") (princ))
 
 ;;;;;;("h" "Вызов команды _.bhatch" "Аббревиатуры")
-(defun c:h () (command "_.bhatch") (princ))
+(defun c:h (/ dist sc an)
+  (setq
+    dist (getdist "Введите расстояние между линиями штриховки без учета масштаба размеров:")
+    sc	 (cond
+	   ((= (getvar "dimscale") 0.0) 1.0)
+	   ( t (getvar "dimscale"))
+	 )
+    an   (getangle "Введите угол наклона штрихов:")
+  )
+  (command "_-hatch" "_p" "_u" (* (/ 180. pi) an) (* dist sc))
+  ;;(command "_.bhatch") (princ)
+)
+
+;;;(defun c:he (/ dist sc an)
+;;;  (setq
+;;;    dist (getdist "Введите расстояние между линиями штриховки без учета масштаба размеров:")
+;;;    sc	 (cond
+;;;	   ((= (getvar "dimscale") 0.0) 1.0)
+;;;	   ( t (getvar "dimscale"))
+;;;	 )
+;;;    an   (getangle "Введите угол наклона штрихов:")
+;;;  )
+;;;  (command "_-hatch" "_p" "_u" (* (/ 180. pi) an) (* dist sc))
+;;;  ;;(command "_.bhatch") (princ)
+;;;)
 
 ;;;;;;("dt" "Вызов команды _.dtext" "Аббревиатуры")
 (defun c:dt () (command "_.dtext") (princ))
@@ -199,3 +223,6 @@
 )
 
 (princ "\t...loaded.\n")
+;|«Visual LISP© Format Options»
+(105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
+;*** DO NOT add text below the comment! ***|;
