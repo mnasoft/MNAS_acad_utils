@@ -1,33 +1,60 @@
-(defun c:lea (/ k str i)
+(defun c:lea (/ k str i key_list key_str)
+  (setq key_list (list "Arrow" "dotSmall" "weldTop" "weldBot") )
+  (setq key_str "")
+  (mapcar (function (lambda (el) (setq key_str (strcat key_str "/" el) ))) key_list)
+  
+  (prompt "Выберите объекты типа LEADER для изменения стрелки:")
+  
   (setq ss (ssget '((0 . "LEADER"))))
-  (initget "Arrow dotSmall weldTop weldBot")
-  (setq k (getkword "Arrow dotSmall weldTop weldBot:"))
+  (initget (key_words->prompt_list key_list " "))
+  (setq k (getkword (strcat "Arrow type [" (key_words->prompt_list key_list "/")  "]:")))
   (cond
-    ((= "Arrow" k)
+    ((= (nth 0 key_list) k)
      (setq str "")
     )
-    ((= "dotSmall" k)
+    ((= (nth 1 key_list) k)
      (setq str "DotSmall")
     )
-    ((= "weldTop" k)
-      (setq str "weld_top")
-      (if (null(not(TBLSEARCH "BLOCK" "weld_top")))
-	(command "_-INSERT" "weld_top" "*0,0,0" "1" "" "")
-	(command "_erase" "_last" "")
-      )
-      ((= "weldBot" k)
-	(setq str "weld_bot")
-	(TBLSEARCH "BLOCK" "weld_bot")
-      )
+    ((= (nth 2 key_list) k)
+     (setq str "weld_arrow_top")
+     (if (not (TBLSEARCH "BLOCK" "weld_arrow_top"))
+       (progn
+	 (command "_-INSERT" "weld_arrow_top" "*0,0,0" "1" "" "")
+	 (command "_erase" "_last" "")
+       )
+     )
     )
+    ((= (nth 3 key_list) k)
+     (setq str "weld_arrow_bot")
+     (if (not (TBLSEARCH "BLOCK" "weld_arrow_bot"))
+       (progn
+	 (command "_-INSERT" "weld_arrow_bot" "*0,0,0" "1" "" "")
+	 (command "_erase" "_last" "")
+       )
+     )
+    )
+  )
   (setq i (sslength ss))
-  (while (<= 0 (setq i (1- i)))
-    (vlax-put-property (vlax-ename->vla-object (ssname ss i)) 'ArrowheadBlock str)
+  (while
+    (<= 0 (setq i (1- i)))
+     (vlax-put-property
+       (vlax-ename->vla-object (ssname ss i))
+       'ArrowheadBlock
+       str
+     )
   )
 )
 
-
-Enter X scale factor, specify opposite corner, or [Corner/XYZ] <1>:
-Enter Y scale factor <use X scale factor>:
-
-Specify rotation angle <0>:
+(defun key_words->prompt_list(key_word dev_str / str)
+  (setq
+    str	     (car key_word)
+    key_word (cdr key_word)
+  )
+  (while (null(not key_word))
+    (setq
+      str      (strcat str dev_str (car key_word))
+      key_word (cdr key_word)
+    )
+  )
+  str
+)
