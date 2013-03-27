@@ -1,24 +1,14 @@
-;;; VLisp project file [V2.0] Dims saved to:[./dims] at:[6/19/10] 
+;;; VLisp project file [V2.0] dims saved to:[D:/home/namatv/Develop/git_mnasoft/MNAS_acad_utils/acad_w.sup/dims] at:[3/27/13] 
 (VLISP-PROJECT-LIST
   :NAME
-  Dims
+  dims
   :OWN-LIST
-  (
-  "../UTILS/ACAD_SUP_DIR"
-  "../utils/Debug"
-  "DIM_FROM"
-  "cut/cut"
-  "look/look"
-  "welding/welding"
-  "../UTILS/ASIST"
-  "../UTILS/DXF"
-  "../MATR/VECTOR"
-  "../UTILS/red_list"
-  "../UTILS/STRING"
-  "../UTILS/draw"
-  "abc_dialog"
-  "abc"
-  "../UTILS/stl_text"
+  ("../UTILS/ACAD_SUP_DIR"
+    "../utils/Debug"	  "DIM_FROM"		"cut/cut"
+    "look/look"		  "welding/welding"	"../UTILS/ASIST"
+    "../UTILS/DXF"	  "../MATR/VECTOR"	"../UTILS/red_list"
+    "../UTILS/STRING"	  "../UTILS/draw"	"abc_dialog"
+    "abc"		  "../UTILS/stl_text"	"./leader/leader"
    )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
