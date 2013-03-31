@@ -8,7 +8,7 @@ make_nsi_multi_sec()
   echo 'Starting job                   at' `date`
   echo 'Compiling *.cpp files          at' `date`
   
-  g++ inst_uninst_sections.cpp -o inst_uninst_sections
+  g++ inst_uninst_sections.cpp -o iu
   g++ file_reverse.cpp -o file_reverse
   
   echo 'Cleaning files                 at' `date`
@@ -24,7 +24,7 @@ make_nsi_multi_sec()
   done 
   
   echo 'Creating sections tmp files    at' `date`
-  inst_uninst_sections.exe <files_by_ext.tmp
+  iu.exe <files_by_ext.tmp
   
   echo 'Converting slash types         at' `date`
  

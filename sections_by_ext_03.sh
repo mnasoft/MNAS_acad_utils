@@ -8,7 +8,7 @@ make_nsi_multi_sec()
   echo 'Starting job                   at' `date`
   echo 'Compiling *.cpp files          at' `date`
   
-  g++ inst_uninst_sections.cpp -o inst_uninst_sections
+  g++ inst_uninst_sections.cpp -o iu
   g++ file_reverse.cpp -o file_reverse
   
 
@@ -60,7 +60,7 @@ make_nsi_multi_sec()
 -or -name "*.dot" \
 -or -name "*.pdf" \
 -or -name "*.scr" \
-| file_reverse.exe | sort | file_reverse.exe | inst_uninst_sections.exe
+| file_reverse.exe | sort | file_reverse.exe | iu.exe
   
   echo 'Converting slash types         at' `date`
 
@@ -76,6 +76,8 @@ make_nsi_multi_sec()
   create_nsi
   
   echo 'Stoping job                    at' `date`
+  
+  rm files_by_ext.tmp  inst.tmp  rmdir.tmp  un.inst.tmp
 }
 
 make_nsi_multi_sec

@@ -11,7 +11,7 @@ inst_fn="inst.tmp"
 un_inst_fn="un.inst.tmp"
 rm_dir_fn="rmdir.tmp"
 nsi_tmp="mnas_acad_utils.nsi"
-UTILS_VERSION="3.0.0.2"
+UTILS_VERSION="3.0.0.3"
 
 uninst_dirs()
 {
