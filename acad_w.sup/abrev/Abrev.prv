@@ -1,4 +1,4 @@
-;;; файл сценария сборки Visual LISP [V1.0] abrev saved to:[./ABREV] at:[5/14/09] 
+;;; Visual LISP make file [V1.0] Abrev saved to:[D:/home/namatv/Develop/git_mnasoft/MNAS_acad_utils/acad_w.sup/abrev] at:[3/31/13] 
 (PRV-DEF (:target . "../../Vlx/Abrev.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
