@@ -222,6 +222,14 @@
   (command "shell" "D:\\home\\_namatv\\Git\\git-bash.bat" )
 )
 
+(defun c:vl()
+    (command "_-VPORTS" "_L" "_ON")
+)
+
+(defun c:vu()
+  (command "_-VPORTS" "_L" "_OFF")
+)
+
 (princ "\t...loaded.\n")
 ;|«Visual LISP© Format Options»
 (105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
