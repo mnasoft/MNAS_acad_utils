@@ -1,29 +1,50 @@
+#import nsi
+#nsi.select_exts(nsi.ext_lst)
+#nsi.inst(nsi.ext_lst)
+#nsi.create_nsi()
+
 import os
-
 import os.path
-
 f_lst=[]
-
+d_lst=[]
 extension='.lsp'
+fn_nsi='mnas_acad_utils.nsi'
+fn_version='mnas_acad_utils.version'
 
 #ext_lst=['.txt']
 ext_lst=['.EXE', '.INI', '.VLX', '.arx', '.bat', '.bmp', '.cui', '.cuix', '.dat', '.dbx', '.dcl', '.dwg', '.fnt', '.fon', '.glb', '.hdx', '.html', '.ijk', '.jpg', '.js', '.lin', '.log', '.lsp', '.mea', '.mnl', '.nsi', '.php', '.png', '.prj', '.prv', '.rtf', '.sh', '.shp', '.shx', '.slb', '.sld', '.ttf', '.txt', '.dot', '.pdf', '.scr']
 
+
 def find_files(pth='.'):
   global f_lst
+  f_lst=[]
   for root, dirs, files in os.walk(pth):
-    #print('ROOT\n')
-    #print(root)
-    #print('DIRS')
-    #print(dirs)
-    #print("FILES")
-    #print(files)
     if '.git' in dirs:
       dirs.remove('.git')
     if '__pycache__' in dirs:
       dirs.remove('__pycache__')
     for name in files:
       f_lst.append(os.path.join(root, name))
+      
+def find_dirs(pth='.'):
+  global d_lst
+  d_lst=[]
+  for root, dirs, files in os.walk(pth):
+    if '.git' in dirs:
+      dirs.remove('.git')
+    if '__pycache__' in dirs:
+      dirs.remove('__pycache__')
+    for name in dirs:
+      d_lst.append(os.path.join(root, name))
+
+def rm_dirs(f_inst, pth='.'):
+  global d_lst
+  for d in d_lst:
+    f_inst.write('''  RMDir  $INSTDIR\\''')
+    f_inst.write(d[2:])
+    f_inst.write('''\n''')
+    
+#RMDir  $INSTDIR\vlx\KOMPAS
     
 def str_iter(string):
   if string[-len(extension):]==extension:
@@ -47,18 +68,65 @@ def select_exts(exts,pth='.'):
     for s in filter(str_iter, f_lst):
      print(s)
      
-def create_nsi():
-  f_nsi=open("text2.txt", 'w')
-  f_nsi.write('''; MNAS_acad_utils.nsi
-
+def inst(f_inst,exts,pth='.'):
+  global f_lst
+  global extension
+  for i in exts:
+    extension=i
+    f_inst.write('''Section "''')
+    f_inst.write(extension[1:])
+    f_inst.write('''"\n''')
+    for s in filter(str_iter, f_lst):
+      f_inst.write('''  SetOutPath $INSTDIR\\''')
+      dirname = os.path.dirname(s)
+      f_inst.write(dirname)
+      f_inst.write('''\n''')
+      f_inst.write('''  File ''')
+      f_inst.write(s)
+      f_inst.write('''\n''')
+    f_inst.write('''SectionEnd\n''')
+    
+def uninst(f_inst,exts,pth='.'):
+  global f_lst
+  global extension
+  for i in exts:
+    extension=i
+    f_inst.write('''Section "un.''')
+    f_inst.write(extension[1:])
+    f_inst.write('''"\n''')
+    for s in filter(str_iter, f_lst):
+      f_inst.write('''  Delete $INSTDIR\\''')
+      f_inst.write(s)
+      f_inst.write('''\n''')
+    f_inst.write('''SectionEnd\n''')
+    
+def create_nsi(pth='.'):
+  global f_lst
+  global extension
+  global ext_lst
+  global fn_version
+  global fn_nsi
+  #Поиск файлов 
+  find_files(pth)
+  f_lst.sort()
+  f_lst.reverse()
+  #Поиск каталогов
+  find_dirs(pth)
+  d_lst.sort()
+  d_lst.reverse()
+  #Считывание номера версии
+  fr=open(fn_version,'r')
+  UTILS_VERSION=fr.readline()
+  fr.close()
+  #Открытие файла установщика
+  f_nsi=open(fn_nsi, 'w')
+  f_nsi.write('''; MNAS_acad_utils.nsi\n
 ; The name of the installer
 Name "mnas_acad_utils"
 ''')
-
-  f_nsi.write('''
-!define VERSION "$UTILS_VERSION"
-''')
-
+  f_nsi.write('''\n!define VERSION "''')
+  f_nsi.write(UTILS_VERSION)
+  f_nsi.write('''"\n''')
   f_nsi.write('''
 LoadLanguageFile "${NSISDIR}\\Contrib\\Language files\\English.nlf"
 LoadLanguageFile "${NSISDIR}\\Contrib\\Language files\\Russian.nlf"
@@ -153,15 +221,15 @@ Section "Start Menu Shortcuts"
 
 SectionEnd
 
-;_Section_MNASoft_files_Start__________________________________________________''')
-#cat inst.tmp >> $nsi_tmp
+;_Section_MNASoft_files_Start__________________________________________________\n''')
+  inst(f_nsi,ext_lst,pth)
   f_nsi.write('''
 ;_Section_MNASoft_files_END____________________________________________________
 
 ; Uninstaller
 ;______________________________________________________________________________
 ''')
-#cat un.inst.tmp >> $nsi_tmp
+  uninst(f_nsi,ext_lst,pth)
   f_nsi.write('''
 ;______________________________________________________________________________
 Section "Uninstall"
@@ -177,7 +245,7 @@ Section "Uninstall"
   
 ;_RMDir_Start_______________________________________________________________________
 ''')
-#cat rmdir.tmp >> $nsi_tmp
+  rm_dirs(f_nsi, pth)
   f_nsi.write('''
 ;_RMDir_End_________________________________________________________________________
 
@@ -192,8 +260,3 @@ Section "Uninstall"
 SectionEnd
 ''')
   f_nsi.close()
-
-  
-#import walk_dir
-#walk_dir.select_exts(walk_dir.ext_lst)
-#walk_dir.create_nsi()
