@@ -20,11 +20,12 @@ function MakeVlispPRV()
 
 //	acad_w_path="C:\\Develop\\MNAS_acad_utils\\acad_w.sup\\";
 //	acad_w_path="D:\\Develop\\MNAS_acad_utils\\acad_w.sup\\";
-	acad_w_path="D:\\home\\namatv\\Develop\\git_mnasoft\\MNAS_acad_utils\\acad_w.sup\\";
+//	acad_w_path="D:\\home\\namatv\\Develop\\git_mnasoft\\MNAS_acad_utils\\acad_w.sup\\";
 //	acad_w_path="O:\\Develop\\MNAS_acad_utils\\acad_w.sup\\"
+	acad_w_path="E:\\home\\namatv\\git\\GitHub\\MNAS_acad_utils\\acad_w.sup\\";
 	
 	
-	WScript.Sleep(3000);
+	WScript.Sleep(1000);
 	
 MakePrv(acad_w_path + "abrev\\Abrev.prv");
 MakePrv(acad_w_path + "acad_pgp\\ACAD_PGP.prv");
