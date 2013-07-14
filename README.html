@@ -9,8 +9,9 @@
 <p>Установочный файл можно скачать по приведенным ниже адресам:</p>
 <ol>
 <li>http://mnasoft.mksat.net/Products/MNAS_AutoCAD_db17_utils/ - (все версии) главный сайт проекта.</li>
+<li>http://dwg.ru/dnl/11383 - (версия 3.0.0.2)</li>
 <li>http://dwg.ru/dnl/10039 - (версия 2.7.7.5)</li>
-<li>http://dwg.ru/dnl/8319    (версия 2.7.6)</li>
+<li>http://dwg.ru/dnl/8319  - (версия 2.7.6)</li>
 </ol>
 <h2>0.2	Сборка установочного файла из исходных файлов</h2>
 <h3>0.2.1 Рекомендуемое программное обеспечение для сборки из исходных файлов</h3>
@@ -18,6 +19,9 @@
 <ul>
 <li>NSIS 2.46. Для сборки установщика.<br />
 Сайт: http://nsis.sourceforge.net/Download<br />
+Степень необходимости: обязательно.</li>
+<li>Python 3.3.2. Для сборки установщика.<br />
+Сайт: http://www.python.org/<br />
 Степень необходимости: обязательно.</li>
 <li>GIT. Для получения исходных файлов в виде git-репозитория.<br />Сайт: http://git-scm.com/download/win<br />Степень необходимости: не обязательно.</li>
 <li>MSYS-1.0.11.<br />
@@ -41,11 +45,95 @@
     git clone git://github.com/mnasoft/MNAS_acad_utils.git
 </code>
 </ul>
-<h3>0.2.3 Сборка установщика</h3>
+<h3>0.2.3 Компиляция vlx приложений из исходных файлов в автоматичеком режиме</h3>
 <ol>
-<li>Перейдите в каталог, содержащий файл MNAS_acad_utils.nsi (корневой каталог проекта).</li>
-<li>При помощи контекстного меню, вызванного для файла MNAS_acad_utils.nsi,
-	   выполните сборку пакета.</li>
+<li>При помощи редактора окорректируйле файл ...\MNAS_acad_utils\acad_setup_js\VLISP_make_prv.js таким образом, чтобы переменная
+<code><pre>acad_w_path="E:\\home\\namatv\\git\\GitHub\\MNAS_acad_utils\\acad_w.sup\\";</pre></code>
+приняла соответствующее вашему случаю значение.</li>
+<li>Запустите англоязычную версию AutoCAD.</li>
+<li>Запустите из программы Проводник файл ...\MNAS_acad_utils\acad_setup_js\VLISP_make_prv.js на выполнение.
+<p>По окончании выполнения VLISP_make_prv.js проверьте содержимое каталога ...\MNAS_acad_utils\vlx. В нем должны появиться скомпилированные VLX-файлы.</p>
+<p>Внимание: сценарий эмулирует нажатие на клавиши пользователя. Если при его выполнении происходят ошибки не предпринимайте никаких действий до его окончания. По окончании проверьте значение переменной acad_w_path из файла ...\MNAS_acad_utils\acad_setup_js\VLISP_make_prv.js, закорйте vlisp и повторите настоящий пункт.
+</p></li>
+</ol>
+<h3>0.2.4 Компиляция vlx приложений из исходных файлов в ручном режиме</h3>
+<ol>
+<li>Запустите AutoCAD.</li>
+<li>Выполните команду <code>vlisp</code> AutoCAD.</li>
+<li>При помощи программы "Visual LISP", используя меню "Файл->Собрать приложение->Собрать приложение ...", соберите нижеперечисленные приложения:
+<code><pre>
+...\MNAS_acad_utils\acad_w.sup\abrev\Abrev.prv
+...\MNAS_acad_utils\acad_w.sup\acad_pgp\ACAD_PGP.prv
+...\MNAS_acad_utils\acad_w.sup\add_prefix\Add_prefix.prv
+...\MNAS_acad_utils\acad_w.sup\atoms\atoms.prv
+...\MNAS_acad_utils\acad_w.sup\axis\Axis.prv
+...\MNAS_acad_utils\acad_w.sup\axis\axis_podp.prv
+...\MNAS_acad_utils\acad_w.sup\big_fnt\big_fnt.prv
+...\MNAS_acad_utils\acad_w.sup\change\Change.prv
+...\MNAS_acad_utils\acad_w.sup\circles\CIRCLES.prv
+...\MNAS_acad_utils\acad_w.sup\clock\Clock.prv
+...\MNAS_acad_utils\acad_w.sup\dims\dims.prv
+...\MNAS_acad_utils\acad_w.sup\dims\dim_style\dim_style.prv
+...\MNAS_acad_utils\acad_w.sup\dims\rou\rou.prv
+...\MNAS_acad_utils\acad_w.sup\dims\rou_1\rou_1.prv
+...\MNAS_acad_utils\acad_w.sup\dims\welding\Welding1.prv
+...\MNAS_acad_utils\acad_w.sup\dxf\dxf.prv
+...\MNAS_acad_utils\acad_w.sup\d_chprop\D_chprop.prv
+...\MNAS_acad_utils\acad_w.sup\edit\EDIT.prv
+...\MNAS_acad_utils\acad_w.sup\entmake\ENTMAKE.prv
+...\MNAS_acad_utils\acad_w.sup\exel\Exel.prv
+...\MNAS_acad_utils\acad_w.sup\format\format.prv
+...\MNAS_acad_utils\acad_w.sup\fors_rh\fors_rh.prv
+...\MNAS_acad_utils\acad_w.sup\for_lic\For_lic.prv
+...\MNAS_acad_utils\acad_w.sup\graf\Graf.prv
+...\MNAS_acad_utils\acad_w.sup\hpgl\HPGL.prv
+...\MNAS_acad_utils\acad_w.sup\kompas\kompas.prv
+...\MNAS_acad_utils\acad_w.sup\layer\layer.prv
+...\MNAS_acad_utils\acad_w.sup\lines\lines.prv
+...\MNAS_acad_utils\acad_w.sup\lopatka\Lopatka.prv
+...\MNAS_acad_utils\acad_w.sup\man\man.prv
+...\MNAS_acad_utils\acad_w.sup\mnas\Pozition\pozition.prv
+...\MNAS_acad_utils\acad_w.sup\mnas\Welding\welding.prv
+...\MNAS_acad_utils\acad_w.sup\mnas\Welding_lsp\\welding_lsp.prv
+...\MNAS_acad_utils\acad_w.sup\M_utils_loader\M_utils_loader.prv
+...\MNAS_acad_utils\acad_w.sup\otvjerstija\f_otv.prv
+...\MNAS_acad_utils\acad_w.sup\piping\pipe.prv");
+...\MNAS_acad_utils\acad_w.sup\point\point.prv
+...\MNAS_acad_utils\acad_w.sup\prj\arx_dbx_reg\\create_registry.prv
+...\MNAS_acad_utils\acad_w.sup\prj\Spring\Spring.prv
+...\MNAS_acad_utils\acad_w.sup\provoloka\provoloka.prv
+...\MNAS_acad_utils\acad_w.sup\razvertka\razvertka.prv
+...\MNAS_acad_utils\acad_w.sup\rename\rename.prv
+...\MNAS_acad_utils\acad_w.sup\scr\scr.prv
+...\MNAS_acad_utils\acad_w.sup\smesitel_vla\SMESITEL_vla.prv
+...\MNAS_acad_utils\acad_w.sup\sort_shp\Sort_shp.prv
+...\MNAS_acad_utils\acad_w.sup\spec\spec.prv
+...\MNAS_acad_utils\acad_w.sup\text\text.prv
+...\MNAS_acad_utils\acad_w.sup\dopusk\Dopusk.prv
+</pre></code></li>
+</ol>
+<h3>0.2.5 Сборка установщика</h3>
+<ol>
+<li>Запустите Python_(command line) или IDLE_(Python_GUI).</li>
+<li>Перейдите в корневой каталог проекта при помощи следующих команд:
+<code><pre>
+>>> import os
+>>> os.chdir('E:\\home\\namatv\\git\\GitHub\\MNAS_acad_utils') # Заданный в кавычках путь адаптируйте для вашего случая.
+</pre></code></li>
+<li>Загрузите модуль nsi при помощи следующей команды:
+<code><pre>
+>>> import nsi
+</pre></code></li>
+<li>Сгенерируйте файл сценария установщика MNAS_acad_utils.nsi при помощи следующей команды:
+<code><pre>
+>>> nsi.create_nsi()
+</pre></code></li>
+<li>Закройте Python_(command line) или IDLE_(Python_GUI) при помощи следующей команы:
+<code><pre>
+>>> quit()
+</pre></code></li>
+<li>Перейдите при помощи программы Проводник в каталог, содержащий файл MNAS_acad_utils.nsi (корневой каталог проекта).</li>
+<li>При помощи контекстного меню (вызывается щелчком по файлу правой кнопкой мыши), вызванного для файла MNAS_acad_utils.nsi, выберите пункт "Compile NSYS Script" или "Compile NSYS Script (Choose Compressor)".</li>
 </ol>
 
 <h1>1. Инструкция по установке и настройке комплекса программ MNAS_acad_utils для Администратора</h1>

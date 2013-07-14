@@ -1,6 +1,4 @@
 #import nsi
-#nsi.select_exts(nsi.ext_lst)
-#nsi.inst(nsi.ext_lst)
 #nsi.create_nsi()
 
 import os
