@@ -230,6 +230,12 @@
   (command "_-VPORTS" "_L" "_OFF")
 )
 
+
+(defun c:lou()
+  (command "_LAYOUT" "_S")
+)
+
+
 (princ "\t...loaded.\n")
 ;|«Visual LISP© Format Options»
 (105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
