@@ -1,4 +1,4 @@
-(princ "\nЗагружаю ... MNASoft_18.mnl")
+(princ "\nЗагружаю ... MNASoft.mnl")
 
 (defun ai_ffile (app)
   (or (findfile (strcat app ".vlx"));;; Добавлено мною
@@ -70,6 +70,7 @@
     "chd" "ch" "s" "l" "a" "o" "c" "e" "co" "cp" "m" "ro" "gr_on_off" "tr" "ex" "rec" "mi"
     "el" "br" "u" "undo" "sc" "oops" "di" "id" "ma" "le"
     "op" "h" "dt" "pe" "bo" "ar" "li" "x" "j" "b" "ps" "ms" "git"
+    "vl" "vu" "lou"
    )
 );;Абревиатуры команд.
 
@@ -125,9 +126,7 @@
   '("clock_off" "clock_on")
 )
 
-
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/D_chprop") '("dch"))
-
 
 (autoload_cmds_and_op-cmds
   (strcat (MNAS_ArxPrj_vlx) "/Dims")
@@ -139,26 +138,12 @@
 
 (autoload_cmds_and_op-cmds
   (strcat (MNAS_ArxPrj_vlx) "/Dim_style")
-  '(
-    "MNASAddDimStyle"
-    "MNASsetDimtxt"
-    "MNASsetDimsd1"
-    "MNASsetDimsd2"
-    "MNASsetDimatfit"
-    "MNASsetDimtoh"
-    "MNASsetDimtad"
-    "MNASsetDimtmove"
-    "MNASsetDimtofl"
-    "MNASsetDimjust"
-	
-	"create_dim_styles"
-	"DIM-SD_SE"
-	"dim-rad-rad"
-	"dim-rad-hor"
-	"dim-toh"
+  '("MNASAddDimStyle"	   "MNASsetDimtxt"	  "MNASsetDimsd1"	 "MNASsetDimsd2"
+    "MNASsetDimatfit"	   "MNASsetDimtoh"	  "MNASsetDimtad"	 "MNASsetDimtmove"
+    "MNASsetDimtofl"	   "MNASsetDimjust"	  "create_dim_styles"	 "DIM-SD_SE"
+    "dim-rad-rad"	   "dim-rad-hor"	  "dim-toh"
    )
 )
-
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/rou") '("rou_i2"))
 
@@ -179,7 +164,6 @@
   '("for_proect" "for_prover" "for_prov" "gr" "pr1" "pr2" "rep")
 )
 
-
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/format") '("format"))
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/fors_rh") '("ras_har_lic" "ras_har_gas"))
@@ -187,21 +171,20 @@
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/graf") '("graf"))
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/kompas") '("kompas_in" "kompas_out"))
-(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/layer")
-	  '("bl_all_on"	 "bl_all_th"  "bl_fr"	   "bl_off"
-	    "cl_sw_d"	 "cl_s_d"     "lay"	   "la_dhv"
-	    "llay"	 "ml_off"     "ml_on"	   "ml_off_c"
-	    "ml_on_c"	 "rgb"	      "sl_fr"	   "sl_lo"
-	    "sl_off"	 "sl_on"      "sl_th"	   "sl_un"
-	    "svl_fr"	 "svl_th"     "vl_fr"	   "vl_fr_w"
-	    "vl_fr_w+_d" "vl_s_d"     "vl_th"	   "vl_th_all"
-	    "am_la"
-	   )
+
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/layer")
+  '("bl_all_on"	 "bl_all_th"  "bl_fr"	   "bl_off"	"cl_sw_d"    "cl_s_d"	  "lay"
+    "la_dhv"	 "llay"	      "ml_off"	   "ml_on"	"ml_off_c"   "ml_on_c"	  "rgb"
+    "sl_fr"	 "sl_lo"      "sl_off"	   "sl_on"	"sl_th"	     "sl_un"	  "svl_fr"
+    "svl_th"	 "vl_fr"      "vl_fr_w"	   "vl_fr_w+_d"	"vl_s_d"     "vl_th"	  "vl_th_all"
+    "am_la"
+   )
 )
 
-
-(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/lines")
-	  '("d_chamf" "d_off" "d_otv" "d_rez" "exl" "xt" "xtcen" "cxt" "ltp" "r_off" "z0" "j_lns")
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/lines")
+  '("d_chamf" "d_off" "d_otv" "d_rez" "exl" "xt" "xtcen" "cxt" "ltp" "r_off" "z0" "j_lns")
 )
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/lopatka") '("lo"))
@@ -224,14 +207,14 @@
    )
 )
 
+(autoload_cmds_and_op-cmds
+  (strcat (MNAS_ArxPrj_vlx) "/SMESITEL_vla")
+  '("prep:sm" "clear:sm" "dr:sech" "dr:sm" "vla-obj" "vla-obj-dump")
+)
 
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/man") '("man"))
 
-
-(autoload_cmds_and_op-cmds  (strcat (MNAS_ArxPrj_vlx) "/SMESITEL_vla")  '("prep:sm" "clear:sm" "dr:sech" "dr:sm" "vla-obj" "vla-obj-dump"))
-
-(autoload_cmds_and_op-cmds  (strcat (MNAS_ArxPrj_vlx) "/man")  '("man"))
-
-(autoload_cmds_and_op-cmds  (strcat (MNAS_ArxPrj_vlx) "/hpgl")  '("hpgl_in"))
+(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/hpgl") '("hpgl_in"))
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/pozition") '("edpos" "ep"  "pozition_set_text_scale" "pos_export"))
 
