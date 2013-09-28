@@ -63,31 +63,25 @@
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/provoloka") '("prov"))
 
-;;Абревиатуры команд.
-(autoload_cmds_and_op-cmds
-  (strcat (MNAS_ArxPrj_vlx) "/abrev")
-  '("pur" "ra" "rg" "rga" "sk" "tm" "vs" "z" "za" "zc" "zd" "ze" "zp" "zv" "zw"	"fr" "f"
-    "chd" "ch" "s" "l" "a" "o" "c" "e" "co" "cp" "m" "ro" "gr_on_off" "tr" "ex" "rec" "mi"
-    "el" "br" "u" "undo" "sc" "oops" "di" "id" "ma" "le"
-    "op" "h" "dt" "pe" "bo" "ar" "li" "x" "j" "b" "ps" "ms" "git"
-    "vl" "vu" "lou"
-   )
-);;Абревиатуры команд.
+(setq abrev_cmd
+       '("pur"	"ra"   "rg"   "rga"  "sk"   "tm"   "vs"	  "z"	 "za"	"zc"   "zd"   "ze"   "zp"
+	 "zv"	"zw"   "fr"   "f"    "chd"  "ch"   "s"	  "l"	 "a"	"o"    "c"    "e"    "co"
+	 "cp"	"m"    "ro"   "gr_on_off"   "tr"   "ex"	  "rec"	 "mi"	"el"   "br"   "u"    "undo"
+	 "sc"	"oops" "di"   "id"   "ma"   "le"   "op"	  "h"	 "dt"	"pe"   "bo"   "ar"   "li"
+	 "x"	"j"    "b"    "ps"   "ms"   "git"  "vl"	  "vu"	 "lou"
+	)
+)
+
+(setq acad_pgp_cmd '("acad_pgp"))
+
+(setq pipe_cmd '("pipe"))
+
+(setq add_prefix_cmd '("add_3d_prefix"))
 
 (autoload_cmds_and_op-cmds
-  (strcat (MNAS_ArxPrj_vlx) "/acad_pgp")
-  '("acad_pgp")
-);;Абревиатуры команд.
-
-
-
-(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/pipe") '("pipe"))
-
-
-;(load "c:/vlx/usadka.vlx")
-;(autoload_cmds_and_op-cmds "c:/vlx/usadka" '("усадка"))
-
-(autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/add_prefix") '("add_3d_prefix"))
+  (strcat (MNAS_ArxPrj_vlx) "/MNASoft")
+  (append abrev_cmd acad_pgp_cmd add_prefix_cmd pipe_cmd )
+)
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/atoms") '("atoms"))
 

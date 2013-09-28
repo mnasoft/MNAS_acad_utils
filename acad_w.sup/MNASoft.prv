@@ -3,7 +3,12 @@
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
-	 (:load-file-list (:prj "acad_pgp/ACAD_PGP.prj") (:prj "abrev/ABREV.prj"))
+	 (:load-file-list
+	   (:prj "abrev/ABREV.prj")
+	   (:prj "acad_pgp/ACAD_PGP.prj")
+	   (:prj "add_prefix/Add_prefix.prj")
+	   (:prj "piping/piping.prj")
+	 )
 	 (:require-file-list)
 	 (:ob-directory . "../vlisp.tmp")
 	 (:tmp-directory)
