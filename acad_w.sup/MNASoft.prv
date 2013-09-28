@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] MNASoft saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup] at:[9/28/13] 
+(PRV-DEF (:target . "../vlx/MNASoft.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "acad_pgp/ACAD_PGP.prj") (:prj "abrev/ABREV.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF
