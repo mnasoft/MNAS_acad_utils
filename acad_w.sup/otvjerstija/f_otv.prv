@@ -1,4 +1,4 @@
-;;; Visual LISP make file [V1.0] f_otv saved to:[./Otvjerstija] at:[4/28/05] 
+;;; Visual LISP make file [V1.0] f_otv saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/otvjerstija] at:[9/29/13] 
 (PRV-DEF (:target . "../../Vlx/f_otv.VLX")
 	 (:active-x . T)
 	 (:separate-namespace)

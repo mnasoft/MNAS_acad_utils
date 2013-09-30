@@ -1,4 +1,4 @@
-;;; Visual LISP make file [V1.0] rou saved to:[./DIMS/rou] at:[1/25/04] 
+;;; Visual LISP make file [V1.0] rou saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dims/rou] at:[9/29/13] 
 (PRV-DEF (:target . "../../../Vlx/rou.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)

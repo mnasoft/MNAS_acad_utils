@@ -1,4 +1,4 @@
-;;; файл сценария сборки Visual LISP [V1.0] Dim_style saved to:[C:/Program Files/MNASoft/MNAS_acad_utils/acad_w.sup/dims/dim_style] at:[3/29/11] 
+;;; Visual LISP make file [V1.0] Dim_style saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dims/dim_style] at:[9/29/13] 
 (PRV-DEF (:target . "../../../vlx/dim_style.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)

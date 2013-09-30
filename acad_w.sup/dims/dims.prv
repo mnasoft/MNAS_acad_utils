@@ -1,22 +1,12 @@
-;;; Visual LISP make file [V1.0] dims saved to:[D:/home/namatv/Develop/git_mnasoft/MNAS_acad_utils/acad_w.sup/dims] at:[3/27/13] 
-(PRV-DEF
-  (:target
-    .
-    "D:/home/namatv/Develop/git_mnasoft/MNAS_acad_utils/vlx/dims.VLX"
-  )
-  (:active-x . T)
-  (:separate-namespace . T)
-  (:protected . T)
-  (:load-file-list (:prj "dims.prj"))
-  (:require-file-list
-    (:DCL "abc.dcl")
-    (:DCL "welding/welding.DCL")
-  )
-  (:ob-directory
-    .
-    "D:/home/namatv/Develop/git_mnasoft/MNAS_acad_utils/vlisp.tmp"
-  )
-  (:tmp-directory)
-  (:optimization . st)
+;;; Visual LISP make file [V1.0] dims saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dims] at:[9/29/13] 
+(PRV-DEF (:target . "D:/home/namatv/Develop/git_mnasoft/MNAS_acad_utils/vlx/dims.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "dims.prj"))
+	 (:require-file-list (:DCL "abc.dcl") (:DCL "welding/welding.DCL"))
+	 (:ob-directory . "D:/home/namatv/Develop/git_mnasoft/MNAS_acad_utils/vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
 )
 ;; EOF

@@ -1,4 +1,4 @@
-;;; Visual LISP make file [V1.0] axis_podp saved to:[./AXIS] at:[6/24/07] 
+;;; Visual LISP make file [V1.0] axis_podp saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/axis] at:[9/29/13] 
 (PRV-DEF (:target . "../../vlx/axis_podp.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
