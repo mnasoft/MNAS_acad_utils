@@ -63,91 +63,102 @@
 
 (autoload_cmds_and_op-cmds (strcat (MNAS_ArxPrj_vlx) "/provoloka") '("prov"))
 
-(setq
-  abrev_cmd	 '("pur"  "ra"	 "rg"	"rga"  "sk"   "tm"   "vs"   "z"	   "za"	  "zc"	 "zd"	"ze"
-		   "zp"	  "zv"	 "zw"	"fr"   "f"    "chd"  "ch"   "s"	   "l"	  "a"	 "o"	"c"
-		   "e"	  "co"	 "cp"	"m"    "ro"   "gr_on_off"   "tr"   "ex"	  "rec"	 "mi"	"el"
-		   "br"	  "u"	 "undo"	"sc"   "oops" "di"   "id"   "ma"   "le"	  "op"	 "h"	"dt"
-		   "pe"	  "bo"	 "ar"	"li"   "x"    "j"    "b"    "ps"   "ms"	  "git"	 "vl"	"vu"
-		   "lou"
-		  )
-  acad_pgp_cmd	 '("acad_pgp")
-  add_prefix_cmd
-		 '("add_3d_prefix")
-  atoms_cmd	 '("atoms")
-  axis_cmd	 '("a1"	"an" "a2" "a2t"	"a2xyn_t" "a2xy_t" "a3"	"a4" "a5" "a6" "an" "ax" "c1" "c2" "c3"
-		   "c4"	"ea" "epr" "im")
-  axis_podp_cmd	 '("ax_shcala")
-  big_fnt_cmd	 '("draw_font" "ins_lit")
-  сhange_cmd	 '("block_block" "block_point" "ch_wid" "point_block")
-  circles_cmd	 '("ax_a" "ax_c" "ax_ca" "cl_els" "cl_s" "c_axis" "c_d" "c_el" "c_ex" "c_r" "c_sc")
-  clock_cmd	 '("clock_off" "clock_on")
-  d_chprop_cmd	 '("dch")
-  dims_cmd	 '("index"	   "index_ru"	   "index_en"	   "ins_blk"	   "bas"
-		   "poz"	   "up"		   "bot"	   "d_up"	   "cut"
-		   "look"	   "obj_data"	   "dwg_put"	   "dwg_get"	   "welding"
-		   "DUMBELLS-TST"  "DUMBELLS-INFO" "make_dim_styles"		   "MNAS_DIM_STYLE_ADD"
-		   "lea"
-		  )
-  dim_style_cmd	 '("MNASAddDimStyle"	  "MNASsetDimtxt"	 "MNASsetDimsd1"
-		   "MNASsetDimsd2"	  "MNASsetDimatfit"	 "MNASsetDimtoh"
-		   "MNASsetDimtad"	  "MNASsetDimtmove"	 "MNASsetDimtofl"
-		   "MNASsetDimjust"	  "create_dim_styles"	 "DIM-SD_SE"
-		   "dim-rad-rad"	  "dim-rad-hor"		 "dim-toh"
-		  )
-  dopusk_cmd	 '("dop")
-  dxf_cmd	 '("obj" "nobj" "objxd" "nobjxd")
-  edit_cmd	 '("mr" "mcp" "off" "ofd" "cr")
-  entmake_cmd	 '("ems" "eml")
-  exel_cmd	 '("exel_read")
-  f_otv_cmd	 '("f_kolca" "f_zavihr")
-  for_lic_cmd	 '("for_proect" "for_prover" "for_prov" "gr" "pr1" "pr2" "rep")
-  format_cmd	 '("format")
-  fors_rh_cmd	 '("ras_har_lic" "ras_har_gas")
-  graf		 '("graf")
-  hpgl		 '("hpgl_in")
-  kompas	 '("kompas_in" "kompas_out")
-  layer		 '("bl_all_on"	"bl_all_th"  "bl_fr"	  "bl_off"     "cl_sw_d"    "cl_s_d"
-		   "lay"	"la_dhv"     "llay"	  "ml_off"     "ml_on"	    "ml_off_c"
-		   "ml_on_c"	"rgb"	     "sl_fr"	  "sl_lo"      "sl_off"	    "sl_on"
-		   "sl_th"	"sl_un"	     "svl_fr"	  "svl_th"     "vl_fr"	    "vl_fr_w"
-		   "vl_fr_w+_d"	"vl_s_d"     "vl_th"	  "vl_th_all"  "am_la"
-		  )
-  lines		 '("d_chamf" "d_off" "d_otv" "d_rez" "exl" "xt" "xtcen" "cxt" "ltp" "r_off" "z0" "j_lns")
-  lopatka	 '("lo")
-  man		 '("man")
-  pipe_cmd	 '("pipe")
-  point		 '("pd" "xy" "xy_sc" "rot_p")
-  pozition	 '("edpos" "ep" "pozition_set_text_scale" "pos_export")
-  razvertka	 '("razvertka" "r_cone")
-  rename	 '("ren")
-  rou_cmd	 '("rou_i2")
-  rou_1_cmd	 '("rou") ; Необходимо выполнить переименование dcl-файла и подключить его .
-  scr		 '("scr")
-  SMESITEL_vla	 '("prep:sm" "clear:sm" "dr:sech" "dr:sm" "vla-obj" "vla-obj-dump")
-  sort_shp	 '("sort_shp")
-  spec		 '("spec")
-  Spring	 '("spring")
-  text		 '("&A&B&C"    "ate"	   "de"	       "l_text"	   "stl"       "te"	   "pos_export"
-		   "te%%c"     "te+"	   "te++"      "te-"	   "te+kvsk"   "te-kvsk"   "to_15"
-		   "z_text"    "x45%%d"	   "te_*"      "text_export"	       "te_<>_"
-		  )
-  welding	 '("edweld" "es" "ed-weld-txt" "est")
+(defun mnasoft-vlx-loader (/		  abrev_cmd	 acad_pgp_cmd	add_prefix_cmd atoms_cmd
+			   axis_cmd	  axis_podp_cmd	 big_fnt_cmd	change_cmd     circles_cmd
+			   clock_cmd	  dims_cmd	 dim_style_cmd	dopusk_cmd     dxf_cmd
+			   d_chprop_cmd	  edit_cmd	 entmake_cmd	exel_cmd       format_cmd
+			   fors_rh_cmd	  for_lic_cmd	 f_otv_cmd	graf_cmd       hpgl_cmd
+			   kompas_cmd	  layer_cmd	 lines_cmd	lopatka_cmd    man_cmd
+			   pipe_cmd	  point_cmd	 pozition_cmd	razvertka_cmd  rename_cmd
+			   rou_1_cmd	  rou_cmd	 scr_cmd	smesitel_vla   sort_shp_cmd
+			   spec_cmd	  spring_cmd	 text_cmd	welding_cmd
+			  )
+  (setq
+    abrev_cmd	   '("pur"  "ra"   "rg"	  "rga"	 "sk"	"tm"   "vs"   "z"    "za"   "zc"   "zd"	  "ze"
+		     "zp"   "zv"   "zw"	  "fr"	 "f"	"chd"  "ch"   "s"    "l"    "a"	   "o"	  "c"
+		     "e"    "co"   "cp"	  "m"	 "ro"	"gr_on_off"   "tr"   "ex"   "rec"  "mi"	  "el"
+		     "br"   "u"	   "undo" "sc"	 "oops"	"di"   "id"   "ma"   "le"   "op"   "h"	  "dt"
+		     "pe"   "bo"   "ar"	  "li"	 "x"	"j"    "b"    "ps"   "ms"   "git"  "vl"	  "vu"
+		     "lou"
+		    )
+    acad_pgp_cmd   '("acad_pgp")
+    add_prefix_cmd
+		   '("add_3d_prefix")
+    atoms_cmd	   '("atoms")
+    axis_cmd	   '("a1" "an" "a2" "a2t" "a2xyn_t" "a2xy_t" "a3" "a4" "a5" "a6" "an" "ax" "c1"	"c2" "c3"
+		     "c4" "ea" "epr" "im")
+    axis_podp_cmd  '("ax_shcala")
+    big_fnt_cmd	   '("draw_font" "ins_lit")
+    change_cmd	   '("block_block" "block_point" "ch_wid" "point_block")
+    circles_cmd	   '("ax_a" "ax_c" "ax_ca" "cl_els" "cl_s" "c_axis" "c_d" "c_el" "c_ex" "c_r" "c_sc")
+    clock_cmd	   '("clock_off" "clock_on")
+    d_chprop_cmd   '("dch")
+    dims_cmd	   '("index"	     "index_ru"	     "index_en"	     "ins_blk"	     "bas"
+		     "poz"	     "up"	     "bot"	     "d_up"	     "cut"
+		     "look"	     "obj_data"	     "dwg_put"	     "dwg_get"	     "welding"
+		     "DUMBELLS-TST"  "DUMBELLS-INFO" "make_dim_styles"		     "MNAS_DIM_STYLE_ADD"
+		     "lea"
+		    )
+    dim_style_cmd  '("MNASAddDimStyle"	    "MNASsetDimtxt"	   "MNASsetDimsd1"
+		     "MNASsetDimsd2"	    "MNASsetDimatfit"	   "MNASsetDimtoh"
+		     "MNASsetDimtad"	    "MNASsetDimtmove"	   "MNASsetDimtofl"
+		     "MNASsetDimjust"	    "create_dim_styles"	   "DIM-SD_SE"
+		     "dim-rad-rad"	    "dim-rad-hor"	   "dim-toh"
+		    )
+    dopusk_cmd	   '("dop")
+    dxf_cmd	   '("obj" "nobj" "objxd" "nobjxd")
+    edit_cmd	   '("mr" "mcp" "off" "ofd" "cr")
+    entmake_cmd	   '("ems" "eml")
+    exel_cmd	   '("exel_read")
+    f_otv_cmd	   '("f_kolca" "f_zavihr")
+    for_lic_cmd	   '("for_proect" "for_prover" "for_prov" "gr" "pr1" "pr2" "rep")
+    format_cmd	   '("format")
+    fors_rh_cmd	   '("ras_har_lic" "ras_har_gas")
+    graf_cmd	   '("graf")
+    hpgl_cmd	   '("hpgl_in")
+    kompas_cmd	   '("kompas_in" "kompas_out")
+    layer_cmd	   '("bl_all_on"  "bl_all_th"  "bl_fr"	    "bl_off"	 "cl_sw_d"    "cl_s_d"
+		     "lay"	  "la_dhv"     "llay"	    "ml_off"	 "ml_on"      "ml_off_c"
+		     "ml_on_c"	  "rgb"	       "sl_fr"	    "sl_lo"	 "sl_off"     "sl_on"
+		     "sl_th"	  "sl_un"      "svl_fr"	    "svl_th"	 "vl_fr"      "vl_fr_w"
+		     "vl_fr_w+_d" "vl_s_d"     "vl_th"	    "vl_th_all"	 "am_la"
+		    )
+    lines_cmd	   '("d_chamf" "d_off" "d_otv" "d_rez" "exl" "xt" "xtcen" "cxt" "ltp" "r_off" "z0" "j_lns")
+    lopatka_cmd	   '("lo")
+    man_cmd	   '("man")
+    pipe_cmd	   '("pipe")
+    point_cmd	   '("pd" "xy" "xy_sc" "rot_p")
+    pozition_cmd   '("edpos" "ep" "pozition_set_text_scale" "pos_export")
+    razvertka_cmd  '("razvertka" "r_cone")
+    rename_cmd	   '("ren")
+    rou_cmd	   '("rou_i2")
+    rou_1_cmd	   '("rou") ; Необходимо выполнить переименование dcl-файла и подключить его .
+    scr_cmd	   '("scr")
+    SMESITEL_vla   '("prep:sm" "clear:sm" "dr:sech" "dr:sm" "vla-obj" "vla-obj-dump")
+    sort_shp_cmd   '("sort_shp")
+    spec_cmd	   '("spec")
+    Spring_cmd	   '("spring")
+    text_cmd	   '("&A&B&C"	 "ate"	     "de"	 "l_text"    "stl"	 "te"	     "pos_export"
+		     "te%%c"	 "te+"	     "te++"	 "te-"	     "te+kvsk"	 "te-kvsk"   "to_15"
+		     "z_text"	 "x45%%d"    "te_*"	 "text_export"		 "te_<>_"
+		    )
+    welding_cmd	   '("edweld" "es" "ed-weld-txt" "est")
+  )
+  (autoload_cmds_and_op-cmds
+    (strcat (MNAS_ArxPrj_vlx) "/MNASoft")
+    (append abrev_cmd	    acad_pgp_cmd    add_prefix_cmd  atoms_cmd	    axis_cmd
+	    axis_podp_cmd   big_fnt_cmd	    change_cmd	    circles_cmd	    clock_cmd
+	    dims_cmd	    dim_style_cmd   dopusk_cmd	    dxf_cmd	    d_chprop_cmd
+	    edit_cmd	    entmake_cmd	    exel_cmd	    format_cmd	    fors_rh_cmd
+	    for_lic_cmd	    f_otv_cmd	    graf_cmd	    hpgl_cmd	    kompas_cmd
+	    layer_cmd	    lines_cmd	    lopatka_cmd	    man_cmd	    pipe_cmd
+	    point_cmd	    pozition_cmd    razvertka_cmd   rename_cmd	    rou_1_cmd
+	    rou_cmd	    scr_cmd	    smesitel_vla    sort_shp_cmd    spec_cmd
+	    spring_cmd	    text_cmd	    welding_cmd
+	   )
+  )
 )
-
-
-
-
-(autoload_cmds_and_op-cmds
-  (strcat (MNAS_ArxPrj_vlx) "/MNASoft")
-  (append abrev_cmd	  acad_pgp_cmd	  add_prefix_cmd  atoms_cmd	  axis_cmd
-	  axis_podp_cmd	  big_fnt_cmd	  сhange_cmd	  circles_cmd	  clock_cmd
-	  d_chprop_cmd	  dim_style_cmd	  dopusk_cmd	  dxf_cmd	  edit_cmd
-	  entmake_cmd	  exel_cmd	  f_otv_cmd	  for_lic_cmd	  format_cmd rou_cmd
-	  rou_1_cmd	  pipe_cmd	  rou_cmd rou_1_cmd
-	 )
-)
-
+(mnasoft-vlx-loader)
 (princ "\nMNASoft.mnl загружен.\n")
 ;|«Visual LISP© Format Options»
 (105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
