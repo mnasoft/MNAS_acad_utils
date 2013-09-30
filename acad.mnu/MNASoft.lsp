@@ -13,25 +13,6 @@
 
 ;;;Функция для определения пути к файлу /rus_cmd_opechatka.lsp загружающему функцию autoload_cmds_and_op-cmds.
 (defun MNAS_ArxPrj (/ LOADER)
-  (setq
-    LOADER
-     (vl-registry-read
-       (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\MNASoft\\" (substr (getvar "acadver") 1 2))
-       "ROOT"
-     )
-  )
-  (if (null LOADER)
-    (setq
-      LOADER
-       (vl-registry-read
-	 (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MNASoft\\"
-		 (substr (getvar "acadver") 1 2)
-	 )
-	 "ROOT"
-       )
-    )
-
-  )
   (VL-STRING-TRANSLATE
     "\\"
     "/"
@@ -41,14 +22,33 @@
        mnasoft-debug-path
       )
       ((null LOADER)
-       (strcat "C:" "\\" "MNAS_acad_db17_utils")
+       (setq
+	 LOADER
+	  (vl-registry-read
+	    (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MNASoft\\"
+		    (substr (getvar "acadver") 1 2)
+	    )
+	    "ROOT"
+	  )
+       )
       )
-      (t LOADER)
+      ((null LOADER)
+       (setq
+	 LOADER
+	  (vl-registry-read
+	    (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\MNASoft\\" (substr (getvar "acadver") 1 2))
+	    "ROOT"
+	  )
+       )
+      )
+      ((null LOADER)
+       (setq
+	 LOADER	(strcat "C:" "\\" "MNAS_acad_db17_utils")
+       )
+      )
     )
   )
 )
-
-
 
 
 (load (strcat (MNAS_ArxPrj) "acad_w.sup/Utils/acad_sup_dir.lsp")

@@ -75,8 +75,7 @@
 	   (:DCL "text/Text.dcl")
 	 )
 	 (:ob-directory . "../vlisp.tmp")
-	 (:tmp-directory)
+	 (:tmp-directory . "../vlisp.tmp")
 	 (:optimization . st)
 )
 ;; EOF
-
