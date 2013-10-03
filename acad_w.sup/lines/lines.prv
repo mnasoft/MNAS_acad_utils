@@ -1,4 +1,4 @@
-;;; Visual LISP make file [V1.0] lines saved to:[./LINES] at:[7/16/01] 
+;;; Visual LISP make file [V1.0] lines saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/lines] at:[10/1/13] 
 (PRV-DEF (:target . "../../Vlx/lines.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
