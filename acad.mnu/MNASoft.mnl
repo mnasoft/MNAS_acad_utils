@@ -12,7 +12,7 @@
 )
 
 (setq
-  mnasoft-debug	     t
+  mnasoft-debug	     nil
   mnasoft-debug-path "E:\\home\\namatv\\git\\GitHub\\MNAS_acad_utils"
 )
 
