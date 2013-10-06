@@ -1,9 +1,6 @@
 (princ "\nЗагружаю Utils/acad_sup_dir  ")
 
 
-;(vl-registry-write reg-key [val-name val-data])
-
-
 (defun c:mnas-cad-utils-path (/ reg-key val-name acad_path)
   (setq
     reg-key
