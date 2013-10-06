@@ -258,3 +258,5 @@ Section "Uninstall"
 SectionEnd
 ''')
   f_nsi.close()
+
+create_nsi()
