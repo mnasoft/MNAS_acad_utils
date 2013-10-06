@@ -1,4 +1,3 @@
-;
 (princ "\nЗагружаю Utils/acad_sup_dir  ")
 
 
