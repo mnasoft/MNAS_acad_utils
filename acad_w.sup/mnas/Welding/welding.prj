@@ -14,7 +14,7 @@
   :TMP-DIRECTORY
   "../../../vlisp.tmp"
   :PROJECT-KEYS
-  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID
   :AUTOLISP
 )

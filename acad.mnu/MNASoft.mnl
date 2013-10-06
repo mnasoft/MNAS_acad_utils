@@ -84,6 +84,7 @@
     atoms_cmd	       '("atoms")
     axis_cmd	       '("a1" "an" "a2"	"a2t" "a2xyn_t"	"a2xy_t" "a3" "a4" "a5"	"a6" "an" "ax" "c1" "c2"
 			 "c3" "c4" "ea"	"epr" "im")
+    
     axis_podp_cmd      '("ax_shcala")
     big_fnt_cmd	       '("draw_font" "ins_lit")
     change_cmd	       '("block_block" "block_point" "ch_wid" "point_block")
@@ -146,16 +147,34 @@
   )
   (autoload_cmds_and_op-cmds
     (strcat (MNAS_ArxPrj_vlx) "/MNASoft")
-    (append abrev_cmd	    acad_pgp_cmd    add_prefix_cmd  atoms_cmd	    axis_cmd
-	    axis_podp_cmd   big_fnt_cmd	    change_cmd	    circles_cmd	    clock_cmd
-	    dims_cmd	    dim_style_cmd   dopusk_cmd	    dxf_cmd	    d_chprop_cmd
-	    edit_cmd	    entmake_cmd	    exel_cmd	    format_cmd	    fors_rh_cmd
-	    for_lic_cmd	    f_otv_cmd	    graf_cmd	    hpgl_cmd	    kompas_cmd
-	    layer_cmd	    lines_cmd	    lopatka_cmd	    man_cmd	    pipe_cmd
-	    point_cmd	    pozition_cmd    razvertka_cmd   rename_cmd	    rou_1_cmd
-	    rou_cmd	    scr_cmd	    smesitel_vla    sort_shp_cmd    spec_cmd
-	    spring_cmd	    text_cmd	    welding_cmd
+    (append abrev_cmd	    acad_pgp_cmd    add_prefix_cmd  axis_cmd	    axis_podp_cmd
+	    big_fnt_cmd	    change_cmd	    circles_cmd	    clock_cmd	    dims_cmd
+	    dim_style_cmd   dopusk_cmd	    dxf_cmd	    d_chprop_cmd    edit_cmd
+	    entmake_cmd	    exel_cmd	    fors_rh_cmd	    for_lic_cmd	    f_otv_cmd
+	    graf_cmd	    hpgl_cmd	    kompas_cmd	    layer_cmd	    lines_cmd
+	    lopatka_cmd	    man_cmd	    pipe_cmd	    point_cmd	    pozition_cmd
+	    razvertka_cmd   rename_cmd	    rou_1_cmd	    rou_cmd	    scr_cmd
+	    smesitel_vla    sort_shp_cmd    spec_cmd	    spring_cmd	    text_cmd
+	    welding_cmd     atoms_cmd format_cmd  
 	   )
+  )
+
+;;;  (autoload_cmds_and_op-cmds
+;;;    (strcat (MNAS_ArxPrj_vlx) "/atoms")
+;;;    (append atoms_cmd
+;;;    )
+;;;  )
+
+  (mapcar (function (lambda (vlx_file_commands)
+		      (autoload_cmds_and_op-cmds
+			(strcat (MNAS_ArxPrj_vlx) "/" (car vlx_file_commands))
+			(append (cdr vlx_file_commands))
+		      )
+		    )
+	  )
+	  (list	;(cons "atoms" atoms_cmd)
+		;(cons "format" format_cmd)
+	  )
   )
 )
 (mnasoft-vlx-loader)

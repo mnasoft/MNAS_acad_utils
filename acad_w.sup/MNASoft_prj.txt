@@ -2,7 +2,6 @@
 (:prj "abrev/abrev.prj")
 (:prj "acad_pgp/acad_pgp.prj")
 (:prj "add_prefix/add_prefix.prj")
-(:prj "atoms/atoms.prj")
 (:prj "axis/axis.prj")
 (:prj "axis/axis_podp.prj")
 (:prj "big_fnt/big_fnt.prj")
@@ -20,7 +19,6 @@
 (:prj "edit/edit.prj")
 (:prj "entmake/entmake.prj")
 (:prj "exel/exel.prj")
-(:prj "format/format.prj")
 (:prj "fors_rh/fors_rh.prj")
 (:prj "for_lic/for_lic.prj")
 (:prj "graf/graf.prj")
@@ -44,6 +42,9 @@
 (:prj "sort_shp/sort_shp.prj")
 (:prj "spec/spec.prj")
 (:prj "text/text.prj")
+
+;;Исключенные
+
 
 ;;Прочие
 (:prj "axis/axis_graph.prj")
@@ -75,7 +76,6 @@
 (:prj "utils/utils.prj")
 
 ;;Стало
-(:DCL "atoms/ATOMS.dcl")
 (:DCL "axis/AXIS.dcl")
 (:DCL "axis/axis_graph.dcl")
 (:DCL "axis/Axis_podp.dcl")
@@ -102,7 +102,6 @@
 
 
 ;;Было
-(:DCL "atoms/ATOMS.dcl")
 (:DCL "axis/AXIS.dcl")
 (:DCL "axis/Axis_podp.dcl")
 (:DCL "dims/abc.dcl")
@@ -110,5 +109,5 @@
 (:DCL "dims/welding/welding.dcl")
 (:DCL "dopusk/DOP.dcl")
 (:DCL "d_chprop/D_CHPROP.dcl")
-(:DCL "format/Format.dcl")
 (:DCL "for_lic/for_prover.dcl")
+

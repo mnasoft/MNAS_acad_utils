@@ -37,23 +37,20 @@
   )
 )
 
-(defun MNAS_ArxPrj_root (/ LOADER)
+(defun MNAS_ArxPrj_root (/ LOADER_32 LOADER_64)
   (setq
-    LOADER
+    LOADER_64
+     (vl-registry-read
+       (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MNASoft\\"
+	       (substr (getvar "acadver") 1 2)
+       )
+       "ROOT"
+     )
+    LOADER_32
      (vl-registry-read
        (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\MNASoft\\" (substr (getvar "acadver") 1 2))
        "ROOT"
      )
-  )
-  (if (null LOADER)
-    (setq
-    LOADER
-     (vl-registry-read
-       (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MNASoft\\" (substr (getvar "acadver") 1 2))
-       "ROOT"
-     )
-  )
-    
   )
   (VL-STRING-TRANSLATE
     "\\"
@@ -63,10 +60,10 @@
        mnasoft-debug
        mnasoft-debug-path
       )
-      ((null LOADER)
-       (strcat "C:" "\\" "MNAS_acad_db17_utils")
+      (LOADER_64
       )
-      (t LOADER)
+      (LOADER_32
+      )
     )
   )
 )

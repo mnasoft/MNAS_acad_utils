@@ -1,25 +1,21 @@
-;;; VLisp project file [V2.0] format saved to:[./format] at:[6/9/12] 
+;;; VLisp project file [V2.0] format saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/format] at:[10/6/13] 
 (VLISP-PROJECT-LIST
-  :NAME
+  :name
   format
-  :OWN-LIST
+  :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"	     "../utils/binary"
-    "geom_util"		     "format_draw"
-    "format"		     "../utils/prin"
-    "../utils/red_list"	     "block_create"
-    "dop_dlg"		     "add_dop_sht_dlg"
-    "../utils/stl_text"	     "../utils/string"
-    "../utils/system_registry"
-    "../utils/dlg_utils"
+    "../utils/Debug"	     "../utils/binary"	      "geom_util"	       "format_draw"
+    "format"		     "../utils/prin"	      "../utils/red_list"      "block_create"
+    "dop_dlg"		     "add_dop_sht_dlg"	      "../utils/stl_text"      "../utils/string"
+    "../utils/system_registry"			      "../utils/dlg_utils"
    )
-  :FAS-DIRECTORY
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
+  :project-keys
+  (:BUILD (:OPTIMIZE :LOCALIZE) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
+  :context-id
   :AUTOLISP
 )
 ;;; EOF
