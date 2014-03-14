@@ -1,15 +1,13 @@
 ;;;(princ "\nЗагружаю Dop/dop             ")
 (princ (strcat "\nЗагружаю " (acad_sup) "/" "Dop/dop             "))
 
-(setq str_specsymbol"\A1;H7 ({\A2\C1\H0.75x;\Sверхний_1^нижний_1;})\P%%c<>{\S            /;}   .\Pd8 ({\A0\H0.75x;\Sверхний_2^нижний_2;})")
+(setq dopusk-str_specsymbol"\A1;H7 ({\A2\C1\H0.75x;\Sверхний_1^нижний_1;})\P%%c<>{\S            /;}   .\Pd8 ({\A0\H0.75x;\Sверхний_2^нижний_2;})")
 "\A1;<>H7{\H1.5x(}{\H0.66x;\S+0.025^-0.001;}{\H1.5x)}"
 
 ;;;;;;("dop"
 ;;;;;;"Добавление к тексту размерного примитива
 ;;;;;; обозначения квалитета и значений предельных отклонений." "Размеры")
-(defun c:dop
-	     (/ ss1 kval en ed p10 p13 p14 p15 a50 p0 l)
-
+(defun c:dop (/ ss1 kval en ed p10 p13 p14 p15 a50 p0 l)
   (princ "\nВыберите размерные примитивы :")
   (setq ss1 (ssget))
   (setq kval (getstring "\nВведите квалитет :"))
@@ -26,45 +24,58 @@
 	(
 	 (= (rem (cdr (assoc 70 ed)) 32) 0)
 	 (princ "\nПовернутый, Горизонтальный, Вертикальный:")
-	 (mapcar (function gdf) '(p10 p13 p14 a50) '(10 13 14 50))
+	 (setq p10 (cdr (assoc 10 ed)))
+	 (setq p13 (cdr (assoc 13 ed)))
+	 (setq p14 (cdr (assoc 14 ed)))
+	 (setq a50 (cdr (assoc 50 ed)))
 	 (setq p0 (inters p13 (polar p13 a50 10.) p14 p10 nil))
-	 (setq l (find_kv (distance p13 p0) kval))
-	 (str_dop l)
+	 (setq l (dopusk-find_kv (distance p13 p0) kval))
+	 (dopusk-str_dop l "%%c")
 	 (entmod ed)
 	)
 	(
 	 (= (rem (cdr (assoc 70 ed)) 32) 1)
 	 (princ "\nПаралельный:")
-	 (mapcar (function gdf) '(p13 p14) '(13 14))
-	 (setq l (find_kv (distance p13 p14) kval))
-	 (str_dop l)
+	 (setq p13 (cdr (assoc 13 ed)))
+	 (setq p14 (cdr (assoc 14 ed)))
+	 (setq l (dopusk-find_kv (distance p13 p14) kval))
+	 (dopusk-str_dop l "%%c")
 	 (entmod ed)
 	)
 	(
 	 (= (rem (cdr (assoc 70 ed)) 32) 2)
-	 (princ "\nУгловой без вершины :")
-	 (mapcar (function gdf) '(p10 p13 p14 p15 p16) '(10 13 14 15 16))
+	  (princ "\nУгловой без вершины :")
+	  (setq p10 (cdr (assoc 10 ed)))
+	  (setq p13 (cdr (assoc 13 ed)))
+	  (setq p14 (cdr (assoc 14 ed)))
+	  (setq p15 (cdr (assoc 15 ed)))
+	  (setq p16 (cdr (assoc 16 ed)))
 	)
 	(
 	 (= (rem (cdr (assoc 70 ed)) 32) 3)
-	 (princ "\nДиаметр:")
-	 (mapcar (function gdf) '(p10 p15) '(10 15))
-	 (setq l (find_kv (distance p10 p15) kval))
-	 (str_dop l)
-	 (entmod ed)
+	  (princ "\nДиаметр:")
+	  (setq p10 (cdr (assoc 10 ed)))
+	  (setq p15 (cdr (assoc 15 ed)))
+	  (setq l (dopusk-find_kv (distance p10 p15) kval))
+	  (dopusk-str_dop l "")
+	  (entmod ed)
 	)
 	(
 	 (= (rem (cdr (assoc 70 ed)) 32) 4)
-	 (princ "\nРадиус:")
-	 (mapcar (function gdf) '(p10 p15) '(10 15))
-	 (setq l (find_kv (distance p10 p15) kval))
-	 (str_dop l)
-	 (entmod ed)
+	  (princ "\nРадиус:")
+	  (setq p10 (cdr (assoc 10 ed)))
+	  (setq p15 (cdr (assoc 15 ed)))
+	  (setq l (dopusk-find_kv (distance p10 p15) kval))
+	  (dopusk-str_dop l "")
+	  (entmod ed)
 	)
 	(
 	 (= (rem (cdr (assoc 70 ed)) 32) 5)
 	 (princ "\nУгловой с вершиной:")
-	 (mapcar (function gdf) '(p10 p13 p14 p15) '(10 13 14 15))
+	  (setq p10 (cdr (assoc 10 ed)))
+	  (setq p13 (cdr (assoc 13 ed)))
+	  (setq p14 (cdr (assoc 14 ed)))
+	  (setq p15 (cdr (assoc 15 ed)))
 	)
       )
     )
@@ -73,11 +84,14 @@
   (princ)
 )
 
-(defun find_kv (val kv / l1 l2)
-  (if (null dop_val)
-    (load "dopusk\\dop_data_new_01")
+(defun dopusk-find_kv (val kv / l1 l2)
+  (if (null dopusk-dop_val)
+    (progn
+      (alert "(load \"dopusk\\dop_data_new_01\")")
+      (exit)
+    )
   )
-  (setq l1 (cadr (assoc kv dop_val)))
+  (setq l1 (cadr (assoc kv dopusk-dop_val)))
   (if (null l1)
     (progn
       (princ (strcat "\nВ таблице допусков нет КВАЛИТЕТА :" kv))
@@ -97,7 +111,7 @@
   l2
 )
 
-(defun str_dop (l / str t_pl t_ot zn_pl zn_ot)
+(defun dopusk-str_dop (l zn_dia / str t_pl t_ot zn_pl zn_ot)
   (if (null l)
     (progn (princ "\nДопуск не найден.") (exit))
   )
@@ -106,15 +120,13 @@
     t_ot (cadddr l)
   )
   (setq
-    str	(strcat	"\\A1;%%c<> "
+    str	(strcat	"\\A1;" zn_dia "<> "
 		kval
 		"{\\H1.6x(}"
 		"{\\H0.725x;\\S"
 		(cond
-;;;		  ((< t_pl 0) (rtos (* 0.001 t_pl) 2 3))
 		  ((< t_pl 0) (rtos (* 1.000 t_pl) 2 3))
 		  ((= t_pl 0) "")
-;;;		  ((> t_pl 0) (strcat "+" (rtos (* 0.001 t_pl) 2 3)))
 		  ((> t_pl 0) (strcat "+" (rtos (* 1.000 t_pl) 2 3)))
 		)
 		"^"
@@ -131,10 +143,6 @@
   )
   (setq ed (dsubst ed (list (cons 1 str))))
 )
-
-(defun gdf (d cod) (set d (cdr (assoc  cod ed))))
-
-
 
 (princ "\t...загружен.\n")
 ;|«Visual LISP© Format Options»
