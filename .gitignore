@@ -6,5 +6,6 @@ Thumbs.db
 *~
 *.mnr
 *.vlx
+*.VLX
 *.nsi
 __pycache__
