@@ -2,7 +2,7 @@
 (princ (strcat "\nЗагружаю " (acad_sup) "/" "dims/rou_1/rou_1    "))
 
 (setq
-  rou_lists
+  rou_1-rou_lists
    '(
      ("Ra "
       ("0"
@@ -36,7 +36,7 @@
 )
 
 (setq
-  setup_lst_bak0
+  rou_1-setup_lst_bak0
    '(
      ("eb_1_1" "10") ; Значение
      ("eb_1_2" "") ; Способ получения
@@ -61,33 +61,14 @@
 )
 ;"Шабрить" "Развертывать" "Протягивать" "Шлифовать" "Притереть" "Полировать" "Хонинговать" "Накатать"
 (setq reg_root "HKEY_CURRENT_USER\\Software\\MNASoft\\Dims\\Rou")
-  (setq	rgb_registry
-	 '(
-	   (code_val
-	    (("t_1_1" . "1")
-	     ("rb_1_1" . "1")
-	     ("rb_1_2" . "0")
-	     ("eb_1_1" . "D,*_D,DEFPOINTS,V,H")
-	     ("eb_1_2" . "0")
-	     ("eb_1_3" . "1")
-	    )
-	   )
-	  )
-  )
 
-
-
-
-(defun reg_en ()
-  (command "_regen")
-)
 ;;;;;;("rou" "Простановка обозначения шероховатости." "Размеры")
 (defun c:rou (/ dcl_id do_dialog p1 p2 fl fl_nm old_err kw str_kw osm reg_root rou_registry)
   (err-init '("cmdecho" "osmode"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq reg_root "HKEY_CURRENT_USER\\Software\\MNASoft\\Dims\\Rou")
   (setq	rou_registry
-	 '((dia_sher_pos (-1 -1))
+	 '((rou_1-dia_sher_pos (-1 -1))
 	   (setup_lst
 	    (
 	     ("rb_1_Ra" "1") ;
@@ -158,42 +139,42 @@
 
   (setq dcl_id (load_dialog (strcat (acad_sup) "/dims/rou/rou.dcl")))
   (while do_dialog
-    (if	(not (new_dialog "шероховатость" dcl_id "" dia_sher_pos))
+    (if	(not (new_dialog "шероховатость" dcl_id "" rou_1-dia_sher_pos))
       (exit)
     )
-    (init)
+    (rou_1-init)
     (mapcar
-      (function (lambda (el) (action_tile (car el) "(ac_1)")))
+      (function (lambda (el) (action_tile (car el) "(rou_1-ac_1)")))
       setup_lst
     )
-    (action_tile "cancel" "(setq dia_sher_pos(done_dialog 0))")
-    (action_tile "accept" "(setq dia_sher_pos(done_dialog 1))")
-    (action_tile "bt_1_1" "(setq dia_sher_pos(done_dialog 2))")
-    (action_tile "bt_1_2" "(setq dia_sher_pos(done_dialog 3))")
-    (action_tile "bt_1_3" "(setq dia_sher_pos(done_dialog 4))")
-    (action_tile "bt_1_masht" "(ac_bt_1_masht)")
+    (action_tile "cancel" "(setq rou_1-dia_sher_pos(done_dialog 0))")
+    (action_tile "accept" "(setq rou_1-dia_sher_pos(done_dialog 1))")
+    (action_tile "bt_1_1" "(setq rou_1-dia_sher_pos(done_dialog 2))")
+    (action_tile "bt_1_2" "(setq rou_1-dia_sher_pos(done_dialog 3))")
+    (action_tile "bt_1_3" "(setq rou_1-dia_sher_pos(done_dialog 4))")
+    (action_tile "bt_1_masht" "(rou_1-ac_bt_1_masht)")
 
 
-    (action_tile "rb_1_Ra" "(ac_rb_1_Ra $value)")
-    (action_tile "rb_1_Rz" "(ac_rb_1_Rz $value)")
-    (action_tile "pl_1_RaRz" "(ac_pl_1_RaRz $value)")
+    (action_tile "rb_1_Ra" "(rou_1-ac_rb_1_Ra $value)")
+    (action_tile "rb_1_Rz" "(rou_1-ac_rb_1_Rz $value)")
+    (action_tile "pl_1_RaRz" "(rou_1-ac_pl_1_RaRz $value)")
 
-    (action_tile "tgl_1_max_val" "(ac_tgl_1_max_val $value)")
-    (action_tile "tgl_1_min_val" "(ac_tgl_1_min_val $value)")
-    (action_tile "tgl_1_spos_pol" "(ac_tgl_1_spos_pol $value)")
+    (action_tile "tgl_1_max_val" "(rou_1-ac_tgl_1_max_val $value)")
+    (action_tile "tgl_1_min_val" "(rou_1-ac_tgl_1_min_val $value)")
+    (action_tile "tgl_1_spos_pol" "(rou_1-ac_tgl_1_spos_pol $value)")
 
-    (action_tile "eb_1_max_val" "(ac_eb_1_max_val $value)")
-    (action_tile "eb_1_min_val" "(ac_eb_1_min_val $value)")
-    (action_tile "eb_1_spos_pol" "(ac_eb_1_spos_pol $value)")
+    (action_tile "eb_1_max_val" "(rou_1-ac_eb_1_max_val $value)")
+    (action_tile "eb_1_min_val" "(rou_1-ac_eb_1_min_val $value)")
+    (action_tile "eb_1_spos_pol" "(rou_1-ac_eb_1_spos_pol $value)")
 
-    (action_tile "pl_1_max_val" "(ac_pl_1_max_val $value)")
-    (action_tile "pl_1_min_val" "(ac_pl_1_min_val $value)")
-    (action_tile "pl_1_masht" "(ac_pl_1_masht $value)")
-    (action_tile "pl_1_spos_pol" "(ac_pl_1_spos_pol $value)")
+    (action_tile "pl_1_max_val" "(rou_1-ac_pl_1_max_val $value)")
+    (action_tile "pl_1_min_val" "(rou_1-ac_pl_1_min_val $value)")
+    (action_tile "pl_1_masht" "(rou_1-ac_pl_1_masht $value)")
+    (action_tile "pl_1_spos_pol" "(rou_1-ac_pl_1_spos_pol $value)")
     (setq ac (start_dialog))
     (cond
       ((= ac 0) (setq do_dialog nil))
-      ((= ac 1) (ac_ok))
+      ((= ac 1) (rou_1-ac_ok))
       (
        (= ac 2)
        (setq p1 (getpoint "\nВерхняя точка на вертикали знака:"))
@@ -211,9 +192,9 @@
        )
        (if (and p1 p2)
 	 (progn
-	   (draw_sher p1 p2)
+	   (rou_1-draw_sher p1 p2)
 	   (setq en (entlast))
-	   (reg_en)
+	   (command "_regen")
 	   (setq
 	     setup_lst
 	      (subst
@@ -258,14 +239,14 @@
 		 setup_lst
 			   (cond
 			     (vl-data
-			      (update_ver_rou vl-data)
+			      (rou_1-update_ver_rou vl-data)
 			     )
 			     ((null vl-data)
 			      setup_lst
 			     )
 			   )
 	       )
-	       (reg_en)
+	       (command "_regen")
 	     )
 	     (setq
 	       setup_lst (subst	(list "error" "Необходимо выбрать знак шероховатости")
@@ -286,9 +267,9 @@
        (if (and p1 p2)
 	 (progn
 	   (entdel en)
-	   (draw_sher p1 p2)
+	   (rou_1-draw_sher p1 p2)
 	   (setq en (entlast))
-	   (reg_en)
+	   (command "_regen")
 	   (setq
 	     setup_lst
 	      (subst
@@ -307,13 +288,13 @@
 )
 
 
-(defun subst_title_assoc_list (title lst)
+(defun rou_1-subst_title_assoc_list (title lst)
   (subst (append (reverse (cdr (reverse (assoc title setup_lst)))) (list lst))
 	 (assoc title setup_lst)
 	 setup_lst
   )
 )
-(defun eb_max_min ()
+(defun rou_1-eb_max_min ()
   (set_tile "eb_1_max_val"
 	    (nth (atoi (get_tile "pl_1_max_val")) (caddr (assoc "pl_1_max_val" setup_lst)))
   )
@@ -322,58 +303,58 @@
   )
 )
 
-(defun ac_rb_1_Ra (val / no_ryada lst)
+(defun rou_1-ac_rb_1_Ra (val / no_ryada lst)
   (cond
     ((= val "1")
      (setq no_ryada (cadr (assoc "pl_1_RaRz" setup_lst)))
-     (setq lst (cadr (assoc no_ryada (cdr (assoc "Ra " rou_lists)))))
-     (setq setup_lst (subst_title_assoc_list "pl_1_max_val" lst)
-	   setup_lst (subst_title_assoc_list "pl_1_min_val" lst)
+     (setq lst (cadr (assoc no_ryada (cdr (assoc "Ra " rou_1-rou_lists)))))
+     (setq setup_lst (rou_1-subst_title_assoc_list "pl_1_max_val" lst)
+	   setup_lst (rou_1-subst_title_assoc_list "pl_1_min_val" lst)
      )
     )
   )
-  (eb_max_min)
-  (ac_1)
+  (rou_1-eb_max_min)
+  (rou_1-ac_1)
 )
 
-(defun ac_rb_1_Rz(val)
+(defun rou_1-ac_rb_1_Rz(val)
   (cond
     ((= val "1")
      (setq no_ryada (cadr (assoc "pl_1_RaRz" setup_lst)))
-     (setq lst (cadr (assoc no_ryada  (cdr (assoc "Rz " rou_lists)))))
+     (setq lst (cadr (assoc no_ryada  (cdr (assoc "Rz " rou_1-rou_lists)))))
      (setq setup_lst (subst_title_assoc_list "pl_1_max_val" lst)
-	   setup_lst (subst_title_assoc_list "pl_1_min_val" lst)
+	   setup_lst (rou_1-subst_title_assoc_list "pl_1_min_val" lst)
      )
     )
   )
-  (eb_max_min)
-  (ac_1)
+  (rou_1-eb_max_min)
+  (rou_1-ac_1)
 )
 
-(defun ac_pl_1_RaRz(val / no_ryada lst)
+(defun rou_1-ac_pl_1_RaRz(val / no_ryada lst)
   (cond
     (
      (= (get_tile "rb_1_Rz") "1")
      (setq no_ryada val)
-     (setq lst (cadr (assoc no_ryada (cdr (assoc "Rz " rou_lists)))))
-     (setq setup_lst (subst_title_assoc_list "pl_1_max_val" lst)
-	   setup_lst (subst_title_assoc_list "pl_1_min_val" lst)
+     (setq lst (cadr (assoc no_ryada (cdr (assoc "Rz " rou_1-rou_lists)))))
+     (setq setup_lst (rou_1-subst_title_assoc_list "pl_1_max_val" lst)
+	   setup_lst (rou_1-subst_title_assoc_list "pl_1_min_val" lst)
      )
     )
     (
      (= (get_tile "rb_1_Ra") "1")
      (setq no_ryada val)
-     (setq lst (cadr (assoc no_ryada (cdr (assoc "Ra " rou_lists)))))
-     (setq setup_lst (subst_title_assoc_list "pl_1_max_val" lst)
-	   setup_lst (subst_title_assoc_list "pl_1_min_val" lst)
+     (setq lst (cadr (assoc no_ryada (cdr (assoc "Ra " rou_1-rou_lists)))))
+     (setq setup_lst (rou_1-subst_title_assoc_list "pl_1_max_val" lst)
+	   setup_lst (rou_1-subst_title_assoc_list "pl_1_min_val" lst)
      )
     )
   )
-  (eb_max_min)
-  (ac_1)
+  (rou_1-eb_max_min)
+  (rou_1-ac_1)
 )
 
-(defun ac_tgl_1_max_val	(val)
+(defun rou_1-ac_tgl_1_max_val	(val)
   (cond
     ((and (= val "1") (/= "" (get_tile "eb_1_max_val")))
     )
@@ -382,10 +363,10 @@
      (set_tile "error" "Поле максимального значения должно быть не пустым")
     )
   )
-  (ac_1)
+  (rou_1-ac_1)
 )
 
-(defun ac_tgl_1_min_val	(val)
+(defun rou_1-ac_tgl_1_min_val	(val)
   (cond
     ((and (= val "1") (/= "" (get_tile "eb_1_min_val")))
     )
@@ -394,11 +375,11 @@
      (set_tile "error" "Поле минимального значения должно быть не пустым")
     )
   )
-  (ac_1)
+  (rou_1-ac_1)
 )
 
 
-(defun ac_tgl_1_spos_pol (val)
+(defun rou_1-ac_tgl_1_spos_pol (val)
   (cond
     ((and (= val "1") (/= "" (get_tile "eb_1_spos_pol")))
     )
@@ -407,48 +388,48 @@
      (set_tile "error" "Поле способа получения должно быть не пустым")
     )
   )
-  (ac_1)
+  (rou_1-ac_1)
 )
 
-(defun ac_eb_1_max_val (val)
+(defun rou_1-ac_eb_1_max_val (val)
   (if (= val "")
     (set_tile "tgl_1_max_val" "0")
     (set_tile "tgl_1_max_val" "1")
   )
-  (ac_1)
+  (rou_1-ac_1)
 )
 
-(defun ac_eb_1_min_val (val)
+(defun rou_1-ac_eb_1_min_val (val)
   (if (= val "")
     (set_tile "tgl_1_min_val" "0")
     (set_tile "tgl_1_min_val" "1")
   )
-  (ac_1)
+  (rou_1-ac_1)
 )
 
-(defun ac_eb_1_spos_pol (val)
+(defun rou_1-ac_eb_1_spos_pol (val)
   (if (= val "")
     (set_tile "tgl_1_spos_pol" "0")
     (set_tile "tgl_1_spos_pol" "1")
   )
-  (ac_1)
+  (rou_1-ac_1)
 )
 
-(defun ac_pl_1_max_val (val / zn_sher)
+(defun rou_1-ac_pl_1_max_val (val / zn_sher)
   (setq	zn_sher	  (nth (atoi val) (caddr (assoc "pl_1_max_val" setup_lst))))
   (set_tile "eb_1_max_val"  zn_sher)
   (set_tile "tgl_1_max_val" "1")
-  (ac_1)
+  (rou_1-ac_1)
 )
 
-(defun ac_pl_1_min_val (val / zn_sher)
+(defun rou_1-ac_pl_1_min_val (val / zn_sher)
   (setq	zn_sher	  (nth (atoi val) (caddr (assoc "pl_1_min_val" setup_lst))))
   (set_tile "eb_1_min_val"  zn_sher)
   (set_tile "tgl_1_min_val" "1")
-  (ac_1)
+  (rou_1-ac_1)
 )
 
-(defun ac_pl_1_masht (val / first_sc poz sc second_sc zn_masht)
+(defun rou_1-ac_pl_1_masht (val / first_sc poz sc second_sc zn_masht)
   (setq
     zn_masht  (nth (atoi val) (caddr (assoc "pl_1_masht" setup_lst)))
     poz	      (vl-string-search ":" zn_masht)
@@ -457,18 +438,18 @@
     sc	      (/ second_sc first_sc)
   )
   (set_tile "eb_1_masht" (rtos sc 2 4))
-  (ac_1)
+  (rou_1-ac_1)
 )
 
 
-(defun ac_pl_1_spos_pol	(val / sp_obr)
+(defun rou_1-ac_pl_1_spos_pol	(val / sp_obr)
   (setq sp_obr (nth (atoi val) (caddr (assoc "pl_1_spos_pol" setup_lst))))
   (set_tile "eb_1_spos_pol" sp_obr)
   (set_tile "tgl_1_spos_pol" "1")
-  (ac_1)
+  (rou_1-ac_1)
 )
 
-(defun point_box (l_pts / x y)
+(defun rou_1-point_box (l_pts / x y)
      ;Возвращает список состоящий из 2-х точек.
      ;Превая точка имеет левые и нижние координаты.
      ;Вторая - правые верхние.
@@ -482,7 +463,7 @@
   )
 )
 
-(defun init ()
+(defun rou_1-init ()
   (mapcar
     (function
       (lambda (el)
@@ -505,7 +486,7 @@
   )
 )
 
-(defun ac_1 (/ temp)
+(defun rou_1-ac_1 (/ temp)
   (setq
     setup_lst
      (mapcar (function
@@ -535,33 +516,17 @@
 		setup_lst
 	 )
   )
-  (init)
+  (rou_1-init)
 )
 
-(defun ac_ok ()
+(defun rou_1-ac_ok ()
   (setq do_dialog nil)
   (reg_write_default_lst reg_root rou_registry)
 )
 
-
-(defun func_trigger (sub_lst)
-  (setq
-    setup_lst
-     (subst
-       (cons sub_lst
-	     (cond
-	       ((= (cdr (assoc sub_lst setup_lst)) "1") "0")
-	       ((= (cdr (assoc sub_lst setup_lst)) "0") "1")
-	     )
-       )
-       (assoc sub_lst setup_lst)
-       setup_lst
-     )
-  )
-)
-(defun ac_bt_1_masht ()
+(defun rou_1-ac_bt_1_masht ()
   (set_tile "eb_1_masht" (rtos (getvar "dimscale") 2 4))
-  (ac_1)
+  (rou_1-ac_1)
 )
 (princ "\t...загружен.\n")
 ;|«Visual LISP© Format Options»
