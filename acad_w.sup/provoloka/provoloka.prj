@@ -1,21 +1,21 @@
 ;;; VLisp project file [V2.0] provoloka saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/provoloka] at:[3/15/14] 
-(vlisp-project-list
+(VLISP-PROJECT-LIST
   :name
   provoloka
   :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"					 "../utils/sub_div"
-    "../utils/draw"					 "provoloka"
+    "../utils/Debug"
+    "../utils/sub_div"
+    "../utils/draw"
+    "provoloka-cmd"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "provoloka_rus"
-   )
+    "provoloka-rus")
   :fas-directory
   "../../vlisp.tmp"
   :tmp-directory
   "../../vlisp.tmp"
   :project-keys
-  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :context-id
-  :AUTOLISP
-)
+  :AUTOLISP)
 ;;; EOF
