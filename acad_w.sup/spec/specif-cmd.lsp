@@ -1,6 +1,3 @@
-;;;(princ "\nЗагружаю spec/Specif.lsp")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "spec/Specif.lsp"))
-
 (vl-arx-import 'acad_colordlg)
 
 ;;;;;;("spec" "Функция простановки позиций." "Размеры")
@@ -255,8 +252,3 @@
     (princ temp_4)
   )
 )
-
-(princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;

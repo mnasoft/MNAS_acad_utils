@@ -1,24 +1,22 @@
 ;;; VLisp project file [V2.0] spec saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/spec] at:[3/15/14] 
-(vlisp-project-list
+(VLISP-PROJECT-LIST
   :name
   spec
   :own-list
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"			    "Specif"
-    "func1"				    "func2"
-    "func3"				    "func4"
-    "../UTILS/red_list"			    "../UTILS/stl_text"
+    "../utils/Debug"			     "specif-cmd"
+    "func1"				     "func2"
+    "func3"				     "func4"
+    "../UTILS/red_list"			     "../UTILS/stl_text"
     "../UTILS/STRING"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "spec_rus"
-   )
+    "spec-rus")
   :fas-directory
   "../../Vlisp.tmp"
   :tmp-directory
   "../../Vlisp.tmp"
   :project-keys
-  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :context-id
-  :AUTOLISP
-)
+  :AUTOLISP)
 ;;; EOF
