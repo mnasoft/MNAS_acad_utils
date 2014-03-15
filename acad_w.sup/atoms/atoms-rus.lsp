@@ -1,5 +1,4 @@
-(princ "\nLoading .../atoms/atoms_rus.lsp     ")
+(opech_cmds
+  '("atoms"))
 
-(opech_cmds '("atoms"))
-
-(princ "\t...loaded.\n")
+(princ "Project\t\t atoms \t\tloaded.\n")

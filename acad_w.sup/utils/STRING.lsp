@@ -1,6 +1,4 @@
-;;;(princ "\nЗагружаю utils/string        ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "utils/string        "))
-       
+  
 ;;	str_token(str div)
 ;;	Разбивает строку str на список подстрок по символам- разделителям
 ;;	находящимся в строке div. Символы-разделители исключаются из строки.
@@ -51,8 +49,3 @@
   )
   string
 )
-
-(princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;

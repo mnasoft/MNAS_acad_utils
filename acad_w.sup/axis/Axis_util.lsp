@@ -1,6 +1,3 @@
-;;;(princ "\nЗагружаю Axis/Axis_2         ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "Axis/Axis_2         "))
-
 (defun sh:SHCKALA () "SHCKALA")
 
 (regapp (sh:SHCKALA))
@@ -281,31 +278,11 @@
 
 ;;Транспонирование списка представляющего из себя матрицу.
 ;;(transpon ((1 2 3)(4 5 6)(7 8 9)(10 11 12)))
-(defun transpon	(lst / col i rez_lst)
+(defun transpon	 (lst / col i rez_lst)
   (setq
     col	    (length (car lst))
     i	    col
-    rez_lst nil
-  )
+    rez_lst nil)
   (while (> i 0)
-    (setq i (1- i))
-    (setq
-      rez_lst (cons
-		(mapcar
-		  (function
-		    (lambda (el)
-		      (nth i el)
-		    )
-		  )
-		  lst
-		)
-		rez_lst
-	      )
-    )
-  )
-)
-
-(princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+    (setq i	  (1- i)
+	  rez_lst (cons (mapcar (function (lambda (el) (nth i el))) lst) rez_lst))))

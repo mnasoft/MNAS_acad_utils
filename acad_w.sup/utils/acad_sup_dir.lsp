@@ -1,6 +1,3 @@
-(princ "\nÇàãðóæàþ Utils/acad_sup_dir  ")
-
-
 (defun c:mnas-cad-utils-path (/ reg-key val-name acad_path)
   (setq
     reg-key
@@ -93,8 +90,6 @@
     (strcat (acad_sup) str)
   )
 )
-
-(princ "\t...çàãðóæåí.\n")
 ;|«Visual LISP© Format Options»
 (130 2 5 2 nil "end of" 100 9 0 0 0 T T nil T)
 ;*** DO NOT add text below the comment! ***|;

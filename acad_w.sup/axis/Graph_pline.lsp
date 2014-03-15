@@ -19,15 +19,8 @@
   (unload_dialog dcl_id)
 )
 
-(defun ep:init ()
-  (setq wid (cdr (assoc 40 param)))
-)
+(defun ep:init	()
+  (setq wid (cdr (assoc 40 param))))
 
-(defun ep:setup	()
-  (set_tile "e41" (rtos wid))
-)
-
-
- ;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+(defun ep:setup	 ()
+  (set_tile "e41" (rtos wid)))

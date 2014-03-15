@@ -1,5 +1,3 @@
-;;;(princ "\nЗагружаю Axis/Graph_analitic ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "Axis/Graph_analitic "))
 ;;; an:analitic	- Функция выводит на экран диалог в котором можно задать в
 ;;;		  параметрическом виде функцию 2-х координат.
 ;;;		  Возвращает список координат.
@@ -136,7 +134,7 @@
 
 (defun an:ac_r22 () (setq fl 1) (princ fl))
 
-(defun an:ac_tile ()
+(defun an:ac_tile  ()
   (action_tile "b22" "(an:ac_b22)")
   (action_tile "e20" "(an:ac_e20)")
   (action_tile "e21" "(an:ac_e21)")
@@ -144,10 +142,4 @@
   (action_tile "e23" "(an:ac_e23)")
   (action_tile "b21" "(an:ac_b21)")
   (action_tile "r21" "(an:ac_r21)")
-  (action_tile "r22" "(an:ac_r22)")
-)
-
-(princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+  (action_tile "r22" "(an:ac_r22)"))

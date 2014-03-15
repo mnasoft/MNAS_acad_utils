@@ -54,6 +54,3 @@
   (dr:line tx_top_min_pt tx_top_max_pt 1)
   (dr:line tx_bot_min_pt tx_bot_max_pt 2)
 )
-;|«Visual LISP© Format Options»
-(105 2 17 2 nil "end of" 90 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;

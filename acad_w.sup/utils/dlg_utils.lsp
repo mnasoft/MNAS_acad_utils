@@ -81,9 +81,5 @@
   rez
 )
 
-(defun about-GPL-string()
-  " (в составе проекта MNAS_cad_utils).\nРаспространяется по лицензии GNU GPL версии 3 или более высокой.\nРазработал Н.А. Матвеев. E-mail: mnasoft@gmail.com"
-)
-;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+(defun about-GPL-string	 ()
+  " (в составе проекта MNAS_cad_utils).\nРаспространяется по лицензии GNU GPL версии 3 или более высокой.\nРазработал Н.А. Матвеев. E-mail: mnasoft@gmail.com")

@@ -1,7 +1,3 @@
-;;;(princ "\nЗагружаю utils/xdata         ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "utils/xdata         "))
-
-
 ;;ДП  - данные примитива вместе с расширенными данными примитива
 ;;((0 . "LINE") (10 ...) (11 ...) (-3 ("SHCKALA" ...)("AXIS" ...)))
 ;;РДП - расширенные данные примитива
@@ -110,26 +106,17 @@
   (length (cdr (xdget data)))
 )
 
-(defun xdappsubst (data app xdapp / d dapp xd)
-  (setq
-    d	 (xdget data)
-    dapp (xdappget data app)
-    xd
-	 (cond
-	   ((and d dapp) (subst (subst xdapp dapp d) d data))
-	   ((null d) (append data (list (list -3 xdapp))))
-	   ((and d (null dapp)) (subst (append d (list xdapp)) d data))
-	 )
-  )
-  xd
-)
+(defun xdappsubst  (data app xdapp / d dapp xd)
+  (setq	d    (xdget data)
+	dapp (xdappget data app)
+	xd   (cond ((and d dapp) (subst (subst xdapp dapp d) d data))
+		   ((null d) (append data (list (list -3 xdapp))))
+		   ((and d (null dapp)) (subst (append d (list xdapp)) d data))))
+  xd)
 
 (defun _xd_appsubst (data app xda)
-  (xdappsubst data app (_xd_xdapp xda app))
-)
+  (xdappsubst data app (_xd_xdapp xda app)))
 
 (defun xdxdapp (xdata app)
-  (assoc app (cdr xdata))
-)
+  (assoc app (cdr xdata)))
 
-(princ "\t...загружен.\n")

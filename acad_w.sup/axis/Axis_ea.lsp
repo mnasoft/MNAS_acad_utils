@@ -1,6 +1,3 @@
-;;;(princ "\nЗагружаю Axis/Axis_ea        ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "Axis/Axis_ea        "))
-
 ;;;;;;("ea"
 ;;;;;;"Производит преобразование примитивов типа LINE в примитив			
 ;;;;;; с расширенными данными типа \"SHCKALA\".\n
@@ -167,10 +164,3 @@
   )
   axdata
 )
-
-
-(princ "\t...загружен.\n")
-
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;

@@ -1,6 +1,3 @@
-;;;(princ "\nÇàãðóæàþ Axis/Graph_block    ")
-(princ (strcat "\nÇàãðóæàþ " (acad_sup) "/" "Axis/Graph_block    "))
-
 (defun eb (param / dcl_id do_dialog n-bl x-sc y-sc)
   (eb:init)
   (setq dcl_id (load_dialog (strcat (acad_sup) "/axis/axis.dcl")))
@@ -30,14 +27,7 @@
   )
 )
 
-(defun eb:setup	()
+(defun eb:setup	 ()
   (set_tile "e61" n-bl)
   (set_tile "e62" (rtos x-sc))
-  (set_tile "e63" (rtos y-sc))
-)
-
-
-(princ "\t...çàãðóæåí.\n")
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+  (set_tile "e63" (rtos y-sc)))

@@ -1,7 +1,3 @@
-(princ "\nLoading .../atoms/atoms.prj     ")
-
-(princ "\nLoading .../atoms/atoms.lsp     ")
-
 (defun err (msg) (setq *error* old_err) (princ))
 (defun sort_l ()
   (if str_atoms_l
@@ -680,8 +676,6 @@
   )
   (unload_dialog dcl_id)
 )
-
-(princ "\t...loaded.\n")
 ;|«Visual LISP© Format Options»
 (72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
 ;*** DO NOT add text below the comment! ***|;

@@ -1,5 +1,3 @@
-;;;(princ "\nЗагружаю Axis/Graph_pnt_type ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "Axis/Graph_pnt_type "))
 ;;;	c_epr()	- Вызывыает диалог для задания параметров точек и графиков.
 ;;;		Самостоятельного применения не имеет.
 ;;;(epr '((70 . 2)
@@ -53,14 +51,8 @@
   (princ fl)
 )
 
-(defun epr:ac_tile ()
+(defun epr:ac_tile  ()
   (action_tile "b81" "(eb d-bl)")
   (action_tile "b82" "(ep d-lin)")
   (action_tile "t81" "(epr:ac_t81-82)")
-  (action_tile "t82" "(epr:ac_t81-82)")
-)
-
-(princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+  (action_tile "t82" "(epr:ac_t81-82)"))

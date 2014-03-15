@@ -1,6 +1,3 @@
-;;;(princ "\nÇàãðóæàþ Axis/Image          ")
-(princ (strcat "\nÇàãðóæàþ " (acad_sup) "/" "Axis/Image          "))
-
 ;;;;;;("im" "not defined" "not defined")
 (defun c:im (/ color)
   (setq color 0)
@@ -26,14 +23,13 @@
   (unload_dialog dcl_id)
 )
 
-(defun im:ac_i101 ($value $key $data $reason $x $y)
+(defun im:ac_i101  ($value $key $data $reason $x $y)
   (print $value)
   (print $key)
   (print $data)
   (print $reason)
   (print $x)
   (print $y)
-
   (start_image "i101")
   (setq color (1+ color))
   (fill_image 0 0 (dimx_tile "i101") (dimy_tile "i101") color)
@@ -42,15 +38,6 @@
     0
     (dimx_tile "i101")
     (dimy_tile "i101")
-    (strcat (acad_sup) "/lopatka/lopatka")
-  )
+    (strcat (acad_sup) "/lopatka/lopatka"))
   (end_image)
-  (princ color)
-)
-
-
-(princ "\t...çàãðóæåí.\n")
-
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+  (princ color))

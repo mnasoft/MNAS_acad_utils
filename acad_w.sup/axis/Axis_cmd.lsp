@@ -1,6 +1,3 @@
-;;;(princ "\nЗагружаю AXIS/Axis_cmd       ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "AXIS/Axis_cmd       "))
-
 ;;;;;;("a1"
 ;;;;;;"Построение полилинии в координатах двух шкал.\n
 ;;;;;; Задаются:\n
@@ -379,23 +376,14 @@
 )
 
 ;;;;;;("c4" "Выводит координаты отмеченных точек." "Шкалы")
-(defun c:c4 (/ sx scx sy scy pxy pt)
+(defun c:c4  (/ sx scx sy scy pxy pt)
   (setq
     sx	(sh:sel "Шкала x")
     scx	(sh:get sx)
     sy	(sh:sel "Шкала y")
-    scy	(sh:get sy)
-  )
-  (while
-    (setq pt (getpoint "\n Укажите точку в на экране:"))
-     (setq pxy (sc:pt_pxy pt scx scy))
-     (princ "pxy") (princ pxy)
-     (dr:point pt 2)
-  )
-)
-
-(princ "\t...загружен.\n")
-
-;|«Visual LISP© Format Options»
-(120 2 40 2 nil "end of" 100 15 2 1 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+    scy	(sh:get sy))
+  (while (setq pt (getpoint "\n Укажите точку в на экране:"))
+    (setq pxy (sc:pt_pxy pt scx scy))
+    (princ "pxy")
+    (princ pxy)
+    (dr:point pt 2)))

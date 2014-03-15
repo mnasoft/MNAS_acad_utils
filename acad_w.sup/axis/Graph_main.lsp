@@ -1,6 +1,3 @@
-;;;(princ "\nЗагружаю Axis/Graph_main     ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "Axis/Graph_main     "))
-
 (setq l1
        (list
 	 (cons 40 20.0) ; Координата по оси x
@@ -550,19 +547,11 @@
   (action_tile "l1" "(ax:ac_l1 $value)") ;
 )
 
-(defun dr-axis-points (sc-x-gr sc-y-gr pts-gr color)
+(defun dr-axis-points  (sc-x-gr sc-y-gr pts-gr color)
   (princ sc-x-gr)
   (princ sc-y-gr)
   (princ pts-gr)
   (mapcar
     (function
-      (lambda (el) (dr:point (sc:pxy_pt el (sh:get sc-x-gr) (sh:get sc-y-gr)) color))
-    )
-    pts-gr
-  )
-)
-
-(princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+      (lambda (el) (dr:point (sc:pxy_pt el (sh:get sc-x-gr) (sh:get sc-y-gr)) color)))
+    pts-gr))
