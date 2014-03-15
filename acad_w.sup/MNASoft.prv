@@ -1,4 +1,4 @@
-;;; Visual LISP make file [V1.0] MNASoft saved to:[D:/home/_namatv/Develop/MNAS_acad_utils/acad_w.sup] at:[9/30/13] 
+;;; Visual LISP make file [V1.0] MNASoft saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup] at:[3/15/14] 
 (PRV-DEF (:target . "../vlx/MNASoft.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
@@ -38,7 +38,7 @@
 	   (:prj "piping/piping.prj")
 	   (:prj "point/point.prj")
 	   (:prj "prj/spring/spring.prj")
-	   (:prj "provoloka/provoloka.prj")	   
+	   (:prj "provoloka/provoloka.prj")
 	   (:prj "razvertka/razvertka.prj")
 	   (:prj "rename/rename.prj")
 	   (:prj "scr/scr.prj")
@@ -46,7 +46,6 @@
 	   (:prj "sort_shp/sort_shp.prj")
 	   (:prj "spec/spec.prj")
 	   (:prj "text/text.prj")
-	   
 	   (:prj "atoms/atoms.prj")
 	   (:prj "axis/axis.prj")
 	   (:prj "format/format.prj")
@@ -73,11 +72,9 @@
 	   (:DCL "prj/Spring/Spring.dcl")
 	   (:DCL "spec/Specification.dcl")
 	   (:DCL "text/Text.dcl")
-
 	   (:DCL "atoms/ATOMS.dcl")
 	   (:DCL "axis/AXIS.dcl")
 	   (:DCL "format/Format.dcl")
-	   
 	 )
 	 (:ob-directory . "../vlisp.tmp")
 	 (:tmp-directory . "../vlisp.tmp")
