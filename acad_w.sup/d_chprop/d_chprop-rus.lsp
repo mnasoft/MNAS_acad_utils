@@ -1,3 +1,3 @@
 (opech_cmds '("dch"))
 
-(princ "Project\t\t d_chprop \t\tloaded.\n")
+(princ "Loaded project d_chprop.\n")

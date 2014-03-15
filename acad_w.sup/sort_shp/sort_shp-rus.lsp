@@ -1,6 +1,3 @@
-(opech_cmds
-  '("sort_shp")
-)
+(opech_cmds '("sort_shp"))
 
-
-(princ "Project\t\t sort_shp \t\tloaded.\n")
+(princ "Loaded project sort_shp.\n")

@@ -1,5 +1,5 @@
-(opech_cmds
-  '("acad_pgp"))
+(opech_cmds '("acad_pgp"))
 
-(princ "Project\t\t acad_pgp \t\tloaded.\n")
+(princ "Loaded project acad_pgp.\n")
+
 

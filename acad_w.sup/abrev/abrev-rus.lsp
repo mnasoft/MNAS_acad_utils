@@ -5,5 +5,5 @@
     "id"   "ma"	  "le"	 "op"	"h"    "dt"   "pe"   "bo"   "ar"   "li"	  "x"	 "j"	"b"    "ps"
     "ms"   "git"  "vl"	 "vu"	"lou"))
 
-(princ "Project\t\t abrev \t\tloaded.\n")
+(princ "Loaded project abrev.\n")
 

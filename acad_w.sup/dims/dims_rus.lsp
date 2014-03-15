@@ -4,4 +4,4 @@
     "dwg_put"	    "dwg_get"	    "welding"	    "DUMBELLS-TST"  "DUMBELLS-INFO" "make_dim_styles"
     "MNAS_DIM_STYLE_ADD"	    "lea"))
 
-(princ "Project\t\t dims \t\tloaded.\n")
+(princ "Loaded project dims.\n")
