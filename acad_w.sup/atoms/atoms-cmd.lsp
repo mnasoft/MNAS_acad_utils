@@ -660,7 +660,7 @@
 (defun c:atoms
 	       (/ act dcl_id do_dial e_1_1 all_atoms_l str_atoms_l poz_list_l)
   (init)
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/atoms/atoms.dcl")))
+  (setq dcl_id (load_dialog (strcat (acad_sup) "/atoms/atoms-dlg.dcl")))
   (if (< dcl_id 0)
     (exit)
   )

@@ -3,9 +3,9 @@
   :NAME
   atoms
   :OWN-LIST
-  ("ATOMS"
+  ("atoms-cmd"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "atoms_rus"
+    "atoms-rus"
   )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
