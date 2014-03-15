@@ -1,6 +1,3 @@
-;;;(princ "\nЗагружаю Lopatka/Lopatka     ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "Lopatka/Lopatka     "))
-
 ;;;;;;("lo" "Построение профиля лопатки." "Расчеты")
 (defun c:lo (/ str str1 temp ss1)
   (setq	old_err	*error*
@@ -261,8 +258,3 @@
   (setvar "cmdecho" 1)
   (princ)
 )
-
-(princ "\t...загружен.\n")
- ;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;

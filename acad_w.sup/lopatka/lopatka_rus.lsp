@@ -1,3 +1,3 @@
-(opech_cmds
-  '("lo")
-)
+(opech_cmds '("lo"))
+
+(princ "Loaded project lopatka.\n")

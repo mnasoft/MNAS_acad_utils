@@ -1,20 +1,14 @@
-(defun lo:my_err (s)
+(defun lo:my_err  (s)
   (if (/= s "Функция прервана")
-    (princ (strcat "\nОшибка: " s))
-  )
+    (princ (strcat "\nОшибка: " s)))
   (setq *error* olderr)
-  (princ)
-)
+  (princ))
 
 
-(defun lo:lop_7 (/ hl lk lp f1 p2_9r1_1 p2_9r2_1 file1)
+(defun lo:lop_7	 (/ hl lk lp f1 p2_9r1_1 p2_9r2_1 file1)
   (setq file1 (open "lopatka.rez" "a"))
   (if (null file1)
-    (progn (alert (princ "Не могу открыть файл " "lopatka.rez" "."))
-	   (exit)
-    )
-  )
-
+    (progn (alert (princ "Не могу открыть файл " "lopatka.rez" ".")) (exit)))
   (princ "\n\n Исходные данные: ")
   (princ "\nd1                 = " file1)
   (princ (* r1 2.) file1)
@@ -56,11 +50,4 @@
   (princ (setq f (* f1 n)) file1)
   (princ " ед^2" file1)
   (close file1)
-  (princ)
-)
-
-
-(princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+  (princ))
