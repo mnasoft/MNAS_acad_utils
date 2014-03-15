@@ -1,24 +1,22 @@
 ;;; VLisp project file [V2.0] rou saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dims/rou] at:[3/15/14] 
-(vlisp-project-list
+(VLISP-PROJECT-LIST
   :name
   rou
   :own-list
   ("../../UTILS/ACAD_SUP_DIR"
-    "../../utils/Debug"			       "rou"
-    "rou_draw"				       "../../UTILS/STRING"
+    "../../utils/Debug"			       "rou-cmd"
+    "rou-draw"				       "../../UTILS/STRING"
     "../../MATR/VECTOR"			       "../../UTILS/red_list"
-    "rou_update_ver"			       "../../UTILS/stl_text"
+    "rou-update_ver"			       "../../UTILS/stl_text"
     "../../UTILS/ERR"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "rou_rus"
-   )
+    "rou-rus")
   :fas-directory
   "../../../vlisp.tmp"
   :tmp-directory
   "../../../vlisp.tmp"
   :project-keys
-  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :context-id
-  :AUTOLISP
-)
+  :AUTOLISP)
 ;;; EOF
