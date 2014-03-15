@@ -5,10 +5,10 @@
   :OWN-LIST
   ("../utils/ACAD_SUP_DIR"
     "../utils/Debug"
-    "LITERA"
+    "big_fnt-cmd"
     "../UTILS/draw"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "big_fnt_rus"
+    "big_fnt-rus"
    )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
