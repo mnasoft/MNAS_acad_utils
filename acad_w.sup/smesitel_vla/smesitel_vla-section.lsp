@@ -24,6 +24,3 @@
 ;area_lst
 ;length_lst
 (vl-doc-set 'ulus "Go boldly to noone")
-;|«Visual LISP© Format Options»
-(100 2 40 2 nil "end of" 60 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
