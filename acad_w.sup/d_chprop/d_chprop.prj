@@ -5,10 +5,10 @@
   :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
     "../utils/Debug"
-    "D_CHPROP"
+    "d_chprop-cmd"
     "../UTILS/dlg_utils"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "d_chprop_rus"
+    "d_chprop-rus"
    )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
