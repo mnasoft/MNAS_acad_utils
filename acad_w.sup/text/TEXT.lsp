@@ -1,61 +1,30 @@
-;;;(princ "\nЗагружаю text/TEXT.lsp")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "text/TEXT.lsp"))
-
 ;;;;;;("te"
 ;;;;;;"Производит редактирование текстов и текстов размерных примитивов." "Тексты")
-(defun c:te (/ dcl_id en i ss_td str dcl_te_pos te_registry reg_root)
+(defun c:te  (/ dcl_id en i ss_td str dcl_te_pos te_registry reg_root)
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
-  (setq	reg_root     "HKEY_CURRENT_USER\\Software\\MNASoft\\Text"
-	te_registry '((dcl_te_pos (-1 -1)))
-  )
+  (setq	reg_root    "HKEY_CURRENT_USER\\Software\\MNASoft\\Text"
+	te_registry '((dcl_te_pos (-1 -1))))
   (reg_read_default_lst reg_root te_registry)
   (prompt "\nВыберите тексты или размеры :")
-  (setq
-    ss_td  (ssget '((-4 . "<OR")
-		    (0 . "DIMENSION")
-		    (0 . "TEXT")
-		    (0 . "MTEXT")
-		    (-4 . "OR>")
-		   )
-	   )
-    dcl_id (load_dialog (strcat (acad_sup) "/text/text.dcl"))
-  )
+  (setq	ss_td  (ssget '((-4 . "<OR") (0 . "DIMENSION") (0 . "TEXT") (0 . "MTEXT") (-4 . "OR>")))
+	dcl_id (load_dialog (strcat (acad_sup) "/text/text.dcl")))
   (if (null ss_td)
-    (progn (alert "Нет выбранных объектов.") (exit))
-  )
+    (progn (alert "Нет выбранных объектов.") (exit)))
   (if (< dcl_id 0)
-    (exit)
-  )
+    (exit))
   (if (not (new_dialog "chgtextt" dcl_id "" dcl_te_pos))
-    (exit)
-  )
-  (setq	str
-	 (cdr (assoc 1 (entget (ssname ss_td 0))))
-  )
+    (exit))
+  (setq str (cdr (assoc 1 (entget (ssname ss_td 0)))))
   (set_tile "dim_string" str)
   (action_tile "accept" "(te_dlg_accept)")
-
   (start_dialog)
   (unload_dialog dcl_id)
   (setq i (sslength ss_td))
-  (while
-    (>= (setq i (1- i)) 0)
-     (setq en (ssname ss_td i))
-     (ch_dxf en 1 str)
-  )
-  (err-handle "")
-)
+  (while (>= (setq i (1- i)) 0) (setq en (ssname ss_td i)) (ch_dxf en 1 str))
+  (err-handle ""))
 
-(defun te_dlg_accept ()
+(defun te_dlg_accept  ()
   (setq str (get_tile "dim_string"))
   (setq dcl_te_pos (done_dialog 0))
-  (reg_write_default_lst reg_root te_registry)
-)
-
-(princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
-
-
+  (reg_write_default_lst reg_root te_registry))
