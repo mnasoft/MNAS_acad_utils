@@ -3,11 +3,11 @@
   :NAME
   axis_podp
   :OWN-LIST
-  ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"			       "../utils/sub_div"
-    "axis_podp"				       "Axis_util"
-    "../UTILS/draw"			       "../utils/DXF"
-    "../UTILS/XDATA"			       "../MATR/VECTOR"
+  ("../utils/acad_sup_dir"
+    "../utils/debug"			       "../utils/sub_div"
+    "axis_podp"				       "axis_util"
+    "../utils/draw"			       "../utils/dxf"
+    "../utils/xdata"			       "../matr/vector"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
     "axis_podp_rus"
    )

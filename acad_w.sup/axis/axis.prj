@@ -1,0 +1,27 @@
+;;; VLisp project file [V2.0] axis saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/axis] at:[3/14/14] 
+(VLISP-PROJECT-LIST
+  :NAME
+  axis
+  :OWN-LIST
+  ("../UTILS/ACAD_SUP_DIR"
+    "../utils/Debug"			"../utils/sub_div"
+    "Axis_cmd"				"Axis_ea"
+    "Axis_util"				"../utils/draw"
+    "../UTILS/DXF"			"Graph_analitic"
+    "Graph_block"			"Graph_main"
+    "Graph_pline"			"Graph_poitn_type"
+    "Image"				"../UTILS/XDATA"
+    "../UTILS/dlg_utils"
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "axis_rus"
+   )
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF
