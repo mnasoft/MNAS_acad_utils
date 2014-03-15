@@ -81,7 +81,3 @@
   ((-1 . <Entity name: 7efdc368>) (0 . "LINE") (330 . <Entity name: 7efc8cf8>) (5 . "1AD") (100 . "AcDbEntity") (67 . 0) (410 . "Model") (8 . "0") (62 . 1) (100 . "AcDbLine") (10 753.32 968.925 0.0) (11 1029.9 1192.06 0.0) (210 0.0 0.0 1.0))
   )
 
-
-;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;

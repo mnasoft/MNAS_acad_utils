@@ -1,24 +1,22 @@
 ;;; VLisp project file [V2.0] lines saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/lines] at:[3/15/14] 
-(vlisp-project-list
+(VLISP-PROJECT-LIST
   :name
   lines
   :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"			   "linetype"
-    "LINES"				   "LINE_1"
-    "line_concat"			   "arc_concat"
-    "../UTILS/ASIST"			   "../UTILS/DXF"
-    "../utils//ERR"			   "../utils/dlg_utils"
+    "../utils/Debug"			     "lines-linetype_load"
+    "lines-cmd"				     "lines-line_1"
+    "lines-concat"			     "lines-arc_concat"
+    "../UTILS/ASIST"			     "../UTILS/DXF"
+    "../utils//ERR"			     "../utils/dlg_utils"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "lines_rus"
-   )
+    "lines-rus")
   :fas-directory
   "../../vlisp.tmp"
   :tmp-directory
   "../../vlisp.tmp"
   :project-keys
-  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :context-id
-  :AUTOLISP
-)
+  :AUTOLISP)
 ;;; EOF
