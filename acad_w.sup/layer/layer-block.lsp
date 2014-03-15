@@ -1,6 +1,3 @@
-;;;(princ "\nЗагружаю Layer/bl_layer.LSP  ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "Layer/bl_layer.LSP  "))
-
 ;;;;;;("bl_off"
 ;;;;;;"Выключает слой, входящий в блок, при указании на объект в составе блока." "Слои")
 (defun c:bl_off	(/ la)
@@ -105,5 +102,3 @@
   )
   str
 )
-
-(princ "\t...загружен.\n")
