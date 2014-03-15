@@ -6,4 +6,3 @@
     "ms"   "git"  "vl"	 "vu"	"lou"))
 
 (princ "Loaded project abrev.\n")
-
