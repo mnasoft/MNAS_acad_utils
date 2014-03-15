@@ -4,10 +4,10 @@
   format
   :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"			    "../utils/binary"
-    "format-cmd"			    "format-draw"
-    "format-geom_util"			    "format-block_create"
-    "format-dop_dlg"			    "format-add_dop_sht_dlg"
+    "../utils/Debug"			    "format-cmd"
+    "format-draw"			    "format-geom_util"
+    "format-block_create"		    "format-dop_dlg"
+    "format-add_dop_sht_dlg"		    "../utils/binary"
     "../utils/prin"			    "../utils/red_list"
     "../utils/stl_text"			    "../utils/string"
     "../utils/system_registry"		    "../utils/dlg_utils"
