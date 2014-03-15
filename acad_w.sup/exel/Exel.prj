@@ -1,21 +1,22 @@
-;;; VLisp project file [V2.0] Exel saved to:[D:/MNAS_acad_utils/acad_w.sup/exel] at:[6/9/12] 
-(VLISP-PROJECT-LIST
-  :NAME
-  Exel
-  :OWN-LIST
+;;; VLisp project file [V2.0] exel saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/exel] at:[3/15/14] 
+(vlisp-project-list
+  :name
+  exel
+  :own-list
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"		 "read_exel_setup_lst"
-    "utils_xls"			 "../utils//ASIST"
-    "../utils//Sistjemy_schisljenija"
-    "graph"
+    "../utils/Debug"				     "read_exel_setup_lst"
+    "utils_xls"					     "../utils//ASIST"
+    "../utils//Sistjemy_schisljenija"		     "graph"
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "exel_rus"
    )
-  :FAS-DIRECTORY
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
+  :project-keys
+  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  :context-id
   :AUTOLISP
 )
 ;;; EOF

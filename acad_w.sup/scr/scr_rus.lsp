@@ -1,0 +1,4 @@
+(opech_cmds
+  '("scr")
+)
+

@@ -1,21 +1,23 @@
-;;; VLisp project file [V2.0] SMESITEL_vla saved to:[D:/MNAS_acad_utils/acad_w.sup/smesitel_vla] at:[6/9/12] 
-(VLISP-PROJECT-LIST
-  :NAME
-  SMESITEL_vla
-  :OWN-LIST
+;;; VLisp project file [V2.0] smesitel_vla saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/smesitel_vla] at:[3/15/14] 
+(vlisp-project-list
+  :name
+  smesitel_vla
+  :own-list
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"	   "section"
-    "sech_by_lenght"	   "../UTILS/vla-utils"
-    "../UTILS/Asist"	   "../UTILS/draw"
-    "Mixer_section"	   "../UTILS/ERR"
+    "../utils/Debug"				"section"
+    "sech_by_lenght"				"../UTILS/vla-utils"
+    "../UTILS/Asist"				"../UTILS/draw"
+    "Mixer_section"				"../UTILS/ERR"
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "smesitel_vla_rus"
    )
-  :FAS-DIRECTORY
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
+  :project-keys
+  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  :context-id
   :AUTOLISP
 )
 ;;; EOF

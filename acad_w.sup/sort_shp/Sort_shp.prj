@@ -1,20 +1,21 @@
-;;; VLisp project file [V2.0] Sort_shp saved to:[D:/MNAS_acad_utils/acad_w.sup/sort_shp] at:[6/9/12] 
-(VLISP-PROJECT-LIST
-  :NAME
-  Sort_shp
-  :OWN-LIST
+;;; VLisp project file [V2.0] sort_shp saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/sort_shp] at:[3/15/14] 
+(vlisp-project-list
+  :name
+  sort_shp
+  :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"
-    "sort_shp"
+    "../utils/Debug"					    "sort_shp"
     "../UTILS/STRING"
-  )
-  :FAS-DIRECTORY
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "sort_shp_rus"
+   )
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
+  :project-keys
+  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  :context-id
   :AUTOLISP
 )
 ;;; EOF

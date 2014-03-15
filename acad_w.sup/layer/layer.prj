@@ -1,22 +1,23 @@
-;;; VLisp project file [V2.0] layer saved to:[D:/MNAS_acad_utils/acad_w.sup/layer] at:[6/9/12] 
-(VLISP-PROJECT-LIST
-  :NAME
+;;; VLisp project file [V2.0] layer saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/layer] at:[3/15/14] 
+(vlisp-project-list
+  :name
   layer
-  :OWN-LIST
+  :own-list
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"	  "layer"		"md_layer"
-    "bl_layer"		  "vp_layer"		"sh_layer"
-    "cur_layer"		  "nent_lay"		"../UTILS/Binary"
-    "../UTILS/red_list"	  "../UTILS/ERR"
-    "../Utils/system_registry"
+    "../utils/Debug"			  "layer"				"md_layer"
+    "bl_layer"				  "vp_layer"				"sh_layer"
+    "cur_layer"				  "nent_lay"				"../UTILS/Binary"
+    "../UTILS/red_list"			  "../UTILS/ERR"			"../Utils/system_registry"
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "layer_rus"
    )
-  :FAS-DIRECTORY
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
+  :project-keys
+  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  :context-id
   :AUTOLISP
 )
 ;;; EOF

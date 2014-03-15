@@ -1,20 +1,24 @@
-;;; VLisp project file [V2.0] lines saved to:[C:/Develop/MNAS_acad_utils/acad_w.sup/lines] at:[1/20/13] 
-(VLISP-PROJECT-LIST
-  :NAME
+;;; VLisp project file [V2.0] lines saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/lines] at:[3/15/14] 
+(vlisp-project-list
+  :name
   lines
-  :OWN-LIST
+  :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"	 "linetype"	      "LINES"		   "LINE_1"
-    "line_concat"	 "arc_concat"	      "../UTILS/ASIST"	   "../UTILS/DXF"
-    "../utils//ERR"	 "../utils/dlg_utils"
+    "../utils/Debug"			   "linetype"
+    "LINES"				   "LINE_1"
+    "line_concat"			   "arc_concat"
+    "../UTILS/ASIST"			   "../UTILS/DXF"
+    "../utils//ERR"			   "../utils/dlg_utils"
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "lines_rus"
    )
-  :FAS-DIRECTORY
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
+  :project-keys
+  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  :context-id
   :AUTOLISP
 )
 ;;; EOF

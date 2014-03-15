@@ -1,0 +1,3 @@
+(opech_cmds
+  '("dop")
+)

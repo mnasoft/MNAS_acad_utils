@@ -1,0 +1,1 @@
+(opech_cmds '("clock_off" "clock_on"))

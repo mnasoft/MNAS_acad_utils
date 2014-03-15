@@ -1,3 +1,6 @@
+(princ "\nLoading .../opechatka/rus_cmd_opechatka.lsp     ")
+
+
 (setq str_keyboard "zZxXcCvVbBnNmM,<.>/?`~qQwWeErRtTyYuUiIoOpP[{]}aAsSdDfFgGhHjJkKlL;:'\"€яч„с—мћи»т“ь№бЅюё.,Є®й…ц÷у”к е≈нЌг√шЎщўз«х’ъЏф‘ыџв¬ајпѕр–оќлЋдƒж∆эЁ")
 (setq str_opchatka "€яч„с—мћи»т“ь№бЅюё.,Є®й…ц÷у”к е≈нЌг√шЎщўз«х’ъЏф‘ыџв¬ајпѕр–оќлЋдƒж∆эЁzZxXcCvVbBnNmM,<.>/?`~qQwWeErRtTyYuUiIoOpP[{]}aAsSdDfFgGhHjJkKlL;:'\"")
 
@@ -61,6 +64,9 @@
     )
   )
 )
+
+(princ "\t...loaded.\n")
+
 ;|ЂVisual LISP© Format Optionsї
 (120 2 40 2 nil "end of" 100 9 2 1 0 T T nil T)
 ;*** Ќ≈ добавл€йте текст под комментари€ми! ***|;

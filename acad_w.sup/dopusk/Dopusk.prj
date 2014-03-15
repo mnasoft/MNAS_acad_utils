@@ -1,4 +1,4 @@
-;;; VLisp project file [V2.0] dopusk saved to:[D:/home/_namatv/git/mnasoft/MNAS_acad_utils/acad_w.sup/dopusk] at:[3/14/14] 
+;;; VLisp project file [V2.0] dopusk saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dopusk] at:[3/14/14] 
 (VLISP-PROJECT-LIST
   :NAME
   dopusk
@@ -8,20 +8,15 @@
     "DOP"
     "../UTILS/DXF"
     "DOP_DATA_new_01"
-  )
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "dopusk_rus"
+   )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY
   "../../vlisp.tmp"
   :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link)
-	  :MERGED
-	  nil
-	  :SAFE-MODE
-	  T
-	  :MSGLEVEL
-	  1
-  )
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID
   :AUTOLISP
 )

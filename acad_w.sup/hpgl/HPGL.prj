@@ -1,20 +1,21 @@
-;;; VLisp project file [V2.0] HPGL saved to:[D:/MNAS_acad_utils/acad_w.sup/hpgl] at:[6/9/12] 
-(VLISP-PROJECT-LIST
-  :NAME
-  HPGL
-  :OWN-LIST
+;;; VLisp project file [V2.0] hpgl saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/hpgl] at:[3/15/14] 
+(vlisp-project-list
+  :name
+  hpgl
+  :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"
-    "HPGL"
+    "../utils/Debug"					    "HPGL"
     "../UTILS/draw"
-  )
-  :FAS-DIRECTORY
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "hpgl_rus"
+   )
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
+  :project-keys
+  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  :context-id
   :AUTOLISP
 )
 ;;; EOF

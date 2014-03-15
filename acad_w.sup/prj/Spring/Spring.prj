@@ -1,20 +1,22 @@
-;;; VLisp project file [V2.0] Spring saved to:[D:/Developer/MNAS_acad_db17_utils/acad_w.sup/prj/Spring] at:[1/2/12] 
-(VLISP-PROJECT-LIST
-  :NAME
-  Spring
-  :OWN-LIST
+;;; VLisp project file [V2.0] spring saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/prj/spring] at:[3/15/14] 
+(vlisp-project-list
+  :name
+  spring
+  :own-list
   ("../../utils/acad_sup_dir"
-    "../../utils/draw"	    "../../utils/dlg_utils"
-    "./Spring"		    "./Spring_dlg"
-    "Spring_class"	    "Spring_actions"
+    "../../utils/draw"				   "../../utils/dlg_utils"
+    "./Spring"					   "./Spring_dlg"
+    "Spring_class"				   "Spring_actions"
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "spring_rus"
    )
-  :FAS-DIRECTORY
+  :fas-directory
   "../../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
+  :project-keys
+  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  :context-id
   :AUTOLISP
 )
 ;;; EOF

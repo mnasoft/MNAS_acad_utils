@@ -1,15 +1,20 @@
-;;; VLisp project file [V2.0] Add_prefix saved to:[./Add_prefix] at:[5/16/09] 
+;;; VLisp project file [V2.0] add_prefix saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/add_prefix] at:[3/14/14] 
 (VLISP-PROJECT-LIST
   :NAME
-  Add_prefix
+  add_prefix
   :OWN-LIST
-  ("../utils/ACAD_SUP_DIR" "Add_prefix" "../utils/Debug")
+  ("../utils/ACAD_SUP_DIR"
+    "../utils/Debug"
+    "Add_prefix"
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "add_prefix_rus"
+  )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY
   "../../vlisp.tmp"
   :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID
   :AUTOLISP
 )

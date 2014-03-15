@@ -1,15 +1,20 @@
-;;; VLisp project file [V2.0] Clock saved to:[D:/MNAS_acad_utils/acad_w.sup/clock] at:[6/8/12] 
+;;; VLisp project file [V2.0] clock saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/clock] at:[3/14/14] 
 (VLISP-PROJECT-LIST
   :NAME
-  Clock
+  clock
   :OWN-LIST
-  ("../utils/ACAD_SUP_DIR" "../utils/Debug" "CLOCK")
+  ("../utils/ACAD_SUP_DIR"
+    "../utils/Debug"
+    "CLOCK"
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "clock_rus"
+  )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY
   "../../vlisp.tmp"
   :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID
   :AUTOLISP
 )

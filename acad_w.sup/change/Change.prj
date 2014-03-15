@@ -1,17 +1,21 @@
-;;; VLisp project file [V2.0] Change saved to:[D:/MNAS_acad_utils/acad_w.sup/change] at:[6/8/12] 
+;;; VLisp project file [V2.0] change saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/change] at:[3/14/14] 
 (VLISP-PROJECT-LIST
   :NAME
-  Change
+  change
   :OWN-LIST
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug" "CH_WID" "POINT_BLOCK" "../UTILS/draw"
-    "../UTILS/DXF")
+    "../utils/Debug"				    "CH_WID"
+    "POINT_BLOCK"				    "../UTILS/draw"
+    "../UTILS/DXF"
+    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "change_rus"
+   )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY
   "../../vlisp.tmp"
   :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID
   :AUTOLISP
 )
