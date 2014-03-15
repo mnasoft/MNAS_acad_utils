@@ -1,6 +1,3 @@
-;;;(princ "\nЗагружаю Dop/dop             ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "Dop/dop             "))
-
 (setq dopusk-str_specsymbol"\A1;H7 ({\A2\C1\H0.75x;\Sверхний_1^нижний_1;})\P%%c<>{\S            /;}   .\Pd8 ({\A0\H0.75x;\Sверхний_2^нижний_2;})")
 "\A1;<>H7{\H1.5x(}{\H0.66x;\S+0.025^-0.001;}{\H1.5x)}"
 
@@ -143,8 +140,3 @@
   )
   (setq ed (dsubst ed (list (cons 1 str))))
 )
-
-(princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
