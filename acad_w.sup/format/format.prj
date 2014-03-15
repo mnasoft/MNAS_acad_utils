@@ -4,13 +4,13 @@
   format
   :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"			  "../utils/binary"
-    "geom_util"				  "format_draw"
-    "format-cmd"			  "../utils/prin"
-    "../utils/red_list"			  "format-block_create"
-    "dop_dlg"				  "add_dop_sht_dlg"
-    "../utils/stl_text"			  "../utils/string"
-    "../utils/system_registry"		  "../utils/dlg_utils"
+    "../utils/Debug"			    "../utils/binary"
+    "format-cmd"			    "format-draw"
+    "format-geom_util"			    "format-block_create"
+    "format-dop_dlg"			    "format-add_dop_sht_dlg"
+    "../utils/prin"			    "../utils/red_list"
+    "../utils/stl_text"			    "../utils/string"
+    "../utils/system_registry"		    "../utils/dlg_utils"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
     "format-rus")
   :fas-directory
