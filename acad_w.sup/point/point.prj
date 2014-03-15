@@ -1,21 +1,20 @@
 ;;; VLisp project file [V2.0] point saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/point] at:[3/15/14] 
-(vlisp-project-list
+(VLISP-PROJECT-LIST
   :name
   point
   :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"					    "../utils/Asist"
-    "points"
+    "../utils/Debug"
+    "point-cmd"
+    "../utils/Asist"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "point_rus"
-   )
+    "point-rus")
   :fas-directory
   "../../vlisp.tmp"
   :tmp-directory
   "../../vlisp.tmp"
   :project-keys
-  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :context-id
-  :AUTOLISP
-)
+  :AUTOLISP)
 ;;; EOF
