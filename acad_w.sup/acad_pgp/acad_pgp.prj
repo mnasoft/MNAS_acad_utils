@@ -4,9 +4,9 @@
   acad_pgp
   :OWN-LIST
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"		"PGP_abrev"		    "../UTILS/STRING"
+    "../utils/Debug"		"acad_pgp-cmd"		    "../UTILS/STRING"
     "../UTILS/ERR"		"../opechatka/rus_cmd_opechatka"
-    "acad_pgp_rus"
+    "acad_pgp-rus"
    )
   :FAS-DIRECTORY
   "../../vlisp.tmp"
