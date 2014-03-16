@@ -1,6 +1,3 @@
-;;;(princ "\nЗагружаю enmake/entmk        ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "enmake/entmk        "))
-
 ;;;;;;("ems"
 ;;;;;;"Сохранение объектов во внешнем dat файле в формате, выводимом командой entmake." "Обмен")
 (defun c:ems (/ li ss1 ff1 k tmp fn)
@@ -60,9 +57,3 @@
   (mapcar 'entmake li)
   (princ)
 )
-
-(princ "\t...загружен.\n")
-
-;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
