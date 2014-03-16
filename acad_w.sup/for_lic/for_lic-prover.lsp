@@ -214,7 +214,7 @@
 (defun for_prover:data (/ act dcl_id ll_for_prover)
   (setq ll_for_prover ll_for_prover_setup)
   (setq	dcl_id (load_dialog
-		 (strcat (acad_sup) "/for_lic/for_prover.dcl")
+		 (strcat (acad_sup) "/for_lic/for_lic-prover.dcl")
 	       )
   )
   (if (< dcl_id 0)
