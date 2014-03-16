@@ -1,21 +1,19 @@
-;;; VLisp project file [V2.0] graf saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/graf] at:[3/15/14] 
-(vlisp-project-list
+;;; VLisp project file [V2.0] graf saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/graf] at:[3/16/14] 
+(VLISP-PROJECT-LIST
   :name
   graf
   :own-list
   ("../utils/ACAD_SUP_DIR"
     "../utils/Debug"
-    "GRAF"
+    "graf-cmd"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "graf_rus"
-  )
+    "graf-rus")
   :fas-directory
   "../../vlisp.tmp"
   :tmp-directory
   "../../vlisp.tmp"
   :project-keys
-  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :context-id
-  :AUTOLISP
-)
+  :AUTOLISP)
 ;;; EOF
