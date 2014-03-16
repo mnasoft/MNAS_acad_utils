@@ -1,181 +1,94 @@
-;;;(princ "\nЗагружаю For_lic/проверка    ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "For_lic/проверка    "))
-
 ;;;;;;("for_prover" "Проверочный расчет жидкотопливной форсунки." "Расчеты")
-(defun c:for_prover
-		    (/
-		     old_err
-		     fn ; Имя файла
-		     f1 ; Дескриптор файла
-		    )
-
-
-
+(defun c:for_prover  (/
+		      old_err
+		      fn ; Имя файла
+		      f1 ; Дескриптор файла
+		      )
   (setq str "DC Dbx N R Psi Beta Ro dP nu Save RUn Load PRint EXit")
-
-  (setvar "cmdecho" 0)
-     ;(setq old_err *error* *error* err)
-
-  (setq
-    dc	 0.0002
-    dbx	 0.00005
-    R	 0.0005
-    beta (/ 90. (/ 180. pi))
-    n	 4.00
-    Psi	 90.0
-  )
-
-  (setq
-    ro 805.
-    dp 6.0e6
-    nu 2.0e-6
-  )
-
+  (setvar "cmdecho" 0) ;(setq old_err *error* *error* err)
+  (setq	dc   0.0002
+	dbx  0.00005
+	R    0.0005
+	beta (/ 90. (/ 180. pi))
+	n    4.00
+	Psi  90.0)
+  (setq	ro 805.
+	dp 6.0e6
+	nu 2.0e-6)
   (setq str1 "")
   (while (/= str1 "EXit")
     (initget str)
     (setq str1 (getkword (strcat "\n" str " : ")))
-    (cond
-      (
-       (= Str1 "Save")
-       (setq fn
-	      (getfiled	"Открытие файла с исходными данными по форсунке"
-			""
-			"dat"
-			1
-	      )
-       )
-       (if (null fn)
-	 (setq fn "data.dat")
-
-       )
-       (setq f1 (open fn "w"))
-       (if (null f1)
-	 (progn
-	   (alert
-	     (princ
-	       (strcat
-		 "\nНе могу открыть файл: "
-		 fn
-		 ".\n"
-	       )
-	     )
+    (cond ((= Str1 "Save")
+	   (setq fn (getfiled "Открытие файла с исходными данными по форсунке" "" "dat" 1))
+	   (if (null fn)
+	     (setq fn "data.dat"))
+	   (setq f1 (open fn "w"))
+	   (if (null f1)
+	     (progn (alert (princ (strcat "\nНе могу открыть файл: " fn ".\n"))) (exit)))
+	   (mapcar '(lambda (el) (print_file el f1)) '(dc dbx R ro dp beta nu c n Psi))
+	   (close f1))
+	  ((= Str1 "Load")
+	   (setq fn (getfiled "Открытие файла с исходными данными по форсунке" "" "dat" 0))
+	   (if (null fn)
+	     (setq fn "data.dat"))
+	   (load fn))
+	  ((= Str1 "RUn")
+	   (setq i_no 0)
+	   (while (<= i_no 10)
+	     (princ "\n\t\t\t")
+	     (princ i_no)
+	     (setq rc	     (f_dr dc)
+		   rbx	     (f_dr dbx)
+		   B	     (/ R rbx)
+		   Eps	     (half_div B_g Eps_g (/ 1.0 B))
+		   A_eps     (/ (* R rc (sin beta)) (* Eps n rbx rbx))
+		   mu_eps    (cond ((= 0 i_no) (half_div A_g mu_g A_eps))
+				   ((> i_no 0) mu_p))
+		   alfa_eps  (cond ((= 0 i_no) (half_div A_g alfa_g A_eps))
+				   ((> i_no 0) alfa_p)) ;cond
+		   G	     (* pi 0.25 dc dc mu_eps (sqrt (* 2.0 ro dp)))
+		   Re_bx     (f_Rebx g ro nu dbx n)
+		   Lambda_k  (half_div Rebx_g Lambdak_g (/ (log Re_bx) (log 10.)))
+		   C	     (/ R rc)
+		   C_k	     (f_ck C rbx rc)
+		   Teta	     (* Lambda_k 0.5 A_eps (- C_k 1))
+		   A_ed	     (/ A_eps (+ 1 Teta))
+		   Mu_Teta   (half_div A_g Mu_g A_ed)
+		   Alfa_Teta (half_div A_g Alfa_g A_ed)
+		   _Alfa     (half_div Teta_g _Alfa_g Teta)
+		   Alfa_p    (* _Alfa Alfa_Teta)
+		   delta_bx  (f_deltabx Re_bx n rc rbx)
+		   delta_c   (f_deltac A_eps Psi)
+		   delta_k   (f_deltak Lambda_k C_k A_eps)
+		   delta_sig (+ delta_bx delta_k delta_c)
+		   Mu_p	     (/ Mu_Teta (sqrt (+ 1 (* Delta_Sig Mu_Teta Mu_Teta))))
+		   i_no	     (1+ i_no)) ;setq
+	     (foreach @n  '(alfa_eps alfa_p mu_eps mu_p)
+	       (princ "\n")
+	       (princ @n)
+	       (princ " = ")
+	       (prin1 (eval @n))) ;foreach
+	     ) ;while
 	   )
-	   (exit)
-	 )
-       )
-       (mapcar
-	 '(lambda (el) (print_file el f1))
-	 '(dc dbx R ro dp beta nu c n Psi)
-       )
-       (close f1)
-      )
-      (
-       (= Str1 "Load")
-       (setq
-	 fn (getfiled "Открытие файла с исходными данными по форсунке"
-		      ""
-		      "dat"
-		      0
-	    )
-       )
-       (if
-	 (null fn)
-	  (setq fn "data.dat")
-       )
-       (load fn)
-      )
-      (
-       (= Str1 "RUn")
-       (setq i_no 0)
-       (while (<= i_no 10)
-	 (princ "\n\t\t\t")
-	 (princ i_no)
-	 (setq
-	   rc	     (f_dr dc)
-	   rbx	     (f_dr dbx)
-	   B	     (/ R rbx)
-	   Eps	     (half_div B_g Eps_g (/ 1.0 B))
-	   A_eps     (/ (* R rc (sin beta)) (* Eps n rbx rbx))
-	   mu_eps    (cond
-		       ((= 0 i_no) (half_div A_g mu_g A_eps))
-		       ((> i_no 0) mu_p)
-		     )
-	   alfa_eps  (cond
-		       (
-			(= 0 i_no)
-			(half_div A_g alfa_g A_eps)
-		       )
-		       (
-			(> i_no 0)
-			alfa_p
-		       )
-		     ) ;cond
-	   G	     (* pi 0.25 dc dc mu_eps (sqrt (* 2.0 ro dp)))
-	   Re_bx     (f_Rebx g ro nu dbx n)
-	   Lambda_k  (half_div Rebx_g
-			       Lambdak_g
-			       (/ (log Re_bx) (log 10.))
-		     )
-	   C	     (/ R rc)
-	   C_k	     (f_ck C rbx rc)
-	   Teta	     (* Lambda_k 0.5 A_eps (- C_k 1))
-	   A_ed	     (/ A_eps (+ 1 Teta))
-	   Mu_Teta   (half_div A_g Mu_g A_ed)
-	   Alfa_Teta (half_div A_g Alfa_g A_ed)
-	   _Alfa     (half_div Teta_g _Alfa_g Teta)
-	   Alfa_p    (* _Alfa Alfa_Teta)
-	   delta_bx  (f_deltabx Re_bx n rc rbx)
-	   delta_c   (f_deltac A_eps Psi)
-	   delta_k   (f_deltak Lambda_k C_k A_eps)
-	   delta_sig (+ delta_bx delta_k delta_c)
-	   Mu_p	     (/ Mu_Teta (sqrt (+ 1 (* Delta_Sig Mu_Teta Mu_Teta))))
-	   i_no	     (1+ i_no)
-	 ) ;setq
-	 (foreach
-		   @n
-		     '(alfa_eps alfa_p mu_eps mu_p)
-	   (princ "\n")
-	   (princ @n)
-	   (princ " = ")
-	   (prin1 (eval @n))
-	 ) ;foreach
-       ) ;while
-      )
-      ((= Str1 "DC") (qw_real "Dc" "m" 'Dc))
-      ((= Str1 "Dbx") (qw_real "Dbx" "m" 'Dbx))
-      ((= Str1 "N") (qw_real "N" "" 'N))
-      ((= Str1 "R") (qw_real "R" "m" 'R))
-      ((= Str1 "Psi") (qw_real "Psi" "" 'Psi))
-      ((= Str1 "Beta") (qw_angle "Beta" "dig" 'Beta))
-      ((= Str1 "Ro") (qw_real "ro" "kg/m^3" 'Ro))
-      ((= Str1 "dP") (qw_real "dP" "N/m^2" 'dP))
-      ((= Str1 "nu") (qw_real "Nu" "" 'Nu))
-      (
-       (= Str1 "PRint")
-       (foreach
-		 @n
-		   '(dc dbx R beta n Psi ro dp nu g alfa_p mu_p)
-	 (princ "\n")
-	 (princ @n)
-	 (princ " = ")
-	 (prin1 (eval @n))
-       )
-      )
-    ) ;cond
-  )  ;while
+	  ((= Str1 "DC") (qw_real "Dc" "m" 'Dc))
+	  ((= Str1 "Dbx") (qw_real "Dbx" "m" 'Dbx))
+	  ((= Str1 "N") (qw_real "N" "" 'N))
+	  ((= Str1 "R") (qw_real "R" "m" 'R))
+	  ((= Str1 "Psi") (qw_real "Psi" "" 'Psi))
+	  ((= Str1 "Beta") (qw_angle "Beta" "dig" 'Beta))
+	  ((= Str1 "Ro") (qw_real "ro" "kg/m^3" 'Ro))
+	  ((= Str1 "dP") (qw_real "dP" "N/m^2" 'dP))
+	  ((= Str1 "nu") (qw_real "Nu" "" 'Nu))
+	  ((= Str1 "PRint")
+	   (foreach @n	'(dc dbx R beta n Psi ro dp nu g alfa_p mu_p)
+	     (princ "\n")
+	     (princ @n)
+	     (princ " = ")
+	     (prin1 (eval @n))))) ;cond
+    )	       ;while
   (setvar "cmdecho" 1)
   (setq *error* old_err)
-  (princ)
-)
+  (princ))
 
-(defun for_prover:err (msg)
-  (setvar "cmdecho" 1)
-  (setq *error* old_err)
-  (princ)
-)
-
-(princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+(defun for_prover:err (msg) (setvar "cmdecho" 1) (setq *error* old_err) (princ))

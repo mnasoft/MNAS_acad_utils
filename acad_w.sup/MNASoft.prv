@@ -61,7 +61,7 @@
 	   (:DCL "d_chprop/D_CHPROP.dcl")
 	   (:DCL "exel/graph.dcl")
 	   (:DCL "fors_rh/fors_rh.dcl")
-	   (:DCL "for_lic/for_prover.dcl")
+	   (:DCL "for_lic/for_lic-prover.dcl")
 	   (:DCL "graf/GRAF.dcl")
 	   (:DCL "layer/rgb.dcl")
 	   (:DCL "lines/line_concat.dcl")

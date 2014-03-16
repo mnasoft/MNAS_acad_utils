@@ -1,21 +1,21 @@
-;;; VLisp project file [V2.0] fors_rh saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/fors_rh] at:[3/15/14] 
-(vlisp-project-list
+;;; VLisp project file [V2.0] fors_rh saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/fors_rh] at:[3/16/14] 
+(VLISP-PROJECT-LIST
   :name
   fors_rh
   :own-list
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"					"../utils/sub_div"
-    "ras_har_lic"					"ras_har_gas"
+    "../utils/Debug"
+    "fors_rh-lic"
+    "fors_rh-gas"
+    "../utils/sub_div"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "fors_rh_rus"
-   )
+    "fors_rh-rus")
   :fas-directory
   "../../vlisp.tmp"
   :tmp-directory
   "../../vlisp.tmp"
   :project-keys
-  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :context-id
-  :AUTOLISP
-)
+  :AUTOLISP)
 ;;; EOF
