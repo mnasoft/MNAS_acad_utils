@@ -8,7 +8,7 @@
 	   "Шкалы"
 	  )
   )
-  (load(strcat (acad_sup) "/man/man_data_base.lsp" ))
+  (load(strcat (acad_sup) "/man/man-data_base.lsp" ))
   (setq i 0)
   (mapcar
     (function
@@ -28,7 +28,3 @@
   (princ (strcat "Разбор команд закончен. Найдено неправильных описаний = " (itoa i) " ." ))
   (princ)
 )
-;;;(vl-sort command_category_list (function <))
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;

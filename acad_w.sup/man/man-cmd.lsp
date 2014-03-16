@@ -6,7 +6,7 @@
 ;;;;;;   List     - выводит перечень комад, определенных пользователем;\n
 ;;;;;;   Rebuild  - извлекает справочную ниформацию из lsp - файлов, перестраивая базу данных помощи;\n
 ;;;;;;   Примечание: При использовании опции Rebuild в случае вывода ошибки: (malform-list) необходимо найти в
-;;;;;; файле /man/man_data_base.lsp последний считанный список и найти соответствующую ему запись
+;;;;;; файле /man/man-data_base.lsp последний считанный список и найти соответствующую ему запись
 ;;;;;; в файле /man/man_data.txt ошибка будет ниже.
 ;;;;;;" "Справка")
 (DEFUN c:man (/				;
@@ -121,8 +121,8 @@
 )
 
 (DEFUN man-load-func ()
-  (LOAD (STRCAT (acad_sup) "/man/man_data_base.lsp"))
-  (LOAD (STRCAT (acad_sup) "/man/man_data_base_func.lsp"))
+  (LOAD (STRCAT (acad_sup) "/man/man-data_base.lsp"))
+  (LOAD (STRCAT (acad_sup) "/man/man-data_base_func.lsp"))
 )
 
 ;;;f;;;("man-rebuild"
@@ -131,7 +131,7 @@
 ;;;f;;;Производит извлечение справочной информации из файлов *.lsp")
 (DEFUN man-rebuild (/ asterix_semicolon fl_r fl_w fn_r fn_w f_name ln semicolon ss)
   (SETQ
-    fn_w (STRCAT (acad_sup) "/man/man_data_base.lsp")
+    fn_w (STRCAT (acad_sup) "/man/man-data_base.lsp")
     fn_r (GETFILED "Select a Lisp File" (STRCAT (acad_sup) "/man/man_data.txt") "txt" 1)
   )
   (find-line-by_mask-in_directory_files
@@ -330,7 +330,7 @@
 
 (DEFUN man-rebuild-func	(/ asterix_semicolon fl_r fl_w fn_r fn_w f_name ln semicolon ss)
   (SETQ
-    fn_w	      (STRCAT (acad_sup) "/man/man_data_base_func.lsp")
+    fn_w	      (STRCAT (acad_sup) "/man/man-data_base_func.lsp")
     fn_r	      (GETFILED	"Select a Lisp File"
 				(STRCAT (acad_sup) "/man/man_data_func.txt")
 				"txt"
