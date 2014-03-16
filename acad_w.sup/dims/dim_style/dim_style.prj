@@ -1,22 +1,20 @@
-;;; VLisp project file [V2.0] dim_style saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dims/dim_style] at:[3/14/14] 
+;;; VLisp project file [V2.0] dim_style saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dims/dim_style] at:[3/16/14] 
 (VLISP-PROJECT-LIST
-  :NAME
+  :name
   dim_style
-  :OWN-LIST
+  :own-list
   ("../../utils/ACAD_SUP_DIR"
-    "../../utils/Debug"				     "dim_override_like_ARX"
-    "dim_override"				     "dim_style"
-    "../../utils/STRING"			     "../../utils/stl_text"
+    "../../utils/Debug"				      "dim_style-override_like_ARX"
+    "dim_style-override"			      "dim_style-cmd"
+    "../../utils/STRING"			      "../../utils/stl_text"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "dim_style_rus"
-   )
-  :FAS-DIRECTORY
+    "dim_style-rus")
+  :fas-directory
   "../../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../../vlisp.tmp"
-  :PROJECT-KEYS
+  :project-keys
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
-  :AUTOLISP
-)
+  :context-id
+  :AUTOLISP)
 ;;; EOF
