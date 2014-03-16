@@ -1,21 +1,20 @@
-;;; VLisp project file [V2.0] rename saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/rename] at:[3/15/14] 
-(vlisp-project-list
+;;; VLisp project file [V2.0] rename saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/rename] at:[3/16/14] 
+(VLISP-PROJECT-LIST
   :name
   rename
   :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"					    "rename"
+    "../utils/Debug"
+    "rename-cmd"
     "../UTILS/ERR"
     "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
-    "rename_rus"
-   )
+    "rename-rus")
   :fas-directory
   "../../vlisp.tmp"
   :tmp-directory
   "../../vlisp.tmp"
   :project-keys
-  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :context-id
-  :AUTOLISP
-)
+  :AUTOLISP)
 ;;; EOF
