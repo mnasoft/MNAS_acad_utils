@@ -1,37 +1,21 @@
-;;;(princ "\nЗагружаю Axis/Dxf            ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "Axis/Dxf            "))
-
 ;;;;;;("obj" "Возвращает данные выбранного примитива." "Объекты")
-(defun c:obj ()
+(defun c:obj  ()
   (setq obj (entget (car (entsel "\nВыберите примитив:"))))
-  (vl-doc-set 'obj obj)
-)
+  (vl-doc-set 'obj obj))
 
 ;;;;;;("nobj" "Возвращает данные выбранного подпримитива." "Объекты")
-(defun c:nobj ()
+(defun c:nobj  ()
   (setq nobj (entget (car (nentsel "\nВыберите примитив:"))))
-  (vl-doc-set 'nobj nobj)
-)
+  (vl-doc-set 'nobj nobj))
 
 ;;;;;;("objxd"
 ;;;;;;"Возвращает данные и расширенные данные выбранного примитива." "Объекты")
-(defun c:objxd ()
-  (setq
-    objxd (entget (car (entsel "\nВыберите примитив:")) (list "*"))
-  )
-  (vl-doc-set 'objxd objxd)
-)
+(defun c:objxd	()
+  (setq objxd (entget (car (entsel "\nВыберите примитив:")) (list "*")))
+  (vl-doc-set 'objxd objxd))
 
 ;;;;;;("nobjxd"
 ;;;;;;"Возвращает данные и расширенные данные выбранного подпримитива." "Объекты")
-(defun c:nobjxd	()
-  (setq
-    nobjxd (entget (car (nentsel "\nВыберите примитив:")) (list "*"))
-  )
-  (vl-doc-set 'nobjxd nobjxd)
-)
-
-(princ "\t...загружен.\n")
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+(defun c:nobjxd	 ()
+  (setq nobjxd (entget (car (nentsel "\nВыберите примитив:")) (list "*")))
+  (vl-doc-set 'nobjxd nobjxd))
