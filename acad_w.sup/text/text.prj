@@ -12,7 +12,7 @@
     "../UTILS/STRING"			 "../UTILS/prin"
     "../UTILS/stl_text"			 "../UTILS/ERR"
     "../utils/system_registry"
-    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "../opechatka/rus_cmd_opechatka"
     "text_rus")
   :FAS-DIRECTORY
   "../../Vlisp.tmp"

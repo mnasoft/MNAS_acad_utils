@@ -7,7 +7,7 @@
     "../utils/Debug"				    "change-line_width"
     "change-point_block"				    "../UTILS/draw"
     "../UTILS/DXF"
-    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "../opechatka/rus_cmd_opechatka"
     "change-rus"
    )
   :FAS-DIRECTORY

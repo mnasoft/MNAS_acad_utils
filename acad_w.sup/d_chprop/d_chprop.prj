@@ -7,7 +7,7 @@
     "../utils/Debug"
     "d_chprop-cmd"
     "../UTILS/dlg_utils"
-    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "../opechatka/rus_cmd_opechatka"
     "d_chprop-rus"
    )
   :FAS-DIRECTORY

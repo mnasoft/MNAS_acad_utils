@@ -8,7 +8,7 @@
     "../utils/sub_div"
     "../utils/draw"
     "provoloka-cmd"
-    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "../opechatka/rus_cmd_opechatka"
     "provoloka-rus")
   :fas-directory
   "../../vlisp.tmp"

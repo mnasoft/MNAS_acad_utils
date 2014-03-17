@@ -7,7 +7,7 @@
     "../../utils/Debug"				      "dim_style-override_like_ARX"
     "dim_style-override"			      "dim_style-cmd"
     "../../utils/STRING"			      "../../utils/stl_text"
-    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "../../opechatka/rus_cmd_opechatka"
     "dim_style-rus")
   :fas-directory
   "../../../vlisp.tmp"

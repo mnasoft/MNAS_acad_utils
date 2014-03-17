@@ -86,6 +86,7 @@
 
 (defun load_format_dcl	()
   (setq dcl_id (load_dialog (strcat (acad_sup) "/format/format.dcl")))
+  ;;(setq dcl_id (load_dialog  "format.dcl"))
   (if (< dcl_id 0)
     (exit)))
 

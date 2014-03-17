@@ -7,7 +7,7 @@
     "../utils/Debug"				     "lopatka-cmd"
     "lopatka-functions"				     "lopatka-draw"
     "../utils/draw"
-    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "../opechatka/rus_cmd_opechatka"
     "lopatka_rus")
   :fas-directory
   "../../vlisp.tmp"

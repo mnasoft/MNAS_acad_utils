@@ -9,7 +9,7 @@
     "spec-func3"			     "spec-func4"
     "../UTILS/red_list"			     "../UTILS/stl_text"
     "../UTILS/STRING"
-    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "../opechatka/rus_cmd_opechatka"
     "spec-rus")
   :fas-directory
   "../../Vlisp.tmp"

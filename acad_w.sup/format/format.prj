@@ -11,7 +11,7 @@
     "../utils/prin"			    "../utils/red_list"
     "../utils/stl_text"			    "../utils/string"
     "../utils/system_registry"		    "../utils/dlg_utils"
-    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "../opechatka/rus_cmd_opechatka"
     "format-rus")
   :fas-directory
   "../../vlisp.tmp"

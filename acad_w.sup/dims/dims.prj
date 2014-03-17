@@ -12,7 +12,7 @@
     "../UTILS/draw"			"abc_dialog"
     "abc"				"../UTILS/stl_text"
     "./leader/leader"
-    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "../opechatka/rus_cmd_opechatka"
     "dims_rus"
    )
   :FAS-DIRECTORY

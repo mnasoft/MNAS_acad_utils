@@ -9,7 +9,7 @@
     "../../UTILS/stl_text"		       "../../UTILS/STRING"
     "../../MATR/VECTOR"			       "../../UTILS/red_list"
     "../../Utils/system_registry"	       "../../UTILS/ERR"
-    "E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka"
+    "../../opechatka/rus_cmd_opechatka"
     "rou_1-rus")
   :fas-directory
   "../../../vlisp.tmp"
