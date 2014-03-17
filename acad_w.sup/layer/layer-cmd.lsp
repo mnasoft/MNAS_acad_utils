@@ -56,8 +56,7 @@
     (cond ((= str "Set")
 	   (setq la_l (ssget))
 	   (if la_l
-	     (progn (setq la (cdr (assoc 8 (entget (ssname la_l 0)))))
-		    (command "_.layer" "_set" la ""))))
+	     (progn (setq la (cdr (assoc 8 (entget (ssname la_l 0))))) (command "_.layer" "_set" la ""))))
 	  ((= str "Un")
 	   (setq la_l (ssget))
 	   (if la_l
@@ -175,17 +174,16 @@
 ;;(выборка_слоев_по_списку_цветов '(((0 . "LAYER") (2 . "0") (70 . 0) (62 . 1) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer1") (70 . 0) (62 . 2) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer2") (70 . 0) (62 . 3) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer3") (70 . 0) (62 . 4) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer4") (70 . 0) (62 . 6) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer5") (70 . 0) (62 . 1) (6 . "Continuous"))) '(2 3 ))
 ;;(((0 . "LAYER") (2 . "Layer1") (70 . 0) (62 . 2) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer2") (70 . 0) (62 . 3) (6 . "Continuous")))
 (defun выборка_слоев_по_списку_цветов  (т_слоев сп_цвет / таб_сл цв)
-  (mapcar (function
-	    (lambda (ln)
-	      (setq цв (abs (cdr (assoc 62 ln))))
-	      (if (apply (function or) (mapcar (function (lambda (el) (= цв el))) сп_цвет))
-		(setq таб_сл (append таб_сл (list ln))))))
+  (mapcar (function (lambda (ln)
+		      (setq цв (abs (cdr (assoc 62 ln))))
+		      (if (apply (function or) (mapcar (function (lambda (el) (= цв el))) сп_цвет))
+			(setq таб_сл (append таб_сл (list ln))))))
 	  т_слоев)
   таб_сл)
 
-(defun rgb  (сп_изменяемых_цветов схема_раскраски      шаблон_исключаемых_имен_слоев
-	     начало		  чередование	       /		    тбл_сл
-	     им_сл		  количество_цветов    n		    CMD_ECHO)
+(defun rgb  (сп_изменяемых_цветов схема_раскраски      шаблон_исключаемых_имен_слоев		 начало
+	     чередование	  /		       тбл_сл		    им_сл		 количество_цветов
+	     n			  CMD_ECHO)
   (setq	тбл_сл (выборка_слоев)
 	тбл_сл (выборка_слоев_по_списку_цветов тбл_сл сп_изменяемых_цветов)
 	тбл_сл (выборка_слоев_неудовл_шабл тбл_сл шаблон_исключаемых_имен_слоев)
@@ -203,7 +201,7 @@
   (setvar "cmdecho" CMD_ECHO))
 
 (defun layer_rgb_settings  (/ ex_dialog action dcl_id code_val)
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/layer/rgb.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/layer/rgb.dcl")))
   (if (< dcl_id 0)
     (exit))
   (reg_read_default_lst reg_root rgb_registry) ;  (while (null ex_dialog)
@@ -218,11 +216,11 @@
   (action_tile "eb_1_2" "(ac_eb_1_2)")
   (action_tile "eb_1_3" "(ac_eb_1_3)")
   (action_tile "accept" "(rgb_dlg_accept)")
-  (setq action (start_dialog)) ;   (cond
-	       ;     ((= action 0) (setq ex_dialog t))
-	       ;     ((= action 1) (setq ex_dialog t))
-	       ;   )
-	       ; )
+  (setq action (start_dialog))		;   (cond
+					;     ((= action 0) (setq ex_dialog t))
+					;     ((= action 1) (setq ex_dialog t))
+					;   )
+					; )
   (unload_dialog dcl_id)
   (cond	((= action 0) nil)
 	((= action 1) code_val)))
@@ -262,8 +260,7 @@
   (print code_val))
 
 ;;;;;;("rgb" "Команда раскраски слоев." "Слои")
-(defun c:rgb
-       (/ rez i список_изменяемых_цветов t_1_1 схема_раскраски reg_root rgb_registry dcl_rgb_pos)
+(defun c:rgb  (/ rez i список_изменяемых_цветов t_1_1 схема_раскраски reg_root rgb_registry dcl_rgb_pos)
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq reg_root "HKEY_CURRENT_USER\\Software\\MNASoft\\Layer")

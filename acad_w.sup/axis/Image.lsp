@@ -1,7 +1,7 @@
 ;;;;;;("im" "not defined" "not defined")
 (defun c:im (/ color)
   (setq color 0)
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/axis/axis.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/axis/axis.dcl")))
   (if (< dcl_id 0)
     (exit)
   )

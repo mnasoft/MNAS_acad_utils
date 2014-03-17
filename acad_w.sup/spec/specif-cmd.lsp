@@ -121,7 +121,7 @@
 		)
   )
 
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/spec/Specification.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/spec/Specification.dcl")))
   (if (< dcl_id 0)
     (exit)
   )

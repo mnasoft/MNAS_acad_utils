@@ -1,476 +1,247 @@
-(setq
-  ll_ax_shcala_setup
-   '(
-     ("zas_right" "1")
-     ("zas_right_len" "2")
-     ("zas_left" "1")
-     ("zas_left_len" "2")
-     ("zas_x_min" "0")
-     ("zas_x_max" "100")
-     ("zas_n_div" "10")
-     ("zas_lst" "0" ("0" "10" "20" "30" "40" "50" "60" "70" "80" "90" "100"))
-     ("text_dist_from_ax" "4.0")
-     ("text_hight" "3.5")
-     ("text_angle" "0")
-     ("text_x_min" "0")
-     ("text_x_max" "100")
-     ("text_n_div" "10")
-     ("text_lst" "0" ("0" "10" "20" "30" "40" "50" "60" "70" "80" "90" "100"))
-     ("podp_text_start" "0")
-     ("podp_text_middle" "1")
-     ("podp_text_end" "0")
-     ("podp_text_dist_from_ax" "15")
-     ("podp_text_hight" "5")
-     ("podp_text_angle" "0")
-     ("zas_draw" "1")
-     ("text_draw" "1")
-     ("podp_text_draw" "1")
-    )
-)
+(setq ll_ax_shcala_setup
+       '(("zas_right" "1")
+	 ("zas_right_len" "2")
+	 ("zas_left" "1")
+	 ("zas_left_len" "2")
+	 ("zas_x_min" "0")
+	 ("zas_x_max" "100")
+	 ("zas_n_div" "10")
+	 ("zas_lst" "0" ("0" "10" "20" "30" "40" "50" "60" "70" "80" "90" "100"))
+	 ("text_dist_from_ax" "4.0")
+	 ("text_hight" "3.5")
+	 ("text_angle" "0")
+	 ("text_x_min" "0")
+	 ("text_x_max" "100")
+	 ("text_n_div" "10")
+	 ("text_lst" "0" ("0" "10" "20" "30" "40" "50" "60" "70" "80" "90" "100"))
+	 ("podp_text_start" "0")
+	 ("podp_text_middle" "1")
+	 ("podp_text_end" "0")
+	 ("podp_text_dist_from_ax" "15")
+	 ("podp_text_hight" "5")
+	 ("podp_text_angle" "0")
+	 ("zas_draw" "1")
+	 ("text_draw" "1")
+	 ("podp_text_draw" "1")))
 
 ;;;;;;("ax_shcala" "Производит подпись шкалы." "Шкалы")
-(defun c:ax_shcala (/ dcl_id	    ll_ax_shcala  exit_dialog	sc_x	      sc_y
-		      sc_x_ename    sc_y_ename	  ss_zas	ss_text	      ss_podp_text
-		     )
+(defun c:ax_shcala  (/ dcl_id ll_ax_shcala exit_dialog sc_x sc_y sc_x_ename sc_y_ename ss_zas ss_text ss_podp_text)
   (setq	ss_zas (ssadd)
 	ss_text	(ssadd)
-	ss_podp_text (ssadd)
-  )
+	ss_podp_text
+	 (ssadd))
   (setq ll_ax_shcala ll_ax_shcala_setup)
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/axis/axis_podp.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/axis/axis_podp.dcl")))
   (if (< dcl_id 0)
-    (exit)
-  )
+    (exit))
   (while (null exit_dialog)
     (if	(not (new_dialog "axis_podp" dcl_id))
-      (exit)
-    )
+      (exit))
     (setup)
     (ac_tile)
     (setq ac (start_dialog))
-    (cond
-      ((= ac 0) (setq exit_dialog t) (btn_delete))
-      ((= ac 1)
-       (setq ll_ax_shcala_setup ll_ax_shcala)
-       (setq exit_dialog t)
-      )
-      ((= ac 2) (btn_select_x_axis))
-      ((= ac 3) (btn_select_y_axis))
-      ((= ac 4) (btn_darw))
-      ((= ac 5) (btn_delete))
-    )
-  )
-)
+    (cond ((= ac 0) (setq exit_dialog t) (btn_delete))
+	  ((= ac 1) (setq ll_ax_shcala_setup ll_ax_shcala) (setq exit_dialog t))
+	  ((= ac 2) (btn_select_x_axis))
+	  ((= ac 3) (btn_select_y_axis))
+	  ((= ac 4) (btn_darw))
+	  ((= ac 5) (btn_delete)))))
 
-(defun btn_select_x_axis ()
+(defun btn_select_x_axis  ()
   (princ "\nbtn_select_x_axis")
   (setq	sc_x_ename (sh:sel "\nВыберите шкалу x:")
-	sc_x	   (sh:get sc_x_ename)
-  )
-)
+	sc_x	   (sh:get sc_x_ename)))
 
-(defun btn_select_y_axis ()
+(defun btn_select_y_axis  ()
   (princ "\nbtn_select_y_axis")
   (setq	sc_y_ename (sh:sel "\nВыберите шкалу y:")
-	sc_y	   (sh:get sc_y_ename)
-  )
-)
+	sc_y	   (sh:get sc_y_ename)))
 
-(defun btn_darw	()
+(defun btn_darw	 ()
   (princ "\nbtn_darw")
   (if (and sc_x sc_y)
-    (progn
-      (draw_zas)
-      (draw_text)
-      (draw_podp_text)
-    )
-  )
-)
+    (progn (draw_zas) (draw_text) (draw_podp_text))))
 
-(defun btn_delete()
-  (command "erase" ss_zas ss_text ss_podp_text "")
-)
+(defun btn_delete () (command "erase" ss_zas ss_text ss_podp_text ""))
 
-(defun draw_zas	(/ n_div pt pt_0 pt_1 scx_end scx_st scy_end scy_st x_max x_min en)
-  (setq
-    x_min (atof (cadr (assoc "zas_x_min" ll_ax_shcala)))
-    x_max (atof (cadr (assoc "zas_x_max" ll_ax_shcala)))
-    n_div (atoi (cadr (assoc "zas_n_div" ll_ax_shcala)))
-  )
-  (setq
-    scx_st  (cdr (assoc 10 sc_x))
-    scx_end (cdr (assoc 11 sc_x))
-    scy_st  (cdr (assoc 10 sc_y))
-    scy_end (cdr (assoc 11 sc_y))
-  )
+(defun draw_zas	 (/ n_div pt pt_0 pt_1 scx_end scx_st scy_end scy_st x_max x_min en)
+  (setq	x_min (atof (cadr (assoc "zas_x_min" ll_ax_shcala)))
+	x_max (atof (cadr (assoc "zas_x_max" ll_ax_shcala)))
+	n_div (atoi (cadr (assoc "zas_n_div" ll_ax_shcala))))
+  (setq	scx_st	(cdr (assoc 10 sc_x))
+	scx_end	(cdr (assoc 11 sc_x))
+	scy_st	(cdr (assoc 10 sc_y))
+	scy_end	(cdr (assoc 11 sc_y)))
   (mapcar
     (function
       (lambda (el)
-	(setq
-	  pt   (sc:val_pt el sc_x)
-	  pt_0 (polar pt (angle scy_st scy_end) (atof (cadr (assoc "zas_right_len" ll_ax_shcala))))
-	  pt_1 (polar pt (angle scy_end scy_st) (atof (cadr (assoc "zas_left_len" ll_ax_shcala))))
-	)
-	(if (and (= "1" (cadr (assoc "zas_right" ll_ax_shcala)))
-		 (= "1" (cadr (assoc "zas_draw" ll_ax_shcala)))
-	    )
-	  (progn
-	    (dr:line pt pt_0 1)
-	    (setq ss_zas (ssadd (entlast) ss_zas))
-	  )
-	)
-	(if (and (= "1" (cadr (assoc "zas_left" ll_ax_shcala)))
-		 (= "1" (cadr (assoc "zas_draw" ll_ax_shcala)))
-	    )
-	  (progn
-	    (dr:line pt pt_1 2)
-	    (setq ss_zas (ssadd (entlast) ss_zas))
-	  )
-	)
-      )
-    )
-    (sub_div x_min x_max n_div 0)
-  )
-)
+	(setq pt   (sc:val_pt el sc_x)
+	      pt_0 (polar pt (angle scy_st scy_end) (atof (cadr (assoc "zas_right_len" ll_ax_shcala))))
+	      pt_1 (polar pt (angle scy_end scy_st) (atof (cadr (assoc "zas_left_len" ll_ax_shcala)))))
+	(if (and (= "1" (cadr (assoc "zas_right" ll_ax_shcala))) (= "1" (cadr (assoc "zas_draw" ll_ax_shcala))))
+	  (progn (dr:line pt pt_0 1) (setq ss_zas (ssadd (entlast) ss_zas))))
+	(if (and (= "1" (cadr (assoc "zas_left" ll_ax_shcala))) (= "1" (cadr (assoc "zas_draw" ll_ax_shcala))))
+	  (progn (dr:line pt pt_1 2) (setq ss_zas (ssadd (entlast) ss_zas))))))
+    (sub_div x_min x_max n_div 0)))
 
-(defun draw_text (/  n_div pt pt_0 scx_end scx_st scy_end scy_st x_max x_min )
-  (setq
-    x_min (atof (cadr (assoc "text_x_min" ll_ax_shcala)))
-    x_max (atof (cadr (assoc "text_x_max" ll_ax_shcala)))
-    n_div (atoi (cadr (assoc "text_n_div" ll_ax_shcala)))
-  )
-  (setq
-    scx_st  (cdr (assoc 10 sc_x))
-    scx_end (cdr (assoc 11 sc_x))
-    scy_st  (cdr (assoc 10 sc_y))
-    scy_end (cdr (assoc 11 sc_y))
-  )
-  (mapcar
-    (function
-      (lambda (el)
-	(setq
-	  pt   (sc:val_pt el sc_x)
-	  pt_0 (polar pt (angle scy_st scy_end) (atof (cadr (assoc "text_dist_from_ax" ll_ax_shcala))))
-	)
-	(if (= "1" (cadr (assoc "text_draw" ll_ax_shcala)))
-	  (progn
-	    (dr:text
-	      (rtos el)
-	      pt_0
-	      (atof (cadr (assoc "text_hight" ll_ax_shcala)))
-	      (angtof (cadr (assoc "text_angle" ll_ax_shcala)))
-	      -1
-	    )
-	    (dr:ch_prop (list (cons 72 1) (cons 73 2) (cons 11 pt_0)))
-	    (setq ss_text (ssadd (entlast) ss_text))
-	  )
-	)
-      )
-    )
-    (sub_div x_min x_max n_div 0)
-  )
-)
+(defun draw_text  (/ n_div pt pt_0 scx_end scx_st scy_end scy_st x_max x_min)
+  (setq	x_min (atof (cadr (assoc "text_x_min" ll_ax_shcala)))
+	x_max (atof (cadr (assoc "text_x_max" ll_ax_shcala)))
+	n_div (atoi (cadr (assoc "text_n_div" ll_ax_shcala))))
+  (setq	scx_st	(cdr (assoc 10 sc_x))
+	scx_end	(cdr (assoc 11 sc_x))
+	scy_st	(cdr (assoc 10 sc_y))
+	scy_end	(cdr (assoc 11 sc_y)))
+  (mapcar (function (lambda (el)
+		      (setq pt	 (sc:val_pt el sc_x)
+			    pt_0 (polar pt (angle scy_st scy_end) (atof (cadr (assoc "text_dist_from_ax" ll_ax_shcala)))))
+		      (if (= "1" (cadr (assoc "text_draw" ll_ax_shcala)))
+			(progn (dr:text	(rtos el)
+					pt_0
+					(atof (cadr (assoc "text_hight" ll_ax_shcala)))
+					(angtof (cadr (assoc "text_angle" ll_ax_shcala)))
+					-1)
+			       (dr:ch_prop (list (cons 72 1) (cons 73 2) (cons 11 pt_0)))
+			       (setq ss_text (ssadd (entlast) ss_text))))))
+	  (sub_div x_min x_max n_div 0)))
 
 
-(defun draw_podp_text ()
-  (setq
-    scx_st  (cdr (assoc 10 sc_x))
-    scx_end (cdr (assoc 11 sc_x))
-    scy_st  (cdr (assoc 10 sc_y))
-    scy_end (cdr (assoc 11 sc_y))
-  )
-  (cond
-    ((= (cadr (assoc "podp_text_start" ll_ax_shcala)) "1")
-     (setq pt scx_st)
-    )
-    ((= (cadr (assoc "podp_text_middle" ll_ax_shcala)) "1")
-     (setq pt (vect_sc/ (vect_+ scx_st scx_end) 2.0))
-    )
-    ((= (cadr (assoc "podp_text_end" ll_ax_shcala)) "1")
-     (setq pt scx_end)
-    )
-  )
-
-
-
-
-
-
-  
-     
-  (setq	pt_0 (polar pt
-		    (angle scy_st scy_end)
-		    (atof (cadr (assoc "podp_text_dist_from_ax" ll_ax_shcala)))
-	     )
-  )
+(defun draw_podp_text  ()
+  (setq	scx_st	(cdr (assoc 10 sc_x))
+	scx_end	(cdr (assoc 11 sc_x))
+	scy_st	(cdr (assoc 10 sc_y))
+	scy_end	(cdr (assoc 11 sc_y)))
+  (cond	((= (cadr (assoc "podp_text_start" ll_ax_shcala)) "1") (setq pt scx_st))
+	((= (cadr (assoc "podp_text_middle" ll_ax_shcala)) "1")
+	 (setq pt (vect_sc/ (vect_+ scx_st scx_end) 2.0)))
+	((= (cadr (assoc "podp_text_end" ll_ax_shcala)) "1") (setq pt scx_end)))
+  (setq pt_0 (polar pt (angle scy_st scy_end) (atof (cadr (assoc "podp_text_dist_from_ax" ll_ax_shcala)))))
   (if (= "1" (cadr (assoc "podp_text_draw" ll_ax_shcala)))
-	  (progn
-	    (dr:text
-	      (cdr (assoc 1 sc_x))
-	      pt_0
-	      (atof (cadr (assoc "podp_text_hight" ll_ax_shcala)))
-	      (angtof (cadr (assoc "podp_text_angle" ll_ax_shcala)))
-	      -1
-	    )
-	    (dr:ch_prop (list (cons 72 1) (cons 73 2) (cons 11 pt_0)))
-	    (setq ss_podp_text (ssadd (entlast) ss_podp_text))
-	  )
-	)
-  (mapcar
-    (function
-      (lambda (el)
-	(setq
-	  pt   (sc:val_pt el sc_x)
-	  pt_0 (polar pt (angle scy_st scy_end) (atof (cadr (assoc "text_dist_from_ax" ll_ax_shcala))))
-	)
-	
-      )
-    )
-    (sub_div x_min x_max n_div 0)
-  )
-)
+    (progn (dr:text (cdr (assoc 1 sc_x))
+		    pt_0
+		    (atof (cadr (assoc "podp_text_hight" ll_ax_shcala)))
+		    (angtof (cadr (assoc "podp_text_angle" ll_ax_shcala)))
+		    -1)
+	   (dr:ch_prop (list (cons 72 1) (cons 73 2) (cons 11 pt_0)))
+	   (setq ss_podp_text (ssadd (entlast) ss_podp_text))))
+  (mapcar (function (lambda (el)
+		      (setq pt	 (sc:val_pt el sc_x)
+			    pt_0 (polar pt (angle scy_st scy_end) (atof (cadr (assoc "text_dist_from_ax" ll_ax_shcala)))))))
+	  (sub_div x_min x_max n_div 0)))
 
 
 
 
-(defun setup ()
-  (mapcar
-    '(lambda (el)
-       (cond
-	 (
-	  (= 2 (length el))
-	  (set_tile (car el) (cadr el))
-	 )
-	 (
-	  (= 3 (length el))
-	  (start_list (car el))
-	  (mapcar (function add_list) (caddr el))
-	  (end_list)
-	  (set_tile (car el) (cadr el))
-	 )
-       )
-     )
-    ll_ax_shcala
-  )
+(defun setup  ()
+  (mapcar '(lambda (el)
+	     (cond ((= 2 (length el)) (set_tile (car el) (cadr el)))
+		   ((= 3 (length el))
+		    (start_list (car el))
+		    (mapcar (function add_list) (caddr el))
+		    (end_list)
+		    (set_tile (car el) (cadr el)))))
+	  ll_ax_shcala)
   (ac-zas_draw)
   (ac-text_draw)
-  (ac-podp_text_draw)
-)
+  (ac-podp_text_draw))
 
-(defun ac_tile ()
-  (mapcar
-    (function (lambda (el) (action_tile (car el) "(all_ac)")))
-    ll_ax_shcala
-  )
+(defun ac_tile	()
+  (mapcar (function (lambda (el) (action_tile (car el) "(all_ac)"))) ll_ax_shcala)
   (action_tile "btn_select_x_axis" "(done_dialog 2)")
   (action_tile "btn_select_y_axis" "(done_dialog 3)")
   (action_tile "btn_darw" "(done_dialog 4)")
-  (action_tile "btn_delete" "(done_dialog 5)")
-)
+  (action_tile "btn_delete" "(done_dialog 5)"))
 
-(defun all_ac ()
-  (setq
-    ll_ax_shcala
-     (mapcar
-       (function
-	 (lambda (el)
-	   (cond
-	     (
-	      (= 2 (length el))
-	      (list (car el) (get_tile (car el)))
-	     )
-	     (
-	      (= 3 (length el))
-	      (list (car el) (get_tile (car el)) (caddr el))
-	     )
-	   )
-	 )
-       )
-       ll_ax_shcala
-     )
-  )
+(defun all_ac  ()
+  (setq	ll_ax_shcala
+	 (mapcar (function (lambda (el)
+			     (cond ((= 2 (length el)) (list (car el) (get_tile (car el))))
+				   ((= 3 (length el)) (list (car el) (get_tile (car el)) (caddr el))))))
+		 ll_ax_shcala))
   (validate)
-  (setup)
-)
+  (setup))
 
-(defun validate	(/ ll_val)
+(defun validate	 (/ ll_val)
   (setq tmp (atof (cadr (assoc "zas_right_len" ll_ax_shcala))))
-  (if
-    (<= tmp 0.0)
-     (setq ll_val (cons (list "zas_right_len" "1.0") ll_val))
-     (setq ll_val (cons (list "zas_right_len" (rtos tmp)) ll_val)
-     )
-  )
+  (if (<= tmp 0.0)
+    (setq ll_val (cons (list "zas_right_len" "1.0") ll_val))
+    (setq ll_val (cons (list "zas_right_len" (rtos tmp)) ll_val)))
   (setq tmp (atof (cadr (assoc "zas_left_len" ll_ax_shcala))))
-  (if
-    (<= tmp 0.0)
-     (setq ll_val (cons (list "zas_left_len" "1.0") ll_val))
-     (setq ll_val (cons (list "zas_left_len" (rtos tmp)) ll_val))
-  )
-  (setq
-    ll_val
-	   (cons
-	     (list "zas_x_min" (rtos (atof (cadr (assoc "zas_x_min" ll_ax_shcala)))))
-	     ll_val
-	   )
-    ll_val
-	   (cons
-	     (list "zas_x_max" (rtos (atof (cadr (assoc "zas_x_max" ll_ax_shcala)))))
-	     ll_val
-	   )
-  )
+  (if (<= tmp 0.0)
+    (setq ll_val (cons (list "zas_left_len" "1.0") ll_val))
+    (setq ll_val (cons (list "zas_left_len" (rtos tmp)) ll_val)))
+  (setq	ll_val (cons (list "zas_x_min" (rtos (atof (cadr (assoc "zas_x_min" ll_ax_shcala))))) ll_val)
+	ll_val (cons (list "zas_x_max" (rtos (atof (cadr (assoc "zas_x_max" ll_ax_shcala))))) ll_val))
   (setq tmp (atoi (cadr (assoc "zas_n_div" ll_ax_shcala))))
-  (if
-    (<= tmp 0)
-     (setq ll_val (cons (list "zas_n_div" "1") ll_val))
-     (setq ll_val (cons (list "zas_n_div" (itoa tmp)) ll_val))
-  )
-  (setq
-    ll_val
-     (cons
-       (list "text_dist_from_ax"
-	     (rtos (atof (cadr (assoc "text_dist_from_ax" ll_ax_shcala))))
-       )
-       ll_val
-     )
-  )
+  (if (<= tmp 0)
+    (setq ll_val (cons (list "zas_n_div" "1") ll_val))
+    (setq ll_val (cons (list "zas_n_div" (itoa tmp)) ll_val)))
+  (setq	ll_val (cons (list "text_dist_from_ax" (rtos (atof (cadr (assoc "text_dist_from_ax" ll_ax_shcala)))))
+		     ll_val))
   (setq tmp (atof (cadr (assoc "text_hight" ll_ax_shcala))))
-  (if
-    (<= tmp 0.0)
-     (setq ll_val (cons (list "text_hight" "3.5") ll_val))
-     (setq ll_val (cons (list "text_hight" (rtos tmp)) ll_val))
-  )
-  (setq
-    ll_val
-	   (cons
-	     (list
-	       "text_angle"
-	       (angtos (angtof (cadr (assoc "text_angle" ll_ax_shcala))))
-	     )
-	     ll_val
-	   )
-    ll_val
-	   (cons
-	     (list
-	       "text_x_min"
-	       (rtos (atof (cadr (assoc "text_x_min" ll_ax_shcala))))
-	     )
-	     ll_val
-	   )
-    ll_val
-	   (cons
-	     (list
-	       "text_x_max"
-	       (rtos (atof (cadr (assoc "text_x_max" ll_ax_shcala))))
-	     )
-	     ll_val
-	   )
-  )
+  (if (<= tmp 0.0)
+    (setq ll_val (cons (list "text_hight" "3.5") ll_val))
+    (setq ll_val (cons (list "text_hight" (rtos tmp)) ll_val)))
+  (setq	ll_val (cons (list "text_angle" (angtos (angtof (cadr (assoc "text_angle" ll_ax_shcala))))) ll_val)
+	ll_val (cons (list "text_x_min" (rtos (atof (cadr (assoc "text_x_min" ll_ax_shcala))))) ll_val)
+	ll_val (cons (list "text_x_max" (rtos (atof (cadr (assoc "text_x_max" ll_ax_shcala))))) ll_val))
   (setq tmp (atoi (cadr (assoc "text_n_div" ll_ax_shcala))))
-  (if
-    (<= tmp 0)
-     (setq ll_val (cons (list "text_n_div" "1") ll_val))
-     (setq ll_val (cons (list "text_n_div" (itoa tmp)) ll_val))
-  )
+  (if (<= tmp 0)
+    (setq ll_val (cons (list "text_n_div" "1") ll_val))
+    (setq ll_val (cons (list "text_n_div" (itoa tmp)) ll_val)))
   (setq	ll_val
-	 (cons
-	   (list "podp_text_dist_from_ax"
-		 (rtos (atof (cadr (assoc "podp_text_dist_from_ax" ll_ax_shcala))))
-	   )
-	   ll_val
-	 )
-  )
+	 (cons (list "podp_text_dist_from_ax" (rtos (atof (cadr (assoc "podp_text_dist_from_ax" ll_ax_shcala)))))
+	       ll_val))
   (setq tmp (atof (cadr (assoc "podp_text_hight" ll_ax_shcala))))
-  (if
-    (<= tmp 0.0)
-     (setq ll_val (cons (list "podp_text_hight" "5.0") ll_val))
-     (setq ll_val (cons (list "podp_text_hight" (rtos tmp)) ll_val))
-  )
-  (setq	ll_val
-	 (cons (list "podp_text_dist_from_ax"
-		     (angtos (angtof (cadr (assoc "podp_text_angle" ll_ax_shcala))))
-	       )
-	       ll_val
-	 )
-  )
-  (setq ll_ax_shcala (dsubst ll_ax_shcala ll_val))
-
+  (if (<= tmp 0.0)
+    (setq ll_val (cons (list "podp_text_hight" "5.0") ll_val))
+    (setq ll_val (cons (list "podp_text_hight" (rtos tmp)) ll_val)))
   (setq
-    tmp	   (assoc "zas_lst" ll_ax_shcala)
-    ll_val (cons (list (car tmp)
-		       (cadr tmp)
-		       (mapcar
-			 'rtos
-			 (sub_div (atof (cadr (assoc "zas_x_min" ll_ax_shcala)))
-				  (atof (cadr (assoc "zas_x_max" ll_ax_shcala)))
-				  (atoi (cadr (assoc "zas_n_div" ll_ax_shcala)))
-				  0
-			 )
-		       )
-		 )
-		 ll_val
-	   )
-    tmp	   (assoc "text_lst" ll_ax_shcala)
-    ll_val (cons (list (car tmp)
-		       (cadr tmp)
-		       (mapcar
-			 'rtos
-			 (sub_div (atof (cadr (assoc "text_x_min" ll_ax_shcala)))
-				  (atof (cadr (assoc "text_x_max" ll_ax_shcala)))
-				  (atoi (cadr (assoc "text_n_div" ll_ax_shcala)))
-				  0
-			 )
-		       )
-		 )
-		 ll_val
-	   )
-  )
+    ll_val (cons (list "podp_text_dist_from_ax" (angtos (angtof (cadr (assoc "podp_text_angle" ll_ax_shcala)))))
+		 ll_val))
   (setq ll_ax_shcala (dsubst ll_ax_shcala ll_val))
-)
+  (setq	tmp    (assoc "zas_lst" ll_ax_shcala)
+	ll_val (cons (list (car tmp)
+			   (cadr tmp)
+			   (mapcar 'rtos
+				   (sub_div (atof (cadr (assoc "zas_x_min" ll_ax_shcala)))
+					    (atof (cadr (assoc "zas_x_max" ll_ax_shcala)))
+					    (atoi (cadr (assoc "zas_n_div" ll_ax_shcala)))
+					    0)))
+		     ll_val)
+	tmp    (assoc "text_lst" ll_ax_shcala)
+	ll_val (cons (list (car tmp)
+			   (cadr tmp)
+			   (mapcar 'rtos
+				   (sub_div (atof (cadr (assoc "text_x_min" ll_ax_shcala)))
+					    (atof (cadr (assoc "text_x_max" ll_ax_shcala)))
+					    (atoi (cadr (assoc "text_n_div" ll_ax_shcala)))
+					    0)))
+		     ll_val))
+  (setq ll_ax_shcala (dsubst ll_ax_shcala ll_val)))
 
 ;; ac-zas_draw()	- Замораживает или размораживает некоторые tile.
-(defun ac-zas_draw (/ tmp ll-zas_draw)
-  (setq tmp (cadr(assoc "zas_draw" ll_ax_shcala))
-	ll-zas_draw (list "zas_right" "zas_right_len" "zas_left" "zas_left_len" "zas_x_min" "zas_x_max" "zas_n_div" "zas_lst"))
-  (cond
-    ((= tmp "0") (mapcar (function (lambda (el) (mode_tile el 1))) ll-zas_draw))
-    ((= tmp "1") (mapcar (function (lambda (el) (mode_tile el 0))) ll-zas_draw))
-  )
-)
+(defun ac-zas_draw  (/ tmp ll-zas_draw)
+  (setq	tmp	    (cadr (assoc "zas_draw" ll_ax_shcala))
+	ll-zas_draw (list "zas_right" "zas_right_len" "zas_left" "zas_left_len"	"zas_x_min" "zas_x_max"	"zas_n_div"
+			  "zas_lst"))
+  (cond	((= tmp "0") (mapcar (function (lambda (el) (mode_tile el 1))) ll-zas_draw))
+	((= tmp "1") (mapcar (function (lambda (el) (mode_tile el 0))) ll-zas_draw))))
 
 ;; ac-text_draw()	- Замораживает или размораживает некоторые tile.
-(defun ac-text_draw (/ tmp ll-text_draw)
+(defun ac-text_draw  (/ tmp ll-text_draw)
   (setq	tmp	     (cadr (assoc "text_draw" ll_ax_shcala))
-	ll-text_draw (list "text_dist_from_ax"
-			   "text_hight"	      "text_angle"	 "text_x_min"	    "text_x_max"
-			   "text_n_div"	      "text_lst"
-			  )
-  )
-  (cond
-    ((= tmp "0")
-     (mapcar (function (lambda (el) (mode_tile el 1))) ll-text_draw)
-    )
-    ((= tmp "1")
-     (mapcar (function (lambda (el) (mode_tile el 0))) ll-text_draw)
-    )
-  )
-)
+	ll-text_draw (list "text_dist_from_ax" "text_hight" "text_angle" "text_x_min" "text_x_max" "text_n_div"
+			   "text_lst"))
+  (cond	((= tmp "0") (mapcar (function (lambda (el) (mode_tile el 1))) ll-text_draw))
+	((= tmp "1") (mapcar (function (lambda (el) (mode_tile el 0))) ll-text_draw))))
 
 
 ;;	ac-podp_text_draw()	- Замораживает или размораживает некоторые tile.
-(defun ac-podp_text_draw (/ tmp ll-podp_text_draw)
-  (setq	tmp	(cadr(assoc "podp_text_draw" ll_ax_shcala))
-	ll-podp_text_draw (list	
-				"podp_text_start"	   "podp_text_middle"
-				"podp_text_end"		   "podp_text_dist_from_ax"
-				"podp_text_hight"	   "podp_text_angle"
-			       )
-  )
-  (cond
-    ((= tmp "0") (mapcar (function (lambda (el) (mode_tile el 1))) ll-podp_text_draw))
-    ((= tmp "1") (mapcar (function (lambda (el) (mode_tile el 0))) ll-podp_text_draw))
-  )
-)
-;|«Visual LISP© Format Options»
-(105 2 5 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+(defun ac-podp_text_draw  (/ tmp ll-podp_text_draw)
+  (setq	tmp		  (cadr (assoc "podp_text_draw" ll_ax_shcala))
+	ll-podp_text_draw (list	"podp_text_start"	   "podp_text_middle"	      "podp_text_end"
+				"podp_text_dist_from_ax"   "podp_text_hight"	      "podp_text_angle"))
+  (cond	((= tmp "0") (mapcar (function (lambda (el) (mode_tile el 1))) ll-podp_text_draw))
+	((= tmp "1") (mapcar (function (lambda (el) (mode_tile el 0))) ll-podp_text_draw))))
+

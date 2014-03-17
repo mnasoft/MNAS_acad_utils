@@ -1,27 +1,25 @@
 ;;;;;;("format" "Построение форматной рамки." "Размеры")
-(defun c:format	 (/ ;
-		  f_key
-	       ;		Список, содержащий ключи основных надписей: ("1" "2" "2аг" "2ат" "2бн" "2бч" "3")
-		  f_val ;		Список, содержащий полные наименования основных надписей.
-		  sht1_key ;		Ключи  тегов в основной надписи
-		  sht1_key2 ;		Наименования тегов в основной надписи
-		  kr_key ;		Список, содержащий допустимые кратности для форматов (строки).
-		  kr_val ;		Список, содержащий допустимые кратности для форматов (целочисленные).
-		  for_name ;		Список, содержащий имена форматов.
-		  for_val ;		Список, содержащий размеры форматов.
-		  reg_root ;		Корнь реестра для записи переменных параметров.
-		  format_registry ;	Список, содержащий значения параметров диалога по умолчанию.
-		  f_no ;			Индекс основной надписи.
-		  kr_no ;			Индекс для нахождения кратности формата.
+(defun c:format	 (/			;
+		  f_key			;		Список, содержащий ключи основных надписей: ("1" "2" "2аг" "2ат" "2бн" "2бч" "3")
+		  f_val			;		Список, содержащий полные наименования основных надписей.
+		  sht1_key		;		Ключи  тегов в основной надписи
+		  sht1_key2		;		Наименования тегов в основной надписи
+		  kr_key		;		Список, содержащий допустимые кратности для форматов (строки).
+		  kr_val		;		Список, содержащий допустимые кратности для форматов (целочисленные).
+		  for_name		;		Список, содержащий имена форматов.
+		  for_val		;		Список, содержащий размеры форматов.
+		  reg_root		;		Корнь реестра для записи переменных параметров.
+		  format_registry	;	Список, содержащий значения параметров диалога по умолчанию.
+		  f_no			;			Индекс основной надписи.
+		  kr_no			;			Индекс для нахождения кратности формата.
 ) (setq reg_root "HKEY_CURRENT_USER\\Software\\MNASoft\\Format")
   (setq	format_registry
 	 '((p_start (0.0 0.0 0.0))
 	   (sht1_val
-	    ("Устройство горелочное"	       "В2М80009993СБ"	"Дораб.черт. Н80038002СБ"
-	     ""		      ""	       ""		""		 "1:1"
-	     ""		      "1"	       "ЖАКИ"		"Нач отд"	 "Матвеев   "
-	     "Матвеев   "     "Дунаев   "      "Ванцовский"	"Матвеев   "	 "Спицын   "
-	     ""		      ""))
+	    ("Устройство горелочное"	       "В2М80009993СБ"	"Дораб.черт. Н80038002СБ"	  ""
+	     ""		      ""	       ""		"1:1"		 ""		  "1"
+	     "ЖАКИ"	      "Нач отд"	       "Матвеев   "	"Матвеев   "	 "Дунаев   "	  "Ванцовский"
+	     "Матвеев   "     "Спицын   "      ""		""))
 	   (f_no 0)
 	   (kr_no 0)
 	   (for_no 1)
@@ -52,17 +50,17 @@
   (setq for_val '((1188 840) (840 594) (594 420) (420 297) (297 210)))
   (setq kr_key (list "1" "3" "4" "5" "6" "7" "8" "9")) ;Кратность
   (setq kr_val (list 1 3 4 5 6 7 8 9))
-  (setq	sht1_key (list "sht1_1"	      "sht1_2"	     "sht1_3"	    "sht1_4_1"	   "sht1_4_2"
-		       "sht1_4_3"     "sht1_5"	     "sht1_6"	    "sht1_7"	   "sht1_8"
-		       "sht1_9"	      "sht1_10"	     "sht1_11_1"    "sht1_11_2"	   "sht1_11_3"
-		       "sht1_11_4"    "sht1_11_5"    "sht1_11_6"    "sht1_24"	   "sht1_25"))
-  (setq	sht1_key2 (list	"NAIMEN"      "OBOZNACH"    "MATERIAL"	  "L_1"		"L_2"
-			"L_3"	      "MASS"	    "MASHT"	  "PAPER"	"PAPERS"
-			"FACTORY"     "RABOTA"	    "RAZRAB"	  "PROVER"	"TECHN_KONTROL"
-			"NACH_PODR"   "NORMO_KONTR" "UTVERD"	  "SPRAV_NO"	"PERV_PRIM")))
-	       ;defun load_format
+  (setq	sht1_key (list "sht1_1"	      "sht1_2"	     "sht1_3"	    "sht1_4_1"	   "sht1_4_2"	  "sht1_4_3"
+		       "sht1_5"	      "sht1_6"	     "sht1_7"	    "sht1_8"	   "sht1_9"	  "sht1_10"
+		       "sht1_11_1"    "sht1_11_2"    "sht1_11_3"    "sht1_11_4"	   "sht1_11_5"	  "sht1_11_6"
+		       "sht1_24"      "sht1_25"))
+  (setq	sht1_key2 (list	"NAIMEN"      "OBOZNACH"    "MATERIAL"	  "L_1"		"L_2"	      "L_3"
+			"MASS"	      "MASHT"	    "PAPER"	  "PAPERS"	"FACTORY"     "RABOTA"
+			"RAZRAB"      "PROVER"	    "TECHN_KONTROL"		"NACH_PODR"   "NORMO_KONTR"
+			"UTVERD"      "SPRAV_NO"    "PERV_PRIM")))
+					;defun load_format
 
-(defun dir_ob  (p1 p2 p3 / a1 a2) ;Определяет векторное произведение векторов (p1->p2) и (p2->p3).
+(defun dir_ob  (p1 p2 p3 / a1 a2)	;Определяет векторное произведение векторов (p1->p2) и (p2->p3).
   (setq a1 (mapcar '- p2 p1))
   (setq a2 (mapcar '- p3 p2))
   (- (* (nth 0 a1) (nth 1 a2)) (* (nth 1 a1) (nth 0 a2))))
@@ -85,30 +83,28 @@
 	((< d 0.0) (assad (dir_ob p2 p1 pt) (dir_ob p3 p2 pt) (dir_ob p1 p3 pt)))))
 
 (defun load_format_dcl	()
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/format/format.dcl")))
-  ;;(setq dcl_id (load_dialog  "format.dcl"))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/format/format.dcl")))
   (if (< dcl_id 0)
     (exit)))
 
 
 (defun ac_ed_3	(/ f1 f_n)
-  (reg_write_default_lst ; По просьбе Давлеткужина откат
-	       ;(reg_write_lst  ; ; По просьбе Давлеткужина
+  (reg_write_default_lst		; По просьбе Давлеткужина откат
+					;(reg_write_lst  ; ; По просьбе Давлеткужина
     reg_root
     '((p_start (0.0 0.0 0.0))
       (sht1_val
-       ("Устройство горелочное"		  "В2М80009993СБ"  "Дораб.черт. Н80038002СБ"
-	""		 ""		  ""		   ""		    "1:1"
-	""		 "1"		  "ЖАКИ"	   "Нач отд"	    "Матвеев   "
-	"Матвеев   "	 "Дунаев   "	  "Ванцовский"	   "Матвеев   "	    "Спицын   "
-	""		 ""))
+       ("Устройство горелочное"		  "В2М80009993СБ"  "Дораб.черт. Н80038002СБ"	     ""
+	""		 ""		  ""		   "1:1"	    ""		     "1"
+	"ЖАКИ"		 "Нач отд"	  "Матвеев   "	   "Матвеев   "	    "Дунаев   "	     "Ванцовский"
+	"Матвеев   "	 "Спицын   "	  ""		   ""))
       (f_no 0)
       (kr_no 0)
       (for_no 1)
       (dir_sht 1)
       (divzone_no 1)
       (zone_ch 65)
-      (zone_dig 1))) ;reg_write_default_lst
+      (zone_dig 1)))			;reg_write_default_lst
   )
 
 (defun zsht  (k1 k2)
@@ -140,9 +136,7 @@
        (if (= str_1 "FORMAT")
 	 (progn	(if (= kr_no 0)
 		  (entmod (subst (cons 1 (nth for_no for_name)) (assoc 1 ed) ed))
-		  (entmod (subst (cons 1 (strcat (nth for_no for_name) "x" (nth kr_no kr_key)))
-				 (assoc 1 ed)
-				 ed)))
+		  (entmod (subst (cons 1 (strcat (nth for_no for_name) "x" (nth kr_no kr_key))) (assoc 1 ed) ed)))
 		(entupd en))))
       (t (setq do nil)))))
 
@@ -178,7 +172,7 @@
 ;;; Если en1=nil в набор выбора включаются все элементы БД.
 (defun ss_pick	(en1 / ss1)
   (setq ss1 (ssadd))
-  (if en1      ;
+  (if en1				;
     (setq en1 (entnext en1))
     (setq en1 (entnext)))
   (while en1
@@ -231,12 +225,8 @@
   (draw_line (mapcar '+ (list (nth 0 for) (nth 1 for) 0.0) p0)
 	     (mapcar '+ (list 0.0 (nth 1 for) 0.0) p0)
 	     col)
-  (draw_line (mapcar '+ (list 0.0 0.0 0.0) p0)
-	     (mapcar '+ (list (nth 0 for) 0.0 0.0) p0)
-	     col)
-  (draw_line (mapcar '+ (list 0.0 0.0 0.0) p0)
-	     (mapcar '+ (list 0.0 (nth 1 for) 0.0) p0)
-	     col))
+  (draw_line (mapcar '+ (list 0.0 0.0 0.0) p0) (mapcar '+ (list (nth 0 for) 0.0 0.0) p0) col)
+  (draw_line (mapcar '+ (list 0.0 0.0 0.0) p0) (mapcar '+ (list 0.0 (nth 1 for) 0.0) p0) col))
 
 
 (defun form_dlg	 (/ for_n kr_n dir_sh dcl_id)
@@ -330,7 +320,7 @@
 (defun main_format  (/ en1 pick3 old_err do_dialog dcl_id)
   (if (null (tblsearch "style" "t"))
     (stl))
-  (setvar "cmdecho" 0) ;(reg_read_default_lst reg_root dop_dlg_registry) ; По просьбе Давлеткужина
+  (setvar "cmdecho" 0)			;(reg_read_default_lst reg_root dop_dlg_registry) ; По просьбе Давлеткужина
   (reg_read_lst reg_root dop_dlg_registry) ; По просьбе Давлеткужина
   (load_format_dcl)
   (setq do_dialog t)
@@ -370,30 +360,26 @@
     (action_tile "about" "(about)")
 ;;;(action_tile "help"   "(acad_helpdlg \"user.hlp\" \"dform\")")
     (setq action (start_dialog))
-    (cond
-      ((= action 1)
-       (setq en1 (util:entlast))
-       (draw_format)
-       (if (= 1 divzone_no)
-	 (setq pick3 (draw_zona))
-	 (setq pick3 (ssadd)))
-       (draw_shtamp)
-       (setq s1 (nth f_no f_key))
-       (cond ((and dsht_3_val
-		   (or (= s1 "1") (= s1 "2") (= s1 "2аг") (= s1 "2ат") (= s1 "2бн") (= s1 "3")))
-	      (draw_dop_sht pick3))
-	     ((= s1 "2бч") t))
-       (add_xdata (ss_pick en1))
-       (zap_sht (entlast))
-       (zap_form (entlast))
-       (setq do_dialog nil))
-      ((= action 0) (setq do_dialog nil))
-      ((= action 2) (uk_point))
-      ((= action 3) (ed_4_do))
-      ((= action 5) (dop_dlg))
-      ((= action 6)
-       (zap_sht (car (entsel "\nУкажите штамп для заполнения :")))
-       (setq do_dialog nil))))
+    (cond ((= action 1)
+	   (setq en1 (util:entlast))
+	   (draw_format)
+	   (if (= 1 divzone_no)
+	     (setq pick3 (draw_zona))
+	     (setq pick3 (ssadd)))
+	   (draw_shtamp)
+	   (setq s1 (nth f_no f_key))
+	   (cond ((and dsht_3_val (or (= s1 "1") (= s1 "2") (= s1 "2аг") (= s1 "2ат") (= s1 "2бн") (= s1 "3")))
+		  (draw_dop_sht pick3))
+		 ((= s1 "2бч") t))
+	   (add_xdata (ss_pick en1))
+	   (zap_sht (entlast))
+	   (zap_form (entlast))
+	   (setq do_dialog nil))
+	  ((= action 0) (setq do_dialog nil))
+	  ((= action 2) (uk_point))
+	  ((= action 3) (ed_4_do))
+	  ((= action 5) (dop_dlg))
+	  ((= action 6) (zap_sht (car (entsel "\nУкажите штамп для заполнения :"))) (setq do_dialog nil))))
   (unload_dialog dcl_id)
   (setq *error* old_err)
   (command "_.undo" "_end")

@@ -99,7 +99,7 @@
 
 (defun for_prover:data	(/ act dcl_id ll_for_prover)
   (setq ll_for_prover ll_for_prover_setup)
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/for_lic/for_lic-prover.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/for_lic/for_lic-prover.dcl")))
   (if (< dcl_id 0)
     (exit))
   (if (not (new_dialog "for_prover" dcl_id))

@@ -25,7 +25,7 @@
     py (point_preobr py screen_slide)
   )
 
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/sher.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/sher.dcl")))
   (while (/= ac 1)
     (if	(not (new_dialog "test_window" dcl_id))
       (exit)

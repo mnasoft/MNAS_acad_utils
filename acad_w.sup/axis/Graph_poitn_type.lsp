@@ -7,7 +7,7 @@
 ;;;)
 (defun epr (param / dcl_id do_dialog  fl d-bl d-lin )
   (epr:init)
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/axis/axis.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/axis/axis.dcl")))
   (if (< dcl_id 0)
     (exit)
   )

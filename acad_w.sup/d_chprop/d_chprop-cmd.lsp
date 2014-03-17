@@ -1,8 +1,8 @@
 (vl-arx-import 'acad_colordlg)
 
 ;;;;;;("dch" "Программа управления свойствами объектов." "Измени")
-(defun c:dch  (/ *error* action	by_block by_layer color1 color4	dcl_id do_dialog ename1	err layer1 layer4
-	       ltype1 ltype4 old_err)
+(defun c:dch  (/ *error* action	by_block by_layer color1 color4	dcl_id do_dialog ename1	err layer1 layer4 ltype1 ltype4
+	       old_err)
   (setq	old_err	*error*
 	*error*	err)
   (setvar "cmdecho" 0)
@@ -17,7 +17,7 @@
 	 (setq by_layer	"BYLAYER"
 	       by_block	"BYBLOCK")
 	 (princ t)))
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/d_chprop/d_chprop.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/d_chprop/d_chprop.dcl")))
   (if (< dcl_id 0)
     (exit))
   (setq do_dialog t)
@@ -66,7 +66,7 @@
 	  ((= action 2) (setq ename1 (ssget)))
 	  ((= action 3) (setq ename1 (ssget)))
 	  ((= action 13) (ac-13))
-	  ((= action 16) (ac-1))) ;cond
+	  ((= action 16) (ac-1)))	;cond
     )
   (unload_dialog dcl_id)
   (command "_undo" "_end")
@@ -228,13 +228,9 @@
     (set_tile "a11" (setq ltype1 "CENTER")))
   (set_tile "a12" (setq color1 "7")))
 
-(defun ac-18  ()
-  (set_tile "a11" (setq ltype1 by_layer))
-  (set_tile "a12" (setq color1 "7")))
+(defun ac-18 () (set_tile "a11" (setq ltype1 by_layer)) (set_tile "a12" (setq color1 "7")))
 
-(defun ac-19  ()
-  (set_tile "a11" (setq ltype1 by_layer))
-  (set_tile "a12" (setq color1 by_layer)))
+(defun ac-19 () (set_tile "a11" (setq ltype1 by_layer)) (set_tile "a12" (setq color1 by_layer)))
 
 (defun about () (alert (strcat "Редактирование свойств" (about-GPL-string))))
 

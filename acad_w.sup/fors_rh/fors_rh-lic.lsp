@@ -12,7 +12,7 @@
 ;;;;;;("ras_har_lic"
 ;;;;;;"Вычисление расходной характеристики жидкостной форсунки." "Расчеты")
 (defun c:ras_har_lic  (/ act dcl_id)
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/fors_rh/fors_rh.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/fors_rh/fors_rh.dcl")))
   (if (< dcl_id 0)
     (exit))
   (if (not (new_dialog "fors_lic" dcl_id))
@@ -104,9 +104,7 @@
   (princ "\nras_har_lic:ac-Ro_kontr")
   (setq Ro_kontr (atof (get_tile "fors_lic:Ro_kontr"))))
 
-(defun ras_har_lic:ac-Ro  ()
-  (princ "\nras_har_lic:ac-Ro")
-  (setq Ro (atof (get_tile "fors_lic:Ro"))))
+(defun ras_har_lic:ac-Ro () (princ "\nras_har_lic:ac-Ro") (setq Ro (atof (get_tile "fors_lic:Ro"))))
 
 (defun ras_har_lic:ac-dP_min  ()
   (princ "\nras_har_lic:ac-dP_min")

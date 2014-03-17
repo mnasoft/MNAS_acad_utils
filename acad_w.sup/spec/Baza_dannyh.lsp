@@ -1,5 +1,5 @@
 (defun база_данных  (/ ex_dialog action dcl_id)
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/Спецификация/Специф.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/Спецификация/Специф.dcl")))
   (if (< dcl_id 0)
     (exit)
   )

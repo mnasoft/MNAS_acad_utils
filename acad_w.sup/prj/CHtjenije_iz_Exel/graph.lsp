@@ -37,7 +37,7 @@
 )
   (setq do_dialog t)
   (setq	dcl_id (load_dialog
-		 (strcat (acad_sup) "/PRJ/CHtjenije iz Exel/graph.DCL")
+		 (findfile "acad_w.sup/PRJ/CHtjenije iz Exel/graph.DCL")
 	       )
   )
   (while do_dialog
