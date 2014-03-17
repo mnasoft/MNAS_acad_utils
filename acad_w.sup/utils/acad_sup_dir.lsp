@@ -19,20 +19,22 @@
 	    "\\Acad.mnu\\Acad_mnu_icon"
 	    ";")))
 
-(defun MNAS_ArxPrj_root	 (/ LOADER_32 LOADER_64)
-  (setq	LOADER_64 (vl-registry-read
-		    (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MNASoft\\"
-			    (substr (getvar "acadver") 1 2))
-		    "ROOT")
-	LOADER_32 (vl-registry-read
-		    (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\MNASoft\\" (substr (getvar "acadver") 1 2))
-		    "ROOT"))
-  (VL-STRING-TRANSLATE
-    "\\"
-    "/"
-    (cond (mnasoft-debug mnasoft-debug-path)
-	  (LOADER_64)
-	  (LOADER_32))))
+;;;(defun MNAS_ArxPrj_root	 (/ LOADER_32 LOADER_64)
+;;;  (setq	LOADER_64 (vl-registry-read
+;;;		    (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MNASoft\\"
+;;;			    (substr (getvar "acadver") 1 2))
+;;;		    "ROOT")
+;;;	LOADER_32 (vl-registry-read
+;;;		    (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\MNASoft\\" (substr (getvar "acadver") 1 2))
+;;;		    "ROOT"))
+;;;  (VL-STRING-TRANSLATE
+;;;    "\\"
+;;;    "/"
+;;;    (cond (mnasoft-debug mnasoft-debug-path)
+;;;	  (LOADER_64)
+;;;	  (LOADER_32))))
+
+(defun MNAS_ArxPrj_root	 ()  "D:/home/_namatv/git/mnasoft/MNAS_acad_utils" )
 
 (defun MNAS_ArxPrj_acad_w () (strcat (MNAS_ArxPrj_root) "/" "acad_w.sup"))
 
@@ -52,4 +54,3 @@
   (if (is_path_full str)
     str
     (strcat (acad_sup) str)))
-
