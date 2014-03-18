@@ -1,5 +1,3 @@
-(princ "\nЗагружаю ... MNASoft.mnl")
-
 ;;;(defun ai_ffile (app)
 ;;;  (or (findfile (strcat app ".vlx"));;; Добавлено мною
 ;;;      (findfile (strcat app ".fas"));;; Добавлено мною
@@ -52,4 +50,5 @@
 ;;;  "Message from M_utility.mnl\nФайл .../acad_w.sup/Utils/acad_sup_dir.lsp не найден."
 ;;;)
 
-(princ "\nMNASoft.mnl загружен.\n")
+(princ "Loaded menu-file  MNASoft.mnl")
+(princ)
