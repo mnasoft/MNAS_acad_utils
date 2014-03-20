@@ -27,7 +27,7 @@
 
 ;;;;;;("translit" "¬ыполн€ет транслитерацию с английской раскладки в русскую." "–едактировани€ текста"
 ;;;;;;)
-(defun c:translit  ()
+(defun c:translit  (ed es len ss txt)
   (prompt "¬ыберите текст дл€ преобразовани€ кодировки.")
   (setq	ss  (ssget)
 	len (sslength ss))
