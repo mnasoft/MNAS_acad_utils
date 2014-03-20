@@ -1,24 +1,21 @@
-;;; VLisp project file [V2.0] format saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/format] at:[3/15/14] 
+;;; VLisp project file [V2.0] format saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/format] at:[3/19/14] 
 (VLISP-PROJECT-LIST
-  :name
+  :NAME
   format
-  :own-list
+  :OWN-LIST
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"			    "format-cmd"
-    "format-draw"			    "format-geom_util"
-    "format-block_create"		    "format-dop_dlg"
-    "format-add_dop_sht_dlg"		    "../utils/binary"
-    "../utils/prin"			    "../utils/red_list"
-    "../utils/stl_text"			    "../utils/string"
-    "../utils/system_registry"		    "../utils/dlg_utils"
-    "../opechatka/rus_cmd_opechatka"
+    "../utils/Debug"		 "format-cmd"		      "format-draw"
+    "format-geom_util"		 "format-block_create"	      "format-dop_dlg"
+    "format-add_dop_sht_dlg"	 "../utils/binary"	      "../utils/prin"
+    "../utils/stl_text"		 "../utils/string"	      "../utils/system_registry"
+    "../utils/dlg_utils"	 "../opechatka/rus_cmd_opechatka"
     "format-rus")
-  :fas-directory
+  :FAS-DIRECTORY
   "../../vlisp.tmp"
-  :tmp-directory
+  :TMP-DIRECTORY
   "../../vlisp.tmp"
-  :project-keys
-  (:BUILD (:OPTIMIZE :LOCALIZE) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :context-id
+  :PROJECT-KEYS
+  (:BUILD (:OPTIMIZE :LOCALIZE) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
   :AUTOLISP)
 ;;; EOF
