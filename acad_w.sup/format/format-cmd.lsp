@@ -61,8 +61,8 @@
 					;defun load_format
 
 (defun dir_ob  (p1 p2 p3 / a1 a2)	;Определяет векторное произведение векторов (p1->p2) и (p2->p3).
-  (setq a1 (mapcar '- p2 p1))
-  (setq a2 (mapcar '- p3 p2))
+  (setq a1 (mapcar (function -) p2 p1))
+  (setq a2 (mapcar (function -) p3 p2))
   (- (* (nth 0 a1) (nth 1 a2)) (* (nth 1 a1) (nth 0 a2))))
 
 (defun assad  (r1 r2 r3)
@@ -107,12 +107,12 @@
       (zone_dig 1)))			;reg_write_default_lst
   )
 
-(defun zsht  (k1 k2)
+(defun zsht  (str_1 k1 k2)
   (if (= str_1 k1)
     (entmod (subst (cons 1 k2) (assoc 1 ed) ed))))
 
 ;;;Заполнение атрибутов штампа
-(defun zap_sht	(en / str_1 ed enn do)
+(defun zap_sht	(str_1 en / ed enn do)
   (setq enn en)
   (setq do t)
   (while do
@@ -120,12 +120,12 @@
     (cond ((null en) (setq do nil))
 	  ((= (cdr (assoc 0 (setq ed (entget en)))) "ATTRIB")
 	   (setq str_1 (cdr (assoc 2 ed)))
-	   (MAPCAR (function zsht) sht1_key2 sht1_val))
+	   (mapcar (function (lambda (el1 el2) (zsht str_1 el1 el2))) sht1_key2 sht1_val))
 	  (t (setq do nil))))
   (entupd enn))
 
 ;;;Заполнение атрибута FORMAT
-(defun zap_form	 (en / zsht str_1 ed do)
+(defun zap_form	 (en / sstr_1 ed do)
   (setq do t)
   (while do
     (setq en (entnext en))
@@ -148,7 +148,7 @@
 (defun zap_val	(en / str_1 ed)
   (while (= (cdr (assoc 0 (entget (setq en (entnext en))))) "ATTRIB")
     (setq str_1 (cdr (assoc 2 (setq ed (entget en)))))
-    (setq sht1_val (MAPCAR 'zval sht1_key2 sht1_val))))
+    (setq sht1_val (mapcar (function zval) sht1_key2 sht1_val))))
 
 
 (defun err (p) (print p) (setq *error* old_err) (princ))
@@ -163,8 +163,8 @@
   (load_format_dcl)
   (if (not (new_dialog "sht1" dcl_id))
     (exit))
-  (mapcar 'set_tile sht1_key sht1_val)
-  (action_tile "accept" "(setq sht1_val(mapcar 'get_tile sht1_key) )(done_dialog)")
+  (mapcar (function set_tile) sht1_key sht1_val)
+  (action_tile "accept" "(setq sht1_val(mapcar (function get_tile) sht1_key) )(done_dialog)")
   (start_dialog)
   (unload_dialog dcl_id))
 
@@ -203,7 +203,7 @@
     (set_tile "dir_sht" "Вдоль короткой стороны")
     (set_tile "dir_sht" "Вдоль длинной стороны")))
 
-(defun draw_format  ()
+(defun draw_format  (dir_sht for_no for_val f_key f_no kr_no kr_val p_start)
   (princ "\nНачинаю отрисовку штампа...")
   (setq for (list (nth 0 (nth for_no for_val)) (* (nth 1 (nth for_no for_val)) (nth kr_no kr_val))))
   (if (< (nth 0 for) (nth 1 for))
@@ -212,21 +212,21 @@
     (setq for (reverse for)))
   (draw_rect for p_start 7)
   (cond	((= (nth f_no f_key) "2бч")
-	 (draw_rect (mapcar '- for '(25.0 10.0)) (mapcar '+ '(5.0 5.0 0.0) p_start) 1))
-	(t (draw_rect (mapcar '- for '(25.0 10.0)) (mapcar '+ '(20.0 5.0 0.0) p_start) 1))))
+	 (draw_rect (mapcar (function -) for '(25.0 10.0)) (mapcar (function +) '(5.0 5.0 0.0) p_start) 1))
+	(t (draw_rect (mapcar (function -) for '(25.0 10.0)) (mapcar (function +) '(20.0 5.0 0.0) p_start) 1))))
 
 
 
 
 (defun draw_rect  (for p0 col)
-  (draw_line (mapcar '+ (list (nth 0 for) (nth 1 for) 0.0) p0)
-	     (mapcar '+ (list (nth 0 for) 0.0 0.0) p0)
+  (draw_line (mapcar (function +) (list (nth 0 for) (nth 1 for) 0.0) p0)
+	     (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0)
 	     col)
-  (draw_line (mapcar '+ (list (nth 0 for) (nth 1 for) 0.0) p0)
-	     (mapcar '+ (list 0.0 (nth 1 for) 0.0) p0)
+  (draw_line (mapcar (function +) (list (nth 0 for) (nth 1 for) 0.0) p0)
+	     (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0)
 	     col)
-  (draw_line (mapcar '+ (list 0.0 0.0 0.0) p0) (mapcar '+ (list (nth 0 for) 0.0 0.0) p0) col)
-  (draw_line (mapcar '+ (list 0.0 0.0 0.0) p0) (mapcar '+ (list 0.0 (nth 1 for) 0.0) p0) col))
+  (draw_line (mapcar (function +) (list 0.0 0.0 0.0) p0) (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0) col)
+  (draw_line (mapcar (function +) (list 0.0 0.0 0.0) p0) (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0) col))
 
 
 (defun form_dlg	 (/ for_n kr_n dir_sh dcl_id)
@@ -237,10 +237,10 @@
 	kr_n   kr_no
 	dir_sh dir_sht)
   (start_list "kr_list")
-  (mapcar 'add_list kr_key)
+  (mapcar (function add_list) kr_key)
   (end_list)
   (start_list "for_list")
-  (mapcar 'add_list for_name)
+  (mapcar (function add_list) for_name)
   (end_list)
   (if (eq (not for) nil)
     (set_tile "razmer" (strcat (itoa (nth 0 for)) " x " (itoa (nth 1 for)))))
@@ -335,12 +335,12 @@
     (set_tile "Y0" (rtos (cadr p_start)))
     (set_tile "sht_list" (itoa f_no))
     (start_list "sht_list")
-    (mapcar 'add_list f_val)
+    (mapcar (function add_list) f_val)
     (end_list)
     (cond ((= divzone_no 1) (set_tile "Dz_y" "1"))
 	  ((= divzone_no 0) (set_tile "Dz_n" "1")))
     (if	dsht_3_val
-      (progn (start_list "dop_list") (mapcar 'add_list (mapcar 'car dsht_3_val)) (end_list)))
+      (progn (start_list "dop_list") (mapcar (function add_list) (mapcar (function car) dsht_3_val)) (end_list)))
     (action_tile "sht_list" "(f_list_act_no $value)")
     (action_tile "Dz_y" "(setq divzone_no 1)")
     (action_tile "Dz_n" "(setq divzone_no 0)")
@@ -362,7 +362,7 @@
     (setq action (start_dialog))
     (cond ((= action 1)
 	   (setq en1 (util:entlast))
-	   (draw_format)
+	   (draw_format dir_sht for_no for_val f_key f_no kr_no kr_val p_start)
 	   (if (= 1 divzone_no)
 	     (setq pick3 (draw_zona))
 	     (setq pick3 (ssadd)))
@@ -372,14 +372,14 @@
 		  (draw_dop_sht pick3))
 		 ((= s1 "2бч") t))
 	   (add_xdata (ss_pick en1))
-	   (zap_sht (entlast))
+	   (zap_sht str_1 (entlast))
 	   (zap_form (entlast))
 	   (setq do_dialog nil))
 	  ((= action 0) (setq do_dialog nil))
 	  ((= action 2) (uk_point))
 	  ((= action 3) (ed_4_do))
 	  ((= action 5) (dop_dlg))
-	  ((= action 6) (zap_sht (car (entsel "\nУкажите штамп для заполнения :"))) (setq do_dialog nil))))
+	  ((= action 6) (zap_sht str_1 (car (entsel "\nУкажите штамп для заполнения :"))) (setq do_dialog nil))))
   (unload_dialog dcl_id)
   (setq *error* old_err)
   (command "_.undo" "_end")

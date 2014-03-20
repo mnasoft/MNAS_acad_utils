@@ -177,10 +177,10 @@
   (while (not (setq p2 (getpoint "\nВторая точка зоны ограничивающая штамп:"))))
   (while (not (setq p3 (getpoint "\nТретья точка зоны ограничивающая штамп:"))))
   (while (not (setq p4 (getpoint "\nЧетвертая точка зоны ограничивающая штамп:"))))
-  (setq	p1 (mapcar '- p1 p0)
-	p2 (mapcar '- p2 p0)
-	p3 (mapcar '- p3 p0)
-	p4 (mapcar '- p4 p0))
+  (setq	p1 (mapcar (function -) p1 p0)
+	p2 (mapcar (function -) p2 p0)
+	p3 (mapcar (function -) p3 p0)
+	p4 (mapcar (function -) p4 p0))
   (setq
     ll (list str1
 	     (list (cons 2 str2) (cons 70 j1) (cons 11 p1) (cons 12 p2) (cons 13 p3) (cons 14 p4))))
@@ -210,9 +210,9 @@
     (if	(not (new_dialog "dop_dlg" dcl_id))
       (exit))
     (if	dsht_1_val
-      (progn (start_list "dop_dlg_1") (mapcar 'add_list (mapcar 'car dsht_1_val)) (end_list)))
+      (progn (start_list "dop_dlg_1") (mapcar (function add_list) (mapcar (function car) dsht_1_val)) (end_list)))
     (if	dsht_2_val
-      (progn (start_list "dop_dlg_2") (mapcar 'add_list (mapcar 'car dsht_2_val)) (end_list)))
+      (progn (start_list "dop_dlg_2") (mapcar (function add_list) (mapcar (function car) dsht_2_val)) (end_list)))
     (if	dsht_1_no
       (set_tile "dop_dlg_1" (rtos dsht_1_no)))
     (if	dsht_2_no

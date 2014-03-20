@@ -6,7 +6,7 @@
   (setq pick3 (hid_tr p1 p3 p4 pick2))
 )
 
-(defun hid_tr (p1 p2 p3 ss1 / en1 ed1 ss1 en2 ss2 ss3 i1)
+(defun hid_tr (p1 p2 p3 ss1 / en1 ed1 en2 ss2 ss3 i1)
 ;;;Отбрасывает части линий из набора ss1 внутри границ треугольника p1 p2 p3.
 ;;;Возвращает набор из оставшихся частей линий.
   (setq ss2 (ssadd))
@@ -48,7 +48,7 @@
     (setq ss1 (ssdel en1 ss1))
   )
   (setq pick1 ss2)
-  (eval ss2)
+  ss2
 )
 
 (defun tr_hide (p1 p2 p3 ed1 / i1 i2 i pt ed2 pt3 pt4 pt5 i3 ss4)
@@ -214,7 +214,7 @@
      )
     )
   )
-  (eval ss4)
+  ss4
 )
 ;|«Visual LISP© Format Options»
 (120 2 10 2 nil "end of " 60 10 0 0 0 T T nil T)
