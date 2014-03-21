@@ -10,7 +10,7 @@
 		    pnt	     p_bok_23 p_bok_43 p_mid	p_vo_2	 p_vo_3	  p_vo_4   start_pnt
 		    s_par    vo_line  v_bok_23 v_bok_43	v_mid	 v_pnt_2  v_pnt_3  v_pnt_4
 		   )
-  (command "_vslide" (strcat (acad_sup) "/razvertka/razvertka.sld"))
+  (command "_vslide" (findfile "acad_w.sup/razvertka/razvertka.sld"))
   (prompt "\nКогда будете готовы нажмите ВВОД.")
   (command pause "_redraw")
   (setq

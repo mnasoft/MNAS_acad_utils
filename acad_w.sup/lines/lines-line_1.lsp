@@ -151,4 +151,4 @@
     (setq cur (+ cur 1))))
 
 
-(defun c:cxt () (command "_script" (strcat (acad_sup) "/lines/cxt.scr")))
+(defun c:cxt () (command "_script" (findfile "acad_w.sup/lines/cxt.scr")))

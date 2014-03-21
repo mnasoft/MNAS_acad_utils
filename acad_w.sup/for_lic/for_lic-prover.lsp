@@ -131,7 +131,7 @@
     0
     (DIMX_TILE "f_pr-image")
     (DIMY_TILE "f_pr-image")
-    (strcat (acad_sup) "/for_lic/for"))
+    (findfile "acad_w.sup/for_lic/for.sld"))
   (end_image))
 
 (defun for_prover:ac_tile  ()

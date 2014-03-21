@@ -38,6 +38,6 @@
     0
     (dimx_tile "i101")
     (dimy_tile "i101")
-    (strcat (acad_sup) "/lopatka/lopatka"))
+    (findfile "acad_w.sup/lopatka/lopatka.sld"))
   (end_image)
   (princ color))

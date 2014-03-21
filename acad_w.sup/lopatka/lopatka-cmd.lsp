@@ -218,7 +218,7 @@
        )
       )
       ((= str "Slide")
-       (command "_.vslide" "lopatka\\lopatka")
+       (command "_.vslide" (findfile "acad_w.sup/lopatka/lopatka.sld"))
       )
       ((= str "File")
        (lo:lop_7)

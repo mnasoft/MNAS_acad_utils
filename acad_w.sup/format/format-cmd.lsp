@@ -89,8 +89,7 @@
 
 
 (defun ac_ed_3	(/ f1 f_n)
-  (reg_write_default_lst		; По просьбе Давлеткужина откат
-					;(reg_write_lst  ; ; По просьбе Давлеткужина
+  (reg_write_default_lst
     reg_root
     '((p_start (0.0 0.0 0.0))
       (sht1_val
@@ -104,8 +103,7 @@
       (dir_sht 1)
       (divzone_no 1)
       (zone_ch 65)
-      (zone_dig 1)))			;reg_write_default_lst
-  )
+      (zone_dig 1))))
 
 (defun zsht  (str_1 k1 k2)
   (if (= str_1 k1)
@@ -213,7 +211,8 @@
   (draw_rect for p_start 7)
   (cond	((= (nth f_no f_key) "2бч")
 	 (draw_rect (mapcar (function -) for '(25.0 10.0)) (mapcar (function +) '(5.0 5.0 0.0) p_start) 1))
-	(t (draw_rect (mapcar (function -) for '(25.0 10.0)) (mapcar (function +) '(20.0 5.0 0.0) p_start) 1))))
+	(t
+	 (draw_rect (mapcar (function -) for '(25.0 10.0)) (mapcar (function +) '(20.0 5.0 0.0) p_start) 1))))
 
 
 
@@ -225,8 +224,12 @@
   (draw_line (mapcar (function +) (list (nth 0 for) (nth 1 for) 0.0) p0)
 	     (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0)
 	     col)
-  (draw_line (mapcar (function +) (list 0.0 0.0 0.0) p0) (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0) col)
-  (draw_line (mapcar (function +) (list 0.0 0.0 0.0) p0) (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0) col))
+  (draw_line (mapcar (function +) (list 0.0 0.0 0.0) p0)
+	     (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0)
+	     col)
+  (draw_line (mapcar (function +) (list 0.0 0.0 0.0) p0)
+	     (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0)
+	     col))
 
 
 (defun form_dlg	 (/ for_n kr_n dir_sh dcl_id)
@@ -320,8 +323,8 @@
 (defun main_format  (/ en1 pick3 old_err do_dialog dcl_id)
   (if (null (tblsearch "style" "t"))
     (stl))
-  (setvar "cmdecho" 0)			;(reg_read_default_lst reg_root dop_dlg_registry) ; По просьбе Давлеткужина
-  (reg_read_lst reg_root dop_dlg_registry) ; По просьбе Давлеткужина
+  (setvar "cmdecho" 0)
+  (reg_read_lst reg_root dop_dlg_registry)
   (load_format_dcl)
   (setq do_dialog t)
   (while do_dialog
@@ -340,7 +343,9 @@
     (cond ((= divzone_no 1) (set_tile "Dz_y" "1"))
 	  ((= divzone_no 0) (set_tile "Dz_n" "1")))
     (if	dsht_3_val
-      (progn (start_list "dop_list") (mapcar (function add_list) (mapcar (function car) dsht_3_val)) (end_list)))
+      (progn (start_list "dop_list")
+	     (mapcar (function add_list) (mapcar (function car) dsht_3_val))
+	     (end_list)))
     (action_tile "sht_list" "(f_list_act_no $value)")
     (action_tile "Dz_y" "(setq divzone_no 1)")
     (action_tile "Dz_n" "(setq divzone_no 0)")
@@ -379,7 +384,9 @@
 	  ((= action 2) (uk_point))
 	  ((= action 3) (ed_4_do))
 	  ((= action 5) (dop_dlg))
-	  ((= action 6) (zap_sht str_1 (car (entsel "\nУкажите штамп для заполнения :"))) (setq do_dialog nil))))
+	  ((= action 6)
+	   (zap_sht str_1 (car (entsel "\nУкажите штамп для заполнения :")))
+	   (setq do_dialog nil))))
   (unload_dialog dcl_id)
   (setq *error* old_err)
   (command "_.undo" "_end")

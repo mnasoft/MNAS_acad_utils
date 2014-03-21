@@ -86,7 +86,7 @@
 
 (defun ac-4  (/ q dcl_id)
   (defun q (i) (cdr (assoc 2 i)))
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/d_chprop/d_chprop.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/d_chprop/d_chprop.dcl")))
   (if (< dcl_id 0)
     (exit))
   (if (not (new_dialog "layertype" dcl_id))
@@ -106,7 +106,7 @@
 
 (defun ac-5  (/ q dcl_id)
   (defun q (i) (cdr (assoc 2 i)))
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/d_chprop/d_chprop.dcl")))
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/d_chprop/d_chprop.dcl")))
   (if (< dcl_id 0)
     (exit))
   (if (not (new_dialog "linetype" dcl_id))

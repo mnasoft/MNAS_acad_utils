@@ -20,11 +20,6 @@
   (mapcar (function (lambda (el) (vl-string-translate str_keyboard str_opchatka el)))
 	  l_cmds))
 
-(defun autoload_cmds_and_op-cmds  (progr_loc cmd_list)
-  (autoload progr_loc cmd_list)
-  (opech_cmds cmd_list)
-  (autoload progr_loc (l_op_str cmd_list)))
-
 ;;;;;;("translit" "¬ыполн€ет транслитерацию с английской раскладки в русскую." "–едактировани€ текста"
 ;;;;;;)
 (defun c:translit  (ed es len ss txt)

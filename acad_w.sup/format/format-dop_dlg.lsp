@@ -205,14 +205,18 @@
 (defun dop_dlg	(/ dop_dlg_ok f_n action f1 str1 ll1 do_dialog dcl_id)
   (load_format_dcl)
   (setq do_dialog t)
-  (reg_read_default_lst reg_root dop_dlg_registry) ;(reg_read_lst reg_root dop_dlg_registry)
+  (reg_read_default_lst reg_root dop_dlg_registry)
   (while do_dialog
     (if	(not (new_dialog "dop_dlg" dcl_id))
       (exit))
     (if	dsht_1_val
-      (progn (start_list "dop_dlg_1") (mapcar (function add_list) (mapcar (function car) dsht_1_val)) (end_list)))
+      (progn (start_list "dop_dlg_1")
+	     (mapcar (function add_list) (mapcar (function car) dsht_1_val))
+	     (end_list)))
     (if	dsht_2_val
-      (progn (start_list "dop_dlg_2") (mapcar (function add_list) (mapcar (function car) dsht_2_val)) (end_list)))
+      (progn (start_list "dop_dlg_2")
+	     (mapcar (function add_list) (mapcar (function car) dsht_2_val))
+	     (end_list)))
     (if	dsht_1_no
       (set_tile "dop_dlg_1" (rtos dsht_1_no)))
     (if	dsht_2_no
@@ -226,9 +230,9 @@
     (action_tile "dop_dlg_7" "(done_dialog 7)")
     (dop_ac_4)
     (setq action (start_dialog))
-    (cond ((= action 1)			;ok
-	   (setq dsht_3_val dsht_2_val)	;(reg_write_default_lst reg_root dop_dlg_registry) ; По просьбе Давлеткужина
-	   (reg_write_lst reg_root dop_dlg_registry) ; По просьбе Давлеткужина
+    (cond ((= action 1)
+	   (setq dsht_3_val dsht_2_val)
+	   (reg_write_lst reg_root dop_dlg_registry)
 	   (setq do_dialog nil))
 	  ((= action 0) (setq do_dialog nil))
 	  ((= action 2) (c__out))
@@ -241,4 +245,5 @@
 	     (progn (setq d7 (nth dsht_1_no dsht_1_val)) (add_dop_sht_dlg))))))
   (unload_dialog dcl_id)
   (princ))
+
 

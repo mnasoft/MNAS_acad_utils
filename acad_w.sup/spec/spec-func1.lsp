@@ -1,57 +1,45 @@
-(defun func_1  ; Простановка позиций
-	       (/
-		action ; Действие для сохранения
-		fl_nm ; Файл для сохранения
-		)
+(defun func_1  (/ action fl_nm)
   (setup_dialog_f1)
   (setup_ac_f1)
   (setq action (start_dialog))
   (cond	((= action 0) (setq ex_dialog t))
 	((= action 1)
 	 (setq ex_dialog t
-	       fl_nm	 (open (strcat (acad_sup) "/spec/Naimjenovanije.lsp") "w"))
+	       fl_nm	 (open (findfile "acad_w.sup/spec/Naimjenovanije.lsp") "w"))
 	 (cond ((null fl_nm) (alert (princ (strcat "Не могу открыть файл."))) (exit)))
 	 (prinf "docum_lst" docum_lst fl_nm)
 	 (close fl_nm)
-	 (setq fl_nm (open (strcat (acad_sup) "/spec/Dialog_pozicija.lsp") "w"))
+	 (setq fl_nm (open (findfile "acad_w.sup/spec/Dialog_pozicija.lsp") "w"))
 	 (cond ((null fl_nm) (alert (princ (strcat "Не могу открыть файл."))) (exit)))
 	 (prinf "dlg_1_kv" dlg_1_kv fl_nm)
 	 (close fl_nm))
-	((= action 2) (ac_b_1_5)) ;Создать
-	((= action 3) (ac_b_1_6)) ;Выбрать
-	((= action 4) (ac_b_1_8)) ;Удалить
-	((= action 5) (ac_b_1_9)) ;Настроить
-	((= action 6) (ac_b_1_7)) ;Обновить
-	((= action 7) (ac_b_1_10)) ;Спецификация
-	((= action 8) (ac_b_1_11)) ;Настр. цвет
-	))
+	((= action 2) (ac_b_1_5))
+	((= action 3) (ac_b_1_6))
+	((= action 4) (ac_b_1_8))
+	((= action 5) (ac_b_1_9))
+	((= action 6) (ac_b_1_7))
+	((= action 7) (ac_b_1_10))
+	((= action 8) (ac_b_1_11))))
 
-(defun ac_1_info  ()
-  (alert "Разработал Матвеев Н.А.\nУкраина\nтелефоны:\nдом. (0512)228873\nраб. (0512)297411"))
+(defun ac_1_info () (alert "Разработал Матвеев Н.А.,\nsite: http://www.mnasoft.mksat.net"))
 
 (defun ac_1_help  ()
-  (help (strcat (acad_sup) "/spec/Specification.ahp" "спецификация_простановка_позиций")))
+  (help (findfile "acad_w.sup/spec/Specification.ahp" "спецификация_простановка_позиций")))
 
 (defun ac_b_1_1	 (/ nam_1 lst_3)
   (setq nam_1 (mapcar 'cons nm_lst_1 val_lst_1))
   (if (= "1" (cdr (assoc "t_2_2" dlg_2_kv)))
     (f_naim_oboz))
-  (cond	((and (= "1" (cdr (assoc "t_2_1" dlg_2_kv))) (= "1" (cdr (assoc "r_2_10" dlg_2_kv)))) ;and
-	 (setq dlg_1_kv	(subst (cons "e_1_0"
-				     (strcat (cdr (assoc "e_1_7" dlg_1_kv))
-					     "..."
-					     (cdr (assoc "e_1_9" dlg_1_kv))
-					     "шт."))
-			       (assoc "e_1_0" dlg_1_kv)
-			       dlg_1_kv) ;subst
-	       ) ;setq
-	 (set_tile "e_1_0" (cdr (assoc "e_1_0" dlg_1_kv))))
-	((and (= "1" (cdr (assoc "t_2_1" dlg_2_kv))) (= "1" (cdr (assoc "r_2_11" dlg_2_kv)))) ;and
+  (cond	((and (= "1" (cdr (assoc "t_2_1" dlg_2_kv))) (= "1" (cdr (assoc "r_2_10" dlg_2_kv))))
 	 (setq dlg_1_kv
-		(subst (cons "e_1_0" (cdr (assoc "e_1_6" dlg_1_kv))) (assoc "e_1_0" dlg_1_kv) dlg_1_kv))
-	       ;setq
-	 (set_tile "e_1_0" (cdr (assoc "e_1_0" dlg_1_kv))))) ;cond
-  )	       ;defun
+		(subst
+		  (cons "e_1_0" (strcat (cdr (assoc "e_1_7" dlg_1_kv)) "..." (cdr (assoc "e_1_9" dlg_1_kv)) "шт."))
+		  (assoc "e_1_0" dlg_1_kv)
+		  dlg_1_kv))
+	 (set_tile "e_1_0" (cdr (assoc "e_1_0" dlg_1_kv))))
+	((and (= "1" (cdr (assoc "t_2_1" dlg_2_kv))) (= "1" (cdr (assoc "r_2_11" dlg_2_kv))))
+	 (setq dlg_1_kv (subst (cons "e_1_0" (cdr (assoc "e_1_6" dlg_1_kv))) (assoc "e_1_0" dlg_1_kv) dlg_1_kv))
+	 (set_tile "e_1_0" (cdr (assoc "e_1_0" dlg_1_kv))))))
 
 (defun ac_b_1_2 () nil)
 (defun ac_b_1_3 () nil)
@@ -68,16 +56,13 @@
 	(t
 	 (while (null p_start) (setq p_start (getpoint "\nНачало выноски:")))
 	 (while (null p_polka) (setq p_polka (getpoint p_start "\nНачало полки:")))
-	 (while (null a_dir) (setq a_dir (getangle p_polka "\nНаправление полки:"))))) ;cond
-  )
+	 (while (null a_dir) (setq a_dir (getangle p_polka "\nНаправление полки:"))))))
 
 (defun ac_b_1_5	 (/ bl_name tb a_st_pol a_napr a_delta poz_scale nm_lst pos_lst val_lst sc_lst atr_lst)
-  (setq	val_lst	(mapcar
-		  (function (lambda (e) (cdr (assoc e dlg_1_kv))))
-		  (list "e_1_0" "e_1_1" "e_1_2" "e_1_4" "e_1_5" "e_1_6" "e_1_7" "e_1_8" "e_1_9" "e_1_10"))
-	nm_lst	(list "ТЕКСТ"	       "СПЕЦИФИКАЦИЯ"	"ВАРИАНТ"	 "ФОРМАТ"
-		      "ЗОНА"	       "ПОЗИЦИЯ"	"ОБОЗНАЧЕНИЕ"	 "НАИМЕНОВАНИЕ"
-		      "КОЛИЧЕСТВО"     "ПРИМЕЧАНИЕ")
+  (setq	val_lst	(mapcar	(function (lambda (e) (cdr (assoc e dlg_1_kv))))
+			(list "e_1_0" "e_1_1" "e_1_2" "e_1_4" "e_1_5" "e_1_6" "e_1_7" "e_1_8" "e_1_9" "e_1_10"))
+	nm_lst	(list "ТЕКСТ"	       "СПЕЦИФИКАЦИЯ"	"ВАРИАНТ"	 "ФОРМАТ"	  "ЗОНА"
+		      "ПОЗИЦИЯ"	       "ОБОЗНАЧЕНИЕ"	"НАИМЕНОВАНИЕ"	 "КОЛИЧЕСТВО"	  "ПРИМЕЧАНИЕ")
 	pos_lst	(list -0.5 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0)
 	sc_lst	(list 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0)
 	atr_lst	(list 0 1 1 1 1 1 1 1 1 1))
@@ -93,8 +78,7 @@
 	       a_napr a_dir)))
   (entmake (list (cons 0 "block") (cons 2 "*U") (cons 10 p_polka) (cons 70 1)))
   (cond	((= (cdr (assoc "p_1_2" dlg_1_kv)) "1")
-	 (entmake
-	   (list (cons 0 "CIRCLE") (cons 10 p_start) (cons 40 (* poz_scale 0.5)) (s_col "i_4_1"))))
+	 (entmake (list (cons 0 "CIRCLE") (cons 10 p_start) (cons 40 (* poz_scale 0.5)) (s_col "i_4_1"))))
 	((= (cdr (assoc "p_1_2" dlg_1_kv)) "2") (strela (/ 5. (/ 180. pi)) (* 5.0 poz_scale))))
   (entmake (list (cons 0 "LINE") (cons 10 p_start) (cons 11 p_polka) (s_col "i_4_2")))
   (setq tb (textbox (list (cons 1 (cdr (car dlg_1_kv))) (cons 7 "T") (cons 40 (* 7.0 poz_scale)))))
@@ -122,45 +106,40 @@
 			     (cons 1070 (atoi (cdr (assoc "p_1_2" dlg_1_kv))))
 			     (cons 1041 (atof (cdr (assoc "e_1_11" dlg_1_kv))))
 			     (cons 1002 "}")))))
-  (mapcar (function
-	    (lambda (el_1 el_2 el_3 el_4 el_5)
-	      (entmake ; последующие атрибуты
-		(list (cons 0 "ATTRIB")
-		      (cons 10
-			    (polar (polar p_polka (+ a_dir (/ pi -2.0)) (* el_3 7.0 poz_scale))
-				   a_napr
-				   (* poz_scale 3.5)))
-		      (cons 40 (* 3.5 poz_scale el_4))
-		      (cons 1 el_1)
-		      (cons 50 a_dir)
-		      (cons 7 "T")
-		      t_jast
-		      (cons 2 el_2)
-		      (s_col "i_4_4")
-		      (cons 11
-			    (polar (polar p_polka (+ a_dir (/ pi -2.0)) (* el_3 7.0 poz_scale))
-				   a_napr
-				   (* poz_scale 3.5)))
-		      (cons 70 el_5)))))
-	  val_lst
-	  nm_lst
-	  pos_lst
-	  sc_lst
-	  atr_lst)
-  (entmake (list (cons 0 "SEQEND"))) ; Конец последовательности атрибутов
+  (mapcar
+    (function
+      (lambda (el_1 el_2 el_3 el_4 el_5)
+	(entmake
+	  (list	(cons 0 "ATTRIB")
+		(cons 10
+		      (polar (polar p_polka (+ a_dir (/ pi -2.0)) (* el_3 7.0 poz_scale)) a_napr (* poz_scale 3.5)))
+		(cons 40 (* 3.5 poz_scale el_4))
+		(cons 1 el_1)
+		(cons 50 a_dir)
+		(cons 7 "T")
+		t_jast
+		(cons 2 el_2)
+		(s_col "i_4_4")
+		(cons 11
+		      (polar (polar p_polka (+ a_dir (/ pi -2.0)) (* el_3 7.0 poz_scale)) a_napr (* poz_scale 3.5)))
+		(cons 70 el_5)))))
+    val_lst
+    nm_lst
+    pos_lst
+    sc_lst
+    atr_lst)
+  (entmake (list (cons 0 "SEQEND")))
   (redraw (setq en_ins (entlast)) 1)
   (setq	p_start	nil
 	p_polka	nil)
-  (redraw))    ;ac_b_1_5
+  (redraw))
 
 
 (defun ac_b_1_6	 (/ en ed txt atr key ass_lst xdata pt_sta pt_pol razdel_sp str_type masht)
-  (setq	ass_lst
-	 (mapcar
-	   'cons
-	   (list "ТЕКСТ"	  "СПЕЦИФИКАЦИЯ"   "ВАРИАНТ"	    "ФОРМАТ"	     "ЗОНА"
-		 "ПОЗИЦИЯ"	  "ОБОЗНАЧЕНИЕ"	   "НАИМЕНОВАНИЕ"   "КОЛИЧЕСТВО"     "ПРИМЕЧАНИЕ")
-	   (list "e_1_0" "e_1_1" "e_1_2" "e_1_4" "e_1_5" "e_1_6" "e_1_7" "e_1_8" "e_1_9" "e_1_10")))
+  (setq	ass_lst	(mapcar	'cons
+			(list "ТЕКСТ"	       "СПЕЦИФИКАЦИЯ"	"ВАРИАНТ"	 "ФОРМАТ"	  "ЗОНА"
+			      "ПОЗИЦИЯ"	       "ОБОЗНАЧЕНИЕ"	"НАИМЕНОВАНИЕ"	 "КОЛИЧЕСТВО"	  "ПРИМЕЧАНИЕ")
+			(list "e_1_0" "e_1_1" "e_1_2" "e_1_4" "e_1_5" "e_1_6" "e_1_7" "e_1_8" "e_1_9" "e_1_10")))
   (setq	en	  (car (entsel))
 	en_ins	  en
 	n_xdata	  (assoc "POZ_SPEC" (cdr (assoc -3 (entget en_ins (list "*")))))
@@ -170,12 +149,11 @@
 	pt_pol	  (cdr (nth 2 xdata))
 	razdel_sp (cdr (nth 3 xdata))
 	str_type  (cdr (nth 4 xdata))
-	masht	  (cdr (nth 5 xdata))) ;setq
+	masht	  (cdr (nth 5 xdata)))
   (if (= app_nm "POZ_SPEC")
     (progn (setq dlg_1_kv (subst (cons "e_1_11" (rtos masht)) (assoc "e_1_11" dlg_1_kv) dlg_1_kv)
 		 dlg_1_kv (subst (cons "p_1_1" (itoa razdel_sp)) (assoc "p_1_1" dlg_1_kv) dlg_1_kv)
 		 dlg_1_kv (subst (cons "p_1_2" (itoa str_type)) (assoc "p_1_2" dlg_1_kv) dlg_1_kv))
-	       ;setq
 	   (while (and en xdata)
 	     (setq en (entnext en))
 	     (cond (en
@@ -185,14 +163,8 @@
 				   atr	    (cdr (assoc 2 ed))
 				   key	    (cdr (assoc atr ass_lst))
 				   dlg_1_kv (subst (cons key txt) (assoc key dlg_1_kv) dlg_1_kv)))
-	       ;progn
-		      (setq en nil)) ;if
-		    )
-		   (t)) ;cond
-	     ) ;while
-	   )   ;progn
-    )	       ;if
-  )	       ;ac_b_1_6
+		      (setq en nil)))
+		   (t))))))
 
 (defun ac_b_1_7	 (/ en)
   (if en_ins
@@ -201,7 +173,7 @@
   (if en
     (entdel en))
   (redraw))
-(defun ac_b_1_8	 () ;Удалить
+(defun ac_b_1_8	 ()
   (if en_ins
     (entdel en_ins)))
 
@@ -219,8 +191,8 @@
 	 (setq temp_1 (atof $value)
 	       $value (if (<= temp_1 0.0)
 			"1"
-			(rtos temp_1))) ;setq
-	 (set_tile $key $value))) ;cond
+			(rtos temp_1)))
+	 (set_tile $key $value)))
   (setq dlg_1_kv (subst (cons $key $value) (assoc $key dlg_1_kv) dlg_1_kv)))
 
 (defun setup_dialog_f1	()
@@ -232,12 +204,12 @@
 (defun setup_ac_f1  ()
   (action_tile "help" "(ac_1_help)")
   (action_tile "info" "(ac_1_info)")
-  (action_tile "b_1_1" "(ac_b_1_1)") ;Заполнить
-  (action_tile "b_1_5" "(done_dialog 2)") ;Создать
-  (action_tile "b_1_6" "(done_dialog 3)") ;Выбрать
-  (action_tile "b_1_7" "(done_dialog 6)") ;Обновить
-  (action_tile "b_1_8" "(done_dialog 4)") ;Удалить
-  (action_tile "b_1_9" "(done_dialog 5)") ;Настроить
-  (action_tile "b_1_10" "(done_dialog 7)") ;Спецификация
-  (action_tile "b_1_11" "(done_dialog 8)") ;Настр. цвет
+  (action_tile "b_1_1" "(ac_b_1_1)")
+  (action_tile "b_1_5" "(done_dialog 2)")
+  (action_tile "b_1_6" "(done_dialog 3)")
+  (action_tile "b_1_7" "(done_dialog 6)")
+  (action_tile "b_1_8" "(done_dialog 4)")
+  (action_tile "b_1_9" "(done_dialog 5)")
+  (action_tile "b_1_10" "(done_dialog 7)")
+  (action_tile "b_1_11" "(done_dialog 8)")
   (mapcar (function (lambda (e) (action_tile (car e) "(ac_dlg_1 $key $value)"))) dlg_1_kv))

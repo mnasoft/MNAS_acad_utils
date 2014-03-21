@@ -86,7 +86,7 @@
   )
 
   (if (null red_list_lsp)
-    (load (strcat (acad_sup) "/UTILS/red_list.lsp"))
+    (load (findfile "acad_w.sup/UTILS/red_list.lsp"))
   )
 
   (setq
