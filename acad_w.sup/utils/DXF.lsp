@@ -7,16 +7,12 @@
 ;;	dxf-get-list (code-list dxf_list)
 ;; Извлекает информацию о dxf-кодах code-list из списка dxf_list.
 ;; Если значения, связанные с кодами, имеют значение nil то они в результат не включаются.
-(defun dxf-get-list  (code-list dxf_list / rez-list)
-  (mapcar (function (lambda (code / cd cd-val)
-		      (setq cd-val   (dxf-get code dxf_list)
-			    rez-list (if cd-val
-				       (cons (cons code cd-val) rez-list)
-				       rez-list))
-		      t))
-	  code-list)
-  rez-list)
-
+(defun dxf-get-list  (code-list dxf_list / rez-list a_code len lst value_lst)
+  (setq len (length dxf_list))
+  (while (>= (setq len (1- len)) 0)
+    (if	(setq a_code (assoc (nth len code-list) dxf_list))
+      (setq value_lst (cons a_code value_lst))))
+  value_lst)
 
 ;;	dxf-set (code val dxf_list)
 ;; Заменяет информацию о dxf-коде  из списка dxf_list, связанную с code, значением val.
@@ -28,19 +24,19 @@
   (setq li (subst (cons code new_val) (assoc code edata) edata))
   (entmod li))
 
-;;	dsubst(data ndata)		- Изменяет или добавляет данные data данными ndata.
-(defun dsubst  (data ndata / add_data)
-  (mapcar (function (lambda (el / d1)
-		      (setq d1 (assoc (car el) data))
-		      (cond (d1 (setq data (subst el d1 data)))
-			    ((null d1) (setq add_data (cons el add_data))))
-		      nil))
-	  ndata)
-  (append data (reverse add_data)))
+;;;dsubst(data ndata)		- Изменяет или добавляет данные data данными ndata.
+(defun dsubst  (edata list_new / len code lst_el data_code)
+  (setq len (length list_new))
+  (while (>= (setq len (1- len)) 0)
+    (setq lst_el    (nth len list_new)
+	  code	    (car lst_el)
+	  data_code (assoc code edata)
+	  edata	    (cond (data_code (subst lst_el (assoc code edata) edata))
+			  ((null data_code) (append edata (list lst_el)))))))
 
-(defun subst_dxf  (list_new edata)
-  (mapcar (function (lambda (el / code)
-		      (setq code  (car el)
-			    edata (subst el (assoc code edata) edata))))
-	  list_new)
-  edata)
+(defun subst_dxf  (list_new edata / len code lst_el)
+  (setq len (length list_new))
+  (while (>= (setq len (1- len)) 0)
+    (setq lst_el (nth len list_new)
+	  code	 (car lst_el)
+	  edata	 (subst lst_el (assoc code edata) edata))))

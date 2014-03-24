@@ -29,13 +29,12 @@
     (set $val default)
     (eval $val)))
 
+;;;(defun value-list-multiplier  (value lst / len value_lst)
+;;;  (setq len (length lst))
+;;;  (while (>= (setq len (1- len)) 0) (setq value_lst (cons value value_lst))))
+
 ;;;(defun reg_read_lst  (root lst)
 ;;;  (mapcar (function (lambda (el) (reg_read root (car el) (cadr el)))) lst))
-
-(defun value-list-multiplier  (value lst / len value_lst)
-  (setq len (length lst))
-  (while (>= (setq len (1- len)) 0) (setq value_lst (cons value value_lst))))
-
 (defun reg_read_lst  (root lst / len root_lst)
   (mapcar (function (lambda (rt el) (reg_read rt (car el) (cadr el))))
 	  (value-list-multiplier root lst)
