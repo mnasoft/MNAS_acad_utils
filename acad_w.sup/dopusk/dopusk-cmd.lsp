@@ -59,18 +59,22 @@
     (setq ss1 (ssdel en ss1)))
   (princ))
 
-(defun dopusk-find_kv  (val kv / l1 l2)
+(defun dopusk-find_kv  (val kv / l1 l2 len el i)
   (if (null dopusk-dop_val)
     (progn (alert "(load \"dopusk\\dop_data_new_01\")") (exit)))
   (setq l1 (cadr (assoc kv dopusk-dop_val)))
   (if (null l1)
     (progn (princ (strcat "\nÂ òàáëèöå äîïóñêîâ íåò ÊÂÀËÈÒÅÒÀ :" kv)) (exit)))
-  (mapcar (function (lambda (vv el)
-		      (if (and (> vv (car el)) (<= vv (cadr el)))
-			(setq l2 el))))
-	  (value-list-multiplier val l1)
-	  l1)
+  (setq	len (length l1)
+	i   0)
+  (while (< i len)
+    (setq el (nth i l1))
+    (if	(and (> val (car el)) (<= val (cadr el)))
+      (setq l2 el
+	    i  len))
+    (setq i (1+ i)))
   l2)
+
 
 (defun dopusk-str_dop  (ed l kval zn_dia / str t_pl t_ot zn_pl zn_ot)
   (if (null l)
