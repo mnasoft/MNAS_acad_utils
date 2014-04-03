@@ -9,3 +9,4 @@ Thumbs.db
 *.VLX
 *.nsi
 __pycache__
+.directory

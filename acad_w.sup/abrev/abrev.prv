@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] Abrev saved to:[D:/home/namatv/Develop/git_mnasoft/MNAS_acad_utils/acad_w.sup/abrev] at:[3/31/13] 
+(PRV-DEF (:target . "../../Vlx/Abrev.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "Abrev.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../../Vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF
