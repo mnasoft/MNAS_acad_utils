@@ -2,7 +2,7 @@
       scale_dev	 '(1.0 0.80 0.625 0.5 0.4 0.3125 0.25 0.2 0.16 0.125 0.1))
 
 ;;;;;;("te+" "Добавляет круглые скобки вокруг текста размерного примитива." "Тексты")
-(defun c:te+  (/ en ed str ss ss_td old_err err dcl_id)
+(defun c:te+  (/ en ed str ss ss_td old_err err dcl_id i)
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (prompt "\nВыберите тексты или размеры :")
@@ -20,7 +20,7 @@
   (err-handle ""))
 
 ;;;;;;("te+" "Добавляет круглые скобки увеличенного размера вокруг текста размерного примитива." "Тексты")
-(defun c:te++  (/ en ed str ss ss_td old_err err dcl_id)
+(defun c:te++  (/ en ed str ss ss_td old_err err dcl_id i)
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (prompt "\nВыберите тексты или размеры :")
