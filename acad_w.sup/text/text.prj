@@ -1,4 +1,4 @@
-;;; VLisp project file [V2.0] text saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/text] at:[4/3/14] 
+;;; VLisp project file [V2.0] text saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/text] at:[4/5/14] 
 (VLISP-PROJECT-LIST
   :NAME
   text
@@ -21,7 +21,7 @@
   :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link)
 	  :MERGED
-	  nil
+	  T
 	  :SAFE-MODE
 	  T
 	  :MSGLEVEL
