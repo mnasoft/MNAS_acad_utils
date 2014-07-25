@@ -1,4 +1,4 @@
-;;; Visual LISP make file [V1.0] MNASoft saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup] at:[3/15/14] 
+;;; Visual LISP make file [V1.0] MNASoft saved to:[D:/home/_namatv/git/mnasoft/MNAS_acad_utils/acad_w.sup] at:[4/9/14] 
 (PRV-DEF (:target . "../vlx/MNASoft.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
@@ -7,9 +7,9 @@
 	   (:prj "abrev/abrev.prj")
 	   (:prj "acad_pgp/acad_pgp.prj")
 	   (:prj "add_prefix/add_prefix.prj")
-       (:prj "axis/axis.prj")
+	   (:prj "axis/axis.prj")
 	   (:prj "axis/axis_podp.prj")
-	   (:prj "atoms/atoms.prj")       
+	   (:prj "atoms/atoms.prj")
 	   (:prj "big_fnt/big_fnt.prj")
 	   (:prj "change/change.prj")
 	   (:prj "circles/circles.prj")
@@ -48,8 +48,7 @@
 	   (:prj "sort_shp/sort_shp.prj")
 	   (:prj "spec/spec.prj")
 	   (:prj "text/text.prj")
-	   (:prj "format/format.prj")
-	 )
+	   (:prj "format/format.prj"))
 	 (:require-file-list
 	   (:DCL "axis/axis_graph.dcl")
 	   (:DCL "axis/Axis_podp.dcl")
@@ -74,10 +73,8 @@
 	   (:DCL "text/Text.dcl")
 	   (:DCL "atoms/atoms-dlg.dcl")
 	   (:DCL "axis/AXIS.dcl")
-	   (:DCL "format/Format.dcl")
-	 )
+	   (:DCL "format/Format.dcl"))
 	 (:ob-directory . "../vlisp.tmp")
 	 (:tmp-directory . "../vlisp.tmp")
-	 (:optimization . st)
-)
+	 (:optimization . st))
 ;; EOF

@@ -1,8 +1,22 @@
-(defun c:normalize_text	 ()
+(setq color_size
+       '((0 . 14)
+	 (1 . 24)
+	 (2 . 92)
+	 (3 . 52)
+	 (4 . 12)
+	 (5 . 64)
+	 (6 . 74)
+	 (7 . 84)
+	 (8 . 94)
+	 (9 . 104)
+	 (10 . 114)
+	 (11 . 124)))
+
+(defun c:normalize_text	 (/ ed en)
   (setq	en (car (entsel "Выберите блок с атрибутами:"))
 	ed (entget en))
   (if (/= "INSERT" (cdr (assoc 0 ed)))
-    (progn ("Объект не является блоком!") (exit)))
+    (progn (princ "Объект не является блоком!") (exit)))
   (if (null (setq en (entnext en)))
     (exit)
     (setq ed (entget en)))
@@ -10,13 +24,22 @@
     (setq ed (entget en))
     (princ ed)
     (setq en (entnext en))
-    (ch_hight ed)))
+    (ch_hight ed (/ 4.0 5.0))))
 
-(defun ch_hight	 (ed)
-  (setq	size  (cdr (assoc 40 ed))
-	color (cdr (assoc 62 ed))
-	ed    (subst (cons 40 3.5) (assoc 40 ed) ed)
-	ed    (subst (cons 62 3) (assoc 62 ed) ed))
+(defun c:norm_attr  ()
+  (setq	en (car (nentsel "Выберите атрибут блока:"))
+	ed (entget en))
+  (if (is_text ed)
+    (ch_hight ed 1.0)))
+
+(defun is_text (ed) (or (= "ATTRIB" (cdr (assoc 0 ed))) (= "TEXT" (cdr (assoc 0 ed)))))
+
+
+(defun ch_hight	 (ed sc / color_new size_new sz_ncol)
+  (setq	sz_ncol	  (text_normalize (cdr (assoc 40 ed)) sc)
+	size_new  (car sz_ncol)
+	color_new (cdr (assoc (cadr sz_ncol) color_size ))
+        ed (dsubst  ed (list (cons 62 color_new)))) ; (cons 40 size_new)
   (entmod ed))
 
 (defun text_size_lst  (/ rez)
@@ -27,7 +50,515 @@
 	  sz  (* sz (/ 7.0 10.0))
 	  rez (cons sz rez)
 	  sz  (* sz (/ 5.0 7.0))))
-  (princ rez))
+  rez)
+
+(defun text_normalize  (x sc / rez rez_i a b i sg sizes)
+  (setq	rez   1.75
+	rez_i 0
+	sizes (scaled_text_size_lst sc)
+	i     (length sizes))
+  (while (<= 1 (setq i (1- i)))
+    (setq b  (nth i sizes)
+	  a  (nth (1- i) sizes)
+	  sg (sqrt (* a b)))
+    (cond ((<= a sg x b)
+	   (setq rez b
+		 rez_i i))
+	  ((<= a x sg b)
+	   (setq rez a
+		 rez_i i))))
+  (list rez rez_i))
+
+
+(defun scaled_text_size_lst  (scl) 
+  (mapcar (function (lambda (el) (* el scl)))(text_size_lst)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 (mapcar (function (lambda (el) (* 0.1 el))) (text_size_lst))
 
