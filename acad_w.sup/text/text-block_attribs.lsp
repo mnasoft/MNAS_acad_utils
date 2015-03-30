@@ -81,11 +81,13 @@
   (setq	en (car (nentsel "“≈ —“ ËÎË Ã“≈ —“:"))
 	ed (entget en)
 	sc (cond ((null (space)) 1.0)
-		 ((= 0 (getvar "dimscale")) 1.0 )
+		 ((= 0 (getvar "dimscale")) 1.0)
 		 (t (getvar "dimscale"))))
   (if (is_text ed)
     (ch_hight ed sc)))
 
 (defun c:tn () (c:textnorm))
 
-     ;
+(opech_cmds '("tn" "textnorm" "attrnorms" "attrnorm"))
+
+;
