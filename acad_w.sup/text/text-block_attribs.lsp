@@ -88,6 +88,6 @@
 
 (defun c:tn () (c:textnorm))
 
-(opech_cmds '("tn" "textnorm" "attrnorms" "attrnorm"))
+
 
 ;
