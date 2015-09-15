@@ -169,7 +169,7 @@ InstallDirRegKey HKLM "Software\\MNASoft" "ROOT"
 ; Request application privileges for Windows Vista
 RequestExecutionLevel admin
 
-LicenseData ./gpl-3.0.txt
+LicenseData ./License/License.txt
 
 ;______________________________________________________________________________
 
@@ -217,15 +217,16 @@ Section "Start Menu Shortcuts"
   SetShellVarContext all
 
   CreateDirectory "$SMPROGRAMS\\mnas_acad_utils"
+  CreateDirectory "$SMPROGRAMS\\mnas_acad_utils\\License"
   
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Uninstall.lnk"               "$INSTDIR\\uninstall.exe"           "" "$INSTDIR\\uninstall.exe" 0
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\README.html.lnk"              "$INSTDIR\\README.html"              "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Change.log.html.lnk"              "$INSTDIR\\Change.log.html"              "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\CopyRight.html.lnk"          "$INSTDIR\\CopyRight.html"          "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Mnasoft_command_list.html.lnk" "$INSTDIR\\acad.help\\mnasoft_command_list.html"          "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\CopyRight.rtf.lnk"           "$INSTDIR\\CopyRight.rtf"           "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\gpl-3.0.rtf.lnk"             "$INSTDIR\\gpl-3.0.rtf"             "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\gpl-3.0-standalone.html.lnk" "$INSTDIR\\gpl-3.0-standalone.html" "" "" 0  
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Uninstall.lnk"                 "$INSTDIR\\uninstall.exe" "" "$INSTDIR\\uninstall.exe" 0
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\README.html.lnk"               "$INSTDIR\\README.html"                          "" "" 0  
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Change.log.html.lnk"           "$INSTDIR\\Change.log.html"                      "" "" 0  
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Mnasoft_command_list.html.lnk" "$INSTDIR\\acad.help\\mnasoft_command_list.html" "" "" 0  
+
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\License\\License.html.lnk"   "$INSTDIR\\License\\License.html"   "" "" 0
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\License\\License.rtf.lnk"    "$INSTDIR\\License\\License.rtf"    "" "" 0
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\License\\License.txt.lnk"    "$INSTDIR\\License\\License.txt"    "" "" 0
 
 SectionEnd
 
@@ -259,8 +260,10 @@ Section "Uninstall"
 
   ; Remove shortcuts, if any
   SetShellVarContext all
+  Delete "$SMPROGRAMS\\mnas_acad_utils\\License\\*.*"
+  RMDir "$SMPROGRAMS\\mnas_acad_utils\\License"
+
   Delete "$SMPROGRAMS\\mnas_acad_utils\\*.*"
-  
   ; Remove directories used
   RMDir "$SMPROGRAMS\\mnas_acad_utils"
   
