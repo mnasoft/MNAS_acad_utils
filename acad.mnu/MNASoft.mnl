@@ -49,6 +49,7 @@
 ;;;  (strcat (MNAS_ArxPrj) "/acad_w.sup/Utils/ACAD_SUP_DIR.lsp")
 ;;;  "Message from M_utility.mnl\nÔאיכ .../acad_w.sup/Utils/acad_sup_dir.lsp םו םאיהום."
 ;;;)
-
-(princ "Loaded menu-file  MNASoft.mnl")
+(princ "Loading menu-file MNASoft.mnl ...")
+(load "MNASoft.VLX")
+(princ "Loaded menu-file  MNASoft.mnl.")
 (princ)
