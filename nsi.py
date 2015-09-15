@@ -18,7 +18,7 @@ fn_nsi='mnas_acad_utils.nsi'
 fn_version='mnas_acad_utils.version'
 
 #ext_lst=['.txt']
-ext_lst=['.EXE', '.INI', '.VLX', '.arx', '.bat', '.bmp', '.cui', '.cuix', '.dat', '.dbx', '.dcl', '.dwg', '.fnt', '.fon', '.glb', '.hdx', '.html', '.ijk', '.jpg', '.js', '.lin', '.log', '.lsp', '.mea', '.mnl', '.nsi', '.php', '.png', '.prj', '.prv', '.rtf', '.sh', '.shp', '.shx', '.slb', '.sld', '.ttf', '.txt', '.dot', '.pdf', '.scr','.ctb','.pmp']
+ext_lst=['.EXE', '.VLX', '.arx', '.bat', '.bmp', '.cuix', '.dat', '.dbx', '.dcl', '.dwg', '.fon', '.glb', '.hdx', '.html', '.ijk', '.jpg', '.js', '.lin', '.log', '.lsp', '.mea', '.mnl', '.nsi', '.php', '.png', '.prj', '.prv', '.rtf', '.sh', '.shp', '.shx', '.slb', '.sld', '.ttf', '.txt', '.dot', '.pdf', '.scr','.ctb','.pmp']
 
 
 def find_files(pth='.'):
