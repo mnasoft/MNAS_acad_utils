@@ -82,6 +82,7 @@ def inst(f_inst,exts,pth='.'):
     f_inst.write('''Section "''')
     f_inst.write(extension[1:])
     f_inst.write('''"\n''')
+    f_inst.write('''SetShellVarContext all\n''')
     for s in filter(str_iter, f_lst):
       f_inst.write('''  SetOutPath $INSTDIR\\''')
       dirname = os.path.dirname(s)
@@ -100,6 +101,7 @@ def uninst(f_inst,exts,pth='.'):
     f_inst.write('''Section "un.''')
     f_inst.write(extension[1:])
     f_inst.write('''"\n''')
+    f_inst.write('''SetShellVarContext all\n''')
     for s in filter(str_iter, f_lst):
       f_inst.write('''  Delete $INSTDIR\\''')
       f_inst.write(s)
