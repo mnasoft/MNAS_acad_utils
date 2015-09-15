@@ -10,3 +10,4 @@ Thumbs.db
 *.nsi
 __pycache__
 .directory
+*.lnk

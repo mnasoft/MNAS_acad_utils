@@ -82,7 +82,6 @@ def inst(f_inst,exts,pth='.'):
     f_inst.write('''Section "''')
     f_inst.write(extension[1:])
     f_inst.write('''"\n''')
-    f_inst.write('''SetShellVarContext all\n''')
     for s in filter(str_iter, f_lst):
       f_inst.write('''  SetOutPath $INSTDIR\\''')
       dirname = os.path.dirname(s)
@@ -101,7 +100,6 @@ def uninst(f_inst,exts,pth='.'):
     f_inst.write('''Section "un.''')
     f_inst.write(extension[1:])
     f_inst.write('''"\n''')
-    f_inst.write('''SetShellVarContext all\n''')
     for s in filter(str_iter, f_lst):
       f_inst.write('''  Delete $INSTDIR\\''')
       f_inst.write(s)
@@ -216,6 +214,8 @@ SectionEnd
 ; Optional section (can be disabled by the user)
 Section "Start Menu Shortcuts"
 
+  SetShellVarContext all
+
   CreateDirectory "$SMPROGRAMS\\mnas_acad_utils"
   
   CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Uninstall.lnk"               "$INSTDIR\\uninstall.exe"           "" "$INSTDIR\\uninstall.exe" 0
@@ -258,8 +258,9 @@ Section "Uninstall"
 ;_RMDir_End_________________________________________________________________________
 
   ; Remove shortcuts, if any
+  SetShellVarContext all
   Delete "$SMPROGRAMS\\mnas_acad_utils\\*.*"
-
+  
   ; Remove directories used
   RMDir "$SMPROGRAMS\\mnas_acad_utils"
   
