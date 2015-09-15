@@ -3,6 +3,7 @@
     "te%%c"	"te+"	    "te++"	"te-"	    "te+kvsk"	"te-kvsk"   "to_15"	"z_text"
     "x45%%d"	"te_*"	    "text_export"	    "te_<>_"))
 
-(opech_cmds '("tn" "textnorm" "attrnorms" "attrnorm"))
+(opech_cmds '("tn" "textnorm" "tns" "textnorms" "attrnorm" "attrnorms"))
+
 
 (princ "Loaded project text.\n")

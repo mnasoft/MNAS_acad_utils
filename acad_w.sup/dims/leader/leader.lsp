@@ -7,7 +7,7 @@
   (initget (key_words->prompt_list key_list " "))
   (setq k (getkword (strcat "Arrow type [" (key_words->prompt_list key_list "/") "]:")))
   (cond	((= (nth 0 key_list) k) (setq str ""))
-	((= (nth 1 key_list) k) (setq str "DotSmall"))
+	((= (nth 1 key_list) k) (setq str "_DotSmall"))
 	((= (nth 2 key_list) k)
 	 (setq str "weld_arrow_top")
 	 (if (not (TBLSEARCH "BLOCK" "weld_arrow_top"))
