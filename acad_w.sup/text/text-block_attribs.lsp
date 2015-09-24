@@ -121,6 +121,17 @@
 (defun c:tn () (c:textnorm))
 (defun c:tns () (c:textnorms))
 
+(defun c:tmatchprop  ()
+  (setq	en (car (nentsel "\nSelect reference TEXT Ã“≈ —“ ATTRIB:"))
+	ed (entget en))
+  (princ "\nReference hight=") (princ (dxf-get 40 ed)) (princ "\n")
+  (while (setq en1 (car (nentsel "\nSelect taget TEXT Ã“≈ —“ ATTRIB:")))
+    (princ "\nReference hight=") (princ (dxf-get 40 ed)) (princ "\n")
+    (setq ed1 (entget en1))
+    (entmod (dxf-set 40 (dxf-get 40 ed) ed1))))
+
+(defun c:tma () (c:tmatchprop))
+
 ;
 ;|´Visual LISP© Format Optionsª
 (120 2 5 0 nil "end of" 100 9 0 0 0 T T nil T)

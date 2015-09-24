@@ -5,5 +5,7 @@
 
 (opech_cmds '("tn" "textnorm" "tns" "textnorms" "attrnorm" "attrnorms"))
 
+(opech_cmds '("tmatchprop" "tma"))
+
 
 (princ "Loaded project text.\n")
