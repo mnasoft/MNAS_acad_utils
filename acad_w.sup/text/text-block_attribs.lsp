@@ -11,23 +11,11 @@
 		   (10 . 214) ; 40.0
 		   (11 . 234))) ; 56.0
 
-(defun c:attrnorms  (/ ed en)
-  (setq	en (car (entsel "Выберите блок с атрибутами:"))
-	ed (entget en))
-  (if (/= "INSERT" (cdr (assoc 0 ed)))
-    (progn (princ "Объект не является блоком!") (exit)))
-  (if (null (setq en (entnext en)))
-    (exit)
-    (setq ed (entget en)))
-  (while (= "ATTRIB" (cdr (assoc 0 ed)))
-    (setq ed (entget en))
-    (princ ed)
-    (setq en (entnext en))
-    (ch_hight ed 1.0)))
-
+;;;;;;("attrnorm"
+;;;;;;"Производит нормализацию и раскрашивание одного из атрибутов вставки блока." "Тексты")
 (defun c:attrnorm  (/ ed en)
-  (setq	en (car (nentsel "Выберите атрибут блока:"))
-	ed (entget en))
+  (setq en (car (nentsel "Выберите атрибут блока:"))
+        ed (entget en))
   (if (is_text ed)
     (ch_hight ed 1.0)))
 
@@ -54,29 +42,28 @@
 	  sz  (* sz (/ 5.0 7.0))))
   rez)
 
-(defun text_normalize  (x
-     ; Высота символов шрифта, которые необходимо нормализовать.
-			sc
-     ; Масштабный фактор нормализации шрифта д.б. sc = высота - 0,5 * толщина
-			/ rez rez_i a b	i sg sizes xsc)
-  (setq	rez   1.75
-	rez_i 0
-	sizes (text_size_lst)
-	i     (length sizes)
-	xsc   (/ x sc))
+(defun text_normalize  (x               ; Высота символов шрифта, которые необходимо нормализовать.
+                        sc              ; Масштабный фактор нормализации шрифта д.б. sc = высота - 0,5 * толщина
+                        / rez rez_i a b i sg sizes xsc)
+  (setq rez   1.75
+        rez_i 0
+        sizes (text_size_lst)
+        i     (length sizes)
+        xsc   (/ x sc))
   (while (<= 1 (setq i (1- i)))
     (setq b  (nth i sizes)
-	  a  (nth (1- i) sizes)
-	  sg (sqrt (* a b)))
+          a  (nth (1- i) sizes)
+          sg (sqrt (* a b)))
     (cond ((<= a sg xsc b)
-	   (setq rez b
-		 rez_i i))
-	  ((<= a xsc sg b)
-	   (setq rez   a
-		 rez_i (1- i)))))
+           (setq rez b
+                 rez_i i))
+          ((<= a xsc sg b)
+           (setq rez   a
+                 rez_i (1- i)))))
   (list (* rez sc) rez_i))
 
-
+;;;;;;("textnorm"
+;;;;;;"Производит нормализацию высоты и раскрашивание одиночного текста, мультитекста, атрибута вставки блока." "Тексты")
 (defun c:textnorm  (/ ed en)
   (setq	en (car (nentsel "ТЕКСТ или МТЕКСТ:"))
 	ed (entget en)
@@ -98,7 +85,8 @@
        )))
   (sslength ss))
 
-
+;;;;;;("textnorms"
+;;;;;;"Производит нормализацию высоты и раскрашивание текстов, мультитекстов, атрибутов вставки блока." "Тексты")
 (defun c:textnorms  (/ ed en)
   (prompt "ТЕКСТ или МТЕКСТ:")
   (setq	ss (ssget '((-4 . "<OR")
@@ -118,9 +106,18 @@
       (ch_hight ed sc))
     (setq i (1+ i))))
 
+;;;;;;("textnorm"
+;;;;;;"Производит нормализацию высоты и раскрашивание одиночного текста, мультитекста, атрибута вставки блока
+;;;;;;Является аббревиатурой команды  textnorm." "Тексты")
 (defun c:tn () (c:textnorm))
+
+;;;;;;("tns"
+;;;;;;"Производит нормализацию высоты и раскрашивание текстов, мультитекстов, атрибутов вставки блока.
+;;;;;;Является аббревиатурой команды  textnorms." "Тексты")
 (defun c:tns () (c:textnorms))
 
+;;;;;;("tmatchprop"
+;;;;;;"Устанавливет высоту для отдельного текса, мультитекста, атрибута вставки блока по высоте ссылочного объекта." "Тексты")
 (defun c:tmatchprop  ()
   (setq	en (car (nentsel "\nSelect reference TEXT МТЕКСТ ATTRIB:"))
 	ed (entget en))
@@ -130,9 +127,7 @@
     (setq ed1 (entget en1))
     (entmod (dxf-set 40 (dxf-get 40 ed) ed1))))
 
+;;;;;;("tma"
+;;;;;;"Устанавливет высоту для отдельного текса, мультитекста, атрибута вставки блока по высоте ссылочного объекта.
+;;;;;;Является аббревиатурой команды  tmatchprop." "Тексты")
 (defun c:tma () (c:tmatchprop))
-
-;
-;|«Visual LISP© Format Options»
-(120 2 5 0 nil "end of" 100 9 0 0 0 T T nil T)
-;*** НЕ добавляйте текст под комментариями! ***|;
