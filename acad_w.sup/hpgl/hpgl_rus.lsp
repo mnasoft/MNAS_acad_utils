@@ -1,3 +1,1 @@
-(opech_cmds
-  '("hpgl_in")
-)
+(opech_cmds '("hpgl_in"))

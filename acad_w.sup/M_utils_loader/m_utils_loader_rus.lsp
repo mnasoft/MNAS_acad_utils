@@ -1,3 +1,1 @@
-(opech_cmds
-  '("MNASoft-registry-uninstall" "MNASoft-registry-install")
-)
+(opech_cmds '("MNASoft-registry-uninstall" "MNASoft-registry-install"))

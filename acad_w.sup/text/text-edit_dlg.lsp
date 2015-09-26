@@ -3,12 +3,12 @@
 (defun c:te  (/ dcl_id en i ss_td str dcl_te_pos te_registry reg_root)
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
-  (setq	reg_root    "HKEY_CURRENT_USER\\Software\\MNASoft\\Text"
-	te_registry '((dcl_te_pos (-1 -1))))
+  (setq reg_root    "HKEY_CURRENT_USER\\Software\\MNASoft\\Text"
+        te_registry '((dcl_te_pos (-1 -1))))
   (reg_read_default_lst reg_root te_registry)
   (prompt "\nВыберите тексты или размеры :")
-  (setq	ss_td  (ssget '((-4 . "<OR") (0 . "DIMENSION") (0 . "TEXT") (0 . "MTEXT") (-4 . "OR>")))
-	dcl_id (load_dialog (findfile "acad_w.sup/text/text.dcl")))
+  (setq ss_td  (ssget '((-4 . "<OR") (0 . "DIMENSION") (0 . "TEXT") (0 . "MTEXT") (-4 . "OR>")))
+        dcl_id (load_dialog (findfile "acad_w.sup/text/text.dcl")))
   (if (null ss_td)
     (progn (alert "Нет выбранных объектов.") (exit)))
   (if (< dcl_id 0)

@@ -1,4 +1,4 @@
-(defun get-MNASArx_AddDimstyle_Commands	()
+(defun get-mnasarx_adddimstyle_commands  ()
   '("Commands"
     (("MNASsetDimsd2" "MNASsetDimsd2")
      ("MNASsetDimtoh" "MNASsetDimtoh")
@@ -9,38 +9,16 @@
      ("MNASsetDimtxt" "MNASsetDimtxt")
      ("MNASsetDimtofl" "MNASsetDimtofl")
      ("MNASsetDimjust" "MNASsetDimjust")
-     ("MNASsetDimtad" "MNASsetDimtad")
-    )
-   )
-)
+     ("MNASsetDimtad" "MNASsetDimtad"))))
 
-(defun get-MNASArx_AddDimstyle_Groups	()
-  '("Groups"
-    (("MNASArx_AddDimstyle" "MNASArx_AddDimstyle"))
-   )
-)
+(defun get-mnasarx_adddimstyle_groups  ()
+  '("Groups" (("MNASArx_AddDimstyle" "MNASArx_AddDimstyle"))))
 
 
-(defun get-MNASArx_Pozition_Commands ()
-  '("Commands"
-    (("MNASPozition" "pos"))
-   )
-)
+(defun get-mnasarx_pozition_commands () '("Commands" (("MNASPozition" "pos"))))
 
-(defun get-MNASArx_Pozition_Groups ()
-  '("Groups"
-    (("MNASArx_Pozition" "MNASArx_Pozition"))
-   )
-)
+(defun get-mnasarx_pozition_groups () '("Groups" (("MNASArx_Pozition" "MNASArx_Pozition"))))
 
-(defun get-MNASArx_Welding_Commands ()
-  '("Commands"
-    (("MNASWelding" "sv"))
-   )
-)
+(defun get-mnasarx_welding_commands () '("Commands" (("MNASWelding" "sv"))))
 
-(defun get-MNASArx_Welding_Groups ()
-  '("Groups"
-    (("MNASArx_Welding" "MNASArx_Welding"))
-   )
-)
+(defun get-mnasarx_welding_groups () '("Groups" (("MNASArx_Welding" "MNASArx_Welding"))))

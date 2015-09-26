@@ -5,7 +5,7 @@
   (princ))
 
 
-(defun lo:lop_7	 (/ hl lk lp f1 p2_9r1_1 p2_9r2_1 file1)
+(defun lo:lop_7  (/ hl lk lp f1 p2_9r1_1 p2_9r2_1 file1)
   (setq file1 (open "lopatka.rez" "a"))
   (if (null file1)
     (progn (alert (princ "Не могу открыть файл " "lopatka.rez" ".")) (exit)))

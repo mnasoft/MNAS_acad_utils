@@ -5,4 +5,4 @@
   (command "_-linetype" "_load" "*" (findfile "acad_w.sup/lines/eskd.lin"))
   (while (= 1 (getvar "CMDACTIVE")) (command ""))
   (command "_regen")
-  (princ))op
+  (princ))

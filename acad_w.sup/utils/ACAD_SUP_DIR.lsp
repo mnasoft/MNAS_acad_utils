@@ -1,23 +1,23 @@
 (defun c:mnas-cad-utils-path  (/ reg-key val-name acad_path)
-  (setq	reg-key	  "HKEY_CURRENT_USER\\Software\\Autodesk\\AutoCAD\\R16.2\\ACAD-4013:409\\Profiles\\<<VANILLA>>\\General"
-	val-name  "ACAD"
-	acad_path (vl-registry-read reg-key val-name))
+  (setq reg-key   "HKEY_CURRENT_USER\\Software\\Autodesk\\AutoCAD\\R16.2\\ACAD-4013:409\\Profiles\\<<VANILLA>>\\General"
+        val-name  "ACAD"
+        acad_path (vl-registry-read reg-key val-name))
   (vl-registry-write
     reg-key
     val-name
     (strcat acad_path
-	    (MNAS_ArxPrj_root)
-	    "\\acad.fnt"
-	    ";"
-	    (MNAS_ArxPrj_root)
-	    "acad.fnt\\Kompas"
-	    ";"
-	    (MNAS_ArxPrj_root)
-	    "\\acad_w.sup"
-	    ";"
-	    (MNAS_ArxPrj_root)
-	    "\\Acad.mnu\\Acad_mnu_icon"
-	    ";")))
+            (MNAS_ArxPrj_root)
+            "\\acad.fnt"
+            ";"
+            (MNAS_ArxPrj_root)
+            "acad.fnt\\Kompas"
+            ";"
+            (MNAS_ArxPrj_root)
+            "\\acad_w.sup"
+            ";"
+            (MNAS_ArxPrj_root)
+            "\\Acad.mnu\\Acad_mnu_icon"
+            ";")))
 
 ;;;(defun MNAS_ArxPrj_root	 (/ LOADER_32 LOADER_64)
 ;;;  (setq	LOADER_64 (vl-registry-read
@@ -34,7 +34,7 @@
 ;;;	  (LOADER_64)
 ;;;	  (LOADER_32))))
 
-(defun MNAS_ArxPrj_root	 ()  "D:/home/_namatv/git/mnasoft/MNAS_acad_utils" )
+(defun MNAS_ArxPrj_root () "D:/home/_namatv/git/mnasoft/MNAS_acad_utils")
 
 (defun MNAS_ArxPrj_acad_w () (strcat (MNAS_ArxPrj_root) "/" "acad_w.sup"))
 

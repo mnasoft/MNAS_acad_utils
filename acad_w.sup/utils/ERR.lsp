@@ -1,6 +1,4 @@
-(defun file-open-err  (fn)
-  (alert (princ (strcat "\nНе могу открыть файл: " fn ".\n")))
-  (exit))
+(defun file-open-err (fn) (alert (princ (strcat "\nНе могу открыть файл: " fn ".\n"))) (exit))
 
 
 (defun err (msg) (setq *error* old_err) (princ))
@@ -12,7 +10,7 @@
 ;;;f;;;2 значения, которое устанавливается для этой системной переменной.
 ;;;f;;;(set-sys-var-lst '((\"cmdecho\" 1) (\"orthomode\" 0)))
 ;;;f;;;")
-(defun set-sys-var-lst	(variable-lst)
+(defun set-sys-var-lst  (variable-lst)
   (mapcar (function (lambda (el) (setvar (car el) (cadr el)))) variable-lst))
 
 ;;;f;;;("get-sys-var-lst (variable-lst)"
@@ -20,21 +18,20 @@
 ;;;f;;;variable-lst - список, каждый элемент которого строка - являющаяся системной переменной ACAD.
 ;;;f;;;(get-sys-var-lst '(\"cmdecho\" \"orthomode\" ))
 ;;;f;;;")
-(defun get-sys-var-lst	(variable-lst)
+(defun get-sys-var-lst  (variable-lst)
   (mapcar (function (lambda (el) (list el (getvar el)))) variable-lst))
 
 
 
 
-(defun err-init	 (variable-lst
-	       ; Спиок, элементы которого - это строки со значениями системных переменных.
-		  /
-		  echo)
-  (setq	*old_error* *error*
-	*error*	err-handle)
+(defun err-init  (variable-lst          ; Спиок, элементы которого - это строки со значениями системных переменных.
+                  /
+                  echo)
+  (setq *old_error* *error*
+        *error* err-handle)
   (setq echo (getvar "cmdecho"))
   (setvar "cmdecho" 0)
-  (VL-CMDF "_undo" "_begin")
+  (vl-cmdf "_undo" "_begin")
   (setvar "cmdecho" echo)
   (setq *variable-lst* (get-sys-var-lst variable-lst)))
 
@@ -42,7 +39,7 @@
   (set-sys-var-lst *variable-lst*)
   (setq echo (getvar "cmdecho"))
   (setvar "cmdecho" 0)
-  (VL-CMDF "_undo" "_end")
+  (vl-cmdf "_undo" "_end")
   (setvar "cmdecho" echo)
   (setq *error* *old_error*)
   (princ msg)

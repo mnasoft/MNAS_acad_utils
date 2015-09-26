@@ -6,21 +6,11 @@
 ;;;;;;Если в предыдущем сеанре редактирования данного файла образующие были задны при помощи команды prep:sm -
 ;;;;;;в новой сессии они будут определены при загрузке приложения.
 ;;;;;;См. команду dr:sm." "Смеситель")
-(defun c:clear:sm ()
-  (mapcar
-    (function
-      (lambda (el)
-	(vlax-ldata-delete "smesitel_vla" el )
-      )
-    )
-    '("v_spl_top"	 "v_spl_r_top"	    "v_spl_r_kt"       "v_spl_r_kb"
-      "v_spl_l_bok"	 "v_spl_kr_bot"	    "v_spl_bot"	       "v_spl_alfa_bok"
-      "v_pl_axis"	 "v_l_axis"
-     )
-  )
-)
+(defun c:clear:sm  ()
+  (mapcar (function (lambda (el) (vlax-ldata-delete "smesitel_vla" el)))
+          '("v_spl_top" "v_spl_r_top" "v_spl_r_kt" "v_spl_r_kb" "v_spl_l_bok" "v_spl_kr_bot" "v_spl_bot" "v_spl_alfa_bok" "v_pl_axis" "v_l_axis")))
 
 
-;area_lst
-;length_lst
+                                        ;area_lst
+                                        ;length_lst
 (vl-doc-set 'ulus "Go boldly to noone")

@@ -1,5 +1,5 @@
 ;;;;;;("vl_fr" "Заморозка отмеченных слоев для данного порта просмотра." "Слои")
-(defun c:vl_fr	(/ e_list len cur la lay_li)
+(defun c:vl_fr  (/ e_list len cur la lay_li)
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (princ "\nЗаморозка отмеченных слоев для данного порта просмотра.")
@@ -17,7 +17,7 @@
   (err-handle ""))
 
 ;;;;;;("vl_th" "Разморозка отмеченных слоев для даного порта просмотра." "Слои")
-(defun c:vl_th	(/ e_list len cur la lay_li)
+(defun c:vl_th  (/ e_list len cur la lay_li)
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (princ "\nРазморозка отмеченных слоев для даноого порта просмотра.")
@@ -70,28 +70,27 @@
 (defun c:vl_fr_w+_d  (/ ed en la la_d)
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
-  (princ
-    "\nЗамораживание всех за исключением выбраного и заканчивающегося на _d для данного порта.")
+  (princ "\nЗамораживание всех за исключением выбраного и заканчивающегося на _d для данного порта.")
   (if (= 1 (getvar "tilemode"))
     (setvar "tilemode" 0))
   (command "._mspace")
   (if_cmd_active)
-  (setq	en   (car (entsel "\nВыберите примитив:"))
-	ed   (entget en)
-	la_d (cdr (assoc 8 ed)))
-  (cond	((wcmatch (strcase la_d) (strcase "*_d"))
-	 (setq la (substr la_d 1 (- (strlen la_d) (strlen "_d"))))
-	 (command "._vplayer" "_Freeze"	"*" "_Current" "_Thaw" la "_Current" "_Thaw" la_d "_Current"))
-	((null (wcmatch (strcase la_d) (strcase "*_d")))
-	 (command "._vplayer"
-		  "_Freeze"
-		  "*"
-		  "_Current"
-		  "_Thaw"
-		  la_d
-		  "_Current"
-		  "_Thaw"
-		  (strcat la_d "_d")
-		  "_Current")))
+  (setq en   (car (entsel "\nВыберите примитив:"))
+        ed   (entget en)
+        la_d (cdr (assoc 8 ed)))
+  (cond ((wcmatch (strcase la_d) (strcase "*_d"))
+         (setq la (substr la_d 1 (- (strlen la_d) (strlen "_d"))))
+         (command "._vplayer" "_Freeze" "*" "_Current" "_Thaw" la "_Current" "_Thaw" la_d "_Current"))
+        ((null (wcmatch (strcase la_d) (strcase "*_d")))
+         (command "._vplayer"
+                  "_Freeze"
+                  "*"
+                  "_Current"
+                  "_Thaw"
+                  la_d
+                  "_Current"
+                  "_Thaw"
+                  (strcat la_d "_d")
+                  "_Current")))
   (if_cmd_active)
   (err-handle ""))

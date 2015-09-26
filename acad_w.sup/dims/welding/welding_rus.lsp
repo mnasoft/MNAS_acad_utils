@@ -1,3 +1,1 @@
-(opech_cmds
-  '("edweld" "es" "ed-weld-txt" "est")
-)
+(opech_cmds '("edweld" "es" "ed-weld-txt" "est"))

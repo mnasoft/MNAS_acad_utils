@@ -11,11 +11,11 @@
 ;;	<Entity name: 14815a8>
 
 (defun util:entlast  (/ tmp en)
-  (setq	tmp (entlast)
-	en  tmp)
+  (setq tmp (entlast)
+        en  tmp)
   (while tmp
     (setq en  tmp
-	  tmp (entnext tmp)))
+          tmp (entnext tmp)))
   en)
 
 ;;prins (str val)

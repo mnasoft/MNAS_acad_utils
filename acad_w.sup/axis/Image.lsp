@@ -1,27 +1,18 @@
 ;;;;;;("im" "not defined" "not defined")
-(defun c:im (/ color)
+(defun c:im  (/ color)
   (setq color 0)
   (setq dcl_id (load_dialog (findfile "acad_w.sup/axis/axis.dcl")))
   (if (< dcl_id 0)
-    (exit)
-  )
+    (exit))
   (setq do_dialog t)
   (while do_dialog
-    (if	(not (new_dialog "im" dcl_id))
-      (exit)
-    )
-    (action_tile
-      "i101"
-      "(im:ac_i101 $value $key $data $reason $x $y)"
-    )
+    (if (not (new_dialog "im" dcl_id))
+      (exit))
+    (action_tile "i101" "(im:ac_i101 $value $key $data $reason $x $y)")
     (setq act (start_dialog))
-    (cond
-      ((= act 0) (setq do_dialog nil))
-      ((= act 1) (setq do_dialog nil))
-    )
-  )
-  (unload_dialog dcl_id)
-)
+    (cond ((= act 0) (setq do_dialog nil))
+          ((= act 1) (setq do_dialog nil))))
+  (unload_dialog dcl_id))
 
 (defun im:ac_i101  ($value $key $data $reason $x $y)
   (print $value)
@@ -33,11 +24,6 @@
   (start_image "i101")
   (setq color (1+ color))
   (fill_image 0 0 (dimx_tile "i101") (dimy_tile "i101") color)
-  (SLIDE_IMAGE
-    0
-    0
-    (dimx_tile "i101")
-    (dimy_tile "i101")
-    (findfile "acad_w.sup/lopatka/lopatka.sld"))
+  (SLIDE_IMAGE 0 0 (dimx_tile "i101") (dimy_tile "i101") (findfile "acad_w.sup/lopatka/lopatka.sld"))
   (end_image)
   (princ color))

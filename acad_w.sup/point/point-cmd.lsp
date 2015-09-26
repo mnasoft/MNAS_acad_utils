@@ -13,7 +13,7 @@
   (setq p3 p3))
 
 ;;;;;;("xy_sc" "Точка по приращениям и масштабам." "Точки")
-(defun c:xy_sc	()
+(defun c:xy_sc  ()
   (setq p0 (getpoint "\nБазвоая точка:"))
   (setq p1 (getpoint p0 "\nНаправление:"))
   (setq dir_0 (angle p0 p1))
@@ -26,7 +26,7 @@
   (setq p3 p3))
 
 ;;;;;;("rot_p" "Точка повернутая с масштабом." "Точки")
-(defun c:rot_p	(/ p0 p1 point alfa dir_0 sc p3)
+(defun c:rot_p  (/ p0 p1 point alfa dir_0 sc p3)
   (setq p0 (getpoint "\nБазовая точка:"))
   (setq p1 (getpoint p0 "\nНаправление:"))
   (setq point (getpoint p0 "\nТчка для поворота:"))

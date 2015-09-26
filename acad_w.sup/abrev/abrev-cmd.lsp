@@ -11,31 +11,23 @@
 (defun c:rga () (command "_.regenall") (princ))
 
 ;;;;;;("sk" "Отрисовка эскизной полилинии (линии обрыва)." "Аббревиатуры")
-(defun c:sk (/ skp ortm)
-  (setq
-    skp	 (getvar "skpoly")
-    ortm (getvar "orthomode")
-  )
+(defun c:sk  (/ skp ortm)
+  (setq skp  (getvar "skpoly")
+        ortm (getvar "orthomode"))
   (setvar "skpoly" 1)
   (setvar "orthomode" 0)
   (command "_.sketch")
-  (while (= 1 (getvar "cmdactive"))
-    (command pause)
-
-  )
+  (while (= 1 (getvar "cmdactive")) (command pause))
   (setvar "skpoly" skp)
   (setvar "orthomode" ortm)
-  (princ)
-)
+  (princ))
 
 ;;;;;;("tm" "Включение|Выключение режима кафельной плитки." "Аббревиатуры")
-(defun c:tm (/ n)
+(defun c:tm  (/ n)
   (setq n (getvar "tilemode"))
-  (cond	((= n 1) (setvar "tilemode" 0))
-	((= n 0) (setvar "tilemode" 1))
-  )
-  (princ)
-)
+  (cond ((= n 1) (setvar "tilemode" 0))
+        ((= n 0) (setvar "tilemode" 1)))
+  (princ))
 
 ;;;;;;("vs" "Вызов команды _.vports, управляющей протами просмотра." "Аббревиатуры")
 (defun c:vs () (command "_.vports"))
@@ -159,18 +151,14 @@
 (defun c:op () (command "_.options") (princ))
 
 ;;;;;;("h" "Вызов команды _.bhatch" "Аббревиатуры")
-(defun c:h (/ dist sc an)
-  (setq
-    dist (getdist "Введите расстояние между линиями штриховки без учета масштаба размеров:")
-    sc	 (cond
-	   ((= (getvar "dimscale") 0.0) 1.0)
-	   ( t (getvar "dimscale"))
-	 )
-    an   (getangle "Введите угол наклона штрихов:")
-  )
+(defun c:h  (/ dist sc an)
+  (setq dist (getdist "Введите расстояние между линиями штриховки без учета масштаба размеров:")
+        sc   (cond ((= (getvar "dimscale") 0.0) 1.0)
+                   (t (getvar "dimscale")))
+        an   (getangle "Введите угол наклона штрихов:"))
   (command "_-hatch" "_p" "_u" (* (/ 180. pi) an) (* dist sc))
   ;;(command "_.bhatch") (princ)
-)
+  )
 
 ;;;(defun c:he (/ dist sc an)
 ;;;  (setq
@@ -216,36 +204,22 @@
 (defun c:ms () (command "_.mspace") (princ))
 
 ;;;;;;("git" "Вызов команды D:\\home\\_namatv\\Git\\git-bash.bat" "Аббревиатуры")
-(defun c:git()
-  (command "shell" "D:\\home\\_namatv\\Git\\git-bash.bat" )
-)
+(defun c:git () (command "shell" "D:\\home\\_namatv\\Git\\git-bash.bat"))
 
-(defun c:vl()
-    (command "_-VPORTS" "_L" "_ON")
-)
+(defun c:vl () (command "_-VPORTS" "_L" "_ON"))
 
-(defun c:vu()
-  (command "_-VPORTS" "_L" "_OFF")
-)
+(defun c:vu () (command "_-VPORTS" "_L" "_OFF"))
 
 
-(defun c:lou()
-  (command "_LAYOUT" "_S")
-)
+(defun c:lou () (command "_LAYOUT" "_S"))
 
 ;;;;;;("gr_on_off"
 ;;;;;;"Включение|Отключение выбора групп объектов
 ;;;;;; (см. системную переменную pickstyle)." "Аббревиатуры")
-(defun c:gr_on_off ()
+(defun c:gr_on_off  ()
   (setq pstl (getvar "pickstyle"))
-  (cond
-    ((= pstl 0) (setvar "pickstyle" 1)(PRINC "\nGroup on..."))
-    ((= pstl 1) (setvar "pickstyle" 0)(PRINC "\nGroup off..."))
-    ((= pstl 2) (setvar "pickstyle" 3)(PRINC "\nGroup on..."))
-    ((= pstl 3) (setvar "pickstyle" 2)(PRINC "\nGroup off..."))
-  )
-  (princ)
-)
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+  (cond ((= pstl 0) (setvar "pickstyle" 1) (PRINC "\nGroup on..."))
+        ((= pstl 1) (setvar "pickstyle" 0) (PRINC "\nGroup off..."))
+        ((= pstl 2) (setvar "pickstyle" 3) (PRINC "\nGroup on..."))
+        ((= pstl 3) (setvar "pickstyle" 2) (PRINC "\nGroup off...")))
+  (princ))

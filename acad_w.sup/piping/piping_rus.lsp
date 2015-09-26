@@ -1,3 +1,1 @@
-(opech_cmds
-  '("pipe")
-)
+(opech_cmds '("pipe"))

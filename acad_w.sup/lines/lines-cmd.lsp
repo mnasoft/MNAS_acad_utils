@@ -2,7 +2,7 @@
 ;;;;;;"Линия в направлении (ang+dir_0) из точки, лежащей на перпедикуляре к dir_0\n
 ;;;;;;проходящем через p0 на расстоянии rad, проекция линии на направление dir_0\n
 ;;;;;;равна off." "Отверстия")
-(defun c:r_off	(/ p0 p1 dir_0 off rad ang)
+(defun c:r_off  (/ p0 p1 dir_0 off rad ang)
   (setq p0 (getpoint "\nНачальная точка на оси:"))
   (setq p1 (getpoint p0 "\nНаправление:"))
   (setq dir_0 (angle p0 p1))
@@ -15,7 +15,7 @@
 ;;;;;;"Линия в направлении (ang+dir_0) из точки, лежащей на перпедикуляре к dir_0\n
 ;;;;;;проходящем через p0 на расстоянии rad, проекция линии на направление dir_0\n
 ;;;;;;равна off ; зеркальная к ней ; и линия замыкающая концы этих линий." "Отверстия")
-(defun c:d_off	(/ p0 p1 dir_0 off dia ang)
+(defun c:d_off  (/ p0 p1 dir_0 off dia ang)
   (setq p0 (getpoint "\nНачальная точка на оси:"))
   (setq p1 (getpoint p0 "\nНаправление:"))
   (setq dir_0 (angle p0 p1))
@@ -24,7 +24,7 @@
   (setq ang (* pi (/ (getreal "\nУгол наклона профиля:") 180.)))
   (off_ang_dia p0 off ang dia dir_0))
 ;;;;;;("d_otv" "Отверстие без фаски." "Отверстия")
-(defun c:d_otv	(/ p0 p1 dir_0 off dia ang)
+(defun c:d_otv  (/ p0 p1 dir_0 off dia ang)
   (setq p0 (getpoint "\nНачальная точка на оси:"))
   (setq p1 (getpoint p0 "\nНаправление:"))
   (setq dir_0 (angle p0 p1))
@@ -46,7 +46,7 @@
   (otv_faska p0 dia off h alfa gamma dir_0))
 
 ;;;;;;("d_rez" "Построение резьбового отверстия" "Отверстия")
-(defun c:d_rez	(/ p0 p1 dir_0 l1 l2 l3 h d1 d2 alfa betta gamma)
+(defun c:d_rez  (/ p0 p1 dir_0 l1 l2 l3 h d1 d2 alfa betta gamma)
   (setq p0 (getpoint "\nНачальная точка на оси:"))
   (setq p1 (getpoint p0 "\nНаправление:"))
   (setq dir_0 (angle p0 p1))
@@ -61,10 +61,9 @@
   (setq gamma (* pi (/ 45. 180.)))
   (otv_rezba p0 d1 d2 h l1 l2 l3 alfa betta gamma dir_0))
 
-(defun off_ang_rad  (p0 off ang rad dir_0 / zn p1 p2 p21 p11 p3)
-	       ; Линия в направлении (ang+dir_0) из точки, лежащей на перпедикуляре к dir_0
-	       ; проходящем через p0 на расстоянии rad, проекция линии на направление dir_0
-	       ; равна off.
+(defun off_ang_rad  (p0 off ang rad dir_0 / zn p1 p2 p21 p11 p3) ; Линия в направлении (ang+dir_0) из точки, лежащей на перпедикуляре к dir_0
+                                        ; проходящем через p0 на расстоянии rad, проекция линии на направление dir_0
+                                        ; равна off.
   (if (< rad 0.)
     (setq zn -1.)
     (setq zn 1.))
@@ -76,10 +75,9 @@
   (command "_line" "_non" p1 "_non" p3 "")
   (setq p3 p3))
 
-(defun off_ang_dia  (p0 off ang dia dir_0 / p1 p2 p01)
-	       ; Линия в направлении (ang+dir_0) из точки, лежащей на перпедикуляре к dir_0
-	       ; проходящем через p0 на расстоянии rad, проекция линии на направление dir_0
-	       ; равна off ; зеркальная к ней ; и линия замыкающая концы этих линий.
+(defun off_ang_dia  (p0 off ang dia dir_0 / p1 p2 p01) ; Линия в направлении (ang+dir_0) из точки, лежащей на перпедикуляре к dir_0
+                                        ; проходящем через p0 на расстоянии rad, проекция линии на направление dir_0
+                                        ; равна off ; зеркальная к ней ; и линия замыкающая концы этих линий.
   (setq p1 (off_ang_rad p0 off ang (/ dia 2.) dir_0))
   (setq p2 (off_ang_rad p0 off ang (/ dia -2.) dir_0))
   (command "_line" "_non" p1 "_non" p2 "")
@@ -90,7 +88,7 @@
 
 
 (defun konus  (p1 p2 alfa dir_0 / d p11 p21 p3) ; 2 линии проходящие через p1 p2 в направлении
-	       ; (dir_0+alfa) и (dir_0-alfa) соответственно до точки их пересечения.
+                                        ; (dir_0+alfa) и (dir_0-alfa) соответственно до точки их пересечения.
   (setq d (distance p1 p2))
   (setq p11 (polar p1 (+ dir_0 alfa) d))
   (setq p21 (polar p2 (+ dir_0 (- 0 alfa)) d))

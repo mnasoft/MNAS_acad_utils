@@ -67,7 +67,7 @@
 (defun ea:ac_about () (alert (strcat "Редактирование шкалы" (about-GPL-string))))
 
 
-(defun ea:setup	 ()
+(defun ea:setup  ()
   (set_tile "e30" (rtos (car p-s)))
   (set_tile "e31" (rtos (cadr p-s)))
   (set_tile "e32" (rtos l__s))
@@ -79,7 +79,7 @@
     (set_tile "r30" "1")
     (set_tile "r31" "1")))
 
-(defun ea:init	()
+(defun ea:init  ()
   (setq p-s (cdr (assoc 10 axdata)))
   (setq p-e (cdr (assoc 11 axdata)))
   (setq l__s (xdgetn axdata "SHCKALA" 0))
@@ -90,23 +90,22 @@
 
 (defun ea:un_init () (setq do_dial nil))
 
-(defun ea:eaxis	 (axdata / act p-s p-e l__s l__e fl n-sc do_dial)
+(defun ea:eaxis  (axdata / act p-s p-e l__s l__e fl n-sc do_dial)
   (load_dcl "/axis/axis.dcl")
   (ea:init)
   (while do_dial
 ;;;    (if	(not (new_dialog "eaxis" axis_dcl_id))
-    (if	(not (new_dialog "eaxis" dcl_id))
+    (if (not (new_dialog "eaxis" dcl_id))
       (exit))
     (ea:setup)
     (ea:ac_tile)
     (setq act (start_dialog))
     (cond ((= act 1)
-	   (setq axdata	(_xd_appsubst
-			  (dsubst axdata (list (cons 10 p-s) (cons 11 p-e)))
-			  "SHCKALA"
-			  (list (cons 1040 l__s) (cons 1040 l__e) (cons 1070 fl) (cons 1000 n-sc))))
-	   (ea:un_init))
-	  ((= act 0) (ea:un_init))
-	  ((= act 31) (ea:ac_b31))
-	  ((= act 32) (ea:ac_b32))))
+           (setq axdata (_xd_appsubst (dsubst axdata (list (cons 10 p-s) (cons 11 p-e)))
+                                      "SHCKALA"
+                                      (list (cons 1040 l__s) (cons 1040 l__e) (cons 1070 fl) (cons 1000 n-sc))))
+           (ea:un_init))
+          ((= act 0) (ea:un_init))
+          ((= act 31) (ea:ac_b31))
+          ((= act 32) (ea:ac_b32))))
   axdata)

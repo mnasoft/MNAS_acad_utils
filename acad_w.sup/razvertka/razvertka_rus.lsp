@@ -1,3 +1,1 @@
-(opech_cmds
-  '("razvertka" "r_cone")
-)
+(opech_cmds '("razvertka" "r_cone"))
