@@ -1,4 +1,4 @@
-(vl-load-com)
+(VL-LOAD-COM)
 ;;;;;;("razvertka" "Построение развертки тела выдавливания с обрезкой кромок." "Развертки")
 (defun c:razvertka  (/                  ;
                      vo_1               ; Образующая листа, отображающая изгибы листа. (Полилиния).
@@ -19,35 +19,35 @@
         n         (getint "\nКоличество точек разбиения каждого сегмента полилинии <5> :")
         n         (cond ((null n) 5)
                         (t n))
-        s_par     (vlax-curve-getstartparam vo_1)
-        e_par     (vlax-curve-getendparam vo_1)
+        s_par     (vlax-curve-getStartParam vo_1)
+        e_par     (vlax-curve-getEndParam vo_1)
         n_delen   (* (- e_par s_par) n)
         par       s_par
         i         0)
   (dr:point start_pnt 7)
   (while (<= par e_par)
     (print par)
-    (setq pnt (vlax-curve-getpointatparam vo_1 par)
-          dst (vlax-curve-getdistatparam vo_1 par))
+    (setq pnt (vlax-curve-getPointAtParam vo_1 par)
+          dst (vlax-curve-getDistAtParam vo_1 par))
     (setq vo_line (dr:line pnt (polar pnt 0 1.) 2))
     (setq p_vo_2   (vlax-safearray->list
                      (vlax-variant-value
                        (vlax-invoke-method
                          vo_line
-                         'intersectwith
+                         'IntersectWith
                          vo_2           ;acExtendNone;  Does not extend either object.
                                         ;acExtendThisEntity ;	Extends the base object.
                                         ;acExtendOtherEntity	;	Extends the object passed as an argument.
-                         acextendboth   ;Extends both objects.
+                         acExtendBoth   ;Extends both objects.
                          )))
           p_vo_3   (vlax-safearray->list
                      (vlax-variant-value
                        (vlax-invoke-method
                          vo_line
-                         'intersectwith
+                         'IntersectWith
                          vo_3           ;acExtendBoth
                                         ;acExtendNone;  Does not extend either object.
-                         acextendthisentity ;	Extends the base object.
+                         acExtendThisEntity ;	Extends the base object.
                                         ;acExtendOtherEntity	;	Extends the object passed as an argument.
                                         ;acExtendBoth	;	Extends both objects.
                          )))
@@ -55,10 +55,10 @@
                      (vlax-variant-value
                        (vlax-invoke-method
                          vo_line
-                         'intersectwith
+                         'IntersectWith
                          vo_4           ;acExtendBoth
                                         ;acExtendNone;  Does not extend either object.
-                         acextendthisentity ;	Extends the base object.
+                         acExtendThisEntity ;	Extends the base object.
                                         ;acExtendOtherEntity	;	Extends the object passed as an argument.
                                         ;acExtendBoth	;	Extends both objects.
                          )))
@@ -75,17 +75,17 @@
           v_mid    (dr:point p_mid 3)
           v_bok_23 (dr:point p_bok_23 3)
           v_bok_43 (dr:point p_bok_43 3))
-    (vlax-invoke-method vo_line 'delete)
-    (vlax-invoke-method v_pnt_2 'delete)
-    (vlax-invoke-method v_pnt_3 'delete)
-    (vlax-invoke-method v_pnt_4 'delete)
+    (vlax-invoke-method vo_line 'Delete)
+    (vlax-invoke-method v_pnt_2 'Delete)
+    (vlax-invoke-method v_pnt_3 'Delete)
+    (vlax-invoke-method v_pnt_4 'Delete)
     (setq i   (1+ i)
           par (/ (* i (- e_par s_par)) n_delen)))
   (princ "Развертка полностью построена!\n")
   (princ))
 
 ;;;;;;("r_cone" "Построение развертки конуса." "Развертки")
-(defun c:r_cone  (/ a1 a2 l1 l2 p0 p01 p02 p1 p2 r1 r2)
+(defun c:r_cone  (/ A1 A2 L1 L2 P0 P01 P02 P1 P2 R1 R2)
   (setq p01 (getpoint "\nВведите первую точку на оси конуса:"))
   (setq p02 (getpoint p01 "\nВведите вторую точку на оси конуса:"))
   (setq p1 (getpoint "\nВведите первую точку на образующей конуса:"))
@@ -100,13 +100,7 @@
   (dr:arc p0 r1 0 a1 2)
   (dr:arc p0 r2 0 a2 2))
 
-;;;;;;("r_triang" "Построение развертки переходного участка методом разбиения на треугольники." "Развертки")
-(defun c:r_triang  (/ p1_0 p2_0)
-  (setq p1_0 (getpoint "Начальная точка на первом основании переходника"))
-  (setq p2_0 (getpoint "Начальная точка на втором основании переходника"))
-  (dr:line p1_0 p2_0 1)
-  (distance p1_0 p2_0))
-
+;;;f;;;("list->3d-point-list" "Преобразует список, содержащий координаты xyz нескольких точек, в список точек.")
 (defun list->3d-point-list  (lst / rez pnt)
   (setq i 0)
   (while (setq el (car lst))
@@ -114,24 +108,63 @@
     (setq i   (1+ i)
           pnt (cons el pnt))
     (if (>= i 3)
-      (setq i   1
+      (setq i   0
             rez (cons (reverse pnt) rez)
             pnt nil)))
   rez)
 
-(defun c:r_triang_test  (/ v_ob_1 v_ob_2 p_ob1_ob2)
+;;;---------------------------------------------------------------------------------------------------------
+
+(defun get-min-length-point  (p lst)
+  (cadar(vl-sort (mapcar (function (lambda (el) (list (distance el p) el))) lst)
+           (function(lambda(el1 el2) (< (car el1) (car el2)))))))
+
+;;;f;;; ("get-IntersectWith-points" "Возвращает список точек пересечения объекта vla-this с объектом vla-oter.
+;;;f;;; Параметр tp - отвечает за удлинение объектов при поиске точек пересечения
+;;;f;;; может принимать одно из следующих значений:
+;;;f;;; acExtendNone=0;
+;;;f;;; acExtendThisEntity=1;
+;;;f;;; acExtendOtherEntity=2;
+;;;f;;; acExtendBoth=3.")
+(defun get-IntersectWith-points (vla-this vla-oter tp)
+  (list->3d-point-list
+                    (vlax-safearray->list
+                      (vlax-variant-value (vlax-invoke-method vla-this 'IntersectWith vla-oter tp)))))
+
+;;;f;;;("draw-riangle" "")
+(defun draw-riangle  (vl d1 d2 cclock_dir / a_delta p_e p_ob1_ob2 p_s v_c1 v_c2 v_ob_1)
+  (if cclock_dir
+    (setq a_delta (/ pi 3.0))
+    (setq a_delta (/ pi -3.0)))
+  (setq p_s       (vlax-curve-getStartPoint vl)
+        p_e       (vlax-curve-getEndPoint vl)
+        p         (polar p_s (+ (angle p_s p_e) a_delta) (distance p_s p_e))
+        v_c1      (dr:circle p_s d1 1)
+        v_c2      (dr:circle p_e d2 2)
+        p_ob1_ob2 (get-IntersectWith-points v_c1 v_c2 acExtendNone))
+  (dr:point (get-min-length-point p p_ob1_ob2) 3)
+  (command "_erase" (vlax-vla-object->ename v_c1) (vlax-vla-object->ename v_c2) ""))
+
+(defun c:draw-riangle-test  ()
+  (draw-riangle
+    (vlax-ename->vla-object (car (entsel "Выберите 1:")))
+    (getdist "Введите первое расстояние:")
+    (getdist "Введите второе расстояние:")
+    t))
+
+;;;;;;("r_triang" "Построение развертки переходного участка методом разбиения на треугольники." "Развертки")
+(defun c:r-triang  (/ p1_0 p2_0)
+  (setq p1_0 (getpoint "Начальная точка на первом основании переходника"))
+  (setq p2_0 (getpoint "Начальная точка на втором основании переходника"))
+  (while (progn (setq p1 (getpoint "Начальная точка на первом основании переходника")
+                      p2 (getpoint "Начальная точка на втором основании переходника"))
+                (and p1 p2))
+    (print (distance p1 p2))))
+
+(defun c:r-triang-test  (/ v_ob_1 v_ob_2 p_ob1_ob2)
   (setq v_ob_1 (vlax-ename->vla-object (car (entsel "Выберите 1:"))))
   (setq v_ob_2 (vlax-ename->vla-object (car (entsel "Выберите 2:"))))
   (setq p_ob1_ob2 (vlax-safearray->list
-                    (vlax-variant-value (vlax-invoke-method v_ob_1 'intersectwith v_ob_2 acextendnone))))
+                    (vlax-variant-value (vlax-invoke-method v_ob_1 'IntersectWith v_ob_2 acExtendNone))))
                                         ; acExtendNone acExtendThisEntity acExtendOtherEntity acExtendBoth
   (mapcar (function (lambda (el) (dr:point el 1))) (list->3d-point-list p_ob1_ob2)))
-
-(defun c:draw-riangle  ()
-  (setq v_ob_1 (vlax-ename->vla-object (car (entsel "Выберите 1:")))
-        d1     (getdist "Введите первое расстояние:")
-        d2     (getdist "Введите второе расстояние:")
-        p_s    (vlax-curve-getstartpoint v_ob_1)
-        p_e    (vlax-curve-getendpoint v_ob_1))
-  (dr:circle p_s d1 1)
-  (dr:circle p_e d2 2))
