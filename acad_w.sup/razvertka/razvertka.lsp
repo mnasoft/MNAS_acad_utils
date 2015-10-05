@@ -132,18 +132,26 @@
                       (vlax-variant-value (vlax-invoke-method vla-this 'IntersectWith vla-oter tp)))))
 
 ;;;f;;;("draw-riangle" "")
-(defun draw-riangle  (vl d1 d2 cclock_dir / a_delta p_e p_ob1_ob2 p_s v_c1 v_c2 v_ob_1)
+(defun draw-riangle  (vl       d1	d2	 cclock_dir
+		      /	       a_delta	p_e	 p_ob1_ob2
+		      p_s      v_c1	v_c2	 v_ob_1)
   (if cclock_dir
     (setq a_delta (/ pi 3.0))
     (setq a_delta (/ pi -3.0)))
-  (setq p_s       (vlax-curve-getStartPoint vl)
-        p_e       (vlax-curve-getEndPoint vl)
-        p         (polar p_s (+ (angle p_s p_e) a_delta) (distance p_s p_e))
-        v_c1      (dr:circle p_s d1 1)
-        v_c2      (dr:circle p_e d2 2)
-        p_ob1_ob2 (get-IntersectWith-points v_c1 v_c2 acExtendNone))
-  (dr:point (get-min-length-point p p_ob1_ob2) 3)
-  (command "_erase" (vlax-vla-object->ename v_c1) (vlax-vla-object->ename v_c2) ""))
+  (setq	p_s	  (vlax-curve-getStartPoint vl)
+	p_e	  (vlax-curve-getEndPoint vl)
+	p	  (polar p_s (+ (angle p_s p_e) a_delta) (distance p_s p_e))
+	v_c1	  (dr:circle p_s d1 1)
+	v_c2	  (dr:circle p_e d2 2)
+	p_ob1_ob2 (get-IntersectWith-points v_c1 v_c2 acExtendNone)
+	p_rez	  (get-min-length-point p p_ob1_ob2))
+;;;;  (dr:point p_rez 3)
+  (command "_erase"
+	   (vlax-vla-object->ename v_c1)
+	   (vlax-vla-object->ename v_c2)
+	   "")
+  p_rez)
+
 
 (defun c:draw-riangle-test  ()
   (draw-riangle
@@ -153,13 +161,23 @@
     t))
 
 ;;;;;;("r_triang" "ѕостроение развертки переходного участка методом разбиени€ на треугольники." "–азвертки")
-(defun c:r-triang  (/ p1_0 p2_0)
-  (setq p1_0 (getpoint "Ќачальна€ точка на первом основании переходника"))
-  (setq p2_0 (getpoint "Ќачальна€ точка на втором основании переходника"))
-  (while (progn (setq p1 (getpoint "Ќачальна€ точка на первом основании переходника")
-                      p2 (getpoint "Ќачальна€ точка на втором основании переходника"))
-                (and p1 p2))
-    (print (distance p1 p2))))
+(defun c:r-triang  (/ p1_0 p2_0 ccd)
+  (setq p01 (getpoint "\np01:"))
+  (setq p1 (getpoint "\np1:"))
+  (setq p2 (getpoint "\np2:"))
+  (setq p02 (polar p01 0.0 (distance p1 p2)))
+  (setq vl (dr:line p01 p02 1))
+  (dr:line p1 p2 256)
+  (while (progn (setq p3 (getpoint "\np3:")))
+    (dr:line p2 p3 256)
+    (setq p03 (draw-riangle vl (distance p1 p3) (distance p2 p3) ccd))
+    (dr:line p01 p02 2)
+    (dr:line p01 p03 3)
+    (setq ccd (null ccd)
+	  p1  p2
+	  p2  p3
+	  p01 p02
+	  p02 p03)))
 
 (defun c:r-triang-test  (/ v_ob_1 v_ob_2 p_ob1_ob2)
   (setq v_ob_1 (vlax-ename->vla-object (car (entsel "¬ыберите 1:"))))
@@ -168,3 +186,4 @@
                     (vlax-variant-value (vlax-invoke-method v_ob_1 'IntersectWith v_ob_2 acExtendNone))))
                                         ; acExtendNone acExtendThisEntity acExtendOtherEntity acExtendBoth
   (mapcar (function (lambda (el) (dr:point el 1))) (list->3d-point-list p_ob1_ob2)))
+
