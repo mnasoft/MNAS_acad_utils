@@ -171,7 +171,7 @@
   (while (progn (setq p3 (getpoint "\np3:")))
     (dr:line p2 p3 256)
     (setq p03 (draw-riangle vl (distance p1 p3) (distance p2 p3) ccd))
-    (dr:line p01 p02 2)
+    (setq vl (dr:line p02 p03 2))
     (dr:line p01 p03 3)
     (setq ccd (null ccd)
 	  p1  p2
