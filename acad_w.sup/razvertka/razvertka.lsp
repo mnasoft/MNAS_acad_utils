@@ -101,7 +101,7 @@
   (dr:arc p0 r2 0 a2 2))
 
 ;;;f;;;("list->3d-point-list" "Преобразует список, содержащий координаты xyz нескольких точек, в список точек.")
-(defun list->3d-point-list  (lst / rez pnt)
+(defun list->3d-point-list  (lst / rez pnt el i)
   (setq i 0)
   (while (setq el (car lst))
     (setq lst (cdr lst))
@@ -161,7 +161,7 @@
     t))
 
 ;;;;;;("r_triang" "Построение развертки переходного участка методом разбиения на треугольники." "Развертки")
-(defun c:r-triang  (/ p1_0 p2_0 ccd)
+(defun c:r-triang  (/ ccd p01 p02 p03 p1 p2 p3 vl)
   (setq p01 (getpoint "\np01:"))
   (setq p1 (getpoint "\np1:"))
   (setq p2 (getpoint "\np2:"))
@@ -187,7 +187,10 @@
                                         ; acExtendNone acExtendThisEntity acExtendOtherEntity acExtendBoth
   (mapcar (function (lambda (el) (dr:point el 1))) (list->3d-point-list p_ob1_ob2)))
 
-(defun c:get-pline-points  (/ fn out)   ;/ rez-pts)
+(defun p-val (val p-val-out)
+  (princ (rtos val 2 2) p-val-out))
+
+(defun c:get-pline-points  (/ fn ed rez-pts out rez-pts)
   (setq ed (c:obj)
         rez-pts nil)
   (setq fn  (getfiled "Имя  Shp-файла для вывода отсортированных форм" "" "html" 1)
@@ -222,5 +225,3 @@
   (close out)
   (dr:pline rez-pts 256))
 
-(defun p-val (val out)
-  (princ (rtos val 2 2) out))
