@@ -220,7 +220,7 @@
           rez-pts)
   (princ "</table>\n" out)
   (close out)
-  rez-pts)
+  (dr:pline rez-pts 256))
 
 (defun p-val (val out)
   (princ (rtos val 2 2) out))
