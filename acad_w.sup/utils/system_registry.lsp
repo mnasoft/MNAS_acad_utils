@@ -14,9 +14,9 @@
 
 ;;;("load-from-string" "(setq value nil)
 ;;;(load-from-string "(setq VALUE '1.0)") value")
-(defun load-from-string (str) (eval (read str)))
+(defun load-from-string (lfs-str) (eval (read lfs-str)))
 
-(defun reg_read  (root $val default)
+(defun reg_read  (root $val default / tmp)
   (setq tmp (vl-registry-read root (vl-prin1-to-string $val)))
   (if tmp
     (load-from-string tmp)))
@@ -29,9 +29,9 @@
     (set $val default)
     (eval $val)))
 
-;;;(defun value-list-multiplier  (value lst / len value_lst)
-;;;  (setq len (length lst))
-;;;  (while (>= (setq len (1- len)) 0) (setq value_lst (cons value value_lst))))
+(defun value-list-multiplier  (value lst / len value_lst)
+  (setq len (length lst))
+  (while (>= (setq len (1- len)) 0) (setq value_lst (cons value value_lst))))
 
 ;;;(defun reg_read_lst  (root lst)
 ;;;  (mapcar (function (lambda (el) (reg_read root (car el) (cadr el)))) lst))

@@ -22,4 +22,4 @@
 ;;	Выводит имя и значеие переменнной на экран.
 ;;_$ (prins "lst_p1" 112.1323)
 ;;lst_p1 = 112.132
-(defun prins (str val) (princ str) (princ " = ") (prin1 val) (princ))
+(defun prins (prns-str val) (princ prns-str) (princ " = ") (prin1 val) (princ))

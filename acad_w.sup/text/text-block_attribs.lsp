@@ -65,7 +65,7 @@
 
 ;;;;;;("textnorm"
 ;;;;;;"Производит нормализацию высоты и раскрашивание одиночного текста, мультитекста, атрибута вставки блока." "Тексты")
-(defun c:textnorm  (/ ed en)
+(defun c:textnorm  (/ ed en sc)
   (setq en (car (nentsel "ТЕКСТ или МТЕКСТ:"))
         ed (entget en)
         sc (cond ((null (space)) 1.0)
@@ -74,23 +74,23 @@
   (if (is_text ed)
     (ch_hight ed sc)))
 
-(defun add_block_attrib  (en)
+(defun add_block_attrib  (en ss i)
   (cond ((= "INSERT" (cdr (assoc 0 (entget en))))
          (ssdel en ss)
          (setq i (1- i))
          (setq en (entnext en))
          (while (and en (= "ATTRIB" (cdr (assoc 0 (entget en))))) (ssadd en ss) (setq en (entnext en)))))
-  (sslength ss))
+  i)
 
 ;;;;;;("textnorms"
 ;;;;;;"Производит нормализацию высоты и раскрашивание текстов, мультитекстов, атрибутов вставки блока." "Тексты")
-(defun c:textnorms  (/ ed en)
+(defun c:textnorms  (/ ed en ss i sc)
   (prompt "ТЕКСТ или МТЕКСТ:")
   (setq ss (ssget '((-4 . "<OR") (0 . "MTEXT") (0 . "TEXT") (0 . "INSERT") (-4 . "OR>")))
         i  0)
   (while (< i (sslength ss))
     (setq en (ssname ss i))
-    (add_block_attrib en)
+    (setq i (add_block_attrib en ss i))
     (setq ed (entget en)
           sc (cond ((null (space)) 1.0)
                    ((= 0 (getvar "dimscale")) 1.0)
@@ -98,6 +98,7 @@
     (if (is_text ed)
       (ch_hight ed sc))
     (setq i (1+ i))))
+
 
 ;;;;;;("textnorm"
 ;;;;;;"Производит нормализацию высоты и раскрашивание одиночного текста, мультитекста, атрибута вставки блока
@@ -111,7 +112,7 @@
 
 ;;;;;;("tmatchprop"
 ;;;;;;"Устанавливет высоту для отдельного текса, мультитекста, атрибута вставки блока по высоте ссылочного объекта." "Тексты")
-(defun c:tmatchprop  ()
+(defun c:tmatchprop  (/ ed ed1 en en1)
   (setq en (car (nentsel "\nSelect reference TEXT МТЕКСТ ATTRIB:"))
         ed (entget en))
   (princ "\nReference hight=")

@@ -3,12 +3,12 @@
 ;;	находящимся в строке div. Символы-разделители исключаются из строки.
 ;;	(str_token "55.050 5.05 5650.05 07.0 " " .")
 ;;	("55" "050" "5" "05" "5650" "05" "07" "0")
-(defun str_token  (str div / add i k s1 d1 stmp lstr)
+(defun str_token  (token-str div / add i k s1 d1 stmp lstr)
   (setq i    0
         stmp "")
-  (repeat (strlen str)
+  (repeat (strlen token-str)
     (setq i   (1+ i)
-          s1  (substr str i 1)
+          s1  (substr token-str i 1)
           k   0
           add t)
     (repeat (strlen div)

@@ -17,14 +17,15 @@
     (exit))
   (setq str (cdr (assoc 1 (entget (ssname ss_td 0)))))
   (set_tile "dim_string" str)
-  (action_tile "accept" "(te_dlg_accept)")
+  (action_tile
+    "accept"
+    "(setq str (get_tile \"dim_string\"))
+    (setq dcl_te_pos (done_dialog 0))
+    (reg_write_default_lst reg_root te_registry)")
   (start_dialog)
   (unload_dialog dcl_id)
   (setq i (sslength ss_td))
   (while (>= (setq i (1- i)) 0) (setq en (ssname ss_td i)) (ch_dxf en 1 str))
   (err-handle ""))
 
-(defun te_dlg_accept  ()
-  (setq str (get_tile "dim_string"))
-  (setq dcl_te_pos (done_dialog 0))
-  (reg_write_default_lst reg_root te_registry))
+

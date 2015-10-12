@@ -47,10 +47,10 @@
 (defun acad_help () (MNAS_ArxPrj_acad_help))
 
 ;;;(is_path_full (cdr (assoc 2 (cadr ll2))))
-(defun is_path_full (str) (wcmatch str "@:*"))
+(defun is_path_full (ifp-str) (wcmatch ifp-str "@:*"))
 
 ;;;(extend_path (cdr (assoc 2 (cadr ll2))))
-(defun extend_path  (str)
-  (if (is_path_full str)
-    str
-    (strcat (acad_sup) str)))
+(defun extend_path  (extend_path-str)
+  (if (is_path_full extend_path-str)
+    extend_path-str
+    (strcat (acad_sup) extend_path-str)))

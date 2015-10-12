@@ -33,7 +33,7 @@
 
 
 ;;;;;;("z_text" "Создает текст, значением которого является координата z." "Тексты")
-(defun c:z_text  (/ go_exit pt pt_xy)
+(defun c:z_text  (/ go_exit pt pt_xy dat)
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (while (null go_exit)
