@@ -1,5 +1,5 @@
 (defun exclude_small_equal-center_circles  (p_lst / lst p_cen p_curr rez_list exc-ss i el)
-  (setq lst (vl-sort p_lst
+  (setq lst (reverse (vl-sort p_lst
                      (function (lambda (el1 el2 / ed1 ed2 e1 e2 r1 r2)
                                  (setq ed1 (entget el1)
                                        ed2 (entget el2)
@@ -9,7 +9,7 @@
                                        r2  (cdr (assoc 40 ed2)))
                                  (cond ((and (= (car e1) (car e2)) (= (cadr e1) (cadr e2))) (> r1 r2))
                                        ((= (car e1) (car e2)) (< (cadr e1) (cadr e2)))
-                                       ((< (car e1) (car e2))))))))
+                                       ((< (car e1) (car e2)))))))))
   (setq exc-ss (ssadd)
         i      (length lst))
   (while (>= (setq i (1- i)) 0)
