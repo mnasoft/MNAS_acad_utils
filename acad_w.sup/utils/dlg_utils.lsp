@@ -1,7 +1,8 @@
 (defun load_dcl  (f_name)
   (setq dcl_id (load_dialog (strcat (acad_sup) f_name)))
   (if (< dcl_id 0)
-    (exit)))
+    (exit)
+    dcl_id))
 
 (defun init_dlg  (lst_setup)
   (mapcar (function (lambda (el)

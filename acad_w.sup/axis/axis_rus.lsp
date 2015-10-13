@@ -19,7 +19,7 @@
 (defun c:с3() (c:c3))
 (defun c:с4() (c:c4))
 (defun c:уф() (c:ea))
-(defun c:узк() (c:epr))
+;(defun c:узк() (c:epr))
 (defun c:шь() (c:im))
 
 (princ "Loaded project axis.\n")

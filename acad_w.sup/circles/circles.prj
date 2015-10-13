@@ -1,23 +1,18 @@
-;;; VLisp project file [V2.0] circles saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/circles] at:[3/14/14] 
-(VLISP-PROJECT-LIST
-  :NAME
+;;; VLisp project file [V2.0] circles saved to:[D:/home/_namatv/git/mnasoft/MNAS_acad_utils/acad_w.sup/circles] at:[10/13/15] 
+(vlisp-project-list
+  :name
   circles
-  :OWN-LIST
+  :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"				"circles-cmd"
-    "circles-cmd_2"					"../UTILS/ASIST"
-    "../UTILS/DXF"				"../UTILS/draw"
-    "circles-point_sort"
-    "../opechatka/rus_cmd_opechatka"
-    "circles-rus"
-   )
-  :FAS-DIRECTORY
+    "../utils/Debug"	       "../UTILS/ASIST"		  "circles-cmd"		     "circles-cmd_2"
+    "../UTILS/DXF"	       "../UTILS/draw"		  "circles-point_sort"	     "../opechatka/rus_cmd_opechatka"
+    "circles-rus")
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
-  :AUTOLISP
-)
+  :project-keys
+  (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
+  :context-id
+  :autolisp)
 ;;; EOF

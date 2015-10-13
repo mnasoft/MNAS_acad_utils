@@ -157,8 +157,10 @@
     (setq ename_list (cons (ssname ss i) ename_list)
           i          (1+ i)))
   ename_list)
+
 ;;;f;;;("list_to_ss" "Преобразует список, содержащий имена примитивов в набор примитивов.")
-(defun list_to_ss  (ename_list / ss)
+(defun list_to_ss  (ent_list / ss i)
   (setq ss (ssadd))
-  (mapcar (function (lambda (el) (ssadd el ss))) ename_list)
+  (setq i (length ent_list))
+  (while (>= 0 (setq i (1- i))) (ssadd (nth i ent_list) ss))
   ss)

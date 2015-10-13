@@ -37,7 +37,7 @@
                      (cons 70 2))))
 
 ;;;;;;("ax" "not defined" "Шкалы")
-(defun c:ax  (/ act dcl_id do-dialog)
+(defun c:ax  (/ act dcl_id do-dialog N PTS-GR SC-X-GR SC-Y-GR SCX SCY)
   (if n
     (ax:init n)
     (progn (setq n 0) (ax:init 0)))
@@ -76,7 +76,7 @@
                   l-gr
                   gr)))
 
-(defun ax:init  (n)
+(defun ax:init  (ax-n)
   (if (null gr)
     (setq gr (list
                (list (cons 1 "Безымянный")
@@ -102,7 +102,7 @@
                                  (list -3
                                        (list "SHCKALA" '(1002 . "{") '(1040 . 0.0) '(1040 . 100.0) '(1070 . 0) '(1000 . "Y-шкала") '(1002 . "}")))))))
     (princ scal))
-  (setq l-gr    (nth n gr)
+  (setq l-gr    (nth ax-n gr)
         n-gr    (cdr (assoc 1 l-gr))
         pot     (cdr (assoc 10 l-gr))
         sc-x-gr (cadr (assoc "Шкала X" scal))
@@ -112,13 +112,14 @@
         n-pt-gr (cdr (assoc 41 l-gr))
         p-ptgr  (cdr (assoc "Параметры точек" l-gr))))
 
-(defun ax:setup  (/ i)
+(defun l-s (p) (strcat (rtos (setq i (1+ i)) 2 0) " (" (rtos (car p)) " " (rtos (cadr p)) ")"))
+
+(defun ax:setup  ()
   (set_tile "e4" n-gr)
   (set_tile "e1" (RTOS C-pt-gr))
-  (defun l-s (p) (strcat (rtos (setq i (1+ i)) 2 0) " (" (rtos (car p)) " " (rtos (cadr p)) ")"))
   (setq i -1)
   (start_list "l1")
-  (mapcar 'add_list (mapcar 'l-s pts-gr))
+  (mapcar (function add_list) (mapcar (function l-s) pts-gr))
   (end_list)
   (set_tile "l1" (rtos c-pt-gr))
   (if pts-gr
@@ -132,16 +133,16 @@
   (set_tile "e5" (xdgetn sc-x-gr "SHCKALA" 3))
   (set_tile "e6" (xdgetn sc-y-gr "SHCKALA" 3)))
 
-(defun ax:add-gr  (/ i ls)
-  (setq i  0
+(defun ax:add-gr  (/ ax-i ls)
+  (setq ax-i  0
         ls nil)
-  (while (< i c-pt-gr)
-    (setq ls (cons (nth i pts-gr) ls)
-          i  (1+ i)))
+  (while (< ax-i c-pt-gr)
+    (setq ls (cons (nth ax-i pts-gr) ls)
+          ax-i  (1+ ax-i)))
   (setq ls (cons pot ls))
-  (while (< i n-pt-gr)
-    (setq ls (cons (nth i pts-gr) ls)
-          i  (1+ i)))
+  (while (< ax-i n-pt-gr)
+    (setq ls (cons (nth ax-i pts-gr) ls)
+          ax-i  (1+ ax-i)))
   (setq pts-gr (reverse ls))
   (setq n-pt-gr (1+ n-pt-gr)))
 
@@ -163,16 +164,16 @@
 
 (defun ax:ac_b5 () (ax:add-gr) (setq c-pt-gr (1+ c-pt-gr)) (ax:setup))
 
-(defun ax:ac_b6  (/ i ls)
-  (setq i  0
+(defun ax:ac_b6  (/ ax-i ls)
+  (setq ax-i  0
         ls nil)
-  (while (< i c-pt-gr)
-    (setq ls (cons (nth i pts-gr) ls)
-          i  (1+ i)))
+  (while (< ax-i c-pt-gr)
+    (setq ls (cons (nth ax-i pts-gr) ls)
+          ax-i  (1+ ax-i)))
   (setq i (1+ i))
-  (while (< i n-pt-gr)
-    (setq ls (cons (nth i pts-gr) ls)
-          i  (1+ i)))
+  (while (< ax-i n-pt-gr)
+    (setq ls (cons (nth ax-i pts-gr) ls)
+          ax-i  (1+ ax-i)))
   (setq pts-gr (reverse ls))
   (setq n-pt-gr (length pts-gr))
   (if (> c-pt-gr 0)
@@ -239,17 +240,17 @@
                            (/ (distance pty p0y) (distance p1y p0y))))))))
   (setq pot (list lptx lpty)))
 
-(defun ax:ac_b9  (/ i ls)
-  (setq i  0
+(defun ax:ac_b9  (/ ax-i ls)
+  (setq ax-i  0
         ls nil)
-  (while (< i c-pt-gr)
-    (setq ls (cons (nth i pts-gr) ls)
-          i  (1+ i)))
+  (while (< ax-i c-pt-gr)
+    (setq ls (cons (nth ax-i pts-gr) ls)
+          ax-i  (1+ ax-i)))
   (setq ls (cons pot ls)
-        i  (1+ i))
-  (while (< i n-pt-gr)
+        ax-i  (1+ ax-i))
+  (while (< ax-i n-pt-gr)
     (setq ls (cons (nth i pts-gr) ls)
-          i  (1+ i)))
+          ax-i  (1+ ax-i)))
   (setq pts-gr (reverse ls))
   (setq n-pt-gr (length pts-gr))
   (ax:setup))
@@ -300,9 +301,12 @@
   (action_tile "l1" "(ax:ac_l1 $value)") ;
   )
 
-(defun dr-axis-points  (sc-x-gr sc-y-gr pts-gr color)
-  (princ sc-x-gr)
-  (princ sc-y-gr)
-  (princ pts-gr)
-  (mapcar (function (lambda (el) (dr:point (sc:pxy_pt el (sh:get sc-x-gr) (sh:get sc-y-gr)) color)))
-          pts-gr))
+(defun dr-axis-points  (dr-sc-x-gr dr-sc-y-gr dr-pts-gr dr-color / dr-i)
+  (princ dr-sc-x-gr)
+  (princ dr-sc-y-gr)
+  (princ dr-pts-gr)
+  (setq dr-i dr-pts-gr)
+  (while (>= (setq dr-i (1- dr-i)) 0)
+    (dr:point (sc:pxy_pt (nth dr-i dr-pts-gr) (sh:get dr-sc-x-gr) (sh:get dr-sc-y-gr)) dr-color)))
+
+;;;;(mapcar (function (lambda (el) (dr:point (sc:pxy_pt el (sh:get sc-x-gr) (sh:get sc-y-gr)) color))) pts-gr)

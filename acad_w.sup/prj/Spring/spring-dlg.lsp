@@ -64,8 +64,8 @@
                   ("i1" "Отношение длины пружины в свободном состоянии к её среднему диаметру")
                   ("m" "Масса пружины, кг")))
 
-(defun c:spring  ()
-  (load_dcl "/prj/spring/Spring.DCL")
+(defun c:spring  (/ action dcl_id do_dialog setup_lst)
+  (setq dcl_id (load_dcl "/prj/spring/Spring.DCL"))
   (setq do_dialog t)
   (while do_dialog
     (if (not (new_dialog "spring" dcl_id))

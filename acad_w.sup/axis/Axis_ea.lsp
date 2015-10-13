@@ -90,8 +90,8 @@
 
 (defun ea:un_init () (setq do_dial nil))
 
-(defun ea:eaxis  (axdata / act p-s p-e l__s l__e fl n-sc do_dial)
-  (load_dcl "/axis/axis.dcl")
+(defun ea:eaxis  (axdata / act p-s p-e l__s l__e fl n-sc do_dial dcl_id)
+  (setq dcl_id (load_dcl "/axis/axis.dcl"))
   (ea:init)
   (while do_dial
 ;;;    (if	(not (new_dialog "eaxis" axis_dcl_id))

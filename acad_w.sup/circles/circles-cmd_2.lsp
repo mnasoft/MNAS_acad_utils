@@ -16,7 +16,7 @@
 
 ;;;("c_sc" "Масштабирование окружности, путем задания центра масштабирования
 ;;; и ее итогового радиуса.")
-(defun c:c_sc  (/ ed rad echo)
+(defun c:c_sc  (/ ed rad echo PT)
   (setq ed  (entget (car (entsel "Окружность:")))
         rad (cdr (assoc 40 ed))
         pt  (getpoint "Точка масштабирования:"))

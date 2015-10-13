@@ -243,7 +243,7 @@
         line-concat-dlg_pos
          '(-1 -1)
         do_dialog t)
-  (load_dcl "/lines/line_concat.dcl")
+  (setq dcl_id (load_dcl "/lines/line_concat.dcl"))
   (while do_dialog
     (if (not (new_dialog "line_concat" dcl_id "" dia_weld_pos))
       (exit))

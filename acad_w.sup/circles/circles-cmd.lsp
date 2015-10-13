@@ -80,8 +80,7 @@
   (while (>= (setq num (1- num)) 0) (ax (ssname li num) dl ang))
   (setq ent_last (entnext ent_last))
   (while ent_last (setq ent_list (cons ent_last ent_list)) (setq ent_last (entnext ent_last)))
-  (setq ss (ssadd))
-  (mapcar (function (lambda (el) (ssadd el ss))) ent_list)
+  (setq ss (list_to_ss  ent_list))
   (command "select" ss "")
   (princ))
 
@@ -99,8 +98,7 @@
   (while (>= (setq num (1- num)) 0) (p_ax (ssname li num) dl polus))
   (setq ent_last (entnext ent_last))
   (while ent_last (setq ent_list (cons ent_last ent_list)) (setq ent_last (entnext ent_last)))
-  (setq ss (ssadd))
-  (mapcar (function (lambda (el) (ssadd el ss))) ent_list)
+  (setq ss (list_to_ss  ent_list))
   (command "select" ss "")
   (princ))
 

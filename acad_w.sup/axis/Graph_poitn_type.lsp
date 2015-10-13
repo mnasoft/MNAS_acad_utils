@@ -28,7 +28,7 @@
   (action_tile "t81" "(epr-ac_t81-82)")
   (action_tile "t82" "(epr-ac_t81-82)"))
 
-(defun epr  (epr-param / epr-dcl_id epr-do_dialog fl d-bl d-lin)
+(defun epr  (epr-param / epr-dcl_id epr-do_dialog fl d-bl d-lin act)
   (epr-init)
   (setq epr-dcl_id (load_dialog (findfile "acad_w.sup/axis/axis.dcl")))
   (if (< epr-dcl_id 0)

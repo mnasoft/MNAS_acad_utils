@@ -22,7 +22,7 @@
 
 
 (defun spring_dlg  ()
-  (load_dcl "/prj/Spring/Spring.dcl")
+  (setq dcl_id (load_dcl "/prj/Spring/Spring.dcl"))
   (setq do_dialog t)
   (while do_dialog
     (if (not (new_dialog "spring" dcl_id))

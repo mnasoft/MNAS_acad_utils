@@ -183,10 +183,10 @@
 
 ;;“ранспонирование списка представл€ющего из себ€ матрицу.
 ;;(transpon ((1 2 3)(4 5 6)(7 8 9)(10 11 12)))
-(defun transpon  (lst / col i rez_lst)
+(defun transpon  (lst / col tr-i rez_lst)
   (setq col     (length (car lst))
-        i       col
+        tr-i    col
         rez_lst nil)
-  (while (> i 0)
-    (setq i       (1- i)
-          rez_lst (cons (mapcar (function (lambda (el) (nth i el))) lst) rez_lst))))
+  (while (> tr-i 0)
+    (setq tr-i    (1- tr-i)
+          rez_lst (cons (mapcar (function (lambda (el) (nth tr-i el))) lst) rez_lst))))

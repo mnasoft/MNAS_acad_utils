@@ -1,3 +1,16 @@
-(opech_cmds '("ax_a" "ax_c" "ax_ca" "cl_els" "cl_s" "c_axis" "c_d" "c_el" "c_ex" "c_r" "c_sc"))
+(setq *circles-command-list* '("ax_a" "ax_c" "ax_ca" "cl_els" "cl_s" "c_axis" "c_d" "c_el" "c_ex" "c_r" "c_sc"))
+;;;; (opech_cmds-str *circles-command-list*)
+
+(defun c:פק_פ() (c:ax_a))
+(defun c:פק_ס() (c:ax_c))
+(defun c:פק_ספ() (c:ax_ca))
+(defun c:סה_ףהû() (c:cl_els))
+(defun c:סה_û() (c:cl_s))
+(defun c:ס_פקרû() (c:c_axis))
+(defun c:ס_ג() (c:c_d))
+(defun c:ס_ףה() (c:c_el))
+(defun c:ס_ףק() (c:c_ex))
+(defun c:ס_ך() (c:c_r))
+(defun c:ס_ûס() (c:c_sc))
 
 (princ "Loaded project circles.\n")

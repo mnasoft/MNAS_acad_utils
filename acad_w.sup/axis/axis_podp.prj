@@ -1,23 +1,18 @@
-;;; VLisp project file [V2.0] axis_podp saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/axis] at:[3/14/14] 
-(VLISP-PROJECT-LIST
-  :NAME
+;;; VLisp project file [V2.0] axis_podp saved to:[D:/home/_namatv/git/mnasoft/MNAS_acad_utils/acad_w.sup/axis] at:[10/13/15] 
+(vlisp-project-list
+  :name
   axis_podp
-  :OWN-LIST
+  :own-list
   ("../utils/acad_sup_dir"
-    "../utils/debug"			       "../utils/sub_div"
-    "axis_podp"				       "axis_util"
-    "../utils/draw"			       "../utils/dxf"
-    "../utils/xdata"			       "../matr/vector"
-    "../opechatka/rus_cmd_opechatka"
-    "axis_podp_rus"
-   )
-  :FAS-DIRECTORY
+    "../utils/debug"	      "../utils/sub_div"	"axis_podp"		  "axis_util"
+    "../utils/draw"	      "../utils/dxf"		"../utils/xdata"	  "../matr/vector"
+    "../opechatka/rus_cmd_opechatka"			"axis_podp_rus")
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
-  :AUTOLISP
-)
+  :project-keys
+  (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
+  :context-id
+  :autolisp)
 ;;; EOF

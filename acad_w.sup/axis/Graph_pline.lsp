@@ -1,4 +1,4 @@
-(defun ep  (param / dcl_id do_dialog wid)
+(defun ep  (param / dcl_id do_dialog wid act)
   (ep:init)
   (setq dcl_id (load_dialog (findfile "acad_w.sup/axis/axis.dcl")))
   (if (< dcl_id 0)
