@@ -170,7 +170,8 @@
                     /                   ;
                     rmd_lst             ; Список, содержащий удаленные объекты
                     vla_tmp_lst do      ; признак продолжения выполнения цикла
-) (setq do t)
+                    i j)
+  (setq do t)
   (while do
     (setq i (length vla_lst))
     (while (<= 0 (setq i (1- i)))
@@ -193,6 +194,7 @@
     (setq rmd_lst nil
           vla_lst vla_tmp_lst)))
 
+
 ;;;;;;("j_lns"
 ;;;;;;  "Выполняет объединение отрезков, замещая смежные и совпадающие части нескольких отрезков одним отрезком."
 ;;;;;;  "Измени"
@@ -205,8 +207,8 @@
                  c_lst                  ; Промежуточный список, в который попадают коллинеарные элементы
                  r_lst                  ; Промежуточный список в который  попадают не коллинеарные элементы
                  rez_lst                ;
-                 filter                 ;
-) (err-init '("cmdecho"))
+                 filter delta)
+  (err-init '("cmdecho"))
   (setq ss     (ssget '((0 . "LINE")))
         i      (sslength ss)
         delta  0.000001
@@ -225,13 +227,19 @@
     (setq vla_lst r_lst
           c_lst   nil
           r_lst   nil))
-  (mapcar (function
-            (lambda (el)
-              (setq el (vl-sort el
-                                (function (lambda (e1 e2) (> (vlax-get-property e1 'length) (vlax-get-property e2 'length))))))
-              (concat_lst el delta)))
+  (mapcar (function (lambda (el)
+                      (setq el
+                             (vl-sort el
+                                      (function (lambda (e1 e2) (> (vlax-get-property e1 'length) (vlax-get-property e2 'length))))))
+                      (concat_lst el delta)))
           rez_lst)
   (err-handle ""))
+
+
+
+
+
+
 
 
 (defun line-concat-dlg  (/ dcl_id       ; id диалога

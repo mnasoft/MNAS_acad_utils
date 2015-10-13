@@ -72,8 +72,8 @@
                         delta           ; “очность
                         /               ;
                         rmd_lst         ; —писок, содержащий удаленные объекты
-                        vla_tmp_lst do  ; признак продолжени€ выполнени€ цикла
-) (setq do t)
+                        vla_tmp_lst i j vli vlj do) ; признак продолжени€ выполнени€ цикла
+  (setq do t)
   (while do
     (setq i (length vla_lst))
     (while (<= 0 (setq i (1- i)))
@@ -95,6 +95,9 @@
       (setq do nil))
     (setq rmd_lst nil
           vla_lst vla_tmp_lst)))
+
+
+
 
 (defun concatenate_two_arcs  (v_line_1  ; Vla объект, предвтавл€ющий первый отрезок
                               v_line_2  ; Vla объект, предвтавл€ющий второй отрезок
