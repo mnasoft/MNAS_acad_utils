@@ -191,7 +191,7 @@
   (princ (rtos val 2 2) p-val-out))
 
 (defun c:get-pline-points  (/ fn ed rez-pts out rez-pts)
-  (setq ed (c:obj)
+  (setq ed (obj)
         rez-pts nil)
   (setq fn  (getfiled "Имя  Shp-файла для вывода отсортированных форм" "" "html" 1)
         out (open fn "w"))
@@ -224,4 +224,3 @@
   (princ "</table>\n" out)
   (close out)
   (dr:pline rez-pts 256))
-

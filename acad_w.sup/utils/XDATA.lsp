@@ -62,7 +62,7 @@
 ;;_$ (xdxdapp (assoc -3 (sh:sel "укажите шкалу")) (sh:shckala))
 ;;("SHCKALA" (1002 . "{") (1040 . 0.0) (1040 . 100.0) (1070 . 0) (1000 . "Некая шкала x") (1002 . "}"))
 
-(defun xdgetn (data app n) (cdr (nth n (_xd_appget data app))))
+(defun xdgetn (data app nn) (cdr (nth nn (_xd_appget data app))))
 
 (defun xdgetassoc (data app code) (cdr (assoc code (_xd_appget data app))))
 

@@ -40,3 +40,17 @@
     (setq lst_el (nth len list_new)
           code   (car lst_el)
           edata  (subst lst_el (assoc code edata) edata))))
+
+;;;;;;("obj" "Возвращает данные выбранного примитива." "Объекты")
+(defun obj () (entget (car (entsel "\nВыберите примитив:"))))
+
+;;;;;;("nobj" "Возвращает данные выбранного подпримитива." "Объекты")
+(defun nobj () (entget (car (nentsel "\nВыберите примитив:"))))
+
+;;;;;;("objxd"
+;;;;;;"Возвращает данные и расширенные данные выбранного примитива." "Объекты")
+(defun objxd () (entget (car (entsel "\nВыберите примитив:")) (list "*")))
+
+;;;;;;("nobjxd"
+;;;;;;"Возвращает данные и расширенные данные выбранного подпримитива." "Объекты")
+(defun nobjxd () (entget (car (nentsel "\nВыберите примитив:")) (list "*")))

@@ -118,7 +118,7 @@
 ;;;;;; 1) ось Х;\n
 ;;;;;; 2) ось Y;\n
 ;;;;;; 3) координата X." "Шкалы")
-(defun c:a2xyn_t  (/)
+(defun c:a2xyn_t  (/ n_div pt pt_0 pt_1 scx scx_end scx_st scy scy_end scy_st x_max x_min)
   (setq scx (sh:get (sh:sel "Ось X"))
         scy (sh:get (sh:sel "Ось Y")))
   (setq x_min (getreal "Введите X_min :")
@@ -144,6 +144,7 @@
                       (dr:text (rtos el) pt 3.5 0.0 256)))
           (sub_div x_min x_max n_div 0))
   (princ))
+
 
 ;;;("a3"
 ;;;"Построение точек в координатах двух шкал.\n

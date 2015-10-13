@@ -1,19 +1,13 @@
 ;;;;;;("obj" "Возвращает данные выбранного примитива." "Объекты")
-(defun c:obj () (setq obj (entget (car (entsel "\nВыберите примитив:")))) (vl-doc-set 'obj obj))
+(defun c:obj () (vl-doc-set 'obj (entget (car (entsel "\nВыберите примитив:")))))
 
 ;;;;;;("nobj" "Возвращает данные выбранного подпримитива." "Объекты")
-(defun c:nobj  ()
-  (setq nobj (entget (car (nentsel "\nВыберите примитив:"))))
-  (vl-doc-set 'nobj nobj))
+(defun c:nobj () (vl-doc-set 'nobj (entget (car (nentsel "\nВыберите примитив:")))))
 
 ;;;;;;("objxd"
 ;;;;;;"Возвращает данные и расширенные данные выбранного примитива." "Объекты")
-(defun c:objxd  ()
-  (setq objxd (entget (car (entsel "\nВыберите примитив:")) (list "*")))
-  (vl-doc-set 'objxd objxd))
+(defun c:objxd () (vl-doc-set 'objxd (entget (car (entsel "\nВыберите примитив:")) (list "*"))))
 
 ;;;;;;("nobjxd"
 ;;;;;;"Возвращает данные и расширенные данные выбранного подпримитива." "Объекты")
-(defun c:nobjxd  ()
-  (setq nobjxd (entget (car (nentsel "\nВыберите примитив:")) (list "*")))
-  (vl-doc-set 'nobjxd nobjxd))
+(defun c:nobjxd () (vl-doc-set 'nobjxd (entget (car (nentsel "\nВыберите примитив:")) (list "*"))))
