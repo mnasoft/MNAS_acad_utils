@@ -5,7 +5,7 @@
 (defun rtd (a) (* 180. (/ a pi)))
 
 ;;	Производит нормализацию угла к диапазону [-pi ; pi].
-(defun angle-normalize[-pi_pi]  (a)
+(defun angle-normalize[-pi_pi]  (a / n)
   (setq n (fix (/ a (* pi 2)))
         a (- a (* n (* pi 2))))
   (cond ((> a pi) (setq a (- a (* pi 2))))
