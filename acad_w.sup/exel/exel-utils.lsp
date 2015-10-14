@@ -2,32 +2,39 @@
 ;;; где на первом месте идет строка, а на втором столбец.
 ;;;_$ (строка_xls->точка "S2")
 ;;;(2 19)
-(DEFUN строка_xls->точка  (str / lst_09 lst_az)
-  (MAPCAR (FUNCTION
-            (LAMBDA (el)
-              (COND ((AND (>= el (ASCII "A")) (<= el (ASCII "Z"))) (SETQ lst_az (CONS (- el 64) lst_az)))
-                    ((AND (>= el (ASCII "0")) (<= el (ASCII "9"))) (SETQ lst_09 (CONS (- el 48) lst_09))))
-              T))
-          (REVERSE (VL-STRING->LIST (STRCASE str))))
-  (LIST (композиция_по_основанию lst_09 10) (композиция_по_основанию lst_az 26)))
+(defun строка_xls->точка  (str / lst_09 lst_az el lst lst-i lst-len)
+  (setq lst     (reverse (vl-string->list (strcase str)))
+        lst-len (length lst)
+        lst-i   -1)
+  (while (< (setq lst-i (1+ lst-i)) lst-len)
+    (setq el (nth lst-i lst))
+    (cond ((and (>= el (ascii "A")) (<= el (ascii "Z"))) (setq lst_az (cons (- el 64) lst_az)))
+          ((and (>= el (ascii "0")) (<= el (ascii "9"))) (setq lst_09 (cons (- el 48) lst_09)))))
+  (list (композиция_по_основанию lst_09 10) (композиция_по_основанию lst_az 26)))
 
-;;;Преобразует строку символов str, представляющую целое число,
-;;;представленное в системе счисления с основанием base и имеющее вид типа колонок в Exel,
-;;;в целое число.
-;;;
-;;;_$ (СТРОКА_XLS->ЦЕЛОЕ "AA" "A" 26)
-;;;27
-;;;_$ (СТРОКА_XLS->ЦЕЛОЕ "IV" "A" 26)
-;;;256
-(DEFUN строка_xls->целое  (str          ;Преобразуемая строка
+;;;f;;;("строка_xls->целое"
+;;;f;;;"Преобразует строку символов str, представляющую целое число,
+;;;f;;;представленное в системе счисления с основанием base и имеющее вид типа колонок в Exel,
+;;;f;;;в целое число.
+;;;f;;;Пример использования:
+;;;f;;;_$ (СТРОКА_XLS->ЦЕЛОЕ "AA" "A" 26)
+;;;f;;;27
+;;;f;;;_$ (СТРОКА_XLS->ЦЕЛОЕ "IV" "A" 26)
+;;;f;;;256")
+(defun строка_xls->целое  (str          ;Преобразуемая строка
                            base_chr     ;Начальноый символ в системе счисления
                            base         ;основание системы счисления
-                           / delta)
-  (SETQ delta (1- (ASCII base_chr)))
-  (композиция_по_основанию (MAPCAR (FUNCTION (LAMBDA (el) (- el delta))) (VL-STRING->LIST str)) base))
-
-
-
+                           / delta el lst lst-i lst-len lst-rez)
+  (setq delta (1- (ascii base_chr)))
+  (композиция_по_основанию
+    (progn (setq lst     (vl-string->list str)
+                 lst-len (length lst)
+                 lst-i   -1)
+           (while (< (setq lst-i (1+ lst-i)) lst-len)
+             (setq el      (nth lst-i lst)
+                   lst-rez (cons (progn (- el delta)) lst-rez)))
+           (setq lst-rez (reverse lst-rez)))
+    base))
 
 ;;;Производит преобразование целого числа в строку символов.
 ;;;Аналогично обозначению колонок в таблице Exel.
@@ -43,13 +50,18 @@
 ;;;"AA"
 ;;;_$ (целое->строка_xls 256 "A" 26)
 ;;;"IV"
-(DEFUN целое->строка_xls  (i            ; преобразуемое число
+(defun целое->строка_xls  (i            ; преобразуемое число
                            base_chr     ; Начальный символ системы счисления
                            base         ; основание системы счисления
-                           )
-  (APPLY (FUNCTION STRCAT)
-         (MAPCAR (FUNCTION (LAMBDA (el) (целое->символ_xls el base_chr)))
-                 (преобразование_к_безнулевому_виду (разложение_по_основанию i base) base))))
+                           / lst-rez el lst lst-i lst-len)
+  (setq lst     (ПРЕОБРАЗОВАНИЕ_К_БЕЗНУЛЕВОМУ_ВИДУ (РАЗЛОЖЕНИЕ_ПО_ОСНОВАНИЮ i base) base)
+        lst-len (length lst)
+        lst-i   -1)
+  (while (< (setq lst-i (1+ lst-i)) lst-len)
+    (setq el      (nth lst-i lst)
+          lst-rez (cons (progn (ЦЕЛОЕ->СИМВОЛ_xls el base_chr)) lst-rez)))
+  (setq lst-rez (reverse lst-rez))
+  (apply (function strcat) lst-rez))
 
 ;;;Используется внутренне функцией целое->строка_xls.
 ;;;_$ (целое->символ_xls 0 "A")
