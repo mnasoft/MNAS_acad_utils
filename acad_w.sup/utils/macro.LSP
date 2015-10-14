@@ -10,5 +10,5 @@
                        '(setq lst-rez (reverse lst-rez))))
   body)
 
-(setq *checked-prj* (list "abrev" "acad_pgp" "add_prefix")
+(setq *checked-prj* (list "abrev" "acad_pgp" "add_prefix" "axis")
 (setq *skip-prj* (list "atoms"))

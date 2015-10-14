@@ -145,6 +145,9 @@
             (* (- (f_pr sc_v1) (f_pr sc_v0))
                (/ (- (f_cord pt) (f_cord sc_p0)) (- (f_cord sc_p1) (f_cord sc_p0)))))))
 
+
+
+
 ;;	sc:val_pt(vt sc)	- Определение точки на шкале по значению на шкале.
 (defun sc:val_pt  (vt sc / sc_p0 sc_p1 sc_v0 sc_v1 sc_flag v_factor p_rez)
   (setq sc_p0    (cdr (assoc 10 sc))
