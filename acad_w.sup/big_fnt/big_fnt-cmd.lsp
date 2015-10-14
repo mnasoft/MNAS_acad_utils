@@ -60,7 +60,7 @@
   (princ))
 
 ;;	ins_lit(p_ins st_1 st_2)	- функция для вставки блока отображения литеры.
-(defun ins_lit  (p0 str1 str2)
+(defun ins_lit  (p0 str1 str2 / BL_NAME ED)
   (entmake (list (cons 0 "block") (cons 2 "*U") (list 10 0.0 0.0 0.0) (cons 70 1)))
   (dr:line (list 0.0 0.0 0.0) (list 15.0 0.0 0.0) 256)
   (dr:line (list 15.0 0.0 0.0) (list 15.0 -15.0 0.0) 256)

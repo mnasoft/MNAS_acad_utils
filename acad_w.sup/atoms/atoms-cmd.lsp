@@ -131,9 +131,14 @@
     (acad_strlsort temp1)
     nil))
 
-(defun t2  (lst_1 / temp)               ;¬озвращает список, состо€щий из имен и типов
-  (mapcar (function (lambda (el) (setq temp (cons (list el (type_as_string (eval (read el)))) temp))))
-          lst_1)
+(defun t2  (lst_1 / temp el lst lst-i lst-len lst-rez) ;¬озвращает список, состо€щий из имен и типов
+  (progn (setq lst     lst_1
+               lst-len (length lst)
+               lst-i   -1)
+         (while (< (setq lst-i (1+ lst-i)) lst-len)
+           (setq el      (nth lst-i lst)
+                 lst-rez (cons (progn (setq temp (cons (list el (type_as_string (eval (read el)))) temp))) lst-rez)))
+         (setq lst-rez (reverse lst-rez)))
   (reverse temp))
 
 (defun t3  (lst_2 wc_str fl / temp st)

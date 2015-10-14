@@ -4,7 +4,7 @@
 ;;;;;; 1) ось Х;\n
 ;;;;;; 2) ось Y;\n
 ;;;;;; 3) имя переменной, которое содержит список точек." "Шкалы")
-(defun c:a1  (/ scx scy str pts)
+(defun c:a1  (/ scx scy str pts EL LST LST-I LST-LEN LST-REZ)
   (alert
     "Построение полилинии в координатах двух шкал
 Задаются:
@@ -16,7 +16,13 @@
         scy (sh:get (sh:sel "Ось Y"))
         str (getstring "\nИмя переменной содержащей список точек:"))
   (print (vl-doc-ref (read str)))
-  (setq pts (mapcar (function (lambda (el) (sc:pxy_pt el scx scy))) (vl-doc-ref (read str))))
+  (setq pts (progn (setq lst     (vl-doc-ref (read str))
+                         lst-len (length lst)
+                         lst-i   -1)
+                   (while (< (setq lst-i (1+ lst-i)) lst-len)
+                     (setq el      (nth lst-i lst)
+                           lst-rez (cons (progn (sc:pxy_pt el scx scy)) lst-rez)))
+                   (setq lst-rez (reverse lst-rez))))
   (dr:pline pts 256))
 
 ;;;;;;("an" "Построение семейства полилиний в координатах двух шкал.\n
@@ -44,12 +50,45 @@
   (setq pts (transpon pts)
         x   (car pts)
         a   (cdr pts))
-  (mapcar (function (lambda (el / p)
-                      (setq p (mapcar (function (lambda (el_x el_y) (list el_x el_y))) x el)
-                            p (mapcar (function (lambda (el) (sc:pxy_pt el scx scy))) p))
-                      (dr:pline p (nth i_colors colors))
-                      (setq i_colors (1+ i_colors))))
-          a))
+  (map-an-0 a colors i_colors scx scy x))
+
+
+(defun map-an-0  (a colors i_colors scx scy x / EL LST LST-I LST-LEN LST-REZ P)
+  (progn (setq lst     a
+               lst-len (length lst)
+               lst-i   -1)
+         (while (< (setq lst-i (1+ lst-i)) lst-len)
+           (setq el      (nth lst-i lst)
+                 lst-rez (cons (progn (setq p (mapcar (function (lambda (el_x el_y) (list el_x el_y))) x el)
+                                            p (map-an-0-1 scx scy p))
+                                      (dr:pline p (nth i_colors colors))
+                                      (setq i_colors (1+ i_colors)))
+                               lst-rez)))
+         (setq lst-rez (reverse lst-rez))))
+
+;;;(macro-mapcar '(mapcar
+;;;                (function
+;;;                 (lambda (el)
+;;;                   (setq
+;;;                    p
+;;;                    (mapcar (function (lambda (el_x el_y) (list el_x el_y))) x el)
+;;;                    p
+;;;                    (map-an-0-1 scx scy p))
+;;;                   (dr:pline p (nth i_colors colors))
+;;;                   (setq i_colors (1+ i_colors))))
+;;;                a))
+
+
+
+
+(defun map-an-0-1  (scx scy p / EL LST LST-I LST-LEN LST-REZ)
+  (progn (setq lst     p
+               lst-len (length lst)
+               lst-i   -1)
+         (while (< (setq lst-i (1+ lst-i)) lst-len)
+           (setq el      (nth lst-i lst)
+                 lst-rez (cons (progn (sc:pxy_pt el scx scy)) lst-rez)))
+         (setq lst-rez (reverse lst-rez))))
 
 
 ;;;;;;("a2"
@@ -57,7 +96,7 @@
 ;;;;;; Задаются:\n
 ;;;;;; 1) ось Х;\n
 ;;;;;; 2) координата X." "Шкалы")
-(defun c:a2  (/ sc)
+(defun c:a2  (/ sc x)
   (alert "Построение точки в координатах шкалы
 Задаются:
 1) ось Х;
@@ -71,7 +110,7 @@
 ;;;;;; Задаются:\n
 ;;;;;; 1) ось Х;\n
 ;;;;;; 2) координата X." "Шкалы")
-(defun c:a2t  (/ sc pt)
+(defun c:a2t  (/ sc pt x)
   (alert "Построение точки в координатах шкалы
 Задаются:
 1) ось Х;
@@ -128,22 +167,51 @@
         scx_end (cdr (assoc 11 scx))
         scy_st  (cdr (assoc 10 scy))
         scy_end (cdr (assoc 11 scy)))
-  (mapcar (function (lambda (el)
-                      (setq pt   (sc:val_pt el scx)
-                            pt_0 (inters pt
-                                         (polar pt (angle scy_st scy_end) 1.0)
-                                         scy_st
-                                         (polar scy_st (angle scx_st scx_end) 1.0)
-                                         nil)
-                            pt_1 (inters pt
-                                         (polar pt (angle scy_st scy_end) 1.0)
-                                         scy_end
-                                         (polar scy_end (angle scx_st scx_end) 1.0)
-                                         nil))
-                      (dr:line pt_0 pt_1 256)
-                      (dr:text (rtos el) pt 3.5 0.0 256)))
-          (sub_div x_min x_max n_div 0))
+  (map-a2xyn_t-0 n_div pt pt_0 pt_1 scx scx_end scx_st scy_end scy_st x_max x_min)
   (princ))
+
+
+(defun map-a2xyn_t-0
+       (n_div pt pt_0 pt_1 scx scx_end scx_st scy_end scy_st x_max x_min / el lst lst-i lst-len lst-rez)
+  (progn (setq lst     (sub_div x_min x_max n_div 0)
+               lst-len (length lst)
+               lst-i   -1)
+         (while (< (setq lst-i (1+ lst-i)) lst-len)
+           (setq el      (nth lst-i lst)
+                 lst-rez (cons (progn (setq pt   (sc:val_pt el scx)
+                                            pt_0 (inters pt
+                                                         (polar pt (angle scy_st scy_end) 1.0)
+                                                         scy_st
+                                                         (polar scy_st (angle scx_st scx_end) 1.0)
+                                                         nil)
+                                            pt_1 (inters pt
+                                                         (polar pt (angle scy_st scy_end) 1.0)
+                                                         scy_end
+                                                         (polar scy_end (angle scx_st scx_end) 1.0)
+                                                         nil))
+                                      (dr:line pt_0 pt_1 256)
+                                      (dr:text (rtos el) pt 3.5 0.0 256))
+                               lst-rez)))
+         (setq lst-rez (reverse lst-rez))))
+
+
+
+
+;;;(macro-mapcar '  (mapcar (function (lambda (el)
+;;;                      (setq pt   (sc:val_pt el scx)
+;;;                            pt_0 (inters pt
+;;;                                         (polar pt (angle scy_st scy_end) 1.0)
+;;;                                         scy_st
+;;;                                         (polar scy_st (angle scx_st scx_end) 1.0)
+;;;                                         nil)
+;;;                            pt_1 (inters pt
+;;;                                         (polar pt (angle scy_st scy_end) 1.0)
+;;;                                         scy_end
+;;;                                         (polar scy_end (angle scx_st scx_end) 1.0)
+;;;                                         nil))
+;;;                      (dr:line pt_0 pt_1 256)
+;;;                      (dr:text (rtos el) pt 3.5 0.0 256)))
+;;;          (sub_div x_min x_max n_div 0)))
 
 
 ;;;("a3"

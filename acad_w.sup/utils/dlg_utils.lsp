@@ -1,4 +1,4 @@
-(defun load_dcl  (f_name)
+(defun load_dcl  (f_name / dcl_id)
   (setq dcl_id (load_dialog (strcat (acad_sup) f_name)))
   (if (< dcl_id 0)
     (exit)

@@ -9,3 +9,6 @@
                              (list 'setq 'el '(nth lst-i lst) 'lst-rez (list 'cons (cons 'progn lam-body) 'lst-rez)))
                        '(setq lst-rez (reverse lst-rez))))
   body)
+
+(setq *checked-prj* (list "abrev" "acad_pgp" "add_prefix")
+(setq *skip-prj* (list "atoms"))
