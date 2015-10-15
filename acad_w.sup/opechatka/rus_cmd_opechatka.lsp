@@ -30,18 +30,3 @@
 (defun l_op_str  (l_cmds)
   (mapcar (function (lambda (el) (vl-string-translate str_keyboard str_opchatka el))) l_cmds))
 
-;;;;;;("translit" "¬ыполн€ет транслитерацию с английской раскладки в русскую." "–едактировани€ текста"
-;;;;;;)
-(defun c:translit  (ed es len ss txt)
-  (prompt "¬ыберите текст дл€ преобразовани€ кодировки.")
-  (setq ss  (ssget)
-        len (sslength ss))
-  (while (<= 0 (setq len (1- len)))
-    (setq es (ssname ss len))
-    (setq ed (entget es))
-    (setq txt (cdr (assoc 1 ed)))
-    (if txt
-      (progn (setq txt (vl-string-translate str_keyboard str_opchatka txt))
-             (setq ed (subst (cons 1 txt) (assoc 1 ed) ed))
-             (entmod ed)
-             (entupd es)))))

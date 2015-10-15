@@ -185,10 +185,5 @@
         (t (princ "\nСлучай не обрабатывается\n") nil)))
 
 
-(defun c:cccc  ()
-  (concatenate_two_arcs
-    (vlax-ename->vla-object (car (entsel)))
-    (vlax-ename->vla-object (car (entsel)))
-    0.0001
-    nil))
+
 
