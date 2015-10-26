@@ -26,3 +26,37 @@
   (getvar "cmdech")
   (command "_scale" (cdr (assoc -1 ed)) "" "_non" pt "_r" rad pause)
   (setvar "cmdecho" echo))
+
+(defun p-mid (p1 p2) (mapcar (function (lambda (el_1 el_2) (* 0.5 (+ el_1 el_2)))) p1 p2))
+
+(defun p-perp (p1 p2) (polar (p-mid p1 p2) (+ (* 0.5 pi)(angle p1 p2)) (distance p1 p2)))
+
+
+(defun in-triang-cen-rad  (p1 p2 p3)
+  (setq p12   (p-mid p1 p2)
+        p23   (p-mid p2 p3)
+        p12-p (p-perp p1 p2)
+        p23-p (p-perp p2 p3)
+        pc    (inters p12 p12-p p23 p23-p nil)
+        rad   (distance pc p3))
+  (list pc rad))
+  
+
+(defun c:c_123  (/ p1 p2 p3)
+  (setq p1 (getpoint "Enter p1:")
+        p2 (getpoint "Enter p2:")
+        p3 (getpoint "Enter p3:"))
+  (setq p-rad (in-triang-cen-rad p1 p2 p3)
+        p0    (car p-rad)
+        r0    (cadr p-rad))
+  (dr:circle p0 r0 256)
+  (prompt "Select circles or arcs:")
+  (setq ss (ssget)
+        i  (sslength ss))
+  (while (<= 0 (setq i (1- i)))
+    (setq ed    (entget (ssname ss i))
+          p_i_c (dxf-get 10 ed)
+          r_i_c (dxf-get 40 ed)
+          p-st  (polar p_i_c (angle p_i_c p0) r_i_c)
+          p-end (polar p_i_c (angle p0 p_i_c) r_i_c))
+    (dr:line p-st p-end 256)))
