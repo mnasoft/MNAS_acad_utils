@@ -33,7 +33,7 @@
         ed        (dsubst ed (list (cons 62 color_new) (cons 40 size_new))))
   (entmod ed))
 
-(defun text_size_lst  (/ rez)
+(defun text_size_lst  (/ rez n sz)
   (setq n  7
         sz 80.0)
   (while (< 0 (setq n (1- n)))
@@ -41,7 +41,7 @@
           sz  (* sz (/ 7.0 10.0))
           rez (cons sz rez)
           sz  (* sz (/ 5.0 7.0))))
-  rez)
+  (mapcar (function(lambda (el) (* 0.9 el))) rez))
 
 (defun text_normalize  (x               ; Высота символов шрифта, которые необходимо нормализовать.
                         sc              ; Масштабный фактор нормализации шрифта д.б. sc = высота - 0,5 * толщина
