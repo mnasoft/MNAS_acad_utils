@@ -74,11 +74,15 @@
         ((> d 0.0) (assad (dir_ob p1 p2 pt) (dir_ob p2 p3 pt) (dir_ob p3 p1 pt)))
         ((< d 0.0) (assad (dir_ob p2 p1 pt) (dir_ob p3 p2 pt) (dir_ob p1 p3 pt)))))
 
-(defun load_format_dcl  ()
-  (setq dcl_id (load_dialog (findfile "acad_w.sup/format/format.dcl")))
+(defun load_format_dcl  (/ dcl-name name)
+  (setq name     "acad_w.sup/format/format.dcl"
+        dcl-name (findfile name))
+  (if (null dcl-name)
+    (alert (strcat "Не могу найти файл диалога\n.../" name "\nПроверьте пути доступа к вспомогательным файлам.")))
+  "Dialog file not found" "Support File Search Path"
+  (setq dcl_id (load_dialog dcl-name))
   (if (< dcl_id 0)
     (exit)))
-
 
 (defun ac_ed_3  (/ f1 f_n)
   (reg_write_default_lst
