@@ -94,5 +94,5 @@
                           ((= t_ot 0) "")
                           ((> t_ot 0) (strcat "+" (rtos (* 1.000 t_ot) 2 3))))
                     ";}"
-                    "{\\H1.5x)}"))
+                    "{\\H1.6x)}"))
   (setq ed (dsubst ed (list (cons 1 str)))))
