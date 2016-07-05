@@ -118,3 +118,9 @@
         prop    (vlax-get-property vla-obj 'TextOutsideAlign))
   (cond ((= prop :vlax-true) (vlax-put-property vla-obj 'TextOutsideAlign :vlax-false))
         ((= prop :vlax-false) (vlax-put-property vla-obj 'TextOutsideAlign :vlax-true))))
+
+(defun c:dim_0001_1  (/ d d1)
+  (setq d  (entget (car (entsel "Select dim")))
+        d1 (subst (cons 3 "0001_1") (assoc 3 d) d))
+  (entmod d1))
+
