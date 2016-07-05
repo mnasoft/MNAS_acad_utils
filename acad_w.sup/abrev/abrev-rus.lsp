@@ -2,7 +2,7 @@
                   "zw"   "fr"   "f"    "chd"  "ch"   "s"    "l"    "a"    "o"    "c"    "e"    "co"   "cp"   "m"
                   "ro"   "gr_on_off"   "tr"   "ex"   "rec"  "mi"   "el"   "br"   "u"    "undo" "sc"   "oops" "di"
                   "id"   "ma"   "le"   "op"   "h"    "dt"   "pe"   "bo"   "ar"   "li"   "x"    "j"    "b"    "ps"
-                  "ms"   "git"  "vl"   "vu"   "lou"))
+                  "ms"   "git"  "vl"   "vu"   "lou"  "xa"))
 ;;;;(opech_cmds-str *abbrev-opech*)
 
 (defun c:חדך() (c:pur))
@@ -65,5 +65,6 @@
 (defun c:לה() (c:vl))
 (defun c:לד() (c:vu))
 (defun c:השד() (c:lou))
+(defun c:קפ() (c:xa))
 
 (princ "Loaded project abrev.\n")

@@ -191,6 +191,34 @@
 ;;;;;;("x" "Вызов команды _.explode" "Аббревиатуры")
 (defun c:x () (command "_.explode") (princ))
 
+;;;;;;("xa" "uВызов команды _.explode" "Аббревиатуры")
+(defun c:xa  (/ el ss)
+  (entmake '((0 . "POINT") (10 0.0 0.0 0.0)))
+  (setq el (entlast))
+  (prompt "Выдерите объекты для полного взрыва")
+  (setq ss (ssget '((0 . "INSERT"))))
+  (while (> (sslength ss) 0)
+    (explode-all ss)
+    (setq ss (select-all-past-ename el))
+    )
+  (entdel el)
+  (princ))
+
+(defun select-all-past-ename  (el / ss ed)
+  (setq ss (ssadd))
+  (while (and el (setq el (entnext el)))
+    (setq ed (entget el))
+    (if (= "INSERT" (cdr (assoc 0 ed)))
+    (setq ss (ssadd el ss))))
+  ss)
+
+(defun explode-all  (ss / i)
+  (setq i (sslength ss))
+  (while (>= (setq i (1- i)) 0) (vl-cmdf "_.explode" (ssname ss i) "")))
+
+
+
+
 ;;;;;;("j" "Вызов команды _.join" "Аббревиатуры")
 (defun c:j () (command "_.join") (princ))
 
@@ -218,8 +246,8 @@
 ;;;;;; (см. системную переменную pickstyle)." "Аббревиатуры")
 (defun c:gr_on_off  ()
   (setq pstl (getvar "pickstyle"))
-  (cond ((= pstl 0) (setvar "pickstyle" 1) (PRINC "\nGroup on..."))
-        ((= pstl 1) (setvar "pickstyle" 0) (PRINC "\nGroup off..."))
-        ((= pstl 2) (setvar "pickstyle" 3) (PRINC "\nGroup on..."))
-        ((= pstl 3) (setvar "pickstyle" 2) (PRINC "\nGroup off...")))
+  (cond ((= pstl 0) (setvar "pickstyle" 1) (princ "\nGroup on..."))
+        ((= pstl 1) (setvar "pickstyle" 0) (princ "\nGroup off..."))
+        ((= pstl 2) (setvar "pickstyle" 3) (princ "\nGroup on..."))
+        ((= pstl 3) (setvar "pickstyle" 2) (princ "\nGroup off...")))
   (princ))

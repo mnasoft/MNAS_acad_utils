@@ -1,9 +1,10 @@
-;;; VLisp project file [V2.0] abrev saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/abrev] at:[10/12/15] 
+;;; VLisp project file [V2.0] abrev saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/abrev] at:[7/4/16] 
 (vlisp-project-list
   :name
   abrev
   :own-list
-  ("../UTILS/ACAD_SUP_DIR" "../utils/Debug" "abrev-cmd" "../opechatka/rus_cmd_opechatka" "abrev-rus")
+  ("../UTILS/ACAD_SUP_DIR"
+    "../utils/Debug" "abrev-cmd" "abrev-xa" "../opechatka/rus_cmd_opechatka" "abrev-rus")
   :fas-directory
   "../../vlisp.tmp"
   :tmp-directory
