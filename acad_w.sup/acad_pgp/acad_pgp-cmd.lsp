@@ -37,3 +37,33 @@
   (close fl_in)
   (write-line (strcat " ...  " fn "..."))
   (princ))
+
+(defun copy-files-MNAS_ARXPRJ_ROAMABLEROOTPREFIX  (dir file-name-list / d-from d-to)
+  (setq d-from (vl-string-translate "\\" "/" (strcat (MNAS_ARXPRJ_ROAMABLEROOTPREFIX) dir))
+        d-to   (vl-string-translate "\\" "/" (strcat (getvar "ROAMABLEROOTPREFIX") dir)))
+  (mapcar (function (lambda (el) (vl-file-copy (strcat d-from el) (strcat d-to el)))) file-name-list))
+
+(defun delete-files-RoamableRootPrefix  (dir file-name-list / d-from)
+  (setq d-from (vl-string-translate "\\" "/" (strcat (getvar "ROAMABLEROOTPREFIX") dir)))
+  (mapcar (function (lambda (el) (vl-file-delete (strcat d-from el)))) file-name-list))
+
+(defun setup-Ploters  ()
+  (copy-files-MNAS_ARXPRJ_ROAMABLEROOTPREFIX
+    "Plotters/"
+    '("A mxn DWG To PDF.pc3")))
+
+(defun setup-ploters-Plot_Styles  ()
+  (copy-files-MNAS_ARXPRJ_ROAMABLEROOTPREFIX
+    "Plotters/Plot Styles/"
+    '("BW_015_030.ctb" "BW_020_040.ctb" "BW_025_050.ctb" "BW_030_060.ctb" "CL_030_060.ctb")))
+
+(defun delete-Ploters  ()
+  (delete-files-RoamableRootPrefix "Plotters/" '("A mxn DWG To PDF.pc3")))
+
+(defun delete-Ploters-Plot_Styles  ()
+  (delete-files-RoamableRootPrefix "Plotters/Plot Styles/"
+    '("BW_015_030.ctb" "BW_020_040.ctb" "BW_025_050.ctb" "BW_030_060.ctb" "CL_030_060.ctb")))
+
+(defun c:mnasoft-utils-install () (setup-Ploters) (setup-ploters-Plot_Styles))
+
+(defun c:mnasoft-utils-uninstall () (delete-Ploters) (delete-ploters-Plot_Styles))

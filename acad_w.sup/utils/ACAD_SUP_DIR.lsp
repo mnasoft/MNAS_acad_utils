@@ -36,6 +36,8 @@
 
 (defun MNAS_ArxPrj_root () "D:/home/_namatv/git/mnasoft/MNAS_acad_utils")
 
+(defun MNAS_ArxPrj_RoamableRootPrefix () (strcat (MNAS_ArxPrj_root) "/" "RoamableRootPrefix/"))
+
 (defun MNAS_ArxPrj_acad_w () (strcat (MNAS_ArxPrj_root) "/" "acad_w.sup"))
 
 (defun MNAS_ArxPrj_acad_help () (strcat (MNAS_ArxPrj_root) "/" "acad.help"))
