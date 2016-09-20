@@ -1,0 +1,20 @@
+;;; VLisp project file [V2.0] acad_pgp saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/acad_pgp] at:[3/14/14] 
+(VLISP-PROJECT-LIST
+  :NAME
+  acad_pgp
+  :OWN-LIST
+  ("../utils/ACAD_SUP_DIR"
+    "../utils/Debug"		"acad_pgp-cmd"		    "../UTILS/STRING"
+    "../UTILS/ERR"		"../opechatka/rus_cmd_opechatka"
+    "acad_pgp-rus"
+   )
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

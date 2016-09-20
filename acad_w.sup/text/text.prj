@@ -1,25 +1,32 @@
-;;; VLisp project file [V2.0] text saved to:[D:/MNAS_acad_utils/acad_w.sup/text] at:[6/9/12] 
+;;; VLisp project file [V2.0] text saved to:[D:/home/_namatv/git/mnasoft/MNAS_acad_utils/acad_w.sup/text] at:[4/17/15] 
 (VLISP-PROJECT-LIST
   :NAME
   text
   :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"	    "Text_pozition"
-    "Rjedaktirovanije_tjekstov"
-    "naklon_15gr"	    "Lay_txt"
-    "TEXT"		    "STL"
-    "../UTILS/DXF"	    "../UTILS/prin"
-    "../UTILS/STRING"	    "Skobka"
-    "Text_export"	    "../UTILS/stl_text"
-    "../UTILS/ERR"	    "../utils/system_registry"
-   )
+    "../utils/Debug"	      "../utils/draw"
+    "text-pozition"	      "text-edit"
+    "text-naklon_15gr"	      "text-layer_current"
+    "text-edit_dlg"	      "text-load_style"
+    "text-brackets"	      "text-export"
+    "text-block_attribs"      "../UTILS/DXF"
+    "../UTILS/STRING"	      "../UTILS/prin"
+    "../UTILS/stl_text"	      "../UTILS/ERR"
+    "../utils/system_registry"
+    "../opechatka/rus_cmd_opechatka"
+    "text_rus")
   :FAS-DIRECTORY
   "../../Vlisp.tmp"
   :TMP-DIRECTORY
   "../../Vlisp.tmp"
   :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
+  (:BUILD (:OPTIMIZE :LOCALIZE :link)
+	  :MERGED
+	  T
+	  :SAFE-MODE
+	  T
+	  :MSGLEVEL
+	  1)
   :CONTEXT-ID
-  :AUTOLISP
-)
+  :AUTOLISP)
 ;;; EOF

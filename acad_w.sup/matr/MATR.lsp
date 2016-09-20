@@ -1,6 +1,3 @@
-;;;(princ "\nЗагружаю matr/matr           ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "matr/matr           "))
-
 ;;matr:name()	-	Вызвращает сторку "Matr".
 
 ;;matr:idx (i j m)
@@ -473,7 +470,4 @@ matr:sys_lu (matr)
   (matr:print x)
   x
 )
-(princ "\t...загружен.\n")
- ;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+

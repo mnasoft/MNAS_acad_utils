@@ -16,7 +16,7 @@
 ;;;;;;5) Выполните в консоли Visual Lisp функцию (make_lst g:fn_full_prj_lst)." "not defined")
 
 (defun c:prj_main (/ fn_list_prj do fl_list_prj path)
-  (setq	fn_list_prj (getfiled "Откройте файл, содержащий проекты" (strcat (acad_sup) "/prj/prj/list_prj") "" 0)
+  (setq	fn_list_prj (getfiled "Откройте файл, содержащий проекты" (findfile "acad_w.sup/prj/prj/list_prj") "" 0)
 	fl_list_prj (open fn_list_prj "r")
 	do t
   )

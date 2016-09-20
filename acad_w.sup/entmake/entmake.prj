@@ -1,0 +1,20 @@
+;;; VLisp project file [V2.0] ENTMAKE saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/entmake] at:[3/16/14] 
+(VLISP-PROJECT-LIST
+  :name
+  ENTMAKE
+  :own-list
+  ("../utils/ACAD_SUP_DIR"
+    "../utils/Debug"
+    "entmake-cmd"
+    "../UTILS/ERR"
+    "../opechatka/rus_cmd_opechatka"
+    "entmake-rus")
+  :fas-directory
+  "../../vlisp.tmp"
+  :tmp-directory
+  "../../vlisp.tmp"
+  :project-keys
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :context-id
+  :AUTOLISP)
+;;; EOF

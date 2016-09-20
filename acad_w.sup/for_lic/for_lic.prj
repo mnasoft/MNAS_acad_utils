@@ -1,0 +1,20 @@
+;;; VLisp project file [V2.0] for_lic saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/for_lic] at:[3/16/14] 
+(VLISP-PROJECT-LIST
+  :name
+  for_lic
+  :own-list
+  ("../UTILS/ACAD_SUP_DIR"
+    "../utils/Debug"				      "for_lic-prover"
+    "for_lic-provjerka"				      "for_lic-projekt"
+    "for_lic-formuly"				      "../Funktcii/Trigonomjetrichjeskije"
+    "../opechatka/rus_cmd_opechatka"
+    "for_lic-rus")
+  :fas-directory
+  "../../vlisp.tmp"
+  :tmp-directory
+  "../../vlisp.tmp"
+  :project-keys
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :context-id
+  :AUTOLISP)
+;;; EOF

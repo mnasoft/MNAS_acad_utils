@@ -68,45 +68,38 @@
 ;;;27
 ;;;_$ (СТРОКА->ЦЕЛОЕ "123" "0" 10)
 ;;;123
-(defun строка->целое (str							;Преобразуемая строка
-		      base_chr							;Начальноый символ в системе счисления
-		      base							;основание системы счисления
-		      /	delta)
+(defun строка->целое  (str              ;Преобразуемая строка
+                       base_chr         ;Начальноый символ в системе счисления
+                       base             ;основание системы счисления
+                       / delta el lst lst-i lst-len lst-rez)
   (setq delta (ascii base_chr))
   (композиция_по_основанию
-    (mapcar
-      (function
-	(lambda	(el)
-	  (- el delta)
-	)
-      )
-      (vl-string->list str)
-    )
-    base
-  )
-)
-
+    (progn (setq lst     (vl-string->list str)
+                 lst-len (length lst)
+                 lst-i   -1)
+           (while (< (setq lst-i (1+ lst-i)) lst-len)
+             (setq el      (nth lst-i lst)
+                   lst-rez (cons (progn (- el delta)) lst-rez)))
+           (setq lst-rez (reverse lst-rez)))
+    base))
 
 ;;;Производит преобразование целого числа в строку символов
 ;;;_$ (целое_строка 123 "0" 10)
 ;;;"123"
-(defun целое->строка (i								;Преобразуемое целое положительное число
-		      base_chr							;Начальноый символ в системе счисления
-		      base							;основание системы счисления
-		     )
-  (apply
-    (function strcat)
-    (mapcar
-      (function
-	(lambda	(el)
-	  (целое->символ el base_chr)
-	)
-      )
-      (разложение_по_основанию i base)
-    )
-  )
-)
+(defun целое->строка  (i                ;Преобразуемое целое положительное число
+                       base_chr         ;Начальноый символ в системе счисления
+                       base             ;основание системы счисления
+                       / el lst lst-i lst-len lst-rez)
+  (apply (function strcat)
+         (progn (setq lst     (РАЗЛОЖЕНИЕ_ПО_ОСНОВАНИЮ i base)
+                      lst-len (length lst)
+                      lst-i   -1)
+                (while (< (setq lst-i (1+ lst-i)) lst-len)
+                  (setq el      (nth lst-i lst)
+                        lst-rez (cons (progn (ЦЕЛОЕ->СИМВОЛ el base_chr)) lst-rez)))
+                (setq lst-rez (reverse lst-rez)))))
 
+;(macro-mapcar '(mapcar (function (lambda (el) (целое->символ el base_chr))) (разложение_по_основанию i base)))
 
 ;;;Используется внутренне функцией целое->строка.
 ;;;_$ (целое->символ 0 "A")
@@ -116,6 +109,3 @@
 (defun целое->символ (i base_chr)
   (chr (+ (ascii base_chr) i))
 )
-;|«Visual LISP© Format Options»
-(132 2 80 2 nil "end of " 100 20 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;

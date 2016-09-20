@@ -1,13 +1,10 @@
-;;; VLisp project file [V2.0] razvertka saved to:[D:/MNAS_acad_utils/acad_w.sup/razvertka] at:[6/9/12] 
+;;; VLisp project file [V2.0] razvertka saved to:[D:/home/_namatv/git/mnasoft/MNAS_acad_utils/acad_w.sup/razvertka] at:[10/12/15] 
 (VLISP-PROJECT-LIST
   :NAME
   razvertka
   :OWN-LIST
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"
-    "../UTILS/draw"
-    "razvertka"
-  )
+    "../utils/Debug" "../UTILS/draw" "../UTILS/DXF" "razvertka" "../opechatka/rus_cmd_opechatka" "razvertka_rus")
   :FAS-DIRECTORY
   "../../vlisp.tmp"
   :TMP-DIRECTORY
@@ -15,6 +12,5 @@
   :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID
-  :AUTOLISP
-)
+  :AUTOLISP)
 ;;; EOF

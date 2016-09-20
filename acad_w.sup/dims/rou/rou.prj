@@ -1,20 +1,22 @@
-;;; VLisp project file [V2.0] rou saved to:[./DIMS/rou] at:[5/16/09] 
+;;; VLisp project file [V2.0] rou saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dims/rou] at:[3/15/14] 
 (VLISP-PROJECT-LIST
-  :NAME
+  :name
   rou
-  :OWN-LIST
-  ("../../UTILS/ACAD_SUP_DIR" "../../utils/Debug"
-    "rou"		      "rou_draw"		"../../UTILS/STRING"
-    "../../MATR/VECTOR"	      "../../UTILS/red_list"	"rou_update_ver"
-    "../../UTILS/stl_text"    "../../UTILS/ERR"
-   )
-  :FAS-DIRECTORY
+  :own-list
+  ("../../UTILS/ACAD_SUP_DIR"
+    "../../utils/Debug"			       "rou-cmd"
+    "rou-draw"				       "../../UTILS/STRING"
+    "../../MATR/VECTOR"			       "../../UTILS/red_list"
+    "rou-update_ver"			       "../../UTILS/stl_text"
+    "../../UTILS/ERR"
+    "../../opechatka/rus_cmd_opechatka"
+    "rou-rus")
+  :fas-directory
   "../../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
-  :AUTOLISP
-)
+  :project-keys
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :context-id
+  :AUTOLISP)
 ;;; EOF

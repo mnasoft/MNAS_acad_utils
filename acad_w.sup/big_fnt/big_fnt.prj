@@ -1,20 +1,16 @@
-;;; VLisp project file [V2.0] big_fnt saved to:[D:/MNAS_acad_utils/acad_w.sup/big_fnt] at:[6/8/12] 
-(VLISP-PROJECT-LIST
-  :NAME
+;;; VLisp project file [V2.0] big_fnt saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/big_fnt] at:[10/14/15] 
+(vlisp-project-list
+  :name
   big_fnt
-  :OWN-LIST
+  :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"
-    "LITERA"
-    "../UTILS/draw"
-  )
-  :FAS-DIRECTORY
+    "../utils/Debug" "big_fnt-cmd" "../utils/DXF" "../UTILS/draw" "../opechatka/rus_cmd_opechatka" "big_fnt-rus")
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
-  :AUTOLISP
-)
+  :project-keys
+  (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
+  :context-id
+  :autolisp)
 ;;; EOF

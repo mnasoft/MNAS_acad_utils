@@ -1,21 +1,21 @@
-;;; VLisp project file [V2.0] man saved to:[./acad_w.sup/man] at:[6/13/12] 
+;;; VLisp project file [V2.0] man saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/man] at:[3/16/14] 
 (VLISP-PROJECT-LIST
-  :NAME
+  :name
   man
-  :OWN-LIST
+  :own-list
   ("../utils/ACAD_SUP_DIR"
     "../utils/Debug"
-    "Type_command_list"
-    "man"
-    "create_html_all_command_list"
-  )
-  :FAS-DIRECTORY
+    "man-type_command"
+    "man-cmd"
+    "man-create_html"
+    "../opechatka/rus_cmd_opechatka"
+    "man-rus")
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
+  :project-keys
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
-  :AUTOLISP
-)
+  :context-id
+  :AUTOLISP)
 ;;; EOF

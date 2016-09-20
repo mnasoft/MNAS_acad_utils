@@ -4,7 +4,7 @@
 	 (:separate-namespace)
 	 (:protected . T)
 	 (:load-file-list (:prj "atoms.prj"))
-	 (:require-file-list (:DCL "Atoms.dcl"))
+	 (:require-file-list (:DCL "atoms-dlg.dcl"))
 	 (:ob-directory . "../../vlisp.tmp")
 	 (:tmp-directory)
 	 (:optimization . st)

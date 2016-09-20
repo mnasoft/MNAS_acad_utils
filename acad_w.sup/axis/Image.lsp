@@ -1,56 +1,29 @@
-;;;(princ "\nÇàãðóæàþ Axis/Image          ")
-(princ (strcat "\nÇàãðóæàþ " (acad_sup) "/" "Axis/Image          "))
-
 ;;;;;;("im" "not defined" "not defined")
-(defun c:im (/ color)
-  (setq color 0)
-  (setq dcl_id (load_dialog (strcat (acad_sup) "/axis/axis.dcl")))
+(defun c:im  (/ im-color ACT DCL_ID DO_DIALOG)
+  (setq im-color 0)
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/axis/axis.dcl")))
   (if (< dcl_id 0)
-    (exit)
-  )
+    (exit))
   (setq do_dialog t)
   (while do_dialog
-    (if	(not (new_dialog "im" dcl_id))
-      (exit)
-    )
-    (action_tile
-      "i101"
-      "(im:ac_i101 $value $key $data $reason $x $y)"
-    )
+    (if (not (new_dialog "im" dcl_id))
+      (exit))
+    (action_tile "i101" "(im:ac_i101 $value $key $data $reason $x $y)")
     (setq act (start_dialog))
-    (cond
-      ((= act 0) (setq do_dialog nil))
-      ((= act 1) (setq do_dialog nil))
-    )
-  )
-  (unload_dialog dcl_id)
-)
+    (cond ((= act 0) (setq do_dialog nil))
+          ((= act 1) (setq do_dialog nil))))
+  (unload_dialog dcl_id))
 
-(defun im:ac_i101 ($value $key $data $reason $x $y)
-  (print $value)
-  (print $key)
-  (print $data)
-  (print $reason)
-  (print $x)
-  (print $y)
-
+(defun im:ac_i101  (im-value im-key im-data im-reason im-x im-y)
+  (print im-value)
+  (print im-key)
+  (print im-data)
+  (print im-reason)
+  (print im-x)
+  (print im-y)
   (start_image "i101")
   (setq color (1+ color))
   (fill_image 0 0 (dimx_tile "i101") (dimy_tile "i101") color)
-  (SLIDE_IMAGE
-    0
-    0
-    (dimx_tile "i101")
-    (dimy_tile "i101")
-    (strcat (acad_sup) "/lopatka/lopatka")
-  )
+  (SLIDE_IMAGE 0 0 (dimx_tile "i101") (dimy_tile "i101") (findfile "acad_w.sup/lopatka/lopatka.sld"))
   (end_image)
-  (princ color)
-)
-
-
-(princ "\t...çàãðóæåí.\n")
-
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 15 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+  (princ color))

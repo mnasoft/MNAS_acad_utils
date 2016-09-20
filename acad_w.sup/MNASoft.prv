@@ -1,5 +1,5 @@
-;;; Visual LISP make file [V1.0] MNASoft saved to:[D:/home/_namatv/Develop/MNAS_acad_utils/acad_w.sup] at:[9/30/13] 
-(PRV-DEF (:target . "../vlx/MNASoft.VLX")
+;;; файл сценария сборки Visual LISP [V1.0] MNASoft saved to:[D:/home/_namatv/git/mnasoft/MNAS_acad_utils/acad_w.sup] at:[7/6/16] 
+(PRV-DEF (:target . "../acad.mnu/MNASoft.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
@@ -7,7 +7,9 @@
 	   (:prj "abrev/abrev.prj")
 	   (:prj "acad_pgp/acad_pgp.prj")
 	   (:prj "add_prefix/add_prefix.prj")
+	   (:prj "axis/axis.prj")
 	   (:prj "axis/axis_podp.prj")
+	   (:prj "atoms/atoms.prj")
 	   (:prj "big_fnt/big_fnt.prj")
 	   (:prj "change/change.prj")
 	   (:prj "circles/circles.prj")
@@ -38,7 +40,7 @@
 	   (:prj "piping/piping.prj")
 	   (:prj "point/point.prj")
 	   (:prj "prj/spring/spring.prj")
-	   (:prj "provoloka/provoloka.prj")	   
+	   (:prj "provoloka/provoloka.prj")
 	   (:prj "razvertka/razvertka.prj")
 	   (:prj "rename/rename.prj")
 	   (:prj "scr/scr.prj")
@@ -46,11 +48,7 @@
 	   (:prj "sort_shp/sort_shp.prj")
 	   (:prj "spec/spec.prj")
 	   (:prj "text/text.prj")
-	   
-	   (:prj "atoms/atoms.prj")
-	   (:prj "axis/axis.prj")
-	   (:prj "format/format.prj")
-	 )
+	   (:prj "format/format.prj"))
 	 (:require-file-list
 	   (:DCL "axis/axis_graph.dcl")
 	   (:DCL "axis/Axis_podp.dcl")
@@ -62,7 +60,7 @@
 	   (:DCL "d_chprop/D_CHPROP.dcl")
 	   (:DCL "exel/graph.dcl")
 	   (:DCL "fors_rh/fors_rh.dcl")
-	   (:DCL "for_lic/for_prover.dcl")
+	   (:DCL "for_lic/for_lic-prover.dcl")
 	   (:DCL "graf/GRAF.dcl")
 	   (:DCL "layer/rgb.dcl")
 	   (:DCL "lines/line_concat.dcl")
@@ -73,14 +71,10 @@
 	   (:DCL "prj/Spring/Spring.dcl")
 	   (:DCL "spec/Specification.dcl")
 	   (:DCL "text/Text.dcl")
-
-	   (:DCL "atoms/ATOMS.dcl")
+	   (:DCL "atoms/atoms-dlg.dcl")
 	   (:DCL "axis/AXIS.dcl")
-	   (:DCL "format/Format.dcl")
-	   
-	 )
+	   (:DCL "format/Format.dcl"))
 	 (:ob-directory . "../vlisp.tmp")
 	 (:tmp-directory . "../vlisp.tmp")
-	 (:optimization . st)
-)
+	 (:optimization . st))
 ;; EOF

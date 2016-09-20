@@ -1,0 +1,18 @@
+;;; VLisp project file [V2.0] change saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/change] at:[3/20/14] 
+(VLISP-PROJECT-LIST
+  :NAME
+  change
+  :OWN-LIST
+  ("../utils/ACAD_SUP_DIR"
+    "../utils/Debug"		 "change-line_width"	      "change-point_block"
+    "../UTILS/draw"		 "../UTILS/DXF"		      "../opechatka/rus_cmd_opechatka"
+    "change-rus")
+  :FAS-DIRECTORY
+  "../../vlisp.tmp"
+  :TMP-DIRECTORY
+  "../../vlisp.tmp"
+  :PROJECT-KEYS
+  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP)
+;;; EOF

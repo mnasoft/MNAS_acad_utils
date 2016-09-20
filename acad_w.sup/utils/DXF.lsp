@@ -1,88 +1,56 @@
-;;;(princ "\nЗагружаю utils/dxf           ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "utils/dxf           "))
-
 ;;	get_dxf (name code) 	- Извлекает информацию о dxf-кодах примитива.
-(defun get_dxf (name code)
-  (cdr (assoc code (entget name)))
-)
+(defun get_dxf (name code) (cdr (assoc code (entget name))))
 
 ;;	dxf-get (code dxf_list)	- Извлекает информацию о dxf-коде code из списка dxf_list.
-(defun dxf-get ( code dxf_list)
-  (cdr (assoc code dxf_list))
-)
+(defun dxf-get (code dxf_list) (cdr (assoc code dxf_list)))
 
 ;;	dxf-get-list (code-list dxf_list)
 ;; Извлекает информацию о dxf-кодах code-list из списка dxf_list.
 ;; Если значения, связанные с кодами, имеют значение nil то они в результат не включаются.
-(defun dxf-get-list (code-list dxf_list / rez-list) 
-  (mapcar
-    (function
-      (lambda (code / cd cd-val)
-	(setq cd-val   (dxf-get code dxf_list)
-	      rez-list (if cd-val
-			 (cons (cons code cd-val) rez-list)
-			 rez-list
-		       )
-	)
-	t
-      )
-    )
-    code-list
-  )
-  rez-list
-)
-
+(defun dxf-get-list  (code-list dxf_list / rez-list a_code len lst value_lst)
+  (setq len (length dxf_list))
+  (while (>= (setq len (1- len)) 0)
+    (if (setq a_code (assoc (nth len code-list) dxf_list))
+      (setq value_lst (cons a_code value_lst))))
+  value_lst)
 
 ;;	dxf-set (code val dxf_list)
 ;; Заменяет информацию о dxf-коде  из списка dxf_list, связанную с code, значением val.
-(defun dxf-set ( code val dxf_list)
-  (subst (cons code val)(assoc code dxf_list) dxf_list)
-)
+(defun dxf-set (code val dxf_list) (subst (cons code val) (assoc code dxf_list) dxf_list))
 
 ;;	ch_dxf(name code new_val)	- Изменяет информацию в dxf-коде примитива на новое значение.
-(defun ch_dxf (name code new_val / edata li)
+(defun ch_dxf  (name code new_val / edata li)
   (setq edata (entget name))
   (setq li (subst (cons code new_val) (assoc code edata) edata))
-  (entmod li)
-)
+  (entmod li))
 
-;;	dsubst(data ndata)		- Изменяет или добавляет данные data данными ndata.
-(defun dsubst (data ndata / add_data)
-  (mapcar
-    (function
-      (lambda
-	(el / d1)
-	 (setq d1 (assoc (car el) data))
-	 (cond
-	   (
-	    d1
-	    (setq data (subst el d1 data))
-	   )
-	   (
-	    (null d1)
-	    (setq add_data (cons el add_data))
-	   )
-	 )
-	 nil
-      )
-    )
-    ndata
-  )
-  (append data (reverse add_data))
-)
+;;;dsubst(data ndata)		- Изменяет или добавляет данные data данными ndata.
+(defun dsubst  (edata list_new / len code lst_el data_code)
+  (setq len (length list_new))
+  (while (>= (setq len (1- len)) 0)
+    (setq lst_el    (nth len list_new)
+          code      (car lst_el)
+          data_code (assoc code edata)
+          edata     (cond (data_code (subst lst_el (assoc code edata) edata))
+                          ((null data_code) (append edata (list lst_el)))))))
 
-(defun subst_dxf (list_new edata)
-  (mapcar
-    (function
-      (lambda (el / code)
-	(setq
-	  code	(car el)
-	  edata	(subst el (assoc code edata) edata)
-	)
-      )
-    )
-    list_new
-  )
-  edata
-)
-(princ "\t...загружен.\n")
+(defun subst_dxf  (list_new edata / len code lst_el)
+  (setq len (length list_new))
+  (while (>= (setq len (1- len)) 0)
+    (setq lst_el (nth len list_new)
+          code   (car lst_el)
+          edata  (subst lst_el (assoc code edata) edata))))
+
+;;;;;;("obj" "Возвращает данные выбранного примитива." "Объекты")
+(defun obj () (entget (car (entsel "\nВыберите примитив:"))))
+
+;;;;;;("nobj" "Возвращает данные выбранного подпримитива." "Объекты")
+(defun nobj () (entget (car (nentsel "\nВыберите примитив:"))))
+
+;;;;;;("objxd"
+;;;;;;"Возвращает данные и расширенные данные выбранного примитива." "Объекты")
+(defun objxd () (entget (car (entsel "\nВыберите примитив:")) (list "*")))
+
+;;;;;;("nobjxd"
+;;;;;;"Возвращает данные и расширенные данные выбранного подпримитива." "Объекты")
+(defun nobjxd () (entget (car (nentsel "\nВыберите примитив:")) (list "*")))

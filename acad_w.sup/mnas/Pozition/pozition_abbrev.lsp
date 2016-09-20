@@ -1,3 +1,1 @@
-(defun c:ep ()
-  (c:edpos)
-)
+(defun c:ep () (c:edpos))

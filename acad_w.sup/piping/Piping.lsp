@@ -1,13 +1,8 @@
 ;;;;;;("pipe" "Построение трубопровода по точкам." "not defined")
-(defun c:pipe (/       a       center  center_1	       e       el_1    el_2    en_c0   en_c1   half_1
-	       half_2  l       ort     p0      p0_n    p0_new  p1      p1_n    p1_new  p1_new_1
-	       p2      p2_n    p2_new  p3      p3_n    p3_new  p3_new_3	       pla_1   pla_2   pla_3
-	       pla_4   r0      r1      r3      sp      sp_1    sp_2  echo
-	       delobj
-	       en_line_01
-	       en_line_12
-	       en_line_23
-	      )
+(defun c:pipe  (/        a        center   center_1 e        el_1     el_2     en_c0    en_c1    half_1   half_2   l        ort      p0
+                p0_n     p0_new   p1       p1_n     p1_new   p1_new_1 p2       p2_n     p2_new   p3       p3_n     p3_new   p3_new_3 pla_1
+                pla_2    pla_3    pla_4    r0       r1       r3       sp       sp_1     sp_2     echo     delobj   en_line_01        en_line_12
+                en_line_23)
   (setq echo (getvar "cmdecho"))
   (setvar "cmdecho" 0)
   (command "ucs" "")
@@ -27,10 +22,9 @@
   (setq r3 (* 1.0 (getdist "\nВведите радиус трубки: ")))
   (setq r0 (getdist "\nВведите первый радиус скругления трубки: "))
   (setq r1 (getdist "\nВведите второй радиус скругления трубки: "))
-
-  (setq a T)
+  (setq a t)
   (while a
-    (command "ucs" "n" "3p" p0 p1 p3) ;Первая часть полилинии
+    (command "ucs" "n" "3p" p0 p1 p3)   ;Первая часть полилинии
     (setq p0_new (trans p0 0 1))
     (setq p1_new (trans p1 0 1))
     (setq p0_n (list (car p0_new) (+ (cadr p0_new) r0) 0.0))
@@ -48,18 +42,10 @@
     (setq p3_new (trans p3_new 0 1))
     (setq p1_new_1 (trans p1_new_1 0 1))
     (setq center (inters p0_n p1_n p3_new p1_new_1 nil))
-    (if	(< (car center) 0)
-      (progn
-	(setq
-	  r0 (getreal (strcat "\nСкругление радиусом " (rtos r0) " невозможно. Задайте новый радиус: ")
-	     )
-	)
-	(command "ucs" "")
-      )
-      (setq a nil)
-    )
-  )
-
+    (if (< (car center) 0)
+      (progn (setq r0 (getreal (strcat "\nСкругление радиусом " (rtos r0) " невозможно. Задайте новый радиус: ")))
+             (command "ucs" ""))
+      (setq a nil)))
   (setq pla_1 (list (car center) 0.0))
   (setq center (trans center 1 0))
   (command "ucs" "")
@@ -72,10 +58,9 @@
   (command "pline" "non" p0_new "non" pla_1 "a" "r" r0 "non" pla_2 "")
   (setq el_1 (entlast))
   (setq pla_2 (trans pla_2 1 0))
-
-  (setq a T)
+  (setq a t)
   (while a
-    (command "ucs" "") ;Вторая часть полилинии
+    (command "ucs" "")                  ;Вторая часть полилинии
     (command "ucs" "n" "3p" p2 p3 p1)
     (setq p2_new (trans p2 0 1))
     (setq p3_new (trans p3 0 1))
@@ -94,18 +79,10 @@
     (setq p1_new (trans p1_new 0 1))
     (setq p3_new_3 (trans p3_new_3 0 1))
     (setq center_1 (inters p2_n p3_n p1_new p3_new_3))
-    (if	(< (car center_1) 0)
-      (progn
-	(setq
-	  r1 (getreal (strcat "\nСкругление радиусом " (rtos r1) " невозможно. Задайте новый радиус: ")
-	     )
-	)
-	(command "ucs" "")
-      )
-      (setq a nil)
-    )
-  )
-
+    (if (< (car center_1) 0)
+      (progn (setq r1 (getreal (strcat "\nСкругление радиусом " (rtos r1) " невозможно. Задайте новый радиус: ")))
+             (command "ucs" ""))
+      (setq a nil)))
   (setq pla_3 (list (car center_1) 0.0 0.0))
   (setq center_1 (trans center_1 1 0))
   (command "ucs" "")
@@ -118,16 +95,14 @@
   (setq pla_4 (trans pla_4 0 1))
   (setq pla_2 (trans pla_2 0 1))
   (command "pline" "non" p2_new "non" pla_3 "a" "r" r1 "non" pla_4 "l" "non" pla_2 "")
-  (setq el_2 (entlast))
-	       ;Первая часть трубки
+  (setq el_2 (entlast))                 ;Первая часть трубки
   (command "ucs" "")
   (command "ucs" "n" "3p" p0 p1 p3)
   (command "ucs" "y" "90")
   (command "circle" "non" '(0.0 0.0) r3)
   (setq en_c0 (entlast))
   (command "extrude" en_c0 "" "p" el_1)
-  (setq half_1 (entlast))
-	       ;Вторая часть трубки
+  (setq half_1 (entlast))               ;Вторая часть трубки
   (command "ucs" "")
   (command "ucs" "n" "3p" p2 p3 p1)
   (command "ucs" "y" "90")
@@ -138,10 +113,5 @@
   (command "union" half_1 half_2 "")
   (command "ucs" "")
   (if (= (getvar "delobj") 1)
-     (command "erase" en_line_01 en_line_12 en_line_23 el_1 el_2 "")
-  )
-  (setvar "cmdecho" echo)
-)
-;|«Visual LISP© Format Options»
-(105 2 15 2 nil "end of" 90 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+    (command "erase" en_line_01 en_line_12 en_line_23 el_1 el_2 ""))
+  (setvar "cmdecho" echo))

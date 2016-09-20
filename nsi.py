@@ -1,5 +1,13 @@
-#import nsi
-#nsi.create_nsi()
+# Сценарий предназначен для построения файла mnas_acad_utils.nsi
+# 
+# Для запуска данного сценария необходимо:
+# 1 Создать ярлык для запуска "Python 3.x (command line - 32 bit)"
+# 2 Параметр "Рабочая папка" вновь созданного ярлыка для запуска 
+# "Python 3.x (command line - 32 bit)" установить равным пути,
+# где находится настоящий файл (nsi.py). 
+# 3 Запустить на выполнение интерпретатор команд Python при помощи вновь созданного ярлыка.
+# В командной строке интерпритатора выполнить нижеследующую команду:
+# >>> import nsi
 
 import os
 import os.path
@@ -10,7 +18,7 @@ fn_nsi='mnas_acad_utils.nsi'
 fn_version='mnas_acad_utils.version'
 
 #ext_lst=['.txt']
-ext_lst=['.EXE', '.INI', '.VLX', '.arx', '.bat', '.bmp', '.cui', '.cuix', '.dat', '.dbx', '.dcl', '.dwg', '.fnt', '.fon', '.glb', '.hdx', '.html', '.ijk', '.jpg', '.js', '.lin', '.log', '.lsp', '.mea', '.mnl', '.nsi', '.php', '.png', '.prj', '.prv', '.rtf', '.sh', '.shp', '.shx', '.slb', '.sld', '.ttf', '.txt', '.dot', '.pdf', '.scr']
+ext_lst=['.EXE', '.VLX', '.arx', '.bat', '.bmp', '.cuix', '.dat', '.dbx', '.dcl', '.dwg', '.fon', '.glb', '.hdx', '.html', '.ijk', '.jpg', '.js', '.lin', '.log', '.lsp', '.mea', '.mnl', '.nsi', '.php', '.png', '.prj', '.prv', '.rtf', '.sh', '.shp', '.shx', '.slb', '.sld', '.ttf', '.txt', '.dot', '.pdf', '.scr','.ctb','.pmp']
 
 
 def find_files(pth='.'):
@@ -161,7 +169,7 @@ InstallDirRegKey HKLM "Software\\MNASoft" "ROOT"
 ; Request application privileges for Windows Vista
 RequestExecutionLevel admin
 
-LicenseData ./gpl-3.0.txt
+LicenseData ./License/License.txt
 
 ;______________________________________________________________________________
 
@@ -206,16 +214,19 @@ SectionEnd
 ; Optional section (can be disabled by the user)
 Section "Start Menu Shortcuts"
 
+  SetShellVarContext all
+
   CreateDirectory "$SMPROGRAMS\\mnas_acad_utils"
+  CreateDirectory "$SMPROGRAMS\\mnas_acad_utils\\License"
   
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Uninstall.lnk"               "$INSTDIR\\uninstall.exe"           "" "$INSTDIR\\uninstall.exe" 0
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\README.html.lnk"              "$INSTDIR\\README.html"              "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Change.log.html.lnk"              "$INSTDIR\\Change.log.html"              "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\CopyRight.html.lnk"          "$INSTDIR\\CopyRight.html"          "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Mnasoft_command_list.html.lnk" "$INSTDIR\\acad.help\\mnasoft_command_list.html"          "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\CopyRight.rtf.lnk"           "$INSTDIR\\CopyRight.rtf"           "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\gpl-3.0.rtf.lnk"             "$INSTDIR\\gpl-3.0.rtf"             "" "" 0  
-  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\gpl-3.0-standalone.html.lnk" "$INSTDIR\\gpl-3.0-standalone.html" "" "" 0  
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Uninstall.lnk"                 "$INSTDIR\\uninstall.exe" "" "$INSTDIR\\uninstall.exe" 0
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\README.html.lnk"               "$INSTDIR\\README.html"                          "" "" 0  
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Change.log.html.lnk"           "$INSTDIR\\Change.log.html"                      "" "" 0  
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\Mnasoft_command_list.html.lnk" "$INSTDIR\\acad.help\\mnasoft_command_list.html" "" "" 0  
+
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\License\\License.html.lnk"   "$INSTDIR\\License\\License.html"   "" "" 0
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\License\\License.rtf.lnk"    "$INSTDIR\\License\\License.rtf"    "" "" 0
+  CreateShortCut "$SMPROGRAMS\\mnas_acad_utils\\License\\License.txt.lnk"    "$INSTDIR\\License\\License.txt"    "" "" 0
 
 SectionEnd
 
@@ -248,8 +259,11 @@ Section "Uninstall"
 ;_RMDir_End_________________________________________________________________________
 
   ; Remove shortcuts, if any
-  Delete "$SMPROGRAMS\\mnas_acad_utils\\*.*"
+  SetShellVarContext all
+  Delete "$SMPROGRAMS\\mnas_acad_utils\\License\\*.*"
+  RMDir "$SMPROGRAMS\\mnas_acad_utils\\License"
 
+  Delete "$SMPROGRAMS\\mnas_acad_utils\\*.*"
   ; Remove directories used
   RMDir "$SMPROGRAMS\\mnas_acad_utils"
   

@@ -1,7 +1,3 @@
-;;;(princ "\nЗагружаю utils/xdata         ")
-(princ (strcat "\nЗагружаю " (acad_sup) "/" "utils/xdata         "))
-
-
 ;;ДП  - данные примитива вместе с расширенными данными примитива
 ;;((0 . "LINE") (10 ...) (11 ...) (-3 ("SHCKALA" ...)("AXIS" ...)))
 ;;РДП - расширенные данные примитива
@@ -66,70 +62,36 @@
 ;;_$ (xdxdapp (assoc -3 (sh:sel "укажите шкалу")) (sh:shckala))
 ;;("SHCKALA" (1002 . "{") (1040 . 0.0) (1040 . 100.0) (1070 . 0) (1000 . "Некая шкала x") (1002 . "}"))
 
-(defun xdgetn (data app n)
-  (cdr (nth n (_xd_appget data app)))
-)
+(defun xdgetn (data app nn) (cdr (nth nn (_xd_appget data app))))
 
-(defun xdgetassoc (data app code)
-  (cdr (assoc code (_xd_appget data app)))
-)
+(defun xdgetassoc (data app code) (cdr (assoc code (_xd_appget data app))))
 
 (defun xdget (data) (assoc -3 data))
 
-(defun xdappget	(data app)
-  (xdxdapp (xdget data) app)
-)
+(defun xdappget (data app) (xdxdapp (xdget data) app))
 
-(defun _xd_appget (data app)
-  (xdapp_xd_ (xdappget data app))
-)
+(defun _xd_appget (data app) (xdapp_xd_ (xdappget data app)))
 
-(defun _xd_applength (data app / xd old_err)
-  (length (_xd_appget data app))
-)
+(defun _xd_applength (data app / xd old_err) (length (_xd_appget data app)))
 
-(defun _xd_xdapp (da app)
+(defun _xd_xdapp  (da app)
   (if (not (listp da))
-    (progn
-      (setq da nil)
-      (princ "\n _xd_xdapp da-Должно быть списком.")
-    )
-  )
-  (append
-    (list app (cons 1002 "{"))
-    da
-    (list (cons 1002 "}"))
-  )
-)
+    (progn (setq da nil) (princ "\n _xd_xdapp da-Должно быть списком.")))
+  (append (list app (cons 1002 "{")) da (list (cons 1002 "}"))))
 
-(defun xdapp_xd_ (dapp)
-  (reverse (cdr (reverse (cddr dapp))))
-)
+(defun xdapp_xd_ (dapp) (reverse (cdr (reverse (cddr dapp)))))
 
-(defun xdapplength (data)
-  (length (cdr (xdget data)))
-)
+(defun xdapplength (data) (length (cdr (xdget data))))
 
-(defun xdappsubst (data app xdapp / d dapp xd)
-  (setq
-    d	 (xdget data)
-    dapp (xdappget data app)
-    xd
-	 (cond
-	   ((and d dapp) (subst (subst xdapp dapp d) d data))
-	   ((null d) (append data (list (list -3 xdapp))))
-	   ((and d (null dapp)) (subst (append d (list xdapp)) d data))
-	 )
-  )
-  xd
-)
+(defun xdappsubst  (data app xdapp / d dapp xd)
+  (setq d    (xdget data)
+        dapp (xdappget data app)
+        xd   (cond ((and d dapp) (subst (subst xdapp dapp d) d data))
+                   ((null d) (append data (list (list -3 xdapp))))
+                   ((and d (null dapp)) (subst (append d (list xdapp)) d data))))
+  xd)
 
-(defun _xd_appsubst (data app xda)
-  (xdappsubst data app (_xd_xdapp xda app))
-)
+(defun _xd_appsubst (data app xda) (xdappsubst data app (_xd_xdapp xda app)))
 
-(defun xdxdapp (xdata app)
-  (assoc app (cdr xdata))
-)
+(defun xdxdapp (xdata app) (assoc app (cdr xdata)))
 
-(princ "\t...загружен.\n")

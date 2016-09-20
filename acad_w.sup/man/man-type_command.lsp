@@ -1,0 +1,15 @@
+;;;;;;("check_command_category_list" "Проверяет правильность написания справки в lsp-файлах. Выводит перечень неправильных описаний." "Справка")
+(defun c:check_command_category_list  (/ i command_category_list)
+  (setq command_category_list
+         (list "not defined"   "Аббревиатуры"  "Большой шрифт" "Измени"        "Настройка"     "Обмен"         "Объекты"       "Отверстия"
+               "Размеры"       "Расчеты"       "Слои"          "Смеситель"     "Справка"       "Тексты"        "Точки"         "Шкалы"))
+  (load (findfile "acad_w.sup/man/man-data_base.lsp"))
+  (setq i 0)
+  (mapcar (function (lambda (el)
+                      (setq len (length el))
+                      (if (/= 4 len)
+                        (progn (print el) (setq i (1+ i))))
+                      len))
+          mnas_command_help)
+  (princ (strcat "Разбор команд закончен. Найдено неправильных описаний = " (itoa i) " ."))
+  (princ))
