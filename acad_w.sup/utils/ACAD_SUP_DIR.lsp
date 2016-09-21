@@ -34,7 +34,11 @@
 ;;;	  (LOADER_64)
 ;;;	  (LOADER_32))))
 
-(defun MNAS_ArxPrj_root () "D:/home/_namatv/git/mnasoft/MNAS_acad_utils")
+(defun mnas_arxprj_root  ()
+  ;;;;"D:/home/_namatv/git/mnasoft/MNAS_acad_utils"
+  "E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils")
+
+
 
 (defun MNAS_ArxPrj_RoamableRootPrefix () (strcat (MNAS_ArxPrj_root) "/" "RoamableRootPrefix/"))
 

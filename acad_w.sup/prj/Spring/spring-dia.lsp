@@ -15,14 +15,8 @@
                   ("L3" "27.0")
                   ("working_temperature" "20.0")))
 
-
-(defun acad_sup_new  ()
-  "D:\Developer\MNAS_acad_db17_utils"
-  "C:\Program Files\MNASoft\MNAS_acad_utils")
-
-
 (defun spring_dlg  ()
-  (setq dcl_id (load_dcl "/prj/Spring/Spring.dcl"))
+  (setq dcl_id (load_dcl "/prj/Spring/Spring.DCL"))
   (setq do_dialog t)
   (while do_dialog
     (if (not (new_dialog "spring" dcl_id))
