@@ -110,6 +110,7 @@
     (action_tile "pl_1_min_val" "(rou_1-ac_pl_1_min_val $value)")
     (action_tile "pl_1_masht" "(rou_1-ac_pl_1_masht $value)")
     (action_tile "pl_1_spos_pol" "(rou_1-ac_pl_1_spos_pol $value)")
+    (action_tile "help" "(rou_1-help)")
     (setq ac (start_dialog))
     (cond ((= ac 0) (setq do_dialog nil))
           ((= ac 1) (rou_1-ac_ok))
@@ -292,3 +293,5 @@
 (defun rou_1-ac_ok () (setq do_dialog nil) (reg_write_default_lst reg_root rou_registry))
 
 (defun rou_1-ac_bt_1_masht () (set_tile "eb_1_masht" (rtos (getvar "dimscale") 2 4)) (rou_1-ac_1))
+
+(defun rou_1-help () (help (strcat (acad_help) "/rou/rou.html")))

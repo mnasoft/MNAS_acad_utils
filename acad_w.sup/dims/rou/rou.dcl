@@ -134,7 +134,7 @@ popup_list_14 : popup_list {fixed_width = true; edit_width=14;}
   : button {key="bt_1_2"; label="Выбрать";}
   : button {key="bt_1_3"; label="Обновить";}
  }
- ok_cancel;
+ ok_cancel_help;
  errtile;
 }
 
