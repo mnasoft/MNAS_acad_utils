@@ -1,20 +1,20 @@
 ;;;;;;("de"
 ;;;;;;"Вызывает диалог для редактирования текста примитивов следуюших типов:
 ;;;;;;MTEXT, TEXT, DIMENSION." "Тексты")
-(defun c:de  (/ en obj temp)
+(defun c:de  (/ en ed temp)
   (setq en   (car (entsel "\nВыберите примитив:"))
-        obj  (entget en)
-        temp (cdr (assoc 0 obj)))
+        ed  (entget en)
+        temp (cdr (assoc 0 ed)))
   (cond ((or (= "MTEXT" temp) (= "TEXT" temp) (= "DIMENSION" temp)) (command "_ddedit" en))
         ((or (= "INSERT" temp)) (command "_ddatte" en)))
   (princ))
 
 
 ;;;;;;("ate" "Редактирование атрибута." "Тексты")
-(defun c:ate  (/ en obj temp)
+(defun c:ate  (/ en ed temp)
   (setq en   (car (nentsel "\nВыберите примитив:"))
-        obj  (entget en)
-        temp (cdr (assoc 0 obj)))
+        ed  (entget en)
+        temp (cdr (assoc 0 ed)))
   (cond ((or (= "MTEXT" temp) (= "TEXT" temp) (= "DIMENSION" temp)) (command "_ddedit" en))
         ((or (= "ATTRIB" temp)) (command "_attedit" "_y" "*" "*" "*" en)))
   (princ))

@@ -12,8 +12,8 @@
     (setq en  (ssname ss i)
           ed  (entget en)
           txt-str (cdr (assoc 1 ed)))
-    (cond ((= txt-str "") (setq txt-str "(<>)"))
-          ((= txt-str "<>") (setq txt-str "(<>)"))
+    (cond ((or (= txt-str "")(= txt-str "<>")) (setq txt-str "(<>)"))
+          
           (t (setq txt-str (strcat "(" txt-str ")"))))
     (setq ed (subst (cons 1 txt-str) (assoc 1 ed) ed))
     (entmod ed))
@@ -30,8 +30,8 @@
     (setq en  (ssname ss i)
           ed  (entget en)
           txt-str (cdr (assoc 1 ed)))
-    (cond ((= txt-str "") (setq txt-str "{\\H2x(\\H0.5x}<>{\\H2x)\\H0.5x}"))
-          ((= txt-str "<>") (setq txt-str "{\\H2x(\\H0.5x}<>{\\H2x)\\H0.5x}"))
+    (cond ((or(= txt-str "") (= txt-str "<>") )(setq txt-str "{\\H2x(\\H0.5x}<>{\\H2x)\\H0.5x}"))
+          
           (t (setq txt-str (strcat "{\\H2x(\\H0.5x}" txt-str "{\\H2x)\\H0.5x}"))))
     (setq ed (subst (cons 1 txt-str) (assoc 1 ed) ed))
     (entmod ed))
@@ -66,8 +66,8 @@
     (setq en  (ssname ss i)
           ed  (entget en)
           txt-str (cdr (assoc 1 ed)))
-    (cond ((= txt-str "") (setq txt-str "{\\H2x[\\H0.5x}<>{\\H2x]\\H0.5x}"))
-          ((= txt-str "<>") (setq txt-str "{\\H2x[\\H0.5x}<>{\\H2x]\\H0.5x}"))
+    (cond ((or (= txt-str "") (= txt-str "<>") )(setq txt-str "{\\H2x[\\H0.5x}<>{\\H2x]\\H0.5x}"))
+
           (t (setq txt-str (strcat "{\\H2x[\\H0.5x}" txt-str "{\\H2x]\\H0.5x}"))))
     (setq ed (subst (cons 1 txt-str) (assoc 1 ed) ed))
     (entmod ed))

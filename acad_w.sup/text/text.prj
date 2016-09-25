@@ -1,32 +1,21 @@
-;;; VLisp project file [V2.0] text saved to:[D:/home/_namatv/git/mnasoft/MNAS_acad_utils/acad_w.sup/text] at:[4/17/15] 
-(VLISP-PROJECT-LIST
-  :NAME
+;;; VLisp project file [V2.0] text saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/text] at:[9/25/16] 
+(vlisp-project-list
+  :name
   text
-  :OWN-LIST
+  :own-list
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"	      "../utils/draw"
-    "text-pozition"	      "text-edit"
-    "text-naklon_15gr"	      "text-layer_current"
-    "text-edit_dlg"	      "text-load_style"
-    "text-brackets"	      "text-export"
-    "text-block_attribs"      "../UTILS/DXF"
-    "../UTILS/STRING"	      "../UTILS/prin"
-    "../UTILS/stl_text"	      "../UTILS/ERR"
-    "../utils/system_registry"
-    "../opechatka/rus_cmd_opechatka"
+    "../utils/dlg_utils"       "../utils/Debug"		  "../utils/draw"	     "text-pozition"
+    "text-edit"		       "text-naklon_15gr"	  "text-layer_current"	     "text-edit_dlg"
+    "text-load_style"	       "text-brackets"		  "text-export"		     "text-block_attribs"
+    "../UTILS/DXF"	       "../UTILS/STRING"	  "../UTILS/prin"	     "../UTILS/stl_text"
+    "../UTILS/ERR"	       "../utils/system_registry" "../opechatka/rus_cmd_opechatka"
     "text_rus")
-  :FAS-DIRECTORY
+  :fas-directory
   "../../Vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../Vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link)
-	  :MERGED
-	  T
-	  :SAFE-MODE
-	  T
-	  :MSGLEVEL
-	  1)
-  :CONTEXT-ID
-  :AUTOLISP)
+  :project-keys
+  (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
+  :context-id
+  :autolisp)
 ;;; EOF
