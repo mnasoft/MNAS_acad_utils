@@ -1,5 +1,7 @@
 ﻿dcl_settings : default_dcl_settings { audit_level = 3; }
 
+@include "../../acad.dcl/ok_cancel_help_info_errtile.dcl"
+
 form : dialog
 {
   label = "Выбор формата";
@@ -94,14 +96,15 @@ sht1 : dialog
 
 forma : dialog
 {
-	aspect_ratio = 0;
-	label = "Выбор основной надписи";
-	: boxed_column
-  { label = "Форма - для чего прим.    | лист";
+  aspect_ratio = 0;
+  label = "Выбор основной надписи";
+  : boxed_column
+  {
+    label = "Форма - для чего прим.    | лист";
     : list_box { key = "f_list"; width = 40; }
-	}
-	ok_cancel;
-	errtile;
+  }
+  ok_cancel;
+  errtile;
 }
 
 dop_dlg : dialog
@@ -155,23 +158,25 @@ add_dop_sht_dlg : dialog
 
 sht_main : dialog
 {
-	aspect_ratio = 0;
-	label = "Заполнение штампа";
-	: row
-	{
-		: column
-		{
-			: row
-			{
-				: boxed_column
-        { label = "Формат и кратность";
-          :text { key = "format_text"; width = 25; }
+  aspect_ratio = 0;
+  label = "Заполнение штампа";
+  : row
+  {
+    : column
+    {
+    : row
+    {
+    : boxed_column
+    {
+      label = "Формат и кратность";
+    :text { key = "format_text"; width = 25; }
           :text { key = "dir_sht"; width = 5; }
           : button { label = "Выбор формта..."; mnemonic = "B"; key = "format"; }
 				}
 				: column
 				{
-					: button
+
+				: button
           { key = "ed_1"; label = "Заполнение..."; }
           : button { key = "ed_3"; label = "Сохранить настр."; }
           : button { key = "ed_4"; label = "Выбрать"; }
@@ -212,8 +217,7 @@ sht_main : dialog
   : row
   {
     : button { label ="Заполнить"; key = "for_zap";}
-    ok_cancel;
-    : button { label ="О программе..."; key = "about";}
+    ok_cancel_help_info_errtile;
   }
-	errtile;
+  
 }
