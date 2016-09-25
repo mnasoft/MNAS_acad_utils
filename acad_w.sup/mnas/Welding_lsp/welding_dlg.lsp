@@ -149,7 +149,7 @@
     )
     (init_dlg setup_lst)
     (slide_setup)								; Заполнение слайдов
-    (action-tile_dlg "setup_lst" "setup_lst")
+    (action-tile_dlg "setup_lst" "setup_lst" "" "")
     (action_tile "accept" "(ac_accept)")
     (action_tile "apply_btn" "(ac_apply_btn)")
     (action_tile "select" "(setq dia_weld_pos (done_dialog 3))")
