@@ -1,55 +1,5 @@
-;;;(defun ai_ffile (app)
-;;;  (or (findfile (strcat app ".vlx"));;; Добавлено мною
-;;;      (findfile (strcat app ".fas"));;; Добавлено мною
-;;;      (findfile (strcat app ".lsp"))
-;;;      (findfile (strcat app ".exp"))
-;;;      (findfile (strcat app ".exe"))
-;;;      (findfile (strcat app ".arx"))
-;;;      (findfile app)
-;;;  )
-;;;)
-;;;
-;;;(setq
-;;;  mnasoft-debug	     nil
-;;;  mnasoft-debug-path "E:\\home\\namatv\\git\\GitHub\\MNAS_acad_utils"
-;;;)
-;;;
-;;;(defun MNAS_ArxPrj (/ LOADER_32 LOADER_64)
-;;;  (setq
-;;;    LOADER_64
-;;;     (vl-registry-read
-;;;       (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MNASoft\\"
-;;;	       (substr (getvar "acadver") 1 2)
-;;;       )
-;;;       "ROOT"
-;;;     )
-;;;    LOADER_32
-;;;     (vl-registry-read
-;;;       (strcat "HKEY_LOCAL_MACHINE\\SOFTWARE\\MNASoft\\" (substr (getvar "acadver") 1 2))
-;;;       "ROOT"
-;;;     )
-;;;  )
-;;;  (VL-STRING-TRANSLATE
-;;;    "\\"
-;;;    "/"
-;;;    (cond
-;;;      (
-;;;       mnasoft-debug
-;;;       mnasoft-debug-path
-;;;      )
-;;;      (LOADER_64
-;;;      )
-;;;      (LOADER_32
-;;;      )
-;;;    )
-;;;  )
-;;;)
-;;;
-;;;(load
-;;;  (strcat (MNAS_ArxPrj) "/acad_w.sup/Utils/ACAD_SUP_DIR.lsp")
-;;;  "Message from M_utility.mnl\nФайл .../acad_w.sup/Utils/acad_sup_dir.lsp не найден."
-;;;)
-(princ "Loading menu-file MNASoft.mnl ...")
+(princ "Loading menu-file MNASoft.mnl ...\n")
+
 (load "MNASoft.VLX")
-(princ "Loaded menu-file  MNASoft.mnl.")
-(princ)
+
+(princ "Loaded menu-file  MNASoft.mnl.\n")
