@@ -1,6 +1,6 @@
-                                        ;'(registry-delete-recursive '("HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Welding"))
+;;;'(registry-delete-recursive '("HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Welding"))
 
-                                        ;'("HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Welding")
+;;;'("HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Welding")
 
 (defun read-reg-el  (str / rel)
   (setq rel (vl-registry-descendents str))
