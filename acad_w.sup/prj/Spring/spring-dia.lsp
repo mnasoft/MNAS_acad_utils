@@ -15,14 +15,14 @@
                   ("L3" "27.0")
                   ("working_temperature" "20.0")))
 
-(defun spring_dlg  ()
+(defun spring_dlg  (/ ACTION DCL_ID DO_DIALOG )
   (setq dcl_id (load_dcl "/prj/Spring/Spring.DCL"))
   (setq do_dialog t)
   (while do_dialog
     (if (not (new_dialog "spring" dcl_id))
       (exit))
     (init_dlg setup_lst)
-    (action-tile_dlg "setup_lst" "setup_lst") ;    (action_tile "dop_dlg_1" "(dop_ac_1 $value)")
+    (action-tile_dlg "setup_lst" "setup_lst" "" "") ;    (action_tile "dop_dlg_1" "(dop_ac_1 $value)")
                                         ;    (action_tile "dop_dlg_7" "(done_dialog 7)")
     (setq action (start_dialog))
     (cond ((= action 0)                 ;cancel
