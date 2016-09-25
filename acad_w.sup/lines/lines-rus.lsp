@@ -1,11 +1,21 @@
-(opech_cmds '("d_chamf" "d_off" "d_otv" "d_rez" "exl" "xt" "xtcen" "cxt" "ltp" "r_off" "z0" "j_lns"))
+(setq *lines-command-list* '("d_chamf" "d_off" "d_otv" "d_rez" "exl" "xt" "xtcen" "cxt" "ltp" "r_off" "z0" "j_lns"))
+;;;;(opech_cmds-str *lines-command-list*)
+
+(defun c:в_срфьа() (c:d_chamf))
+(defun c:в_щаа() (c:d_off))
+(defun c:в_щем() (c:d_otv))
+(defun c:в_ку€() (c:d_rez))
+(defun c:учд() (c:exl))
+(defun c:че() (c:xt))
+(defun c:чесут() (c:xtcen))
+(defun c:сче() (c:cxt))
+(defun c:дез() (c:ltp))
+(defun c:к_щаа() (c:r_off))
+(defun c:€0() (c:z0))
+(defun c:о_дты() (c:j_lns))
 
 (princ "Loaded project lines.\n")
 
-
-(mapcar (function (lambda (el) (list (vl-symbol-name el))))
-        '(mnas-cad-utils-path ltp r_off d_off d_otv d_chamf d_rez xt exl z0 xtcen cxt j_lns j_arcs test_err
-          translit))
 
 '(("MNAS-CAD-UTILS-PATH" nil)
   ("LTP" t)

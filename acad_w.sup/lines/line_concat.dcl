@@ -1,5 +1,7 @@
 dcl_settings : default_dcl_settings { audit_level = 3; }
 
+@include "../../acad.dcl/ok_cancel_help_info_errtile.dcl"
+
 line_concat : dialog
 {
   label = "Line Concatenation Filter";
@@ -11,5 +13,5 @@ line_concat : dialog
     : toggle { key = "tgl_TrueColor" ; label = "TrueColor";}
     : toggle { key = "tgl_LineType" ; label = "LineType";}
   }
-  ok_cancel_help_errtile; 
+  ok_cancel_help_info_errtile; 
 }

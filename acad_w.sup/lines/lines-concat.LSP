@@ -236,12 +236,6 @@
   (err-handle ""))
 
 
-
-
-
-
-
-
 (defun line-concat-dlg  (/ dcl_id       ; id диалога
                          setup_lst      ; список с параметрами диалога
                          line-concat-dlg_pos ; Положение диалога на экране
@@ -256,8 +250,9 @@
     (if (not (new_dialog "line_concat" dcl_id "" dia_weld_pos))
       (exit))
     (init_dlg setup_lst)
-    (action-tile_dlg "setup_lst" "setup_lst")
-    (action_tile "about" "(about)")
+    (action-tile_dlg "setup_lst" "setup_lst" "" "")
+    (action_tile "help" "(lines-j_lns-help)")
+    (action_tile "info" "(lines-j_lns-info)")
     (setq action (start_dialog))
     (cond ((= action 1) (setq rez (ac_accept_do)) (setq do_dialog nil))
           ((= action 0) (ac_cancel_do) (setq do_dialog nil))
@@ -275,6 +270,11 @@
   rez_lst)
 
 (defun ac_cancel_do () nil)
+
+(defun lines-j_lns-info () (alert (strcat "Объединение наложенных друг на друга отрезков " (about-gpl-string))))
+
+(defun lines-j_lns-help() (help (strcat (acad_help) "/j_lns/j_lns.html")))
+
 
 ;;;(defun c:cccc()
 ;;;  (concatenate_two_lines
