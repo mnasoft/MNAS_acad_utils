@@ -81,7 +81,7 @@
     (if (not (new_dialog "mnas_pos_main" dcl_id "" dia_pos_pos))
       (exit))
     (init_dlg_key setup_lst)
-    (action-tile_dlg_key "setup_lst" "setup_lst")
+    (action-tile_dlg "setup_lst" "setup_lst" "" "")
     (action_tile "accept" "(ac_accept)")
     (action_tile "apply_btn" "(ac_apply_btn)")
     (action_tile "select" "(setq dia_pos_pos (done_dialog 3))")
@@ -97,35 +97,38 @@
     (action_tile "text-size" "(ac_text-size)")
     text-size
     (setq action (start_dialog))
-    (cond ((= action 7)                 ; "match_all_off"
-           (mapcar (function
-                     (lambda (el)
-                       (setq setup_lst (subst (list el "0" (last (assoc el setup_lst))) (assoc el setup_lst) setup_lst))))
-                   '("text_toggle" "arrow_type_toggle" "dim_style_toggle" "text_color_toggle" "text-scale_toggle" "line-offset_toggle")))
-          ((= action 6)                 ; "match_all_on"
-           (mapcar (function
-                     (lambda (el)
-                       (setq setup_lst (subst (list el "1" (last (assoc el setup_lst))) (assoc el setup_lst) setup_lst))))
-                   '("text_toggle" "arrow_type_toggle" "dim_style_toggle" "text_color_toggle" "text-scale_toggle" "line-offset_toggle")))
-          ((= action 5)                 ;"text_color_image" "text_color"
-           (setq text_color_n (acad_colordlg (atoi (cadr (assoc "text_color_image" setup_lst))))
-                 setup_lst    (subst (list "text_color_image" (itoa text_color_n) (last (assoc "text_color_image" setup_lst)))
-                                     (assoc "text_color_image" setup_lst)
-                                     setup_lst)
-                              ;;	 ed	      (subst (cons 70 text_color_n) (assoc 70 ed) ed)
-                 ))
-          ((= action 4)                 ;"match_apply"
-           (ac_match_apply))
-          ((= action 3)                 ;"select"
-           (select)
-           (select-init))
-          ((= action 2)                 ;"apply_btn"
-           (ac_apply_do))
-          ((= action 1)                 ;"accept"
-           (ac_apply_do)
-           (setq do_dialog nil))
-          ((= action 0) (setq do_dialog nil))
-          (setq do_dialog nil)))
+    (cond
+      ((= action 7)                     ; "match_all_off"
+       (mapcar (function
+                 (lambda (el)
+                   (setq setup_lst (subst (list el "0" (last (assoc el setup_lst))) (assoc el setup_lst) setup_lst))))
+               '("text_toggle"              "arrow_type_toggle"        "dim_style_toggle"
+                 "text_color_toggle"        "text-scale_toggle"        "line-offset_toggle")))
+      ((= action 6)                     ; "match_all_on"
+       (mapcar (function
+                 (lambda (el)
+                   (setq setup_lst (subst (list el "1" (last (assoc el setup_lst))) (assoc el setup_lst) setup_lst))))
+               '("text_toggle"              "arrow_type_toggle"        "dim_style_toggle"
+                 "text_color_toggle"        "text-scale_toggle"        "line-offset_toggle")))
+      ((= action 5)                     ;"text_color_image" "text_color"
+       (setq text_color_n (acad_colordlg (atoi (cadr (assoc "text_color_image" setup_lst))))
+             setup_lst    (subst (list "text_color_image" (itoa text_color_n) (last (assoc "text_color_image" setup_lst)))
+                                 (assoc "text_color_image" setup_lst)
+                                 setup_lst)
+                          ;;	 ed	      (subst (cons 70 text_color_n) (assoc 70 ed) ed)
+             ))
+      ((= action 4)                     ;"match_apply"
+       (ac_match_apply))
+      ((= action 3)                     ;"select"
+       (select)
+       (select-init))
+      ((= action 2)                     ;"apply_btn"
+       (ac_apply_do))
+      ((= action 1)                     ;"accept"
+       (ac_apply_do)
+       (setq do_dialog nil))
+      ((= action 0) (setq do_dialog nil))
+      (setq do_dialog nil)))
   (unload_dialog dcl_id))
 
 (defun ac_accept  ()
@@ -163,19 +166,17 @@
           match_prop_ed (entget match_prop_en))
     (cond ((= "MNASPozition" (cdr (assoc 0 match_prop_ed)))
            (if (= "1" (cadr (assoc "text_toggle" setup_lst)))
-             (progn (setq match_prop_ed
-                           (subst
+             (progn (setq match_prop_ed (subst
 ;;;		     (assoc 1 ed)
-                                  (cons 1 (cadr (assoc "text" setup_lst)))
-                                  (assoc 1 match_prop_ed)
-                                  match_prop_ed))))
+                                               (cons 1 (cadr (assoc "text" setup_lst)))
+                                               (assoc 1 match_prop_ed)
+                                               match_prop_ed))))
            (if (= "1" (cadr (assoc "arrow_type_toggle" setup_lst)))
-             (progn (setq match_prop_ed
-                           (subst
+             (progn (setq match_prop_ed (subst
 ;;;		     (assoc 91 ed)
-                                  (cons 91 (atoi (cadr (assoc "arrow_type" setup_lst))))
-                                  (assoc 91 match_prop_ed)
-                                  match_prop_ed))))
+                                               (cons 91 (atoi (cadr (assoc "arrow_type" setup_lst))))
+                                               (assoc 91 match_prop_ed)
+                                               match_prop_ed))))
            (if (= "1" (cadr (assoc "dim_style_toggle" setup_lst)))
              (progn (setq dim_stl_tile  (assoc "dim_style" setup_lst)
                           dim_stl       (nth (atoi (cadr dim_stl_tile)) (caddr dim_stl_tile))
@@ -185,26 +186,23 @@
                                                (assoc 340 match_prop_ed)
                                                match_prop_ed))))
            (if (= "1" (cadr (assoc "text-scale_toggle" setup_lst)))
-             (progn (setq match_prop_ed
-                           (subst
+             (progn (setq match_prop_ed (subst
 ;;;		     (assoc 40 ed)
-                                  (cons 40 (atof (cadr (assoc "text-scale" setup_lst))))
-                                  (assoc 40 match_prop_ed)
-                                  match_prop_ed))))
+                                               (cons 40 (atof (cadr (assoc "text-scale" setup_lst))))
+                                               (assoc 40 match_prop_ed)
+                                               match_prop_ed))))
            (if (= "1" (cadr (assoc "line-offset_toggle" setup_lst)))
-             (progn (setq match_prop_ed
-                           (subst
+             (progn (setq match_prop_ed (subst
 ;;;		     (assoc 41 ed)
-                                  (cons 41 (atof (cadr (assoc "line-offset" setup_lst))))
-                                  (assoc 41 match_prop_ed)
-                                  match_prop_ed))))
+                                               (cons 41 (atof (cadr (assoc "line-offset" setup_lst))))
+                                               (assoc 41 match_prop_ed)
+                                               match_prop_ed))))
            (if (= "1" (cadr (assoc "text_color_toggle" setup_lst)))
-             (progn (setq match_prop_ed
-                           (subst
+             (progn (setq match_prop_ed (subst
 ;;;		     (assoc 70 ed)
-                                  (cons 70 (atoi (cadr (assoc "text_color_image" setup_lst))))
-                                  (assoc 70 match_prop_ed)
-                                  match_prop_ed))))
+                                               (cons 70 (atoi (cadr (assoc "text_color_image" setup_lst))))
+                                               (assoc 70 match_prop_ed)
+                                               match_prop_ed))))
            (entmod match_prop_ed)))
     (setq i (1+ i)))
   (command "_redraw"))
@@ -245,26 +243,18 @@
   (mapcar (function (lambda (el) (setq rez (or rez (= el val))))) list_val)
   rez)
 
-(defun action-tile_dlg_key  (@setup_lst @setup_lst_name / rez)
-  (mapcar (function
-            (lambda (el)
-              (action_tile (car el) (strcat "(setq " @setup_lst_name " (action-save_dlg_key " @setup_lst "))"))))
-          (eval (read @setup_lst))))
-
-
 (defun action-save_dlg_key  (setup_lst / key)
-  (setq setup_lst (mapcar (function
-                            (lambda (el)
-                              (setq key (car (last el)))
-                              (cond ((is_equal_one_in_list key '("toggle" "edit_box")) (list (car el) (get_tile (car el)) (last el)))
-                                    ((is_equal_one_in_list key '("list" "popup_list"))
-                                     (list (car el) (get_tile (car el)) (caddr el) (last el)))
-                                    (t el))))
+  (setq setup_lst (mapcar (function (lambda (el)
+                                      (setq key (car (last el)))
+                                      (cond ((is_equal_one_in_list key '("toggle" "edit_box"))
+                                             (list (car el) (get_tile (car el)) (last el)))
+                                            ((is_equal_one_in_list key '("list" "popup_list"))
+                                             (list (car el) (get_tile (car el)) (caddr el) (last el)))
+                                            (t el))))
                           setup_lst))
   (mapcar (function (lambda (el / el_last el_post_pros)
-                      (setq el_last (last el)
-                            el_post_pros
-                             (cadr el_last))
+                      (setq el_last      (last el)
+                            el_post_pros (cadr el_last))
                       (if el_post_pros
                         (eval (read el_post_pros)))))
           setup_lst)
@@ -310,13 +300,11 @@
         setup_lst (subst (list "text" text_n (last (assoc "text" setup_lst))) text_tile setup_lst))
   ;; Инициализация "text" конец.
   ;; Инициализация "text_color_image" начало.
-  (setq text_color_image_tile
-         (assoc "text_color_image" setup_lst)
-        text_color_image_n
-         (cdr (assoc 70 ed))
-        setup_lst (subst (list "text_color_image" (itoa text_color_image_n) (last (assoc "text_color_image" setup_lst)))
-                         text_color_image_tile
-                         setup_lst))
+  (setq text_color_image_tile (assoc "text_color_image" setup_lst)
+        text_color_image_n    (cdr (assoc 70 ed))
+        setup_lst             (subst (list "text_color_image" (itoa text_color_image_n) (last (assoc "text_color_image" setup_lst)))
+                                     text_color_image_tile
+                                     setup_lst))
   ;; Инициализация "text_color_image" конец.
   ;; Инициализация "line-offset" конец.
   (setq line-offset_tile (assoc "line-offset" setup_lst)
