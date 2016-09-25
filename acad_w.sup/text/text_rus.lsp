@@ -1,10 +1,40 @@
-(opech_cmds
-  '("&A&B&C" "ate" "de" "l_text" "stl" "te" "pos_export" "te%%c" "te+" "te++" "te-" "te+kvsk" "te-kvsk" "to_15" "z_text" "x45%%d" "te_*" "text_export"
-    "te_<>_" "t-tr"))
+(setq *text-command-list*
+       '(;;"mnas-cad-utils-path"
+         "pos_export" "de"         "ate"        "t-tr"       "to_15"      "l_text"     "z_text"     "te"
+         "stl"        "te+"        "te++"       "te+kvsk"    "te++kvsk"   "te-"        "te-kvsk"    "te%%c"
+         "te-%%c"     "x45%%d"     "&a&b&c"     "te_*"       "te_<>_"     "text_export"             "attrnorm"
+         "textnorm"   "textnorms"  "tn"         "tns"        "tmatchprop" "tma"        "test_err"))
+;;;;(opech_cmds-str *text-command-list*)
 
-(opech_cmds '("tn" "textnorm" "tns" "textnorms" "attrnorm" "attrnorms"))
-
-(opech_cmds '("tmatchprop" "tma"))
-
+(defun c:חשû_ףקחשךו () (c:pos_export))
+(defun c:גף () (c:de))
+(defun c:פוף () (c:ate))
+(defun c:ו-וך () (c:t-tr))
+(defun c:וש_15 () (c:to_15))
+(defun c:ה_וףקו () (c:l_text))
+(defun c:ÿ_וףקו () (c:z_text))
+(defun c:וף () (c:te))
+(defun c:ûוה () (c:stl))
+(defun c:וף+ () (c:te+))
+(defun c:וף++ () (c:te++))
+(defun c:וף+כלûכ () (c:te+kvsk))
+(defun c:וף++כלûכ () (c:te++kvsk))
+(defun c:וף- () (c:te-))
+(defun c:וף-כלûכ () (c:te-kvsk))
+(defun c:וף%%ס () (c:te%%c))
+(defun c:וף-%%ס () (c:te-%%c))
+(defun c:ק45%%ג () (c:x45%%d))
+(defun c:&פ&ט&ס () (c:&a&b&c))
+(defun c:וף_* () (c:te_*))
+(defun c:וף_ֱÞ_ () (c:te_<>_))
+(defun c:וףקו_ףקחשךו () (c:text_export))
+(defun c:פווךעשךü () (c:attrnorm))
+(defun c:וףקועשךü () (c:textnorm))
+(defun c:וףקועשךüû () (c:textnorms))
+(defun c:וע () (c:tn))
+(defun c:ועû () (c:tns))
+(defun c:וüפוסנחךשח () (c:tmatchprop))
+(defun c:וüפ () (c:tma))
+(defun c:וףûו_ףךך () (c:test_err))
 
 (princ "Loaded project text.\n")

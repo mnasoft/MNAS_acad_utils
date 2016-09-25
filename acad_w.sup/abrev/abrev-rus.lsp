@@ -3,7 +3,7 @@
                   "ro"   "gr_on_off"   "tr"   "ex"   "rec"  "mi"   "el"   "br"   "u"    "undo" "sc"   "oops" "di"
                   "id"   "ma"   "le"   "op"   "h"    "dt"   "pe"   "bo"   "ar"   "li"   "x"    "j"    "b"    "ps"
                   "ms"   "git"  "vl"   "vu"   "lou"  "xa"))
-;;;;(opech_cmds-str *abbrev-opech*)
+;;;;(opech_cmds-str *abbrev-command-list*)
 
 (defun c:ηγκ() (c:pur))
 (defun c:κτ() (c:ra))
@@ -66,5 +66,6 @@
 (defun c:μγ() (c:vu))
 (defun c:δωγ() (c:lou))
 (defun c:χτ() (c:xa))
+
 
 (princ "Loaded project abrev.\n")
