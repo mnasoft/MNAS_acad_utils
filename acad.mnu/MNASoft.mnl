@@ -1,4 +1,4 @@
-(princ "Loading menu-file MNASoft.mnl ...\n")
+(princ "\nLoading menu-file MNASoft.mnl ...\n")
 
 (load "MNASoft.VLX")
 
