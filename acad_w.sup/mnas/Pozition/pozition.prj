@@ -1,22 +1,17 @@
-;;; VLisp project file [V2.0] pozition saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/mnas/pozition] at:[3/15/14] 
+;;; VLisp project file [V2.0] pozition saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/mnas/pozition] at:[9/27/16] 
 (vlisp-project-list
   :name
   pozition
   :own-list
   ("../../utils/ACAD_SUP_DIR"
-    "../../utils/Debug"				      "pozition_export"
-    "pozition_dlg"				      "../../Utils/system_registry"
-    "../../utils/dlg_utils"			      "pozition_abbrev"
-    "../../opechatka/rus_cmd_opechatka"
-    "pozition_rus"
-   )
+    "../../utils/Debug"	"pozition_export" "pozition_dlg" "../../Utils/system_registry" "../../utils/dlg_utils"
+    "pozition_abbrev" "../../opechatka/rus_cmd_opechatka" "pozition_rus")
   :fas-directory
   "../../../vlisp.tmp"
   :tmp-directory
   "../../../vlisp.tmp"
   :project-keys
-  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id
-  :AUTOLISP
-)
+  :autolisp)
 ;;; EOF

@@ -1,21 +1,15 @@
-;;; VLisp project file [V2.0] piping saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/piping] at:[3/15/14] 
+;;; VLisp project file [V2.0] piping saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/piping] at:[9/27/16] 
 (vlisp-project-list
   :name
   piping
   :own-list
-  ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"
-    "Piping"
-    "../opechatka/rus_cmd_opechatka"
-    "piping_rus"
-  )
+  ("../utils/ACAD_SUP_DIR" "../utils/Debug" "Piping" "../opechatka/rus_cmd_opechatka" "piping_rus")
   :fas-directory
   "../../vlisp.tmp"
   :tmp-directory
   "../../vlisp.tmp"
   :project-keys
-  (:build (:optimize :localize :link) :merged nil :safe-mode T :msglevel 1)
+  (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id
-  :AUTOLISP
-)
+  :autolisp)
 ;;; EOF
