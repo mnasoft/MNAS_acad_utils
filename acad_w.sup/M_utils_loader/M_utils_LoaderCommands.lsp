@@ -1,3 +1,24 @@
+(defun c:mnas-cad-utils-path  (/ reg-key val-name acad_path)
+  (setq reg-key   "HKEY_CURRENT_USER\\Software\\Autodesk\\AutoCAD\\R16.2\\ACAD-4013:409\\Profiles\\<<VANILLA>>\\General"
+        val-name  "ACAD"
+        acad_path (vl-registry-read reg-key val-name))
+  (vl-registry-write
+    reg-key
+    val-name
+    (strcat acad_path
+            (mnas_arxprj_root)
+            "\\acad.fnt"
+            ";"
+            (mnas_arxprj_root)
+            "acad.fnt\\Kompas"
+            ";"
+            (mnas_arxprj_root)
+            "\\acad_w.sup"
+            ";"
+            (mnas_arxprj_root)
+            "\\Acad.mnu\\Acad_mnu_icon"
+            ";")))
+
 
 ;;;;;;("MNASoft-registry-uninstall"
 ;;;;;;"Команда MNASoft-registry-uninstall () выполняет очистку системного реестра от записех приложения MNASoft."

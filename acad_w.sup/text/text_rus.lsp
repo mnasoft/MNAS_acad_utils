@@ -4,7 +4,7 @@
          "stl"        "te+"        "te++"       "te+kvsk"    "te++kvsk"   "te-"        "te-kvsk"    "te%%c"
          "te-%%c"     "x45%%d"     "&a&b&c"     "te_*"       "te_<>_"     "text_export"             "attrnorm"
          "textnorm"   "textnorms"  "tn"         "tns"        "tmatchprop" "tma"        "test_err"))
-;;;;(opech_cmds-str *text-command-list*)
+;;;; (opech_cmds-str *text-command-list*)
 
 (defun c:חשû_ףקחשךו () (c:pos_export))
 (defun c:גף () (c:de))
