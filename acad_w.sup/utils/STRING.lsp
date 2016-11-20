@@ -25,6 +25,34 @@
     (setq lstr (cons stmp lstr)))
   (reverse lstr))
 
+(defun get-locale  ()
+  ;; Возвращает локаль, запущенного сеанса AutoCAD
+  (last (str_token (getvar "LOCALROOTPREFIX") "\\")))
+
+(defun get-localized-message  (lst)
+  ;; Возвращает строку, на языке соответствующей локали
+  ;; Пример использования:
+  ;; (get-localized-message '(("enu" . "File is not") ("rus" . "Файл не")))
+  (cdr (assoc (get-locale) lst)))
+
+(defun g-l-m  (lst)
+  ;; Возвращает строку, на языке соответствующей локали
+  ;; Пример использования:
+  ;; (g-l-m '(("enu" . "File is not") ("rus" . "Файл не")))
+  (get-localized-message lst))
+
+(defun r-e-m  (string-rus string-enu)
+  ;; Возвращает строку, на языке соответствующей локали
+  ;; Пример использования:
+  ;; (r-e-m  "Файл не" "File is not")
+  (get-localized-message (list (cons "rus" string-rus) (cons "enu" string-enu))))
+
+(defun e-r-m  (string-enu string-rus)
+  ;; Возвращает строку, на языке соответствующей локали
+  ;; Пример использования:
+  ;; (e-r-m  "File is not" "Файл не")
+  (get-localized-message (list (cons "enu" string-enu) (cons "rus" string-rus))))
+
 (defun string-subst-all  (new-str pattern string / do)
   (setq do t)
   (while do
