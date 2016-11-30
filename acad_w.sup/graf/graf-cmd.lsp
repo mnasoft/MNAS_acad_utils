@@ -1,5 +1,5 @@
 ;;;;;;("graf" "Построение графика." "Шкалы")
-(defun c:graf  (/ cmdstr str lastent    ;
+(defun c:graf  (/               cmdstr          str             lastent ;
                 gr_t_str_val            ; Значения заголовка, обозначений осей, подрисуночной подписи
                 gr_t_str_key            ; Ключи заголовка, обозначений осей, подрисуночной подписи
                 gr_t_real_val           ; Значения, определяющие расположение текста для оформления рисунка
@@ -17,48 +17,44 @@
   (setq li_gr '())                      ;Список с точками графика.
   (setq n_li_gr 0)                      ;Текущий элемент списка.
   (setq gr_t_str_val (list "Заголовок" "x" "y" "Рис. 1"))
-  (setq gr_t_str_key
-         (list "zagolovok"              ;Текст заголовока.
-               "x_axis"                 ;Текст на оси X.
-               "y_axis"                 ;Текст на оси Y.
-               "risunok"                ;Подрисуночный текст.
-               ))
+  (setq gr_t_str_key (list "zagolovok"  ;Текст заголовока.
+                           "x_axis"     ;Текст на оси X.
+                           "y_axis"     ;Текст на оси Y.
+                           "risunok"    ;Подрисуночный текст.
+                           ))
   (setq gr_t_real_val (list 5.0 10.0 5.0 5.0 5.0 5.0 5.0 5.0 15.0))
-  (setq gr_t_real_key
-         (list "h_tt"                   ;Высота заголовка
-               "d_tt"                   ;Смещение заголовка
-               "h_axis"                 ;Высота текста на осях
-               "d_tx"                   ;Смещение текста оси X по оси X
-               "d_ty"                   ;Смещение текста оси Y по оси Y
-               "h_net"                  ;Высота текста на сетке
-               "d_net"                  ;Смещение текста от сетки
-               "h_tr"                   ;Высота прдрисуночной надписи
-               "d_tr"                   ;Смещение подрисуночной надписи
+  (setq gr_t_real_key (list "h_tt"      ;Высота заголовка
+                            "d_tt"      ;Смещение заголовка
+                            "h_axis"    ;Высота текста на осях
+                            "d_tx"      ;Смещение текста оси X по оси X
+                            "d_ty"      ;Смещение текста оси Y по оси Y
+                            "h_net"     ;Высота текста на сетке
+                            "d_net"     ;Смещение текста от сетки
+                            "h_tr"      ;Высота прдрисуночной надписи
+                            "d_tr"      ;Смещение подрисуночной надписи
 )       )
   (setq gr_n_str_val (list "CONTINUOUS" ""))
-  (setq gr_n_str_key
-         (list "l_type"                 ;Тип линии для графика.
-               "point_bl"               ;Имя блока для точки.
-               ))
+  (setq gr_n_str_key (list "l_type"     ;Тип линии для графика.
+                           "point_bl"   ;Имя блока для точки.
+                           ))
   (setq gr_n_real_val (list 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1. 1. 0.0 0.0 7 0.0 0.0 7))
-  (setq gr_n_real_key
-         (list "min_x"                  ;Минимальная координата сетки по X
-               "max_x"                  ;Максимальная координата сетки по X
-               "min_y"                  ;Минимальная координата сетки по Y
-               "max_y"                  ;Максимальная координата сетки по Y
-               "dx"                     ;Приращение основных делений сетки по X
-               "dy"                     ;Приращение основных делений сетки по Y
-               "sub_x"                  ;Приращение вспомогательных делений сетки по X
-               "sub_y"                  ;Приращение вспомогательных делений сетки по Y
-               "ps_x"                   ;Коэффициент масштабирования сетки по X
-               "ps_y"                   ;Коэффициент масштабирования сетки по Y
-               "pp_x"                   ;Начало координат по X
-               "pp_y"                   ;Начало координат по Y
-               "l_color"                ;Цвет линии
-               "sc_x_bl"                ;Масштаб блока по оси Х
-               "sc_y_bl"                ;Масштаб блока по оси Y
-               "color_bl"               ;Цвет блока
-)       )
+  (setq gr_n_real_key (list "min_x"     ;Минимальная координата сетки по X
+                            "max_x"     ;Максимальная координата сетки по X
+                            "min_y"     ;Минимальная координата сетки по Y
+                            "max_y"     ;Максимальная координата сетки по Y
+                            "dx"        ;Приращение основных делений сетки по X
+                            "dy"        ;Приращение основных делений сетки по Y
+                            "sub_x"     ;Приращение вспомогательных делений сетки по X
+                            "sub_y"     ;Приращение вспомогательных делений сетки по Y
+                            "ps_x"      ;Коэффициент масштабирования сетки по X
+                            "ps_y"      ;Коэффициент масштабирования сетки по Y
+                            "pp_x"      ;Начало координат по X
+                            "pp_y"      ;Начало координат по Y
+                            "l_color"   ;Цвет линии
+                            "sc_x_bl"   ;Масштаб блока по оси Х
+                            "sc_y_bl"   ;Масштаб блока по оси Y
+                            "color_bl"  ;Цвет блока
+                            ))
   (setvar "cmdecho" 0)
   (draw_point)
   (draw_line)
@@ -87,8 +83,9 @@
            (setq ff (open s "w"))
            (if (null ff)
              (progn (alert (princ (strcat "Не могу отурыть файл :" s "."))))
-             (progn (foreach n  (list li_gr n_li_gr gr_t_str_val gr_t_str_key gr_t_real_val gr_t_real_key gr_n_str_val gr_n_str_key gr_n_real_val
-                                      gr_n_real_key)
+             (progn (foreach n  (list li_gr             n_li_gr           gr_t_str_val      gr_t_str_key
+                                      gr_t_real_val     gr_t_real_key     gr_n_str_val      gr_n_str_key
+                                      gr_n_real_val     gr_n_real_key)
                       (print n ff))
                     (close ff))))
           ((= str "Load")
@@ -265,103 +262,108 @@
         sdy (find_by_key "sub_y" gr_n_real_key gr_n_real_val))
   (setq dn_s (entlast))
   (if (and (> xma xmi) (> yma ymi) (> dx 0) (> dy 0))
-    (progn (setq a xmi)
-           (while (<= a xma)
-             (entmake (list (cons 0 "LINE")
-                            (cons 62 1)
-                            (cons 10 (preobr_pt (list a ymi 0.0)))
-                            (cons 11 (preobr_pt (list a yma 0.0)))))
-             (entmake
-               (list (cons 0 "TEXT")
+    (progn
+      (setq a xmi)
+      (while (<= a xma)
+        (entmake (list (cons 0 "LINE")
+                       (cons 62 1)
+                       (cons 10 (preobr_pt (list a ymi 0.0)))
+                       (cons 11 (preobr_pt (list a yma 0.0)))))
+        (entmake
+          (list
+            (cons 0 "TEXT")
+            (cons 10 (list 0.0 0.0 0.0)) ;Начальная точка
+            (cons 40 (find_by_key "h_net" gr_t_real_key gr_t_real_val)) ;Высота
+            (cons 1 (rtos a))
+            (cons 62 7)                 ;(cons 50 0.0)
+            (cons 71 0)
+            (cons 72 1)
+            (cons 11
+                  (polar (preobr_pt (list a ymi 0.0)) (* pi 1.5) (find_by_key "d_net" gr_t_real_key gr_t_real_val)))
+            (cons 73 3))                ;list
+          )                             ;entmake
+        (if (> sdx 0.0)
+          (progn (setq b (+ a sdx))
+                 (while (and (< b (+ a dx)) (< b xma))
+                   (entmake (list (cons 0 "LINE")
+                                  (cons 62 7)
+                                  (cons 10 (preobr_pt (list b ymi 0.0)))
+                                  (cons 11 (preobr_pt (list b yma 0.0)))) ;list
+                            )           ;entmake
+                   (setq b (+ b sdx)))  ;while
+                 ))                     ;if
+        (setq a (+ a dx)))              ;while
+      (setq a ymi)
+      (while (<= a yma)
+        (entmake (list (cons 0 "LINE")
+                       (cons 62 1)
+                       (cons 10 (preobr_pt (list xmi a 0.0)))
+                       (cons 11 (preobr_pt (list xma a 0.0)))) ;list
+                 )                      ;entmake
+        (entmake
+          (list
+            (cons 0 "TEXT")
+            (cons 10 (list 0.0 0.0 0.0)) ;Начальная точка
+            (cons 40 (find_by_key "h_net" gr_t_real_key gr_t_real_val)) ;Высота
+            (cons 1 (rtos a))
+            (cons 62 7)                 ;(cons 50 0.0)
+            (cons 71 0)
+            (cons 72 2)
+            (cons 11
+                  (polar (preobr_pt (list xmi a 0.0)) (* pi 1.) (find_by_key "d_net" gr_t_real_key gr_t_real_val)))
+            (cons 73 2))                ;list
+          )                             ;entmake
+        (if (> sdy 0.0)
+          (progn (setq b (+ a sdy))
+                 (while (and (< b (+ a dy)) (< b yma))
+                   (entmake (list (cons 0 "LINE")
+                                  (cons 62 7)
+                                  (cons 10 (preobr_pt (list xmi b 0.0)))
+                                  (cons 11 (preobr_pt (list xma b 0.0)))) ;list
+                            )           ;entmake
+                   (setq b (+ b sdy)))  ;while
+                 ))                     ;if
+        (setq a (+ a dy)))              ;while
+      (entmake (list (cons 0 "TEXT")
                      (cons 10 (list 0.0 0.0 0.0)) ;Начальная точка
-                     (cons 40 (find_by_key "h_net" gr_t_real_key gr_t_real_val)) ;Высота
-                     (cons 1 (rtos a))
-                     (cons 62 7)        ;(cons 50 0.0)
-                     (cons 71 0)
+                     (cons 40 (find_by_key "h_tt" gr_t_real_key gr_t_real_val)) ;Высота
+                     (cons 1 (find_by_key "zagolovok" gr_t_str_key gr_t_str_val))
                      (cons 72 1)
                      (cons 11
-                           (polar (preobr_pt (list a ymi 0.0)) (* pi 1.5) (find_by_key "d_net" gr_t_real_key gr_t_real_val)))
-                     (cons 73 3))       ;list
-               )                        ;entmake
-             (if (> sdx 0.0)
-               (progn (setq b (+ a sdx))
-                      (while (and (< b (+ a dx)) (< b xma))
-                        (entmake (list (cons 0 "LINE")
-                                       (cons 62 7)
-                                       (cons 10 (preobr_pt (list b ymi 0.0)))
-                                       (cons 11 (preobr_pt (list b yma 0.0)))) ;list
-                                 )      ;entmake
-                        (setq b (+ b sdx))) ;while
-                      ))                ;if
-             (setq a (+ a dx)))         ;while
-           (setq a ymi)
-           (while (<= a yma)
-             (entmake (list (cons 0 "LINE")
-                            (cons 62 1)
-                            (cons 10 (preobr_pt (list xmi a 0.0)))
-                            (cons 11 (preobr_pt (list xma a 0.0)))) ;list
-                      )                 ;entmake
-             (entmake
-               (list (cons 0 "TEXT")
+                           (polar (preobr_pt (list (/ (+ xma xmi) 2.) yma 0.0))
+                                  (* pi 0.5)
+                                  (find_by_key "d_tt" gr_t_real_key gr_t_real_val)))
+                     (cons 73 1)))      ;entmake
+      (entmake
+        (list
+          (cons 0 "TEXT")
+          (cons 10 (list 0.0 0.0 0.0))  ;Начальная точка
+          (cons 40 (find_by_key "h_axis" gr_t_real_key gr_t_real_val)) ;Высота
+          (cons 1 (find_by_key "x_axis" gr_t_str_key gr_t_str_val))
+          (cons 72 0)
+          (cons 11
+                (polar (preobr_pt (list xma ymi 0.0)) (* pi 0.0) (find_by_key "d_tx" gr_t_real_key gr_t_real_val)))
+          (cons 73 2)))                 ;entmake
+      (entmake
+        (list
+          (cons 0 "TEXT")
+          (cons 10 (list 0.0 0.0 0.0))  ;Начальная точка
+          (cons 40 (find_by_key "h_axis" gr_t_real_key gr_t_real_val)) ;Высота
+          (cons 1 (find_by_key "y_axis" gr_t_str_key gr_t_str_val))
+          (cons 72 1)
+          (cons 11
+                (polar (preobr_pt (list xmi yma 0.0)) (* pi 0.5) (find_by_key "d_ty" gr_t_real_key gr_t_real_val)))
+          (cons 73 1)))                 ;entmake
+      (entmake (list (cons 0 "TEXT")
                      (cons 10 (list 0.0 0.0 0.0)) ;Начальная точка
-                     (cons 40 (find_by_key "h_net" gr_t_real_key gr_t_real_val)) ;Высота
-                     (cons 1 (rtos a))
-                     (cons 62 7)        ;(cons 50 0.0)
-                     (cons 71 0)
-                     (cons 72 2)
+                     (cons 40 (find_by_key "h_tr" gr_t_real_key gr_t_real_val)) ;Высота
+                     (cons 1 (find_by_key "risunok" gr_t_str_key gr_t_str_val))
+                     (cons 72 1)
                      (cons 11
-                           (polar (preobr_pt (list xmi a 0.0)) (* pi 1.) (find_by_key "d_net" gr_t_real_key gr_t_real_val)))
-                     (cons 73 2))       ;list
-               )                        ;entmake
-             (if (> sdy 0.0)
-               (progn (setq b (+ a sdy))
-                      (while (and (< b (+ a dy)) (< b yma))
-                        (entmake (list (cons 0 "LINE")
-                                       (cons 62 7)
-                                       (cons 10 (preobr_pt (list xmi b 0.0)))
-                                       (cons 11 (preobr_pt (list xma b 0.0)))) ;list
-                                 )      ;entmake
-                        (setq b (+ b sdy))) ;while
-                      ))                ;if
-             (setq a (+ a dy)))         ;while
-           (entmake (list (cons 0 "TEXT")
-                          (cons 10 (list 0.0 0.0 0.0)) ;Начальная точка
-                          (cons 40 (find_by_key "h_tt" gr_t_real_key gr_t_real_val)) ;Высота
-                          (cons 1 (find_by_key "zagolovok" gr_t_str_key gr_t_str_val))
-                          (cons 72 1)
-                          (cons 11
-                                (polar (preobr_pt (list (/ (+ xma xmi) 2.) yma 0.0))
-                                       (* pi 0.5)
-                                       (find_by_key "d_tt" gr_t_real_key gr_t_real_val)))
-                          (cons 73 1))) ;entmake
-           (entmake
-             (list (cons 0 "TEXT")
-                   (cons 10 (list 0.0 0.0 0.0)) ;Начальная точка
-                   (cons 40 (find_by_key "h_axis" gr_t_real_key gr_t_real_val)) ;Высота
-                   (cons 1 (find_by_key "x_axis" gr_t_str_key gr_t_str_val))
-                   (cons 72 0)
-                   (cons 11
-                         (polar (preobr_pt (list xma ymi 0.0)) (* pi 0.0) (find_by_key "d_tx" gr_t_real_key gr_t_real_val)))
-                   (cons 73 2)))        ;entmake
-           (entmake
-             (list (cons 0 "TEXT")
-                   (cons 10 (list 0.0 0.0 0.0)) ;Начальная точка
-                   (cons 40 (find_by_key "h_axis" gr_t_real_key gr_t_real_val)) ;Высота
-                   (cons 1 (find_by_key "y_axis" gr_t_str_key gr_t_str_val))
-                   (cons 72 1)
-                   (cons 11
-                         (polar (preobr_pt (list xmi yma 0.0)) (* pi 0.5) (find_by_key "d_ty" gr_t_real_key gr_t_real_val)))
-                   (cons 73 1)))        ;entmake
-           (entmake (list (cons 0 "TEXT")
-                          (cons 10 (list 0.0 0.0 0.0)) ;Начальная точка
-                          (cons 40 (find_by_key "h_tr" gr_t_real_key gr_t_real_val)) ;Высота
-                          (cons 1 (find_by_key "risunok" gr_t_str_key gr_t_str_val))
-                          (cons 72 1)
-                          (cons 11
-                                (polar (preobr_pt (list (/ (+ xmi xma) 2.0) ymi 0.0))
-                                       (* pi -0.5)
-                                       (find_by_key "d_tr" gr_t_real_key gr_t_real_val)))
-                          (cons 73 3)))))
+                           (polar (preobr_pt (list (/ (+ xmi xma) 2.0) ymi 0.0))
+                                  (* pi -0.5)
+                                  (find_by_key "d_tr" gr_t_real_key gr_t_real_val)))
+                     (cons 73 3)))))
   (setq dn_e (entlast)))
 
 (defun find  (val lis / i j)

@@ -4,9 +4,10 @@
   smesitel_vla
   :own-list
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug" "smesitel_vla-section" "smesitel_vla-sech_by_lenght" "smesitel_vla-mixer_section"
-    "../UTILS/vla-utils" "../UTILS/Asist" "../UTILS/draw" "../UTILS/ERR" "../opechatka/rus_cmd_opechatka"
-    "smesitel_vla-rus")
+    "../utils/Debug"		    "../utils/DXF"		    "smesitel_vla-section"
+    "smesitel_vla-sech_by_lenght"   "smesitel_vla-mixer_section"    "../UTILS/vla-utils"
+    "../UTILS/Asist"		    "../UTILS/draw"		    "../UTILS/ERR"
+    "../opechatka/rus_cmd_opechatka"				    "smesitel_vla-rus")
   :fas-directory
   "../../vlisp.tmp"
   :tmp-directory

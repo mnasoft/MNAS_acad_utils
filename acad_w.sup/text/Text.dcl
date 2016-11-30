@@ -1,6 +1,6 @@
 ﻿dcl_settings : default_dcl_settings { audit_level = 3; }
 
-@include "../../acad.dcl/ok_cancel_help_info_errtile.dcl"
+ok_cancel_help_info_errtile : column { ok_cancel_help_info; errtile; }
 
 chgtextt : dialog
 {

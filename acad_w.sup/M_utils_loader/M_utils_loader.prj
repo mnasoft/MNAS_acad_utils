@@ -1,10 +1,10 @@
-;;; VLisp project file [V2.0] m_utils_loader saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/m_utils_loader] at:[9/27/16] 
+;;; VLisp project file [V2.0] m_utils_loader saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/m_utils_loader] at:[9/29/16] 
 (vlisp-project-list
   :name
   m_utils_loader
   :own-list
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug" "M_utils_loader" "M_utils_LoaderCommands" "M_utils_LoaderAppRegistryData"
+    "../utils/Debug" "M_utils_loader-test" "M_utils_loader" "M_utils_LoaderCommands" "M_utils_LoaderAppRegistryData"
     "M_utils_LoaderARXInstall" "M_utils_LoaderDBXInstall" "../opechatka/rus_cmd_opechatka" "m_utils_loader_rus")
   :fas-directory
   "../../vlisp.tmp"

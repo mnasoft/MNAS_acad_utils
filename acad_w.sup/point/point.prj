@@ -1,10 +1,10 @@
-;;; VLisp project file [V2.0] point saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/point] at:[9/27/16] 
+;;; VLisp project file [V2.0] point saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/point] at:[9/29/16] 
 (vlisp-project-list
   :name
   point
   :own-list
   ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug" "point-cmd" "../utils/Asist" "../opechatka/rus_cmd_opechatka" "point-rus")
+    "../utils/Debug" "../utils/DXF" "point-cmd"	"../utils/Asist" "../opechatka/rus_cmd_opechatka" "point-rus")
   :fas-directory
   "../../vlisp.tmp"
   :tmp-directory

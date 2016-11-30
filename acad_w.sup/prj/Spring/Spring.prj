@@ -1,4 +1,4 @@
-;;; VLisp project file [V2.0] spring saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/prj/spring] at:[9/22/16] 
+;;; VLisp project file [V2.0] spring saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/prj/spring] at:[9/27/16] 
 (vlisp-project-list
   :name
   spring
@@ -12,7 +12,7 @@
   :tmp-directory
   "../../../vlisp.tmp"
   :project-keys
-  (:build (:optimize :localize :make-internal) :merged t :safe-mode t :msglevel 2)
+  (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id
   :autolisp)
 ;;; EOF

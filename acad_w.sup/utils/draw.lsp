@@ -128,17 +128,17 @@
     (vla-put-color text col))
   (vla-put-Rotation text rotation)
   text)
- ;|	dr:solid (point1 point2 point3 point4 color) - отрисовка области.
+ ;|	dr:solid (point1 point2 point3 point4 a-color) - отрисовка области.
 	(dr:solid '(0.0 0.0 0.0) '(10. 0.0 0.0) '(0.0 10. 0.0) '(10.0 10. 5.0) 5)
 |;
-(defun dr:solid  (point1 point2 point3 point4 color / solid)
+(defun dr:solid  (point1 point2 point3 point4 a-color / solid)
   (setq solid (vla-AddSolid (AcadAppDocSpace)
                             (vlax-3d-point point1)
                             (vlax-3d-point point2)
                             (vlax-3d-point point3)
                             (vlax-3d-point point4)))
-  (if (and (>= color 0) (<= color 256))
-    (vla-put-color solid color))
+  (if (and (>= a-color 0) (<= a-color 256))
+    (vla-put-color solid a-color))
   solid)
 
 (defun dr:spline  (pts col / arr len spline)

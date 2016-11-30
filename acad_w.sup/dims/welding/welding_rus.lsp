@@ -4,3 +4,4 @@
 (defun c:цудвштп() (c:welding))
 
 (princ "Loaded project welding1.\n")
+(princ)

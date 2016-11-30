@@ -56,7 +56,7 @@
     (progn (alert (princ "Имя файла не задано.")) (exit)))
   (setq fl (open fn "w"))
   (if (null fl)
-    (progn (alert (princ "Не могу открыть файл :" fl ".")) (exit)))
+    (progn (alert (princ (strcat "Не могу открыть файл :" fl "."))) (exit)))
   (while (> (sslength ss) 0)
     (setq en   (ssname ss 0)
           ed   (entget en)

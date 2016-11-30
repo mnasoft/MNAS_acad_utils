@@ -1,69 +1,88 @@
-D:/Develop/MNAS_acad_utils/acad_w.sup/Acaddoc.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/BL_PUR.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/INET.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/KO.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/LITERA.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prv.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/abrev/Abrev.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/abrev/gr_on_off.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/acad_pgp/PGP_abrev.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/add_prefix/Add_prefix.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/atoms/ATOMS.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/axis/Axis_cmd.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/axis/Axis_ea.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/axis/axis_graph_main.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/axis/axis_podp.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/axis/Axis_util.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/axis/Graph_analitic.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/axis/Graph_block.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/axis/Graph_main.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/axis/Graph_pline.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/axis/Graph_poitn_type.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/axis/Image.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/big_fnt/LITERA.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/change/CH_WID.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/change/POINT_BLOCK.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/circles/CIRCLES.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/circles/Circles_2.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/circles/sort_point.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/clock/CLOCK.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/abc.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/abc_dialog.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/DIM_FROM.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/cut/cut.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_override.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_override_like_ARX.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_style.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/dim_style/tmp.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/dim_style/tmp_1.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/look/look.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/rou/rou.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/rou/rou_draw.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/rou/rou_stp.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/rou/rou_update_ver.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/rou_1/dim_vars.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/rou_1/rou_draw_i3.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/rou_1/rou_i3.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/dia_arrow.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/dia_setup_geometry.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/Dia_welding.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/draw_arrow.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/tmp.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/welding.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dims/welding/welding_data.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dopusk/DOP.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dopusk/DOP_DATA.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dopusk/DOP_DATA_new.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dopusk/DOP_DATA_new_01.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dopusk/get_dop_from_mechanical.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dopusk/test_dop.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/dxf/dxf_cmd.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/d_chprop/D_CHPROP.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/edit/EDIT.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/entmake/entmake.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/exel/graph.lsp
-;;;f;;;("select_column" "Выполняет выборку из списка, указанных столбцыов.\n
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/BL_PUR.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/INET.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/KO.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/LITERA.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prv.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/abrev/abrev-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/abrev/abrev-func.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/abrev/abrev-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/acad_pgp/acad_pgp-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/acad_pgp/acad_pgp-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/add_prefix/add_prefix-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/add_prefix/add_prefix-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/atoms/atoms-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/atoms/atoms-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/Axis_cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/Axis_ea.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/axis_graph_main.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/axis_podp.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/axis_podp_rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/axis_rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/Axis_util.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/Graph_analitic.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/Graph_block.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/Graph_main.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/Graph_pline.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/Graph_poitn_type.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/axis/Image.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/big_fnt/big_fnt-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/big_fnt/big_fnt-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/change/change-line_width.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/change/change-point_block.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/change/change-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/circles/circles-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/circles/circles-cmd_2.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/circles/circles-point_sort.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/circles/circles-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/clock/clock-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/clock/clock-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/abc.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/abc_dialog.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/dims_rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/DIM_FROM.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/cut/cut.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_style-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_style-override.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_style-override_like_ARX.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_style-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_style-tmp.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/dim_style/dim_style-tmp_1.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/leader/leader.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/look/look.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/rou/rou-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/rou/rou-draw.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/rou/rou-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/rou/rou-update_ver.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/rou/rou_stp.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/rou_1/dim_vars.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/rou_1/rou_1-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/rou_1/rou_1-draw.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/rou_1/rou_1-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/rou_1/rou_1-update.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/welding/dia_arrow.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/welding/dia_setup_geometry.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/welding/Dia_welding.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/welding/draw_arrow.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/welding/tmp.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/welding/welding.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/welding/welding_data.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dims/welding/welding_rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dopusk/dopusk-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dopusk/dopusk-data.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dopusk/dopusk-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dopusk/get_dop_from_mechanical.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dopusk/test_dop.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dxf/dxf-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/dxf/dxf_cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/d_chprop/d_chprop-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/d_chprop/d_chprop-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/edit/edit-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/edit/edit-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/entmake/entmake-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/entmake/entmake-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/exel/exel-graph.lsp
+;;;f;;;("select_column" "Выполняет выборку из списка, указанных столбцов.\n
 ;;;f;;;Аргументы:
 ;;;f;;;matrix - список, состояший из списков.\n
 ;;;f;;;lst    - список, содержащий номера отбираемых столбцов.\n
@@ -78,29 +97,51 @@ D:/Develop/MNAS_acad_utils/acad_w.sup/exel/graph.lsp
 ;;;f;;;	    '(3 1)
 ;;;f;;;)
 ;;;f;;;")
-D:/Develop/MNAS_acad_utils/acad_w.sup/exel/read_exel_setup_lst.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/exel/read_scalc.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/exel/tmp.LSP
-D:/Develop/MNAS_acad_utils/acad_w.sup/exel/utils_xls.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/format/add_dop_sht_dlg.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/format/block_create.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/format/dop_dlg.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/format/FORMAT.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/format/format_draw.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/format/geom_util.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/fors_rh/ras_har_gas.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/fors_rh/ras_har_lic.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/for_lic/formuly.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/for_lic/for_prover.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/for_lic/projekt.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/for_lic/provjerka.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/for_lic/tmp.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/funktcii/11.LSP
-D:/Develop/MNAS_acad_utils/acad_w.sup/funktcii/Trigonomjetrichjeskije.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/funktcii/ActivX/mtext_to_word.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/funktcii/ActivX/reactor.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/funktcii/Fizichjeskije/Par.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/funktcii/Fizichjeskije/Phizich.lsp
+;;;f;;;("select_column-row"
+;;;f;;;  "Выполняет выборку из списка, указанных столбцов.\n
+;;;f;;;Аргументы:
+;;;f;;;row    - список, состояший из списков.\n
+;;;f;;;lst    - список, содержащий номера отбираемых столбцов.\n
+;;;f;;;Пример использования:
+;;;f;;;_$ (select_column-row '(0 1 2 3 4 5 6 7) '(0 0 5 5 7 7))
+;;;f;;;(0 0 5 5 7 7)
+;;;f;;;" )
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/exel/exel-read_exel_setup_lst.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/exel/exel-read_scalc.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/exel/exel-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/exel/exel-tmp.LSP
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/exel/exel-utils.lsp
+;;;f;;;("строка_xls->целое"
+;;;f;;;"Преобразует строку символов str, представляющую целое число,
+;;;f;;;представленное в системе счисления с основанием base и имеющее вид типа колонок в Exel,
+;;;f;;;в целое число.
+;;;f;;;Пример использования:
+;;;f;;;_$ (СТРОКА_XLS->ЦЕЛОЕ \"AA\" \"A\" 26)
+;;;f;;;27
+;;;f;;;_$ (СТРОКА_XLS->ЦЕЛОЕ \"IV\" \"A\" 26)
+;;;f;;;256")
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/format/format-add_dop_sht_dlg.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/format/format-block_create.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/format/format-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/format/format-dop_dlg.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/format/format-draw.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/format/format-geom_util.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/format/format-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/fors_rh/fors_rh-gas.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/fors_rh/fors_rh-lic.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/fors_rh/fors_rh-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/for_lic/for_lic-formuly.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/for_lic/for_lic-projekt.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/for_lic/for_lic-prover.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/for_lic/for_lic-provjerka.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/for_lic/for_lic-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/for_lic/for_lic-tmp.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/funktcii/11.LSP
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/funktcii/Trigonomjetrichjeskije.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/funktcii/ActivX/mtext_to_word.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/funktcii/ActivX/reactor.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/funktcii/Fizichjeskije/Par.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/funktcii/Fizichjeskije/Phizich.lsp
 ;;;f;;;("g_usp()" "Ускорение свободного падения[м/с^2].")
 ;;;f;;;("T_abs0[C] ()"	"Абсолютный ноль в градусах цельсиях.")
 ;;;f;;; ("T[K]->t[C] ( T[K] )" "Перевод температуры из кельвинов в градусы цельсия.")
@@ -111,27 +152,26 @@ D:/Develop/MNAS_acad_utils/acad_w.sup/funktcii/Fizichjeskije/Phizich.lsp
 ;;;f;;; ("p_izb->p_abs( p_izb )" "Перевод избыточного давления в абсолютное [Па].")
 ;;;f;;; ("p_izb[kg/cm2]->p_abs[Pa] ( p_izb )" "Перевод избыточного давления [кг/см^2] в абсолютное [Па].")
 ;;;f;;; ("ro(P mu Rmu Temperatura)" "Плотность по P mu Rmu Temperatura")
-D:/Develop/MNAS_acad_utils/acad_w.sup/funktcii/Regystry/registry.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/funktcii/Regystry/registry.lsp
 ;;;f;;;("string-subst-all(new_substr olg_sustr str)"
 ;;;f;;;"Производит замену всех вхождений olg_sustr на new_substr для строки str.")
-D:/Develop/MNAS_acad_utils/acad_w.sup/graf/GRAF.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/graf/point_to_xsl.LSP
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/graf/graf-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/graf/graf-point_to_xsl.LSP
 ;;;f;;;("tbl_to_xls" "Вывод таблицы в html формате"
 ;;;f;;;)
-D:/Develop/MNAS_acad_utils/acad_w.sup/hpgl/HPGL.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/izmjeritjelnaja_mashina/read_mea.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/izmjeritjelnaja_mashina/spline.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/izmjeritjelnaja_mashina/Mea/123.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/kollector/kollector.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/graf/graf-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/hpgl/HPGL.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/hpgl/hpgl_rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/izmjeritjelnaja_mashina/read_mea.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/izmjeritjelnaja_mashina/spline.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/izmjeritjelnaja_mashina/Mea/123.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/kollector/kollector.lsp
 ;;;f;;;("uroven"
-;;;f;;;  (strcat
-;;;f;;;    "Определение гидростатического уровня i-той форсуки в коллекторе.\n"
-;;;f;;;    "Параметры:\n"
-;;;f;;;    "i      - номер форсунки в коллекторе;\n"
-;;;f;;;    "n      - количество форсунк в коллекторе;\n"
-;;;f;;;    "d_koll - диаметр коллектора.\n"
-;;;f;;;  )
-;;;f;;;)
+;;;f;;;"Определение гидростатического уровня i-той форсуки в коллекторе.\n
+;;;f;;;Параметры:\n
+;;;f;;;i      - номер форсунки в коллекторе;\n
+;;;f;;;n      - количество форсунк в коллекторе;\n
+;;;f;;;d_koll - диаметр коллектора.\n")
 ;;;f;;; ("P_Arxided" "Архимедово давление, кгс/см2.\n
 ;;;f;;; h - высота, отсчитываемая от нижней точки коллектора.")
 ;;;f;;; ("p_i" "Давление перед i-той форсункой\n
@@ -156,32 +196,21 @@ D:/Develop/MNAS_acad_utils/acad_w.sup/kollector/kollector.lsp
 ;;;f;;; Пример использования:
 ;;;f;;; (g_sum 0.08 16 1.0 835. 30. 835. 334.)
 ;;;f;;; ")
-D:/Develop/MNAS_acad_utils/acad_w.sup/kompas/acad-kompas.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/kompas/kompas-acad.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/kompas/KOMPAS.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/layer/bl_layer.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/layer/cur_layer.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/layer/layer.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/layer/md_layer.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/layer/nent_lay.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/layer/sh_layer.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/layer/vp_layer.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/lines/arc_concat.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/lines/LINES.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/lines/linetype.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/lines/LINE_1.lsp
-;;;f;;;("get_center_lines" "Возвращает набор выбора из отрезков, имеющих осевой тип линии.
-;;;f;;;Пример использования:
-;;;f;;;(get_center_lines)
-;;;f;;;<Selection set: db>
-;;;f;;;")
-;;;f;;;("get_cut_edges" "Возвращает набор выбора из отрезков, дуг, окружностей, полилиний, эллипсов, имеющих не осевой тип линии.
-;;;f;;;Пример использования:
-;;;f;;;(get_cut_edges)
-;;;f;;;<Selection set: df>
-;;;f;;;")
-D:/Develop/MNAS_acad_utils/acad_w.sup/lines/LINE_2.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/lines/line_concat.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/kompas/kompas-acad_kompas.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/kompas/kompas-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/kompas/kompas-kompas_acad.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/kompas/kompas-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/layer/layer-block.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/layer/layer-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/layer/layer-cur.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/layer/layer-md.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/layer/layer-nent.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/layer/layer-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/layer/layer-sh.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/layer/layer-vp.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/lines/lines-arc_concat.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/lines/lines-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/lines/lines-concat.LSP
 ;;;f;;; ("v3d->list" "Выполняет преобразование vla3d точки в список её координат.")
 ;;;f;;; ("is-collinear"
 ;;;f;;; "Выполняет проверку двух отрезков на коллинеарность.
@@ -215,11 +244,25 @@ D:/Develop/MNAS_acad_utils/acad_w.sup/lines/line_concat.lsp
 ;;;f;;; filter
 ;;;f;;; "
 ;;;f;;; )
-D:/Develop/MNAS_acad_utils/acad_w.sup/lopatka/draw_lop.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/lopatka/Lopatka.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/lopatka/Lop_func.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/man/create_html_all_command_list.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/man/man.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/lines/lines-lines_2.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/lines/lines-linetype_load.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/lines/lines-line_1.lsp
+;;;f;;;("get_center_lines" "Возвращает набор выбора из отрезков, имеющих осевой тип линии.
+;;;f;;;Пример использования:
+;;;f;;;(get_center_lines)
+;;;f;;;<Selection set: db>
+;;;f;;;")
+;;;f;;;("get_cut_edges" "Возвращает набор выбора из отрезков, дуг, окружностей, полилиний, эллипсов, имеющих не осевой тип линии.
+;;;f;;;Пример использования:
+;;;f;;;(get_cut_edges)
+;;;f;;;<Selection set: df>
+;;;f;;;")
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/lines/lines-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/lopatka/lopatka-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/lopatka/lopatka-draw.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/lopatka/lopatka-functions.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/lopatka/lopatka_rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/man/man-cmd.lsp
 ;;;f;;;("man-rebuild"
 ;;;f;;;"Prj - man.\n
 ;;;f;;;File - man.lsp.
@@ -236,151 +279,187 @@ D:/Develop/MNAS_acad_utils/acad_w.sup/man/man.lsp
 ;;;f;;;в файлах с маской имени файла file_mask\n
 ;;;f;;;начиная с коталога directory рекурсивно вглубь по дереву каталогов\n
 ;;;f;;;и выводит строки, найденные в файлах, в выходной файл с именем fn_out.")
-D:/Develop/MNAS_acad_utils/acad_w.sup/man/man_data_base.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/man/man_data_base_func.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/man/Type_command_list.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/matr/CHH.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/matr/EX.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/matr/MATR.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/matr/M_PREOBR.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/matr/SLIDE.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/matr/VECTOR.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/matr/Vychisljenije_osrjednjajuschjej_funktcii.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mjetod_pokoordinatnogo_spuska/Mjetod_pokoordinatnogo_spuska.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mjetod_polovinnogo_djeljenija/Polovinnoje_djeljenije.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mjetod_polovinnogo_djeljenija/Polovinnoje_djeljenije_1.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_abbrev.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_dlg.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_export.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_sort.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding/setup_lst.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding/welding_dlg.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding/weld_abbrev.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding/Weld_text_dlg.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/get_dimstyle_hanlde.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/man/man-create_html.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/man/man-data_base.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/man/man-data_base_func.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/man/man-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/man/man-type_command.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/matr/CHH.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/matr/EX.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/matr/MATR.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/matr/M_PREOBR.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/matr/SLIDE.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/matr/VECTOR.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/matr/Vychisljenije_osrjednjajuschjej_funktcii.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mjetod_pokoordinatnogo_spuska/Mjetod_pokoordinatnogo_spuska.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mjetod_polovinnogo_djeljenija/Polovinnoje_djeljenije.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mjetod_polovinnogo_djeljenija/Polovinnoje_djeljenije_1.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_abbrev.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_dlg.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_export.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Pozition/pozition_sort.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Welding/setup_lst.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Welding/welding_dlg.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Welding/weld_abbrev.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Welding/Weld_text_dlg.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/get_dimstyle_hanlde.lsp
 ;;;f;;;("w-edit-arrow-dir")
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/setup_lst.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/welding_dlg.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/weld_abbrev.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/Weld_text_dlg.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_loader.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/setup_lst.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/welding_dlg.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/weld_abbrev.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/mnas/Welding_lsp/Weld_text_dlg.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_loader.lsp
+;;;f;;;
 ;;;f;;;("registry-dir"
-;;;f;;;"Выполняет чтение подключей для строк содержащих ключи реестра.\n
+;;;f;;;  "Выполняет чтение подключей для строк содержащих ключи реестра.\n
 ;;;f;;;Возвращает список подключей реестра.\n
 ;;;f;;;Параметры:\n
 ;;;f;;;str-lst - содержит список ключей реестра.\n
 ;;;f;;;Пример использования 1:\n
 ;;;f;;;(registry-dir '(\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Pozition\"))\n
 ;;;f;;;Результат работы 1:\n
-;;;f;;;'(\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Pozition\\Groups\"\n
-;;;f;;;  \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Pozition\\Commands\"\n
-;;;f;;; )\n
-;;;f;;;"
-;;;f;;;)
-D:/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderAppRegistryData.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderARXInstall.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderCommands.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderDBXInstall.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/optimalnoje_raspololjenije_okrugnostjej/okrugnost_po_tochkam.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/otvjerstija/f_otv.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/piping/Piping.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/point/points.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/lst.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Temperaturnyj_napor.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/arx_dbx_reg/arx_dbx_reg.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/arx_dbx_reg/MNAS_ARX_DBX_16.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/arx_dbx_reg/MNAS_ARX_DBX_17.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Check_Inters/ck.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/graph.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/my_read_exel.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/my_write_exel.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/Rad_exel_samp.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/read_exel_setup_lst.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/read_me.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/utils_xls.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/Wri_exel_samp.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Filter/filter.LSP
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Idelchik/koeff_cinematic_vjazkost.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/moment_zatjazki/moment.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Ostcill/osc.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Ostcill/osct_1.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Postrojenije_Zavisimostjej_vrjednyh_vybrosov/banzaj1.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/func_new.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/func_new1.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/func_prj.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/prj_main.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/projects.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/prv_main.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/prj/tmp.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Provoloka/Provoloka.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/CP_CH4.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/F-ly_pjerjeschjeta_gaz_smjesi.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Gasodin_functions.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Pereschet.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Raschet_smesi_0.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Raschet_teplojomkosti.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Raschjet_smjesi.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Smjeshjenije_sostavov.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Sostavy_smjesjej.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Tablitca_gazov.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Tablitca_Mjendjeljejeva.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Tablitsa_teplojomkostej.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza_0/Raschet_smesi.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_pruginy/Prugina.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_pruginy/Raschjet_pruginy.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF/Ugol_vyhoda_vozduha_iz_TVF.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika/dg80L5.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika/gt25000.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika/havisude.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/rename_ru_eng/rename_ru_eng.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Rjezba_mjetrichjeskaja/Raschjet_profilja_mjetrichjeskoj_rjezby_po_GOST_9150-81.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Spring/Spring.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Spring/Spring_actions.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Spring/Spring_class.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Spring/Spring_dia.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Spring/Spring_dlg.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Temperetche_In_smesitel/tmp.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Tr_inch/tr_inch.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/prj/Zavihritel/ZAV_1.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/projection/projection.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/provoloka/provoloka.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/razvertka/razvertka.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/rename/rename.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/scr/Scr.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/smesitel_vla/Mixer_section.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/smesitel_vla/sech_by_lenght.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/smesitel_vla/section.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/sort_shp/sort_shp.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/spec/Baza_dannyh.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/spec/bd_naimjenovanije.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/spec/Dialog_Color.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/spec/Dialog_Nastrojka.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/spec/Dialog_pozicija.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/spec/func1.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/spec/func2.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/spec/func3.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/spec/func4.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/spec/Naimjenovanije.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/spec/Specif.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/statistika/123.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/statistika/koeff_studenta.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/statistika/kriterij_grubsa.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/statistika/prolivky_forsunok.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/statistika/Statistika.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/statistika/Utuchnennye_pyfchenyja_vjazkosty.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/std_features/nut.LSP
-D:/Develop/MNAS_acad_utils/acad_w.sup/text/Lay_txt.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/text/naklon_15gr.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/text/Rjedaktirovanije_tjekstov.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/text/Skobka.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/text/STL.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/text/TEXT.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/text/Text_export.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/text/Text_extract.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/text/Text_pozition.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/tmp/al.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/tmp/equal_area.lsp
+;;;f;;;(\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Pozition\\Groups\"\n
+;;;f;;; \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Autodesk\\AutoCAD\\R17.2\\ACAD-7005:419\\Applications\\MNASArx_Pozition\\Commands\"\n")
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderAppRegistryData.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderARXInstall.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderCommands.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/M_utils_loader/M_utils_LoaderDBXInstall.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/M_utils_loader/m_utils_loader_rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/opechatka/rus_cmd_opechatka.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/optimalnoje_raspololjenije_okrugnostjej/okrugnost_po_tochkam.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/otvjerstija/f_otv-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/otvjerstija/f_otv-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/piping/Piping.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/piping/piping_rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/point/point-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/point/point-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/lst.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Temperaturnyj_napor.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/3d_mesh/3d_mesh.lsp
+;;;f;;; ("l_int" "Функция линейной интерполяции")
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/akima/akima.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/arx_dbx_reg/arx_dbx_reg.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/arx_dbx_reg/MNAS_ARX_DBX_16.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/arx_dbx_reg/MNAS_ARX_DBX_17.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Check_Inters/ck.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/graph.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/my_read_exel.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/my_write_exel.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/Rad_exel_samp.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/read_exel_setup_lst.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/read_me.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/utils_xls.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/CHtjenije_iz_Exel/Wri_exel_samp.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Filter/filter.LSP
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Idelchik/Idelchik_1994.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Idelchik/Idelchik_furmuls.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Idelchik/koeff_cinematic_vjazkost.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/moment_zatjazki/moment.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Ostcill/osc.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Ostcill/osct_1.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Postrojenije_Zavisimostjej_vrjednyh_vybrosov/banzaj1.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/prj/func_new.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/prj/func_new1.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/prj/func_prj.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/prj/prj_main.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/prj/projects.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/prj/prv_main.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/prj/tmp.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Provoloka/Provoloka.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/CP_CH4.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/F-ly_pjerjeschjeta_gaz_smjesi.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Gasodin_functions.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Pereschet.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Raschet_smesi_0.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Raschet_teplojomkosti.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Raschjet_smjesi.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Smjeshjenije_sostavov.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Sostavy_smjesjej.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Tablitca_gazov.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Tablitca_Mjendjeljejeva.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza/Tablitsa_teplojomkostej.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_gaza_0/Raschet_smesi.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_pruginy/Prugina.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_pruginy/Raschjet_pruginy.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Raschjet_ugla_vyhoda_strui_vozduha_iz_TVF/Ugol_vyhoda_vozduha_iz_TVF.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika/dg80L5.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika/gt25000.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/rascot_zolotnika/havisude.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/rename_ru_eng/rename_ru_eng.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Rjezba_mjetrichjeskaja/Raschjet_profilja_mjetrichjeskoj_rjezby_po_GOST_9150-81.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Spring/spring-actions.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Spring/spring-class.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Spring/spring-dia.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Spring/spring-dlg.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Spring/spring-klapan.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Spring/spring-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Temperetche_In_smesitel/tmp.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Tr_inch/tr_inch.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/Zavihritel/ZAV_1.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/projection/projection.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/provoloka/provoloka-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/provoloka/provoloka-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/razvertka/razvertka.lsp
+;;;f;;;("list->3d-point-list" "Преобразует список, содержащий координаты xyz нескольких точек, в список точек.")
+;;;f;;; ("get-IntersectWith-points" "Возвращает список точек пересечения объекта vla-this с объектом vla-oter.
+;;;f;;; Параметр tp - отвечает за удлинение объектов при поиске точек пересечения
+;;;f;;; может принимать одно из следующих значений:
+;;;f;;; acExtendNone=0;
+;;;f;;; acExtendThisEntity=1;
+;;;f;;; acExtendOtherEntity=2;
+;;;f;;; acExtendBoth=3.")
+;;;f;;;("draw-riangle" "")
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/razvertka/razvertka_rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/rename/rename-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/rename/rename-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/scr/scr-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/scr/scr-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/smesitel_vla/smesitel_vla-mixer_section.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/smesitel_vla/smesitel_vla-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/smesitel_vla/smesitel_vla-sech_by_lenght.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/smesitel_vla/smesitel_vla-section.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/sort_shp/sort_shp-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/sort_shp/sort_shp-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/Baza_dannyh.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/bd_naimjenovanije.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/Dialog_Color.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/Dialog_Nastrojka.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/Dialog_pozicija.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/Naimjenovanije.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/spec-func1.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/spec-func2.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/spec-func3.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/spec-func4.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/spec-rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/spec/specif-cmd.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/statistika/123.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/statistika/koeff_studenta.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/statistika/kriterij_grubsa.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/statistika/prolivky_forsunok.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/statistika/Statistika.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/statistika/Utuchnennye_pyfchenyja_vjazkosty.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/std_features/nut.LSP
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/text/text-block_attribs.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/text/text-brackets.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/text/text-edit.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/text/text-edit_dlg.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/text/text-export.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/text/text-layer_current.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/text/text-load_style.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/text/text-naklon_15gr.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/text/text-pozition.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/text/Text_extract.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/text/text_rus.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/tmp/al.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/tmp/equal_area.lsp
+;;;f;;;("equal_area_radius_n"  "Делит кольцо между максимальным радиусом rb и минимальным радиусом rm на n равновеликих по площади частей и выводит их радиусы.
+;;;f;;; 
+;;;f;;; rb > rm.
+;;;f;;; Наример, для того чтобы рассчитать радиусы для постановки 5-ти термопар при rm=802.0;   rb 871.5.
+;;;f;;; Неодходимо выполнить следующее:
+;;;f;;;(equal_area_radius_n 871.5 802.0 5)
+;;;f;;;")
 ;;;f;;;("equal_area_radius"
 ;;;f;;;  "Делит кольцо между максимальным радиусом rb и минимальным радиусом rm на n равновеликих по площади частей и выводит i-товый радиус.
 ;;;f;;; При значении i=0 выводится внутренний радиус.
@@ -394,24 +473,18 @@ D:/Develop/MNAS_acad_utils/acad_w.sup/tmp/equal_area.lsp
 ;;;f;;; (equal_area_radius 871.5 802.0 7 10)
 ;;;f;;; (equal_area_radius 871.5 802.0 9 10)"
 ;;;f;;;)
-;;;f;;;("equal_area_radius_n"  "Делит кольцо между максимальным радиусом rb и минимальным радиусом rm на n равновеликих по площади частей и выводит их радиусы.
-;;;f;;; 
-;;;f;;; rb > rm.
-;;;f;;; Наример, для того чтобы рассчитать радиусы для постановки 5-ти термопар при rm=802.0;   rb 871.5.
-;;;f;;; Неодходимо выполнить следующее:
-;;;f;;;(equal_area_radius_n 871.5 802.0 5)")
-D:/Develop/MNAS_acad_utils/acad_w.sup/tmp/menu_load.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/tmp/new.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/tmp/test.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/tmp/tmp.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/acad_sup_dir.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/ASIST.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/tmp/menu_load.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/tmp/new.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/tmp/test.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/tmp/tmp.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/ACAD_SUP_DIR.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/ASIST.lsp
 ;;;f;;;("ss_to_list" "Преобразует набор примитивов в список, содержащий имена примитивов.")
 ;;;f;;;("list_to_ss" "Преобразует список, содержащий имена примитивов в набор примитивов.")
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/Binary.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/Debug.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/dlg_utils.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/draw.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/binary.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/Debug.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/dlg_utils.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/draw.lsp
 ;;;f;;;("Space()" "Space определяет какое пространство (модели или листа) является текущим.\n
 ;;;f;;;Возвращает:\n
 ;;;f;;;1. nil - если текущим является пространство листа;\n
@@ -453,8 +526,8 @@ D:/Develop/MNAS_acad_utils/acad_w.sup/utils/draw.lsp
 ;;;f;;;_$ (dr:circle '(0.0 0.0 0.0) 10.0 256)\n
 ;;;f;;;#<VLA-OBJECT IAcadCircle 0ed63fa4>\n
 ;;;f;;;Возвращает vla-объект, соответствующий нарисованной окружности.\n")
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/DXF.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/ERR.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/DXF.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/ERR.lsp
 ;;;f;;;("set-sys-var-lst (variable-lst)"
 ;;;f;;;"Устанавливает значения системных переменных\n
 ;;;f;;;variable-lst - список, каждый элемент которого должен содержать список, состоящий из:
@@ -467,26 +540,30 @@ D:/Develop/MNAS_acad_utils/acad_w.sup/utils/ERR.lsp
 ;;;f;;;variable-lst - список, каждый элемент которого строка - являющаяся системной переменной ACAD.
 ;;;f;;;(get-sys-var-lst '(\"cmdecho\" \"orthomode\" ))
 ;;;f;;;")
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/html.LSP
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/prin.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/red_list.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/Sistjemy_schisljenija.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/stl_text.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/STRING.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/sub_div.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/system_registry.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/html.LSP
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/list.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/macro.LSP
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/msg.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/prin.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/red_list.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/Sistjemy_schisljenija.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/stl_text.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/STRING.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/sub_div.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/system_registry.lsp
 ;;;f;;;("print-to-string" "Производит вывод цитируемого значения $val в строку,
 ;;;f;;;в виде пригодном для последующего восстановдения значения функцией load-from-string.
 ;;;f;;;
 ;;;f;;;(setq value 1.0) (print-to-string 'value)
 ;;;f;;;1.0
 ;;;f;;;(setq VALUE '1.0)")
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/system_variable.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/vla-pline.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/vla-utils.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/system_variable.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/table_interpolation.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/vla-pline.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/vla-utils.lsp
 ;;;f;;;("devide-list" "Разбивает список lst на группы по n элементов.")
 ;;;f;;;("pnt-distance-short"
 ;;;f;;;"Возвращает точку из списка точек pnt-lst-to,\n
 ;;;f;;;расстояние до которой от точки pnt-from является наименьшим.")
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/vla.lsp
-D:/Develop/MNAS_acad_utils/acad_w.sup/utils/XDATA.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/vla.lsp
+E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/utils/XDATA.lsp

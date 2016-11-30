@@ -23,10 +23,6 @@
         (t (sqrt (/ 1.0 (apply (function +) (mapcar (function (lambda (el) (/ 1.0 (* el el)))) l_f)))))))
 
 
-
-
-
-
 ;;;;;;("f_kolca" "Вычисление площади кольца." "Расчеты")
 (defun c:f_kolca (/ area p1 p1-p2 p2 p_mid p_mid-p_os p_os) (f_kolca) (princ))
 
