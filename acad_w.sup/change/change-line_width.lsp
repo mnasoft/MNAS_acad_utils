@@ -41,7 +41,7 @@
     (command "select" li)))
 
 ;;	ch:sp_pl - преобразование сплайна в полилинию.
-(defun ch:sp_pl  (ed wid / tmp pt en)
+(defun ch:sp_pl  (ed wid /  pt en)
   (mapcar (function (lambda (el) (cond ((= (car el) 10) (setq tmp (cons (list (cadr el) (caddr el)) tmp)))) t))
           (member (assoc 10 ed) ed))
   (dr:pline tmp 256)
