@@ -14,41 +14,49 @@
                   kr_no                 ; Индекс для нахождения кратности формата.
                                         ;
 ) (setq reg_root "HKEY_CURRENT_USER\\Software\\MNASoft\\Format")
-  (setq format_registry
-         '((p_start (0.0 0.0 0.0))
-           (sht1_val
-            ("Устройство горелочное"           "В2М80009993СБ"  "Дораб.черт. Н80038002СБ"         ""               ""               ""
-             ""               "1:1"            ""               "1"              "ЖАКИ"           "Нач отд"        "Матвеев   "     "Матвеев   "
-             "Дунаев   "      "Ванцовский"     "Матвеев   "     "Спицын   "      ""               ""))
-           (f_no 0)
-           (kr_no 0)
-           (for_no 1)
-           (dir_sht 1)
-           (divzone_no 1)
-           (zone_ch 65)
-           (zone_dig 1)))
+  (setq format_registry '((p_start (0.0 0.0 0.0))
+                          (sht1_val
+                           ("Устройство горелочное"           "В2М80009993СБ"  "Дораб.черт. Н80038002СБ"
+                            ""               ""               ""               ""               "1:1"
+                            ""               "1"              "ЖАКИ"           "Нач отд"        "Матвеев   "
+                            "Матвеев   "     "Дунаев   "      "Ванцовский"     "Матвеев   "     "Спицын   "
+                            ""               ""))
+                          (f_no 0)
+                          (kr_no 0)
+                          (for_no 1)
+                          (dir_sht 1)
+                          (divzone_no 1)
+                          (zone_ch 65)
+                          (zone_dig 1)))
   (load_format)
   (main_format)
   (princ))
 
-(defun about () (alert (strcat "Вставка форматной рамки" (about-gpl-string))))
+(defun format:about () (alert (strcat "Вставка форматной рамки" (about-gpl-string))))
 
 (defun load_format  ()
   (reg_read_default_lst reg_root format_registry)
   (setq f_key (list "1" "2аг" "2" "2ат" "2б" "2бн" "2бч" "3")) ;Тип штампа
-  (setq f_val (list "1   \tчертежи и схемы    \tЛист=1"                  "2аг \tчетрежи и схемы    \tЛист=n"
-                    "2   \tтекст.констр.док.  \tЛист=1"                  "2ат \tтекст.констр.док.  \tЛист=n"
-                    "2б  \tтекст.констр.док.  \tСтр.=1"                  "2бн \tтекст.констр.док.  \tСтр.=(2*n+1)"
-                    "2бч \tтекст.констр.док.  \tСтр.=(2*n) "             "3   \tтолько рамка       \tСтр.=ЛУ"))
+  (setq f_val (list
+                "1   \tчертежи и схемы    \tЛист=1"
+                "2аг \tчетрежи и схемы    \tЛист=n"
+                "2   \tтекст.констр.док.  \tЛист=1"
+                "2ат \tтекст.констр.док.  \tЛист=n"
+                "2б  \tтекст.констр.док.  \tСтр.=1"
+                "2бн \tтекст.констр.док.  \tСтр.=(2*n+1)"
+                "2бч \tтекст.констр.док.  \tСтр.=(2*n) "
+                "3   \tтолько рамка       \tСтр.=ЛУ"))
   (setq for_name (list "А0" "А1" "А2" "А3" "А4"))
   (setq for_val '((1188 840) (840 594) (594 420) (420 297) (297 210)))
   (setq kr_key (list "1" "3" "4" "5" "6" "7" "8" "9")) ;Кратность
   (setq kr_val (list 1 3 4 5 6 7 8 9))
-  (setq sht1_key (list "sht1_1"       "sht1_2"       "sht1_3"       "sht1_4_1"     "sht1_4_2"     "sht1_4_3"     "sht1_5"       "sht1_6"
-                       "sht1_7"       "sht1_8"       "sht1_9"       "sht1_10"      "sht1_11_1"    "sht1_11_2"    "sht1_11_3"    "sht1_11_4"
-                       "sht1_11_5"    "sht1_11_6"    "sht1_24"      "sht1_25"))
-  (setq sht1_key2 (list "NAIMEN"      "OBOZNACH"    "MATERIAL"    "L_1"         "L_2"         "L_3"         "MASS"        "MASHT"       "PAPER"
-                        "PAPERS"      "FACTORY"     "RABOTA"      "RAZRAB"      "PROVER"      "TECHN_KONTROL"             "NACH_PODR"   "NORMO_KONTR"
+  (setq sht1_key (list "sht1_1"       "sht1_2"       "sht1_3"       "sht1_4_1"     "sht1_4_2"     "sht1_4_3"
+                       "sht1_5"       "sht1_6"       "sht1_7"       "sht1_8"       "sht1_9"       "sht1_10"
+                       "sht1_11_1"    "sht1_11_2"    "sht1_11_3"    "sht1_11_4"    "sht1_11_5"    "sht1_11_6"
+                       "sht1_24"      "sht1_25"))
+  (setq sht1_key2 (list "NAIMEN"      "OBOZNACH"    "MATERIAL"    "L_1"         "L_2"         "L_3"
+                        "MASS"        "MASHT"       "PAPER"       "PAPERS"      "FACTORY"     "RABOTA"
+                        "RAZRAB"      "PROVER"      "TECHN_KONTROL"             "NACH_PODR"   "NORMO_KONTR"
                         "UTVERD"      "SPRAV_NO"    "PERV_PRIM")))
                                         ;defun load_format
 
@@ -78,8 +86,11 @@
   (setq name     "acad_w.sup/format/format.dcl"
         dcl-name (findfile name))
   (if (null dcl-name)
-    (alert (strcat "Не могу найти файл диалога\n.../" name "\nПроверьте пути доступа к вспомогательным файлам.")))
-  "Dialog file not found" "Support File Search Path"
+    (alert (strcat "Не могу найти файл диалога\n.../"
+                   name
+                   "\nПроверьте пути доступа к вспомогательным файлам.")))
+  "Dialog file not found"
+  "Support File Search Path"
   (setq dcl_id (load_dialog dcl-name))
   (if (< dcl_id 0)
     (exit)))
@@ -89,9 +100,10 @@
     reg_root
     '((p_start (0.0 0.0 0.0))
       (sht1_val
-       ("Устройство горелочное"           "В2М80009993СБ"  "Дораб.черт. Н80038002СБ"         ""               ""               ""
-        ""               "1:1"            ""               "1"              "ЖАКИ"           "Нач отд"        "Матвеев   "     "Матвеев   "
-        "Дунаев   "      "Ванцовский"     "Матвеев   "     "Спицын   "      ""               ""))
+       ("Устройство горелочное"           "В2М80009993СБ"  "Дораб.черт. Н80038002СБ"         ""
+        ""               ""               ""               "1:1"            ""               "1"
+        "ЖАКИ"           "Нач отд"        "Матвеев   "     "Матвеев   "     "Дунаев   "      "Ванцовский"
+        "Матвеев   "     "Спицын   "      ""               ""))
       (f_no 0)
       (kr_no 0)
       (for_no 1)
@@ -122,15 +134,16 @@
   (setq do t)
   (while do
     (setq en (entnext en))
-    (cond ((null en) (setq do nil))
-          ((= (cdr (assoc 0 (entget en))) "ATTRIB")
-           (setq str_1 (cdr (assoc 2 (setq ed (entget en)))))
-           (if (= str_1 "FORMAT")
-             (progn (if (= kr_no 0)
-                      (entmod (subst (cons 1 (nth for_no for_name)) (assoc 1 ed) ed))
-                      (entmod (subst (cons 1 (strcat (nth for_no for_name) "x" (nth kr_no kr_key))) (assoc 1 ed) ed)))
-                    (entupd en))))
-          (t (setq do nil)))))
+    (cond
+      ((null en) (setq do nil))
+      ((= (cdr (assoc 0 (entget en))) "ATTRIB")
+       (setq str_1 (cdr (assoc 2 (setq ed (entget en)))))
+       (if (= str_1 "FORMAT")
+         (progn (if (= kr_no 0)
+                  (entmod (subst (cons 1 (nth for_no for_name)) (assoc 1 ed) ed))
+                  (entmod (subst (cons 1 (strcat (nth for_no for_name) "x" (nth kr_no kr_key))) (assoc 1 ed) ed)))
+                (entupd en))))
+      (t (setq do nil)))))
 
 (defun zval  (k1 k2)
   (if (= str_1 k1)
@@ -195,32 +208,42 @@
     (set_tile "dir_sht" "Вдоль короткой стороны")
     (set_tile "dir_sht" "Вдоль длинной стороны")))
 
-(defun draw_format  (dir_sht for_no for_val f_key f_no kr_no kr_val p_start)
+(defun format:draw-format  (dir_sht for_no for_val f_key f_no kr_no kr_val p_start)
   (princ "\nНачинаю отрисовку штампа...")
   (setq for (list (nth 0 (nth for_no for_val)) (* (nth 1 (nth for_no for_val)) (nth kr_no kr_val))))
   (if (< (nth 0 for) (nth 1 for))
     (setq for (reverse for)))
   (if (= dir_sht 0)
     (setq for (reverse for)))
-  (draw_rect for p_start 7)
+  (format:draw-rect for p_start 7)
   (cond ((= (nth f_no f_key) "2бч")
-         (draw_rect (mapcar (function -) for '(25.0 10.0)) (mapcar (function +) '(5.0 5.0 0.0) p_start) 1))
+         (format:draw-rect
+           (mapcar (function -) for '(25.0 10.0))
+           (mapcar (function +) '(5.0 5.0 0.0) p_start)
+           1))
         (t
-         (draw_rect (mapcar (function -) for '(25.0 10.0)) (mapcar (function +) '(20.0 5.0 0.0) p_start) 1))))
+         (format:draw-rect
+           (mapcar (function -) for '(25.0 10.0))
+           (mapcar (function +) '(20.0 5.0 0.0) p_start)
+           1))))
 
-(defun draw_rect  (for p0 col)
-  (format:draw_line (mapcar (function +) (list (nth 0 for) (nth 1 for) 0.0) p0)
-             (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0)
-             col)
-  (format:draw_line (mapcar (function +) (list (nth 0 for) (nth 1 for) 0.0) p0)
-             (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0)
-             col)
-  (format:draw_line (mapcar (function +) (list 0.0 0.0 0.0) p0)
-             (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0)
-             col)
-  (format:draw_line (mapcar (function +) (list 0.0 0.0 0.0) p0)
-             (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0)
-             col))
+(defun format:draw-rect  (for p0 col)
+  (format:draw-line
+    (mapcar (function +) (list (nth 0 for) (nth 1 for) 0.0) p0)
+    (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0)
+    col)
+  (format:draw-line
+    (mapcar (function +) (list (nth 0 for) (nth 1 for) 0.0) p0)
+    (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0)
+    col)
+  (format:draw-line
+    (mapcar (function +) (list 0.0 0.0 0.0) p0)
+    (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0)
+    col)
+  (format:draw-line
+    (mapcar (function +) (list 0.0 0.0 0.0) p0)
+    (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0)
+    col))
 
 
 (defun form_dlg  (/ for_n kr_n dir_sh dcl_id)
@@ -352,19 +375,19 @@
     (action_tile "ed_4" "(done_dialog 3)")
     (action_tile "dop_edit" "(done_dialog 5)")
     (action_tile "for_zap" "(done_dialog 6)")
-    (action_tile "about" "(about)")
+    (action_tile "about" "(format:about)")
 ;;;(action_tile "help"   "(acad_helpdlg \"user.hlp\" \"dform\")")
     (setq action (start_dialog))
     (cond ((= action 1)
            (setq en1 (util:entlast))
-           (draw_format dir_sht for_no for_val f_key f_no kr_no kr_val p_start)
+           (format:draw-format dir_sht for_no for_val f_key f_no kr_no kr_val p_start)
            (if (= 1 divzone_no)
-             (setq pick3 (draw_zona))
+             (setq pick3 (format:draw-zona))
              (setq pick3 (ssadd)))
-           (draw_shtamp)
+           (format:draw-shtamp)
            (setq s1 (nth f_no f_key))
            (cond ((and dsht_3_val (or (= s1 "1") (= s1 "2") (= s1 "2аг") (= s1 "2ат") (= s1 "2бн") (= s1 "3")))
-                  (draw_dop_sht pick3))
+                  (format:draw-dop_sht pick3))
                  ((= s1 "2бч") t))
            (add_xdata (ss_pick en1))
            (zap_sht str_1 (entlast))
