@@ -1,4 +1,4 @@
-;;; VLisp project file [V2.0] format saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/format] at:[9/27/16] 
+;;; VLisp project file [V2.0] format saved to:[E:/PRG/msys64/home/namatv/develop/git/mnasoft/MNAS_acad_utils/acad_w.sup/format] at:[12/1/16] 
 (vlisp-project-list
   :name
   format
@@ -13,7 +13,7 @@
   :tmp-directory
   "../../vlisp.tmp"
   :project-keys
-  (:build (:standard) :merged nil :safe-mode t :msglevel 1)
+  (:build (:optimize :link) :merged t :safe-mode t :msglevel 1)
   :context-id
   :autolisp)
 ;;; EOF
