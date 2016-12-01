@@ -1,5 +1,5 @@
 ;;;;;;("point_block" "Преобразование точки в блок." "Измени")
-(defun c:point_block  (/ ed en layer p_10 p_210 ss ss_len x_sc y_sc z_sc a_ro l_type color)
+(defun c:point_block  (/ ed en layer p_10 p_210 ss ss_len x_sc y_sc z_sc a_ro l_type color ED_INS EN_INS NAME_INS SS_INS)
   (princ "\nСсылочный блок:")
   (setq ss_ins   (ssget '((0 . "INSERT")))
         en_ins   (ssname ss_ins 0)
@@ -51,7 +51,7 @@
   (princ))
 
 ;;;;;;("block_block" "Преобразование блока в блок." "Измени")
-(defun c:block_block  (/ ED layer EN P_10 p_210 SS SS_LEN x_sc y_sc z_sc a_ro)
+(defun c:block_block  (/ ED layer EN P_10 p_210 SS SS_LEN x_sc y_sc z_sc a_ro ED_INS EN_INS NAME_INS SS_INS)
   (princ "\nСсылочный блок:")
   (setq ss_ins   (ssget '((0 . "INSERT")))
         en_ins   (ssname ss_ins 0)
