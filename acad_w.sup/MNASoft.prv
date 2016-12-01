@@ -15,7 +15,7 @@
 			  (:prj "d_chprop/d_chprop.prj")
 			  (:prj "entmake/entmake.prj")
 			  (:prj "exel/exel.prj")
-			  (:prj "format/format.prj")
+			  
 			  (:prj "fors_rh/fors_rh.prj")
 			  (:prj "for_lic/for_lic.prj")
 			  (:prj "otvjerstija/f_otv.prj")
@@ -53,6 +53,8 @@
 
 			  (:prj "dxf/dxf.prj")
 			  (:prj "edit/edit.prj")
+
+			  (:prj "format/format.prj")
 
 			  (:prj "piping/piping.prj")
 			  (:prj "point/point.prj")			  
