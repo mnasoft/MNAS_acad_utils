@@ -32,7 +32,7 @@
 (defun p-perp (p1 p2) (polar (p-mid p1 p2) (+ (* 0.5 pi)(angle p1 p2)) (distance p1 p2)))
 
 
-(defun in-triang-cen-rad  (p1 p2 p3)
+(defun in-triang-cen-rad  (p1 p2 p3 / P12 P12-P P23 P23-P PC RAD)
   (setq p12   (p-mid p1 p2)
         p23   (p-mid p2 p3)
         p12-p (p-perp p1 p2)
@@ -42,7 +42,7 @@
   (list pc rad))
   
 
-(defun c:c_123  (/ p1 p2 p3)
+(defun c:c_123  (/ p1 p2 p3 ED I P-END P-RAD P-ST P0 P_I_C R0 R_I_C SS)
   (setq p1 (getpoint "Enter p1:")
         p2 (getpoint "Enter p2:")
         p3 (getpoint "Enter p3:"))

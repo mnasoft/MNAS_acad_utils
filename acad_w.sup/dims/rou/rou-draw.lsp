@@ -8,7 +8,7 @@
 ;;	draw_sher(p_top p_bas)	- ќтрисовка шероховатости:
 ;;				p_top - точка над знаком шероховатости;
 ;;				p_bas - точка в основании знака шероховатости.
-(defun draw_sher  (p_top p_bas / bl_name d1 d2 d3 perev tb ed en ob)
+(defun draw_sher  (p_top p_bas / bl_name d1 d2 d3 perev tb ed a-en a-ob)
   (setq d1    4.0                       ; ¬ысота по y до верха левой линии зн.
         d2    3.5                       ; ¬ысота текста.
         d3    1.25                      ; –ассто€ние до низа скобок.
@@ -56,11 +56,11 @@
                  (cons 210 '(0.0 0.0 0.0)))
         ed (pt_ang_o_u ed p_bas (- (angle p_bas p_top) (/ pi 2.))))
   (entmake ed)
-  (setq en (entlast)
-        ob (vlax-ename->vla-object en))
-  (vlax-ldata-put ob "rou" setup_lst)
-  (vlax-ldata-put ob "rou-p_top" p_top)
-  (vlax-ldata-put ob "rou-p_bas" p_bas))
+  (setq a-en (entlast)
+        a-ob (vlax-ename->vla-object a-en))
+  (vlax-ldata-put a-ob "rou" setup_lst)
+  (vlax-ldata-put a-ob "rou-p_top" p_top)
+  (vlax-ldata-put a-ob "rou-p_bas" p_bas))
 
 ;;;	draw_1(d1 d2)	- ќтрисовка галочки.
 (defun draw_1  (d1 d2 / l1 p0 p1 p2)

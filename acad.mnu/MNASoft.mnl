@@ -1,5 +1,18 @@
-(princ "\nLoading menu-file MNASoft.mnl ...\n")
+(progn (defun pr---  ()
+         (princ "\n********************************************************************************"))
+       (defun mnasoft-menu-load  ()
+         (princ "\nLoading menu-file MNASoft.mnl ...")
+         (pr---)
+         (if (null (load "MNASoft.VLX" t))
+           (progn (pr---) (princ "\n\"MNASoft.VLX\" loaded successfully.\n"))
+           (progn (pr---)
+                  (alert "\nCan not find file \"MNASoft.VLX\".\nAdd file location in in Support Files Search Path.")
+                  (princ "\nCan not find file \"MNASoft.VLX\". Add file location in in Support Files Search Path.")))
+         (princ "\n"))
+       (mnasoft-menu-load)
+       (princ))
 
-(load "MNASoft.VLX")
-
-(princ "Loaded menu-file  MNASoft.mnl.\n")
+;;;(alert "Can not find file \"MNASoft.VLX\"\n Add file path location in Support Files Search Path")
+;;;
+;;;      
+;;;      (princ "Loaded menu-file  MNASoft.mnl.\n")

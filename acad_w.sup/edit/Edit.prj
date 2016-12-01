@@ -1,19 +1,15 @@
-;;; VLisp project file [V2.0] edit saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/edit] at:[3/15/14] 
-(VLISP-PROJECT-LIST
+;;; VLisp project file [V2.0] edit saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/edit] at:[9/27/16] 
+(vlisp-project-list
   :name
   edit
   :own-list
-  ("../utils/ACAD_SUP_DIR"
-    "../utils/Debug"
-    "edit-cmd"
-    "../opechatka/rus_cmd_opechatka"
-    "edit-rus")
+  ("../utils/ACAD_SUP_DIR" "../utils/Debug" "edit-cmd" "../opechatka/rus_cmd_opechatka" "edit-rus")
   :fas-directory
   "../../Vlisp.tmp"
   :tmp-directory
   "../../Vlisp.tmp"
   :project-keys
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id
-  :AUTOLISP)
+  :autolisp)
 ;;; EOF

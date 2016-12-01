@@ -1,27 +1,20 @@
-;;; VLisp project file [V2.0] dims saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dims] at:[3/14/14] 
-(VLISP-PROJECT-LIST
-  :NAME
+;;; VLisp project file [V2.0] dims saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/dims] at:[9/27/16] 
+(vlisp-project-list
+  :name
   dims
-  :OWN-LIST
+  :own-list
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"			"DIM_FROM"
-    "cut/cut"				"look/look"
-    "welding/welding"			"../UTILS/ASIST"
-    "../UTILS/DXF"			"../MATR/VECTOR"
-    "../UTILS/red_list"			"../UTILS/STRING"
-    "../UTILS/draw"			"abc_dialog"
-    "abc"				"../UTILS/stl_text"
-    "./leader/leader"
-    "../opechatka/rus_cmd_opechatka"
-    "dims_rus"
-   )
-  :FAS-DIRECTORY
+    "../utils/Debug"	    "DIM_FROM"		    "cut/cut"		    "look/look"
+    "welding/welding"	    "../UTILS/ASIST"	    "../UTILS/DXF"	    "../MATR/VECTOR"
+    "../UTILS/STRING"	    "../UTILS/draw"	    "abc_dialog"	    "abc"
+    "../UTILS/stl_text"	    "./leader/leader"	    "../opechatka/rus_cmd_opechatka"
+    "dims_rus")
+  :fas-directory
   "../../vlisp.tmp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../vlisp.tmp"
-  :PROJECT-KEYS
-  (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
-  :AUTOLISP
-)
+  :project-keys
+  (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
+  :context-id
+  :autolisp)
 ;;; EOF

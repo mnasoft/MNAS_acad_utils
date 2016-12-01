@@ -13,7 +13,7 @@
   (setq p3 p3))
 
 ;;;;;;("xy_sc" "Точка по приращениям и масштабам." "Точки")
-(defun c:xy_sc  ()
+(defun c:xy_sc  (/ dir_0 dx dy p0 p1 p3 scx scy)
   (setq p0 (getpoint "\nБазвоая точка:"))
   (setq p1 (getpoint p0 "\nНаправление:"))
   (setq dir_0 (angle p0 p1))
