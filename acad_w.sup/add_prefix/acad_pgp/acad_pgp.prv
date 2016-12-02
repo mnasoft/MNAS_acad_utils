@@ -1,0 +1,12 @@
+;;; Visual LISP make file [V1.0] ACAD_PGP saved to:[./Acad_pgp] at:[7/18/06] 
+(PRV-DEF (:target . "../../Vlx/ACAD_PGP.VLX")
+	 (:active-x . T)
+	 (:separate-namespace . T)
+	 (:protected . T)
+	 (:load-file-list (:prj "ACAD_PGP.prj"))
+	 (:require-file-list)
+	 (:ob-directory . "../../vlisp.tmp")
+	 (:tmp-directory)
+	 (:optimization . st)
+)
+;; EOF
