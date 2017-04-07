@@ -135,75 +135,33 @@
 ;;;;;;("textnorm"
 ;;;;;;"Производит нормализацию высоты и раскрашивание одиночного текста, мультитекста, атрибута вставки блока." "Тексты")
 
+(defun sh-ob-nm-pr  (en / ed)
+  (setq en (entnext en)
+        ed (entget en))
+  (cond ((= (cdr (assoc 2 ed)) "ОБОЗНАЧЕНИЕ") (setq e_ob ed))
+        ((= (cdr (assoc 2 ed)) "НАИМЕНОВАНИЕ") (setq e_nm ed))
+        ((= (cdr (assoc 2 ed)) "ПРИМЕЧАНИЕ") (setq e_pr ed)))
+  en)
 
-(defun c:sh_hide  (/ ea1 ea2 ea3 ed)
-  (setq ed  (car (entsel "Выберите элемент схемы"))
-        ed  (entnext ed)
-        ea1 (entget ed)
-        ed  (entnext ed)
-        ea2 (entget ed)
-        ed  (entnext ed)
-        ea3 (entget ed))
-  (if (and (> (strlen (cdr (assoc 1 ea3))) 2) (= (cdr (assoc 2 ea3)) "ОБОЗНАЧЕНИЕ"))
-    (progn (setq ea1 (subst (assoc 1 ea3) (assoc 1 ea1) ea1)
-                 ea2 (subst (assoc 1 ea3) (assoc 1 ea2) ea2)
-                 ea3 (subst (cons 1 "") (assoc 1 ea3) ea3))
-           (entmod ea1)
-           (entmod ea2)
-           (entmod ea3))))
+(defun c:sh_hide  (/ en ed e_ob e_nm e_pr)
+  (setq en (car (entsel "Выберите элемент схемы"))
+        en (sh-ob-nm-pr en)
+        en (sh-ob-nm-pr en)
+        en (sh-ob-nm-pr en))
+  (if (and (> (strlen (cdr (assoc 1 e_ob))) 2) (= (cdr (assoc 2 e_ob)) "ОБОЗНАЧЕНИЕ"))
+    (progn (setq e_pr (subst (assoc 1 e_ob) (assoc 1 e_pr) e_pr)
+                 e_nm (subst (assoc 1 e_ob) (assoc 1 e_nm) e_nm)
+                 e_ob (subst (cons 1 "") (assoc 1 e_ob) e_ob))
+           (entmod e_ob)
+           (entmod e_nm)
+           (entmod e_pr))))
 
-
-(defun c:sh_ma  (/ ea1 ea2 ea3 ed ref refd)
+(defun c:sh_ma  (/ ref refd en e_ob e_nm e_pr)
   (setq ref  (car (entsel "Выберите ссылочный текст:"))
         refd (entget ref)
-        ed   (car (entsel "Выберите элемент схемы:"))
-        ed   (entnext ed)
-        ed   (entnext ed)
-        ed   (entnext ed)
-        ea3  (entget ed))
-  (if (and (> (strlen (cdr (assoc 1 refd))) 2) (= (cdr (assoc 2 ea3)) "ОБОЗНАЧЕНИЕ"))
-    (progn (setq ea3 (subst (assoc 1 refd) (assoc 1 ea3) ea3)) (entmod ea3) (entdel ref))))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        en   (car (entsel "Выберите элемент схемы:"))
+        en   (sh-ob-nm-pr en)	
+        en   (sh-ob-nm-pr en)
+        en   (sh-ob-nm-pr en))
+  (if (and (> (strlen (cdr (assoc 1 refd))) 2) (= (cdr (assoc 2 e_ob)) "ОБОЗНАЧЕНИЕ"))
+    (progn (setq e_ob (subst (assoc 1 refd) (assoc 1 e_ob) e_ob)) (entmod e_ob) (entdel ref))))
