@@ -129,3 +129,81 @@
 ;;;;;;"Устанавливет высоту для отдельного текса, мультитекста, атрибута вставки блока по высоте ссылочного объекта.
 ;;;;;;Является аббревиатурой команды  tmatchprop." "Тексты")
 (defun c:tma () (c:tmatchprop))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;("textnorm"
+;;;;;;"Производит нормализацию высоты и раскрашивание одиночного текста, мультитекста, атрибута вставки блока." "Тексты")
+
+
+(defun c:sh_hide  (/ ea1 ea2 ea3 ed)
+  (setq ed  (car (entsel "Выберите элемент схемы"))
+        ed  (entnext ed)
+        ea1 (entget ed)
+        ed  (entnext ed)
+        ea2 (entget ed)
+        ed  (entnext ed)
+        ea3 (entget ed))
+  (if (and (> (strlen (cdr (assoc 1 ea3))) 2) (= (cdr (assoc 2 ea3)) "ОБОЗНАЧЕНИЕ"))
+    (progn (setq ea1 (subst (assoc 1 ea3) (assoc 1 ea1) ea1)
+                 ea2 (subst (assoc 1 ea3) (assoc 1 ea2) ea2)
+                 ea3 (subst (cons 1 "") (assoc 1 ea3) ea3))
+           (entmod ea1)
+           (entmod ea2)
+           (entmod ea3))))
+
+
+(defun c:sh_ma  (/ ea1 ea2 ea3 ed ref refd)
+  (setq ref  (car (entsel "Выберите ссылочный текст:"))
+        refd (entget ref)
+        ed   (car (entsel "Выберите элемент схемы:"))
+        ed   (entnext ed)
+        ed   (entnext ed)
+        ed   (entnext ed)
+        ea3  (entget ed))
+  (if (and (> (strlen (cdr (assoc 1 refd))) 2) (= (cdr (assoc 2 ea3)) "ОБОЗНАЧЕНИЕ"))
+    (progn (setq ea3 (subst (assoc 1 refd) (assoc 1 ea3) ea3)) (entmod ea3) (entdel ref))))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
