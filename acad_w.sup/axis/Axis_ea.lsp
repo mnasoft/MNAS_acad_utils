@@ -14,6 +14,15 @@
 ;;;;;;)"
 ;;;;;;"Шкалы")
 
+(defun c:eam  (/ en-txt)
+  (regapp "SHCKALA")
+  (setq en-txt (dxf-get 1 (entget (car (entsel "\nВыберите текст:")))))
+  (setq ed  (entget (car (entsel "\nВыберите Шкалу:")) (list "SHCKALA")))
+  (print ed)
+  (setq ed (subst (list -3 (append (list "SHCKALA") (dsubst (cdr (assoc "SHCKALA" (cdr (assoc -3 ed)))) (list (cons 1000 en-txt))))) (assoc -3 ed) ed))
+  (print ed)
+  (entmod ed))
+
 (defun c:ea  (/ ed ed1 en)
   (setq en (car (entsel "\nВыберите шкалу : ")))
   (if (null en)

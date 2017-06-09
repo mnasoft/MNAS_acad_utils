@@ -25,6 +25,73 @@
                    (setq lst-rez (reverse lst-rez))))
   (dr:pline pts 256))
 
+(defun axis:draw-single-graph-by-axis-names
+       (x-axis-name y-axis-name / scx scy str pts EL LST LST-I LST-LEN LST-REZ)
+  (setq scx (sh:get (sh:sel-by-name x-axis-name))
+        scy (sh:get (sh:sel-by-name y-axis-name))
+        str y-axis-name)
+  (print (vl-doc-ref (read str)))
+  (if (and scx scy)
+    (progn (setq pts (progn (setq lst     (vl-doc-ref (read str))
+                                  lst-len (length lst)
+                                  lst-i   -1)
+                            (while (< (setq lst-i (1+ lst-i)) lst-len)
+                              (setq el      (nth lst-i lst)
+                                    lst-rez (cons (progn (sc:pxy_pt el scx scy)) lst-rez)))
+                            (setq lst-rez (reverse lst-rez))))
+      (dr:layer-set y-axis-name)
+      (dr:pline pts 256))))
+
+(defun axis:draw-multiple-graphs-by-axis-names  (x-axis-name y-axis-name-lst)
+  (mapcar (function (lambda (el) (axis:draw-single-graph-by-axis-names x-axis-name el)))
+          y-axis-name-lst))
+
+(defun c:a-l  (/ en te)
+  (setq en (car (entsel "\nВыберите ось:"))
+        te (sh:get-sh-name en))
+  (command "_CHANGE" en "" "_Properties" "_LAyer" te ""))
+
+(defun c:pm-170  ()
+  (axis:draw-multiple-graphs-by-axis-names
+    "tau"
+    '("Gas2Oil"  "Oil2Gas"  "GQ010"    "P02"      "EN1"      "EN2"      "FQ010"    "FQ110"    "FP230"
+      "FP210"    "FP220"    "EB100"    "EB110"    "EB120"    "FT010"    "FT020"
+      "PT250"    "PT240"    "PT230"
+      "WP020"    "WP030"
+      "WT100"
+      "PT210"    "PT220"    "FT310"    "FT320"
+      "PH066"    "PH076"
+      "FH176"
+      "FK200"    "FK201"    "FH206"    "FH207"
+      "FK400"    "FK401"    "FH406"
+      "FH407"    "FK250"    "FK251"    "FH256"    "FH257"    "FK260"    "FK261"    "FH266"    "FH267"
+      "FK270"    "FK271"    "FH276"    "FH277"
+      
+      "FK280"    "FK281"    "FH286"    "FH287"
+      "FK290"    "FK291"    "FH296"    "FH297"
+      "FK300"    "FK301"    "FH306"    "FH307"
+      "FK310"    "FK311"    "FH316"    "FH317"
+      "WH010"    "WH011"    "WH016"    "WH017"
+      "FK350"    "FH356"    "FH366"
+      "FK370"    "FH376"    "FH386"
+      "FK480"    "FH486"    "FH487"
+      
+      "FK230"    "FH236"    "FH226"
+      "FH046"
+      "FK010"    "FK020"    "FH036"    "FH016"    "FH028"    "FH027"    "FK211"    "FH336"
+      "FH346"    "FH466"    "FH476"
+      
+;;;;      "Ready_23" "Ready_30"
+      
+      "FA011"    "FA012"    "FA010"    "FA016"
+      
+      "FM016"    "FU116"    "Hand_FM01" "FF116"
+      "FA021"    "FA022"    "FA020"    "FA026"
+      "FM026"    "FU016")))
+
+
+
+
 ;;;;;;("an" "Построение семейства полилиний в координатах двух шкал.\n
 ;;;;;;Задаются:\n
 ;;;;;; 1) ось Х;\n

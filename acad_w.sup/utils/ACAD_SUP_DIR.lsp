@@ -14,8 +14,11 @@
 ;;;	  (LOADER_32))))
 
 (defun mnas_arxprj_root  ()
-  ;;;;"D:/home/_namatv/git/mnasoft/MNAS_acad_utils"
-  "E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils")
+  "D:/PRG/msys32/home/namatv/develop/git/mnasoft/MNAS_acad_utils"
+  ;;;;"E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils"
+  )
+
+
 
 
 

@@ -152,3 +152,9 @@
   (if (and (>= col 0) (<= col 256))
     (vla-put-color spline col))
   spline)
+
+(defun dr:layer-new(layer-name)
+  (command "_-layer" "_new" layer-name ""))
+
+(defun dr:layer-set(layer-name)
+  (command "_-layer" "_new" layer-name "_set" layer-name ""))
