@@ -15,7 +15,8 @@
 
 (defun mnas_arxprj_root  ()
   ;;;;"D:/home/_namatv/git/mnasoft/MNAS_acad_utils"
-  "E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils")
+  ;;;;"E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils"
+  "E:/PRG/msys64/home/namatv/develop/git/MNAS_acad_utils")
 
 
 
