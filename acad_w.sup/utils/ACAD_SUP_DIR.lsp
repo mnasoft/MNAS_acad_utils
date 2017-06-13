@@ -13,12 +13,17 @@
 ;;;	  (LOADER_64)
 ;;;	  (LOADER_32))))
 
+(defun ac:machine-instance  (/ wscript pcname)
+  (cond ((setq wscript (vlax-create-object "WScript.Network"))
+         (setq pcname (vlax-get-property wscript "ComputerName"))
+         (vlax-release-object wscript)
+         pcname)))
+
 (defun mnas_arxprj_root  ()
-  ;;;;"D:/home/_namatv/git/mnasoft/MNAS_acad_utils"
-  ;;;;"E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils"
-  "E:/PRG/msys64/home/namatv/develop/git/MNAS_acad_utils")
-
-
+  (cond ((= (ac:machine-instance) "MNASOFT-01") "E:/PRG/msys64/home/namatv/develop/git/MNAS_acad_utils")
+        ((= (ac:machine-instance) "KO11-118383")
+         "D:/PRG/msys32/home/namatv/develop/git/mnasoft/MNAS_acad_utils")
+        (t "C:/")))
 
 (defun MNAS_ArxPrj_RoamableRootPrefix () (strcat (MNAS_ArxPrj_root) "/" "RoamableRootPrefix/"))
 

@@ -38,6 +38,27 @@
     (entget (ssname ss 0) (list (sh:SHCKALA)))
     nil))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun sh:get-sh-name  (en)
+  (dxf-get 1000 (dxf-get "SHCKALA" (dxf-get -3 (entget en (list (sh:SHCKALA)))))))
+
+(defun sh:sel-by-name  (name / en i rez ss)
+  (princ (strcat "\n" name ":"))
+  (setq ss  (ssget "X" (list (cons 0 "LINE") (list -3 (list (sh:SHCKALA)))))
+        i   (sslength ss)
+        rez nil)
+  (while (<= 0 (setq i (1- i)))
+    (setq en (ssname ss i))
+    (if (= (sh:get-sh-name en) name)
+      (setq rez en)))
+  (if rez
+    (entget rez (list (sh:SHCKALA)))
+    nil))
+
+
+;;;;(setq tol (sh:sel-by-name "FA010"))
+
 ;;;sh:get(ed)
 ;;;	Принимает данные примитива с расширенными данными шкалы и
 ;;;	Возвращает список с данными шкалы.

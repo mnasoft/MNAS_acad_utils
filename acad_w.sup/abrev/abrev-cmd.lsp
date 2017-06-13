@@ -236,3 +236,11 @@
         ((= pstl 2) (setvar "pickstyle" 3) (princ "\nGroup on..."))
         ((= pstl 3) (setvar "pickstyle" 2) (princ "\nGroup off...")))
   (princ))
+
+(defun c:lim  (/ plb prt)
+  (command "_zoom" "_e")
+  (command "_zoom" "0.8x")
+  (setq plb (getpoint "Левый нижний угол:")
+        prt (getpoint "Правый верхний угол:"))
+  (command "_limits" "_non" plb "_non" prt)
+  (command "_zoom" "_e"))

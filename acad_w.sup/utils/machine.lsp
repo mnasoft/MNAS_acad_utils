@@ -1,0 +1,17 @@
+(defun machine-instance  (/ wscript pcname)
+  (cond ((setq wscript (vlax-create-object "WScript.Network"))
+         (setq pcname (vlax-get-property wscript "ComputerName"))
+         (vlax-release-object wscript)
+         pcname)))
+
+(defun user-name  (/ wscript pcuser)
+  (cond ((setq wscript (vlax-create-object "WScript.Network"))
+         (setq pcuser (vlax-get-property wscript "UserName"))
+         (vlax-release-object wscript)
+         pcuser)))
+
+(defun user-domain  (/ wscript pcdom)
+  (cond ((setq wscript (vlax-create-object "WScript.Network"))
+         (setq pcdom (vlax-get-property wscript "UserDomain"))
+         (vlax-release-object wscript)
+         pcdom)))
