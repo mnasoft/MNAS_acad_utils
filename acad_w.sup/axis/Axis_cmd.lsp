@@ -54,7 +54,9 @@
 (defun c:pm-170  ()
   (axis:draw-multiple-graphs-by-axis-names
     "tau"
-    '("Gas2Oil"  "Oil2Gas"  "GQ010"    "P02"      "EN1"      "EN2"      "FQ010"    "FQ110"    "FP230"
+    '("Gas2Oil"  "Oil2Gas"  "GQ010"    "P02"      "EN1"      "EN2"      "FQ010"    "FQ110"
+      "T04"	     "T04max"	"T04min"
+      "FP230"
       "FP210"    "FP220"    "EB100"    "EB110"    "EB120"    "FT010"    "FT020"
       "PT250"    "PT240"    "PT230"
       "WP020"    "WP030"
