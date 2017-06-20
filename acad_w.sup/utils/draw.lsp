@@ -46,6 +46,9 @@
     (vla-put-color point col))
   point)
 
+(defun dr:points (pts col / pt) (mapcar (function (lambda (pt) (dr:point pt col))) pts))
+
+
 ;;;f;;;("dr:line(pt1 pl2 col)" "Создает отрезок в текущем пространстве.\n
 ;;;f;;;   pt1 - начальная точка отрезка;\n
 ;;;f;;;   pt2 - конечная точка отрезка;\n
