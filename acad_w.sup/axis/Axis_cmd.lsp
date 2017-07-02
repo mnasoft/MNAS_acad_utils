@@ -23,6 +23,7 @@
                      (setq el      (nth lst-i lst)
                            lst-rez (cons (progn (sc:pxy_pt el scx scy)) lst-rez)))
                    (setq lst-rez (reverse lst-rez))))
+  (dr:points pts 256)
   (dr:pline pts 256))
 
 (defun axis:draw-single-graph-by-axis-names
