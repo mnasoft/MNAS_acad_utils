@@ -1,16 +1,28 @@
-;;; VLisp project file [V2.0] abrev saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/abrev] at:[9/27/16] 
-(vlisp-project-list
-  :name
+;;; VLisp project file [V2.0] abrev saved to:[E:/PRG/msys64/home/namatv/develop/git/MNAS_acad_utils/acad_w.sup/abrev] at:[6/25/17] 
+(VLISP-PROJECT-LIST
+  :NAME
   abrev
-  :own-list
+  :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug" "abrev-func" "abrev-cmd" "../opechatka/rus_cmd_opechatka" "abrev-rus")
-  :fas-directory
+    "../utils/Debug"	      "abrev-func"
+    "abrev-cmd"		      "view-save"
+    "../opechatka/rus_cmd_opechatka"
+    "abrev-rus"
+   )
+  :FAS-DIRECTORY
   "../../vlisp.tmp"
-  :tmp-directory
+  :TMP-DIRECTORY
   "../../vlisp.tmp"
-  :project-keys
-  (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
-  :context-id
-  :autolisp)
+  :PROJECT-KEYS
+  (:BUILD (:OPTIMIZE :LOCALIZE :link)
+	  :MERGED
+	  T
+	  :SAFE-MODE
+	  T
+	  :MSGLEVEL
+	  1
+  )
+  :CONTEXT-ID
+  :AUTOLISP
+)
 ;;; EOF
