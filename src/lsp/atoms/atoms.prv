@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] atoms saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/atoms] at:[9/29/13] 
-(PRV-DEF (:target . "../../vlx/atoms.VLX")
+(PRV-DEF (:target . "../../../bin/atoms.VLX")
 	 (:active-x . T)
 	 (:separate-namespace)
 	 (:protected . T)
 	 (:load-file-list (:prj "atoms.prj"))
 	 (:require-file-list (:DCL "atoms-dlg.dcl"))
-	 (:ob-directory . "../../vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

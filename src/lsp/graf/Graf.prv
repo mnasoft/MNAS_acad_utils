@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] Graf saved to:[./GRAF] at:[7/16/01] 
-(PRV-DEF (:target . "../../vlx/Graf.VLX")
+(PRV-DEF (:target . "../../../bin/Graf.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "Graf.prj"))
 	 (:require-file-list (:DCL "Graf.dcl"))
-	 (:ob-directory . "../../vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

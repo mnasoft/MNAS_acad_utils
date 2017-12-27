@@ -71,9 +71,9 @@
 )
 
 
-;;;"C:/acad_w.sup/ЮЛЯ/УСАДКИ/USADKA.PRJ"
-;;;(build_list_of_lsp_files "C:/acad_w.sup/ЮЛЯ/УСАДКИ/USADKA.PRJ")
-;;;(build_list_of_lsp_files "C:/acad_w.sup/ABREV/ABREV.PRJ")
+;;;"C:/src/lsp/ЮЛЯ/УСАДКИ/USADKA.PRJ"
+;;;(build_list_of_lsp_files "C:/src/lsp/ЮЛЯ/УСАДКИ/USADKA.PRJ")
+;;;(build_list_of_lsp_files "C:/src/lsp/ABREV/ABREV.PRJ")
 (defun build_list_of_lsp_files (fn_prj / vl_prj ; Список проекта  проекта
 				lst_file_name ; Список файлов в проекте
 				lst_file_renamed ; Список переименованых файлов
@@ -119,7 +119,7 @@
   (list fn_prj (subst lst_file_renamed lst_file_name vl_prj) lst_file_name lst_file_renamed)
 )
 
-;;;(explode_filename "C:/acad_w.sup/Add_prefix/Add_prefix.lsp")
+;;;(explode_filename "C:/src/lsp/Add_prefix/Add_prefix.lsp")
 (defun explode_filename	(filename / dir_list do file_dir file_name)
   (setq do t)
   (while do
@@ -226,8 +226,8 @@
 ;;;(explode_path g:fn_full_prj_lst)
 (defun explode_path (lst) (mapcar (function explode_filename) lst))
 
-;;;(form_fname '("C:/" "acad_w.sup" "ABREV" "Текстовый документ"))
-;;;"C:/acad_w.sup/ABREV/Текстовый документ"
+;;;(form_fname '("C:/" "src/lsp" "ABREV" "Текстовый документ"))
+;;;"C:/src/lsp/ABREV/Текстовый документ"
 (defun form_fname (list_exp / str)
   (setq str (substr (car list_exp) 1 2))
   (mapcar (function (lambda (el) (setq str (strcat str "/" el)) t)) (cdr list_exp))

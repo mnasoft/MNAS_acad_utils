@@ -55,7 +55,7 @@
            "*mnas_acad_utils*")
         menu-mnasoft.cuix-path
          (filename-directory (getfiled "Select MNASoft.cuix" "MNASoft.cuix" "cuix" 0)))
-  (foreach string  '("" "acad_w.sup" "acad_fnt" "acad_fnt\\Kompas")
+  (foreach string  '("" "src/lsp" "fonts" "fonts\\Kompas")
     (setq not-mnas_acad_utils-path-lst
            (append
              not-mnas_acad_utils-path-lst

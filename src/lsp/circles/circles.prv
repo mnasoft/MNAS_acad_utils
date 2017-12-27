@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] Circles saved to:[./CIRCLES] at:[7/16/01] 
-(PRV-DEF (:target . "../../Vlx/Circles.VLX")
+(PRV-DEF (:target . "../../../bin/Circles.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "Circles.prj"))
 	 (:require-file-list)
-	 (:ob-directory . "../../Vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

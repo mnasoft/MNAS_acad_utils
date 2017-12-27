@@ -9,7 +9,7 @@
          ("wg:радиус_по_контуру" "1.5")))
 
 (defun weld:setup_geometry  ()
-  (setq arrow_dcl_id (load_dialog (findfile "acad_w.sup/DIMS/welding/welding.dcl")))
+  (setq arrow_dcl_id (load_dialog (findfile "src/lsp/DIMS/welding/welding.dcl")))
   (if (< arrow_dcl_id 0)
     (exit))
   (if (not (new_dialog "welding_geometry" arrow_dcl_id))

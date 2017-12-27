@@ -8,10 +8,10 @@
     "layer-md"		     "layer-vp"		      "layer-sh"	       "layer-nent"
     "../UTILS/Binary"	     "../UTILS/red_list"      "../UTILS/ERR"	       "../Utils/system_registry"
     "../opechatka/rus_cmd_opechatka"		      "layer-rus")
-  :fas-directory
-  "../../vlisp.tmp"
-  :tmp-directory
-  "../../vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../temp"
+  :TMP-DIRECTORY
+  "../../../temp"
   :project-keys
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id

@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] Exel saved to:[./Exel] at:[9/13/05] 
-(PRV-DEF (:target . "../../Vlx/Exel.VLX")
+(PRV-DEF (:target . "../../../bin/Exel.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "Exel.prj"))
 	 (:require-file-list (:DCL "graph.DCL"))
-	 (:ob-directory . "../../vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

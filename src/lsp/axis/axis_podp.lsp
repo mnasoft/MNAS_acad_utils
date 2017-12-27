@@ -256,7 +256,7 @@
   (if axis-podp:*sc-y-ename*
     (setq sc_y (sh:get axis-podp:*sc-y-ename*)))
   (setq ll_ax_shcala axis-podp:*shcala_setup*)
-  (setq dcl_id (load_dialog (findfile "acad_w.sup/axis/axis_podp.dcl")))
+  (setq dcl_id (load_dialog (findfile "src/lsp/axis/axis_podp.dcl")))
   (if (< dcl_id 0)
     (exit))
   (while (null exit_dialog)

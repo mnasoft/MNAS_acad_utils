@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] Welding1 saved to:[./welding] at:[10/18/08] 
-(PRV-DEF (:target . "../../../Vlx/Welding1.VLX")
+(PRV-DEF (:target . "../../../../bin/Welding1.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "Welding1.prj"))
 	 (:require-file-list (:DCL "welding.DCL"))
-	 (:ob-directory . "../../../Vlisp.tmp")
+	 (:ob-directory . "../../../../temp")
 	 (:tmp-directory)
 	 (:optimization . lsa)
 )

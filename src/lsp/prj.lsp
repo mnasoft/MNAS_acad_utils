@@ -1,45 +1,45 @@
-C:/acad_w.sup/ABREV/ABREV.PRJ
-C:/acad_w.sup/ATOMS/atoms.prj
-C:/acad_w.sup/AXIS/AXIS.PRJ	  
-C:/acad_w.sup/AXIS/axis_podp.prj	  
-C:/acad_w.sup/CHANGE/Change.prj	  
-C:/acad_w.sup/CIRCLES/Circles.prj	  
-C:/acad_w.sup/CLOCK/Clock.prj	  
-C:/acad_w.sup/DIMS/dims.prj	  
-C:/acad_w.sup/DIMS/welding/Welding.prj	  
-C:/acad_w.sup/DOPUSK/Dopusk.prj	  
-C:/acad_w.sup/D_CHPROP/D_chprop.prj	  
-C:/acad_w.sup/ENTMAKE/ENTMAKE.prj	  
-C:/acad_w.sup/FOR_LIC/For_lic.prj	  
-C:/acad_w.sup/GRAF/Graf.prj	
-C:/acad_w.sup/KOMPAS/kompas.prj	  
-C:/acad_w.sup/LAYER/layer.prj	  
-C:/acad_w.sup/LINES/lines.prj	  
-C:/acad_w.sup/LOPATKA/Lopatka.prj	  
-C:/acad_w.sup/MATR/MATR.PRJ	  
-C:/acad_w.sup/PRJ/SMESITEL/SMESITEL.PRJ	  
-C:/acad_w.sup/PRJ/Расчет угла выхода струи воздуха из ТВФ/stream.prj
-C:/acad_w.sup/RENAME/rename.prj
-C:/acad_w.sup/SCR/scr.prj
-C:/acad_w.sup/TEXT/text.prj	  
-C:/acad_w.sup/UTILS/RED_LIST.PRJ
-C:/acad_w.sup/UTILS/UTILS.PRJ  
-C:/acad_w.sup/ЮЛЯ/Расчет толщины изоляции/izolac.prj	
-C:/acad_w.sup/ЮЛЯ/Расчет толщины изоляции/rez_ras.prj	
-C:/acad_w.sup/ЮЛЯ/УСАДКИ/USADKA.PRJ	  
-C:/acad_w.sup/ЮЛЯ/ОЦКП/OZKP.prj	  
-C:/acad_w.sup/Оптимальное распололение окружностей/circ_pnt.prj
-C:/acad_w.sup/Fors_rh/fors_rh.prj
-C:/acad_w.sup/Spec/spec.prj
-C:/acad_w.sup/Spec/bd.prj
-C:/acad_w.sup/Big_fnt/big_fnt.prj
-C:/acad_w.sup/Add_prefix/Add_prefix.prj
-C:/acad_w.sup/Sort_shp/Sort_shp.prj
-C:/acad_w.sup/Format/format.prj
-C:/acad_w.sup/Edit/Edit.prj
-C:/acad_w.sup/Отверстия/f_otv.prj
-C:/acad_w.sup/Измерительная машина/read_mea.prj
-C:/acad_w.sup/Функции/Физические/Phizich.prj
-C:/acad_w.sup/Пример1/Primer.prj
-C:/acad_w.sup/point/point.prj
-C:/acad_w.sup/Dxf/dxf.prj
+C:/src/lsp/ABREV/ABREV.PRJ
+C:/src/lsp/ATOMS/atoms.prj
+C:/src/lsp/AXIS/AXIS.PRJ	  
+C:/src/lsp/AXIS/axis_podp.prj	  
+C:/src/lsp/CHANGE/Change.prj	  
+C:/src/lsp/CIRCLES/Circles.prj	  
+C:/src/lsp/CLOCK/Clock.prj	  
+C:/src/lsp/DIMS/dims.prj	  
+C:/src/lsp/DIMS/welding/Welding.prj	  
+C:/src/lsp/DOPUSK/Dopusk.prj	  
+C:/src/lsp/D_CHPROP/D_chprop.prj	  
+C:/src/lsp/ENTMAKE/ENTMAKE.prj	  
+C:/src/lsp/FOR_LIC/For_lic.prj	  
+C:/src/lsp/GRAF/Graf.prj	
+C:/src/lsp/KOMPAS/kompas.prj	  
+C:/src/lsp/LAYER/layer.prj	  
+C:/src/lsp/LINES/lines.prj	  
+C:/src/lsp/LOPATKA/Lopatka.prj	  
+C:/src/lsp/MATR/MATR.PRJ	  
+C:/src/lsp/PRJ/SMESITEL/SMESITEL.PRJ	  
+C:/src/lsp/PRJ/Расчет угла выхода струи воздуха из ТВФ/stream.prj
+C:/src/lsp/RENAME/rename.prj
+C:/src/lsp/SCR/scr.prj
+C:/src/lsp/TEXT/text.prj	  
+C:/src/lsp/UTILS/RED_LIST.PRJ
+C:/src/lsp/UTILS/UTILS.PRJ  
+C:/src/lsp/ЮЛЯ/Расчет толщины изоляции/izolac.prj	
+C:/src/lsp/ЮЛЯ/Расчет толщины изоляции/rez_ras.prj	
+C:/src/lsp/ЮЛЯ/УСАДКИ/USADKA.PRJ	  
+C:/src/lsp/ЮЛЯ/ОЦКП/OZKP.prj	  
+C:/src/lsp/Оптимальное распололение окружностей/circ_pnt.prj
+C:/src/lsp/Fors_rh/fors_rh.prj
+C:/src/lsp/Spec/spec.prj
+C:/src/lsp/Spec/bd.prj
+C:/src/lsp/Big_fnt/big_fnt.prj
+C:/src/lsp/Add_prefix/Add_prefix.prj
+C:/src/lsp/Sort_shp/Sort_shp.prj
+C:/src/lsp/Format/format.prj
+C:/src/lsp/Edit/Edit.prj
+C:/src/lsp/Отверстия/f_otv.prj
+C:/src/lsp/Измерительная машина/read_mea.prj
+C:/src/lsp/Функции/Физические/Phizich.prj
+C:/src/lsp/Пример1/Primer.prj
+C:/src/lsp/point/point.prj
+C:/src/lsp/Dxf/dxf.prj

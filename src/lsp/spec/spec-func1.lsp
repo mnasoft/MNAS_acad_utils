@@ -5,11 +5,11 @@
   (cond ((= action 0) (setq ex_dialog t))
         ((= action 1)
          (setq ex_dialog t
-               fl_nm     (open (findfile "acad_w.sup/spec/Naimjenovanije.lsp") "w"))
+               fl_nm     (open (findfile "src/lsp/spec/Naimjenovanije.lsp") "w"))
          (cond ((null fl_nm) (alert (princ (strcat "Не могу открыть файл."))) (exit)))
          (prinf "docum_lst" docum_lst fl_nm)
          (close fl_nm)
-         (setq fl_nm (open (findfile "acad_w.sup/spec/Dialog_pozicija.lsp") "w"))
+         (setq fl_nm (open (findfile "src/lsp/spec/Dialog_pozicija.lsp") "w"))
          (cond ((null fl_nm) (alert (princ (strcat "Не могу открыть файл."))) (exit)))
          (prinf "dlg_1_kv" dlg_1_kv fl_nm)
          (close fl_nm))
@@ -24,7 +24,7 @@
 (defun ac_1_info () (alert "Разработал Матвеев Н.А.,\nsite: http://www.mnasoft.mksat.net"))
 
 (defun ac_1_help  ()
-  (help (findfile "acad_w.sup/spec/Specification.ahp" "спецификация_простановка_позиций")))
+  (help (findfile "src/lsp/spec/Specification.ahp" "спецификация_простановка_позиций")))
 
 (defun ac_b_1_1  (/ nam_1 lst_3)
   (setq nam_1 (mapcar 'cons nm_lst_1 val_lst_1))

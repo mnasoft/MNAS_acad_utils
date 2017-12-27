@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] man saved to:[D:/MNAS_acad_utils/acad_w.sup/man] at:[6/13/12] 
-(prv-def (:target . "../../vlx/man.VLX")
+(prv-def (:target . "../../../bin/man.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "man.prj"))
 	 (:require-file-list)
-	 (:ob-directory . "../../vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

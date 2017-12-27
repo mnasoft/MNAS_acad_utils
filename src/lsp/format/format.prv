@@ -1,11 +1,11 @@
 ;;; файл сценария сборки Visual LISP [V1.0] format saved to:[D:/home/_namatv/_private/exchange/MNAS_acad_db17_utils/acad_w.sup/format] at:[9/12/11] 
-(PRV-DEF (:target . "../../vlx/format.VLX")
+(PRV-DEF (:target . "../../../bin/format.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "format.prj"))
 	 (:require-file-list (:DCL "Format.dcl"))
-	 (:ob-directory . "../../Vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

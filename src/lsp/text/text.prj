@@ -10,10 +10,10 @@
     "../UTILS/DXF"	       "../UTILS/STRING"	  "../UTILS/prin"	     "../UTILS/stl_text"
     "../UTILS/ERR"	       "../utils/system_registry" "../opechatka/rus_cmd_opechatka"
     "text_rus")
-  :fas-directory
-  "../../Vlisp.tmp"
-  :tmp-directory
-  "../../Vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../temp"
+  :TMP-DIRECTORY
+  "../../../temp"
   :project-keys
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id

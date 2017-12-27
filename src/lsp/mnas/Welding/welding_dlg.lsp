@@ -117,7 +117,7 @@
   ;; ¬ыборка данных из примитива сварки дл€ формировани€ диалога.
   (get_data ed)
   ;; «агрузка диалога.
-  (setq dcl_id (load_dialog "./acad_w.sup/MNAS/welding/welding.dcl"))
+  (setq dcl_id (load_dialog "./src/lsp/MNAS/welding/welding.dcl"))
   (setq do_dialog t)
   (while do_dialog
     (if (not (new_dialog "mnas_weld_main" dcl_id "" dia_weld_pos))

@@ -149,7 +149,7 @@
   (cond
     ((= s1 "1")
      (command "_insert"
-              (strcat "*" (findfile "acad_w.sup/FORMAT/sht_1.dwg"))
+              (strcat "*" (findfile "src/lsp/FORMAT/sht_1.dwg"))
               "_non"
               (polar p_start 0.0 (nth 0 for))
               "1"
@@ -158,34 +158,34 @@
              (and (= dir_sht 1) (= (nth kr_no kr_val) 1) (/= (nth for_no for_name) "Р4"))
              (and (= dir_sht 0) (= (nth kr_no kr_val) 1) (= (nth for_no for_name) "Р4")))
        (command "_insert"
-                (strcat "*" (findfile "acad_w.sup/FORMAT/sht_2.dwg"))
+                (strcat "*" (findfile "src/lsp/FORMAT/sht_2.dwg"))
                 "_non"
                 (polar p_start (/ pi 2.0) (nth 1 for))
                 "1"
                 "0")
        (command "_insert"
-                (strcat "*" (findfile "acad_w.sup/FORMAT/sht_2.dwg"))
+                (strcat "*" (findfile "src/lsp/FORMAT/sht_2.dwg"))
                 "_non"
                 (polar (polar (mapcar (function +) p_start '(0.0 15.0 0.0)) 0.0 (nth 0 for)) (/ pi 2.) (nth 1 for))
                 "1"
                 "-90"))
      (if (and (= divzone_no 1) (or (/= for_no 4) (and (= for_no 4) (> kr_no 0))))
        (command "_insert"
-                (strcat "*" (findfile "acad_w.sup/FORMAT/sht_3.dwg"))
+                (strcat "*" (findfile "src/lsp/FORMAT/sht_3.dwg"))
                 "_non"
                 (polar p_start 0.0 (nth 0 for))
                 "1"
                 "0")))
     ((= s1 "2")
      (command "_insert"
-              (strcat "*" (findfile "acad_w.sup/FORMAT/sht_4.dwg"))
+              (strcat "*" (findfile "src/lsp/FORMAT/sht_4.dwg"))
               "_non"
               (polar p_start 0.0 (nth 0 for))
               "1"
               "0"))
     ((= s1 "2ру")
      (command "_insert"
-              (strcat "*" (findfile "acad_w.sup/FORMAT/sht_5.dwg"))
+              (strcat "*" (findfile "src/lsp/FORMAT/sht_5.dwg"))
               "_non"
               (polar p_start 0.0 (nth 0 for))
               "1"
@@ -194,38 +194,38 @@
              (and (= dir_sht 1) (= (nth kr_no kr_val) 1) (/= (nth for_no for_name) "Р4"))
              (and (= dir_sht 0) (= (nth kr_no kr_val) 1) (= (nth for_no for_name) "Р4")))
        (command "_insert"
-                (strcat "*" (findfile "acad_w.sup/FORMAT/sht_2.dwg"))
+                (strcat "*" (findfile "src/lsp/FORMAT/sht_2.dwg"))
                 "_non"
                 (polar p_start (/ pi 2.0) (nth 1 for))
                 "1"
                 "0")
        (command "_insert"
-                (strcat "*" (findfile "acad_w.sup/FORMAT/sht_2.dwg"))
+                (strcat "*" (findfile "src/lsp/FORMAT/sht_2.dwg"))
                 "_non"
                 (polar (polar (mapcar (function +) p_start '(0.0 15.0 0.0)) 0.0 (nth 0 for)) (/ pi 2.) (nth 1 for))
                 "1"
                 "-90")))
     ((= s1 "2рђ")
      (command "_insert"
-              (strcat "*" (findfile "acad_w.sup/FORMAT/sht_5.dwg"))
+              (strcat "*" (findfile "src/lsp/FORMAT/sht_5.dwg"))
               "_non"
               (polar p_start 0.0 (nth 0 for))
               "1"
               "0"))
     ((= s1 "2с")
      (command "_insert"
-              (strcat "*" (findfile "acad_w.sup/FORMAT/SHT_4_S.dwg"))
+              (strcat "*" (findfile "src/lsp/FORMAT/SHT_4_S.dwg"))
               "_non"
               (polar p_start 0.0 (nth 0 for))
               "1"
               "0"))
     ((= s1 "2сэ")
      (command "_insert"
-              (strcat "*" (findfile "acad_w.sup/FORMAT/SHT_6_R.dwg"))
+              (strcat "*" (findfile "src/lsp/FORMAT/SHT_6_R.dwg"))
               "_non"
               (polar p_start 0.0 (nth 0 for))
               "1"
               "0"))
     ((= s1 "2сї")
-     (command "_insert" (strcat "*" (findfile "acad_w.sup/FORMAT/SHT_6_L.dwg")) "_non" p_start "1" "0"))
+     (command "_insert" (strcat "*" (findfile "src/lsp/FORMAT/SHT_6_L.dwg")) "_non" p_start "1" "0"))
     ((= s1 "3"))))

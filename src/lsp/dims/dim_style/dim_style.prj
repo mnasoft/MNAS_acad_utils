@@ -10,9 +10,9 @@
     "../../opechatka/rus_cmd_opechatka"
     "dim_style-rus")
   :FAS-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../../../temp"
   :TMP-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../../../temp"
   :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link)
 	  :MERGED

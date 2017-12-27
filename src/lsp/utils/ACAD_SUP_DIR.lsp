@@ -30,11 +30,11 @@
 
 (defun MNAS_ArxPrj_RoamableRootPrefix () (strcat (MNAS_ArxPrj_root) "/" "RoamableRootPrefix/"))
 
-(defun MNAS_ArxPrj_acad_w () (strcat (MNAS_ArxPrj_root) "/" "acad_w.sup"))
+(defun MNAS_ArxPrj_acad_w () (strcat (MNAS_ArxPrj_root) "/" "src/lsp"))
 
-(defun MNAS_ArxPrj_acad_help () (strcat (MNAS_ArxPrj_root) "/" "acad.help"))
+(defun MNAS_ArxPrj_acad_help () (strcat (MNAS_ArxPrj_root) "/" "doc"))
 
-(defun MNAS_ArxPrj_vlx () (strcat (MNAS_ArxPrj_root) "/" "vlx"))
+(defun MNAS_ArxPrj_vlx () (strcat (MNAS_ArxPrj_root) "/" "bin"))
 
 (defun acad_sup () (MNAS_ArxPrj_acad_w))
 

@@ -7,10 +7,10 @@
     "../../utils/Debug"		"../../utils/ERR"	    "rou-cmd"			"rou-draw"
     "../../UTILS/STRING"	"../../MATR/VECTOR"	    "rou-update_ver"		"../../UTILS/stl_text"
     "../../opechatka/rus_cmd_opechatka"			    "rou-rus")
-  :fas-directory
-  "../../../vlisp.tmp"
-  :tmp-directory
-  "../../../vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../../temp"
+  :TMP-DIRECTORY
+  "../../../../temp"
   :project-keys
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id

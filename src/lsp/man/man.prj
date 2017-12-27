@@ -10,10 +10,10 @@
     "man-create_html"
     "../opechatka/rus_cmd_opechatka"
     "man-rus")
-  :fas-directory
-  "../../vlisp.tmp"
-  :tmp-directory
-  "../../vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../temp"
+  :TMP-DIRECTORY
+  "../../../temp"
   :project-keys
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
   :context-id

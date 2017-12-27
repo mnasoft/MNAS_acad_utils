@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] text saved to:[./TEXT] at:[2/5/08] 
-(PRV-DEF (:target . "../../Vlx/text.VLX")
+(PRV-DEF (:target . "../../../bin/text.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "text.prj"))
 	 (:require-file-list (:DCL "Text.dcl"))
-	 (:ob-directory . "../../Vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] axis_podp saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/axis] at:[9/29/13] 
-(PRV-DEF (:target . "../../vlx/axis_podp.VLX")
+(PRV-DEF (:target . "../../../bin/axis_podp.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "axis_podp.prj"))
 	 (:require-file-list (:DCL "Axis_podp.dcl"))
-	 (:ob-directory . "../../vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

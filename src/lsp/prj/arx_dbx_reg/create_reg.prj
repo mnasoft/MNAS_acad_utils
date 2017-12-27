@@ -4,9 +4,9 @@
 		    :OWN-LIST
 		    ("../../utils/ACAD_SUP_DIR" "arx_dbx_reg" "MNAS_ARX_DBX_16" "MNAS_ARX_DBX_17")
 		    :FAS-DIRECTORY
-		    "../../../vlisp.tmp"
+		    "../../../../temp"
 		    :TMP-DIRECTORY
-		    "../../../vlisp.tmp"
+		    "../../../../temp"
 		    :PROJECT-KEYS
 		    (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
 		    :CONTEXT-ID

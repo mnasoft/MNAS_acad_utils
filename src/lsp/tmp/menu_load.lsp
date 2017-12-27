@@ -26,7 +26,7 @@
 ("C:\\Program Files\\MNASoft\\MNAS_cad_utils\\acad.fnt\\kompas"
   "C:\\Program Files\\MNASoft\\MNAS_cad_utils\\acad.fnt"
   "C:\\Program Files\\MNASoft\\MNAS_cad_utils\\acad.mnu\\acad_mnu_icon"
-  "C:\\Program Files\\MNASoft\\MNAS_cad_utils\\acad_w.sup"
+  "C:\\Program Files\\MNASoft\\MNAS_cad_utils\\src/lsp"
   "C:\\Program Files\\Autodesk\\MDT 2006\\support\\color"
   "C:\\Program Files\\Autodesk\\MDT 2006\\express"
   "C:\\Program Files\\Autodesk\\MDT 2006\\help"

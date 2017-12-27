@@ -11,7 +11,7 @@
   (reg_read_default_lst *text-edit-dlg-reg_root* *text-edit-dlg-te_registry*)
   (prompt "\nВыберите тексты или размеры :")
   (setq ss_td  (ssget '((-4 . "<OR") (0 . "DIMENSION") (0 . "TEXT") (0 . "MTEXT") (-4 . "OR>")))
-        dcl_id (load_dialog (findfile "acad_w.sup/text/text.dcl")))
+        dcl_id (load_dialog (findfile "src/lsp/text/text.dcl")))
   (if (null ss_td)
     (progn (alert "Нет выбранных объектов.") (exit)))
   (if (< dcl_id 0)

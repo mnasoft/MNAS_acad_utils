@@ -7,10 +7,10 @@
     "../utils/Debug"		     "for_lic-prover"		      "for_lic-provjerka"
     "for_lic-projekt"		     "for_lic-formuly"		      "../Funktcii/Trigonomjetrichjeskije"
     "../opechatka/rus_cmd_opechatka" "for_lic-rus")
-  :fas-directory
-  "../../vlisp.tmp"
-  :tmp-directory
-  "../../vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../temp"
+  :TMP-DIRECTORY
+  "../../../temp"
   :project-keys
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id

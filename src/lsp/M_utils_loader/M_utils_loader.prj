@@ -6,10 +6,10 @@
   ("../UTILS/ACAD_SUP_DIR"
     "../utils/Debug" "M_utils_loader-test" "M_utils_loader" "M_utils_LoaderCommands" "M_utils_LoaderAppRegistryData"
     "M_utils_LoaderARXInstall" "M_utils_LoaderDBXInstall" "../opechatka/rus_cmd_opechatka" "m_utils_loader_rus")
-  :fas-directory
-  "../../vlisp.tmp"
-  :tmp-directory
-  "../../vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../temp"
+  :TMP-DIRECTORY
+  "../../../temp"
   :project-keys
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id

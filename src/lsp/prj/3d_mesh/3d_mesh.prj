@@ -5,9 +5,9 @@
   :OWN-LIST
   ("3d_mesh")
   :FAS-DIRECTORY
-  nil
+  "../../../../temp"
   :TMP-DIRECTORY
-  nil
+  "../../../../temp"
   :PROJECT-KEYS
   (:BUILD (:standard))
   :CONTEXT-ID

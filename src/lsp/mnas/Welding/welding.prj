@@ -10,9 +10,9 @@
     "Weld_text_dlg"	       "setup_lst"
    )
   :FAS-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../../../temp"
   :TMP-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../../../temp"
   :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID

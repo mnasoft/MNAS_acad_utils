@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] big_fnt saved to:[./Big_fnt] at:[7/16/01] 
-(PRV-DEF (:target . "../../vlx/big_fnt.VLX")
+(PRV-DEF (:target . "../../../bin/big_fnt.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "big_fnt.prj"))
 	 (:require-file-list)
-	 (:ob-directory . "../../Vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

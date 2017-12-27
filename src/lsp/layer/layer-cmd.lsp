@@ -199,7 +199,7 @@
   (setvar "cmdecho" cmd_echo))
 
 (defun layer_rgb_settings  (/ ex_dialog action dcl_id code_val)
-  (setq dcl_id (load_dialog (findfile "acad_w.sup/layer/rgb.dcl")))
+  (setq dcl_id (load_dialog (findfile "src/lsp/layer/rgb.dcl")))
   (if (< dcl_id 0)
     (exit))
   (reg_read_default_lst reg_root rgb_registry) ;  (while (null ex_dialog)

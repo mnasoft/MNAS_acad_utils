@@ -1,6 +1,6 @@
 (defun eb  (param / dcl_id do_dialog n-bl x-sc y-sc act)
   (eb:init)
-  (setq dcl_id (load_dialog (findfile "acad_w.sup/axis/axis.dcl")))
+  (setq dcl_id (load_dialog (findfile "src/lsp/axis/axis.dcl")))
   (if (< dcl_id 0)
     (exit))
   (setq do_dialog t)

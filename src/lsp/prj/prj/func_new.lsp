@@ -11,7 +11,7 @@
   (vl-file-rename  fn_from  fn_to)
 )
 
-;;;(get_filenm+ext "C:/acad_w.sup/Add_prefix/Add_prefix.lsp")
+;;;(get_filenm+ext "C:/src/lsp/Add_prefix/Add_prefix.lsp")
 (defun get_filenm+ext (str)
   (setq
     fnm	(cond
@@ -26,8 +26,8 @@
   (strcat fnm ext)
 )
 
-;;;(get_pathnm "C:/acad_w.sup/PRJ/prj/func_prj.lsp")
-;;;(get_pathnm "C:/acad_w.sup")
+;;;(get_pathnm "C:/src/lsp/PRJ/prj/func_prj.lsp")
+;;;(get_pathnm "C:/src/lsp")
 (defun get_pathnm (str)
   (setq
     pathnm	(VL-FILENAME-DIRECTORY str)

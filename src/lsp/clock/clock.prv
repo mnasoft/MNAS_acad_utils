@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] Clock saved to:[./CLOCK] at:[7/16/01] 
-(PRV-DEF (:target . "../../vlx/Clock.VLX")
+(PRV-DEF (:target . "../../../bin/Clock.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "Clock.prj"))
 	 (:require-file-list)
-	 (:ob-directory . "../../vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

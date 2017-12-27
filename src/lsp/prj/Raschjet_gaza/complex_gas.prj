@@ -8,9 +8,9 @@
     "Sostavy_smjesjej"		  "../../UTILS/Binary"		"Smjeshjenije_sostavov"
    )
   :FAS-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../../../temp"
   :TMP-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../../../temp"
   :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID

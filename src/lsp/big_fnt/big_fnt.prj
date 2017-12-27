@@ -5,10 +5,10 @@
   :own-list
   ("../utils/ACAD_SUP_DIR"
     "../utils/Debug" "big_fnt-cmd" "../utils/DXF" "../UTILS/draw" "../opechatka/rus_cmd_opechatka" "big_fnt-rus")
-  :fas-directory
-  "../../vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../temp"
   :tmp-directory
-  "../../vlisp.tmp"
+  "../../../TEMP"
   :project-keys
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id

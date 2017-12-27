@@ -6,10 +6,10 @@
   ("../utils/ACAD_SUP_DIR"
     "../utils/Debug" "dopusk-cmd" "dopusk-data"	"../utils/list"	"../UTILS/DXF" "../opechatka/rus_cmd_opechatka"
     "dopusk-rus")
-  :fas-directory
-  "../../vlisp.tmp"
-  :tmp-directory
-  "../../vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../temp"
+  :TMP-DIRECTORY
+  "../../../temp"
   :project-keys
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
   :context-id

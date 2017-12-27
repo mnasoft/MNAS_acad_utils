@@ -16,7 +16,7 @@
   (setq	ar_ang_s (nth 0 param)
 	ar_ang_e (nth 1 param)
 	ar_size	 (nth 2 param))
-  (setq arrow_dcl_id (load_dialog (findfile "acad_w.sup/DIMS/welding/welding.dcl")))
+  (setq arrow_dcl_id (load_dialog (findfile "src/lsp/DIMS/welding/welding.dcl")))
   (if (< arrow_dcl_id 0)
     (exit))
   (if (not (new_dialog "arrow_setup" arrow_dcl_id))

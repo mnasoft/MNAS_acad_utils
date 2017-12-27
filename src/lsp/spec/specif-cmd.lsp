@@ -81,7 +81,7 @@
         a_dir       (if (null a_dir)
                       0
                       a_dir))
-  (setq dcl_id (load_dialog (findfile "acad_w.sup/spec/Specification.dcl")))
+  (setq dcl_id (load_dialog (findfile "src/lsp/spec/Specification.dcl")))
   (if (< dcl_id 0)
     (exit))
   (while (null ex_dialog)

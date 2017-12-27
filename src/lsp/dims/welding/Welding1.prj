@@ -7,10 +7,10 @@
     "../../utils/Debug"		"Dia_welding"		    "dia_setup_geometry"	"draw_arrow"
     "welding_data"		"../../UTILS/DXF"	    "../../UTILS/ASIST"		"../../UTILS/draw"
     "../../opechatka/rus_cmd_opechatka"			    "welding_rus")
-  :fas-directory
-  "../../../Vlisp.tmp"
-  :tmp-directory
-  "../../../Vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../../temp"
+  :TMP-DIRECTORY
+  "../../../../temp"
   :project-keys
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id

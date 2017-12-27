@@ -83,7 +83,7 @@
         ((< d 0.0) (assad (dir_ob p2 p1 pt) (dir_ob p3 p2 pt) (dir_ob p1 p3 pt)))))
 
 (defun load_format_dcl  (/ dcl-name name)
-  (setq name     "acad_w.sup/format/format.dcl"
+  (setq name     "src/lsp/format/format.dcl"
         dcl-name (findfile name))
   (if (null dcl-name)
     (alert (strcat "Не могу найти файл диалога\n.../"

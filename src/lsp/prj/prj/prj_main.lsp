@@ -16,7 +16,7 @@
 ;;;;;;5) Выполните в консоли Visual Lisp функцию (make_lst g:fn_full_prj_lst)." "not defined")
 
 (defun c:prj_main (/ fn_list_prj do fl_list_prj path)
-  (setq	fn_list_prj (getfiled "Откройте файл, содержащий проекты" (findfile "acad_w.sup/prj/prj/list_prj") "" 0)
+  (setq	fn_list_prj (getfiled "Откройте файл, содержащий проекты" (findfile "src/lsp/prj/prj/list_prj") "" 0)
 	fl_list_prj (open fn_list_prj "r")
 	do t
   )
@@ -61,7 +61,7 @@
   (1- i)
 )
 
-;;; (find_absolute_path "C:/acad_w.sup/PRJ/CHtjenije iz Exel" "c:/UTILS/Sistjemy schisljenija" )
+;;; (find_absolute_path "C:/src/lsp/PRJ/CHtjenije iz Exel" "c:/UTILS/Sistjemy schisljenija" )
 (defun find_absolute_path(directory relative_path / directory-lst relative_path-lst)
   (setq
     directory-lst     (devide_file_name directory)
@@ -133,7 +133,7 @@
 
 
 
-;;; (FIND_RELATIVE_PATH "C:/acad_w.sup/PRJ/CHtjenije iz Exel" "c:/acad_w.sup/UTILS/Sistjemy schisljenija")
+;;; (FIND_RELATIVE_PATH "C:/src/lsp/PRJ/CHtjenije iz Exel" "c:/src/lsp/UTILS/Sistjemy schisljenija")
 (defun find_relative_path (directory full_path / el_lst prj_fnm_lst str_fn)
   (setq
     el_lst (devide_file_name full_path)

@@ -117,7 +117,7 @@
     (stl))
   (setq setup_lst (subst (list "eb_1_masht" (rtos (getvar "DIMSCALE") 2 4)) (assoc "eb_1_masht" setup_lst) setup_lst))
   (setq do_dialog t)
-  (setq dcl_id (load_dialog (findfile "acad_w.sup/dims/rou/rou.dcl")))
+  (setq dcl_id (load_dialog (findfile "src/lsp/dims/rou/rou.dcl")))
   (while do_dialog
     (if (not (new_dialog "шероховатость" dcl_id "" dia_sher_pos))
       (exit))

@@ -6,9 +6,9 @@
   ("projects"
     "../rename_ru_eng/rename_ru_eng" "func_prj"	"func_new" "func_new1" "prj_main" "prv_main")
   :FAS-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../../../temp"
   :TMP-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../../../temp"
   :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID

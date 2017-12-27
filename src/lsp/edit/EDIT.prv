@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] Edit saved to:[./Edit] at:[7/16/01] 
-(PRV-DEF (:target . "../../Vlx/Edit.VLX")
+(PRV-DEF (:target . "../../../bin/Edit.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "Edit.prj"))
 	 (:require-file-list)
-	 (:ob-directory . "../../Vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

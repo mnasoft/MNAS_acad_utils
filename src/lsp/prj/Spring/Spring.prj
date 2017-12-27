@@ -7,10 +7,10 @@
     "../../utils/dlg_utils"	 "spring-dlg"		      "spring-class"		   "spring-actions"
     "../../utils/DXF"		 "../../utils/draw"	      "../../opechatka/rus_cmd_opechatka"
     "spring-rus")
-  :fas-directory
-  "../../../vlisp.tmp"
-  :tmp-directory
-  "../../../vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../../temp"
+  :TMP-DIRECTORY
+  "../../../../temp"
   :project-keys
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id

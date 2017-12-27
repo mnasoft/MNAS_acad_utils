@@ -1,5 +1,5 @@
 (defun create_cmd_html  (/ fl)
-  (load (findfile "acad_w.sup/man/man-data_base.lsp"))
+  (load (findfile "src/lsp/man/man-data_base.lsp"))
 ;;;
   (setq fl (open (strcat (acad_help) "/mnasoft_command_list.html") "w"))
 ;;; cmd.html
@@ -98,7 +98,7 @@
 
 
 (defun re_sotr_by_type  (/ mnas_command_help new_lst)
-  (load (findfile "acad_w.sup/man/man-data_base.lsp"))
+  (load (findfile "src/lsp/man/man-data_base.lsp"))
   (setq mnas_command_help
          (vl-sort mnas_command_help
                   (function (lambda (a1 a2)

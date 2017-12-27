@@ -24,7 +24,7 @@
 ;;;f;;;"Выполняет вставку в текущий чертеж файла Point-Types,
 ;;;f;;;который содержит определения блоков, спользуемых как маркеры точек.")
 (defun axis:load-point-types	()
-  (command "_-insert" "./acad_w.sup/Point-Types.dwg")
+  (command "_-insert" "./src/lsp/Point-Types.dwg")
   (command)
   (command "_-purge" "_b" "Point-Types" "_n"))
 

@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] rou saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dims/rou] at:[9/29/13] 
-(PRV-DEF (:target . "../../../Vlx/rou.VLX")
+(PRV-DEF (:target . "../../../../bin/rou.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "rou.prj"))
 	 (:require-file-list (:DCL "rou.dcl"))
-	 (:ob-directory . "../../../Vlisp.tmp")
+	 (:ob-directory . "../../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

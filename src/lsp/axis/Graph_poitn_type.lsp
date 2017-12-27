@@ -30,7 +30,7 @@
 
 (defun epr  (epr-param / epr-dcl_id epr-do_dialog fl d-bl d-lin act)
   (epr-init)
-  (setq epr-dcl_id (load_dialog (findfile "acad_w.sup/axis/axis.dcl")))
+  (setq epr-dcl_id (load_dialog (findfile "src/lsp/axis/axis.dcl")))
   (if (< epr-dcl_id 0)
     (exit))
   (setq epr-do_dialog t)

@@ -6,9 +6,9 @@
   ("Wri_exel_samp"
     "read_exel_setup_lst" "Rad_exel_samp" "my_read_exel" "my_write_exel" "utils_xls" "../../UTILS/ACAD_SUP_DIR"	"graph")
   :FAS-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../../../temp"
   :TMP-DIRECTORY
-  "../../../vlisp.tmp"
+  "../../../../temp"
   :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID

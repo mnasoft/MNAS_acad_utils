@@ -11,10 +11,10 @@
     "../../Utils/system_registry"	       "../../UTILS/ERR"
     "../../opechatka/rus_cmd_opechatka"
     "rou_1-rus")
-  :fas-directory
-  "../../../vlisp.tmp"
-  :tmp-directory
-  "../../../vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../../temp"
+  :TMP-DIRECTORY
+  "../../../../temp"
   :project-keys
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
   :context-id

@@ -13,7 +13,7 @@
             "acad.fnt\\Kompas"
             ";"
             (mnas_arxprj_root)
-            "\\acad_w.sup"
+            "\\src/lsp"
             ";"
             (mnas_arxprj_root)
             "\\Acad.mnu\\Acad_mnu_icon"

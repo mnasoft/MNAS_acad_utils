@@ -9,10 +9,10 @@
     "../UTILS/STRING"	    "../UTILS/draw"	    "abc_dialog"	    "abc"
     "../UTILS/stl_text"	    "./leader/leader"	    "../opechatka/rus_cmd_opechatka"
     "dims_rus")
-  :fas-directory
-  "../../vlisp.tmp"
-  :tmp-directory
-  "../../vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../temp"
+  :TMP-DIRECTORY
+  "../../../temp"
   :project-keys
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id

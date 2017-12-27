@@ -6,10 +6,10 @@
   ("../../utils/ACAD_SUP_DIR"
     "../../utils/Debug"	"pozition_export" "pozition_dlg" "../../Utils/system_registry" "../../utils/dlg_utils"
     "pozition_abbrev" "../../opechatka/rus_cmd_opechatka" "pozition_rus")
-  :fas-directory
-  "../../../vlisp.tmp"
-  :tmp-directory
-  "../../../vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../../temp"
+  :TMP-DIRECTORY
+  "../../../../temp"
   :project-keys
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id

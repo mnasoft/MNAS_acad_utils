@@ -4,11 +4,11 @@
 		       xyz_ijk_lst ; список координат точек и ортов подхода к ним
 )
 ;;;  (setq fn (getfiled "title" "default" "ijk" 0))
-  (setq fn (findfile "acad_w.sup/Измерительная машина/Mea/h10_1.ijk"))
+  (setq fn (findfile "src/lsp/Измерительная машина/Mea/h10_1.ijk"))
   (if (null fn)
     (progn (alert
 	     (princ
-	       (strcat "Не могу открыть файл :" "acad_w.sup/Измерительная машина/Mea/h10_1.ijk")))
+	       (strcat "Не могу открыть файл :" "src/lsp/Измерительная машина/Mea/h10_1.ijk")))
 	   (exit)))
   (setq fl (open fn "r"))
   (if (null fl)

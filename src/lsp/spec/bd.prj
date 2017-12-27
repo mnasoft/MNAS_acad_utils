@@ -5,9 +5,9 @@
   :OWN-LIST
   ("Baza_dannyh" "bd_naimjenovanije")
   :FAS-DIRECTORY
-  nil
+  "../../../temp"
   :TMP-DIRECTORY
-  nil
+  "../../../temp"
   :PROJECT-KEYS
   (:BUILD (:standard))
   :CONTEXT-ID

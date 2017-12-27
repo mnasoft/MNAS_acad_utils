@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] provoloka saved to:[C:/MNAS_acad_db17_utils/acad_w.sup/provoloka] at:[11/7/10] 
-(PRV-DEF (:target . "../../vlx/provoloka.VLX")
+(PRV-DEF (:target . "../../../bin/provoloka.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "provoloka.prj"))
 	 (:require-file-list)
-	 (:ob-directory . "../../vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

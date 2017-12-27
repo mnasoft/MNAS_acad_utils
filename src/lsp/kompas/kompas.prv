@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] kompas saved to:[./KOMPAS] at:[7/16/01] 
-(PRV-DEF (:target . "../../Vlx/kompas.VLX")
+(PRV-DEF (:target . "../../../bin/kompas.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "kompas.prj"))
 	 (:require-file-list)
-	 (:ob-directory . "../../Vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

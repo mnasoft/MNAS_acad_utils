@@ -6,10 +6,10 @@
   ("../UTILS/ACAD_SUP_DIR"
     "../utils/Debug" "specif-cmd" "spec-func1" "spec-func2" "spec-func3" "spec-func4" "../UTILS/red_list"
     "../UTILS/stl_text"	"../UTILS/STRING" "../opechatka/rus_cmd_opechatka" "spec-rus")
-  :fas-directory
-  "../../Vlisp.tmp"
-  :tmp-directory
-  "../../Vlisp.tmp"
+  :FAS-DIRECTORY
+  "../../../temp"
+  :TMP-DIRECTORY
+  "../../../temp"
   :project-keys
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
   :context-id

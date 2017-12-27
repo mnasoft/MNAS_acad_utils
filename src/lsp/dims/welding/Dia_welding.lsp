@@ -1,6 +1,6 @@
 ;;;;;;("welding" "Построение обозначения сварочных швов. Не закончена." "Размеры")
 (defun c:welding  (/ wt_exit_dialog)
-  (setq arrow_dcl_id (load_dialog (findfile "acad_w.sup/DIMS/welding/welding.dcl")))
+  (setq arrow_dcl_id (load_dialog (findfile "src/lsp/DIMS/welding/welding.dcl")))
   (if (< arrow_dcl_id 0)
     (exit))
   (while (null wt_exit_dialog)

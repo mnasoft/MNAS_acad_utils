@@ -10,9 +10,9 @@
     "kollector"
   )
   :FAS-DIRECTORY
-  nil
+  "../../../temp"
   :TMP-DIRECTORY
-  nil
+  "../../../temp"
   :PROJECT-KEYS
   (:BUILD (:standard))
   :CONTEXT-ID

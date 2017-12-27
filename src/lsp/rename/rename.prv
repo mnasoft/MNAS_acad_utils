@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] rename saved to:[./RENAME] at:[1/29/06] 
-(PRV-DEF (:target . "../../vlx/rename.VLX")
+(PRV-DEF (:target . "../../../bin/rename.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "rename.prj"))
 	 (:require-file-list)
-	 (:ob-directory . "../../vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

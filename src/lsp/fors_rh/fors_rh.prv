@@ -1,11 +1,11 @@
 ;;; Visual LISP make file [V1.0] fors_rh saved to:[./Fors_rh] at:[7/16/01] 
-(PRV-DEF (:target . "../../vlx/fors_rh.VLX")
+(PRV-DEF (:target . "../../../bin/fors_rh.VLX")
 	 (:active-x . T)
 	 (:separate-namespace . T)
 	 (:protected . T)
 	 (:load-file-list (:prj "fors_rh.prj"))
 	 (:require-file-list (:DCL "fors_rh.dcl"))
-	 (:ob-directory . "../../vlisp.tmp")
+	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
 	 (:optimization . st)
 )

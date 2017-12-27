@@ -41,7 +41,7 @@
   (if n
     (ax:init n)
     (progn (setq n 0) (ax:init 0)))
-  (setq dcl_id (load_dialog (findfile "acad_w.sup/axis/axis.dcl")))
+  (setq dcl_id (load_dialog (findfile "src/lsp/axis/axis.dcl")))
   (if (< dcl_id 0)
     (exit))
   (setq do-dialog t)
