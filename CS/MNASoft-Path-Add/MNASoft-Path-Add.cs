@@ -43,9 +43,9 @@ namespace MNASoft
 
             SupportPath = SupportPath + ";" + 
                 PWD + ";" +
-                PWD + "\\" + "acad.mnu" + ";" +
-                PWD + "\\" + "acad_fnt" + ";" +
-                PWD + "\\" + "acad_fnt\\Kompas" ;
+                PWD + "\\" + "bin" + ";" +
+                PWD + "\\" + "fonts" + ";" +
+                PWD + "\\" + "fonts\\Kompas" ;
 
             string[] SupportPathArray = SupportPath.Split(';');
 
