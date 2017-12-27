@@ -1,12 +1,12 @@
-п»їdcl_settings : default_dcl_settings { audit_level = 3; }
+dcl_settings : default_dcl_settings { audit_level = 3; }
 
 axis : dialog
 {
   aspect_ratio = 0;
-  label = "Р’РІРѕРґ С‚РѕС‡РµРє РіСЂР°С„РёРєР°";
+  label = "Ввод точек графика";
   initial_focus = "accept";
   : row
-  { : edit_box  {key ="e4";label= "РРјСЏ РіСЂР°С„РёРєР°"; }
+  { : edit_box  {key ="e4";label= "Имя графика"; }
     : button  {key = "b10"; label = "<"; }
     : text {key = "t2"; width=5; }
     : button  {key = "b11"; label = ">"; }
@@ -15,21 +15,21 @@ axis : dialog
   }
   : row
   {
-    : button  {key = "b12"; label = "X-РЁРєР°Р»Р°"; }
+    : button  {key = "b12"; label = "X-Шкала"; }
     : edit_box{key ="e5"; }
-    : button  {key = "b13"; label = "X-РЎРµС‚РєР° "; }
-    : button  {key = "b14"; label = "Y-РЁРєР°Р»Р°"; }
+    : button  {key = "b13"; label = "X-Сетка "; }
+    : button  {key = "b14"; label = "Y-Шкала"; }
     : edit_box{key ="e6"; }
-    : button  {key = "b15"; label = "Y-РЎРµС‚РєР°"; }
+    : button  {key = "b15"; label = "Y-Сетка"; }
   }
   : boxed_row
-  { label = "РњР°РЅРёРїСѓР»РёСЂРѕРІР°РЅРёРµ С‚РѕС‡РєР°Рј С‚РµРєСѓС‰РµРіРѕ РіСЂР°С„РёРєР°";
+  { label = "Манипулирование точкам текущего графика";
     : column
     {
       : boxed_column
-      { label = "РЎСЃС‹Р»РѕС‡РЅР°СЏ С‚РѕС‡РєР°";
+      { label = "Ссылочная точка";
       : boxed_row
-        { label = "РЈРґР°Р»РµРЅРёРµ,Р’СЃС‚Р°РІРєР°,РџСЂРѕРєСЂСѓС‚РєР°";
+        { label = "Удаление,Вставка,Прокрутка";
           : edit_box{key = "e1"; edit_width = 5;}
           : button  {key = "b6"; label = "Del";mnemonic="D";}
           : text    {key = "t1"; label = ""; width = 15;}
@@ -44,7 +44,7 @@ axis : dialog
         }
       }
       : boxed_column
-      { label = "Р РµРґР°РєС‚РёСЂСѓРµРјР°СЏ С‚РѕС‡РєР°";
+      { label = "Редактируемая точка";
         : row
         {
           : edit_box  {key = "e2"; label = "X = ";}
@@ -59,15 +59,15 @@ axis : dialog
     }
     : column
     {
-      : list_box { key="l1"; width = 15; label = "РўРѕС‡РєРё РіСЂР°С„РёРєР°";}
-      : button  {key = "b17"; label = "РџР°СЂР°РјРµС‚СЂС‹ С‚РѕС‡РµРє"; }
-      : button  {key = "b7"; label = "РђРЅР°Р»РёС‚РёС‡РµСЃРєРѕРµ Р·Р°РґР°РЅРёРµ С‚РѕС‡РµРє"; }
+      : list_box { key="l1"; width = 15; label = "Точки графика";}
+      : button  {key = "b17"; label = "Параметры точек"; }
+      : button  {key = "b7"; label = "Аналитическое задание точек"; }
     }
   }
   : row
   { ok_cancel_help;
-    : button  {key = "b16"; label = "Рћ РїСЂРѕРіСЂР°РјРјРµ"; }
-    : button  {key = "b20"; label = "РџСЂРѕСЃРјРѕС‚СЂ";}
+    : button  {key = "b16"; label = "О программе"; }
+    : button  {key = "b20"; label = "Просмотр";}
   }
   errtile;
 }
@@ -75,7 +75,7 @@ axis : dialog
 panal : dialog
 {
   aspect_ratio = 0;
-  label = "РђРЅР°Р»РёС‚РёС‡РµСЃРєРѕРµ Р·Р°РґР°РЅРёРµ С‚РѕС‡РµРє РіСЂР°С„РёРєР°";
+  label = "Аналитическое задание точек графика";
   initial_focus = "accept";
   : boxed_row
   {
@@ -89,12 +89,12 @@ panal : dialog
       }
       : boxed_row
       {
-        label = "Р Р°Р·РјРµС‚РєР° РїР°СЂР°РјРµС‚СЂР° T";
+        label = "Разметка параметра T";
         : radio_row
         {
           fixed_width = true;
-          : radio_button { label = "РџСЂРѕРїРѕСЂС†РёРѕРЅР°Р»СЊРЅР°СЏ"; key = "r21";}
-          : radio_button { label = "Р›РѕРіР°СЂРёС„РјРёС‡РµСЃРєР°СЏ"; key = "r22";}
+          : radio_button { label = "Пропорциональная"; key = "r21";}
+          : radio_button { label = "Логарифмическая"; key = "r22";}
         }
       }
       : row
@@ -103,26 +103,26 @@ panal : dialog
         {
           : row
           { : toggle { key = "t21";}
-            : edit_box { key = "e24"; edit_width=15; label = "Р¤СѓРЅРєС†РёСЏ РїРѕ X";}
+            : edit_box { key = "e24"; edit_width=15; label = "Функция по X";}
           }
           : row
           { : toggle { key = "t22";}
-            : edit_box { key = "e25"; edit_width=15; label = "Р¤СѓРЅРєС†РёСЏ РїРѕ Y";}
+            : edit_box { key = "e25"; edit_width=15; label = "Функция по Y";}
           }
         }
-        : button  {key = "b21"; label = "РџРµСЂРµСЃС‡РµС‚"; }
+        : button  {key = "b21"; label = "Пересчет"; }
       }
     }
-    : list_box { key="l21"; width = 25; label = "РўРѕС‡РєРё РіСЂР°С„РёРєР°";}
+    : list_box { key="l21"; width = 25; label = "Точки графика";}
   }
   : boxed_row
-  { label = "Р’РІРѕРґ С„СѓРЅРєС†РёРё Р°РІС‚РѕР»РёСЃРїР°";
-    : edit_box  {key = "e23"; label = "Р¤СѓРЅРєС†РёСЏ"; edit_width=35;}
-    : button  {key = "b22"; label = "РћС†РµРЅРёС‚СЊ"; }
+  { label = "Ввод функции автолиспа";
+    : edit_box  {key = "e23"; label = "Функция"; edit_width=35;}
+    : button  {key = "b22"; label = "Оценить"; }
   }
   : boxed_row
-  { label = "РЎРѕРѕР±С‰РµРЅРёРµ Р°РІС‚РѕР»РёСЃРїР°";
-    : text {key = "te21"; label = "Р¤СѓРЅРєС†РёСЏ";}
+  { label = "Сообщение автолиспа";
+    : text {key = "te21"; label = "Функция";}
   }
 
   ok_cancel_help;
@@ -132,11 +132,11 @@ panal : dialog
 eaxis : dialog
 {
   aspect_ratio = 0;
-  label = "Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ С€РєР°Р»С‹";
+  label = "Редактирование шкалы";
   initial_focus = "accept";
-  : edit_box  {key = "e36"; label = "РРјСЏ С€РєР°Р»С‹";  }
+  : edit_box  {key = "e36"; label = "Имя шкалы";  }
   : boxed_column
-  { label = "РљРѕРѕСЂРґ. С‚РѕС‡РµРє Рё Р·РЅ. С€РєР°Р»С‹ РІ РЅРёС…";
+  { label = "Коорд. точек и зн. шкалы в них";
     : row
     {
       : edit_box  {key = "e30"; label = "Xs";  }
@@ -154,12 +154,12 @@ eaxis : dialog
 
     : boxed_row
     {
-      label = "Р Р°Р·РјРµС‚РєР° РїР°СЂР°РјРµС‚СЂР° T";
+      label = "Разметка параметра T";
       : radio_row
       {
         fixed_width = true;
-        : radio_button { label = "РџСЂРѕРїРѕСЂС†РёРѕРЅР°Р»СЊРЅР°СЏ"; key = "r30";}
-        : radio_button { label = "Р›РѕРіР°СЂРёС„РјРёС‡РµСЃРєР°СЏ"; key = "r31";}
+        : radio_button { label = "Пропорциональная"; key = "r30";}
+        : radio_button { label = "Логарифмическая"; key = "r31";}
       }
     }
   }
@@ -173,37 +173,37 @@ eaxis : dialog
 epline : dialog
 {
   aspect_ratio = 0;
-  label = "Р›РёРЅРёСЏ РіСЂР°С„РёРєР°";
+  label = "Линия графика";
   initial_focus = "accept";
-  : edit_box  {key ="e41";label= "РЁРёСЂРёРЅР° Р»РёРЅРёРё"; }
-  : row { ok_cancel; : button {key = "b41"; label = "РЎРІРѕР№СЃС‚РІР°";} }
+  : edit_box  {key ="e41";label= "Ширина линии"; }
+  : row { ok_cancel; : button {key = "b41"; label = "Свойства";} }
   errtile;
 }
 
 eblock : dialog
 {
   aspect_ratio = 0;
-  label = "РўРѕС‡РєРё РіСЂР°С„РёРєР°";
+  label = "Точки графика";
   initial_focus = "accept";
-  : edit_box  {key ="e61";label= "РРјСЏ Р±Р»РѕРєР°"; }
+  : edit_box  {key ="e61";label= "Имя блока"; }
   : row
   {
-  : edit_box  {key ="e62";label= "X РјР°СЃС€С‚"; }
-  : edit_box  {key ="e63";label= "Y РјР°СЃС€С‚"; }
+  : edit_box  {key ="e62";label= "X масшт"; }
+  : edit_box  {key ="e63";label= "Y масшт"; }
   }
-  : row { ok_cancel; : button {key = "b61"; label = "РЎРІРѕР№СЃС‚РІР°";} }
+  : row { ok_cancel; : button {key = "b61"; label = "Свойства";} }
   errtile;
 }
 
 eprop : dialog
 {
   aspect_ratio = 0;
-  label = "РќР°СЃС‚СЂРѕР№РєРё С‚РѕС‡РµРє";
+  label = "Настройки точек";
   initial_focus = "accept";
   : row
-  { : toggle { key = "t81";} : button {key = "b81"; label = "Р‘Р»РѕРє"; } }
+  { : toggle { key = "t81";} : button {key = "b81"; label = "Блок"; } }
   : row
-  { : toggle { key = "t82";} : button {key = "b82"; label = "Р›РёРЅРёСЏ"; } }
+  { : toggle { key = "t82";} : button {key = "b82"; label = "Линия"; } }
   ok_cancel;
   errtile;
 }

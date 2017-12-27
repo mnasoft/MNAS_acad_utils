@@ -141,7 +141,7 @@
   (reg_read_default_lst reg_root reg_val)
 ;;;(select)	; Выбор сварного шва для редактирования .
 ;;;(get_data ed)	; Выборка данных из примитива сварки для формирования диалога.
-  (setq dcl_id (load_dcl "/MNAS/welding/welding.dcl"))					; Загрузка диалога.
+  (setq dcl_id (load_dialog "./acad_w.sup/MNAS/welding/welding.dcl"))					; Загрузка диалога.
   (setq do_dialog t)
   (while do_dialog
     (if	(not (new_dialog "mnas_weld_main" dcl_id "" dia_weld_pos))

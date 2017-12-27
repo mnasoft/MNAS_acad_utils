@@ -75,7 +75,7 @@
   (reg_read_default_lst reg_root reg_val)
   (select)
   (select-init)
-  (setq dcl_id (load_dcl "/MNAS/pozition/pozition.dcl"))
+  (setq dcl_id (load_dialog "./acad_w.sup/MNAS/pozition/pozition.dcl"))
   (setq do_dialog t)
   (while do_dialog
     (if (not (new_dialog "mnas_pos_main" dcl_id "" dia_pos_pos))

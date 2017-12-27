@@ -1,4 +1,4 @@
-(setq *ll_ax_shcala_setup*
+(setq axis-podp:*shcala_setup*
        '(("zas_right" "1")
          ("zas_right_len" "2")
          ("zas_left" "1")
@@ -7,7 +7,7 @@
          ("zas_x_max" "100")
          ("zas_n_div" "10")
          ("zas_lst" "0" ("0" "10" "20" "30" "40" "50" "60" "70" "80" "90" "100"))
-         ("text_dist_from_ax" "4.0")
+         ("text_dist_from_ax" "-4.0")
          ("text_hight" "3.5")
          ("text_angle" "0")
          ("text_x_min" "0")
@@ -24,49 +24,27 @@
          ("text_draw" "1")
          ("podp_text_draw" "1")))
 
-;;;;;;("ax_shcala" "Производит подпись шкалы." "Шкалы")
-(defun c:ax_shcala  (/ dcl_id ll_ax_shcala exit_dialog sc_x sc_y sc_x_ename sc_y_ename ss_zas ss_text ss_podp_text)
-  (setq ss_zas (ssadd)
-        ss_text (ssadd)
-        ss_podp_text (ssadd))
-  (setq ll_ax_shcala *ll_ax_shcala_setup*)
-  (setq dcl_id (load_dialog (findfile "acad_w.sup/axis/axis_podp.dcl")))
-  (if (< dcl_id 0)
-    (exit))
-  (while (null exit_dialog)
-    (if (not (new_dialog "axis_podp" dcl_id))
-      (exit))
-    (setup )
-    (ac_tile )
-    (setq ac (start_dialog))
-    (cond ((= ac 0) (setq exit_dialog t) (btn_delete))
-          ((= ac 1) (setq *ll_ax_shcala_setup* ll_ax_shcala) (setq exit_dialog t))
-          ((= ac 2) (btn_select_x_axis))
-          ((= ac 3) (btn_select_y_axis))
-          ((= ac 4) (btn_draw SC_X SC_Y ll_ax_shcala))
-          ((= ac 5) (btn_delete)))))
+(setq axis-podp:*sc-x-ename* nil)
 
-(defun btn_select_x_axis  ()
-  (princ "\nbtn_select_x_axis")
-  (setq sc_x_ename (sh:sel "\nВыберите шкалу x:")
-        sc_x       (sh:get sc_x_ename)))
+(setq axis-podp:*sc-y-ename* nil)
 
-(defun btn_select_y_axis  ()
+(defun axis-podp:btn-select-x-axis  ()
+  (princ "\naxis-podp:btn_select_x_axis")
+  (setq axis-podp:*sc-x-ename*
+         (sh:sel "\nВыберите шкалу x:")
+        sc_x (sh:get axis-podp:*sc-x-ename*)))
+
+(defun axis-podp:btn-select-y-axis  ()
   (princ "\nbtn_select_y_axis")
-  (setq sc_y_ename (sh:sel "\nВыберите шкалу y:")
-        sc_y       (sh:get sc_y_ename)))
+  (setq axis-podp:*sc-y-ename*
+         (sh:sel "\nВыберите шкалу y:")
+        sc_y (sh:get axis-podp:*sc-y-ename*)))
 
-(defun btn_draw  (sc_x sc_y ll_ax_shcala)
-  (princ "\nbtn_darw")
-  (if (and sc_x sc_y)
-    (progn (draw_zas ss_zas sc_x sc_y ll_ax_shcala)
-           (draw_text ss_text sc_x sc_y ll_ax_shcala)
-           (draw_podp_text ss_podp_text sc_x sc_y ll_ax_shcala))))
+(defun axis-podp:btn-delete () (command "erase" ss_zas ss_text ss_podp_text ""))
 
-(defun btn_delete () (command "erase" ss_zas ss_text ss_podp_text ""))
-
-(defun draw_zas  (ss_zas sc_x sc_y ll_ax_shcala / n_div pt pt_0 pt_1 scx_end scx_st scy_end scy_st x_max x_min en el lst lst-i lst-len
-                  lst-rez)
+(defun axis-podp:draw-zas  (ss_zas   sc_x     sc_y     ll_ax_shcala      /        n_div    pt       pt_0     pt_1
+                            scx_end  scx_st   scy_end  scy_st   x_max    x_min    en       el       lst      lst-i
+                            lst-len  lst-rez)
   (setq x_min (atof (cadr (assoc "zas_x_min" ll_ax_shcala)))
         x_max (atof (cadr (assoc "zas_x_max" ll_ax_shcala)))
         n_div (atoi (cadr (assoc "zas_n_div" ll_ax_shcala))))
@@ -92,7 +70,7 @@
          (setq lst-rez (reverse lst-rez))))
 
 
-(defun draw_text  (ss_text sc_x sc_y ll_ax_shcala / n_div pt pt_0 scx_end scx_st scy_end scy_st x_max x_min)
+(defun axis-podp:draw-text  (ss_text sc_x sc_y ll_ax_shcala / n_div pt pt_0 scx_end scx_st scy_end scy_st x_max x_min)
   (setq x_min (atof (cadr (assoc "text_x_min" ll_ax_shcala)))
         x_max (atof (cadr (assoc "text_x_max" ll_ax_shcala)))
         n_div (atoi (cadr (assoc "text_n_div" ll_ax_shcala))))
@@ -114,7 +92,7 @@
           (sub_div x_min x_max n_div 0)))
 
 
-(defun draw_podp_text  (ss_podp_text sc_x sc_y ll_ax_shcala / pt pt_0 scx_end scx_st scy_end scy_st)
+(defun axis-podp:draw-podp-text  (ss_podp_text sc_x sc_y ll_ax_shcala / pt pt_0 scx_end scx_st scy_end scy_st)
   (setq scx_st  (cdr (assoc 10 sc_x))
         scx_end (cdr (assoc 11 sc_x))
         scy_st  (cdr (assoc 10 sc_y))
@@ -137,7 +115,40 @@
                             pt_0 (polar pt (angle scy_st scy_end) (atof (cadr (assoc "text_dist_from_ax" ll_ax_shcala)))))))
           (sub_div x_min x_max n_div 0)))
 
-(defun setup  ()
+(defun axis-podp:btn-draw  (sc_x sc_y ll_ax_shcala)
+  (princ "\nbtn_darw")
+  (if (and sc_x sc_y)
+    (progn (axis-podp:draw-zas ss_zas sc_x sc_y ll_ax_shcala)
+           (axis-podp:draw-text ss_text sc_x sc_y ll_ax_shcala)
+           (axis-podp:draw-podp-text ss_podp_text sc_x sc_y ll_ax_shcala))
+    ))
+
+;; axis-podp:ac-zas-draw-hide-show()	- Замораживает или размораживает некоторые tile.
+(defun axis-podp:ac-zas-draw-hide-show  (/ tmp ll-zas_draw)
+  (setq tmp         (cadr (assoc "zas_draw" ll_ax_shcala))
+        ll-zas_draw (list "zas_right" "zas_right_len" "zas_left" "zas_left_len" "zas_x_min" "zas_x_max" "zas_n_div"
+                          "zas_lst"))
+  (cond ((= tmp "0") (mapcar (function (lambda (el) (mode_tile el 1))) ll-zas_draw))
+        ((= tmp "1") (mapcar (function (lambda (el) (mode_tile el 0))) ll-zas_draw))))
+
+;; axis-podp:ac-text-draw-hide-show()	- Замораживает или размораживает некоторые tile.
+(defun axis-podp:ac-text-draw-hide-show  (/ tmp ll-text_draw)
+  (setq tmp          (cadr (assoc "text_draw" ll_ax_shcala))
+        ll-text_draw (list "text_dist_from_ax" "text_hight" "text_angle" "text_x_min" "text_x_max" "text_n_div"
+                           "text_lst"))
+  (cond ((= tmp "0") (mapcar (function (lambda (el) (mode_tile el 1))) ll-text_draw))
+        ((= tmp "1") (mapcar (function (lambda (el) (mode_tile el 0))) ll-text_draw))))
+
+
+;;	axis-podp:ac-text-draw-hide-show()	- Замораживает или размораживает некоторые tile.
+(defun axis-podp:ac-text-draw-hide-show  (/ tmp ll-podp_text_draw)
+  (setq tmp               (cadr (assoc "podp_text_draw" ll_ax_shcala))
+        ll-podp_text_draw (list "podp_text_start"          "podp_text_middle"         "podp_text_end"
+                                "podp_text_dist_from_ax"   "podp_text_hight"          "podp_text_angle"))
+  (cond ((= tmp "0") (mapcar (function (lambda (el) (mode_tile el 1))) ll-podp_text_draw))
+        ((= tmp "1") (mapcar (function (lambda (el) (mode_tile el 0))) ll-podp_text_draw))))
+
+(defun axis-podp:setup  ()
   (mapcar (function (lambda (el)
                       (cond ((= 2 (length el)) (set_tile (car el) (cadr el)))
                             ((= 3 (length el))
@@ -146,27 +157,19 @@
                              (end_list)
                              (set_tile (car el) (cadr el))))))
           ll_ax_shcala)
-  (ac-zas_draw)
-  (ac-text_draw)
-  (ac-podp_text_draw))
+  (axis-podp:ac-zas-draw-hide-show)
+  (axis-podp:ac-text-draw-hide-show)
+  (axis-podp:ac-text-draw-hide-show))
 
 
-(defun ac_tile  ()
-  (mapcar (function (lambda (el) (action_tile (car el) "(all_ac )"))) ll_ax_shcala)
+(defun axis-podp:ac-tile  ()
+  (mapcar (function (lambda (el) (action_tile (car el) "(axis-podp:all-ac)"))) ll_ax_shcala)
   (action_tile "btn_select_x_axis" "(done_dialog 2)")
   (action_tile "btn_select_y_axis" "(done_dialog 3)")
-  (action_tile "btn_darw" "(done_dialog 4)")
+  (action_tile "btn_draw" "(done_dialog 4)")
   (action_tile "btn_delete" "(done_dialog 5)"))
 
-(defun all_ac  ()
-  (setq ll_ax_shcala (mapcar (function (lambda (el)
-                                         (cond ((= 2 (length el)) (list (car el) (get_tile (car el))))
-                                               ((= 3 (length el)) (list (car el) (get_tile (car el)) (caddr el))))))
-                             ll_ax_shcala))
-  (validate)
-  (setup ))
-
-(defun validate  (/ ll_val TMP)
+(defun axis-podp:validate  (/ ll_val TMP)
   (setq tmp (atof (cadr (assoc "zas_right_len" ll_ax_shcala))))
   (if (<= tmp 0.0)
     (setq ll_val (cons (list "zas_right_len" "1.0") ll_val))
@@ -194,13 +197,14 @@
   (if (<= tmp 0)
     (setq ll_val (cons (list "text_n_div" "1") ll_val))
     (setq ll_val (cons (list "text_n_div" (itoa tmp)) ll_val)))
-  (setq ll_val (cons (list "podp_text_dist_from_ax" (rtos (atof (cadr (assoc "podp_text_dist_from_ax" ll_ax_shcala)))))
-                     ll_val))
+  (setq ll_val
+         (cons (list "podp_text_dist_from_ax" (rtos (atof (cadr (assoc "podp_text_dist_from_ax" ll_ax_shcala)))))
+               ll_val))
   (setq tmp (atof (cadr (assoc "podp_text_hight" ll_ax_shcala))))
   (if (<= tmp 0.0)
     (setq ll_val (cons (list "podp_text_hight" "5.0") ll_val))
     (setq ll_val (cons (list "podp_text_hight" (rtos tmp)) ll_val)))
-  (setq ll_val (cons (list "podp_text_dist_from_ax" (angtos (angtof (cadr (assoc "podp_text_angle" ll_ax_shcala)))))
+  (setq ll_val (cons (list "podp_text_angle" (angtos (angtof (cadr (assoc "podp_text_angle" ll_ax_shcala)))))
                      ll_val))
   (setq ll_ax_shcala (dsubst ll_ax_shcala ll_val))
   (setq tmp    (assoc "zas_lst" ll_ax_shcala)
@@ -223,25 +227,47 @@
                      ll_val))
   (setq ll_ax_shcala (dsubst ll_ax_shcala ll_val)))
 
-;; ac-zas_draw()	- Замораживает или размораживает некоторые tile.
-(defun ac-zas_draw  (/ tmp ll-zas_draw)
-  (setq tmp         (cadr (assoc "zas_draw" ll_ax_shcala))
-        ll-zas_draw (list "zas_right" "zas_right_len" "zas_left" "zas_left_len" "zas_x_min" "zas_x_max" "zas_n_div" "zas_lst"))
-  (cond ((= tmp "0") (mapcar (function (lambda (el) (mode_tile el 1))) ll-zas_draw))
-        ((= tmp "1") (mapcar (function (lambda (el) (mode_tile el 0))) ll-zas_draw))))
+(defun axis-podp:all-ac  ()
+  (setq ll_ax_shcala
+         (mapcar (function (lambda (el)
+                             (cond ((= 2 (length el)) (list (car el) (get_tile (car el))))
+                                   ((= 3 (length el)) (list (car el) (get_tile (car el)) (caddr el))))))
+                 ll_ax_shcala))
+  (axis-podp:validate)
+  (axis-podp:setup))
 
-;; ac-text_draw()	- Замораживает или размораживает некоторые tile.
-(defun ac-text_draw  (/ tmp ll-text_draw)
-  (setq tmp          (cadr (assoc "text_draw" ll_ax_shcala))
-        ll-text_draw (list "text_dist_from_ax" "text_hight" "text_angle" "text_x_min" "text_x_max" "text_n_div" "text_lst"))
-  (cond ((= tmp "0") (mapcar (function (lambda (el) (mode_tile el 1))) ll-text_draw))
-        ((= tmp "1") (mapcar (function (lambda (el) (mode_tile el 0))) ll-text_draw))))
-
-
-;;	ac-podp_text_draw()	- Замораживает или размораживает некоторые tile.
-(defun ac-podp_text_draw  (/ tmp ll-podp_text_draw)
-  (setq tmp               (cadr (assoc "podp_text_draw" ll_ax_shcala))
-        ll-podp_text_draw (list "podp_text_start" "podp_text_middle" "podp_text_end" "podp_text_dist_from_ax" "podp_text_hight" "podp_text_angle"))
-  (cond ((= tmp "0") (mapcar (function (lambda (el) (mode_tile el 1))) ll-podp_text_draw))
-        ((= tmp "1") (mapcar (function (lambda (el) (mode_tile el 0))) ll-podp_text_draw))))
-
+;;;;;;("ax_shcala" "Производит подпись шкалы." "Шкалы")
+(defun c:ax_shcala  (/                  ;
+                     dcl_id             ;
+                     ll_ax_shcala       ;
+                     exit_dialog        ;
+                     sc_x               ;
+                     sc_y               ;
+                     ss_zas             ;
+                     ss_text            ;
+                     ss_podp_text       ;
+)                                       ;
+  (setq ss_zas (ssadd)
+        ss_text (ssadd)
+        ss_podp_text
+         (ssadd))
+  (if axis-podp:*sc-x-ename*
+    (setq sc_x (sh:get axis-podp:*sc-x-ename*)))
+  (if axis-podp:*sc-y-ename*
+    (setq sc_y (sh:get axis-podp:*sc-y-ename*)))
+  (setq ll_ax_shcala axis-podp:*shcala_setup*)
+  (setq dcl_id (load_dialog (findfile "acad_w.sup/axis/axis_podp.dcl")))
+  (if (< dcl_id 0)
+    (exit))
+  (while (null exit_dialog)
+    (if (not (new_dialog "axis_podp" dcl_id))
+      (exit))
+    (axis-podp:setup)
+    (axis-podp:ac-tile)
+    (setq ac (start_dialog))
+    (cond ((= ac 0) (setq exit_dialog t) (axis-podp:btn-delete))
+          ((= ac 1) (setq axis-podp:*shcala_setup* ll_ax_shcala) (setq exit_dialog t))
+          ((= ac 2) (axis-podp:btn-select-x-axis))
+          ((= ac 3) (axis-podp:btn-select-y-axis))
+          ((= ac 4) (axis-podp:btn-draw SC_X SC_Y ll_ax_shcala))
+          ((= ac 5) (axis-podp:btn-delete)))))

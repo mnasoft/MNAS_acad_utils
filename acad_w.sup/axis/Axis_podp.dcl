@@ -1,23 +1,23 @@
-п»їdcl_settings : default_dcl_settings { audit_level = 3; }
+dcl_settings : default_dcl_settings { audit_level = 3; }
 
 axis_podp : dialog
 {
   aspect_ratio = 0;
-  label = "РџР°СЂР°РјРµС‚СЂС‹ РїРѕРґРїРёСЃРё РѕСЃРё";
+  label = "Параметры подписи оси";
   initial_focus = "accept";
   fixed_width = true;
   : row
   {
     : boxed_column
-    { label = "Р—Р°СЃРµС‡РєРё Р±РµР· С‚РµРєСЃС‚Р°";
+    { label = "Засечки без текста";
       :row
       {
-        : toggle {label = "Р’РґРѕР»СЊ РѕСЃРё Y"; key = "zas_right";}
+        : toggle {label = "Вдоль оси Y"; key = "zas_right";}
         : edit_box  {edit_width= 5; key ="zas_right_len";}
       }
       :row
       {
-        : toggle {label = "РџСЂРѕС‚РёРІ РѕСЃРё Y"; key = "zas_left";}
+        : toggle {label = "Против оси Y"; key = "zas_left";}
         : edit_box  {edit_width= 5; key ="zas_left_len";}
       }
       : edit_box  {edit_width= 5; label= "x_min";  key ="zas_x_min";}
@@ -27,10 +27,10 @@ axis_podp : dialog
       : toggle {key = "zas_draw";}
     }
     : boxed_column
-    { label = "РўРµРєСЃС‚ С†РёС„СЂ";
-      : edit_box  {edit_width= 5; label= "Р Р°СЃСЃС‚РѕСЏРЅРёРµ РѕС‚ РѕСЃРё";  key ="text_dist_from_ax";}
-      : edit_box  {edit_width= 5; label= "Р’С‹СЃРѕС‚Р°";  key ="text_hight";}
-      : edit_box  {edit_width= 5; label= "РЈРіРѕР» РїРѕРІРѕСЂРѕС‚Р°";  key ="text_angle";}
+    { label = "Текст цифр";
+      : edit_box  {edit_width= 5; label= "Расстояние от оси";  key ="text_dist_from_ax";}
+      : edit_box  {edit_width= 5; label= "Высота";  key ="text_hight";}
+      : edit_box  {edit_width= 5; label= "Угол поворота";  key ="text_angle";}
       : edit_box  {edit_width= 5; label= "x_min";  key ="text_x_min";}
       : edit_box  {edit_width= 5; label= "x_max";  key ="text_x_max";}
       : edit_box  {edit_width= 5; label= "n_div";  key ="text_n_div";}
@@ -38,25 +38,25 @@ axis_podp : dialog
       : toggle {key = "text_draw";}
     }
     : boxed_column
-    { label = "РџРѕРґРїРёСЃСЊ РѕСЃРё";
+    { label = "Подпись оси";
       : radio_column
       {   
-        : radio_button { label = "РќР°С‡Р°Р»Рѕ"; key = "podp_text_start";}
-        : radio_button { label = "РЎРµСЂРµРґРёРёРЅР°"; key = "podp_text_middle";}
-        : radio_button { label = "РљРѕРЅРµС†"; key = "podp_text_end";}
+        : radio_button { label = "Начало"; key = "podp_text_start";}
+        : radio_button { label = "Середиина"; key = "podp_text_middle";}
+        : radio_button { label = "Конец"; key = "podp_text_end";}
       }
-      : edit_box  {edit_width= 5; label= "Р Р°СЃСЃС‚РѕСЏРЅРёРµ РѕС‚ РѕСЃРё";  key ="podp_text_dist_from_ax";}
-      : edit_box  {edit_width= 5; label= "Р’С‹СЃРѕС‚Р°";  key ="podp_text_hight";}
-      : edit_box  {edit_width= 5; label= "РЈРіРѕР» РїРѕРІРѕСЂРѕС‚Р°";  key ="podp_text_angle";}
+      : edit_box  {edit_width= 5; label= "Расстояние от оси";  key ="podp_text_dist_from_ax";}
+      : edit_box  {edit_width= 5; label= "Высота";  key ="podp_text_hight";}
+      : edit_box  {edit_width= 5; label= "Угол поворота";  key ="podp_text_angle";}
       : toggle {key = "podp_text_draw";}
     }
   }
   : row
   {
-    : button {label="Р’С‹Р±РµСЂРёС‚Рµ РѕСЃСЊ x" ;key = "btn_select_x_axis";}
-    : button {label="Р’С‹Р±РµСЂРёС‚Рµ РѕСЃСЊ y" ;key = "btn_select_y_axis";}
-    : button {label="РќР°СЂРёСЃРѕРІР°С‚СЊ" ;key = "btn_darw";}
-    : button {label="РЈРґР°Р»РёС‚СЊ" ;key = "btn_delete";}
+    : button {label="Выберите ось x" ;key = "btn_select_x_axis";}
+    : button {label="Выберите ось y" ;key = "btn_select_y_axis";}
+    : button {label="Нарисовать" ;key = "btn_draw";}
+    : button {label="Удалить" ;key = "btn_delete";}
   }
    ok_cancel_help;
 }

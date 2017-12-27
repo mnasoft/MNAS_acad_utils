@@ -27,10 +27,10 @@
   (dr:pline pts 256))
 
 (defun axis:draw-single-graph-by-axis-names
-       (x-axis-name y-axis-name / scx scy str pts EL LST LST-I LST-LEN LST-REZ)
+       (x-axis-name y-axis-name xy-point-name / scx scy str pts el lst lst-i lst-len lst-rez pnt-type)
   (setq scx (sh:get (sh:sel-by-name x-axis-name))
         scy (sh:get (sh:sel-by-name y-axis-name))
-        str y-axis-name)
+        str xy-point-name)
   (print (vl-doc-ref (read str)))
   (if (and scx scy)
     (progn (setq pts (progn (setq lst     (vl-doc-ref (read str))
@@ -40,12 +40,28 @@
                               (setq el      (nth lst-i lst)
                                     lst-rez (cons (progn (sc:pxy_pt el scx scy)) lst-rez)))
                             (setq lst-rez (reverse lst-rez))))
-      (dr:layer-set y-axis-name)
-      (dr:pline pts 256))))
+           (dr:layer-set xy-point-name)
+           (dr:pline pts 256)
+           (setq pnt-type (axis:point-type-next))
+           (mapcar (function (lambda (pt) (dr:insert pt pnt-type))) pts))))
 
-(defun axis:draw-multiple-graphs-by-axis-names  (x-axis-name y-axis-name-lst)
-  (mapcar (function (lambda (el) (axis:draw-single-graph-by-axis-names x-axis-name el)))
-          y-axis-name-lst))
+(defun axis:draw-multiple-graphs-by-axis-names
+       (x-axis-name y-axis-name-lst)
+  (mapcar (function
+	    (lambda (el)
+	      (axis:draw-single-graph-by-axis-names x-axis-name el el)))
+	  y-axis-name-lst))
+
+(defun axis:draw-multiple-graphs-on-same-axis
+       (x-axis-name y-axis-name data-symbol-lst)
+  (axis:load-point-types)
+  (axis:point-type-reset)
+  (mapcar (function (lambda (el)
+		      (axis:draw-single-graph-by-axis-names
+			x-axis-name
+			y-axis-name
+			(strcase (vl-symbol-name el) t))))
+	  data-symbol-lst))
 
 (defun c:a-l  (/ en te)
   (setq en (car (entsel "\nВыберите ось:"))

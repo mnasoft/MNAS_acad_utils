@@ -19,11 +19,14 @@
          (vlax-release-object wscript)
          pcname)))
 
-(defun mnas_arxprj_root  ()
-  (cond ((= (ac:machine-instance) "MNASOFT-01") "E:/PRG/msys64/home/namatv/develop/git/MNAS_acad_utils")
-        ((= (ac:machine-instance) "KO11-118383")
-         "D:/PRG/msys32/home/namatv/develop/git/mnasoft/MNAS_acad_utils")
-        (t "C:/")))
+(defun mnas_arxprj_root	 ()
+  (cond
+    ((= (ac:machine-instance) "MNASOFT-01")
+     "C:/msys32/home/namatv/develop/git/MNAS_acad_utils")
+    ((= (ac:machine-instance) "KO11-118383")
+     "D:/PRG/msys32/home/namatv/develop/git/mnasoft/MNAS_acad_utils")
+    (t "C:/")))
+
 
 (defun MNAS_ArxPrj_RoamableRootPrefix () (strcat (MNAS_ArxPrj_root) "/" "RoamableRootPrefix/"))
 

@@ -64,7 +64,7 @@
                   ("i1" "")             ; Отношение длины пружины в свободном состоянии к её среднему диаметру
                   ("m" "")              ; Масса пружины, кг
                   ))
-  (setq dcl_id (load_dcl "/prj/spring/Spring.DCL"))
+  (setq dcl_id (load_dialog "./acad_w.sup/prj/spring/Spring.DCL"))
   ;;  ;; "E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/acad_w.sup/prj/spring/Spring.DCL"
   (setq do_dialog t)
   (while do_dialog

@@ -60,7 +60,9 @@
   (setq line (vla-AddLine (AcadAppDocSpace) (vlax-3d-point pt1) (vlax-3d-point pt2)))
   (if (and (>= col 0) (<= col 256))
     (vla-put-color line col))
+  (vla-update line)
   line)
+
 
 ;;;f;;;("dr:pline(pts col)"
 ;;;f;;;"Создает полилинию в текущем пространстве.\n
@@ -79,6 +81,7 @@
   (setq pline (vla-AddLightweightPolyline (AcadAppDocSpace) arr))
   (if (and (>= col 0) (<= col 256))
     (vla-put-color pline col))
+  (vla-update pline)
   pline)
 
 ;;;f;;;("dr:circle(pt r col)"
@@ -93,6 +96,7 @@
   (setq circle (vla-AddCircle (AcadAppDocSpace) (vlax-3d-point pt) r))
   (if (and (>= col 0) (<= col 256))
     (vla-put-color circle col))
+  (vla-update circle)
   circle)
  ;|	dr:arc (pt r a_start a_end col)	- Отрисовка дуги.
 	(dr:arc '(0.0 0.0 0.0) 10.0 0.0 (* pi 0.5) 256)
@@ -101,6 +105,7 @@
   (setq arc (vla-AddArc (AcadAppDocSpace) (vlax-3d-point pt) r a_start a_end))
   (if (and (>= col 0) (<= col 256))
     (vla-put-color arc col))
+  (vla-update arc)  
   arc)
  ;|	dr:xline(pt1 pt2 col)	- Отрисовка прямой, проходящей через две точки.
 	(dr:xline '(5.0 4.0 3.0) '(8.0 2.0 0.0) 0)
@@ -110,6 +115,7 @@
   (setq xline (vla-AddXline (AcadAppDocSpace) (vlax-3d-point pt1) (vlax-3d-point pt2)))
   (if (and (>= col 0) (<= col 256))
     (vla-put-color xline col))
+  (vla-update xline)
   xline)
  ;|	dr:ray(pt1 pt2 col)	- Отрисовка луча.
 	(dr:ray '(5.0 4.0 3.0) '(8.0 2.0 0.0) 0)
@@ -119,6 +125,7 @@
   (setq ray (vla-AddRay (AcadAppDocSpace) (vlax-3d-point pt1) (vlax-3d-point pt2)))
   (if (and (>= col 0) (<= col 256))
     (vla-put-color ray col))
+  (vla-update ray)
   ray)
 
  ;|	dr:text(txt pt height rotation col)	- Отрисовка текста.
@@ -130,6 +137,7 @@
   (if (and (>= col 0) (<= col 256))
     (vla-put-color text col))
   (vla-put-Rotation text rotation)
+  (vla-update text)
   text)
  ;|	dr:solid (point1 point2 point3 point4 a-color) - отрисовка области.
 	(dr:solid '(0.0 0.0 0.0) '(10. 0.0 0.0) '(0.0 10. 0.0) '(10.0 10. 5.0) 5)
@@ -142,6 +150,7 @@
                             (vlax-3d-point point4)))
   (if (and (>= a-color 0) (<= a-color 256))
     (vla-put-color solid a-color))
+  (vla-update solid)
   solid)
 
 (defun dr:spline  (pts col / arr len spline)
@@ -154,6 +163,7 @@
   (setq spline (vla-AddSpline (AcadAppDocSpace) arr (vlax-3d-point 0.0 0.0 0.0) (vlax-3d-point 0.0 0.0 0.0)))
   (if (and (>= col 0) (<= col 256))
     (vla-put-color spline col))
+  (vla-update spline)
   spline)
 
 (defun dr:layer-new(layer-name)
@@ -161,3 +171,6 @@
 
 (defun dr:layer-set(layer-name)
   (command "_-layer" "_new" layer-name "_set" layer-name ""))
+
+(defun dr:insert  (pt block-name)
+  (command "_-insert" block-name "_s" 1.0 "_r" 0.0 "_non" pt))
