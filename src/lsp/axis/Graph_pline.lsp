@@ -1,6 +1,6 @@
 (defun ep  (param / dcl_id do_dialog wid act)
   (ep:init)
-  (setq dcl_id (load_dialog (findfile "src/lsp/axis/axis.dcl")))
+  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "axis/axis.dcl"))))
   (if (< dcl_id 0)
     (exit))
   (setq do_dialog t)

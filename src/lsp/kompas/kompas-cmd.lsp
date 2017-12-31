@@ -18,7 +18,7 @@
         exten     (car (reverse (str_token fn ".")))
         fn_wo_ext (substr fn 1 (- (strlen fn) (strlen exten))))
   (cond ((or (= (strcase exten t) "frg") (= (strcase exten t) "cad"))
-         (startapp (findfile "src/lsp/kompas/cad_sf.bat") fn)
+         (startapp (findfile (utils:path-src-lsp "kompas/cad_sf.bat")) fn)
          (getstring "<>")))
   (setq fl (open (strcat fn_wo_ext "sf") "r"))
   (if (null fl)
@@ -66,4 +66,4 @@
     (if f_nm
       (f_nm)))
   (out_my_err " ")
-  (startapp (findfile "src/lsp/kompas/sf_cad.bat") fn))
+  (startapp (findfile (utils:path-src-lsp "kompas/sf_cad.bat")) fn))

@@ -8,7 +8,7 @@
                      n                  ;Количество точек для каждого сегмента полилинии.
                      a_23     a_43     dst      d_23     d_43     e_par    i        n_delen  par      pnt      p_bok_23 p_bok_43 p_mid    p_vo_2
                      p_vo_3   p_vo_4   start_pnt         s_par    vo_line  v_bok_23 v_bok_43 v_mid    v_pnt_2  v_pnt_3  v_pnt_4)
-  (command "_vslide" (findfile "src/lsp/razvertka/razvertka.sld"))
+  (command "_vslide" (findfile (utils:path-src-lsp "razvertka/razvertka.sld")))
   (prompt "\nКогда будете готовы нажмите ВВОД.")
   (command pause "_redraw")
   (setq vo_1      (vlax-ename->vla-object (car (entsel "\nВыберите серединную образующую (вид на торец листа):")))

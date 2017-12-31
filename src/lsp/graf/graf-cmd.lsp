@@ -209,7 +209,7 @@
 
 
 (defun gr_text  ()
-  (setq ted_dcl_id (load_dialog (findfile "src/lsp/graf/graf.dcl")))
+  (setq ted_dcl_id (load_dialog (findfile (utils:path-src-lsp "graf/graf.dcl"))))
   (if (< ted_dcl_id 0)
     (exit))
   (if (not (new_dialog "gr_text" ted_dcl_id))
@@ -232,7 +232,7 @@
 (defun get_real (a) (atof (get_tile a)))
 
 (defun gr_net  ()
-  (setq ted_dcl_id (load_dialog (findfile "src/lsp/graf/graf.dcl")))
+  (setq ted_dcl_id (load_dialog (findfile (utils:path-src-lsp "graf/graf.dcl"))))
   (if (< ted_dcl_id 0)
     (exit))
   (if (not (new_dialog "gr_net" ted_dcl_id))

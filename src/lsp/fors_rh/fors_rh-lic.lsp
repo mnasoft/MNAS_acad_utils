@@ -12,7 +12,7 @@
 ;;;;;;("ras_har_lic"
 ;;;;;;"Вычисление расходной характеристики жидкостной форсунки." "Расчеты")
 (defun c:ras_har_lic  (/ act dcl_id)
-  (setq dcl_id (load_dialog (findfile "src/lsp/fors_rh/fors_rh.dcl")))
+  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "fors_rh/fors_rh.dcl"))))
   (if (< dcl_id 0)
     (exit))
   (if (not (new_dialog "fors_lic" dcl_id))

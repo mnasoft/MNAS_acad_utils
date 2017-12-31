@@ -1,6 +1,6 @@
 (defun база_данных  (/ ex_dialog action dcl_id)
   (setq	dcl_id
-	 (load_dialog (findfile "src/lsp/Спецификация/Специф.dcl")))
+	 (load_dialog (findfile (utils:path-src-lsp "Спецификация/Специф.dcl"))))
   (if (< dcl_id 0)
     (exit))
   (while (null ex_dialog)
@@ -66,7 +66,7 @@
 (defun бд_ac_b_5_5 () (alert "Сохранить"))
 
 (defun бд_setup_dialog	(/ str_in_l_box)
-  (load (findfile "src/lsp/spec/bd_naimjenovanije.lsp"))
+  (load (findfile (utils:path-src-lsp "spec/bd_naimjenovanije.lsp")))
   (setq	str_in_l_box
 	 (mapcar (function (lambda (el)
 			     (setq обознач.   (cdr (assoc 1 el))

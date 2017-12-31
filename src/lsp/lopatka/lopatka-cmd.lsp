@@ -143,7 +143,7 @@
              (setq n (getint " n :"))
              (if (null n)
                (setq n temp))))
-          ((= str "Slide") (command "_.vslide" (findfile "src/lsp/lopatka/lopatka.sld")))
+          ((= str "Slide") (command "_.vslide" (findfile (utils:path-src-lsp "lopatka/lopatka.sld"))))
           ((= str "File") (lo:lop_7))
           ((= str "Redraw") (command "_.redraw"))
           ((= str "Erase")

@@ -379,7 +379,7 @@
 ;;;;;;("atoms" "Команда для просмотра загруженных команд функций и атомов." "not defined")
 (defun c:atoms  (/ act dcl_id do_dial e_1_1 all_atoms_l str_atoms_l poz_list_l)
   (init)
-  (setq dcl_id (load_dialog (findfile "src/lsp/atoms/atoms-dlg.dcl")))
+  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "atoms/atoms-dlg.dcl"))))
   (if (< dcl_id 0)
     (exit))
   (if (not (new_dialog "atoms" dcl_id))

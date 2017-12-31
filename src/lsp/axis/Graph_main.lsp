@@ -37,11 +37,11 @@
                      (cons 70 2))))
 
 ;;;;;;("ax" "not defined" "Ўкалы")
-(defun c:ax  (/ act dcl_id do-dialog N PTS-GR SC-X-GR SC-Y-GR SCX SCY)
+(defun c:ax  (/ act dcl_id do-dialog n pts-gr sc-x-gr sc-y-gr scx scy)
   (if n
     (ax:init n)
     (progn (setq n 0) (ax:init 0)))
-  (setq dcl_id (load_dialog (findfile "src/lsp/axis/axis.dcl")))
+  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "axis/axis.dcl"))))
   (if (< dcl_id 0)
     (exit))
   (setq do-dialog t)

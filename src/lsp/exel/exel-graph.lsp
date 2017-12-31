@@ -788,7 +788,7 @@
 ;;; EXELREAD::DIA_POS - Координаты диалога.
 ;;; EXELREAD::SETUP_LST - Список с настройками диалога.
 ) (setq do_dialog t)
-  (setq dcl_id (load_dialog (findfile "src/lsp/exel/graph.DCL")))
+  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "exel/graph.DCL"))))
   (while do_dialog
     (if (not (new_dialog "exelread" dcl_id "" exelread::dia_pos))
       (exit))

@@ -4,7 +4,7 @@
 		       xyz_ijk_lst ; список координат точек и ортов подхода к ним
 )
 ;;;  (setq fn (getfiled "title" "default" "ijk" 0))
-  (setq fn (findfile "src/lsp/Измерительная машина/Mea/h10_1.ijk"))
+  (setq fn (findfile (utils:path-src-lsp "Измерительная машина/Mea/h10_1.ijk")))
   (if (null fn)
     (progn (alert
 	     (princ

@@ -48,3 +48,7 @@
   (if (is_path_full extend_path-str)
     extend_path-str
     (strcat (acad_sup) extend_path-str)))
+
+(defun utils:path-src (str) (strcat "src" "/" str))
+
+(defun utils:path-src-lsp (str) (utils:path-src (strcat "lsp" "/" str)))

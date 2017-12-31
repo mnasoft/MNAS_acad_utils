@@ -93,7 +93,7 @@
 
 (defun for_prover:data  (/ act dcl_id ll_for_prover)
   (setq ll_for_prover ll_for_prover_setup)
-  (setq dcl_id (load_dialog (findfile "src/lsp/for_lic/for_lic-prover.dcl")))
+  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "for_lic/for_lic-prover.dcl"))))
   (if (< dcl_id 0)
     (exit))
   (if (not (new_dialog "for_prover" dcl_id))
@@ -125,7 +125,7 @@
     0
     (dimx_tile "f_pr-image")
     (dimy_tile "f_pr-image")
-    (findfile "src/lsp/for_lic/for.sld"))
+    (findfile (utils:path-src-lsp "for_lic/for.sld")))
   (end_image))
 
 (defun for_prover:ac_tile  ()

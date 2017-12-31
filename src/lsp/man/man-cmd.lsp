@@ -57,16 +57,16 @@
   (princ))
 
 (defun man-load-func  ()
-  (load (findfile "src/lsp/man/man-data_base.lsp"))
-  (load (findfile "src/lsp/man/man-data_base_func.lsp")))
+  (load (findfile (utils:path-src-lsp "man/man-data_base.lsp")))
+  (load (findfile (utils:path-src-lsp "man/man-data_base_func.lsp"))))
 
 ;;;f;;;("man-rebuild"
 ;;;f;;;"Prj - man.\n
 ;;;f;;;File - man.lsp.
 ;;;f;;;Производит извлечение справочной информации из файлов *.lsp")
 (defun man-rebuild  (/ asterix_semicolon fl_r fl_w fn_r fn_w f_name ln semicolon ss)
-  (setq fn_w (findfile "src/lsp/man/man-data_base.lsp")
-        fn_r (getfiled "Select a Lisp File" (findfile "src/lsp/man/man_data.txt") "txt" 1))
+  (setq fn_w (findfile (utils:path-src-lsp "man/man-data_base.lsp"))
+        fn_r (getfiled "Select a Lisp File" (findfile (utils:path-src-lsp "man/man_data.txt")) "txt" 1))
   (find-line-by_mask-in_directory_files (acad_sup) "*.lsp" (strcat "*;;;" ";;;*") fn_r)
   (setq fl_r (open fn_r "r")
         fl_w (open fn_w "w"))
@@ -143,8 +143,8 @@
   (close f_out))
 
 (defun man-rebuild-func  (/ asterix_semicolon fl_r fl_w fn_r fn_w f_name ln semicolon ss)
-  (setq fn_w              (findfile "src/lsp/man/man-data_base_func.lsp")
-        fn_r              (getfiled "Select a Lisp File" (findfile "src/lsp/man/man_data_func.txt") "txt" 1)
+  (setq fn_w              (findfile (utils:path-src-lsp "man/man-data_base_func.lsp"))
+        fn_r              (getfiled "Select a Lisp File" (findfile (utils:path-src-lsp "man/man_data_func.txt")) "txt" 1)
         f_name            ""
         ss                ""
         semicolon         (strcat ";;;" "f" ";;;")

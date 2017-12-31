@@ -16,7 +16,7 @@
          (setq by_layer "BYLAYER"
                by_block "BYBLOCK")
          (princ t)))
-  (setq dcl_id (load_dialog (findfile "src/lsp/d_chprop/d_chprop.dcl")))
+  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "d_chprop/d_chprop.dcl"))))
   (if (< dcl_id 0)
     (exit))
   (setq do_dialog t)
@@ -85,7 +85,7 @@
 
 (defun ac-4  (/ q dcl_id)
   (defun q (i) (cdr (assoc 2 i)))
-  (setq dcl_id (load_dialog (findfile "src/lsp/d_chprop/d_chprop.dcl")))
+  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "d_chprop/d_chprop.dcl"))))
   (if (< dcl_id 0)
     (exit))
   (if (not (new_dialog "layertype" dcl_id))
@@ -105,7 +105,7 @@
 
 (defun ac-5  (/ q dcl_id)
   (defun q (i) (cdr (assoc 2 i)))
-  (setq dcl_id (load_dialog (findfile "src/lsp/d_chprop/d_chprop.dcl")))
+  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "d_chprop/d_chprop.dcl"))))
   (if (< dcl_id 0)
     (exit))
   (if (not (new_dialog "linetype" dcl_id))

@@ -2,7 +2,7 @@
   (prompt "\nВыберите тексты или размеры :")
   (setq en (select) )
   (setq
-    dcl_id (load_dialog (findfile "src/lsp/mnas/Welding/welding.dcl"))
+    dcl_id (load_dialog (findfile (utils:path-src-lsp "mnas/Welding/welding.dcl")))
   )
 
   (if (< dcl_id 0)    (exit)   )

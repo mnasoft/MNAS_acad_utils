@@ -6,7 +6,7 @@
          (list "not defined"   "Аббревиатуры"  "Большой шрифт" "Измени"        "Настройка"     "Обмен"
                "Объекты"       "Отверстия"     "Размеры"       "Расчеты"       "Слои"          "Смеситель"
                "Справка"       "Тексты"        "Точки"         "Шкалы"))
-  (load (findfile "src/lsp/man/man-data_base.lsp"))
+  (load (findfile (utils:path-src-lsp "man/man-data_base.lsp")))
   (setq i 0
         i (foreach a-el  mnas_command_help
             (if (/= 4 (length a-el))

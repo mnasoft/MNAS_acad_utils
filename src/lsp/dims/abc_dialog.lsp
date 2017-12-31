@@ -6,7 +6,7 @@
 ;;;;;;("index" "¬ыводит на экран диалоговое окно, позвол€ющее задать символ и индекс дл€ генерируемых впоследствии обозначений баз, направлени€ взгл€да, разреза." "–азмеры")
 
 (defun c:index  (/ dcl_id do_dialog ac index_A index_0)
-  (setq dcl_id    (load_dialog (findfile "src/lsp/dims/abc.dcl"))
+  (setq dcl_id    (load_dialog (findfile (utils:path-src-lsp "dims/abc.dcl")))
         do_dialog t)
   (while do_dialog
     (if (not (new_dialog "начальный_индекс" dcl_id))

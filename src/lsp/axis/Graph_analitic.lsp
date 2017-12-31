@@ -81,7 +81,7 @@
           x-t   (cdr (assoc "x(t)" l1))
           y-t   (cdr (assoc "y(t)" l1))
           def   (cdr (assoc "defun" l1))))
-  (setq dcl_id (load_dialog (findfile "src/lsp/axis/axis_graph_1.dcl")))
+  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "axis/axis_graph_1.dcl"))))
   (if (< dcl_id 0)
     (exit))
   (setq do_dialog t)

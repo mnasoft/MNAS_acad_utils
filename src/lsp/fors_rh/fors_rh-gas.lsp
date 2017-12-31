@@ -8,7 +8,7 @@
 
 ;;;;;;("ras_har_gas" "Вычисление расходной характеристики газовой форсунки." "Расчеты")
 (defun c:ras_har_gas  (/ fl f_fors n_div ro*dp_max ro*dp_min var_name)
-  (setq dcl_id (load_dialog (findfile "src/lsp/fors_rh/fors_rh.dcl")))
+  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "fors_rh/fors_rh.dcl"))))
   (if (< dcl_id 0)
     (exit))
   (if (not (new_dialog "fors_gas" dcl_id))
