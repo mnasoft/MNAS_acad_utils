@@ -22,4 +22,19 @@
 ;(defun c:узк() (c:epr))
 (defun c:шь() (c:im))
 
+(defun mnas-axis-Add-Toolbar-Button  (command-name)
+  (setq	menu-name    "MNASOFT"
+	toolbar-name "MNAS_Axis_Temp"
+	button-name  (STRCASE (VL-STRING-TRANSLATE "-" "_" command-name) nil)
+	icon-path    "./menus/Acad_mnu_icon/axis/"
+	icon-name    (VL-STRING-TRANSLATE "-" "_" command-name)
+	icon-name-16 (strcat icon-path icon-name "_16.bmp")
+	icon-name-32 (strcat icon-path icon-name "_32.bmp"))
+  (mnas-vlax-utils-Add-Toolbar-Button
+    menu-name toolbar-name button-name command-name icon-name-16 icon-name-32))
+
+(mapcar	(function mnas-axis-Add-Toolbar-Button)
+	'("mnas-axis-mode-setup" "mnas-axis-edit" "mnas-axis-graph-xy" "mnas-axis-graph-xy-n" "mnas-axis-point"	"mnas-axis-point-text" "mnas-axis-tick"	"mnas-axis-ticks" "mnas-axis-draw-xy"
+	  "mnas-axis-draw-point"))
+
 (princ "Loaded project axis.\n")

@@ -1,0 +1,15 @@
+;;; VLisp project file [V2.0] vlax-utils saved to:[C:/msys32/home/namatv/develop/git/MNAS_acad_utils/src/lsp/vlax-utils] at:[1/2/18] 
+(VLISP-PROJECT-LIST
+  :NAME
+  vlax-utils
+  :OWN-LIST
+  ("acad-object")
+  :FAS-DIRECTORY
+  nil
+  :TMP-DIRECTORY
+  nil
+  :PROJECT-KEYS
+  (:BUILD (:standard))
+  :CONTEXT-ID
+  :AUTOLISP)
+;;; EOF

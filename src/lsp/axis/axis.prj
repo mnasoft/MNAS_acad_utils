@@ -1,14 +1,14 @@
-;;; VLisp project file [V2.0] axis saved to:[D:/PRG/msys32/home/namatv/develop/git/mnasoft/MNAS_acad_utils/acad_w.sup/axis] at:[12/26/17] 
+;;; VLisp project file [V2.0] axis saved to:[C:/msys32/home/namatv/develop/git/MNAS_acad_utils/src/lsp/axis] at:[1/2/18] 
 (VLISP-PROJECT-LIST
   :NAME
   axis
   :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"	    "../utils/sub_div"	    "Axis_cmd"		    "Axis_ea"
-    "Axis_util"		    "../utils/draw"	    "../UTILS/DXF"	    "Graph_analitic"
-    "Graph_block"	    "Graph_main"	    "Graph_pline"	    "Graph_poitn_type"
-    "Image"		    "../UTILS/XDATA"	    "../UTILS/dlg_utils"    "Insert-point-types"
-    "../opechatka/rus_cmd_opechatka"		    "axis_rus")
+    "../utils/Debug"			"C:/msys32/home/namatv/develop/git/MNAS_acad_utils/src/lsp/vlax-utils/acad-object"			    "../utils/sub_div"
+    "Axis_cmd"				"Axis_ea"			    "Axis_util"				"../utils/draw"			    "../UTILS/DXF"
+    "Graph_analitic"			"Graph_block"			    "Graph_main"			"Graph_pline"			    "Graph_poitn_type"
+    "Image"				"../UTILS/XDATA"		    "../UTILS/dlg_utils"		"Insert-point-types"		    "../opechatka/rus_cmd_opechatka"
+    "axis_rus")
   :FAS-DIRECTORY
   "../../../temp"
   :TMP-DIRECTORY
