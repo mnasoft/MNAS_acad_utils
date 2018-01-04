@@ -22,19 +22,30 @@
 ;(defun c:узк() (c:epr))
 (defun c:шь() (c:im))
 
-(defun mnas-axis-Add-Toolbar-Button  (command-name)
+(defun mnas-axis-Add-Toolbar-Button  (c-n-h)
   (setq	menu-name    "MNASOFT"
 	toolbar-name "MNAS_Axis_Temp"
+	command-name (car c-n-h)
+	command-help (cadr c-n-h)
 	button-name  (STRCASE (VL-STRING-TRANSLATE "-" "_" command-name) nil)
 	icon-path    "./menus/Acad_mnu_icon/axis/"
 	icon-name    (VL-STRING-TRANSLATE "-" "_" command-name)
 	icon-name-16 (strcat icon-path icon-name "_16.bmp")
 	icon-name-32 (strcat icon-path icon-name "_32.bmp"))
   (mnas-vlax-utils-Add-Toolbar-Button
-    menu-name toolbar-name button-name command-name icon-name-16 icon-name-32))
+    menu-name toolbar-name button-name command-name command-help icon-name-16 icon-name-32))
 
-(mapcar	(function mnas-axis-Add-Toolbar-Button)
-	'("mnas-axis-mode-setup" "mnas-axis-edit" "mnas-axis-graph-xy" "mnas-axis-graph-xy-n" "mnas-axis-point"	"mnas-axis-point-text" "mnas-axis-tick"	"mnas-axis-ticks" "mnas-axis-draw-xy"
-	  "mnas-axis-draw-point"))
+(defun c:toolbar-mnas-axis  ()
+  (mapcar (function mnas-axis-Add-Toolbar-Button)
+	  '(("mnas-axis-mode-setup" "Ќастройка режима приглашений и уведомлений")
+	    ("mnas-axis-edit" "ѕреобразование отрезка в ось & –едактирование оси")
+	    ("mnas-axis-graph-xy" "ѕостроение полилинии в координатах двух шкал.")
+	    ("mnas-axis-graph-xy-n" "ѕостроение семейства полилиний в координатах двух шкал")
+	    ("mnas-axis-point" "ѕостроение точки в координатах шкалы")
+	    ("mnas-axis-point-text" "ѕостроение точки в координатах шкалы и нанесение текста")
+	    ("mnas-axis-tick" "ѕостроение линий сетки в координатах 2-х шкал и нанесение текста")
+	    ("mnas-axis-ticks" "ѕостроение линий сетки в координатах 2-х шкал и нанесение текста")
+	    ("mnas-axis-draw-xy" "ѕостроение точек в координатах двух шкал по их координатам")
+	    ("mnas-axis-draw-point" "ѕостроение точек в координатах двух шкал по точкам"))))
 
 (princ "Loaded project axis.\n")

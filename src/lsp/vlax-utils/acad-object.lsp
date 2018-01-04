@@ -90,7 +90,7 @@
 ;;;(mnas-vlax-utils-Toolbars-name-list (mnas-vlax-utils-search-menu-by-name "MNASOFT"))
 ;;;(mnas-vlax-utils-add-Toolbar (mnas-vlax-utils-search-menu-by-name "MNASOFT") "MNAS_XX1")
 
-(defun mnas-vlax-utils-Add-Toolbar-Button  (menu-name toolbar-name btn-name command-name small-icon big-icon / menu-object newbutton openmacro toolbar-object)
+(defun mnas-vlax-utils-Add-Toolbar-Button  (menu-name toolbar-name btn-name command-name command-help small-icon big-icon / menu-object newbutton openmacro toolbar-object)
   (setq Menu-object (mnas-vlax-utils-search-menu-by-name menu-name))
   (if (null Menu-object)
     (progn (prompt (strcat "\nERROR in func AddToolbarButton. Cood not find menu: \"" menu-name "\"."))
@@ -98,7 +98,7 @@
   (if (null (setq ToolBar-object (mnas-vlax-utils-search-Toolbar-by-name Menu-object toolbar-name)))
     (setq ToolBar-object (vla-Add (vla-get-Toolbars Menu-object) toolbar-name)))
   (setq openMacro (strcat (Chr 3) (Chr 3) (Chr 95) command-name (Chr 32)))
-  (setq newButton (vla-AddToolbarButton ToolBar-object "" btn-name "Open a file." openMacro))
+  (setq newButton (vla-AddToolbarButton ToolBar-object "" btn-name command-help openMacro))
   (vla-put-Visible ToolBar-object :vlax-true)
   (vlax-invoke-method newButton 'SetBitmaps small-icon big-icon))
 
