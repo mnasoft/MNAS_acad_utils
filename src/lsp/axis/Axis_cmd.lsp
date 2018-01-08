@@ -72,6 +72,17 @@
 (setq mnas-axis:point-to-screen-prompt "Перевод точек из координат двух шкал в координаты экрана
 Задаются: 1) ось Х; 2) ось Y; 3) точка в координатах шкал X-Y.")
 
+(setq mnas-axis:point-to-another-axis-prompt "Перевод точек из координат одной пары шкал в координаты другой пары шкал
+Задаются: 1) ось Х_from по которой берутся точки; 2) ось Y_from по которой берутся точки;
+3) ось Х_to в которой строятся точки; 4) ось Y_to в которой строятся точки;
+5) точка в координатах шкал X_from-Y_from.")
+
+(setq mnas-axis:point-value-prompt "Определение значения на шкале по точке
+Задаются: 1) ось Х; 2) Точка, для которой необходимо определить значение.")
+
+(setq mnas-axis:point-value-xy-prompt "Выводит координаты отмеченных точек
+Задаются: 1) ось Х; 2) ось Y; 3) Точка в кординатах шкал, для которой необходимо определить значение.")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;("mnas-axis-graph-xy"
@@ -358,7 +369,7 @@
 ;;;;;;("a4" "См. mnas-axis-draw-point." "Шкалы")
 (defun c:a4 () (c:mnas-axis-draw-point))
 
-;;;;;;("mnas-axis-point-to-screen" a5
+;;;;;;("mnas-axis-point-to-screen"
 ;;;;;;"Перевод точек из координат двух шкал в координаты экрана.\n
 ;;;;;; Задаются:\n
 ;;;;;; 1) ось Х;\n
@@ -376,7 +387,7 @@
 ;;;;;;("a5" "См. mnas-axis-point-to-screen." "Шкалы")
 (defun c:a5 () (c:mnas-axis-point-to-screen))
 
-;;;;;;("a6"
+;;;;;;("mnas-axis-point-to-another-axis"
 ;;;;;;"Перевод точек из координат одной пары шкал\n
 ;;;;;; в координаты другой пары шкал.\n
 ;;;;;; Задаются:\n
@@ -385,59 +396,36 @@
 ;;;;;; 3) ось Х в которой строятся точки;\n
 ;;;;;; 4) ось Y в которой строятся точки;\n
 ;;;;;; 5) точка в координатах шкал X-Y." "Шкалы")
-(defun c:a6  (/ p scx0 scx1 scy0 scy1)
-  (alert
-    "Перевод точек из координат одной пары шкал
-в координаты другой пары шкал
-Задаются:
-1) ось Х по которой берутся точки;
-2) ось Y по которой берутся точки;
-3) ось Х в которой строятся точки;
-4) ось Y в которой строятся точки;
-5) точка в координатах шкал X-Y.")
-  (setq scx0 (sh:get (sh:sel "Ось X для указания точек"))
-        scy0 (sh:get (sh:sel "Ось Y для указания точек"))
-        scx1 (sh:get (sh:sel "Ось X для построения точек"))
-        scy1 (sh:get (sh:sel "Ось Y для построения точек")))
-  (while (setq p (getpoint "Введите точку P :")
-               p (sc:pt_pxy p scx0 scy0))
-    (print p)
+(defun c:mnas-axis-point-to-another-axis  (/ p scx0 scx1 scy0 scy1)
+  (mnas-axis:show-prompt mnas-axis:point-to-another-axis-prompt)
+  (setq	scx0 (sh:get (sh:sel "Ось X_from"))
+	scy0 (sh:get (sh:sel "Ось Y_from"))
+	scx1 (sh:get (sh:sel "Ось X_to"))
+	scy1 (sh:get (sh:sel "Ось Y_to")))
+  (while (setq p (getpoint "Введите точку P:"))
+    (setq p (sc:pt_pxy p scx0 scy0))
     (dr:point (sc:pxy_pt p scx1 scy1) 256)))
 
-;;;;;;("c1" "Построение точки на шкале по значению." "Шкалы")
-(defun c:c1  (/ sx scx v pt)
-  (setq	sx  (sh:sel "Шкала x")
-	scx (sh:get sx)
-	v   (getreal "\nВведите значение:")
-	pt  (sc:val_pt v scx))
-  (dr:point pt 1)
-  (princ v)
-  (princ))
+;;;;;;("a6" "См. mnas-axis-point-to-another-axis" "Шкалы")
+(defun c:a6 () (c:mnas-axis-point-to-another-axis))
 
-;;;;;;("c2" "Определение значения на шкале по точке." "Шкалы")
-(defun c:c2  (/ sx scx v pt)
-  (setq	sx  (sh:sel "Шкала x")
+;;;;;;("mnas-axis-point-value" "Определение значения на шкале по точке." "Шкалы")
+(defun c:mnas-axis-point-value  (/ sx scx v pt)
+  (mnas-axis:show-prompt mnas-axis:point-value-prompt)
+  (setq	sx  (sh:sel "Ось X:")
 	scx (sh:get sx)
-	pt  (getpoint "\nУкажите точку на шкале:")
+	pt  (getpoint "\nУкажите точку:")
 	v   (sc:pt_val pt scx))
   (dr:point pt 1)
   (princ v)
   (princ))
 
-;;;;;;("c3" "Построение точки в координатах 2-х шкал." "Шкалы")
-(defun c:c3  (/ sx scx sy scy pxy pt)
-  (setq	sx  (sh:sel "Шкала x")
-	scx (sh:get sx)
-	sy  (sh:sel "Шкала y")
-	scy (sh:get sy))
-  (while (setq pxy (getpoint "\n Укажите точку в координатах шкалы:"))
-    (setq pt (sc:pxy_pt pxy scx scy))
-    (princ "pxy")
-    (princ pxy)
-    (dr:point pt 1)))
+;;;;;;("c2" "См. mnas-axis-point-value." "Шкалы")
+(defun c:c2 () (c:mnas-axis-point-value))
 
-;;;;;;("c4" "Выводит координаты отмеченных точек." "Шкалы")
-(defun c:c4  (/ sx scx sy scy pxy pt)
+;;;;;;("mnas-axis-point-value-xy" "Выводит координаты отмеченных точек." "Шкалы")
+(defun c:mnas-axis-point-value-xy  (/ sx scx sy scy pxy pt)
+  (mnas-axis:show-prompt mnas-axis:point-value-xy-prompt )
   (setq	sx  (sh:sel "Шкала x")
 	scx (sh:get sx)
 	sy  (sh:sel "Шкала y")
@@ -447,6 +435,9 @@
     (princ "pxy")
     (princ pxy)
     (dr:point pt 2)))
+
+;;;;;;("c4" "См. mnas-axis-point-value-xy" "Шкалы")
+(defun c:c4 () (c:mnas-axis-point-value-xy))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

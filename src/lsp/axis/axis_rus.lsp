@@ -22,9 +22,18 @@
 ;(defun c:узк() (c:epr))
 (defun c:шь() (c:im))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun c:mnas-menu-delete-toolbar-axis  ()
+  (vlax-invoke-method
+    (mnas-vlax-utils-search-toolbar-by-name
+      (mnas-vlax-utils-search-menu-by-name "MNAS_CLEAN")
+      "MNAS_Clean_Axis")
+    'Delete))
+
 (defun mnas-axis-Add-Toolbar-Button  (c-n-h)
-  (setq	menu-name    "MNASOFT"
-	toolbar-name "MNAS_Axis_Temp"
+  (setq	menu-name    "MNAS_CLEAN"
+	toolbar-name "MNAS_Clean_Axis"
 	command-name (car c-n-h)
 	command-help (cadr c-n-h)
 	button-name  (STRCASE (VL-STRING-TRANSLATE "-" "_" command-name) nil)
@@ -32,10 +41,12 @@
 	icon-name    (VL-STRING-TRANSLATE "-" "_" command-name)
 	icon-name-16 (strcat icon-path icon-name "_16.bmp")
 	icon-name-32 (strcat icon-path icon-name "_32.bmp"))
-  (mnas-vlax-utils-Add-Toolbar-Button
+  (mnas-vlax-utils-add-Toolbar-name-Button
     menu-name toolbar-name button-name command-name command-help icon-name-16 icon-name-32))
 
-(defun c:toolbar-mnas-axis  ()
+
+
+(defun c:mnas-menu-add-toolbar-axis  ()
   (mapcar (function mnas-axis-Add-Toolbar-Button)
 	  '(("mnas-axis-mode-setup" "Ќастройка режима приглашений и уведомлений")
 	    ("mnas-axis-edit" "ѕреобразование отрезка в ось & –едактирование оси")
@@ -46,6 +57,10 @@
 	    ("mnas-axis-tick" "ѕостроение линий сетки в координатах 2-х шкал и нанесение текста")
 	    ("mnas-axis-ticks" "ѕостроение линий сетки в координатах 2-х шкал и нанесение текста")
 	    ("mnas-axis-draw-xy" "ѕостроение точек в координатах двух шкал по их координатам")
-	    ("mnas-axis-draw-point" "ѕостроение точек в координатах двух шкал по точкам"))))
+	    ("mnas-axis-draw-point" "ѕостроение точек в координатах двух шкал по точкам")
+	    ("mnas-axis-point-to-screen" "ѕеревод точек из координат двух шкал в координаты экрана")
+	    ("mnas-axis-point-to-another-axis" "ѕеревод точек из координат одной пары шкал в координаты другой пары шкал.")
+	    ("mnas-axis-point-value" "ќпределение значени€ на шкале по точке")
+	    ("mnas-axis-point-value-xy" "¬ыводит координаты отмеченных точек"))))
 
 (princ "Loaded project axis.\n")
