@@ -165,3 +165,50 @@
         en   (sh-ob-nm-pr en))
   (if (and (> (strlen (cdr (assoc 1 refd))) 2) (= (cdr (assoc 2 e_ob)) "ОБОЗНАЧЕНИЕ"))
     (progn (setq e_ob (subst (assoc 1 refd) (assoc 1 e_ob) e_ob)) (entmod e_ob) (entdel ref))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq sh:layer-hide-name "Подписи_hide") ; Имя слоя при перемещении на который атрибуты блока становятся невидимыми
+
+(setq sh:layer-show-name "Подписи"); Имя слоя при перемещении на который атрибуты блока становятся видимыми
+
+(setq sh:layer-show t) ; Ключ 
+
+;;;f;;; ("sh-next-attrib-or-nil" "" "")
+(defun sh-next-attrib-or-nil  (en / ed)
+  (setq en (entnext en))
+  (cond ((null en) nil) ;
+        ((= "ATTRIB" (cdr (assoc 0 (setq ed (entget en))))) (print (cdr (assoc 2 ed))) en)))
+
+;;;f;;; ("sh-attrib-to-layer" "" "")
+(defun sh-attrib-to-layer  (en layer-name / ed)
+  (setq ed (entget en))
+  (setq ed (subst (cons 8 layer-name) (assoc 8 ed) ed))
+  (entmod ed))
+
+(defun sh-attrib-to-layer-show (en) (sh-attrib-to-layer en sh:layer-show-name))
+
+(defun sh-attrib-to-layer-hide (en) (sh-attrib-to-layer en sh:layer-hide-name))
+
+(defun sh-attribs-hide  (en)
+  (while (setq en (sh-next-attrib-or-nil en)) (sh-attrib-to-layer-hide en)))
+
+(defun sh-attribs-show  (en)
+  (while (setq en (sh-next-attrib-or-nil en)) (sh-attrib-to-layer-show en)))
+
+(defun c:sh-hide-attribs  (/ en)
+  (setq en (car (entsel "Выберите элемент схемы:")))
+  (sh-attribs-hide en))
+
+(defun c:sh-show-attribs  (/ en)
+  (setq en (car (entsel "Выберите элемент схемы:")))
+  (sh-attribs-show en))
+
+(defun c:sh-flip-attribs  (/ en)
+  (setq en (car (entsel "Выберите элемент схемы:")))
+  (if sh:layer-show
+    (sh-attribs-show en)
+    (sh-attribs-hide en))
+  (setq sh:layer-show (null sh:layer-show)))
