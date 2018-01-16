@@ -176,13 +176,16 @@
 
 (setq sh:layer-show t) ; Ключ 
 
-;;;f;;; ("sh-next-attrib-or-nil" "" "")
+;;;f;;;("sh-next-attrib-or-nil" "Возвращает:
+;;;f;;; - имя атрибута, следующего за объектом с именем ed, если такой имеется;
+;;;f;;; - nil, если за объектом с именем ed атрибутов нет." )
 (defun sh-next-attrib-or-nil  (en / ed)
   (setq en (entnext en))
   (cond ((null en) nil) ;
         ((= "ATTRIB" (cdr (assoc 0 (setq ed (entget en))))) (print (cdr (assoc 2 ed))) en)))
 
-;;;f;;; ("sh-attrib-to-layer" "" "")
+;;;f;;;("sh-attrib-to-layer" "Выполняет перемещение объекта с именем en на слой с менем layer-name." )
+;;; Имя не информативно.
 (defun sh-attrib-to-layer  (en layer-name / ed)
   (setq ed (entget en))
   (setq ed (subst (cons 8 layer-name) (assoc 8 ed) ed))
