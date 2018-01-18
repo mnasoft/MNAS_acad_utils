@@ -1,121 +1,105 @@
-;;;Cadalyst CAD Tips www.cadalyst.com/cadtips December 2008 (c) by the Author and Cadalyst
+(defun mnas-text-get-excel-cells  (/ o-cells o-excel-app o-sheet1 o-sheets o-workbook o-workbooks)
+;;; Получение яцеек объекта первого листа Exel
+    (setq o-excel-app (vlax-create-object "excel.application"))
+    (setq o-workbooks (vlax-get-property o-excel-app 'Workbooks))
+    (setq o-workbook (vlax-invoke-method o-workbooks 'Add))
+    (setq o-sheets (vlax-get-property o-workbook 'Sheets))
+    (setq o-sheet1 (vlax-get-property o-sheets 'Item 1))
+    (setq o-cells (vlax-get-property o-sheet1 'Cells))
+    (vlax-put-property o-excel-app 'Visible :vlax-true)
+    o-cells)
 
-;;;Author: Pedro Miguel da Silva Ferreira Email:pedro_ferreira@netcabo.pt or pferreira@wsatkins.pt
-;;;Web page: http://pwp.netcabo.pt/pedro_ferreira
-;;;Location: Portugal, Lisboa
-;;;RDS: PMSF
-;;;Command Name: txt2xls
-;;;Date: 10 of May 2008
-;;;Version: 1.0
-;;;Description: Visual Lisp Routine that writes to an excel file the selected text
+(defun mnas-text-exel:translate	 (str)
+  (setq
+    str (string-subst-all "&#x2205;" "%%C" str)
+    str (string-subst-all "&#x2205;" "%%c" str)
+    str (string-subst-all "&#xB1;" "%%p" str)
+    str (string-subst-all "&#xB1;" "%%P" str)
+    str (string-subst-all "&#xB0;" "%%d" str)
+    str (string-subst-all "&#xB0;" "%%D" str)
 
-(defun c:txt2xls () (vl-load-com) (init-excel) (selecttext) (princ))
+    str (string-subst-all "&#x" "\\U+00" str)
+    str (string-subst-all "&#x" "\\U+0" str)
+	str (string-subst-all "&#x" "\\U+" str))
+	(strcat "<html>" str "</html>"))
 
-(defun selecttext  ()
-  (princ "\nSelect text: ")
-  (setq pt1 (getpoint "\nSpecify first corner: "))
-  (setq pt2 (getcorner pt1 "Specify opposite corner:"))
-  (setq sstext (ssget "_w" pt1 pt2 '((0 . "text"))))
-  (setq lengthsstext (sslength sstext))
-  (setq count 0)
-  (setq textlist nil)
-  (repeat lengthsstext
-    (setq Text	     (vlax-ename->vla-object (cdr (car (entget (ssname sstext count)))))
-	  TextPoint  (vlax-get-property Text 'insertionpoint)
-	  textString (vlax-get-property Text 'textstring)
-	  listText   (append (vlax-safearray->list (vlax-variant-value textpoint)) (list textstring))
-	  textlist   (append textlist (list listtext))
-	  count	     (1+ count)))
-  (alert "Length and Heigth error calculation, select two entities in the same column!")
-  (setq	pt1 (vlax-safearray->list
-	      (vlax-variant-value
-		(vlax-get-property (vlax-ename->vla-object (cdr (car (entget (car (entsel)))))) 'insertionpoint))))
-  (setq	pt2 (vlax-safearray->list
-	      (vlax-variant-value
-		(vlax-get-property (vlax-ename->vla-object (cdr (car (entget (car (entsel)))))) 'insertionpoint))))
-  (setq	calY (- (abs (- (cadr pt1) (cadr pt2))) 0.001)
-	calX (- (abs (- (car pt1) (car pt2))) 0.001))
-  (setq fuzzY (getreal (strcat "\nHeigth error value <" (rtos calY) ">, select other: ")))
-  (if (= fuzzY nil)
-    (setq fuzzY calY))
-  (setq fuzzX (getreal (strcat "\nLength error value <" (rtos calX) ">, select other: ")))
-  (if (= fuzzX nil)
-    (setq fuzzX calX))
-;;;ordenado por x
-  (setq textlist (vl-sort textlist (function (lambda (e1 e2) (< (car e1) (car e2))))))
-  (setq textlistlength (length textlist))
-  (setq count 0)
-  (setq countcol 1)
-  (while (< count textlistlength)
-    (progn (setq smalllist  (nth count textlist)
-		 valuex	    (car (nth count textlist))
-		 nextvaluex (car (nth (1+ count) textlist)))
-	   (setq smalllist (subst (itoa countcol) valuex smalllist))
-	   (setq textlist (subst smalllist (nth count textlist) textlist))
-	   (while (equal nextvaluex valuex fuzzX)
-	     (progn (setq count (1+ count))
-		    (setq smalllist  (nth count textlist)
-			  valuex     (car (nth count textlist))
-			  nextvaluex (car (nth (1+ count) textlist)))
-		    (setq smalllist (subst (itoa countcol) valuex smalllist))
-		    (setq textlist (subst smalllist (nth count textlist) textlist))
-		    (if	(= nextvaluex nil)
-		      (setq nextvaluex (1+ valuex)))))
-	   (if (> nextvaluex valuex)
-	     (progn (setq count (1+ count)) (setq countcol (1+ countcol))))))
-;;;ordenado por y
-  (setq textlist (vl-sort textlist (function (lambda (e1 e2) (> (cadr e1) (cadr e2))))))
-  (setq textlistlength (length textlist))
-  (setq count 0)
-  (setq countrow 1)
-  (while (< count textlistlength)
-    (progn (setq smalllist  (nth count textlist)
-		 valuey	    (cadr (nth count textlist))
-		 nextvaluey (cadr (nth (1+ count) textlist)))
-	   (setq smalllist (subst (itoa countrow) valuey smalllist))
-	   (setq textlist (subst smalllist (nth count textlist) textlist))
-	   (while (equal nextvaluey valuey fuzzY)
-	     (progn (setq count (1+ count))
-		    (setq smalllist  (nth count textlist)
-			  valuey     (cadr (nth count textlist))
-			  nextvaluey (cadr (nth (1+ count) textlist)))
-		    (setq smalllist (subst (itoa countrow) valuey smalllist))
-		    (setq textlist (subst smalllist (nth count textlist) textlist))
-		    (if	(= nextvaluey nil)
-		      (setq nextvaluey (1+ valuey)))))
-	   (if (< nextvaluey valuey)
-	     (progn (setq count (1+ count)) (setq countrow (1+ countrow))))))
-  (setq textlistlength (length textlist))
-  (setq count 0)
-  (while (< count textlistlength)
-    (progn (setq colstring (cadddr (nth count textlist)))
-	   (setq posx (atoi (car (nth count textlist)))
-		 posy (atoi (cadr (nth count textlist))))
-	   (write-row-column posy posx colstring)
-	   (setq count (1+ count))))
-  (princ))
+(defun select-text  ()
+;;; Создание набора выбора типа c объектами типа текст.
+    (ssget '((0 . "text"))))
 
-(defun init-excel  (/ excel-app wb-collection workbook sheets sheet1)
-  (setq excel-app (vlax-create-object "excel.application"))
-  (setq wb-collection (vlax-get excel-app "workbooks"))
-  (setq workbook (vlax-invoke-method wb-collection "add"))
-  (setq sheets (vlax-get workbook "sheets"))
-  (setq sheet1 (vlax-get-property sheets "item" 1))
-  (setq *excel-cells* (vlax-get sheet1 "cells"))
-  (vlax-put excel-app "visible" 1))
+(defun do-text-exel  (ss o-c / i o-txt ss-len str)
+;;; Вывод объектов, находящихся в наборе ss ячейки Exel объект o-c
+  (setq	ss-len (sslength ss)
+	i      -1)
+  (while (< (setq i (1+ i)) ss-len)
+    (setq str (cdr (assoc 1 (entget (ssname ss i))))
+	  str (mnas-text-exel:translate str))
+    (PasteSpecial-string-row-column o-c str (+ 1 i) 1)))
 
-(defun write-row-column	 (row col x)
-  (vlax-put-property *excel-cells* 'Item row col (vl-princ-to-string x)))
+(defun cells-select (o-c row col)
+  (vlax-invoke-method  (variant-value (vlax-get-property o-c 'Item row col)) 'Select))
 
-(alert
-  "Type [txt2xls] in the command line\n\nAuthor: Pedro Ferreira
-  web page: http://pwp.netcabo.pt/pedro_Ferreira
-  THIS PROGRAM IS PROVIDED \"AS IS\" AND WITH ALL FAULTS.
-  Press OK to continue.")
+(defun string->ClipBoard  (str / h-f)
+;;;; Выполняет запись строки в буфер обмена
+  (setq h-f (vlax-create-object "htmlfile"))
+  (vlax-invoke
+    (vlax-get-property (vlax-get-property h-f 'ParentWindow) 'ClipBoardData)
+    'setData
+    "Text"
+    str)
+  (vlax-release-object h-f))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun ClipBoard->string  (/ h-f str)
+  ;;;; Возвращает строку из буфера обмена
+  (setq h-f (vlax-create-object "htmlfile"))
+  (setq	str (vlax-invoke
+	      (vlax-get-property (vlax-get-property h-f 'ParentWindow) 'ClipBoardData)
+	      'GetData
+	      "Text"))
+  (vlax-release-object h-f)
+  str)
 
+(defun PasteSpecial-string-row-column  (o-c str row col / o-s)
+  (setq o-s (vlax-get-property o-c 'Parent))
+  (string->ClipBoard str)
+  (cells-select o-c row col)
+  (vlax-invoke-method o-s 'PasteSpecial))
 
+(defun c:mnas-text-exel	 (/ o-c ss)
+;;;; Экспортирование объектов в MS.Exel
+  (setq o-c (mnas-text-get-excel-cells))
+  (setq ss (select-text))
+  (do-text-exel ss o-c))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq *str* "Umbra\\U+0346Codabra\\U+0347Abra\\U+0348Shvabra\\U+0349Eb")
+(setq f-ch (VL-STRING-SEARCH "\\U+" *str* 0))
+(setq *str* (substr *str* (+ 1 f-ch )))
+
+(substr *str* (+ 1 (VL-STRING-SEARCH "\\U+" *str* 0) ))
+
+(defun replase-U-codes (str)
+  str
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun get-row-column-text (o-cells row col)
+;;;; Не окончено
+  (vlax-variant-value (vlax-get-property (vlax-variant-value (vlax-get-property *o-c* 'Item row col)) 'text)))
+
+(defun get-row-column-value (o-cells row col)
+;;;; Не окончено
+  (vlax-variant-value (vlax-get-property (vlax-variant-value (vlax-get-property *o-c* 'Item row col)) 'value)))
+
+(defun get-row-column-value2 (o-cells row col)
+;;;; Не окончено
+  (vlax-variant-value (vlax-get-property (vlax-variant-value (vlax-get-property *o-c* 'Item row col)) 'value2)))
+
+(defun write-row-column  (o-cells row col x)
+;;; Вывод строки x в ячейку Exel o-cells row col
+      (vlax-put-property o-cells 'Item row col (vl-princ-to-string x)))
 
 
