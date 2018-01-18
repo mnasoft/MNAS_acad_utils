@@ -9,8 +9,25 @@
     (vlax-put-property o-excel-app 'Visible :vlax-true)
     o-cells)
 
+(defun replase-U-codes (str / f-ch str-rez)
+  (setq str-rez ""
+        f-ch nil)
+  (while str
+    (setq f-ch (VL-STRING-SEARCH "\\U+" str 0))
+    (cond ((> f-ch 0)
+           (setq str-rez (strcat str-rez (substr str 1 f-ch))
+                 str     (substr str (+ 1 f-ch))))
+          ((= f-ch 0)
+           (setq str-rez (strcat str-rez (substr str 1 7) ";")
+                 str     (substr str 8)))
+          ((null f-ch)
+           (setq str-rez (strcat str-rez str)
+                 str     nil))))
+  str-rez)
+
 (defun mnas-text-exel:translate	 (str)
   (setq
+    str (replase-U-codes str)
     str (string-subst-all "&#x2205;" "%%C" str)
     str (string-subst-all "&#x2205;" "%%c" str)
     str (string-subst-all "&#xB1;" "%%p" str)
@@ -72,17 +89,6 @@
   (do-text-exel ss o-c))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq *str* "Umbra\\U+0346Codabra\\U+0347Abra\\U+0348Shvabra\\U+0349Eb")
-(setq f-ch (VL-STRING-SEARCH "\\U+" *str* 0))
-(setq *str* (substr *str* (+ 1 f-ch )))
-
-(substr *str* (+ 1 (VL-STRING-SEARCH "\\U+" *str* 0) ))
-
-(defun replase-U-codes (str)
-  str
-  )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -103,3 +109,4 @@
       (vlax-put-property o-cells 'Item row col (vl-princ-to-string x)))
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
