@@ -170,16 +170,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq sh:layer-hide-name "Подписи_hide") ; Имя слоя при перемещении на который атрибуты блока становятся невидимыми
+(setq scheme:layer-hide-name "Подписи_hide") ; Имя слоя при перемещении на который атрибуты блока становятся невидимыми
 
-(setq sh:layer-show-name "Подписи"); Имя слоя при перемещении на который атрибуты блока становятся видимыми
+(setq scheme:layer-show-name "Подписи"); Имя слоя при перемещении на который атрибуты блока становятся видимыми
 
-(setq sh:layer-show t) ; Ключ 
+(setq scheme:layer-show t) ; Ключ 
 
-;;;f;;;("sh-next-attrib-or-nil" "Возвращает:
+;;;f;;;("text:next-attrib-or-nil" "Возвращает:
 ;;;f;;; - имя атрибута, следующего за объектом с именем ed, если такой имеется;
 ;;;f;;; - nil, если за объектом с именем ed атрибутов нет." )
-(defun sh-next-attrib-or-nil  (en / ed)
+(defun text:next-attrib-or-nil  (en / ed)
   (setq en (entnext en))
   (cond ((null en) nil) ;
         ((= "ATTRIB" (cdr (assoc 0 (setq ed (entget en))))) (print (cdr (assoc 2 ed))) en)))
@@ -191,15 +191,15 @@
   (setq ed (subst (cons 8 layer-name) (assoc 8 ed) ed))
   (entmod ed))
 
-(defun sh-attrib-to-layer-show (en) (sh-attrib-to-layer en sh:layer-show-name))
+(defun sh-attrib-to-layer-show (en) (sh-attrib-to-layer en scheme:layer-show-name))
 
-(defun sh-attrib-to-layer-hide (en) (sh-attrib-to-layer en sh:layer-hide-name))
+(defun sh-attrib-to-layer-hide (en) (sh-attrib-to-layer en scheme:layer-hide-name))
 
 (defun sh-attribs-hide  (en)
-  (while (setq en (sh-next-attrib-or-nil en)) (sh-attrib-to-layer-hide en)))
+  (while (setq en (text:next-attrib-or-nil en)) (sh-attrib-to-layer-hide en)))
 
 (defun sh-attribs-show  (en)
-  (while (setq en (sh-next-attrib-or-nil en)) (sh-attrib-to-layer-show en)))
+  (while (setq en (text:next-attrib-or-nil en)) (sh-attrib-to-layer-show en)))
 
 (defun c:sh-hide-attribs  (/ en)
   (setq en (car (entsel "Выберите элемент схемы:")))
@@ -211,7 +211,7 @@
 
 (defun c:sh-flip-attribs  (/ en)
   (setq en (car (entsel "Выберите элемент схемы:")))
-  (if sh:layer-show
+  (if scheme:layer-show
     (sh-attribs-show en)
     (sh-attribs-hide en))
-  (setq sh:layer-show (null sh:layer-show)))
+  (setq scheme:layer-show (null scheme:layer-show)))

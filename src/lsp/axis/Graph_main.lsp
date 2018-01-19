@@ -307,6 +307,6 @@
   (princ dr-pts-gr)
   (setq dr-i dr-pts-gr)
   (while (>= (setq dr-i (1- dr-i)) 0)
-    (dr:point (sc:pxy_pt (nth dr-i dr-pts-gr) (sh:get dr-sc-x-gr) (sh:get dr-sc-y-gr)) dr-color)))
+    (dr:point (sc:pxy_pt (nth dr-i dr-pts-gr) (axis:get dr-sc-x-gr) (axis:get dr-sc-y-gr)) dr-color)))
 
-;;;;(mapcar (function (lambda (el) (dr:point (sc:pxy_pt el (sh:get sc-x-gr) (sh:get sc-y-gr)) color))) pts-gr)
+;;;;(mapcar (function (lambda (el) (dr:point (sc:pxy_pt el (axis:get sc-x-gr) (axis:get sc-y-gr)) color))) pts-gr)

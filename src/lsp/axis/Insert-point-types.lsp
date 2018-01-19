@@ -1,3 +1,7 @@
+(setq	axis:color-current -1
+	axis:color '(1 2 3 4 5 6 7 25 45 65 85 105 125 145 165 185 205 225 245))
+
+
 ;;;s;;;("axis:point-type-current"
 ;;;s;;;"ѕеременна€, котора€ хранит номер предыдущий текущему блоку с изображением точки на графике.
 ;;;s;;;- axis:point-type;
@@ -20,13 +24,28 @@
          "ct-01"    "ct-02"    "ct-03"    "cl-01"    "cl-02"    "cl-03"    "cb-01"    "cb-02"
          "cb-03"))
 
+;;;s;;;("axis:point-type-defined"
+;;;s;;;"‘ункци€ возвращает:
+;;;s;;;T   - в чертеж загружены все блоки с сменами из списка axis:point-type;
+;;;s;;;nil - в чертеж загружены не все блоки с сменами из списка axis:point-type.
+;;;s;;;")
+(defun axis:point-type-defined ()
+      (apply (function and) (mapcar (function (lambda (el) (TBLSEARCH "block" el))) axis:point-type)))
+
+;;;f;;;("axis:load-point-types-dwg"
+;;;f;;;"¬ыполн€ет вставку в текущий чертеж файла Point-Types,
+;;;f;;;который содержит определени€ блоков, спользуемых как маркеры точек.")
+(defun axis:load-point-types-dwg	()
+  (command "_-insert" "./support/Point-Types/Point-Types.dwg")
+  (command)
+  (command "_-purge" "_b" "Point-Types" "_n"))
+
 ;;;f;;;("load-point-types"
 ;;;f;;;"¬ыполн€ет вставку в текущий чертеж файла Point-Types,
 ;;;f;;;который содержит определени€ блоков, спользуемых как маркеры точек.")
-(defun axis:load-point-types	()
-  (command "_-insert" "./src/lsp/Point-Types.dwg")
-  (command)
-  (command "_-purge" "_b" "Point-Types" "_n"))
+(defun axis:load-point-types  ()
+  (if (null (axis:point-type-defined))
+    (axis:load-point-types-dwg)))
 
 (defun axis:point-type-name (/ b-lst eb)
  (setq b-lst nil
@@ -46,3 +65,5 @@
            axis:point-type-current
            -1)
         rez (nth axis:point-type-current axis:point-type)))
+
+(defun axis:load-reset-point-types () (axis:load-point-types) (axis:point-type-reset))

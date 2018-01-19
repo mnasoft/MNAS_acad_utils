@@ -31,14 +31,14 @@
 (defun axis-podp:btn-select-x-axis  ()
   (princ "\naxis-podp:btn_select_x_axis")
   (setq axis-podp:*sc-x-ename*
-         (sh:sel "\nВыберите шкалу x:")
-        sc_x (sh:get axis-podp:*sc-x-ename*)))
+         (axis:sel "\nВыберите шкалу x:")
+        sc_x (axis:get axis-podp:*sc-x-ename*)))
 
 (defun axis-podp:btn-select-y-axis  ()
   (princ "\nbtn_select_y_axis")
   (setq axis-podp:*sc-y-ename*
-         (sh:sel "\nВыберите шкалу y:")
-        sc_y (sh:get axis-podp:*sc-y-ename*)))
+         (axis:sel "\nВыберите шкалу y:")
+        sc_y (axis:get axis-podp:*sc-y-ename*)))
 
 (defun axis-podp:btn-delete () (command "erase" ss_zas ss_text ss_podp_text ""))
 
@@ -252,9 +252,9 @@
         ss_podp_text
          (ssadd))
   (if axis-podp:*sc-x-ename*
-    (setq sc_x (sh:get axis-podp:*sc-x-ename*)))
+    (setq sc_x (axis:get axis-podp:*sc-x-ename*)))
   (if axis-podp:*sc-y-ename*
-    (setq sc_y (sh:get axis-podp:*sc-y-ename*)))
+    (setq sc_y (axis:get axis-podp:*sc-y-ename*)))
   (setq ll_ax_shcala axis-podp:*shcala_setup*)
   (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "axis/axis_podp.dcl"))))
   (if (< dcl_id 0)

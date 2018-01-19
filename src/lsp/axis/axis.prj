@@ -4,7 +4,8 @@
   axis
   :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug" "../vlax-utils//acad-object" "../utils/sub_div" "Axis_cmd"	"Axis_ea" "Axis_util" "../utils/draw" "../UTILS/DXF" "Graph_analitic" "Graph_block" "Graph_main" "Graph_pline"
+    "../utils/Debug" "../vlax-utils//acad-object" "../utils/sub_div" "Axis_prompt" "Axis_draw" 
+    "Axis_cmd"	"Axis_ea" "Axis_util" "../utils/draw" "../UTILS/DXF" "Graph_analitic" "Graph_block" "Graph_main" "Graph_pline"
     "Graph_poitn_type" "Image" "../UTILS/XDATA"	"../UTILS/dlg_utils" "Insert-point-types" "../opechatka/rus_cmd_opechatka" "axis_rus")
   :FAS-DIRECTORY
   "../../../temp"

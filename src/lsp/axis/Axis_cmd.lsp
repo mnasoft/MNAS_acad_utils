@@ -39,50 +39,6 @@
   (if (mnas-axis:alert-mode)
     (alert prompt-string)))
     
-(setq mnas-axis:graph-xy-prompt
-       "Построение полилинии в координатах двух шкал
-Задаются: 1) ось Х; 2) ось Y; 3) имя переменной, которое содержит список точек.
-Имя переменной можно задать как показано ниже:
-(setq coords '((-3.0 9.0) (-2.0 4.0) (-1.0 1.0)
-               (0 0) (1.0 1.0) (2.0 4.0) (3.0 9.0)))
-Чтобы преобразовать отрезок в ось нужно воспользоваться командой mnas-axis-edit.")
-
-(setq mnas-axis:graph-xyn-prompt
-       "Построение семейства полилиний в координатах двух шкал
-Задаются: 1) ось Х; 2) ось Y; 3) имя переменной, которое содержит список точек.
-Имя переменной можно задать как показано ниже:
-(setq coords '((-3.0 9.0 -13.5) (-2.0 4.0 -4.0) (-1.0 1.0 -0.5)
-               (0 0 0) (1.0 1.0 0.5) (2.0 4.0 4.0) (3.0 9.0 13.5)))
-Чтобы преобразовать отрезок в ось нужно воспользоваться командой mnas-axis-edit.")
-
-(setq mnas-axis:point-prompt "Построение точки в координатах шкалы
-Задаются: 1) ось Х; 2) значение координаты X.")
-
-(setq mnas-axis:point-text-prompt "Построение точки и текста в координатах шкалы
-Задаются: 1) ось Х; 2) значение координаты X.")
-
-(setq mnas-axis:draw-xy-prompt
-    "Построение точек в координатах двух шкал
-Задаются: 1) ось Х; 2) ось Y; 3) координата X. 4) координата Y.")
-
-(setq mnas-axis:draw-point-prompt
-    "Построение точек в координатах двух шкал
-Задаются: 1) ось Х; 2) ось Y; 3) точка в координатах шкал X-Y.")
-
-(setq mnas-axis:point-to-screen-prompt "Перевод точек из координат двух шкал в координаты экрана
-Задаются: 1) ось Х; 2) ось Y; 3) точка в координатах шкал X-Y.")
-
-(setq mnas-axis:point-to-another-axis-prompt "Перевод точек из координат одной пары шкал в координаты другой пары шкал
-Задаются: 1) ось Х_from по которой берутся точки; 2) ось Y_from по которой берутся точки;
-3) ось Х_to в которой строятся точки; 4) ось Y_to в которой строятся точки;
-5) точка в координатах шкал X_from-Y_from.")
-
-(setq mnas-axis:point-value-prompt "Определение значения на шкале по точке
-Задаются: 1) ось Х; 2) Точка, для которой необходимо определить значение.")
-
-(setq mnas-axis:point-value-xy-prompt "Выводит координаты отмеченных точек
-Задаются: 1) ось Х; 2) ось Y; 3) Точка в кординатах шкал, для которой необходимо определить значение.")
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;("mnas-axis-graph-xy"
@@ -92,66 +48,20 @@
 ;;;;;; 2) ось Y;\n
 ;;;;;; 3) имя переменной, которое содержит список точек.\n
 ;;;;;;Чтобы преобразовать отрезок в ось нужно воспользоваться командой mnas-axis-edit." "Шкалы")
-(defun c:mnas-axis-graph-xy
-       (/ scx scy str pts el lst lst-i lst-len lst-rez)
+(defun c:mnas-axis-graph-xy  ()
+  (axis:load-reset-point-types)
   (mnas-axis:show-prompt mnas-axis:graph-xy-prompt)
-  (setq	scx (sh:get (sh:sel "Ось X"))
-	scy (sh:get (sh:sel "Ось Y"))
-	str (getstring "\nИмя переменной содержащей список точек:"))
-  (print (vl-doc-ref (read str)))
-  (setq	pts (progn (setq lst	 (vl-doc-ref (read str))
-			 lst-len (length lst)
-			 lst-i	 -1)
-		   (while (< (setq lst-i (1+ lst-i)) lst-len)
-		     (setq el	   (nth lst-i lst)
-			   lst-rez (cons (progn (sc:pxy_pt el scx scy)) lst-rez)))
-		   (setq lst-rez (reverse lst-rez))))
-  (dr:points pts 256)
-  (dr:pline pts 256))
+  (axis:draw-single-graph-by-axis-data
+    (axis:get (axis:sel "Ось X"))
+    (axis:get (axis:sel "Ось Y"))
+    (getstring "\nИмя переменной содержащей список точек:")))
 
 ;;;;;;("a1" "См. mnas-axis-graph-xy" "Шкалы")
 (defun c:a1 () (c:mnas-axis-graph-xy))
 
-(defun axis:draw-single-graph-by-axis-names  (x-axis-name y-axis-name xy-point-name / scx scy str pts el lst lst-i lst-len lst-rez pnt-type)
-  (setq	scx (sh:get (sh:sel-by-name x-axis-name))
-	scy (sh:get (sh:sel-by-name y-axis-name))
-	str xy-point-name)
-  (print (vl-doc-ref (read str)))
-  (if (and scx scy)
-    (progn (setq pts (progn (setq lst	  (vl-doc-ref (read str))
-				  lst-len (length lst)
-				  lst-i	  -1)
-			    (while (< (setq lst-i (1+ lst-i)) lst-len)
-			      (setq el	    (nth lst-i lst)
-				    lst-rez (cons (progn (sc:pxy_pt el scx scy)) lst-rez)))
-			    (setq lst-rez (reverse lst-rez))))
-	   (dr:layer-set xy-point-name)
-	   (dr:pline pts 256)
-	   (setq pnt-type (axis:point-type-next))
-	   (mapcar (function (lambda (pt) (dr:insert pt pnt-type))) pts))))
-
-
-(defun axis:draw-multiple-graphs-by-axis-names
-       (x-axis-name y-axis-name-lst)
-  (mapcar (function
-	    (lambda (el)
-	      (axis:draw-single-graph-by-axis-names x-axis-name el el)))
-	  y-axis-name-lst))
-
-(defun axis:draw-multiple-graphs-on-same-axis
-       (x-axis-name y-axis-name data-symbol-lst)
-  (axis:load-point-types)
-  (axis:point-type-reset)
-  (mapcar (function (lambda (el)
-		      (axis:draw-single-graph-by-axis-names
-			x-axis-name
-			y-axis-name
-			(strcase (vl-symbol-name el) t))))
-	  data-symbol-lst))
-
 (defun c:a-l  (/ en te)
   (setq en (car (entsel "\nВыберите ось:"))
-        te (sh:get-sh-name en))
+        te (axis:get-sh-name en))
   (command "_CHANGE" en "" "_Properties" "_LAyer" te ""))
 
 
@@ -162,9 +72,10 @@
 ;;;;;; 3) имя переменной, которое содержит список точек.\n
 ;;;;;;Примечание: чтобы преобразовать отрезок в ось нужно воспользоваться командой ea." "Шкалы")
 (defun c:mnas-axis-graph-xy-n  (/ scx scy str pts x a i_colors colors)
+  (axis:load-reset-point-types)
   (mnas-axis:show-prompt mnas-axis:graph-xyn-prompt)
-  (setq	scx (sh:get (sh:sel "Ось X"))
-	scy (sh:get (sh:sel "Ось Y"))
+  (setq	scx (axis:get (axis:sel "Ось X"))
+	scy (axis:get (axis:sel "Ось Y"))
 	str (getstring "\nИмя переменной содержащей список точек:"))
   (setq	i_colors 0
 	colors	 '(1 2 3 4 5 6 7 25 45 65 85 105 125 145 165 185 205 225 245))
@@ -175,42 +86,37 @@
 	a   (cdr pts))
   (map-an-0 a colors i_colors scx scy x))
 
+(defun c:mnas-axis-graph-xy-n  (/ x-axis-data y-axis-data str pts x-dt y-dt-lst)
+  (axis:load-reset-point-types)
+  (mnas-axis:show-prompt mnas-axis:graph-xyn-prompt)
+  (setq	x-axis-data (axis:get (axis:sel "Ось X"))
+	y-axis-data (axis:get (axis:sel "Ось Y"))
+	str	    (getstring "\nИмя переменной содержащей список точек:"))
+  (print (vl-doc-ref (read str)))
+  (setq pts (vl-doc-ref (read str)))
+  (setq	pts	 (transpon pts)
+	x-dt	 (car pts)
+	y-dt-lst (cdr pts)
+	y-str	 (make-list-str y-dt-lst))
+  (mapcar (function (lambda (y-values y-la-ext)
+		      (axis:draw-single-graph-by-axis-xy-val-data
+			x-axis-data
+			y-axis-data
+			(mapcar (function list) x-dt y-values)
+			(strcat str "-" y-la-ext))))
+	  y-dt-lst
+	  y-str))
+
+(defun make-list-int	 (lst)
+  (setq	i 0
+	times 10
+	lst nil)
+  (while (<= (setq i (1+ i)) times) (setq lst (cons i lst)))
+  (reverse lst))
+
+(defun make-list-str (lst) (mapcar (function itoa) (make-list-int lst)))
+
 (defun c:an () (c:mnas-axis-graph-xy-n))
-
-(defun map-an-0  (a colors i_colors scx scy x / EL LST LST-I LST-LEN LST-REZ P)
-  (progn (setq lst     a
-               lst-len (length lst)
-               lst-i   -1)
-         (while (< (setq lst-i (1+ lst-i)) lst-len)
-           (setq el      (nth lst-i lst)
-                 lst-rez (cons (progn (setq p (mapcar (function (lambda (el_x el_y) (list el_x el_y))) x el)
-                                            p (map-an-0-1 scx scy p))
-                                      (dr:pline p (nth i_colors colors))
-                                      (setq i_colors (1+ i_colors)))
-                               lst-rez)))
-         (setq lst-rez (reverse lst-rez))))
-
-;;;(macro-mapcar '(mapcar
-;;;                (function
-;;;                 (lambda (el)
-;;;                   (setq
-;;;                    p
-;;;                    (mapcar (function (lambda (el_x el_y) (list el_x el_y))) x el)
-;;;                    p
-;;;                    (map-an-0-1 scx scy p))
-;;;                   (dr:pline p (nth i_colors colors))
-;;;                   (setq i_colors (1+ i_colors))))
-;;;                a))
-
-(defun map-an-0-1  (scx scy p / EL LST LST-I LST-LEN LST-REZ)
-  (progn (setq lst     p
-               lst-len (length lst)
-               lst-i   -1)
-         (while (< (setq lst-i (1+ lst-i)) lst-len)
-           (setq el      (nth lst-i lst)
-                 lst-rez (cons (progn (sc:pxy_pt el scx scy)) lst-rez)))
-         (setq lst-rez (reverse lst-rez))))
-
 
 ;;;;;;("mnas-axis-point"
 ;;;;;;"Построение точки в координатах шкалы.\n
@@ -219,7 +125,7 @@
 ;;;;;; 2) координата X." "Шкалы")
 (defun c:mnas-axis-point  (/ sc x)
   (mnas-axis:show-prompt mnas-axis:point-prompt)
-  (setq sc (sh:get (sh:sel "Выберите ось:")))
+  (setq sc (axis:get (axis:sel "Выберите ось:")))
   (while (setq x (getreal "Введите X :")) (dr:point (sc:val_pt x sc) 256))
   (princ))
 
@@ -233,7 +139,7 @@
 ;;;;;; 2) координата X." "Шкалы")
 (defun c:mnas-axis-point-text  (/ sc pt x)
   (mnas-axis:show-prompt mnas-axis:point-text-prompt)
-  (setq sc (sh:get (sh:sel "Выберите ось:")))
+  (setq sc (axis:get (axis:sel "Выберите ось:")))
   (while (setq x (getreal "Введите X :"))
     (setq pt (sc:val_pt x sc))
     (dr:point pt 256)
@@ -250,8 +156,8 @@
 ;;;;;; 2) ось Y;\n
 ;;;;;; 3) координата X." "Шкалы")
 (defun c:mnas-axis-tick  (/ pt pt_0 pt_1 scx scx_end scx_st scy scy_end scy_st x)
-  (setq scx (sh:get (sh:sel "Ось X"))
-        scy (sh:get (sh:sel "Ось Y")))
+  (setq scx (axis:get (axis:sel "Ось X"))
+        scy (axis:get (axis:sel "Ось Y")))
   (while (setq x (getreal "Введите X :"))
     (setq pt      (sc:val_pt x scx)
           scx_st  (cdr (assoc 10 scx))
@@ -282,8 +188,8 @@
 ;;;;;; 2) ось Y;\n
 ;;;;;; 3) координата X." "Шкалы")
 (defun c:mnas-axis-ticks  (/ n_div pt pt_0 pt_1 scx scx_end scx_st scy scy_end scy_st x_max x_min)
-  (setq	scx (sh:get (sh:sel "Ось X"))
-	scy (sh:get (sh:sel "Ось Y")))
+  (setq	scx (axis:get (axis:sel "Ось X"))
+	scy (axis:get (axis:sel "Ось Y")))
   (setq	x_min (getreal "Введите X_min :")
 	x_max (getreal "Введите X_max :")
 	n_div (getint "Введите n_div :"))
@@ -346,8 +252,8 @@
 ;;;;;; 4) координата Y." "Шкалы")
 (defun c:mnas-axis-draw-xy  (/ x y scx scy)
   (mnas-axis:show-prompt mnas-axis:draw-xy-prompt)  
-  (setq scx (sh:get (sh:sel "Ось X:")))
-  (setq scy (sh:get (sh:sel "Ось Y:")))
+  (setq scx (axis:get (axis:sel "Ось X:")))
+  (setq scy (axis:get (axis:sel "Ось Y:")))
   (while (and (setq x (getreal "Введите X :")) (setq y (getreal "Введите Y :")))
     (dr:point (sc:pxy_pt (list x y 0.0) scx scy) 256)))
 
@@ -362,8 +268,8 @@
 ;;;;;; 3) точка в координатах шкал X-Y." "Шкалы")
 (defun c:mnas-axis-draw-point  (/ p scx scy)
   (mnas-axis:show-prompt mnas-axis:draw-point-prompt)
-  (setq	scx (sh:get (sh:sel "Ось X:"))
-	scy (sh:get (sh:sel "Ось Y:")))
+  (setq	scx (axis:get (axis:sel "Ось X:"))
+	scy (axis:get (axis:sel "Ось Y:")))
   (while (setq p (getpoint "Введите точку P :")) (dr:point (sc:pxy_pt p scx scy) 256)))
 
 ;;;;;;("a4" "См. mnas-axis-draw-point." "Шкалы")
@@ -377,8 +283,8 @@
 ;;;;;; 3) точка в координатах шкал X-Y." "Шкалы")
 (defun c:mnas-axis-point-to-screen  (/ p scx scy)
     (mnas-axis:show-prompt mnas-axis:point-to-screen-prompt)
-  (setq scx (sh:get (sh:sel "Ось X:"))
-        scy (sh:get (sh:sel "Ось Y:")))
+  (setq scx (axis:get (axis:sel "Ось X:"))
+        scy (axis:get (axis:sel "Ось Y:")))
   (while (setq p (getpoint "Введите точку P :")
                p (sc:pt_pxy p scx scy))
     (print p)
@@ -398,10 +304,10 @@
 ;;;;;; 5) точка в координатах шкал X-Y." "Шкалы")
 (defun c:mnas-axis-point-to-another-axis  (/ p scx0 scx1 scy0 scy1)
   (mnas-axis:show-prompt mnas-axis:point-to-another-axis-prompt)
-  (setq	scx0 (sh:get (sh:sel "Ось X_from"))
-	scy0 (sh:get (sh:sel "Ось Y_from"))
-	scx1 (sh:get (sh:sel "Ось X_to"))
-	scy1 (sh:get (sh:sel "Ось Y_to")))
+  (setq	scx0 (axis:get (axis:sel "Ось X_from"))
+	scy0 (axis:get (axis:sel "Ось Y_from"))
+	scx1 (axis:get (axis:sel "Ось X_to"))
+	scy1 (axis:get (axis:sel "Ось Y_to")))
   (while (setq p (getpoint "Введите точку P:"))
     (setq p (sc:pt_pxy p scx0 scy0))
     (dr:point (sc:pxy_pt p scx1 scy1) 256)))
@@ -412,8 +318,8 @@
 ;;;;;;("mnas-axis-point-value" "Определение значения на шкале по точке." "Шкалы")
 (defun c:mnas-axis-point-value  (/ sx scx v pt)
   (mnas-axis:show-prompt mnas-axis:point-value-prompt)
-  (setq	sx  (sh:sel "Ось X:")
-	scx (sh:get sx)
+  (setq	sx  (axis:sel "Ось X:")
+	scx (axis:get sx)
 	pt  (getpoint "\nУкажите точку:")
 	v   (sc:pt_val pt scx))
   (dr:point pt 1)
@@ -426,10 +332,10 @@
 ;;;;;;("mnas-axis-point-value-xy" "Выводит координаты отмеченных точек." "Шкалы")
 (defun c:mnas-axis-point-value-xy  (/ sx scx sy scy pxy pt)
   (mnas-axis:show-prompt mnas-axis:point-value-xy-prompt )
-  (setq	sx  (sh:sel "Шкала x")
-	scx (sh:get sx)
-	sy  (sh:sel "Шкала y")
-	scy (sh:get sy))
+  (setq	sx  (axis:sel "Шкала x")
+	scx (axis:get sx)
+	sy  (axis:sel "Шкала y")
+	scy (axis:get sy))
   (while (setq pt (getpoint "\n Укажите точку в на экране:"))
     (setq pxy (sc:pt_pxy pt scx scy))
     (princ "pxy")

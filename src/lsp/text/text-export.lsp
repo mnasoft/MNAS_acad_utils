@@ -32,7 +32,7 @@
 (defun mnas-text:export-insert	(insert-ed file / en)
   (setq en (cdr (assoc -1 insert-ed)))
   (princ (strcat "(\"" "INSERT" "\" \"" (cdr (assoc 2 insert-ed)) "\"\n") file)
-  (while (setq en (sh-next-attrib-or-nil en)) (mnas-text:export-attrib (entget en) file))
+  (while (setq en (text:next-attrib-or-nil en)) (mnas-text:export-attrib (entget en) file))
   (princ  ")\n" file))
 
 (defun mnas-text-export-ename  (ename file / ed)

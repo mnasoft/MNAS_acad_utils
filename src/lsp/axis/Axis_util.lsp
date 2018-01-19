@@ -1,12 +1,12 @@
-(defun sh:SHCKALA () "SHCKALA")
+(defun axis:app-name () "SHCKALA")
 
-(regapp (sh:SHCKALA))
+(regapp (axis:app-name))
 
-;;;sh:sel(str)
+;;;axis:sel(str)
 ;;;	Отображает запрос str; позволяет выбрать
 ;;;     примитив типа "SHCKALA" и возвращает имя примитива
 ;;;     с даными шкалы или nil, если ничего не выбрано.
-;;;sh:sel("Шкала")
+;;;axis:sel("Шкала")
 ;;;Шкала:
 ;;;((-1 . <Entity name: 149d218>)
 ;;;  (0 . "LINE")
@@ -31,38 +31,38 @@
 ;;;      )
 ;;;  )
 ;;;)
-(defun sh:sel  (str / ss)
+(defun axis:sel  (str / ss)
   (princ (strcat "\n" str ":"))
-  (setq ss (ssget (list (cons 0 "LINE") (list -3 (list (sh:SHCKALA))))))
+  (setq ss (ssget (list (cons 0 "LINE") (list -3 (list (axis:app-name))))))
   (if ss
-    (entget (ssname ss 0) (list (sh:SHCKALA)))
+    (entget (ssname ss 0) (list (axis:app-name)))
     nil))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun sh:get-sh-name  (en)
-  (dxf-get 1000 (dxf-get "SHCKALA" (dxf-get -3 (entget en (list (sh:SHCKALA)))))))
+(defun axis:get-sh-name  (en)
+  (dxf-get 1000 (dxf-get "SHCKALA" (dxf-get -3 (entget en (list (axis:app-name)))))))
 
-(defun sh:sel-by-name  (name / en i rez ss)
+(defun axis:sel-by-name  (name / en i rez ss)
   (princ (strcat "\n" name ":"))
-  (setq ss  (ssget "X" (list (cons 0 "LINE") (list -3 (list (sh:SHCKALA)))))
+  (setq ss  (ssget "X" (list (cons 0 "LINE") (list -3 (list (axis:app-name)))))
         i   (sslength ss)
         rez nil)
   (while (<= 0 (setq i (1- i)))
     (setq en (ssname ss i))
-    (if (= (sh:get-sh-name en) name)
+    (if (= (axis:get-sh-name en) name)
       (setq rez en)))
   (if rez
-    (entget rez (list (sh:SHCKALA)))
+    (entget rez (list (axis:app-name)))
     nil))
 
 
-;;;;(setq tol (sh:sel-by-name "FA010"))
+;;;;(setq tol (axis:sel-by-name "FA010"))
 
-;;;sh:get(ed)
+;;;axis:get(ed)
 ;;;	Принимает данные примитива с расширенными данными шкалы и
 ;;;	Возвращает список с данными шкалы.
-;;;(sh:get
+;;;(axis:get
 ;;;  '((0 . "LINE")
 ;;;    (10 358.003 78.6892 0.0)
 ;;;    (11 558.003 78.6892 0.0)
@@ -85,8 +85,8 @@
 ;;;  (70 . 0)
 ;;;  (1 . "Некая шкала x")
 ;;;)
-(defun sh:get  (ed / xdt p0 p1 v0 v1 flag str)
-  (setq xdt  (_xd_appget ed (sh:SHCKALA))
+(defun axis:get  (ed / xdt p0 p1 v0 v1 flag str)
+  (setq xdt  (_xd_appget ed (axis:app-name))
         v0   (cdr (nth 0 xdt))
         v1   (cdr (nth 1 xdt))
         flag (cdr (nth 2 xdt))
@@ -95,7 +95,7 @@
         p1   (cdr (assoc 11 ed)))
   (list (cons 10 p0) (cons 11 p1) (cons 40 v0) (cons 41 v1) (cons 70 flag) (cons 1 str)))
 
-;;;sh:upd(ed sh:data)
+;;;axis:upd(ed axis-data)
 ;;;	Обновляет данные примитива (0 . "LINE") с расширенными данными 
 ;;;	шкалы данными шкалы.
 ;;;	ed - данные примитива линии;
@@ -113,7 +113,7 @@
 ;;;  )
 ;;; )
 ;;;)
-;;;	sh:data - данные шкалы:
+;;;	axis-data - данные шкалы:
 ;;;((10 358.003 78.6892 0.0)
 ;;;  (11 558.003 78.6892 0.0)
 ;;;  (40 . 0.0)
@@ -121,13 +121,13 @@
 ;;;  (70 . 0)
 ;;;  (1 . "Некая шкала x")
 ;;;)
-(defun sh:upd  (ed sh:data / pts xdt)
+(defun axis:upd  (ed axis-data / pts xdt)
 ;;; не законЧена
-  (setq pts (list (assoc 10 sh:data) (assoc 11 sh:data))
-        xdt (list (cons 1040 (assoc 40 sh:data))
-                  (cons 1040 (assoc 41 sh:data))
-                  (cons 1070 (assoc 70 sh:data))
-                  (cons 1000 (assoc 1 sh:data)))
+  (setq pts (list (assoc 10 axis-data) (assoc 11 axis-data))
+        xdt (list (cons 1040 (assoc 40 axis-data))
+                  (cons 1040 (assoc 41 axis-data))
+                  (cons 1070 (assoc 70 axis-data))
+                  (cons 1000 (assoc 1 axis-data)))
         ed  (dsubst ed pts)
         ed  (_xdsubst_ xdt)
 ;;;место длЯ доработкИ.

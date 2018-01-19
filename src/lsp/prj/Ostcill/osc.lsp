@@ -1,12 +1,12 @@
 (defun ccc ()
 ;;; Задаем оси в которых будем строить осциллограммы
   (setq
-    sc_tau (sh:get (sh:sel "Ось времени"))
-    sc_01  (sh:get (sh:sel "Ось канала 01"))
-    sc_02  (sh:get (sh:sel "Ось канала 02"))
-    sc_03  (sh:get (sh:sel "Ось канала 03"))
-    sc_04  (sh:get (sh:sel "Ось канала 04"))
-    sc_05  (sh:get (sh:sel "Ось канала 05"))
+    sc_tau (axis:get (axis:sel "Ось времени"))
+    sc_01  (axis:get (axis:sel "Ось канала 01"))
+    sc_02  (axis:get (axis:sel "Ось канала 02"))
+    sc_03  (axis:get (axis:sel "Ось канала 03"))
+    sc_04  (axis:get (axis:sel "Ось канала 04"))
+    sc_05  (axis:get (axis:sel "Ось канала 05"))
   )
 
   (setq int_file_no 61)

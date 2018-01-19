@@ -1,0 +1,45 @@
+(defun axis:draw-single-graph-by-axis-xy-val-data  (x-axis-data y-axis-data pnt-name-var layer-name / pts el lst lst-i lst-len lst-rez pnt-type)
+  (if (and x-axis-data y-axis-data)
+    (progn (setq pts (progn (setq lst	  pnt-name-var
+				  lst-len (length lst)
+				  lst-i	  -1)
+			    (while (< (setq lst-i (1+ lst-i)) lst-len)
+			      (setq el	    (nth lst-i lst)
+				    lst-rez (cons (progn (sc:pxy_pt el x-axis-data y-axis-data)) lst-rez)))
+			    (setq lst-rez (reverse lst-rez))))
+	   (dr:layer-set layer-name)
+	   (dr:pline pts 256)
+	   (setq pnt-type (axis:point-type-next))
+	   (mapcar (function (lambda (pt) (dr:insert pt pnt-type))) pts))))
+
+(defun axis:draw-single-graph-by-axis-data  (x-axis-data y-axis-data xy-point-name / pnt-name-var)
+  (print xy-point-name)
+  (setq pnt-name-var (vl-doc-ref (read xy-point-name)))
+  (print pnt-name-var)
+  (axis:draw-single-graph-by-axis-xy-val-data x-axis-data y-axis-data pnt-name-var xy-point-name))
+
+;;;;;;;;;;
+
+(defun axis:draw-single-graph-by-axis-names  (x-axis-name y-axis-name xy-point-name)
+  (axis:draw-single-graph-by-axis-data
+    (axis:get (axis:sel-by-name x-axis-name))
+    (axis:get (axis:sel-by-name y-axis-name))
+    xy-point-name))
+
+(defun axis:draw-multiple-graphs-by-axis-names
+       (x-axis-name y-axis-name-lst)
+  (mapcar (function
+	    (lambda (el)
+	      (axis:draw-single-graph-by-axis-names x-axis-name el el)))
+	  y-axis-name-lst))
+
+(defun axis:draw-multiple-graphs-on-same-axis
+       (x-axis-name y-axis-name data-symbol-lst)
+  (axis:load-point-types)
+  (axis:point-type-reset)
+  (mapcar (function (lambda (el)
+		      (axis:draw-single-graph-by-axis-names
+			x-axis-name
+			y-axis-name
+			(strcase (vl-symbol-name el) t))))
+	  data-symbol-lst))
