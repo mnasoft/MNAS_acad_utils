@@ -71,21 +71,6 @@
 ;;;;;; 2) ось Y;\n
 ;;;;;; 3) имя переменной, которое содержит список точек.\n
 ;;;;;;Примечание: чтобы преобразовать отрезок в ось нужно воспользоваться командой ea." "Шкалы")
-(defun c:mnas-axis-graph-xy-n  (/ scx scy str pts x a i_colors colors)
-  (axis:load-reset-point-types)
-  (mnas-axis:show-prompt mnas-axis:graph-xyn-prompt)
-  (setq	scx (axis:get (axis:sel "Ось X"))
-	scy (axis:get (axis:sel "Ось Y"))
-	str (getstring "\nИмя переменной содержащей список точек:"))
-  (setq	i_colors 0
-	colors	 '(1 2 3 4 5 6 7 25 45 65 85 105 125 145 165 185 205 225 245))
-  (print (vl-doc-ref (read str)))
-  (setq pts (vl-doc-ref (read str)))
-  (setq	pts (transpon pts)
-	x   (car pts)
-	a   (cdr pts))
-  (map-an-0 a colors i_colors scx scy x))
-
 (defun c:mnas-axis-graph-xy-n  (/ x-axis-data y-axis-data str pts x-dt y-dt-lst)
   (axis:load-reset-point-types)
   (mnas-axis:show-prompt mnas-axis:graph-xyn-prompt)
@@ -117,6 +102,21 @@
 (defun make-list-str (lst) (mapcar (function itoa) (make-list-int lst)))
 
 (defun c:an () (c:mnas-axis-graph-xy-n))
+
+;;;;;;;;;;;;
+
+(defun c:mnas-axis-graph-xy-names  (/  names-str str x-axis-data xy-point-name y-axis-data)
+  (axis:load-reset-point-types)
+  (mnas-axis:show-prompt mnas-axis:graph-xy-names-prompt)
+  (setq x-axis-data (axis:get (axis:sel "Ось X"))
+        y-axis-data (axis:get (axis:sel "Ось Y"))
+        str         (getstring "\nИмя переменной содержащей список точек:"))
+  (print (vl-doc-ref (read str)))
+  (setq names-str (vl-doc-ref (read str)))
+  (mapcar (function (lambda (nm) (axis:draw-single-graph-by-axis-data x-axis-data y-axis-data nm)))
+          names-str))
+
+;;;;;;;;;;;;
 
 ;;;;;;("mnas-axis-point"
 ;;;;;;"Построение точки в координатах шкалы.\n
@@ -347,6 +347,24 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+(defun c:mnas-axis-graph-xy-names  (/  names-str str x-axis-data xy-point-name y-axis-data)
+  (axis:load-reset-point-types)
+  (mnas-axis:show-prompt mnas-axis:graph-xy-names-prompt)
+  (setq x-axis-data (axis:get (axis:sel "Ось X"))
+        y-axis-data (axis:get (axis:sel "Ось Y"))
+        str         (getstring "\nИмя переменной содержащей список точек:"))
+  (print (vl-doc-ref (read str)))
+  (setq names-str (vl-doc-ref (read str)))
+)
+
+(defun c:mnas-axis-multiple-graph  (/ str-x str-y-n)
+  (setq str-x   (vl-doc-ref (read (getstring "\nИмя переменной, содержащей имя оси х:")))
+        str-y-n (vl-doc-ref (read (getstring "\nИмя переменной, содержащей данные:"))))
+  (axis:draw-multiple-graphs-by-axis-names str-x str-y-n))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  
 (defun c:pm-170  ()
   (axis:draw-multiple-graphs-by-axis-names
     "tau"

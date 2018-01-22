@@ -1,3 +1,5 @@
+(defun good-layer-name (name) (VL-STRING-TRANSLATE "\"\\<>/:;?*|,=`" "'----....-.-'" name))
+
 (defun axis:draw-single-graph-by-axis-xy-val-data  (x-axis-data y-axis-data pnt-name-var layer-name / pts el lst lst-i lst-len lst-rez pnt-type)
   (if (and x-axis-data y-axis-data)
     (progn (setq pts (progn (setq lst	  pnt-name-var
@@ -26,13 +28,6 @@
     (axis:get (axis:sel-by-name y-axis-name))
     xy-point-name))
 
-(defun axis:draw-multiple-graphs-by-axis-names
-       (x-axis-name y-axis-name-lst)
-  (mapcar (function
-	    (lambda (el)
-	      (axis:draw-single-graph-by-axis-names x-axis-name el el)))
-	  y-axis-name-lst))
-
 (defun axis:draw-multiple-graphs-on-same-axis
        (x-axis-name y-axis-name data-symbol-lst)
   (axis:load-point-types)
@@ -43,3 +38,17 @@
 			y-axis-name
 			(strcase (vl-symbol-name el) t))))
 	  data-symbol-lst))
+
+(defun axis:draw-multiple-graphs-by-axis-names  (x-axis-name y-axis-name-lst / x-data y-data)
+  (axis:load-point-types)
+  (axis:point-type-reset)
+  (setq x-data (vl-doc-ref (read x-axis-name)))
+  (mapcar (function (lambda (el)
+                      (axis:draw-single-graph-by-axis-xy-val-data
+                        (axis:get (axis:sel-by-name x-axis-name))
+                        (axis:get (axis:sel-by-name el))
+                        (mapcar (function list) x-data (vl-doc-ref (read el)))
+                        (good-layer-name el))))
+          y-axis-name-lst))
+
+
