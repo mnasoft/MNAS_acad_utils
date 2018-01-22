@@ -1,7 +1,8 @@
 ;;;;;;("l_text"
 ;;;;;;"—оздает текстовый примитив, значением которого €вл€етс€ им€ слой,\n
 ;;;;;;на котором находитс€ ссылочный примитив." "“ексты")
-(defun c:l_text  (/ dat dt en go_exit la pt pt_xy)
+
+(defun c:mnas-text-layer  (/ dat dt en go_exit la pt pt_xy)
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (while (null go_exit)
@@ -29,7 +30,7 @@
   (princ)
   (err-handle ""))
 
-
+(defun c:l_text (/ dat dt en go_exit la pt pt_xy) (c:mnas-text-layer))
 
 
 ;;;;;;("z_text" "—оздает текст, значением которого €вл€етс€ координата z." "“ексты")
