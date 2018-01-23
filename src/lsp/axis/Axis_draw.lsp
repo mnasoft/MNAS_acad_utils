@@ -50,5 +50,3 @@
                         (mapcar (function list) x-data (vl-doc-ref (read el)))
                         (good-layer-name el))))
           y-axis-name-lst))
-
-

@@ -364,7 +364,27 @@
   (axis:draw-multiple-graphs-by-axis-names str-x str-y-n))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  
+
+(defun c:mnas-axis-text-podp  (/ axis-data ang p0 p1 txt)
+;;;;
+  (setq axis-data (axis:get (axis:sel "Выберите ось:"))
+        p0        (cdr (assoc 10 axis-data))
+        p1        (cdr (assoc 11 axis-data))
+        txt       (cdr (assoc 1 axis-data))
+        ang       (angle p0 p1))
+  (dr:text txt (mid-point p0 p1) "3.15" ang 256))
+
+(defun c:mnas-axis-mathprop   (/ axis-data ang p0 p1 txt)
+;;;; (40 . 0.0) (41 . 2000.0) (70 . 0)
+  (setq ed        (axis:sel "Выберите ось")
+        axis-data (axis:get ed)
+        p0        (cdr (assoc 10 axis-data))
+        p1        (cdr (assoc 11 axis-data))
+        txt       (cdr (assoc 1 axis-data))
+        ang       (angle p0 p1))
+  (dr:text txt (mid-point p0 p1) "3.15" ang 256))
+
+ 
 (defun c:pm-170  ()
   (axis:draw-multiple-graphs-by-axis-names
     "tau"
