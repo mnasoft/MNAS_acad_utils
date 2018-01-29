@@ -374,6 +374,9 @@
         ang       (angle p0 p1))
   (dr:text txt (mid-point p0 p1) "3.15" ang 256))
 
+(defun c:mnas-axis-select-by-name () (axis:get (axis:sel-by-name (getstring "Имя оси:"))))
+
+
 (defun c:mnas-axis-mathprop   (/ axis-data ang p0 p1 txt)
 ;;;; (40 . 0.0) (41 . 2000.0) (70 . 0)
   (setq ed        (axis:sel "Выберите ось")
