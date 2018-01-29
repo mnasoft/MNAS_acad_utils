@@ -41,7 +41,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun axis:get-sh-name  (en)
-  (dxf-get 1000 (dxf-get "SHCKALA" (dxf-get -3 (entget en (list (axis:app-name)))))))
+  (dxf-get 1000 (dxf-get (axis:app-name) (dxf-get -3 (entget en (list (axis:app-name)))))))
 
 (defun axis:sel-by-name  (name / en i rez ss)
   (princ (strcat "\n" name ":"))

@@ -379,8 +379,9 @@
 
 (defun c:mnas-axis-mathprop   (/ axis-data ang p0 p1 txt)
 ;;;; (40 . 0.0) (41 . 2000.0) (70 . 0)
-  (setq ed        (axis:sel "Выберите ось")
-        axis-data (axis:get ed)
+  (setq axis-from        (axis:sel "Ось для наследованиня свойств")
+        axis-data (axis:get axis-from)
+	axis-to        (axis:sel "Ось для наследованиня свойств")
         p0        (cdr (assoc 10 axis-data))
         p1        (cdr (assoc 11 axis-data))
         txt       (cdr (assoc 1 axis-data))
