@@ -39,11 +39,8 @@
     (setq ed1 (_xd_appsubst ed (axis:app-name) (list '(1040 . 0.0) '(1040 . 100.0) '(1070 . 0) '(1000 . ""))))
     (setq ed1 ed))
   (setq ed1 (mnas-axis-edit:eaxis ed1))
-  (IF (NOT (EQUAL ED ED1))
-    (entMOD ed1)))
-
-
-
+  (if (not (equal ed ed1))
+    (entmod ed1)))
 
 ;;;;;;("ea"
 ;;;;;;  "Ñì. mnas-axis-edit"
