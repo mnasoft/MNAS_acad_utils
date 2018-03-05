@@ -345,20 +345,8 @@
 ;;;;;;("c4" "См. mnas-axis-point-value-xy" "Шкалы")
 (defun c:c4 () (c:mnas-axis-point-value-xy))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-(defun c:mnas-axis-graph-xy-names  (/  names-str str x-axis-data xy-point-name y-axis-data)
-  (axis:load-reset-point-types)
-  (mnas-axis:show-prompt mnas-axis:graph-xy-names-prompt)
-  (setq x-axis-data (axis:get (axis:sel "Ось X"))
-        y-axis-data (axis:get (axis:sel "Ось Y"))
-        str         (getstring "\nИмя переменной содержащей список точек:"))
-  (print (vl-doc-ref (read str)))
-  (setq names-str (vl-doc-ref (read str)))
-)
-
 (defun c:mnas-axis-multiple-graph  (/ str-x str-y-n)
+  (mnas-axis:show-prompt mnas-axis:multiple-graph-prompt)
   (setq str-x   (vl-doc-ref (read (getstring "\nИмя переменной, содержащей имя оси х:")))
         str-y-n (vl-doc-ref (read (getstring "\nИмя переменной, содержащей данные:"))))
   (axis:draw-multiple-graphs-by-axis-names str-x str-y-n))
