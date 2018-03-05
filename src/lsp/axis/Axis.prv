@@ -1,12 +1,11 @@
-;;; Visual LISP make file [V1.0] axis saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/axis] at:[9/29/13] 
+;;; Visual LISP make file [V1.0] axis saved to:[C:/msys32/home/namatv/develop/git/MNAS_acad_utils/src/lsp/axis] at:[3/4/18] 
 (PRV-DEF (:target . "../../../bin/Axis.VLX")
 	 (:active-x . T)
-	 (:separate-namespace . T)
+	 (:separate-namespace)
 	 (:protected . T)
 	 (:load-file-list (:prj "AXIS.PRJ"))
 	 (:require-file-list (:DCL "Axis.dcl"))
 	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
-	 (:optimization . st)
-)
+	 (:optimization . st))
 ;; EOF

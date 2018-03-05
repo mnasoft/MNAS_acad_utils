@@ -121,17 +121,36 @@
 ;;;  (70 . 0)
 ;;;  (1 . "Ќека€ шкала x")
 ;;;)
-(defun axis:upd  (ed axis-data / pts xdt)
-;;; не закон„ена
-  (setq pts (list (assoc 10 axis-data) (assoc 11 axis-data))
-        xdt (list (cons 1040 (assoc 40 axis-data))
-                  (cons 1040 (assoc 41 axis-data))
-                  (cons 1070 (assoc 70 axis-data))
-                  (cons 1000 (assoc 1 axis-data)))
-        ed  (dsubst ed pts)
-        ed  (_xdsubst_ xdt)
-;;;место для доработк».
-        ))
+(defun axis:upd	 (ed axis-data / pts xdt)
+  (setq	pts (list (assoc 10 axis-data) (assoc 11 axis-data))
+	xdt (list (cons 1040 (cdr (assoc 40 axis-data)))
+		  (cons 1040 (cdr (assoc 41 axis-data)))
+		  (cons 1070 (cdr (assoc 70 axis-data)))
+		  (cons 1000 (cdr (assoc 1 axis-data))))
+	ed  (dsubst ed pts)
+	ed  (_xd_appsubst ed (axis:app-name) xdt))
+  (entmod ed))
+
+;;;f;;;("dr:axis (start-pt end-pt start-value end-value flag name)" "—оздает ось (axis) в текущем пространстве.\n
+;;;f;;;   start-pt    - начальна€ точка отрезка;\n
+;;;f;;;   end-pt      - конечна€ точка отрезка;\n
+;;;f;;;   start-value - значение в начальной точке шкалы;\n
+;;;f;;;   end-value   - значение в конечной точке шкалы;\n
+;;;f;;;   flag        - признак, если 0 - шкала пропорциональна€, если 1 - шкала гогарифмическа€;\n
+;;;f;;;   name        - им€ шкалы.\n
+;;;f;;;_$ (dr:axis '(0 0 0) '(100 0 0) 50 100 0 "COOL_axis")\n
+;;;f;;;((0 . "LINE") (10 0 0 0) (11 100 0 0) (-3 ("SHCKALA" (1002 . "{") (1040 . 50) (1040 . 100) (1070 . 0) (1000 . "COOL_axis") (1002 . "}"))))\n
+;;;f;;;")
+(defun dr:axis	(start-pt end-pt start-value end-value flag name / ed ed1)
+  (regapp (axis:app-name))
+  (setq	ed  (list (cons 0 "LINE") (cons 10 start-pt) (cons 11 end-pt))
+	ed1 (_xd_appsubst
+	      ed
+	      (axis:app-name)
+	      (list (cons 1040 start-value) (cons 1040 end-value) (cons 1070 flag) (cons 1000 name))))
+  (entmake ed1))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;	sc:val_pt_porp(x)	- ‘ункци€ преобразовани€ значени€ в точку дл€ пропорциональной шкалы.
 (defun sc:val_pt_porp (x) x)
@@ -165,9 +184,6 @@
   (f_obr (+ (f_pr sc_v0)
             (* (- (f_pr sc_v1) (f_pr sc_v0))
                (/ (- (f_cord pt) (f_cord sc_p0)) (- (f_cord sc_p1) (f_cord sc_p0)))))))
-
-
-
 
 ;;	sc:val_pt(vt sc)	- ќпределение точки на шкале по значению на шкале.
 (defun sc:val_pt  (vt sc / sc_p0 sc_p1 sc_v0 sc_v1 sc_flag v_factor p_rez)
