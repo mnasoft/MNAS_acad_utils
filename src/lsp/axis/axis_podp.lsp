@@ -86,7 +86,7 @@
                                         pt_0
                                         (atof (cadr (assoc "text_hight" ll_ax_shcala)))
                                         (angtof (cadr (assoc "text_angle" ll_ax_shcala)))
-                                        -1)
+                                        -1 0)
                                (dr:ch_prop (list (cons 72 1) (cons 73 2) (cons 11 pt_0)))
                                (setq ss_text (ssadd (entlast) ss_text))))))
           (sub_div x_min x_max n_div 0)))
@@ -107,7 +107,7 @@
                     pt_0
                     (atof (cadr (assoc "podp_text_hight" ll_ax_shcala)))
                     (angtof (cadr (assoc "podp_text_angle" ll_ax_shcala)))
-                    -1)
+                    -1 0)
            (dr:ch_prop (list (cons 72 1) (cons 73 2) (cons 11 pt_0)))
            (setq ss_podp_text (ssadd (entlast) ss_podp_text))))
   (mapcar (function (lambda (el / pt pt_0)

@@ -1,12 +1,11 @@
-;;; Visual LISP make file [V1.0] dims saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dims] at:[9/29/13] 
+;;; Visual LISP make file [V1.0] dims saved to:[D:/PRG/msys32/home/namatv/develop/git/mnasoft/MNAS_acad_utils/src/lsp/dims] at:[3/6/18] 
 (PRV-DEF (:target . "../../../bin/dims.VLX")
 	 (:active-x . T)
-	 (:separate-namespace . T)
+	 (:separate-namespace)
 	 (:protected . T)
 	 (:load-file-list (:prj "dims.prj"))
 	 (:require-file-list (:DCL "abc.dcl") (:DCL "welding/welding.DCL"))
 	 (:ob-directory . "../../../temp")
 	 (:tmp-directory)
-	 (:optimization . st)
-)
+	 (:optimization . st))
 ;; EOF

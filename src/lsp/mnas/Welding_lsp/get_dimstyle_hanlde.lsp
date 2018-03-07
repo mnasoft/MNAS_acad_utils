@@ -209,7 +209,7 @@
 	t_style	(cdr (assoc 2 (entget (cdr (assoc 340 (tblsearch "dimstyle" d_style)))))) ; Имя размерного стиля
 	t_hight	(cdr (assoc 140 (entget (cdr (assoc 340 (tblsearch "dimstyle" d_style)))))) ; Высота текста
   )
-  (dr:text str_top p_mid t_hight 0.0 256)
+  (dr:text str_top p_mid t_hight 0.0 256 0)
   pnt_list
 )
 

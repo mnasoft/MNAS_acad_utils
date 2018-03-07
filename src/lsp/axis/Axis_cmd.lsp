@@ -1,3 +1,8 @@
+(setq mnas-axis:block-scale 1.5)
+
+(defun mnas-axis:block-scale-set (val)
+  (setq mnas-axis:block-scale val))
+
 (setq mnas-axis:mode-setup '((alert-mode . t) (prompt-mode . t)))
      
 (defun mnas-axis:alert-mode  ()
@@ -143,7 +148,7 @@
   (while (setq x (getreal "¬ведите X :"))
     (setq pt (sc:val_pt x sc))
     (dr:point pt 256)
-    (dr:text (rtos x) pt 3.5 0.0 256))
+    (dr:text (rtos x) pt 3.5 0.0 256 0))
   (princ))
 
 ;;;;;;("a2t" "—м. mnas-axis-point-text." "Ўкалы")
@@ -175,7 +180,7 @@
                           (polar scy_end (angle scx_st scx_end) 1.0)
                           nil))
     (dr:line pt_0 pt_1 256)
-    (dr:text (rtos x) pt 3.5 0.0 256))
+    (dr:text (rtos x) pt 3.5 0.0 256 0))
   (princ))
 
 ;;;;;;("a2xy_t" "—м. mnas-axis-tick." "Ўкалы")
@@ -221,7 +226,7 @@
 							 (polar scy_end (angle scx_st scx_end) 1.0)
 							 nil))
 				      (dr:line pt_0 pt_1 256)
-				      (dr:text (rtos el) pt 3.5 0.0 256))
+				      (dr:text (rtos el) pt 3.5 0.0 256 0))
 			       lst-rez)))
 	 (setq lst-rez (reverse lst-rez))))
 
@@ -239,7 +244,7 @@
 ;;;                                         (polar scy_end (angle scx_st scx_end) 1.0)
 ;;;                                         nil))
 ;;;                      (dr:line pt_0 pt_1 256)
-;;;                      (dr:text (rtos el) pt 3.5 0.0 256)))
+;;;                      (dr:text (rtos el) pt 3.5 0.0 256 0)))
 ;;;          (sub_div x_min x_max n_div 0)))
 
 
@@ -360,7 +365,7 @@
         p1        (cdr (assoc 11 axis-data))
         txt       (cdr (assoc 1 axis-data))
         ang       (angle p0 p1))
-  (dr:text txt (mid-point p0 p1) "3.15" ang 256))
+  (dr:text txt (mid-point p0 p1) "3.15" ang 256 0))
 
 (defun c:mnas-axis-select-by-name () (axis:get (axis:sel-by-name (getstring "»м€ оси:"))))
 
@@ -374,7 +379,7 @@
         p1        (cdr (assoc 11 axis-data))
         txt       (cdr (assoc 1 axis-data))
         ang       (angle p0 p1))
-  (dr:text txt (mid-point p0 p1) "3.15" ang 256))
+  (dr:text txt (mid-point p0 p1) "3.15" ang 256 0))
 
  
 (defun c:pm-170  ()

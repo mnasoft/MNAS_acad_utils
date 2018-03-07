@@ -197,9 +197,6 @@
         v_factor (/ (- (f_pr vt) (f_pr sc_v0)) (- (f_pr sc_v1) (f_pr sc_v0))))
   (mapcar (function (lambda (el0 el1) (+ el0 (* (- el1 el0) v_factor)))) sc_p0 sc_p1))
 
-
-
-
 ;;	sc:pxy_pt(pxy scx scy)	- Переводит точку из координат шкал scx и scy в координаты экрана.
 (defun sc:pxy_pt  (pxy scx scy / SCX_P0 SCX_P1 SCY_P0 SCY_P1 px py p_rez)
   (setq px     (sc:val_pt (car pxy) scx)

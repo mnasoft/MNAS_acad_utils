@@ -132,17 +132,20 @@
   (vla-update ray)
   ray)
 
- ;|	dr:text(txt pt height rotation col)	- Отрисовка текста.
-	(dr:text "Это пример текста" '(10.0 20. 10.) 20.0 (* pi 0.25) 4)
+ ;|	dr:text(txt pt height rotation col Alignment)	- Отрисовка текста.
+	(dr:text "Это пример текста" '(10.0 20. 10.) 20.0 (* pi 0.25) 4 0)
 	#<VLA-OBJECT IAcadText 00f718e4>
 |;
-(defun dr:text  (txt pt height rotation col / text)
-  (setq text (vla-AddText (AcadAppDocSpace) txt (vlax-3d-point pt) height))
+(defun dr:text  (txt pt height rotation col Alignment / v-text)
+  (setq v-text (vla-AddText (AcadAppDocSpace) txt (vlax-3d-point pt) height))
   (if (and (>= col 0) (<= col 256))
-    (vla-put-color text col))
-  (vla-put-Rotation text rotation)
-  (vla-update text)
-  text)
+    (vla-put-color v-text col))
+  (vla-put-Rotation v-text rotation)
+  (vla-put-Alignment v-text Alignment)
+  (vla-put-TextAlignmentPoint v-text (vlax-3d-point pt))
+  (vla-update v-text)
+  v-text)
+
  ;|	dr:solid (point1 point2 point3 point4 a-color) - отрисовка области.
 	(dr:solid '(0.0 0.0 0.0) '(10. 0.0 0.0) '(0.0 10. 0.0) '(10.0 10. 5.0) 5)
 |;
@@ -176,5 +179,19 @@
 (defun dr:layer-set(layer-name)
   (command "_-layer" "_new" layer-name "_set" layer-name ""))
 
-(defun dr:insert  (pt block-name)
-  (command "_-insert" block-name "_s" 1.0 "_r" 0.0 "_non" pt))
+;;;; (defun dr:insert  (pt block-name) (command "_-insert" block-name "_s" 1.0 "_r" 0.0 "_non" pt))
+
+(defun dr:insert  (InsertionPoint Name Xscale Yscale ZScale Rotation / v-insert)
+  (setq v-insert (vla-InsertBlock (AcadAppDocSpace) (vlax-3d-point InsertionPoint) Name Xscale Yscale ZScale Rotation))
+  v-insert)
+
+(defun dr:mtext  (InsertionPoint Width Text height rotation color AttachmentPoint / v-mtext)
+  (setq v-mtext (vla-AddMText (AcadAppDocSpace) (vlax-3d-point InsertionPoint) Width Text))
+  (if (and (>= color 0) (<= color 256))
+    (vla-put-color v-mtext color))
+  (vla-put-Rotation v-mtext rotation)
+  (vla-put-Height v-mtext height)
+  (vla-put-AttachmentPoint v-mtext AttachmentPoint)
+  (vla-put-InsertionPoint v-mtext (vlax-3d-point pt))
+  (vla-update v-mtext)
+  v-mtext)

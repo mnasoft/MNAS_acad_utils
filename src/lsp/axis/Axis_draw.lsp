@@ -12,7 +12,7 @@
 	   (dr:layer-set layer-name)
 	   (dr:pline pts 256)
 	   (setq pnt-type (axis:point-type-next))
-	   (mapcar (function (lambda (pt) (dr:insert pt pnt-type))) pts))))
+	   (mapcar (function (lambda (pt) (dr:insert pt pnt-type mnas-axis:block-scale mnas-axis:block-scale mnas-axis:block-scale 0.0))) pts))))
 
 (defun axis:draw-single-graph-by-axis-data  (x-axis-data y-axis-data xy-point-name / pnt-name-var)
   (print xy-point-name)

@@ -1,12 +1,11 @@
-;;; Visual LISP make file [V1.0] Dim_style saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/dims/dim_style] at:[9/29/13] 
+;;; Visual LISP make file [V1.0] dim_style saved to:[D:/PRG/msys32/home/namatv/develop/git/mnasoft/MNAS_acad_utils/src/lsp/dims/dim_style] at:[3/6/18] 
 (PRV-DEF (:target . "../../../../bin/dim_style.VLX")
 	 (:active-x . T)
-	 (:separate-namespace . T)
+	 (:separate-namespace)
 	 (:protected . T)
 	 (:load-file-list (:prj "dim_style.prj"))
 	 (:require-file-list)
 	 (:ob-directory . "../../../../temp")
 	 (:tmp-directory)
-	 (:optimization . st)
-)
+	 (:optimization . st))
 ;; EOF
