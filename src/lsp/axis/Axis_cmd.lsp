@@ -352,7 +352,7 @@
 
 (defun c:mnas-axis-multiple-graph  (/ str-x str-y-n)
   (mnas-axis:show-prompt mnas-axis:multiple-graph-prompt)
-  (setq str-x   (vl-doc-ref (read (getstring "\nИмя переменной, содержащей имя оси х:")))
+  (setq str-x   (getstring "\nИмя переменной, содержащей имя оси х:")
         str-y-n (vl-doc-ref (read (getstring "\nИмя переменной, содержащей данные:"))))
   (axis:draw-multiple-graphs-by-axis-names str-x str-y-n))
 
