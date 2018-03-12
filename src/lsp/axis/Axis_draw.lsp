@@ -1,18 +1,28 @@
 (defun good-layer-name (name) (VL-STRING-TRANSLATE "\"\\<>/:;?*|,=` \t\n." "-----____-_--____" name))
 
-(defun axis:draw-single-graph-by-axis-xy-val-data  (x-axis-data y-axis-data pnt-name-var layer-name / pts el lst lst-i lst-len lst-rez pnt-type)
+(defun axis:draw-single-graph-by-axis-xy-val-data
+       (x-axis-data y-axis-data pnt-name-var layer-name / pts el lst lst-i lst-len lst-rez pnt-type)
   (if (and x-axis-data y-axis-data)
-    (progn (setq pts (progn (setq lst	  pnt-name-var
-				  lst-len (length lst)
-				  lst-i	  -1)
-			    (while (< (setq lst-i (1+ lst-i)) lst-len)
-			      (setq el	    (nth lst-i lst)
-				    lst-rez (cons (progn (sc:pxy_pt el x-axis-data y-axis-data)) lst-rez)))
-			    (setq lst-rez (reverse lst-rez))))
-	   (dr:layer-set layer-name)
-	   (dr:pline pts 256)
-	   (setq pnt-type (axis:point-type-next))
-	   (mapcar (function (lambda (pt) (dr:insert pt pnt-type mnas-axis:block-scale mnas-axis:block-scale mnas-axis:block-scale 0.0))) pts))))
+    (progn
+      (setq pts (progn (setq lst     pnt-name-var
+                             lst-len (length lst)
+                             lst-i   -1)
+                       (while (< (setq lst-i (1+ lst-i)) lst-len)
+                         (setq el      (nth lst-i lst)
+                               lst-rez (cons (progn (sc:pxy_pt el x-axis-data y-axis-data)) lst-rez)))
+                       (setq lst-rez (reverse lst-rez))))
+      (dr:layer-set layer-name)
+      (if mnas-axis:draw-pline
+        (dr:pline pts 256))
+      (if mnas-axis:draw-spline
+        (dr:spline pts 256))
+      (if mnas-axis:draw-point
+        (progn
+        (setq pnt-type (axis:point-type-next))
+        (mapcar (function
+                  (lambda (pt)
+                    (dr:insert pt pnt-type mnas-axis:block-scale mnas-axis:block-scale mnas-axis:block-scale 0.0)))
+                pts))))))
 
 (defun axis:draw-single-graph-by-axis-data  (x-axis-data y-axis-data xy-point-name / pnt-name-var)
   (print xy-point-name)

@@ -1,3 +1,15 @@
+(setq mnas-axis:draw-point t)
+
+(defun mnas-axis:draw-point-set (flag) (setq mnas-axis:draw-point flag))
+
+(setq mnas-axis:draw-pline t)
+
+(defun mnas-axis:draw-pline-set (flag) (setq mnas-axis:draw-pline flag))
+
+(setq mnas-axis:draw-spline t)
+
+(defun mnas-axis:draw-spline-set (flag) (setq mnas-axis:draw-spline flag))
+
 (setq mnas-axis:block-scale 1.5)
 
 (defun mnas-axis:block-scale-set (val)

@@ -57,13 +57,16 @@
 
 (defun axis:point-type-reset () (setq axis:point-type-current -1))
 
+(defun axis:point-type-block-name  ()
+  (nth axis:point-type-current axis:point-type))
+
 (defun axis:point-type-next  (/ rez)
   (setq axis:point-type-current
          (1+ axis:point-type-current)
         axis:point-type-current
          (if (< axis:point-type-current (length axis:point-type))
            axis:point-type-current
-           -1)
+           (progn 0))
         rez (nth axis:point-type-current axis:point-type)))
 
 (defun axis:load-reset-point-types () (axis:load-point-types) (axis:point-type-reset))
