@@ -192,6 +192,6 @@
   (vla-put-Rotation v-mtext rotation)
   (vla-put-Height v-mtext height)
   (vla-put-AttachmentPoint v-mtext AttachmentPoint)
-  (vla-put-InsertionPoint v-mtext (vlax-3d-point pt))
+  (vla-put-InsertionPoint v-mtext (vlax-3d-point InsertionPoint))
   (vla-update v-mtext)
   v-mtext)
