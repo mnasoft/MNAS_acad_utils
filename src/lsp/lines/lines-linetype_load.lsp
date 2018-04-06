@@ -1,11 +1,4 @@
 ;;;;;;("ltp" "Загрузка шрифтов линий." "Настройка")
-(defun mnas-lines:load-line-types  ()
-  (command "_ltscale" "1")
-  (command "_psltscale" "1")
-  (command "_-linetype" "_load" "*" (findfile (utils:path-src-lsp "lines/eskd.lin")))
-  (while (= 1 (getvar "CMDACTIVE")) (command ""))
-  (command "_regen")
-  (princ))
 
 (defun c:ltp  ()
   (mnas-lines:load-line-types)

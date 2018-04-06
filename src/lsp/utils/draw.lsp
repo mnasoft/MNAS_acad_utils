@@ -195,3 +195,12 @@
   (vla-put-InsertionPoint v-mtext (vlax-3d-point InsertionPoint))
   (vla-update v-mtext)
   v-mtext)
+
+
+(defun mnas-lines:load-line-types  ()
+  (command "_ltscale" "1")
+  (command "_psltscale" "1")
+  (command "_-linetype" "_load" "*" (findfile (utils:path-src-lsp "lines/eskd.lin")))
+  (while (= 1 (getvar "CMDACTIVE")) (command ""))
+  (command "_regen")
+  (princ))

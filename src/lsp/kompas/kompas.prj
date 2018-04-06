@@ -1,17 +1,15 @@
-;;; VLisp project file [V2.0] kompas saved to:[E:/home/namatv/git/GitHub/MNAS_acad_utils/acad_w.sup/kompas] at:[3/16/14] 
+;;; VLisp project file [V2.0] kompas saved to:[D:/home/_namatv/develop/git/mnasoft/MNAS_acad_utils/src/lsp/kompas] at:[4/6/18] 
 (VLISP-PROJECT-LIST
   :name
   kompas
   :own-list
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"				      "kompas-kompas_acad"
-    "kompas-acad_kompas"			      "kompas-cmd"
-    "../UTILS/STRING"
-    "../opechatka/rus_cmd_opechatka"
+    "../utils/Debug"		"../utils/draw"		    "kompas-kompas_acad"	"kompas-acad_kompas"
+    "kompas-cmd"		"kompas-line-type"	    "../UTILS/STRING"		"../opechatka/rus_cmd_opechatka"
     "kompas-rus")
-  :FAS-DIRECTORY
+  :fas-directory
   "../../../temp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "../../../temp"
   :project-keys
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)

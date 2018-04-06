@@ -54,14 +54,14 @@
         lt (cdr (assoc 6 ed))
         lt (cond ((null lt) "bylayer")
                  (t lt)))
-  (command "chprop" en "" "c" co "la" la "lt" lt "")
+  (command "_chprop" en "" "_c" co "_la" la "_lt" lt "")
   (command "_.pedit" en "_l" "_on" "_w" wid "s" ""))
 
 (defun ch:ln_pl  (ed wid / p1 p2)
   (setq p1 (cdr (assoc 10 ed))
         p2 (cdr (assoc 11 ed)))
   (command "_.pline" "_non" p1 "_w" wid wid "_non" p2 "")
-  (command "matchprop" (dxf-get -1 ed) (entlast) ""))
+  (command "_matchprop" (dxf-get -1 ed) (entlast) ""))
 
 (defun ch:ar_pl  (ed wid / cen rad as ae ps pe)
   (setq cen (cdr (assoc 10 ed))
@@ -71,7 +71,7 @@
         ps  (polar cen as rad)
         pe  (polar cen ae rad))
   (command "_.pline" "_non" ps "_w" wid wid "_a" "_ce" "_non" cen "_non" pe "")
-  (command "matchprop" (dxf-get -1 ed) (entlast) ""))
+  (command "_matchprop" (dxf-get -1 ed) (entlast) ""))
 
 (defun ch:cl_pl  (ed wid / cen rad di do)
   (setq cen (cdr (assoc 10 ed))
@@ -79,6 +79,6 @@
         di  (- (* rad 2.) wid)
         do  (+ (* rad 2.) wid))
   (command "_.donut" di do "_non" cen "")
-  (command "matchprop" (dxf-get -1 ed) (entlast) ""))
+  (command "_matchprop" (dxf-get -1 ed) (entlast) ""))
 
 (defun ch:lw_pl (en wid) (command "_.pedit" en "_w" wid "_x"))
