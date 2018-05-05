@@ -60,3 +60,7 @@
                         (mapcar (function list) x-data (vl-doc-ref (read el)))
                         (good-layer-name el))))
           y-axis-name-lst))
+
+(defun axis:mnas-axis-multiple-graph  (str-x str-y / str-y-n)
+  (setq str-y-n (vl-doc-ref (read str-y)))
+  (axis:draw-multiple-graphs-by-axis-names str-x str-y-n))
