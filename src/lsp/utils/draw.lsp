@@ -142,7 +142,7 @@
     (vla-put-color v-text col))
   (vla-put-Rotation v-text rotation)
   (vla-put-Alignment v-text Alignment)
-  (vla-put-TextAlignmentPoint v-text (vlax-3d-point pt))
+  (if (/= 0 Alignment) (vla-put-TextAlignmentPoint v-text (vlax-3d-point pt)))
   (vla-update v-text)
   v-text)
 
