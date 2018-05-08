@@ -1,19 +1,38 @@
-(setq mnas-axis:draw-point t)
+(progn (setq mnas-axis:draw-point t)
+       (setq mnas-axis:draw-pline t)
+       (setq mnas-axis:draw-spline t)
+       (setq mnas-axis:block-scale 1.5))
+(defun mnas-axis:draw-point-get	() (if mnas-axis:draw-point   t nil))
+(defun mnas-axis:draw-pline-get	() (if mnas-axis:draw-pline   t nil))
+(defun mnas-axis:draw-spline-get () (if mnas-axis:draw-spline t nil))
+
+(defun mnas-axis:block-scale-get () mnas-axis:block-scale)
+
+(defun mnas-axis:draw-point-get-string  () (if (mnas-axis:draw-point-get) "Yes" "No"))
+(defun mnas-axis:draw-pline-get-string  () (if (mnas-axis:draw-pline-get) "Yes" "No"))
+(defun mnas-axis:draw-spline-get-string () (if (mnas-axis:draw-spline-get) "Yes" "No"))
+(defun mnas-axis:block-scale-get-string () (rtos (mnas-axis:block-scale-get)))
 
 (defun mnas-axis:draw-point-set (flag) (setq mnas-axis:draw-point flag))
-
-(setq mnas-axis:draw-pline t)
-
 (defun mnas-axis:draw-pline-set (flag) (setq mnas-axis:draw-pline flag))
-
-(setq mnas-axis:draw-spline t)
-
 (defun mnas-axis:draw-spline-set (flag) (setq mnas-axis:draw-spline flag))
+(defun mnas-axis:block-scale-set (val) (setq mnas-axis:block-scale val))
 
-(setq mnas-axis:block-scale 1.5)
+(defun c:mnas-axis-setup-draw-mode  (/ draw-point draw-pline draw-spline point-scale)
+  (progn (initget 0 "Yes No") (setq draw-point  (getkword (strcat "Draw-point (Yes No) " "<"  (mnas-axis:draw-point-get-string) ">" ":"))))
+  (progn (initget 0 "Yes No") (setq draw-pline  (getkword (strcat "Draw-pline (Yes No) " "<"  (mnas-axis:draw-pline-get-string) ">" ":"))))
+  (progn (initget 0 "Yes No") (setq draw-spline (getkword (strcat "Draw-spline (Yes No) " "<" (mnas-axis:draw-spline-get-string) ">" ":"))))
+  (progn (initget 6 "Yes No") (setq point-scale (getreal  (strcat "Масштаб точек " "<" (mnas-axis:block-scale-get-string) ">" ":"))))
+  (cond	((= draw-point "Yes") (mnas-axis:draw-point-set t))
+	((= draw-point "No") (mnas-axis:draw-point-set nil)))
+  (cond ((= draw-pline "Yes") (mnas-axis:draw-pline-set t))
+	((= draw-pline "No") (mnas-axis:draw-pline-set nil)))
+  (cond	((= draw-spline "Yes") (mnas-axis:draw-spline-set t))
+	((= draw-spline "No") (mnas-axis:draw-spline-set nil)))
+  (cond (point-scale (mnas-axis:block-scale-set point-scale))))
 
-(defun mnas-axis:block-scale-set (val)
-  (setq mnas-axis:block-scale val))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq mnas-axis:mode-setup '((alert-mode . t) (prompt-mode . t)))
      
@@ -37,7 +56,7 @@
 	   (assoc 'prompt-mode mnas-axis:mode-setup)
 	   mnas-axis:mode-setup)))
 
-(defun c:mnas-axis-mode-setup  (/ am pm)
+(defun c:mnas-axis-setup-pompt-mode  (/ am pm) 
   (initget 1 "Yes No")
   (setq am (getkword "Alert-mode (Yes No):"))
   (initget 1 "Yes No")
@@ -370,17 +389,20 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun c:mnas-axis-text-podp  (/ axis-data ang p0 p1 txt)
-;;;;
-  (setq axis-data (axis:get (axis:sel "Выберите ось:"))
-        p0        (cdr (assoc 10 axis-data))
-        p1        (cdr (assoc 11 axis-data))
-        txt       (cdr (assoc 1 axis-data))
-        ang       (angle p0 p1))
-  (dr:text txt (mid-point p0 p1) "3.15" ang 256 0))
+(defun c:mnas-axis-draw-name  (/ axis-data ang p0 p1 name caption dimension)
+  (setq	axis-data (axis:get (axis:sel "Выберите ось:"))
+	p0	  (cdr (assoc 10 axis-data))
+	p1	  (cdr (assoc 11 axis-data))
+	name	  (cdr (assoc 1 axis-data))
+	caption	  (cdr (assoc 2 axis-data))
+	dimension (cdr (assoc 3 axis-data))
+	ang	  (angle p0 p1))
+  (dr:text name p0 3.15 ang 256 10)
+  (dr:text caption (mid-point p0 p1) 3.15 ang 256 10)
+  (dr:text dimension p1 3.15 ang 256 10))
+
 
 (defun c:mnas-axis-select-by-name () (axis:get (axis:sel-by-name (getstring "Имя оси:"))))
-
 
 (defun c:mnas-axis-mathprop   (/ axis-data ang p0 p1 txt)
 ;;;; (40 . 0.0) (41 . 2000.0) (70 . 0)
@@ -393,7 +415,31 @@
         ang       (angle p0 p1))
   (dr:text txt (mid-point p0 p1) "3.15" ang 256 0))
 
- 
+
+(defun c:mnas-axis-print-all-axis-data	(/ ss len a-data)
+  (setq	ss  (ssget (axis:filter-list))
+	len (sslength ss))
+  (while (<= 0 (setq len (1- len)))
+    (setq a-data (axis:get (entget (ssname ss len) (list (axis:app-name)))))
+    (princ "(vlisp:dr-axis '")
+    (princ (cdr (assoc 10 a-data)))
+    (princ " '")
+    (princ (cdr (assoc 11 a-data)))
+    (princ " ")
+    (princ (cdr (assoc 40 a-data)))
+    (princ " ")
+    (princ (cdr (assoc 41 a-data)))
+    (princ " ")
+    (princ (cdr (assoc 70 a-data)))
+    (princ " \"")
+    (princ (cdr (assoc 1 a-data)))
+    (princ "\" :caption \"")
+    (princ (cdr (assoc 2 a-data)))
+    (princ "\" :dimension \"")
+    (princ (cdr (assoc 3 a-data)))
+    (princ "\")\n")
+    (princ)))
+
 (defun c:pm-170  ()
   (axis:draw-multiple-graphs-by-axis-names
     "tau"

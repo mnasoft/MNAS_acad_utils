@@ -2,6 +2,11 @@
 
 (regapp (axis:app-name))
 
+(defun enamep (var)
+  (eq (type var) 'ename))
+
+(defun axis:filter-list () (list (cons 0 "LINE") (list -3 (list (axis:app-name)))))
+
 ;;;axis:sel(str)
 ;;;	Отображает запрос str; позволяет выбрать
 ;;;     примитив типа "SHCKALA" и возвращает имя примитива
@@ -26,26 +31,47 @@
 ;;;	(1040 . 0.0)
 ;;;	(1040 . 100.0)
 ;;;	(1070 . 0)
-;;;	(1000 . "Некая шкала x")
+;;;	(1000 . "Имя шкалы")
+;;;	(1000 . "Заголовок")
+;;;	(1000 . "Размерность")
 ;;;	(1002 . "}")
 ;;;      )
 ;;;  )
 ;;;)
+
 (defun axis:sel  (str / ss)
   (princ (strcat "\n" str ":"))
-  (setq ss (ssget (list (cons 0 "LINE") (list -3 (list (axis:app-name))))))
+  (setq ss (ssget (axis:filter-list)))
   (if ss
     (entget (ssname ss 0) (list (axis:app-name)))
     nil))
 
+(defun axis:ename  (str / ss)
+  (princ (strcat "\n" str ":"))
+  (setq ss (ssget (axis:filter-list)))
+  (if ss
+    (ssname ss 0)
+    nil))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun axis:get-sh-name  (en)
-  (dxf-get 1000 (dxf-get (axis:app-name) (dxf-get -3 (entget en (list (axis:app-name)))))))
+(defun axis:get-sh-name	 (en-or-ed)
+  (cond	((listp en-or-ed) (dxf-get 1 (axis:get en-or-ed)))
+	((enamep en-or-ed) (dxf-get 1 (axis:get (entget en-or-ed (list (axis:app-name))))))))
+
+(defun axis:get-sh-caption  (en-or-ed)
+  (cond	((listp en-or-ed) (dxf-get 2 (axis:get en-or-ed)))
+	((enamep en-or-ed) (dxf-get 2 (axis:get (entget en-or-ed (list (axis:app-name))))))))
+
+(defun axis:get-sh-dimension  (en-or-ed)
+  (cond	((listp en-or-ed) (dxf-get 3 (axis:get en-or-ed)))
+	((enamep en-or-ed) (dxf-get 3 (axis:get (entget en-or-ed (list (axis:app-name))))))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun axis:sel-by-name  (name / en i rez ss)
   (princ (strcat "\n" name ":"))
-  (setq ss  (ssget "X" (list (cons 0 "LINE") (list -3 (list (axis:app-name)))))
+  (setq ss  (ssget "X" (axis:filter-list))
         i   (sslength ss)
         rez nil)
   (while (<= 0 (setq i (1- i)))
@@ -55,7 +81,6 @@
   (if rez
     (entget rez (list (axis:app-name)))
     nil))
-
 
 ;;;;(setq tol (axis:sel-by-name "FA010"))
 
@@ -72,7 +97,9 @@
 ;;;      (1040 . 0.0)
 ;;;      (1040 . 100.0)
 ;;;      (1070 . 0)
-;;;      (1000 . "Некая шкала x")
+;;;      (1000 . "Имя шкалы")
+;;;      (1000 . "Подпись шкалы")
+;;;      (1000 . "Размерность")
 ;;;      (1002 . "}")
 ;;;     )
 ;;;    )
@@ -83,17 +110,64 @@
 ;;;  (40 . 0.0)
 ;;;  (41 . 100.0)
 ;;;  (70 . 0)
-;;;  (1 . "Некая шкала x")
+;;;  (1 . "Имя шкалы")
+;;;  (2 . "Подпись")
+;;;  (3 . "Рзмерность")
 ;;;)
-(defun axis:get  (ed / xdt p0 p1 v0 v1 flag str)
-  (setq xdt  (_xd_appget ed (axis:app-name))
-        v0   (cdr (nth 0 xdt))
-        v1   (cdr (nth 1 xdt))
-        flag (cdr (nth 2 xdt))
-        str  (cdr (nth 3 xdt))
-        p0   (cdr (assoc 10 ed))
-        p1   (cdr (assoc 11 ed)))
-  (list (cons 10 p0) (cons 11 p1) (cons 40 v0) (cons 41 v1) (cons 70 flag) (cons 1 str)))
+(defun axis:get	 (ed / xdt p0 p1 v0 v1 flag name caption dimension)
+  (setq	xdt	  (_xd_appget ed (axis:app-name))
+	v0	  (cdr (nth 0 xdt))
+	v1	  (cdr (nth 1 xdt))
+	flag	  (cdr (nth 2 xdt))
+	name	  (cdr (nth 3 xdt))
+	caption	  (cdr (nth 4 xdt))
+	caption   (if  (null caption)   "" caption)
+	dimension (cdr (nth 5 xdt))
+	dimension (if  (null dimension) "" dimension)
+	p0	  (cdr (assoc 10 ed))
+	p1	  (cdr (assoc 11 ed)))
+  (list	(cons 10 p0)
+	(cons 11 p1)
+	(cons 40 v0)
+	(cons 41 v1)
+	(cons 70 flag)
+	(cons 1 name)
+	(cons 2 caption)
+	(cons 3 dimension)))
+
+(defun axis:make-axis-initial-data ()
+  '((10 0.0 0.0 0.0)
+    (11 100.0 0.0 0.0)
+    (40 . 0.0)
+    (41 . 100.0)
+    (70 . 0)
+    (1 . "name")
+    (2 . "caption")
+    (3 . "dimension")))
+
+
+(defun axis:make-axis-data (p0 p1 start-value end-value flag name caption dimension)
+  (list	(cons 10 p0)
+	(cons 11 p1)
+	(cons 40 start-value)
+	(cons 41 end-value)
+	(cons 70 flag)
+	(cons 1 name)
+	(cons 2 caption)
+	(cons 3 dimension)))
+
+(defun axis:extract-axis-points  (axis-data)
+  (list	(assoc 10 axis-data)
+	(assoc 11 axis-data)))
+
+(defun axis:extract-axis-xdt  (axis-data)
+  (list	(cons 1040 (cdr (assoc 40 axis-data)))
+	(cons 1040 (cdr (assoc 41 axis-data)))
+	(cons 1070 (cdr (assoc 70 axis-data)))
+	(cons 1000 (cdr (assoc 1 axis-data)))
+	(cons 1000 (cdr (assoc 2 axis-data)))
+	(cons 1000 (cdr (assoc 3 axis-data)))))
+
 
 ;;;axis:upd(ed axis-data)
 ;;;	Обновляет данные примитива (0 . "LINE") с расширенными данными 
@@ -109,6 +183,8 @@
 ;;;   (1040 . 100.0)
 ;;;   (1070 . 0)
 ;;;   (1000 . "Некая шкала x")
+;;;   (1000 . "Заголовок")
+;;;   (1000 . "Размерность")
 ;;;   (1002 . "}")
 ;;;  )
 ;;; )
@@ -120,16 +196,15 @@
 ;;;  (41 . 100.0)
 ;;;  (70 . 0)
 ;;;  (1 . "Некая шкала x")
+;;;  (2 . "Заголовок")
+;;;  (3 . "Размерность")
 ;;;)
-(defun axis:upd	 (ed axis-data / pts xdt)
+(defun axis:upd	 (ed axis-data / pts)
   (setq	pts (list (assoc 10 axis-data) (assoc 11 axis-data))
-	xdt (list (cons 1040 (cdr (assoc 40 axis-data)))
-		  (cons 1040 (cdr (assoc 41 axis-data)))
-		  (cons 1070 (cdr (assoc 70 axis-data)))
-		  (cons 1000 (cdr (assoc 1 axis-data))))
 	ed  (dsubst ed pts)
-	ed  (_xd_appsubst ed (axis:app-name) xdt))
+	ed  (_xd_appsubst ed (axis:app-name) (axis:extract-axis-xdt axis-data)))
   (entmod ed))
+
 
 ;;;f;;;("dr:axis (start-pt end-pt start-value end-value flag name)" "Создает ось (axis) в текущем пространстве.\n
 ;;;f;;;   start-pt    - начальная точка отрезка;\n
@@ -139,15 +214,14 @@
 ;;;f;;;   flag        - признак, если 0 - шкала пропорциональная, если 1 - шкала гогарифмическая;\n
 ;;;f;;;   name        - имя шкалы.\n
 ;;;f;;;_$ (dr:axis '(0 0 0) '(100 0 0) 50 100 0 "COOL_axis")\n
-;;;f;;;((0 . "LINE") (10 0 0 0) (11 100 0 0) (-3 ("SHCKALA" (1002 . "{") (1040 . 50) (1040 . 100) (1070 . 0) (1000 . "COOL_axis") (1002 . "}"))))\n
+;;;f;;;((0 . "LINE") (10 0 0 0) (11 100 0 0) (-3 ("SHCKALA" (1002 . "{") (1040 . 50) (1040 . 100) (1070 . 0)
+;;;f;;; (1000 . "COOL_axis")(1001 . "COOL&A&Baxis") (1003 . "кПа") (1002 . "}"))))\n
 ;;;f;;;")
-(defun dr:axis	(start-pt end-pt start-value end-value flag name / ed ed1)
+(defun dr:axis	(start-pt end-pt start-value end-value flag name caption dimension / ed ed1)
   (regapp (axis:app-name))
-  (setq	ed  (list (cons 0 "LINE") (cons 10 start-pt) (cons 11 end-pt))
-	ed1 (_xd_appsubst
-	      ed
-	      (axis:app-name)
-	      (list (cons 1040 start-value) (cons 1040 end-value) (cons 1070 flag) (cons 1000 name))))
+  (setq	ax-data	(axis:make-axis-data start-pt end-pt start-value end-value flag name caption dimension)
+	ed	(append (list (cons 0 "LINE")) (axis:extract-axis-points ax-data))
+	ed1	(_xd_appsubst ed (axis:app-name) (axis:extract-axis-xdt ax-data)))
   (entmake ed1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

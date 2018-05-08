@@ -1,4 +1,6 @@
-(defun good-layer-name (name) (VL-STRING-TRANSLATE "\"\\<>/:;?*|,=` \t\n." "-----____-_--____" name))
+;;;; (defun good-layer-name (name) (VL-STRING-TRANSLATE "\"\\<>/:;?*|,=` \t\n." "-----____-_--____" name))
+
+(defun good-layer-name (name) (VL-STRING-TRANSLATE "\"<>/:;?*|,=` \t\n." "----____-_--____" name))
 
 (defun axis:draw-single-graph-by-axis-xy-val-data
        (x-axis-data y-axis-data pnt-name-var layer-name / pts el lst lst-i lst-len lst-rez pnt-type)

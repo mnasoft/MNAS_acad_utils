@@ -134,7 +134,12 @@ eaxis : dialog
   aspect_ratio = 0;
   label = "Редактирование шкалы";
   initial_focus = "accept";
-  : edit_box  {key = "e36"; label = "Имя шкалы";  }
+  : row
+  {
+    : edit_box  {key = "name";      label = "Имя";  }
+    : edit_box  {key = "caption";   label = "Подпись";  }
+    : edit_box  {key = "dimension"; label = "Размерность";  }
+  }
   : boxed_column
   { label = "Коорд. точек и зн. шкалы в них";
     : row

@@ -22,6 +22,7 @@
 ;;;;;;    (1040 . 100.0)  ; - значение по шкале в конечной точке отрезка\n
 ;;;;;;    (1070 . 0)      ; - тип шкалы: 0-пропорциональна€; 1-логарифмическа€\n
 ;;;;;;    (1000 . \"xx\") ; - им€ шкалы\n
+;;;;;;    (1000 . \"кѕа\") ; - размерность\n
 ;;;;;;    (1002 . \"}\")
 ;;;;;;  )
 ;;;;;;)"
@@ -36,7 +37,7 @@
   (if (/= (cdr (assoc 0 ed)) "LINE")
     (exit))
   (if (null (_xd_appget ed (axis:app-name)))
-    (setq ed1 (_xd_appsubst ed (axis:app-name) (list '(1040 . 0.0) '(1040 . 100.0) '(1070 . 0) '(1000 . ""))))
+    (setq ed1 (_xd_appsubst ed (axis:app-name) (axis:extract-axis-xdt (axis:make-axis-initial-data))))
     (setq ed1 ed))
   (setq ed1 (mnas-axis-edit:eaxis ed1))
   (if (not (equal ed ed1))
@@ -56,7 +57,11 @@
 
 (defun mnas-axis-edit:ac_e35 () (setq l__e (atof (get_tile "e35"))))
 
-(defun mnas-axis-edit:ac_e36 () (setq n-sc (get_tile "e36")))
+(defun mnas-axis-edit:ac_name () (setq n-sc (get_tile "name")))
+
+(defun mnas-axis-edit:ac_caption () (setq cap-sc (get_tile "caption")))
+
+(defun mnas-axis-edit:ac_dimension () (setq dim-sc (get_tile "dimension")))
 
 (defun mnas-axis-edit:ac_r30 () (setq fl 0))
 
@@ -78,13 +83,14 @@
   (action_tile "e33" "(mnas-axis-edit:ac_e33-34)")
   (action_tile "e34" "(mnas-axis-edit:ac_e33-34)")
   (action_tile "e35" "(mnas-axis-edit:ac_e35)")
-  (action_tile "e36" "(mnas-axis-edit:ac_e36)")
+  (action_tile "name" "(mnas-axis-edit:ac_name)")
+  (action_tile "dimension" "(mnas-axis-edit:ac_dimension)")
+  (action_tile "caption" "(mnas-axis-edit:ac_caption)")
   (action_tile "r30" "(mnas-axis-edit:ac_r30)")
   (action_tile "r31" "(mnas-axis-edit:ac_r31)")
   (action_tile "about" "(mnas-axis-edit:ac_about)"))
 
 (defun mnas-axis-edit:ac_about () (alert (strcat "–едактирование шкалы" (about-GPL-string))))
-
 
 (defun mnas-axis-edit:setup  ()
   (set_tile "e30" (rtos (car p-s)))
@@ -93,23 +99,30 @@
   (set_tile "e33" (rtos (car p-e)))
   (set_tile "e34" (rtos (cadr p-e)))
   (set_tile "e35" (rtos l__e))
-  (set_tile "e36" n-sc)
+  (set_tile "name" n-sc)
+  (set_tile "caption" cap-sc)
+  (set_tile "dimension" dim-sc)
+  (set_tile "name" n-sc)
   (if (= fl 0)
     (set_tile "r30" "1")
     (set_tile "r31" "1")))
 
-(defun mnas-axis-edit:init  ()
-  (setq p-s (cdr (assoc 10 axdata)))
-  (setq p-e (cdr (assoc 11 axdata)))
-  (setq l__s (xdgetn axdata (axis:app-name) 0))
-  (setq l__e (xdgetn axdata (axis:app-name) 1))
-  (setq fl (xdgetn axdata (axis:app-name) 2))
-  (setq n-sc (xdgetn axdata (axis:app-name) 3))
-  (setq do_dial t))
+
+(defun mnas-axis-edit:init  (/ ax-data)
+  (setq	ax-data	(axis:get axdata)
+	p-s	(cdr (assoc 10 ax-data))
+	p-e	(cdr (assoc 11 ax-data))
+	l__s	(cdr (assoc 40 ax-data))
+	l__e	(cdr (assoc 41 ax-data))
+	fl	(cdr (assoc 70 ax-data))
+	n-sc	(cdr (assoc 1 ax-data))
+	cap-sc	(cdr (assoc 2 ax-data))
+	dim-sc	(cdr (assoc 3 ax-data))
+	do_dial	t))
 
 (defun mnas-axis-edit:un_init () (setq do_dial nil))
 
-(defun mnas-axis-edit:eaxis  (axdata / act p-s p-e l__s l__e fl n-sc do_dial dcl_id)
+(defun mnas-axis-edit:eaxis  (axdata / act p-s p-e l__s l__e fl n-sc cap-sc dim-sc do_dial dcl_id)
   (setq dcl_id (load_dialog "./src/lsp/axis/axis.dcl"))
   (mnas-axis-edit:init)
   (while do_dial
@@ -122,7 +135,7 @@
     (cond ((= act 1)
            (setq axdata (_xd_appsubst (dsubst axdata (list (cons 10 p-s) (cons 11 p-e)))
                                       (axis:app-name)
-                                      (list (cons 1040 l__s) (cons 1040 l__e) (cons 1070 fl) (cons 1000 n-sc))))
+                                      (list (cons 1040 l__s) (cons 1040 l__e) (cons 1070 fl) (cons 1000 n-sc) (cons 1000 cap-sc) (cons 1000 dim-sc))))
            (mnas-axis-edit:un_init))
           ((= act 0) (mnas-axis-edit:un_init))
           ((= act 31) (mnas-axis-edit:ac_b31))
