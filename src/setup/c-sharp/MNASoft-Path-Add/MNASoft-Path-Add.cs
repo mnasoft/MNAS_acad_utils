@@ -45,6 +45,7 @@ namespace MNASoft
                 PWD + ";" +
                 PWD + "\\" + "bin" + ";" +
                 PWD + "\\" + "fonts" + ";" +
+                PWD + "\\" + "support" + ";" +
                 PWD + "\\" + "fonts\\Kompas" ;
 
             string[] SupportPathArray = SupportPath.Split(';');
