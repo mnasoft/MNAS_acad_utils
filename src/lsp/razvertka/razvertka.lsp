@@ -1,4 +1,7 @@
 (VL-LOAD-COM)
+
+
+
 ;;;;;;("razvertka" "Построение развертки тела выдавливания с обрезкой кромок." "Развертки")
 (defun c:razvertka  (/                  ;
                      vo_1               ; Образующая листа, отображающая изгибы листа. (Полилиния).
@@ -69,16 +72,17 @@
           p_mid    (polar start_pnt (* 0.5 pi) dst)
           p_bok_23 (polar p_mid a_23 d_23)
           p_bok_43 (polar p_mid a_43 d_43))
-    (setq v_pnt_2  (dr:point p_vo_2 2)
-          v_pnt_3  (dr:point p_vo_3 3)
-          v_pnt_4  (dr:point p_vo_4 3)
+    (setq
+;;;      v_pnt_2  (dr:point p_vo_2 2)
+;;;          v_pnt_3  (dr:point p_vo_3 3)
+;;;          v_pnt_4  (dr:point p_vo_4 3)
           v_mid    (dr:point p_mid 3)
           v_bok_23 (dr:point p_bok_23 3)
           v_bok_43 (dr:point p_bok_43 3))
     (vlax-invoke-method vo_line 'Delete)
-    (vlax-invoke-method v_pnt_2 'Delete)
-    (vlax-invoke-method v_pnt_3 'Delete)
-    (vlax-invoke-method v_pnt_4 'Delete)
+;;;    (vlax-invoke-method v_pnt_2 'Delete)
+;;;    (vlax-invoke-method v_pnt_3 'Delete)
+;;;    (vlax-invoke-method v_pnt_4 'Delete)
     (setq i   (1+ i)
           par (/ (* i (- e_par s_par)) n_delen)))
   (princ "Развертка полностью построена!\n")

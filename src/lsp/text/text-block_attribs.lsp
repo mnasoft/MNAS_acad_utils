@@ -130,8 +130,28 @@
 ;;;;;;Является аббревиатурой команды  tmatchprop." "Тексты")
 (defun c:tma () (c:tmatchprop))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun c:tcopy  (/ ed ed1 en en1)
+  (setq en (car (nentsel "\nSelect reference TEXT МТЕКСТ ATTRIB:"))
+        ed (entget en))
+  (princ "\nReference string=")
+  (princ (dxf-get 1 ed))
+  (princ "\n")
+  (while (setq en1 (car (nentsel "\nSelect taget TEXT МТЕКСТ ATTRIB:")))
+    (princ "\nReference string=")
+    (princ (dxf-get 1 ed))
+    (princ "\n")
+    (setq ed1 (entget en1))
+    (entmod (dxf-set 1 (dxf-get 1 ed) ed1))))
+
+(defun c:tcp  ()
+  (c:tcopy))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 ;;;;;;("textnorm"
 ;;;;;;"Производит нормализацию высоты и раскрашивание одиночного текста, мультитекста, атрибута вставки блока." "Тексты")
 
