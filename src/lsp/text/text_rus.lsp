@@ -3,7 +3,7 @@
          "pos_export" "de"         "ate"        "t-tr"       "to_15"      "l_text"     "z_text"     "te"
          "stl"        "te+"        "te++"       "te+kvsk"    "te++kvsk"   "te-"        "te-kvsk"    "te%%c"
          "te-%%c"     "x45%%d"     "&a&b&c"     "te_*"       "te_<>_"     "text_export"             "attrnorm"
-         "textnorm"   "textnorms"  "tn"         "tns"        "tmatchprop" "tma"        "test_err"))
+         "textnorm"   "textnorms"  "tn"         "tns"        "tmatchprop" "tma"        "test_err" "tcopy" "tcp"))
 ;;;; (opech_cmds-str *text-command-list*)
 
 (defun c:חשû_ףקחשךו () (c:pos_export))
@@ -36,5 +36,7 @@
 (defun c:וüפוסנחךשח () (c:tmatchprop))
 (defun c:וüפ () (c:tma))
 (defun c:וףûו_ףךך () (c:test_err))
+(defun c:וסשחם() (c:tcopy))
+(defun c:וסח() (c:tcp))
 
 (princ "Loaded project text.\n")

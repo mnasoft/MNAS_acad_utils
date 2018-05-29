@@ -1,3 +1,13 @@
+;;;;;;("x" "Вызов команды _.explode." "Аббревиатуры")
+(defun c:x  (/ en)
+  (setq en (car (entsel "Выберите полилинию:")))
+  (command "_.pedit" en "_close" "")
+  (command "_.region" en "")
+  (setq en (entlast))
+  (command "_.explode" en "")
+  (princ))
+
+
 ;;;;;;("pur" "Очистка всех неиспользуемых элементов из секции таблиц." "Аббревиатуры")
 (defun c:pur () (command "_.purge" "_all" "*" "_no") (princ))
 
