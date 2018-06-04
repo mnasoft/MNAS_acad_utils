@@ -104,6 +104,25 @@
   (dr:arc p0 r1 0 a1 2)
   (dr:arc p0 r2 0 a2 2))
 
+(defun dist-from-p-to-line  (p0 l-p0 lp1)
+  (DISTANCE p0
+            (INTERS l-p0 lp1 p0 (polar p0 (+ (* pi 0.5) (angle l-p0 lp1)) (distance l-p0 lp1)) nil)))
+
+
+(defun c:r_cil  (/ DX DY P01 P02 P1 P2 PL1 PL2 PL3 PL4)
+  (setq p01 (getpoint "\nВведите первую точку на оси цилиндра:"))
+  (setq p02 (getpoint p01 "\nВведите вторую точку оси цилиндра:"))
+  (setq p1 (getpoint "\nВведите первую точку на образующей цилиндра:"))
+  (setq p2 (getpoint p1 "\nВведите вторую точку на оси цилиндра:"))
+  (setq dx (DISTANCE p1 p2))
+  (setq dy (* (dist-from-p-to-line p2 p01 p02) pi 2))
+  (setq pl1 p2
+        pl2 (polar pl1 0 dx)
+        pl3 (polar pl2 (* pi 0.5) dy)
+        pl4 (polar pl3 pi dx))
+  (dr:pline (list pl1 pl2 pl3 pl4 pl1) 2))
+
+
 ;;;f;;;("list->3d-point-list" "Преобразует список, содержащий координаты xyz нескольких точек, в список точек.")
 (defun list->3d-point-list  (lst / rez pnt el i)
   (setq i 0)
