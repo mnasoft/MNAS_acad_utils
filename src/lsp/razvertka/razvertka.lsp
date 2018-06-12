@@ -88,8 +88,8 @@
   (princ "Развертка полностью построена!\n")
   (princ))
 
-;;;;;;("r_cone" "Построение развертки конуса." "Развертки")
-(defun c:r_cone  (/ A1 A2 L1 L2 P0 P01 P02 P1 P2 R1 R2)
+;;;;;;("net-cone" "Построение развертки конуса." "Развертки")
+(defun c:net-cone  (/ A1 A2 L1 L2 P0 P01 P02 P1 P2 R1 R2)  
   (setq p01 (getpoint "\nВведите первую точку на оси конуса:"))
   (setq p02 (getpoint p01 "\nВведите вторую точку на оси конуса:"))
   (setq p1 (getpoint "\nВведите первую точку на образующей конуса:"))
@@ -104,12 +104,15 @@
   (dr:arc p0 r1 0 a1 2)
   (dr:arc p0 r2 0 a2 2))
 
+;;;;;;("r_cone" "Построение развертки конуса." "Развертки")
+(defun c:r_cone () (c:net-cone))
+
 (defun dist-from-p-to-line  (p0 l-p0 lp1)
   (DISTANCE p0
             (INTERS l-p0 lp1 p0 (polar p0 (+ (* pi 0.5) (angle l-p0 lp1)) (distance l-p0 lp1)) nil)))
 
 
-(defun c:r_cil  (/ DX DY P01 P02 P1 P2 PL1 PL2 PL3 PL4)
+(defun c:net-cilinder  (/ DX DY P01 P02 P1 P2 PL1 PL2 PL3 PL4)
   (setq p01 (getpoint "\nВведите первую точку на оси цилиндра:"))
   (setq p02 (getpoint p01 "\nВведите вторую точку оси цилиндра:"))
   (setq p1 (getpoint "\nВведите первую точку на образующей цилиндра:"))
@@ -121,6 +124,8 @@
         pl3 (polar pl2 (* pi 0.5) dy)
         pl4 (polar pl3 pi dx))
   (dr:pline (list pl1 pl2 pl3 pl4 pl1) 2))
+
+(defun c:r_cil () (c:net-cilinder))
 
 
 ;;;f;;;("list->3d-point-list" "Преобразует список, содержащий координаты xyz нескольких точек, в список точек.")
