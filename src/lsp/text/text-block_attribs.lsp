@@ -123,12 +123,26 @@
     (princ (dxf-get 40 ed))
     (princ "\n")
     (setq ed1 (entget en1))
-    (entmod (dxf-set 40 (dxf-get 40 ed) ed1))))
+    (setq ed1 (dxf-set 40 (dxf-get 40 ed) ed1)
+          ed1 (dxf-set 41 (dxf-get 41 ed) ed1))
+    (entmod ed1)
+;;;(entmod (dxf-set 41 (dxf-get 41 ed) ed1))
+    ))
+
 
 ;;;;;;("tma"
 ;;;;;;"Устанавливет высоту для отдельного текса, мультитекста, атрибута вставки блока по высоте ссылочного объекта.
 ;;;;;;Является аббревиатурой команды  tmatchprop." "Тексты")
 (defun c:tma () (c:tmatchprop))
+
+(defun c:mk-l  (/ ED-NM ED-OB EN-NM EN-OB L-NAME)
+  (setq en-ob (car (nentsel "\nВыберите обозначение:"))
+        ed-ob (entget en-ob))
+  (setq en-nm (car (nentsel "\nВыберите наименование:"))
+        ed-nm (entget en-nm))
+  (setq l-name (strcat (dxf-get 1 ed-ob) "_" (dxf-get 1 ed-nm)))
+  (command "_-layer" "_new" l-name "_set" l-name ""))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
