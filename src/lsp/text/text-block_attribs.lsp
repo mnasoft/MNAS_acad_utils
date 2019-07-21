@@ -162,9 +162,20 @@
 (defun c:tcp  ()
   (c:tcopy))
 
+(defun c:str-copy  (/ from-ob from-nm str-from str-to to-ob to-nm str-to-ob str-to-nm fl)
+  (setq fl (open (getfiled "COOOOOOOOOOOOOOL" "" "txt" 1) "w"))
+  (setq from-ob     (car (nentsel "\nFrom-ob:"))
+        from-nm     (car (nentsel "\nFrom-nm:"))
+        str-from-ob (dxf-get 1 (entget from-ob))
+        str-from-nm (dxf-get 1 (entget from-nm)))
+  (while (and (setq to-ob (car (nentsel "\nTo-ob:"))) (setq to-nm (car (nentsel "\nTo-nm:"))))
+    (setq str-to-ob (dxf-get 1 (entget to-ob))
+          str-to-nm (dxf-get 1 (entget to-nm)))
+    (princ (strcat "(" "\"" str-from-ob "\n" str-from-nm "\"" " " "\"" str-to-ob "\n" str-to-nm "\"" ")\n")
+           fl))
+  (close fl))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 ;;;;;;("textnorm"
 ;;;;;;"ѕроизводит нормализацию высоты и раскрашивание одиночного текста, мультитекста, атрибута вставки блока." "“ексты")

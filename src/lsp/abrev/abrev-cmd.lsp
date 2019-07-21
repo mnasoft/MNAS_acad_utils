@@ -232,6 +232,44 @@
 
 (defun c:vu () (command "_-VPORTS" "_L" "_OFF"))
 
+(defun layout-tab-list  (/ layouts items acadObj doc)
+  (setq acadObj (vlax-get-acad-object))
+  (setq doc (vla-get-ActiveDocument acadObj))
+  (mapcar 'vla-get-name
+          (vl-sort (vlax-for layout (vla-get-layouts doc) (setq layouts (cons layout layouts)))
+                   '(lambda (a b) (< (vla-get-taborder a) (vla-get-taborder b))))))
+
+(defun clayout-number  (/ layout-lst)
+  (setq layout-lst (layout-tab-list))
+  (- (length layout-lst)
+     (length
+       (member (VL-LIST->STRING (reverse (cdr (member 42 (reverse (vl-string->list (getvar "clayout")))))))
+               layout-lst))))
+
+(defun c:ll  (/ layout-lst)
+  (setq layout-lst (layout-tab-list))
+  (setq new-layout (nth (max 1 (- (clayout-number) 10)) layout-lst))
+  (command "_layout" "_set" new-layout))
+
+(defun c:lr  (/ layout-lst)
+  (setq layout-lst (layout-tab-list))
+  (setq new-layout (nth (min (- (length layout-lst) 1) (+ (clayout-number) 10)) layout-lst))
+  (command "_layout" "_set" new-layout))
+
+(defun c:l-first  (/ layout-lst)
+  (setq layout-lst (layout-tab-list))
+  (setq new-layout (nth 1 layout-lst))
+  (command "_layout" "_set" new-layout))
+
+(defun c:l-last  (/ layout-lst)
+  (setq layout-lst (layout-tab-list))
+  (setq new-layout (nth (- (length layout-lst) 1) layout-lst))
+  (command "_layout" "_set" new-layout))
+
+(defun c:l-mid  (/ layout-lst)
+  (setq layout-lst (layout-tab-list))
+  (setq new-layout (nth (/ (- (length layout-lst) 2 ) 1) layout-lst))
+  (command "_layout" "_set" new-layout))
 
 (defun c:lou () (command "_LAYOUT" "_S"))
 

@@ -115,3 +115,7 @@
   (otv_faska p0 d1 l1 h alfa gamma dir_0)
   (setq p1 (off_ang_dia p0 l2 0 d2 dir_0))
   (off_ang_dia p1 l3 betta d2 dir_0))
+
+(defun c:z-point(/ p)
+  (setq p (getpoint "Укажите точку:"))
+  (command "_point" ".xy" p ".z" "*0,0,0" ))
