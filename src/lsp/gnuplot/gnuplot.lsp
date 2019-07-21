@@ -1,22 +1,24 @@
-(vl-load-all)
-
-(defun c:gnuplot-vectors-export  (/ ss en ed vo)
-  (setq ss (ssget)
-        i  (sslength ss))
+(vl-load-com)
+    
+(defun c:gnuplot-vectors-export  (/ ss en ed vo out)
+  (setq out (open (getfiled "Укажите имя файла" "" "data" 1) "w")
+        ss  (ssget)
+        i   (sslength ss))
   (while (<= 0 (setq i (1- i)))
     (setq en    (ssname ss i)
           ed    (entget en)
           vo    (vlax-ename->vla-object en)
           vo-sp (vlax-curve-getStartParam vo)
           vo-ep (vlax-curve-getEndParam vo))
-    (print (list (cdr (assoc 0 ed)) vo-sp vo-ep))
-    (cond
-      (= (cdr (assoc 0 ed))))))
+    (cond ((= (cdr (assoc 0 ed)) "LINE") (gnuplot-export-line-to-vector vo))
+          ((= (cdr (assoc 0 ed)) "ARC") (gnuplot-export-arc-to-vector vo))
+          ((= (cdr (assoc 0 ed)) "CIRCLE") (gnuplot-export-arc-to-vector vo))))
+  (close out))
 
 (defun gnuplot-export-vector  (sp ep)
-  (mapcar (function (lambda (el) (princ el) (princ " "))) sp)
-  (mapcar (function (lambda (el) (princ el) (princ " "))) (mapcar (function -) ep sp))
-  (princ "\n"))
+  (mapcar (function (lambda (el) (princ el out) (princ " " out))) sp)
+  (mapcar (function (lambda (el) (princ el out) (princ " " out))) (mapcar (function -) ep sp))
+  (princ "\n" out))
 
 (defun gnuplot-export-line-to-vector  (vo / sp ep)
   (setq sp (vlax-curve-getPointAtParam vo (vlax-curve-getStartParam vo))
@@ -50,10 +52,3 @@
           ep   (vlax-curve-getPointAtParam vo ep-i))
     (gnuplot-export-vector sp ep)
     (setq i (1+ i))))
-
-(setq *vo* (vlax-ename->vla-object (car (entsel ":"))))
-
-(gnuplot-export-arc-to-vector *vo*)
-
-(c:gnuplot-vectors-export)
-
