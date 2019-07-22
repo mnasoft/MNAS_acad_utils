@@ -241,3 +241,7 @@
   (while (= 1 (getvar "CMDACTIVE")) (command ""))
   (command "_regen")
   (princ))
+
+(defun c:z-point (/ р)
+  (setq p (getpoint "Укажите точку"))
+  (command "_point" ".z" "*0,0,0" ".xy" p ))
