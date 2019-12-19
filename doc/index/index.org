@@ -1,0 +1,44 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: index
+#+DATE: <2019-12-19 Чт>
+#+AUTHOR:
+#+EMAIL: namatv@KO11-118383
+#+LANGUAGE: ru
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+
+* INDEX
+Выполняет вывод на экран диалогового окноа, позволяющего задать символ и индекс для генерируемых впоследствии нижеперечисленных объектов:
+
+- [[../bas/bas.org][BAS]];
+- [[../look/look.org][LOOK]];
+- [[../cut/cut.org][CUT]];
+
+При каждом последующем вызове перечисленных выше команд:
+- сначала в алфавитном порядке увеличивается символ;
+- затем, при достижении символом максимального значения, устанавливается первый символ и индекс увеличивается на единицу.
+
+Символ с индексом 0 изображается как символ без индекса.
+
+На рисунке 1 приведен диалог для установки текущего символа и индекса.
+[[./index__6b43007c.png]]
+
+Рисунок 1 - диалог для установки текущего символа и индекса.
+
+Смотри также команды:
+- [[../index_en/index_en.org][INDEX_EN]];
+- [[../index_ru/index_ru.org][INDEX_RU]];
+- [[../bas/bas.org][BAS]];
+- [[../look/look.org][LOOK]];
+- [[../cut/cut.org][CUT]];
+
+ [[../mnasoft_command_list.org][К оглавлению...]]
+
+| index |                                                                                                                                                 8 | ./dims/abc_dialog.lsp |                                                                               |
+| index | Выводит на экран диалоговое окно, позволяющее задать символ и индекс для генерируемых впоследствии обозначений баз, направления взгляда, разреза. | Размеры               | E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/src/lsp/dims/abc_dialog.lsp |
+

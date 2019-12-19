@@ -1,0 +1,110 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: poz
+#+DATE: <2019-12-19 Чт>
+#+AUTHOR:
+#+EMAIL: namatv@KO11-118383
+#+LANGUAGE: ru
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+
+* POZ
+Выполняет простановку позиций, обозначения мест клеймения, маркировки, обозначения пайки
+
+Опции команды написаны на транслите
+
+Данная команда позволяет проставить графическое изображение сварного шва, паяного соединения,
+клеймления и маркировки без надписей обозначений. Текст сварных и паяных соединений необходимо 
+вносить «однострочным» текстом.
+
+** 1 Простановка сварки (SVarka/SSVarka)
+
+Если необходимо проставить сварной шов «по контуру» вносим букву «К» (английский алфавит).
+
+Если нужен обычный сварной шов, то просто «Ввод».
+
+#+BEGIN_SRC 
+   Команда: poz
+   Strelka/SVarka/SSVarka/POint/&lt;Nothing&gt;:sv«Ввод»
+   Kontur/&lt;Nothing&gt;:k«Ввод»
+   Montaz/&lt;Nothing&gt;: «Ввод»
+   Kley/Pajka/&lt;Nothing&gt;: «Ввод»
+   Nothing/Circle/KLejmo/&lt;Polka&gt;: «Ввод»,
+   Начало выноски: «Первая точка»
+   Вторая точка: «Вторая точка»
+   Третья точка: «Третья точка»
+#+END_SRC
+
+ [[./POZ_html_7056f16b.png]]
+
+** Простановка клеймения
+
+#+BEGIN_SRC 
+   Команда: poz
+   Strelka/SVarka/SSVarka/POint/&lt;Nothing&gt;:st«Ввод»
+   Kontur/&lt;Nothing&gt;: «Ввод»
+   Montaz/&lt;Nothing&gt;: «Ввод»
+   Kley/Pajka/&lt;Nothing&gt;: «Ввод»
+   Nothing/Circle/KLejmo/&lt;Polka&gt;:kl«Ввод»>
+   Начало выноски: «Первая точка»
+   Вторая точка: «Вторая точка»
+   Третья точка: «Третья точка»
+#+END_SRC
+
+ [[./POZ_html_59182332.jpg]]
+
+** Простановка маркировки
+#+BEGIN_SRC 
+   Команда:POZ
+   STrelka/SVarka/SSVarka/POint/&lt;Nothing&gt;:st или po«Ввод»
+   Kontur/&lt;Nothing&gt;: «Ввод»
+   Montaz/&lt;Nothing&gt;: «Ввод»
+   Kley/Pajka/&lt;Nothing&gt;: «Ввод»
+   Nothing/Circle/KLejmo/&lt;Polka&gt;:c«Ввод»
+   Начало выноски: «Первая точка»
+   Вторая точка: «Вторая точка»
+   Третья точка: «Третья точка»
+#+END_SRC
+
+ [[./POZ_html_m75ce748e.jpg]]
+
+** Простановка паяного соединения
+
+#+BEGIN_SRC 
+   Команда: poz
+   STrelka/SVarka/SSVarka/POint/&lt;Nothing&gt;:st«Ввод»
+   Kontur/&lt;Nothing&gt;: «Ввод»
+   Montaz/&lt;Nothing&gt;: «Ввод»
+   Kley/Pajka/&lt;Nothing&gt;:p«Ввод»
+   Nothing/Circle/KLejmo/&lt;Polka&gt;: «Ввод»
+   Начало выноски: «Первая точка»
+   Вторая точка: «Вторая точка»
+   Третья точка: «Третья точка»
+#+END_SRC
+
+ [[./POZ_html_32f3d1ba.jpg]]
+
+** Простановка выносной линии для позиций.
+
+#+BEGIN_SRC 
+   Команда:POZ
+   STrelka/SVarka/SSVarka/POint/&lt;Nothing&gt;: po«Ввод»
+   Kontur/&lt;Nothing&gt;: «Ввод»
+   Montaz/&lt;Nothing&gt;: «Ввод»
+   Kley/Pajka/&lt;Nothing&gt;: «Ввод»
+   Nothing/Circle/KLejmo/&lt;Polka&gt;: «Ввод»
+   Начало выноски: «Первая точка»
+   Вторая точка: «Вторая точка»
+   Третья точка: «Третья точка»
+#+END_SRC
+
+ [[./POZ_html_m392bf328.jpg]]
+
+ [[../mnasoft_command_list.org][К оглавлению...]]
+
+| poz | Простановка позиций, обозначения мест клеймения, маркировки, обозначения пайки. | Размеры             | E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/src/lsp/dims/DIM_FROM.lsp |
+| poz |                                                                              60 | ./dims/DIM_FROM.lsp |                                                                             |

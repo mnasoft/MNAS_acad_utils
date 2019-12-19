@@ -18,4 +18,5 @@
 [[file:d:/home/namatv/Develop/git/MNAS_acad_utils/doc/mnasoft_command_list.org][К оглавлению...]]
 
 
-| mi   | 130 | ./abrev/abrev-cmd.lsp | Исключенные
+| mi |                    130 | ./abrev/abrev-cmd.lsp | Исключенные                                                                   |
+| mi | Вызов команды _.mirror | Аббревиатуры          | E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/src/lsp/abrev/abrev-cmd.lsp |

@@ -4,6 +4,7 @@ Thumbs.db
 *.bak
 *.exe
 *~
+.#*
 *.mnr
 *.vlx
 *.VLX

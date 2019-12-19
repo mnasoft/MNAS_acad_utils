@@ -19,5 +19,5 @@
 
 [[file:d:/home/namatv/Develop/git/MNAS_acad_utils/doc/ms/ms.org][ms]]
 
-| ps | Вызов команды _.pspace | Аббревиатуры | ./src/lsp/abrev/abrev-cmd.lsp |
-
+| ps | Вызов команды _.pspace | Аббревиатуры          | ./src/lsp/abrev/abrev-cmd.lsp |
+| ps |                    223 | ./abrev/abrev-cmd.lsp | Исключенные                   |
