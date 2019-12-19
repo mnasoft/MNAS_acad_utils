@@ -1,0 +1,45 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: block_block
+#+DATE: <2019-12-19 Чт>
+#+AUTHOR:
+#+EMAIL: namatv@KO11-118383
+#+LANGUAGE: ru
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+ 
+* BLOCK_BLOCK
+Выполняет преобразование блоков в блок.
+
+ [[./image001.png]]
+
+Вызов команды block_block
+
+ [[./image002.png]]
+
+  Выбор ссылочного блока
+
+ [[./image003.png]]
+
+ Ссылочный блок выбран
+
+ [[./image004.png]]
+
+ Выбор блоков для преобразования в выбранный блок
+
+  [[./image005.png]]
+
+ Выбор блоков закончен
+
+ [[./image006.png]]
+
+ Блоки преобразованы в другой тип блока
+
+ [[../mnasoft_command_list.org][К оглавлению...]]
+
+| block_block |                           54 | ./change/change-point_block.lsp |                                                                                         |
+| block_block | Преобразование блока в блок. | Измени                          | E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/src/lsp/change/change-point_block.lsp |

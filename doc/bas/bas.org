@@ -1,0 +1,43 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: bas
+#+DATE: <2019-12-19 Чт>
+#+AUTHOR:
+#+EMAIL: namatv@KO11-118383
+#+LANGUAGE: ru
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+
+* BAS
+Генерирует обозначение базы.
+
+При ее выполнении задаются две точки:
+- первая - на опорной стороне треугольника базы;
+- вторая — в центре квадрата базы.
+
+  [[./bas_html_3688dde8.png]]
+
+Рисунок 1 - Результат выполнения команды BAS.
+
+Символы базы в прямоугольнике проставляются в алфавитном порядке.
+
+Для редактирования символа базы используйте стандартные средства редактирования ACAD.
+
+Для установки текущего генерируемого символа базы используйте команду INDEX.
+
+Смотри также команды:
+- [[../index/index.org][INDEX]];
+- [[../index_en/index_en.org][INDEX_EN]];
+- [[../index_ru/index_ru.org][INDEX_RU]];
+- [[../bas/bas.org][BAS]];
+- [[../look/look.org][LOOK]];
+- [[../cut/cut.org][CUT]].
+
+[[../mnasoft_command_list.org][К оглавлению...]]
+
+| bas |               13 | ./dims/DIM_FROM.lsp |                                                                             |
+| bas | Простановка баз. | Размеры             | E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/src/lsp/dims/DIM_FROM.lsp |
