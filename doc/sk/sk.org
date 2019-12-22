@@ -15,7 +15,7 @@
 * SK
 Выполняет отрисовку эскизной полилинии (линии обрыва).
 
-См. команду _.sketch.
+См. команду =_.SKETCH=.
 
 [[file:d:/home/namatv/Develop/git/MNAS_acad_utils/doc/mnasoft_command_list.org][К оглавлению...]]
   

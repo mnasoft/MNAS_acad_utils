@@ -1,155 +1,818 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>MNASoft.MNAS_acad_utils.translit</title>
-  <meta name="author" content="Николай Матвеев">
-  <meta name="created" content="20120511;23010779">
-  <meta name="changedby" content="Николай Матвеев">
-  <meta name="changed" content="20120519;14370000">
- </head>
- <body lang="ru-RU">
-  <h1>TRANSLIT</h1>
-  <h2>Выполняет транслитерацию (исправление кодировки введенных символов) для примитивов AutoCAD, имеющих текст.</h2>
-  <p>Транслитерация производится на основании следующей таблицы:</p>
-  <table>
-    <tr><td>'</td><td>э</td></tr>
-	<tr><td>,</td><td>?</td></tr>
-	<tr><td>,</td><td>б</td></tr>
-	<tr><td>.</td><td>/</td></tr>
-	<tr><td>.</td><td>ю</td></tr>
-	<tr><td>/</td><td>.</td></tr>
-	<tr><td>:</td><td>Ж</td></tr>
-	<tr><td>;</td><td>ж</td></tr>
-	<tr><td><</td><td>Б</td></tr>
-	<tr><td>></td><td>Ю</td></tr>
-	<tr><td>?</td><td>,</td></tr>
-	<tr><td>A</td><td>Ф</td></tr>
-	<tr><td>B</td><td>И</td></tr>
-	<tr><td>C</td><td>С</td></tr>
-	<tr><td>D</td><td>В</td></tr>
-	<tr><td>E</td><td>У</td></tr>
-	<tr><td>F</td><td>А</td></tr>
-	<tr><td>G</td><td>П</td></tr>
-	<tr><td>H</td><td>Р</td></tr>
-	<tr><td>I</td><td>Ш</td></tr>
-	<tr><td>J</td><td>О</td></tr>
-	<tr><td>K</td><td>Л</td></tr>
-	<tr><td>L</td><td>Д</td></tr>
-	<tr><td>M</td><td>Ь</td></tr>
-	<tr><td>N</td><td>Т</td></tr>
-	<tr><td>O</td><td>Щ</td></tr>
-	<tr><td>P</td><td>З</td></tr>
-	<tr><td>Q</td><td>Й</td></tr>
-	<tr><td>R</td><td>К</td></tr>
-	<tr><td>S</td><td>Ы</td></tr>
-	<tr><td>T</td><td>Е</td></tr>
-	<tr><td>U</td><td>Г</td></tr>
-	<tr><td>V</td><td>М</td></tr>
-	<tr><td>W</td><td>Ц</td></tr>
-	<tr><td>X</td><td>Ч</td></tr>
-	<tr><td>Y</td><td>Н</td></tr>
-	<tr><td>Z</td><td>Я</td></tr>
-	<tr><td>[</td><td>х</td></tr>
-	<tr><td>]</td><td>ъ</td></tr>
-	<tr><td>`</td><td>ё</td></tr>
-	<tr><td>a</td><td>ф</td></tr>
-	<tr><td>b</td><td>и</td></tr>
-	<tr><td>c</td><td>с</td></tr>
-	<tr><td>d</td><td>в</td></tr>
-	<tr><td>e</td><td>у</td></tr>
-	<tr><td>f</td><td>а</td></tr>
-	<tr><td>g</td><td>п</td></tr>
-	<tr><td>h</td><td>р</td></tr>
-	<tr><td>i</td><td>ш</td></tr>
-	<tr><td>j</td><td>о</td></tr>
-	<tr><td>k</td><td>л</td></tr>
-	<tr><td>l</td><td>д</td></tr>
-	<tr><td>m</td><td>ь</td></tr>
-	<tr><td>n</td><td>т</td></tr>
-	<tr><td>o</td><td>щ</td></tr>
-	<tr><td>p</td><td>з</td></tr>
-	<tr><td>q</td><td>й</td></tr>
-	<tr><td>r</td><td>к</td></tr>
-	<tr><td>s</td><td>ы</td></tr>
-	<tr><td>t</td><td>е</td></tr>
-	<tr><td>u</td><td>г</td></tr>
-	<tr><td>v</td><td>м</td></tr>
-	<tr><td>w</td><td>ц</td></tr>
-	<tr><td>x</td><td>ч</td></tr>
-	<tr><td>y</td><td>н</td></tr>
-	<tr><td>z</td><td>я</td></tr>
-	<tr><td>{</td><td>Х</td></tr>
-	<tr><td>}</td><td>Ъ</td></tr>
-	<tr><td>~</td><td>Ё</td></tr>
-	<tr><td>Ё</td><td>~</td></tr>
-	<tr><td>ё</td><td>`</td></tr>
-	<tr><td>А</td><td>F</td></tr>
-	<tr><td>Б</td><td><</td></tr>
-	<tr><td>В</td><td>D</td></tr>
-	<tr><td>Г</td><td>U</td></tr>
-	<tr><td>Д</td><td>L</td></tr>
-	<tr><td>Е</td><td>T</td></tr>
-	<tr><td>Ж</td><td>:</td></tr>
-	<tr><td>З</td><td>P</td></tr>
-	<tr><td>И</td><td>B</td></tr>
-	<tr><td>Й</td><td>Q</td></tr>
-	<tr><td>К</td><td>R</td></tr>
-	<tr><td>Л</td><td>K</td></tr>
-	<tr><td>М</td><td>V</td></tr>
-	<tr><td>Н</td><td>Y</td></tr>
-	<tr><td>О</td><td>J</td></tr>
-	<tr><td>П</td><td>G</td></tr>
-	<tr><td>Р</td><td>H</td></tr>
-	<tr><td>С</td><td>C</td></tr>
-	<tr><td>Т</td><td>N</td></tr>
-	<tr><td>У</td><td>E</td></tr>
-	<tr><td>Ф</td><td>A</td></tr>
-	<tr><td>Х</td><td>{</td></tr>
-	<tr><td>Ц</td><td>W</td></tr>
-	<tr><td>Ч</td><td>X</td></tr>
-	<tr><td>Ш</td><td>I</td></tr>
-	<tr><td>Щ</td><td>O</td></tr>
-	<tr><td>Ъ</td><td>}</td></tr>
-	<tr><td>Ы</td><td>S</td></tr>
-	<tr><td>Ь</td><td>M</td></tr>
-	<tr><td>Э</td><td>"</td></tr>
-	<tr><td>Ю</td><td>></td></tr>
-	<tr><td>Я</td><td>Z</td></tr>
-	<tr><td>а</td><td>f</td></tr>
-	<tr><td>б</td><td>,</td></tr>
-	<tr><td>в</td><td>d</td></tr>
-	<tr><td>г</td><td>u</td></tr>
-	<tr><td>д</td><td>l</td></tr>
-	<tr><td>е</td><td>t</td></tr>
-	<tr><td>ж</td><td>;</td></tr>
-	<tr><td>з</td><td>p</td></tr>
-	<tr><td>и</td><td>b</td></tr>
-	<tr><td>й</td><td>q</td></tr>
-	<tr><td>к</td><td>r</td></tr>
-	<tr><td>л</td><td>k</td></tr>
-	<tr><td>м</td><td>v</td></tr>
-	<tr><td>н</td><td>y</td></tr>
-	<tr><td>о</td><td>j</td></tr>
-	<tr><td>п</td><td>g</td></tr>
-	<tr><td>р</td><td>h</td></tr>
-	<tr><td>с</td><td>c</td></tr>
-	<tr><td>т</td><td>n</td></tr>
-	<tr><td>у</td><td>e</td></tr>
-	<tr><td>ф</td><td>a</td></tr>
-	<tr><td>х</td><td>[</td></tr>
-	<tr><td>ц</td><td>w</td></tr>
-	<tr><td>ч</td><td>x</td></tr>
-	<tr><td>ш</td><td>i</td></tr>
-	<tr><td>щ</td><td>o</td></tr>
-	<tr><td>ъ</td><td>]</td></tr>
-	<tr><td>ы</td><td>s</td></tr>
-	<tr><td>ь</td><td>m</td></tr>
-	<tr><td>э</td><td>'</td></tr>
-	<tr><td>ю</td><td>.</td></tr>
-	<tr><td>я</td><td>z</td></tr>
-	</table>
-  <p><br /></p>
-  <p><a href="../mnasoft_command_list.html">К оглавлению...</a>.</p>
- </body>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<!-- 2019-12-20 Пт 10:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>translit</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">translit</h1>
+<div id="table-of-contents">
+<h2>&#1057;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1085;&#1080;&#1077;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgb2488e8">1. TRANSLIT</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb2488e8" class="outline-2">
+<h2 id="orgb2488e8"><span class="section-number-2">1</span> TRANSLIT</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Выполняет транслитерацию (исправление кодировки введенных символов) для примитивов AutoCAD, имеющих текст.
+</p>
+
+<p>
+Транслитерация производится на основании следующей таблицы:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">'</td>
+<td class="org-left">,</td>
+<td class="org-left">,</td>
+<td class="org-left">.</td>
+<td class="org-left">.</td>
+<td class="org-left">/</td>
+<td class="org-left">:</td>
+<td class="org-left">;</td>
+<td class="org-left">&lt;</td>
+<td class="org-left">&gt;</td>
+<td class="org-left">?</td>
+<td class="org-left">A</td>
+<td class="org-left">B</td>
+<td class="org-left">C</td>
+<td class="org-left">D</td>
+<td class="org-left">E</td>
+<td class="org-left">F</td>
+<td class="org-left">G</td>
+<td class="org-left">H</td>
+<td class="org-left">I</td>
+<td class="org-left">J</td>
+<td class="org-left">K</td>
+<td class="org-left">L</td>
+<td class="org-left">M</td>
+<td class="org-left">N</td>
+<td class="org-left">O</td>
+<td class="org-left">P</td>
+<td class="org-left">Q</td>
+<td class="org-left">R</td>
+<td class="org-left">S</td>
+<td class="org-left">T</td>
+<td class="org-left">U</td>
+<td class="org-left">V</td>
+<td class="org-left">W</td>
+<td class="org-left">X</td>
+<td class="org-left">Y</td>
+<td class="org-left">Z</td>
+<td class="org-left">[</td>
+<td class="org-left">]</td>
+<td class="org-left">`</td>
+<td class="org-left">a</td>
+<td class="org-left">b</td>
+<td class="org-left">c</td>
+<td class="org-left">d</td>
+<td class="org-left">e</td>
+<td class="org-left">f</td>
+<td class="org-left">g</td>
+<td class="org-left">h</td>
+<td class="org-left">i</td>
+<td class="org-left">j</td>
+<td class="org-left">k</td>
+<td class="org-left">l</td>
+<td class="org-left">m</td>
+<td class="org-left">n</td>
+<td class="org-left">o</td>
+<td class="org-left">p</td>
+<td class="org-left">q</td>
+<td class="org-left">r</td>
+<td class="org-left">s</td>
+<td class="org-left">t</td>
+<td class="org-left">u</td>
+<td class="org-left">v</td>
+<td class="org-left">w</td>
+<td class="org-left">x</td>
+<td class="org-left">y</td>
+<td class="org-left">z</td>
+<td class="org-left">{</td>
+<td class="org-left">}</td>
+<td class="org-left">~</td>
+<td class="org-left">Ё</td>
+<td class="org-left">ё</td>
+<td class="org-left">А</td>
+<td class="org-left">Б</td>
+<td class="org-left">В</td>
+<td class="org-left">Г</td>
+<td class="org-left">Д</td>
+<td class="org-left">Е</td>
+<td class="org-left">Ж</td>
+<td class="org-left">З</td>
+<td class="org-left">И</td>
+<td class="org-left">Й</td>
+<td class="org-left">К</td>
+<td class="org-left">Л</td>
+<td class="org-left">М</td>
+<td class="org-left">Н</td>
+<td class="org-left">О</td>
+<td class="org-left">П</td>
+<td class="org-left">Р</td>
+<td class="org-left">С</td>
+<td class="org-left">Т</td>
+<td class="org-left">У</td>
+<td class="org-left">Ф</td>
+<td class="org-left">Х</td>
+<td class="org-left">Ц</td>
+<td class="org-left">Ч</td>
+<td class="org-left">Ш</td>
+<td class="org-left">Щ</td>
+<td class="org-left">Ъ</td>
+<td class="org-left">Ы</td>
+<td class="org-left">Ь</td>
+<td class="org-left">Э</td>
+<td class="org-left">Ю</td>
+<td class="org-left">Я</td>
+<td class="org-left">а</td>
+<td class="org-left">б</td>
+<td class="org-left">в</td>
+<td class="org-left">г</td>
+<td class="org-left">д</td>
+<td class="org-left">е</td>
+<td class="org-left">ж</td>
+<td class="org-left">з</td>
+<td class="org-left">и</td>
+<td class="org-left">й</td>
+<td class="org-left">к</td>
+<td class="org-left">л</td>
+<td class="org-left">м</td>
+<td class="org-left">н</td>
+<td class="org-left">о</td>
+<td class="org-left">п</td>
+<td class="org-left">р</td>
+<td class="org-left">с</td>
+<td class="org-left">т</td>
+<td class="org-left">у</td>
+<td class="org-left">ф</td>
+<td class="org-left">х</td>
+<td class="org-left">ц</td>
+<td class="org-left">ч</td>
+<td class="org-left">ш</td>
+<td class="org-left">щ</td>
+<td class="org-left">ъ</td>
+<td class="org-left">ы</td>
+<td class="org-left">ь</td>
+<td class="org-left">э</td>
+<td class="org-left">ю</td>
+<td class="org-left">я</td>
+</tr>
+
+<tr>
+<td class="org-left">э</td>
+<td class="org-left">?</td>
+<td class="org-left">б</td>
+<td class="org-left">/</td>
+<td class="org-left">ю</td>
+<td class="org-left">.</td>
+<td class="org-left">Ж</td>
+<td class="org-left">ж</td>
+<td class="org-left">Б</td>
+<td class="org-left">Ю</td>
+<td class="org-left">,</td>
+<td class="org-left">Ф</td>
+<td class="org-left">И</td>
+<td class="org-left">С</td>
+<td class="org-left">В</td>
+<td class="org-left">У</td>
+<td class="org-left">А</td>
+<td class="org-left">П</td>
+<td class="org-left">Р</td>
+<td class="org-left">Ш</td>
+<td class="org-left">О</td>
+<td class="org-left">Л</td>
+<td class="org-left">Д</td>
+<td class="org-left">Ь</td>
+<td class="org-left">Т</td>
+<td class="org-left">Щ</td>
+<td class="org-left">З</td>
+<td class="org-left">Й</td>
+<td class="org-left">К</td>
+<td class="org-left">Ы</td>
+<td class="org-left">Е</td>
+<td class="org-left">Г</td>
+<td class="org-left">М</td>
+<td class="org-left">Ц</td>
+<td class="org-left">Ч</td>
+<td class="org-left">Н</td>
+<td class="org-left">Я</td>
+<td class="org-left">х</td>
+<td class="org-left">ъ</td>
+<td class="org-left">ё</td>
+<td class="org-left">ф</td>
+<td class="org-left">и</td>
+<td class="org-left">с</td>
+<td class="org-left">в</td>
+<td class="org-left">у</td>
+<td class="org-left">а</td>
+<td class="org-left">п</td>
+<td class="org-left">р</td>
+<td class="org-left">ш</td>
+<td class="org-left">о</td>
+<td class="org-left">л</td>
+<td class="org-left">д</td>
+<td class="org-left">ь</td>
+<td class="org-left">т</td>
+<td class="org-left">щ</td>
+<td class="org-left">з</td>
+<td class="org-left">й</td>
+<td class="org-left">к</td>
+<td class="org-left">ы</td>
+<td class="org-left">е</td>
+<td class="org-left">г</td>
+<td class="org-left">м</td>
+<td class="org-left">ц</td>
+<td class="org-left">ч</td>
+<td class="org-left">н</td>
+<td class="org-left">я</td>
+<td class="org-left">Х</td>
+<td class="org-left">Ъ</td>
+<td class="org-left">Ё</td>
+<td class="org-left">~</td>
+<td class="org-left">`</td>
+<td class="org-left">F</td>
+<td class="org-left">&lt;</td>
+<td class="org-left">D</td>
+<td class="org-left">U</td>
+<td class="org-left">L</td>
+<td class="org-left">T</td>
+<td class="org-left">:</td>
+<td class="org-left">P</td>
+<td class="org-left">B</td>
+<td class="org-left">Q</td>
+<td class="org-left">R</td>
+<td class="org-left">K</td>
+<td class="org-left">V</td>
+<td class="org-left">Y</td>
+<td class="org-left">J</td>
+<td class="org-left">G</td>
+<td class="org-left">H</td>
+<td class="org-left">C</td>
+<td class="org-left">N</td>
+<td class="org-left">E</td>
+<td class="org-left">A</td>
+<td class="org-left">{</td>
+<td class="org-left">W</td>
+<td class="org-left">X</td>
+<td class="org-left">I</td>
+<td class="org-left">O</td>
+<td class="org-left">}</td>
+<td class="org-left">S</td>
+<td class="org-left">M</td>
+<td class="org-left">"</td>
+<td class="org-left">&gt;</td>
+<td class="org-left">Z</td>
+<td class="org-left">f</td>
+<td class="org-left">,</td>
+<td class="org-left">d</td>
+<td class="org-left">u</td>
+<td class="org-left">l</td>
+<td class="org-left">t</td>
+<td class="org-left">;</td>
+<td class="org-left">p</td>
+<td class="org-left">b</td>
+<td class="org-left">q</td>
+<td class="org-left">r</td>
+<td class="org-left">k</td>
+<td class="org-left">v</td>
+<td class="org-left">y</td>
+<td class="org-left">j</td>
+<td class="org-left">g</td>
+<td class="org-left">h</td>
+<td class="org-left">c</td>
+<td class="org-left">n</td>
+<td class="org-left">e</td>
+<td class="org-left">a</td>
+<td class="org-left">[</td>
+<td class="org-left">w</td>
+<td class="org-left">x</td>
+<td class="org-left">i</td>
+<td class="org-left">o</td>
+<td class="org-left">]</td>
+<td class="org-left">s</td>
+<td class="org-left">m</td>
+<td class="org-left">'</td>
+<td class="org-left">.</td>
+<td class="org-left">z</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+<a href="./../mnasoft_command_list.html">К оглавлению&#x2026;</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">&#1044;&#1072;&#1090;&#1072;: 2019-12-20 Пт 00:00</p>
+<p class="date">Created: 2019-12-20 Пт 10:05</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
 </html>

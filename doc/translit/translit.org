@@ -1,0 +1,25 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: translit
+#+DATE: <2019-12-20 Пт>
+#+AUTHOR:
+#+EMAIL: namatv@KO11-118383
+#+LANGUAGE: ru
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+
+* TRANSLIT
+
+Выполняет транслитерацию (исправление кодировки введенных символов) для примитивов AutoCAD, имеющих текст.
+
+Транслитерация производится на основании следующей таблицы:
+
+| ' | , | , | . | . | / | : | ; | < | > | ? | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | [ | ] | ` | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | { | } | ~ | Ё | ё | А | Б | В | Г | Д | Е | Ж | З | И | Й | К | Л | М | Н | О | П | Р | С | Т | У | Ф | Х | Ц | Ч | Ш | Щ | Ъ | Ы | Ь | Э | Ю | Я | а | б | в | г | д | е | ж | з | и | й | к | л | м | н | о | п | р | с | т | у | ф | х | ц | ч | ш | щ | ъ | ы | ь | э | ю | я |
+| э | ? | б | / | ю | . | Ж | ж | Б | Ю | , | Ф | И | С | В | У | А | П | Р | Ш | О | Л | Д | Ь | Т | Щ | З | Й | К | Ы | Е | Г | М | Ц | Ч | Н | Я | х | ъ | ё | ф | и | с | в | у | а | п | р | ш | о | л | д | ь | т | щ | з | й | к | ы | е | г | м | ц | ч | н | я | Х | Ъ | Ё | ~ | ` | F | < | D | U | L | T | : | P | B | Q | R | K | V | Y | J | G | H | C | N | E | A | { | W | X | I | O | } | S | M | " | > | Z | f | , | d | u | l | t | ; | p | b | q | r | k | v | y | j | g | h | c | n | e | a | [ | w | x | i | o | ] | s | m | ' | . | z |
+
+
+[[./../mnasoft_command_list.html][К оглавлению...]]

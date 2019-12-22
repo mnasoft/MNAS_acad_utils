@@ -1,0 +1,29 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: te
+#+DATE: <2019-12-20 Пт>
+#+AUTHOR:
+#+EMAIL: namatv@KO11-118383
+#+LANGUAGE: ru
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+
+* TE
+Производит редактирование текстов и текстов размерных примитивов. 
+
+В ответ на приглашение выбора объектов выберите один или более примитивов типа TEXT, MTEXT, или DIMENSION.
+
+В поле редактирования  диалогового окна попадает текст первого, выбранного вами примитива.
+
+При нажатии на кнопку OK для всех, выбранных вами примитивов устанавливается текст из поля редактирования диалогового окна.
+
+[[./te_001.png]]
+  
+[[./../mnasoft_command_list.html][К оглавлению...]]
+
+| te                          | Производит редактирование текстов и текстов размерных примитивов.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Тексты                | E:/home/namatv/git/GitHub/mnasoft/MNAS_acad_utils/src/lsp/text/text-edit_dlg.lsp                                                                 |
+| te                              |   8 | ./text/text-edit_dlg.lsp                                                                 |
