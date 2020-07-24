@@ -378,12 +378,14 @@ BH,                 *BHATCH
 (defun make-ru-pgp-record  ()
   (mapcar (function (lambda (el) (make-pgp-record (cadr el) (cadar el)))) *acad-pgp-data*))
 
-(defun c:acad-pdp-add-script  (/ r-r-p r-r-p-last)
+(defun c:acad-pgp-add-script  (/ r-r-p r-r-p-last)
   (setq r-r-p (getvar "ROAMABLEROOTPREFIX"))
   (setq r-r-p-last (strcase (last (string-split "\\" r-r-p))))
-  (cond ((= "ENU" r-r-p-last) (make-en-pgp-record))
-        ((= "RUS" r-r-p-last) (make-ru-pgp-record)))
+  (cond	((= "ENU" r-r-p-last) (make-en-pgp-record))
+	((= "RUS" r-r-p-last) (make-ru-pgp-record)))
   (princ
     (strcat "Edit acad.pgp file in directory: " (VL-STRING-TRANSLATE "\\" "/" r-r-p) "Support/acad.pgp"))
+  (print)
+  (princ
+    (strcat "Edit acad.pgp file in directory: " (VL-STRING-TRANSLATE "/" "\\"  r-r-p) "Support\\acad.pgp"))
   (princ))
-
