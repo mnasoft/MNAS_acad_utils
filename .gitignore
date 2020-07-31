@@ -1,4 +1,5 @@
 Thumbs.db
+
 *._*
 *.tmp
 *.bak
@@ -13,3 +14,7 @@ __pycache__
 .directory
 *.lnk
 temp/
+desktop.ini
+.emacs.desktop
+*.dwl
+*.dwl*
