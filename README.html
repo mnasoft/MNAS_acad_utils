@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
 <head>
-<!-- 2020-07-31 Пт 19:57 -->
+<!-- 2020-07-31 Пт 20:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>README</title>
@@ -225,28 +225,6 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -255,101 +233,130 @@ for the JavaScript code in this tag.
 <h2>&#1057;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1085;&#1080;&#1077;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8f527c1">1. Скопируйте файл на ваш ПК.</a></li>
-<li><a href="#org6baec4d">2. Измените расширение с .txt .exe</a></li>
-<li><a href="#org713e508">3. Распакуйте архив. Пароль - 12345678</a></li>
-<li><a href="#orgc90355d">4. Прекратите работу AutoCAD</a></li>
-<li><a href="#org51e1e45">5. Из каталога установки выполните программу MNASoft-Path-Add.exe</a></li>
-<li><a href="#org22ed407">6. Запустите AutoCAD на выполнение</a></li>
-<li><a href="#orgb120f53">7. Выполните команду _CUI</a></li>
-<li><a href="#orgcb04dbe">8. Используйте команду TRIANG для построения развертки линейчатой поверхности</a></li>
+<li><a href="#orgf8a4ef1">1. Загрузка и распаковка</a>
+<ul>
+<li><a href="#orgefcbfd7">1.1. Скачайте zip-архив <code>MNAS_acad_utils</code> (ветку develop) по адресу</a></li>
+<li><a href="#orgfde20d3">1.2. Распакуйте архив</a></li>
+</ul>
+</li>
+<li><a href="#orgb0b4643">2. Настройка</a>
+<ul>
+<li><a href="#org00eb010">2.1. Выберите версию <code>AutoCAD</code>, к которой вы хотите подключить пакет <code>MNAS_acad_utils</code></a>
+<ul>
+<li><a href="#orgf14d4dd">2.1.1. Запустите <code>AutoCAD</code> на выполнение</a></li>
+<li><a href="#org2d621ef">2.1.2. Прекратите работу AutoCAD</a></li>
+</ul>
+</li>
+<li><a href="#org8ea989a">2.2. Подключение путей</a>
+<ul>
+<li><a href="#org45d8bf0">2.2.1. Из каталога установки выполните программу MNASoft-Path-Add.exe</a></li>
+</ul>
+</li>
+<li><a href="#orgc43494f">2.3. Подключение меню пакета <code>MNAS_acad_utils</code></a>
+<ul>
+<li><a href="#org1d5a43a">2.3.1. Запустите AutoCAD на выполнение</a></li>
+<li><a href="#org4ee3672">2.3.2. Выполните команду <code>_CUI</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-
-
-<div id="outline-container-org8f527c1" class="outline-2">
-<h2 id="org8f527c1"><span class="section-number-2">1</span> Скопируйте файл на ваш ПК.</h2>
+<div id="outline-container-orgf8a4ef1" class="outline-2">
+<h2 id="orgf8a4ef1"><span class="section-number-2">1</span> Загрузка и распаковка</h2>
 <div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgefcbfd7" class="outline-3">
+<h3 id="orgefcbfd7"><span class="section-number-3">1.1</span> Скачайте zip-архив <code>MNAS_acad_utils</code> (ветку develop) по адресу</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<a href="https://github.com/mnasoft/MNAS_acad_utils/tree/develop">https://github.com/mnasoft/MNAS_acad_utils/tree/develop</a> .
+</p>
+
 
 <div class="figure">
 <p><img src="image/image001.jpg" alt="image001.jpg" />
 </p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 1.: </span>Рисунок 1</p>
-</div>
-</div>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 1.: </span>Скачивание пакета <code>MNAS_acad_utils</code> (ветки develop)</p>
 </div>
 
-<div id="outline-container-org6baec4d" class="outline-2">
-<h2 id="org6baec4d"><span class="section-number-2">2</span> Измените расширение с .txt .exe</h2>
-<div class="outline-text-2" id="text-2">
+<p>
+Сохраните файл
+</p>
 
 <div class="figure">
 <p><img src="image/image002.jpg" alt="image002.jpg" />
 </p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 2.: </span>Рисунок 2</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 2.: </span>Сохранение файла</p>
+</div>
+</div>
 </div>
 
+
+<div id="outline-container-orgfde20d3" class="outline-3">
+<h3 id="orgfde20d3"><span class="section-number-3">1.2</span> Распакуйте архив</h3>
+<div class="outline-text-3" id="text-1-2">
 
 <div class="figure">
 <p><img src="image/image003.jpg" alt="image003.jpg" />
 </p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 3.: </span>Рисунок 3</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 3.: </span>Распаковка архива</p>
 </div>
 </div>
 </div>
-
-<div id="outline-container-org713e508" class="outline-2">
-<h2 id="org713e508"><span class="section-number-2">3</span> Распакуйте архив. Пароль - 12345678</h2>
-<div class="outline-text-2" id="text-3">
-
-<div class="figure">
-<p><img src="image/image004.jpg" alt="image004.jpg" />
-</p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 4.: </span>Рисунок 4</p>
 </div>
 
-
-<div class="figure">
-<p><img src="image/image005.jpg" alt="image005.jpg" />
-</p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 5.: </span>Рисунок 5</p>
+<div id="outline-container-orgb0b4643" class="outline-2">
+<h2 id="orgb0b4643"><span class="section-number-2">2</span> Настройка</h2>
+<div class="outline-text-2" id="text-2">
 </div>
-
-<p>
-&lt;p class=MsoNormal style='page-break-after:avoid'&gt;&lt;span lang=EN-US&gt;4 &lt;/span&gt;
-Запустите AutoCAD на выполнение
-</p>
-
+<div id="outline-container-org00eb010" class="outline-3">
+<h3 id="org00eb010"><span class="section-number-3">2.1</span> Выберите версию <code>AutoCAD</code>, к которой вы хотите подключить пакет <code>MNAS_acad_utils</code></h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-orgf14d4dd" class="outline-4">
+<h4 id="orgf14d4dd"><span class="section-number-4">2.1.1</span> Запустите <code>AutoCAD</code> на выполнение</h4>
+<div class="outline-text-4" id="text-2-1-1">
 
 <div class="figure">
 <p><img src="image/image006.jpg" alt="image006.jpg" />
 </p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 6.: </span>Рисунок 6</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 4.: </span>AutoCAD запущен</p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc90355d" class="outline-2">
-<h2 id="orgc90355d"><span class="section-number-2">4</span> Прекратите работу AutoCAD</h2>
+<div id="outline-container-org2d621ef" class="outline-4">
+<h4 id="org2d621ef"><span class="section-number-4">2.1.2</span> Прекратите работу AutoCAD</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Данная манипуляция делает запись в системнои реестре о последней запущенной версии <code>AutoCAD</code>, 
+которая используется для подлючения путей.
+</p>
 </div>
-
-<div id="outline-container-org51e1e45" class="outline-2">
-<h2 id="org51e1e45"><span class="section-number-2">5</span> Из каталога установки выполните программу MNASoft-Path-Add.exe</h2>
-<div class="outline-text-2" id="text-5">
+</div>
+</div>
+<div id="outline-container-org8ea989a" class="outline-3">
+<h3 id="org8ea989a"><span class="section-number-3">2.2</span> Подключение путей</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org45d8bf0" class="outline-4">
+<h4 id="org45d8bf0"><span class="section-number-4">2.2.1</span> Из каталога установки выполните программу MNASoft-Path-Add.exe</h4>
+<div class="outline-text-4" id="text-2-2-1">
 
 <div class="figure">
 <p><img src="image/image007.jpg" alt="image007.jpg" />
 </p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 7.: </span>Рисунок 7</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 5.: </span>Выполните программу MNASoft-Path-Add.exe</p>
 </div>
 
 
 <div class="figure">
 <p><img src="image/image008.jpg" alt="image008.jpg" />
 </p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 8.: </span>Рисунок 8</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 6.: </span>Программа отражает подключенные пути. Нажмите Enter (Ввод)</p>
 </div>
 
 <p>
@@ -357,41 +364,42 @@ for the JavaScript code in this tag.
 </p>
 </div>
 </div>
-
-<div id="outline-container-org22ed407" class="outline-2">
-<h2 id="org22ed407"><span class="section-number-2">6</span> Запустите AutoCAD на выполнение</h2>
 </div>
 
-<div id="outline-container-orgb120f53" class="outline-2">
-<h2 id="orgb120f53"><span class="section-number-2">7</span> Выполните команду _CUI</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-orgc43494f" class="outline-3">
+<h3 id="orgc43494f"><span class="section-number-3">2.3</span> Подключение меню пакета <code>MNAS_acad_utils</code></h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org1d5a43a" class="outline-4">
+<h4 id="org1d5a43a"><span class="section-number-4">2.3.1</span> Запустите AutoCAD на выполнение</h4>
+</div>
+
+<div id="outline-container-org4ee3672" class="outline-4">
+<h4 id="org4ee3672"><span class="section-number-4">2.3.2</span> Выполните команду <code>_CUI</code></h4>
+<div class="outline-text-4" id="text-2-3-2">
 
 <div class="figure">
 <p><img src="image/image009.jpg" alt="image009.jpg" />
 </p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 9.: </span>Рисунок 9</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 7.: </span>В командной строке набрана команда <code>_CUI</code></p>
 </div>
-
-<p>
-Нажмите папку со значком «+»
-</p>
 
 
 <div class="figure">
 <p><img src="image/image010.jpg" alt="image010.jpg" />
 </p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 10.: </span>Рисунок 10</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 8.: </span>Кликните мышью папку со значком +</p>
 </div>
 
 <p>
-Выберите файл адаптации из .\MNAS<sub>acad</sub><sub>utils\acad.mnu\MNASoft.cuix</sub>
+Выберите файл адаптации из <code>.\MNAS_acad_utils-develop\menus\mnasoft.bak.cuix</code>
 </p>
 
 
 <div class="figure">
 <p><img src="image/image011.jpg" alt="image011.jpg" />
 </p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 11.: </span>Рисунок 11</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 9.: </span>Выбор файла адаптпции (меню)</p>
 </div>
 
 <p>
@@ -402,19 +410,16 @@ for the JavaScript code in this tag.
 <div class="figure">
 <p><img src="image/image012.jpg" alt="image012.jpg" />
 </p>
-<p><span class="figure-number">&#1056;&#1080;&#1089;. 12.: </span>Рисунок 12</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 10.: </span>Подключение меню</p>
 </div>
 </div>
 </div>
-
-
-<div id="outline-container-orgcb04dbe" class="outline-2">
-<h2 id="orgcb04dbe"><span class="section-number-2">8</span> Используйте команду TRIANG для построения развертки линейчатой поверхности</h2>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">&#1044;&#1072;&#1090;&#1072;: 2020-07-31 Пт 00:00</p>
-<p class="date">Created: 2020-07-31 Пт 19:57</p>
+<p class="date">Created: 2020-07-31 Пт 20:46</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

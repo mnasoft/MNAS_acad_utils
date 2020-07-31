@@ -29,65 +29,62 @@
 #+CREATOR: <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.1.9)
 #+LATEX_HEADER:
 
-* Скопируйте файл на ваш ПК.
+* Загрузка и распаковка
+** Скачайте zip-архив =MNAS_acad_utils= (ветку develop) по адресу 
+https://github.com/mnasoft/MNAS_acad_utils/tree/develop .
 
-#+CAPTION: Рисунок 1
+#+CAPTION: Скачивание пакета =MNAS_acad_utils= (ветки develop)
 [[file:image/image001.jpg]]
 
-* Измените расширение с .txt .exe
+Сохраните файл
+#+CAPTION: Сохранение файла
+[[file:image/image002.jpg]]
 
-#+CAPTION: Рисунок 2
- [[file:image/image002.jpg]]
 
-#+CAPTION: Рисунок 3
+** Распакуйте архив
+
+#+CAPTION: Распаковка архива
  [[file:image/image003.jpg]]
 
-* Распакуйте архив. Пароль - 12345678
+* Настройка
+** Выберите версию =AutoCAD=, к которой вы хотите подключить пакет =MNAS_acad_utils= 
+*** Запустите =AutoCAD= на выполнение
 
-#+CAPTION: Рисунок 4
- [[file:image/image004.jpg]]
+ #+CAPTION: AutoCAD запущен
+  [[file:image/image006.jpg]]
 
-#+CAPTION: Рисунок 5
- [[file:image/image005.jpg]]
+*** Прекратите работу AutoCAD
 
-* Запустите AutoCAD на выполнение
+Данная манипуляция делает запись в системнои реестре о последней запущенной версии =AutoCAD=, 
+которая используется для подлючения путей.
+** Подключение путей 
+*** Из каталога установки выполните программу MNASoft-Path-Add.exe
 
-#+CAPTION: Рисунок 6
- [[file:image/image006.jpg]]
+ #+CAPTION: Выполните программу MNASoft-Path-Add.exe
+  [[file:image/image007.jpg]]
 
-* Прекратите работу AutoCAD
+ #+CAPTION: Программа отражает подключенные пути. Нажмите Enter (Ввод)
+  [[file:image/image008.jpg]]
 
-* Из каталога установки выполните программу MNASoft-Path-Add.exe
+ Нажмите клавишу Enter
 
-#+CAPTION: Рисунок 7
- [[file:image/image007.jpg]]
+** Подключение меню пакета =MNAS_acad_utils= 
+*** Запустите AutoCAD на выполнение
 
-#+CAPTION: Рисунок 8
- [[file:image/image008.jpg]]
+*** Выполните команду =_CUI=
 
-Нажмите клавишу Enter
+ #+CAPTION: В командной строке набрана команда =_CUI=
+  [[file:image/image009.jpg]]
 
-* Запустите AutoCAD на выполнение
+ #+CAPTION:  Кликните мышью папку со значком +
+  [[file:image/image010.jpg]]
 
-* Выполните команду _CUI
+ Выберите файл адаптации из =.\MNAS_acad_utils-develop\menus\mnasoft.bak.cuix=
 
-#+CAPTION: Рисунок 9
- [[file:image/image009.jpg]]
+ #+CAPTION: Выбор файла адаптпции (меню)
+  [[file:image/image011.jpg]]
 
-Нажмите папку со значком «+»
+ Нажмите на кнопку OK
 
-#+CAPTION: Рисунок 10
- [[file:image/image010.jpg]]
-
-Выберите файл адаптации из .\MNAS_acad_utils\acad.mnu\MNASoft.cuix
-
-#+CAPTION: Рисунок 11
- [[file:image/image011.jpg]]
-
-Нажмите на кнопку OK
-
-#+CAPTION: Рисунок 12
- [[file:image/image012.jpg]]
-
-
-* Используйте команду TRIANG для построения развертки линейчатой поверхности
+ #+CAPTION: Подключение меню
+  [[file:image/image012.jpg]]
