@@ -193,7 +193,7 @@
         en (sh-ob-nm-pr en)
         en (sh-ob-nm-pr en)
         en (sh-ob-nm-pr en))
-  (if (and (> (strlen (cdr (assoc 1 e_ob))) 2) (= (cdr (assoc 2 e_ob)) "Œ¡Œ«Õ¿◊≈Õ»≈"))
+  (if (and (> (strlen (cdr (assoc 1 e_ob))) 0) (= (cdr (assoc 2 e_ob)) "Œ¡Œ«Õ¿◊≈Õ»≈"))
     (progn (setq e_pr (subst (assoc 1 e_ob) (assoc 1 e_pr) e_pr)
                  e_nm (subst (assoc 1 e_ob) (assoc 1 e_nm) e_nm)
                  e_ob (subst (cons 1 "") (assoc 1 e_ob) e_ob))
