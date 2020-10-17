@@ -1,0 +1,93 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: README
+#+DATE: <2020-07-31 Пт>
+#+AUTHOR:
+#+EMAIL: mnasoft@gmail.com
+#+LANGUAGE: ru
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:auto
+#+OPTIONS: html-preamble:t html-scripts:t html-style:t
+#+OPTIONS: html5-fancy:nil tex:t
+#+HTML_DOCTYPE: xhtml-strict
+#+HTML_CONTAINER: div
+#+DESCRIPTION:
+#+KEYWORDS:
+#+HTML_LINK_HOME:
+#+HTML_LINK_UP:
+#+HTML_MATHJAX:
+#+HTML_HEAD:
+#+HTML_HEAD_EXTRA:
+#+SUBTITLE:
+#+INFOJS_OPT:
+#+CREATOR: <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.1.9)
+#+LATEX_HEADER:
+
+* Скопируйте файл на ваш ПК.
+
+#+CAPTION: Рисунок 1
+[[file:image/image001.jpg]]
+
+* Измените расширение с .txt .exe
+
+#+CAPTION: Рисунок 2
+ [[file:image/image002.jpg]]
+
+#+CAPTION: Рисунок 3
+ [[file:image/image003.jpg]]
+
+* Распакуйте архив. Пароль - 12345678
+
+#+CAPTION: Рисунок 4
+ [[file:image/image004.jpg]]
+
+#+CAPTION: Рисунок 5
+ [[file:image/image005.jpg]]
+
+* Запустите AutoCAD на выполнение
+
+#+CAPTION: Рисунок 6
+ [[file:image/image006.jpg]]
+
+* Прекратите работу AutoCAD
+
+* Из каталога установки выполните программу MNASoft-Path-Add.exe
+
+#+CAPTION: Рисунок 7
+ [[file:image/image007.jpg]]
+
+#+CAPTION: Рисунок 8
+ [[file:image/image008.jpg]]
+
+Нажмите клавишу Enter
+
+* Запустите AutoCAD на выполнение
+
+* Выполните команду _CUI
+
+#+CAPTION: Рисунок 9
+ [[file:image/image009.jpg]]
+
+Нажмите папку со значком «+»
+
+#+CAPTION: Рисунок 10
+ [[file:image/image010.jpg]]
+
+Выберите файл адаптации из .\MNAS_acad_utils\acad.mnu\MNASoft.cuix
+
+#+CAPTION: Рисунок 11
+ [[file:image/image011.jpg]]
+
+Нажмите на кнопку OK
+
+#+CAPTION: Рисунок 12
+ [[file:image/image012.jpg]]
+
+
+* Используйте команду TRIANG для построения развертки линейчатой поверхности
