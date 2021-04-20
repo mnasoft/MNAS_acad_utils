@@ -3,24 +3,24 @@
 ;;;; Её надобность в отсутствие SPDS отпала.
 ;;;(defun c:x  (/ en)
 ;;;  (setq en (car (entsel "Выберите полилинию:")))
-;;;  (command "_.pedit" en "_close" "")
-;;;  (command "_.region" en "")
+;;;  (command-s "_.pedit" en "_close" "")
+;;;  (command-s "_.region" en "")
 ;;;  (setq en (entlast))
-;;;  (command "_.explode" en "")
+;;;  (command-s "_.explode" en "")
 ;;;  (princ))
 
 
 ;;;;;;("pur" "Очистка всех неиспользуемых элементов из секции таблиц." "Аббревиатуры")
-(defun c:pur () (command "_.purge" "_all" "*" "_no") (princ))
+(defun c:pur () (command-s "_.purge" "_all" "*" "_no") (princ))
 
 ;;;;;;("ra" "Перерисовка всех видовых экранов." "Аббревиатуры")
-     ;(defun c:ra () (command "_.redrawall") (princ))
+     ;(defun c:ra () (command-s "_.redrawall") (princ))
 
 ;;;;;;("rg" "Регенерация чертежа." "Аббревиатуры")
-     ;(defun c:rg () (command "_.regen") (princ))
+     ;(defun c:rg () (command-s "_.regen") (princ))
 
 ;;;;;;("rga" "Регенерация всех видовых экранов в чертеже." "Аббревиатуры")
-     ;(defun c:rga () (command "_.regenall") (princ))
+     ;(defun c:rga () (command-s "_.regenall") (princ))
 
 ;;;;;;("sk" "Отрисовка эскизной полилинии (линии обрыва)." "Аббревиатуры")
 (defun c:sk  (/ skp ortm)
@@ -28,8 +28,8 @@
         ortm (getvar "orthomode"))
   (setvar "skpoly" 1)
   (setvar "orthomode" 0)
-  (command "_.sketch")
-  (while (= 1 (getvar "cmdactive")) (command pause))
+  (command-s "_.sketch")
+  (while (= 1 (getvar "cmdactive")) (command-s pause))
   (setvar "skpoly" skp)
   (setvar "orthomode" ortm)
   (princ))
@@ -42,125 +42,125 @@
   (princ))
 
 ;;;;;;("vs" "Вызов команды _.vports, управляющей протами просмотра." "Аббревиатуры")
-     ;(defun c:vs () (command "_.vports"))
+     ;(defun c:vs () (command-s "_.vports"))
 
 ;;;;;;("z" "Вызов команды _.zoom, управляющей изменением области просмотра." "Аббревиатуры")
-     ;(defun c:z () (command "_.zoom"))
+     ;(defun c:z () (command-s "_.zoom"))
 
 ;;;;;;("za"
 ;;;;;;"Изменение области просмотра таким образом,
 ;;;;;; чтобы были отображены все срегенерированные примитивы чертежа +
 ;;;;;; область опеделяемая лимитами чертежа." "Аббревиатуры")
-(defun c:za () (command "_.zoom" "_a"))
+(defun c:za () (command-s "_.zoom" "_a"))
 
 ;;;;;;("zc" "Изменение области просмотра по ценральной точке и высоте." "Аббревиатуры")
-(defun c:zc () (command "_.zoom" "_c"))
+(defun c:zc () (command-s "_.zoom" "_c"))
 
 ;;;;;;("zd" "Изменение области просмотра при помощи динамического окна." "Аббревиатуры")
-(defun c:zd () (command "_.zoom" "_d"))
+(defun c:zd () (command-s "_.zoom" "_d"))
 
 ;;;;;;("ze"
 ;;;;;;"Изменение области просмотра таким образом,
 ;;;;;; чтобы были отображены все срегенерированные примитивы чертежа." "Аббревиатуры")
-(defun c:ze () (command "_.zoom" "_e"))
+(defun c:ze () (command-s "_.zoom" "_e"))
 
 ;;;;;;("zp" "Просмотр предыдущей отображаемой области." "Аббревиатуры")
-(defun c:zp () (command "_.zoom" "_p"))
+(defun c:zp () (command-s "_.zoom" "_p"))
 
 ;;;;;;("zv"
 ;;;;;;"Изменение области просмотра таким образом,
 ;;;;;; чтобы стала отображаться максимальная область, не требующая регенерации." "Аббревиатуры")
-(defun c:zv () (command "_.zoom" "_v"))
+(defun c:zv () (command-s "_.zoom" "_v"))
 
 ;;;;;;("zw" "Изменение области просмотра, определяемой окном." "Аббревиатуры")
-(defun c:zw () (command "_.zoom" "_w"))
+(defun c:zw () (command-s "_.zoom" "_w"))
 
 ;;;;;;("fr" "Вызов команды _.fillet с последующим указанием ключа для ввода радиуса." "Аббревиатуры")
-(defun c:fr () (command "_.fillet" "_r") (princ))
+(defun c:fr () (command-s "_.fillet" "_r") (princ))
 
 ;;;;;;("f" "Вызов команды _.fillet с последующим указанием ключа для ввода радиуса." "Аббревиатуры")
-     ;(defun c:f () (command "_.fillet") (princ))
+     ;(defun c:f () (command-s "_.fillet") (princ))
 
 ;;;;;;("chd" "Вызов команды _.chamfer с последующим указанием ключа для ввода длины фаски." "Аббревиатуры")
-(defun c:chd () (command "_.chamfer" "_d") (princ))
+(defun c:chd () (command-s "_.chamfer" "_d") (princ))
 
 ;;;;;;("ch" "Вызов команды _.chamfer." "Аббревиатуры")
-     ;(defun c:ch () (command "_.chamfer") (princ))
+     ;(defun c:ch () (command-s "_.chamfer") (princ))
 
 ;;;;;;("s" "Вызов команды _.stretch" "Аббревиатуры")
-     ;(defun c:s () (command "_.stretch") (princ))
+     ;(defun c:s () (command-s "_.stretch") (princ))
 
 ;;;;;;("l" "Вызов команды _.line" "Аббревиатуры")
-     ;(defun c:l () (command "_.line") (princ))
+     ;(defun c:l () (command-s "_.line") (princ))
 
 ;;;;;;("a" "Вызов команды _.arc" "Аббревиатуры")
-     ;(defun c:a () (command "_.arc") (princ))
+     ;(defun c:a () (command-s "_.arc") (princ))
 
 ;;;;;;("o" "Вызов команды _.offset" "Аббревиатуры")
-     ;(defun c:o () (command "_.offset") (princ))
+     ;(defun c:o () (command-s "_.offset") (princ))
 
 ;;;;;;("c" "Вызов команды _.circle" "Аббревиатуры")
-     ;(defun c:c () (command "_.circle") (princ))
+     ;(defun c:c () (command-s "_.circle") (princ))
 
 ;;;;;;("e" "Вызов команды _.erase" "Аббревиатуры")
-     ;(defun c:e () (command "_.erase") (princ))
+     ;(defun c:e () (command-s "_.erase") (princ))
 
 ;;;;;;("co" "Вызов команды _.copy" "Аббревиатуры")
-     ;(defun c:co () (command "_.copy") (princ))
+     ;(defun c:co () (command-s "_.copy") (princ))
 
 ;;;;;;("cp" "Вызов команды _.copy" "Аббревиатуры")
-     ;(defun c:cp () (command "_.copy") (princ))
+     ;(defun c:cp () (command-s "_.copy") (princ))
 
 ;;;;;;("m" "Вызов команды _.move" "Аббревиатуры")
-     ;(defun c:m () (command "_.move") (princ))
+     ;(defun c:m () (command-s "_.move") (princ))
 
 ;;;;;;("ro" "Вызов команды _.rotate" "Аббревиатуры")
-     ;(defun c:ro () (command "_.rotate") (princ))
+     ;(defun c:ro () (command-s "_.rotate") (princ))
 
 ;;;;;;("tr" "Вызов команды _.trim" "Аббревиатуры")
-     ;(defun c:tr () (command "_.trim") (princ))
+     ;(defun c:tr () (command-s "_.trim") (princ))
 
 ;;;;;;("ex" "Вызов команды _.extend" "Аббревиатуры")
-     ;(defun c:ex () (command "_.extend") (princ))
+     ;(defun c:ex () (command-s "_.extend") (princ))
 
 ;;;;;;("rec" "Вызов команды _.rectangle" "Аббревиатуры")
-     ;(defun c:rec () (command "_.rectangle") (princ))
+     ;(defun c:rec () (command-s "_.rectangle") (princ))
 
 ;;;;;;("mi" "Вызов команды _.mirror" "Аббревиатуры")
-     ;(defun c:mi () (command "_.mirror") (princ))
+     ;(defun c:mi () (command-s "_.mirror") (princ))
 
 ;;;;;;("el" "Вызов команды _.ellipse" "Аббревиатуры")
-     ;(defun c:el () (command "_.ellipse") (princ))
+     ;(defun c:el () (command-s "_.ellipse") (princ))
 
 ;;;;;;("br" "Вызов команды _.break" "Аббревиатуры")
-     ;(defun c:br () (command "_.break") (princ))
+     ;(defun c:br () (command-s "_.break") (princ))
 
 ;;;;;;("u" "Вызов команды _.u" "Аббревиатуры")
-     ;(defun c:u () (command "_.u") (princ))
+     ;(defun c:u () (command-s "_.u") (princ))
 
 ;;;;;;("undo" "Вызов команды _.undo" "Аббревиатуры")
-     ;(defun c:undo () (command "_.undo") (princ))
+     ;(defun c:undo () (command-s "_.undo") (princ))
 
 ;;;;;;("sc" "Вызов команды _.scale" "Аббревиатуры")
-     ;(defun c:sc () (command "_.scale") (princ))
+     ;(defun c:sc () (command-s "_.scale") (princ))
 
 ;;;;;;("oops" "Вызов команды _.oops" "Аббревиатуры")
-     ;(defun c:oops () (command "_.oops") (princ))
+     ;(defun c:oops () (command-s "_.oops") (princ))
 
 ;;;;;;("di" "Вызов команды _.dist" "Аббревиатуры")
-     ;(defun c:di () (command "_.dist") (princ))
+     ;(defun c:di () (command-s "_.dist") (princ))
 
 ;;;;;;("id" "Вызов команды _.id" "Аббревиатуры")
-     ;(defun c:id () (command "_.id") (princ))
+     ;(defun c:id () (command-s "_.id") (princ))
 
 ;;;;;;("ma" "Вызов команды _.matchprop" "Аббревиатуры")
-     ;(defun c:ma () (command "_.matchprop") (princ))
+     ;(defun c:ma () (command-s "_.matchprop") (princ))
 
 ;;;;;;("le" "Вызов команды _.qleader" "Аббревиатуры")
-     ;(defun c:le () (command "_.qleader") (princ))
+     ;(defun c:le () (command-s "_.qleader") (princ))
 
 ;;;;;;("op" "Вызов команды _.options" "Аббревиатуры")
-     ;(defun c:op () (command "_.options") (princ))
+     ;(defun c:op () (command-s "_.options") (princ))
 
 ;;;;;;("h" "Вызов команды _.bhatch" "Аббревиатуры")
      ;(defun c:h  (/ dist sc an)
@@ -168,8 +168,8 @@
      ;        sc   (cond ((= (getvar "dimscale") 0.0) 1.0)
      ;                   (t (getvar "dimscale")))
      ;        an   (getangle "Введите угол наклона штрихов:"))
-     ;  (command "_-hatch" "_p" "_u" (* (/ 180. pi) an) (* dist sc))
-     ;  ;;(command "_.bhatch") (princ)
+     ;  (command-s "_-hatch" "_p" "_u" (* (/ 180. pi) an) (* dist sc))
+     ;  ;;(command-s "_.bhatch") (princ)
      ;  )
 
 ;;;(defun c:he (/ dist sc an)
@@ -181,27 +181,27 @@
 ;;;	 )
 ;;;    an   (getangle "Введите угол наклона штрихов:")
 ;;;  )
-;;;  (command "_-hatch" "_p" "_u" (* (/ 180. pi) an) (* dist sc))
-;;;(command "_.bhatch") (princ)
+;;;  (command-s "_-hatch" "_p" "_u" (* (/ 180. pi) an) (* dist sc))
+;;;(command-s "_.bhatch") (princ)
 ;;;)
 
 ;;;;;;("dt" "Вызов команды _.dtext" "Аббревиатуры")
-;;(defun c:dt () (command "_.dtext") (princ))
+;;(defun c:dt () (command-s "_.dtext") (princ))
 
 ;;;;;;("pe" "Вызов команды _.pedit" "Аббревиатуры")
-;;(defun c:pe () (command "_.pedit") (princ))
+;;(defun c:pe () (command-s "_.pedit") (princ))
 
 ;;;;;;("bo" "Вызов команды _.boundary" "Аббревиатуры")
-;;(defun c:bo () (command "_.boundary") (princ))
+;;(defun c:bo () (command-s "_.boundary") (princ))
 
 ;;;;;;("ar" "Вызов команды _.array" "Аббревиатуры")
-;;(defun c:ar () (command "_.array") (princ))
+;;(defun c:ar () (command-s "_.array") (princ))
 
 ;;;;;;("li" "Вызов команды _.list" "Аббревиатуры")
-;;(defun c:li () (command "_.list") (princ))
+;;(defun c:li () (command-s "_.list") (princ))
 
 ;;;;;;("x" "Вызов команды _.explode" "Аббревиатуры")
-;;(defun c:x () (command "_.explode") (princ))
+;;(defun c:x () (command-s "_.explode") (princ))
 
 ;;;;;;("xa" "Выполняет рекурсивный взрыв блоков" "Аббревиатуры")
 (defun c:xa  (/ el ss)
@@ -214,23 +214,23 @@
   (princ))
 
 ;;;;;;("j" "Вызов команды _.join" "Аббревиатуры")
-;;(defun c:j () (command "_.join") (princ))
+;;(defun c:j () (command-s "_.join") (princ))
 
 ;;;;;;("b" "Вызов команды _.block" "Аббревиатуры")
-;;(defun c:b () (command "_.block") (princ))
+;;(defun c:b () (command-s "_.block") (princ))
 
 ;;;;;;("ps" "Вызов команды _.pspace" "Аббревиатуры")
-;;(defun c:ps () (command "_.pspace") (princ))
+;;(defun c:ps () (command-s "_.pspace") (princ))
 
 ;;;;;;("ms" "Вызов команды _.mspace" "Аббревиатуры")
-;;(defun c:ms () (command "_.mspace") (princ))
+;;(defun c:ms () (command-s "_.mspace") (princ))
 
 ;;;;;;("git" "Вызов команды D:\\home\\_namatv\\Git\\git-bash.bat" "Аббревиатуры")
-(defun c:git () (command "shell" "D:\\home\\_namatv\\Git\\git-bash.bat"))
+(defun c:git () (command-s "shell" "D:\\home\\_namatv\\Git\\git-bash.bat"))
 
-(defun c:vl () (command "_-VPORTS" "_L" "_ON"))
+(defun c:vl () (command-s "_-VPORTS" "_L" "_ON"))
 
-(defun c:vu () (command "_-VPORTS" "_L" "_OFF"))
+(defun c:vu () (command-s "_-VPORTS" "_L" "_OFF"))
 
 (defun layout-tab-list  (/ layouts items acadObj doc)
   (setq acadObj (vlax-get-acad-object))
@@ -249,29 +249,29 @@
 (defun c:ll  (/ layout-lst)
   (setq layout-lst (layout-tab-list))
   (setq new-layout (nth (max 1 (- (clayout-number) 10)) layout-lst))
-  (command "_layout" "_set" new-layout))
+  (command-s "_layout" "_set" new-layout))
 
 (defun c:lr  (/ layout-lst)
   (setq layout-lst (layout-tab-list))
   (setq new-layout (nth (min (- (length layout-lst) 1) (+ (clayout-number) 10)) layout-lst))
-  (command "_layout" "_set" new-layout))
+  (command-s "_layout" "_set" new-layout))
 
 (defun c:l-first  (/ layout-lst)
   (setq layout-lst (layout-tab-list))
   (setq new-layout (nth 1 layout-lst))
-  (command "_layout" "_set" new-layout))
+  (command-s "_layout" "_set" new-layout))
 
 (defun c:l-last  (/ layout-lst)
   (setq layout-lst (layout-tab-list))
   (setq new-layout (nth (- (length layout-lst) 1) layout-lst))
-  (command "_layout" "_set" new-layout))
+  (command-s "_layout" "_set" new-layout))
 
 (defun c:l-mid  (/ layout-lst)
   (setq layout-lst (layout-tab-list))
   (setq new-layout (nth (/ (- (length layout-lst) 2 ) 1) layout-lst))
-  (command "_layout" "_set" new-layout))
+  (command-s "_layout" "_set" new-layout))
 
-(defun c:lou () (command "_LAYOUT" "_S"))
+(defun c:lou () (command-s "_LAYOUT" "_S"))
 
 ;;;;;;("gr_on_off"
 ;;;;;;"Включение|Отключение выбора групп объектов
@@ -285,12 +285,12 @@
   (princ))
 
 (defun c:lim  (/ plb prt)
-  (command "_zoom" "_e")
-  (command "_zoom" "0.8x")
+  (command-s "_zoom" "_e")
+  (command-s "_zoom" "0.8x")
   (setq plb (getpoint "Левый нижний угол:")
         prt (getpoint "Правый верхний угол:"))
-  (command "_limits" "_non" plb "_non" prt)
-  (command "_zoom" "_e"))
+  (command-s "_limits" "_non" plb "_non" prt)
+  (command-s "_zoom" "_e"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

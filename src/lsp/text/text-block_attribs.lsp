@@ -141,7 +141,7 @@
   (setq en-nm (car (nentsel "\nВыберите наименование:"))
         ed-nm (entget en-nm))
   (setq l-name (strcat (dxf-get 1 ed-ob) "_" (dxf-get 1 ed-nm)))
-  (command "_-layer" "_new" l-name "_set" l-name ""))
+  (command-s "_-layer" "_new" l-name "_set" l-name ""))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -98,7 +98,7 @@
 (defun c:a-l  (/ en te)
   (setq en (car (entsel "\nВыберите ось:"))
         te (axis:get-sh-name en))
-  (command "_CHANGE" en "" "_Properties" "_LAyer" te ""))
+  (command-s "_CHANGE" en "" "_Properties" "_LAyer" te ""))
 
 
 ;;;;;;("c:mnas-axis-graph-xy-n" "Построение семейства полилиний в координатах двух шкал.\n

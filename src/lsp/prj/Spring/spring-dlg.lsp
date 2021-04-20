@@ -96,7 +96,7 @@
           ((= action 2) (spring-draw))))
   (unload_dialog dcl_id)
 ;;;  (setq *error* old_err)
-;;;  (command "_.undo" "_end")
+;;;  (command-s "_.undo" "_end")
 ;;;  (setvar "cmdecho" 1)
   )
 

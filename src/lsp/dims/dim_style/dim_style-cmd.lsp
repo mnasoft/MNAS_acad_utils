@@ -159,10 +159,10 @@
   (mapcar (function (lambda (el)
                       (load_dim_vars)
                       (setvar "DIMSCALE" (cadr el))
-                      (command "_DIMSTYLE" "_save" (car el))
+                      (command-s "_-DIMSTYLE" "_save" (car el))
                       (if (= 1 (getvar "cmdactive"))
-                        (command "_Y"))))
+                        (command-s "_Y"))))
           dstyle_size))
 
-(defun c:MNASAddDimStyle () (create_dim_styles) (command "_-DIMSTYLE" "_restore" "0001_1") (princ))
+(defun c:MNASAddDimStyle () (create_dim_styles) (command-s "_-DIMSTYLE" "_restore" "0001_1") (princ))
 

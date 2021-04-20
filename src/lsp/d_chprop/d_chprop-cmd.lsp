@@ -5,7 +5,7 @@
   (setq old_err *error*
         *error* err)
   (setvar "cmdecho" 0)
-  (command "_undo" "_group")
+  (command-s "_undo" "_group")
   (cond ((= (substr (ver) 1 8) "AutoLISP")
          (setq by_layer "BYLAYER"
                by_block "BYBLOCK"))
@@ -68,20 +68,20 @@
           ((= action 16) (ac-1)))       ;cond
     )
   (unload_dialog dcl_id)
-  (command "_undo" "_end")
+  (command-s "_undo" "_end")
   (setvar "cmdecho" 1)
   (princ))
 
 (defun ac-1  ()
   (if ename1
-    (progn (command "_chprop" ename1 "")
+    (progn (command-s "_chprop" ename1 "")
            (if (= layer4 "1")
-             (command "_la" layer1))
+             (command-s "_la" layer1))
            (if (= ltype4 "1")
-             (command "_lt" ltype1))
+             (command-s "_lt" ltype1))
            (if (= color4 "1")
-             (command "_c" color1))
-           (command ""))))
+             (command-s "_c" color1))
+           (command-s ""))))
 
 (defun ac-4  (/ q dcl_id)
   (defun q (i) (cdr (assoc 2 i)))

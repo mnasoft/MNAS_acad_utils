@@ -3,11 +3,11 @@
   (setq	m 30
 	n 30
 	i 0)
-  (command "3dmesh" m n)
+  (command-s "3dmesh" m n)
   (while (< i m)
     (setq j 0)
     (while (< j n)
-      (command (list (xi i) (yj j) (zij i j)))
+      (command-s (list (xi i) (yj j) (zij i j)))
       (setq j (1+ j)))
     (setq i (1+ i))))
 

@@ -270,7 +270,7 @@
   )
   (weld_pp_list_apply)
   (entmod ed)
-  (command "_redraw")
+  (command-s "_redraw")
 )
 
 ;;;Применяет к текущей редактируемой позиции изменения, выполненные в диалоге
@@ -290,7 +290,7 @@
   )
   (weld_pp_list_apply)
   (entmod ed)
-  (command "_redraw")
+  (command-s "_redraw")
 )
 
 (defun arrow_apply ()
@@ -421,7 +421,7 @@
     )
     (setq i (1+ i))
   )
-  (command "_redraw")
+  (command-s "_redraw")
 )
 
 (defun ac_text_color_image (key x y)

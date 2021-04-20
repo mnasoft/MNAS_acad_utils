@@ -11,8 +11,8 @@
     (setq lay_li (cons la lay_li))
     (setq cur (+ cur 1)))
   (setq lay_li (bin_or lay_li))
-  (command "._vplayer")
-  (mapcar (function (lambda (el) (command "_Freeze" el ""))) lay_li)
+  (command-s "._vplayer")
+  (mapcar (function (lambda (el) (command-s "_Freeze" el ""))) lay_li)
   (if_cmd_active)
   (err-handle ""))
 
@@ -29,8 +29,8 @@
     (setq lay_li (cons la lay_li))
     (setq cur (+ cur 1)))
   (setq lay_li (bin_or lay_li))
-  (command "._vplayer")
-  (mapcar (function (lambda (el) (command "_thaw" el ""))) lay_li)
+  (command-s "._vplayer")
+  (mapcar (function (lambda (el) (command-s "_thaw" el ""))) lay_li)
   (if_cmd_active)
   (err-handle ""))
 
@@ -47,10 +47,10 @@
     (setq lay_li (cons la lay_li))
     (setq cur (+ cur 1)))
   (setq lay_li (bin_or lay_li))
-  (command "._vplayer" "_freeze" "~")
+  (command-s "._vplayer" "_freeze" "~")
   (if_cmd_active)
-  (command "._vplayer")
-  (mapcar (function (lambda (el) (command "_thaw" el ""))) lay_li)
+  (command-s "._vplayer")
+  (mapcar (function (lambda (el) (command-s "_thaw" el ""))) lay_li)
   (if_cmd_active)
   (err-handle ""))
 
@@ -59,7 +59,7 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (princ "\nРазморозка всех слоев для данного порта просмотра.")
-  (command "_vplayer" "_thaw" "~")
+  (command-s "_vplayer" "_thaw" "~")
   (if_cmd_active)
   (err-handle ""))
 
@@ -73,16 +73,16 @@
   (princ "\nЗамораживание всех за исключением выбраного и заканчивающегося на _d для данного порта.")
   (if (= 1 (getvar "tilemode"))
     (setvar "tilemode" 0))
-  (command "._mspace")
+  (command-s "._mspace")
   (if_cmd_active)
   (setq en   (car (entsel "\nВыберите примитив:"))
         ed   (entget en)
         la_d (cdr (assoc 8 ed)))
   (cond ((wcmatch (strcase la_d) (strcase "*_d"))
          (setq la (substr la_d 1 (- (strlen la_d) (strlen "_d"))))
-         (command "._vplayer" "_Freeze" "*" "_Current" "_Thaw" la "_Current" "_Thaw" la_d "_Current"))
+         (command-s "._vplayer" "_Freeze" "*" "_Current" "_Thaw" la "_Current" "_Thaw" la_d "_Current"))
         ((null (wcmatch (strcase la_d) (strcase "*_d")))
-         (command "._vplayer"
+         (command-s "._vplayer"
                   "_Freeze"
                   "*"
                   "_Current"

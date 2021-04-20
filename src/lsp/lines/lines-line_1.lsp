@@ -1,6 +1,6 @@
 ;;;;;;("xt" "Удлинение|укорачивание выбранных отрезков в оба конца на dl." "Измени")
 (defun c:xt  (/ li dl cur num en ed pt1 pt2 pt_1 pt_2)
-  (command "_.undo" "_begin")
+  (command-s "_.undo" "_begin")
   (prompt "\nЛинии для удлинения в обе стороны:")
   (setq li (ssget '((0 . "LINE"))))
   (setq dl (getdist "\nВведите расстояние:"))
@@ -16,12 +16,12 @@
           ed   (dsubst ed (list (cons 10 pt_1) (cons 11 pt_2))))
     (entmod ed)
     (setq cur (+ cur 1)))
-  (command "_.undo" "_end")
+  (command-s "_.undo" "_end")
   (princ))
 
 ;;;;;;("exl" "Удлинение|укорачивание отрезка в одну сторону на dl." "Измени")
 (defun c:exl  (/ dist en ed ename_pt pt pt1 pt2 pt3 pt4)
-  (command "_.undo" "_begin")
+  (command-s "_.undo" "_begin")
   (setq ename_pt (entsel "\nВыберите линию с удлиняемой стороны:")
         en       (car ename_pt)
         ed       (entget en)
@@ -32,7 +32,7 @@
   (if (> (distance pt1 pt) (distance pt2 pt))
     (progn (setq pt3 (polar pt2 (angle pt1 pt2) dist)) (ch_dxf en 11 pt3))
     (progn (setq pt4 (polar pt1 (angle pt2 pt1) dist)) (ch_dxf en 10 pt4)))
-  (command "_.undo" "_end")
+  (command-s "_.undo" "_end")
   (princ))
 
 ;;;;;;("z0"
@@ -63,15 +63,15 @@
 ;;;;;;("xtcen"
 ;;;;;;"Удлинение всех осевых линий за границы контура на определенное расстояние." "Измени")
 (defun c:xtcen  (/ ss_cut_edges li dl cur num en ed pt1 pt2 pt_1 pt_2 pbox)
-  (command "_.undo" "_begin")
+  (command-s "_.undo" "_begin")
   (setq pbox (getvar "pickbox"))
   (setq li           (get_center_lines)
         ss_cut_edges (get_cut_edges))
   (setq dl (getdist "\nВведите расстояние:"))
   (do_ext_lines (* dl 0.1) li)
-  (command "_zoom" "_e")
-  (command "_redraw")
-  (command "_trim" ss_cut_edges "")
+  (command-s "_zoom" "_e")
+  (command-s "_redraw")
+  (command-s "_trim" ss_cut_edges "")
   (setq cur 0)
   (setq num (sslength li))
   (while (< cur num)
@@ -79,13 +79,13 @@
           ed  (entget en)
           pt1 (cdr (assoc 10 ed))
           pt2 (cdr (assoc 11 ed)))
-    (command pt1 pt2)
+    (command-s pt1 pt2)
     (setq cur (+ cur 1)))
-  (command "")
+  (command-s "")
   (do_ext_lines dl li)
-  (command "_zoom" "_p")
+  (command-s "_zoom" "_p")
   (setvar "pickbox" pbox)
-  (command "_.undo" "_end"))
+  (command-s "_.undo" "_end"))
 
 
 ;;;f;;;("get_center_lines" "Возвращает набор выбора из отрезков, имеющих осевой тип линии.
@@ -151,4 +151,4 @@
     (setq cur (+ cur 1))))
 
 
-(defun c:cxt () (command "_script" (findfile (utils:path-src-lsp "lines/cxt.scr"))))
+(defun c:cxt () (command-s "_script" (findfile (utils:path-src-lsp "lines/cxt.scr"))))

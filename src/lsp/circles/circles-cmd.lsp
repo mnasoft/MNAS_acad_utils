@@ -3,7 +3,7 @@
   (princ "\nПостроение окружности по радиусу и центру")
   (setq p0 (getdist "\nРадиус:"))
   (setq p01 (getpoint "\nЦентр:"))
-  (command "_.circle" p01 p0)
+  (command-s "_.circle" p01 p0)
   (princ))
 
 ;;;;;;("c_d" "Построение окружности по диаметру и центральной точке." "Отверстия")
@@ -11,7 +11,7 @@
   (princ "\nПостроение окружности по диаметру и центру")
   (setq p0 (* 0.5 (getdist "\nДиаметр:")))
   (setq p01 (getpoint "\nЦентр:"))
-  (command "_.circle" p01 p0)
+  (command-s "_.circle" p01 p0)
   (princ))
 
 ;;;;;;("cl_s" "Построение группы окружностей, имеющих один центр." "Отверстия")
@@ -25,7 +25,7 @@
   (setq p4 (polar p3 (+ (/ pi 2.) ang) dist))
   (while (setq p5 (getpoint "\nPoint:"))
     (setq p6 (inters p5 (polar p5 ang dist) p3 p4 nil))
-    (command "_.circle" "_non" p3 "_non" p6))
+    (command-s "_.circle" "_non" p3 "_non" p6))
   (princ))
 
 ;;;;;;("ax_c" "Построение окружности с осями." "Отверстия")
@@ -37,7 +37,7 @@
   (setq dl (getdist "\nРасстояние, на которое оси выходят за пределы окружности:"))
   (setq alfa (getangle "\nУгол поворота осей от нулевого направления:"))
   (axis_ p0 r alfa dl dir_0)
-  (command "_.circle" "_non" p0 r))
+  (command-s "_.circle" "_non" p0 r))
 
 ;;;;;;("ax_a" "Построение дуги с осями." "Отверстия")
 (defun c:ax_a  (/ p0 p1 dir_0 r dl alfa st_arc vertex_arc)
@@ -81,7 +81,7 @@
   (setq ent_last (entnext ent_last))
   (while ent_last (setq ent_list (cons ent_last ent_list)) (setq ent_last (entnext ent_last)))
   (setq ss (list_to_ss  ent_list))
-  (command "select" ss "")
+  (command-s "select" ss "")
   (princ))
 
 ;;;;;;("p_axis" "Построение осей для отмеченных окружностей и дуг." "Отверстия")
@@ -99,7 +99,7 @@
   (setq ent_last (entnext ent_last))
   (while ent_last (setq ent_list (cons ent_last ent_list)) (setq ent_last (entnext ent_last)))
   (setq ss (list_to_ss  ent_list))
-  (command "select" ss "")
+  (command-s "select" ss "")
   (princ))
 
 ;;;;;;("c_el" "Построение проекции окружности." "Отверстия")
@@ -113,7 +113,7 @@
         pc  (inters p1 p2 p3 (polar p3 ang (distance p1 p2)) nil)
         pe1 (inters p1 p2 p4 (polar p4 ang (distance p1 p2)) nil)
         pe2 (polar pc ang (distance p3 p4)))
-  (command "_.ellipse" "_c" "_non" pc "_non" pe1 "_non" pe2))
+  (command-s "_.ellipse" "_c" "_non" pc "_non" pe1 "_non" pe2))
 
 ;;;;;;("cl_els" "Построение проекциий окружностей на заданную ось." "Отверстия")
 (defun c:cl_els  (/ a_e_pi2 a_c_pi2 p_e1 p_e2 p_c1 p_c2 p0 p1 p2 p3 p4)
@@ -129,5 +129,5 @@
           p2 (inters p_e1 p_e2 p0 (polar p0 a_e_pi2 1.0) nil)
           p3 (inters p_e1 p_e2 p1 (polar p1 a_e_pi2 1.0) nil)
           p4 (polar p3 a_e_pi2 (distance p1 p0)))
-    (command "_.ellipse" "_c" "_non" p3 "_non" p4 "_non" p2))
+    (command-s "_.ellipse" "_c" "_non" p3 "_non" p4 "_non" p2))
   (princ))

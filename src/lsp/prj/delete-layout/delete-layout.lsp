@@ -8,15 +8,19 @@
       lt      (vl-string-subst "" ".dwg" (getvar "dwgname")))
 
 
-(defun del-layout  (l-name l-lst / l-tmp) ;(command "open" l-name)
+(defun del-layout  (l-name l-lst / l-tmp) ;(command-s "open" l-name)
   (mapcar (function (lambda (el)
                       (if (not (= el l-name))
-                        (command "layout" "delete" el))))
+                        (command-s "layout" "delete" el))))
           l-lst))
 
-(del-layout lt 001-049)
+(del-layout lt 050-099)
 
-
+(mapcar (function (lambda (el)(command-s "saveas" "2018" el) ) )
+        '("002"    "003"    "004"    "005"    "006"    "008"    "009"    "010"    "015"    "016"    "017"    "018"
+          "019"    "020"    "021"    "022"    "023"    "024"    "025"    "026"    "027"    "028"    "029"    "030"
+          "031"    "032"    "033"    "034"    "035"    "036"    "037"    "038"    "039"    "040"    "041"    "042"
+          "043"    "044"    "045"    "046"    "047"    "048"    "049"))
 
 
 

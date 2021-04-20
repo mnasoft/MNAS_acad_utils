@@ -53,8 +53,4 @@
 (dr:point p_15 170)
 (dr:point p_16 180)
 (dr:point p_17 190)
-(command "regen")
-
- ;|«Visual LISP© Format Options»
-(150 2 15 2 nil "end of" 100 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+(command-s "regen")

@@ -1,5 +1,5 @@
 ;;;;;;("pd" "Настройка размеров и стиля отображения точки." "Настройка")
-(defun c:pd () (command "pdmode" "35") (command "pdsize" "2"))
+(defun c:pd () (command-s "pdmode" "35") (command-s "pdsize" "2"))
 
 ;;;;;;("xy" "Точка по приращениям." "Точки")
 (defun c:xy  (/ p0 p1 dir_0 dx dy p3)
@@ -9,7 +9,7 @@
   (setq dx (getreal "\nПриращение по X:"))
   (setq dy (getreal "\nПриращение по Y:"))
   (setq p3 (dxdy p0 dx dy dir_0))
-  (command "_point" "_non" p3)
+  (command-s "_point" "_non" p3)
   (setq p3 p3))
 
 ;;;;;;("xy_sc" "Точка по приращениям и масштабам." "Точки")
@@ -22,7 +22,7 @@
   (setq scx (getreal "\nМасштаб по X:"))
   (setq scy (getreal "\nМасштаб по Y:"))
   (setq p3 (dxdy_sc_xy p0 dx dy scx scy dir_0))
-  (command "_point" "_non" p3)
+  (command-s "_point" "_non" p3)
   (setq p3 p3))
 
 ;;;;;;("rot_p" "Точка повернутая с масштабом." "Точки")
@@ -34,5 +34,5 @@
   (setq dir_0 (angle p0 p1))
   (setq sc (getreal "\nМасштаб :"))
   (setq p3 (rotate_sc p0 point alfa sc))
-  (command "_point" "_non" p3)
+  (command-s "_point" "_non" p3)
   (setq p3 p3))

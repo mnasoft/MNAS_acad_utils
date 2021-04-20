@@ -70,7 +70,7 @@
 ;;	ins_block (p0 name sc dir_0)	- Производит вставку блока в чертеж
 (defun ins_block  (p0 name sc dir_0)
   (setq dir_0 (rtd dir_0))
-  (command "._insert" name "_non" p0 sc sc dir_0))
+  (command-s "._insert" name "_non" p0 sc sc dir_0))
 
 ;;	axis_(p0 r alfa dl dir_0)	- Проводит оси.
 (defun axis_  (p0 r alfa dl dir_0 / pr sc p1 p2)
@@ -78,17 +78,17 @@
   (setq sc (+ (/ dl r) 1.0))
   (setq p1 (rotate_sc p0 pr 0.0 sc))
   (setq p2 (rotate_sc p0 pr pi sc))
-  (command "_line" "_non" p1 "_non" p2 "")
+  (command-s "_line" "_non" p1 "_non" p2 "")
   (setq p1 (rotate_sc p0 pr (/ pi 2.) sc))
   (setq p2 (rotate_sc p0 pr (/ pi -2.) sc))
-  (command "_line" "_non" p1 "_non" p2 ""))
+  (command-s "_line" "_non" p1 "_non" p2 ""))
 
 ;;	arc_(p0 r st_arc vertex_arc dir_0) - Построение дуги без осей.
 (defun arc_  (p0 r st_arc vertex_arc dir_0 / p_st p_sc p_en)
   (setq p_st (polar_dir_0 p0 st_arc r dir_0))
   (setq p_sc (rotate_sc p0 p_st (/ vertex_arc 2.) 1.))
   (setq p_en (rotate_sc p0 p_st vertex_arc 1.))
-  (command "_arc" "_non" p_st "_non" p_sc "_non" p_en))
+  (command-s "_arc" "_non" p_st "_non" p_sc "_non" p_en))
 
 ;;	circle_arc (p0 rc ra dl ang_axis st_arc ver_arc dir_0) - Окружность и дуга с осями.
 (defun circle_arc  (p0 rc ra dl ang_axis st_arc ver_arc dir_0 / r)
@@ -96,7 +96,7 @@
     (setq r rc)
     (setq r ra))
   (arc_ p0 ra (+ st_arc ang_axis) ver_arc dir_0)
-  (command "_circle" "_non" p0 rc)
+  (command-s "_circle" "_non" p0 rc)
   (axis_ p0 r ang_axis dl dir_0))
 
 ;;	ax (circ dl ang)		- Строит оси для дуги ИЛИ окружности circ выступающие на dl.

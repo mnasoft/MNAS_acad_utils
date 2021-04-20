@@ -57,9 +57,9 @@
         (t
          (setq n_ar 12
                i    0)
-         (command "_pline" ".xy" "_non" (trans (polar pt_1 (* 0 2.0 (/ pi n_ar)) r) en 0) "0" "_arc")
+         (command-s "_pline" ".xy" "_non" (trans (polar pt_1 (* 0 2.0 (/ pi n_ar)) r) en 0) "0" "_arc")
          (while (< i n_ar)
-           (command "_second"
+           (command-s "_second"
                     ".xy"
                     "_non"
                     (trans (polar pt_1 (* (+ 0.5 i) 2.0 (/ pi n_ar)) r) en 0)
@@ -67,7 +67,7 @@
                     "_non"
                     (trans (polar pt_1 (* (1+ i) 2.0 (/ pi n_ar)) r) en 0))
            (setq i (1+ i)))
-         (command "cl")
+         (command-s "cl")
          (setq ss (ssadd (entlast) ss)))))
 
 (defun arc_sf  (/ pt_1 r a_s a_e p_s p_e d_210 n_ar i a_delta)
@@ -108,9 +108,9 @@
                          (+ pi pi (- a_e a_s)))
                n_ar    (1+ (fix (/ a_delta (/ pi 6.0))))
                i       0)
-         (command "_pline" ".xy" "_non" (trans (polar pt_1 a_s r) en 0) "0" "_arc")
+         (command-s "_pline" ".xy" "_non" (trans (polar pt_1 a_s r) en 0) "0" "_arc")
          (while (< i n_ar)
-           (command "_second"
+           (command-s "_second"
                     ".xy"
                     "_non"
                     (trans (polar pt_1 (+ a_s (* (+ 0.5 i) (/ a_delta n_ar))) r) en 0)
@@ -118,7 +118,7 @@
                     "_non"
                     (trans (polar pt_1 (+ a_s (* (1+ i) (/ a_delta n_ar))) r) en 0))
            (setq i (1+ i)))
-         (command "")
+         (command-s "")
          (setq ss (ssadd (entlast) ss)))))
 
 (defun insert_sf  (/ en_last)
@@ -127,14 +127,14 @@
         sc_z (cdr (assoc 43 ed)))
   (cond ((= sc_x sc_y sc_z)
          (setq en_last (entlast))
-         (command "_explode" en)
+         (command-s "_explode" en)
          (setq en_last (entnext en_last))
          (while en_last
            (setq ss      (ssadd en_last ss)
                  en_last (entnext en_last))))))
 (defun pline_sf  (/ en_last)
   (setq en_last (entlast))
-  (command "_explode" en)
+  (command-s "_explode" en)
   (setq en_last (entnext en_last))
   (while en_last
     (setq ss      (ssadd en_last ss)
@@ -142,9 +142,9 @@
 (defun out_my_err  (str)
   (setq *error* old_err)
   (print str)
-  (command "_undo" "_end")
+  (command-s "_undo" "_end")
   (close fl)
-  (command "_u" "_u")
+  (command-s "_u" "_u")
   (alert "Разработал Матвеев Н.А.\nтелефоны:\nрабочий (0512)29-74-11\nдомашний (0512)22-88-73")
   (setvar "cmdecho" echo)
   (princ))

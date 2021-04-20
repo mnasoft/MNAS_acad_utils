@@ -70,7 +70,7 @@
                   ("error" "")          ;error ; Поток ошибок
                   ))
 
-(defun reg_en () (command "_regen"))
+(defun reg_en () (command-s "_regen"))
 
 ;;;;;;("rou_i2" "Простановка обозначения шероховатости." "Размеры")
 (defun c:rou_i2  (/ dcl_id do_dialog p1 p2 fl fl_nm kw str_kw osm)
