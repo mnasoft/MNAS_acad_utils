@@ -63,10 +63,10 @@
 	  (list v_top_kt v_bot_kb v_bok_kt v_bok_kb))
   (mapcar (function
 	    (lambda (el)
-	      (VL-CMDF "_mirror" (vlax-vla-object->ename (eval (read el))) "" p_top p_bot "_N")
+	      (command-s "_mirror" (vlax-vla-object->ename (eval (read el))) "" p_top p_bot "_N")
 	      (set (read (strcat el "_mir")) (vlax-ename->vla-object (entlast)))))
 	  (list "v_bot" "v_kb" "v_bok" "v_kt" "v_top"))
-  (VL-CMDF "_pedit"
+  (command-s "_pedit"
 	   (vlax-vla-object->ename v_bot)
 	   "_y"
 	   "_j"

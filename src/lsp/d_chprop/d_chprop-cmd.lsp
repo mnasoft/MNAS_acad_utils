@@ -74,14 +74,13 @@
 
 (defun ac-1  ()
   (if ename1
-    (progn (command-s "_chprop" ename1 "")
-           (if (= layer4 "1")
-             (command-s "_la" layer1))
+    (progn (if (= layer4 "1")
+             (command-s "_chprop" ename1 "" "_la" layer1 ""))
            (if (= ltype4 "1")
-             (command-s "_lt" ltype1))
+             (command-s "_chprop" ename1 "" "_lt" ltype1 ""))
            (if (= color4 "1")
-             (command-s "_c" color1))
-           (command-s ""))))
+             (command-s "_chprop" ename1 "" "_c" color1 "")))))
+
 
 (defun ac-4  (/ q dcl_id)
   (defun q (i) (cdr (assoc 2 i)))
