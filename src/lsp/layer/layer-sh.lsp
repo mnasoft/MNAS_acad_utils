@@ -3,7 +3,7 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq str (getstring (strcat "Включить слои <" la_shabl_on_off ">:")))
-  (vl-cmdf "_.-layer"
+  (command-s "_.-layer"
            "_on"
            (if (= "" str)
              la_shabl_on_off
@@ -16,7 +16,7 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq str (getstring (strcat "Выключить слои <" la_shabl_on_off ">:")))
-  (vl-cmdf "_.-layer"
+  (command-s "_.-layer"
            "_off"
            (if (= "" str)
              la_shabl_on_off
@@ -29,7 +29,7 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq str (getstring (strcat "Разморозить слои <" la_shabl_th_fr ">:")))
-  (vl-cmdf "_.-layer"
+  (command-s "_.-layer"
            "_thaw"
            (if (= "" str)
              la_shabl_th_fr
@@ -42,7 +42,7 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq str (getstring (strcat "Заморозить слои <" la_shabl_th_fr ">:")))
-  (vl-cmdf "_.-layer"
+  (command-s "_.-layer"
            "_freeze"
            (if (= "" str)
              la_shabl_th_fr
@@ -55,7 +55,7 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq str (getstring (strcat "Блокировать слои <" la_shabl_lo_un ">:")))
-  (vl-cmdf "_.-layer"
+  (command-s "_.-layer"
            "_lock"
            (if (= "" str)
              la_shabl_lo_un
@@ -68,7 +68,7 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq str (getstring (strcat "Разблокировать слои <" la_shabl_lo_un ">:")))
-  (vl-cmdf "_.-layer"
+  (command-s "_.-layer"
            "_unlock"
            (if (= "" srt)
              la_shabl_lo_un
@@ -82,9 +82,9 @@
   (set-sys-var-lst '(("cmdecho" 0)))
   (if (= 1 (getvar "tilemode"))
     (setvar "tilemode" 0))
-  (vl-cmdf "_mspace")
+  (command-s "_mspace")
   (if_cmd_active)
-  (vl-cmdf "_vplayer"
+  (command-s "_vplayer"
            "_thaw"
            (if (= "" (setq str (getstring (strcat "Размомрозить слои <" vp_la_shabl_th_fr ">:"))))
              vp_la_shabl_th_fr
@@ -98,9 +98,9 @@
   (set-sys-var-lst '(("cmdecho" 0)))
   (if (= 1 (getvar "tilemode"))
     (setvar "tilemode" 0))
-  (vl-cmdf "_mspace")
+  (command-s "_mspace")
   (if_cmd_active)
-  (vl-cmdf "_vplayer"
+  (command-s "_vplayer"
            "_freeze"
            (if (= "" (setq str (getstring (strcat "Размомрозить слои <" vp_la_shabl_th_fr ">:"))))
              vp_la_shabl_th_fr
