@@ -1,149 +1,426 @@
-﻿<html>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
 <head>
- <style>
-   .colortext {
-     color: red; /* Красный цвет выделения */
-   }
+<!-- 2020-07-31 Пт 20:46 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>README</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
 </style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
 </head>
-<h1>0. Получение комплекса программ</h1>
-<p>Комплекс программ доступен для скачивания в двух вариантах в виде:</p>
+<body>
+<div id="content">
+<h1 class="title">README</h1>
+<div id="table-of-contents">
+<h2>&#1057;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1085;&#1080;&#1077;</h2>
+<div id="text-table-of-contents">
 <ul>
-<li>установочного файла;</li>
-<li>исходных файлов.</li>
-</ul>
-<h2>0.1	Получение установочного файла</h2>
-<p>Установочный файл можно скачать по приведенным ниже адресам:</p>
-<ol>
-<li>http://mnasoft.mksat.net/Products/MNAS_AutoCAD_db17_utils/ - (все версии) главный сайт проекта.</li>
-<li>http://dwg.ru/dnl/11383 - (версия 3.0.0.2)</li>
-<li>http://dwg.ru/dnl/10039 - (версия 2.7.7.5)</li>
-<li>http://dwg.ru/dnl/8319  - (версия 2.7.6)</li>
-</ol>
-<h2>0.2	Сборка установочного файла из исходных файлов</h2>
-<h3>0.2.1 Рекомендуемое программное обеспечение для сборки из исходных файлов</h3>
-<p>Перечень рекомендуемого программного обеспечение для сборки комплекса программ из исходных файлов:</p>
+<li><a href="#orgf8a4ef1">1. Загрузка и распаковка</a>
 <ul>
-<li><a href="http://nsis.sourceforge.net/Download">NSIS 3.0b2</a>. Для сборки установщика. (обязательно).</li>
-<li><a href="http://www.python.org">Python 3.4</a>. Для сборки установщика (обязательно).</li>
-<li><a href="http://git-scm.com/download/win">Git</a> или <a href="https://desktop.github.com/">GitHub Desktop</a>. Для получения исходных файлов в виде git-репозитория (обязательно).</li>
-<li><a href="http://notepad-plus-plus.org/"> Notepad++</a>. Для редактирования отдельных файлов (не обязательно).</li>
+<li><a href="#orgefcbfd7">1.1. Скачайте zip-архив <code>MNAS_acad_utils</code> (ветку develop) по адресу</a></li>
+<li><a href="#orgfde20d3">1.2. Распакуйте архив</a></li>
 </ul>
-<h3>0.2.2	Получение исходных файлов</h3>
-Исходные файлы можно получитьт с сайта https://github.com/mnasoft/MNAS_acad_utils в виде:
+</li>
+<li><a href="#orgb0b4643">2. Настройка</a>
 <ul>
-<li>git-репозитория <a href="https://github.com/mnasoft/MNAS_acad_utils">MNAS_acad_utils</a><br />
-Скачать git-репозиторий можно при помощи команды:<br />
-<code>
-    $ git clone git://github.com/mnasoft/MNAS_acad_utils.git
-</code>
-</ul>
-<h3>0.2.3 Компиляция vlx приложения из исходных файлов</h3>
-<ol>
-<li>Запустите AutoCAD.</li>
-<li>Выполните команду <code>vlisp</code> AutoCAD.</li>
-<li>При помощи программы Visual LISP, используя меню Файл->Собрать приложение->Собрать приложение ..., соберите приложение:
-<code><pre>
-...\MNAS_acad_utils\acad_w.sup\MNASoft.prv
-</pre></code></li>
-</ol>
-<h3>0.2.4 Сборка установщика (выполняется при добавлении|удалении исходных файлов)</h3>
-<ol>
-<li>Запустите Python_(command line) или IDLE_(Python_GUI).</li>
-<li>Перейдите в корневой каталог проекта при помощи следующих команд:
-<code><pre>
->>> import os
->>> os.chdir('E:\\home\\namatv\\git\\GitHub\\MNAS_acad_utils') # Заданный в кавычках путь адаптируйте для вашего случая.
-</pre></code></li>
-<li>Загрузите модуль nsi при помощи следующей команды:
-<code><pre>
->>> import nsi
-</pre></code></li>
-<li>Закройте Python_(command line) или IDLE_(Python_GUI) при помощи следующей команы:
-<code><pre>
->>> quit()
-</pre></code></li>
-<li>Перейдите при помощи программы Проводник в каталог, содержащий файл MNAS_acad_utils.nsi (корневой каталог проекта).</li>
-<li>При помощи контекстного меню (вызывается щелчком по файлу правой кнопкой мыши), вызванного для файла MNAS_acad_utils.nsi, выберите пункт "Compile NSYS Script" или "Compile NSYS Script (Choose Compressor)".</li>
-</ol>
-
-<h1>1. Инструкция по установке и настройке комплекса программ MNAS_acad_utils для Администратора</h1>
-<h2>1.1	Установка пакета MNAS_acad_utils </h2>
-<p>Установите пакет MNAS_acad_utils-X.Х.Х.Х.exe. Запомните имя каталога, в который в будет установлен комплекс программ, (Далее по тексту ...= путь установки комплекса программ).</p>
-<h2>1.2 Настройка разрешений</h2>
-<p>Предполагаается, что в процессе работы с комплексом программ пользователь будет подгружать частичное меню и возможно, захочет что-то поправить в исходном коде программ.</p>
-<p>Для обеспечения вышеуказанных возможностей разрешите изменение содержимого каталога с комплексом программ для пользователей, которые будут с ним работать.</p>
-<h1>2. Инструкция по настройке комплекса программ MNAS_acad_utils для Пользователя AutoCAD</h1>
-<h2>2.1 Очистка записей с информацией о промежуточных данных работы команд комплекта из системного реестра</h2>
-Если вы переходите из версии MNAS_AutoCAD_db17_utils-2.3 или более ранней - удалите из системного реестра папку  HKEY_CURRENT_USER\Software\MNASoft.<br />
-Для удаления воспользуйтесь программой regedit.
-
-<h2>2.2 Настройка AutoCAD для работы с комплексом программ MNAS_acad_utils.</h2>
-<p>Запустите AutoCAD на выполнение.</p>
-
-<h2>2.3 Добавление путей для поиска файлов адаптации</h2>
-<ol>
-<li>Выполните команду AutoCAD _options.</li>
-<li>В диалоге "Настройка" ("Options") перейдите на вкладку "Файлы" ("Files").</li>
-<li>Выберите элемент "Путь доступа к вспомогательным файлам" ("Support File Search Path").</li>
-<li>Добавьте перечисленные ниже пути:</li>
+<li><a href="#org00eb010">2.1. Выберите версию <code>AutoCAD</code>, к которой вы хотите подключить пакет <code>MNAS_acad_utils</code></a>
 <ul>
-<li>"..." ;</li>
-<li>"...\acad_fnt" ;</li>
-<li>"...\acad.mnu";</li>
-<li>"...\acad.mnu\Acad_mnu_icon" .</li>
+<li><a href="#orgf14d4dd">2.1.1. Запустите <code>AutoCAD</code> на выполнение</a></li>
+<li><a href="#org2d621ef">2.1.2. Прекратите работу AutoCAD</a></li>
 </ul>
-<li>Закройте диалог.</li>
-</ol>
-<h2>2.4 Загрузка файла меню частичной адаптации.</h2>
-<ol>
-<li>Выполните команду AutoCAD <code>"_cui"</code>.</li>
-<li>В диалоге "Адаптация пользовательского интерфейса" ("Customize User Interface") перейдите на вкладку "Адаптация" ("Customize").</li>
-<li>Нажмите кнопку "Загрузить файл частичной адаптации" ("Load partial customization file"), расположенную на панели инструментов (открытая папка с знаком +).</li>
-<li>В диалоге "Открыть" выберите файл "...\MNAS_acad_utils\acad.mnu\MNASoft.cuix" .</li>
-<li>Закройте диалог "Адаптация пользовательского интерфейса" ("Customize User Interface").</li>
-</ol>
+</li>
+<li><a href="#org8ea989a">2.2. Подключение путей</a>
+<ul>
+<li><a href="#org45d8bf0">2.2.1. Из каталога установки выполните программу MNASoft-Path-Add.exe</a></li>
+</ul>
+</li>
+<li><a href="#orgc43494f">2.3. Подключение меню пакета <code>MNAS_acad_utils</code></a>
+<ul>
+<li><a href="#org1d5a43a">2.3.1. Запустите AutoCAD на выполнение</a></li>
+<li><a href="#org4ee3672">2.3.2. Выполните команду <code>_CUI</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 
-<h2>2.5 Перезапуск AutoCAD.</h2>
-<p>Для версий AutoCAD до 2013 необходим перезапуск, чтобы пути адаптации начали действовать.</p>
-<ol>
-<li>Завершите сеанс AutoCAD.</li>
-<li>Повторно запустите AutoCAD.</li>
-</ol>
+<div id="outline-container-orgf8a4ef1" class="outline-2">
+<h2 id="orgf8a4ef1"><span class="section-number-2">1</span> Загрузка и распаковка</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgefcbfd7" class="outline-3">
+<h3 id="orgefcbfd7"><span class="section-number-3">1.1</span> Скачайте zip-архив <code>MNAS_acad_utils</code> (ветку develop) по адресу</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<a href="https://github.com/mnasoft/MNAS_acad_utils/tree/develop">https://github.com/mnasoft/MNAS_acad_utils/tree/develop</a> .
+</p>
 
-<h2>2.6 Получение списка команд MNAS_acad_utils.</h2>
-<p> Ознакомьтесь со списком команд, определенных в комплексе программ MNAS_acad_utils, их краткое описание можно просмотреть
-  , вызвав команду MAN.</p>
 
-<h3>Приятной работы с использованием комплекса программ MNAS_acad_utils.</h3>
+<div class="figure">
+<p><img src="image/image001.jpg" alt="image001.jpg" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 1.: </span>Скачивание пакета <code>MNAS_acad_utils</code> (ветки develop)</p>
+</div>
 
-<h1>3. Инструкция по деинсталяции комплекса программ MNAS_acad_utils для Пользователя AutoCAD</h1>
-<h2>3.1 Вызрузка файла меню частичной адаптации</h2>
+<p>
+Сохраните файл
+</p>
 
-<ol>
-<li>Запустите AutoCAD</li>
-<li>Выполните команду AutoCAD _cui.</li>
-<li>В диалоге "Адаптация пользовательского интерфейса" перейдите на вкладку "Адаптация".</li>
-<li>В выпадающем списке "Адаптации" выберите элемент "Все файлы адаптации".</li>
-<li>Раскройте элемент "Файлы частичной адаптации".</li>
-<li>Вызовите контекстное меню элемента "MNASOFT".</li>
-<li>Выберите из контекстного меню элемент "Выгрузить MNASoft.CUIX".</li>
-<li>Закройте диалог "Адаптация пользовательского интерфейса".</li>
-</ol>
+<div class="figure">
+<p><img src="image/image002.jpg" alt="image002.jpg" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 2.: </span>Сохранение файла</p>
+</div>
+</div>
+</div>
 
-<h2>3.2 Удаление путей поиска файлов адаптации.</h2>
-<ol>
-<li>Выполните команду AutoCAD _options.</li>
-<li>В диалоге "Настройка" перейдите на вкладку "Файлы".</li>
-<li>Выберите элемент "Путь доступа к вспомогательным файлам".</li>
-<li>Удалите пути, добавленные в пункте 2.3.</li>
-<li>Закройте диалог "Настройка"</li>
-</ol>
-<h3><p>Приятной работы без использования комплекса программ MNAS_acad_utils.</p></h3>
 
-<h1>4. Инструкция по деинсталяции комплекса программ MNAS_acad_utils для Администратора</h1>
-<h2>Очистка системного реестра.</h2>
-<ol>
-<li>Используя диалог "Установка и удаление программ" "Панели инструментов" удалите комплекс программ MNAS_acad_utils.</li>
-</ol>
+<div id="outline-container-orgfde20d3" class="outline-3">
+<h3 id="orgfde20d3"><span class="section-number-3">1.2</span> Распакуйте архив</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<div class="figure">
+<p><img src="image/image003.jpg" alt="image003.jpg" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 3.: </span>Распаковка архива</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb0b4643" class="outline-2">
+<h2 id="orgb0b4643"><span class="section-number-2">2</span> Настройка</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org00eb010" class="outline-3">
+<h3 id="org00eb010"><span class="section-number-3">2.1</span> Выберите версию <code>AutoCAD</code>, к которой вы хотите подключить пакет <code>MNAS_acad_utils</code></h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-orgf14d4dd" class="outline-4">
+<h4 id="orgf14d4dd"><span class="section-number-4">2.1.1</span> Запустите <code>AutoCAD</code> на выполнение</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<div class="figure">
+<p><img src="image/image006.jpg" alt="image006.jpg" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 4.: </span>AutoCAD запущен</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2d621ef" class="outline-4">
+<h4 id="org2d621ef"><span class="section-number-4">2.1.2</span> Прекратите работу AutoCAD</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Данная манипуляция делает запись в системнои реестре о последней запущенной версии <code>AutoCAD</code>, 
+которая используется для подлючения путей.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8ea989a" class="outline-3">
+<h3 id="org8ea989a"><span class="section-number-3">2.2</span> Подключение путей</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org45d8bf0" class="outline-4">
+<h4 id="org45d8bf0"><span class="section-number-4">2.2.1</span> Из каталога установки выполните программу MNASoft-Path-Add.exe</h4>
+<div class="outline-text-4" id="text-2-2-1">
+
+<div class="figure">
+<p><img src="image/image007.jpg" alt="image007.jpg" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 5.: </span>Выполните программу MNASoft-Path-Add.exe</p>
+</div>
+
+
+<div class="figure">
+<p><img src="image/image008.jpg" alt="image008.jpg" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 6.: </span>Программа отражает подключенные пути. Нажмите Enter (Ввод)</p>
+</div>
+
+<p>
+Нажмите клавишу Enter
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc43494f" class="outline-3">
+<h3 id="orgc43494f"><span class="section-number-3">2.3</span> Подключение меню пакета <code>MNAS_acad_utils</code></h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org1d5a43a" class="outline-4">
+<h4 id="org1d5a43a"><span class="section-number-4">2.3.1</span> Запустите AutoCAD на выполнение</h4>
+</div>
+
+<div id="outline-container-org4ee3672" class="outline-4">
+<h4 id="org4ee3672"><span class="section-number-4">2.3.2</span> Выполните команду <code>_CUI</code></h4>
+<div class="outline-text-4" id="text-2-3-2">
+
+<div class="figure">
+<p><img src="image/image009.jpg" alt="image009.jpg" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 7.: </span>В командной строке набрана команда <code>_CUI</code></p>
+</div>
+
+
+<div class="figure">
+<p><img src="image/image010.jpg" alt="image010.jpg" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 8.: </span>Кликните мышью папку со значком +</p>
+</div>
+
+<p>
+Выберите файл адаптации из <code>.\MNAS_acad_utils-develop\menus\mnasoft.bak.cuix</code>
+</p>
+
+
+<div class="figure">
+<p><img src="image/image011.jpg" alt="image011.jpg" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 9.: </span>Выбор файла адаптпции (меню)</p>
+</div>
+
+<p>
+Нажмите на кнопку OK
+</p>
+
+
+<div class="figure">
+<p><img src="image/image012.jpg" alt="image012.jpg" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 10.: </span>Подключение меню</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">&#1044;&#1072;&#1090;&#1072;: 2020-07-31 Пт 00:00</p>
+<p class="date">Created: 2020-07-31 Пт 20:46</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
 </html>

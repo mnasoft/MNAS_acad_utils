@@ -1,0 +1,90 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: README
+#+DATE: <2020-07-31 Пт>
+#+AUTHOR:
+#+EMAIL: mnasoft@gmail.com
+#+LANGUAGE: ru
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:auto
+#+OPTIONS: html-preamble:t html-scripts:t html-style:t
+#+OPTIONS: html5-fancy:nil tex:t
+#+HTML_DOCTYPE: xhtml-strict
+#+HTML_CONTAINER: div
+#+DESCRIPTION:
+#+KEYWORDS:
+#+HTML_LINK_HOME:
+#+HTML_LINK_UP:
+#+HTML_MATHJAX:
+#+HTML_HEAD:
+#+HTML_HEAD_EXTRA:
+#+SUBTITLE:
+#+INFOJS_OPT:
+#+CREATOR: <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.1.9)
+#+LATEX_HEADER:
+
+* Загрузка и распаковка
+** Скачайте zip-архив =MNAS_acad_utils= (ветку develop) по адресу 
+https://github.com/mnasoft/MNAS_acad_utils/tree/develop .
+
+#+CAPTION: Скачивание пакета =MNAS_acad_utils= (ветки develop)
+[[file:image/image001.jpg]]
+
+Сохраните файл
+#+CAPTION: Сохранение файла
+[[file:image/image002.jpg]]
+
+
+** Распакуйте архив
+
+#+CAPTION: Распаковка архива
+ [[file:image/image003.jpg]]
+
+* Настройка
+** Выберите версию =AutoCAD=, к которой вы хотите подключить пакет =MNAS_acad_utils= 
+*** Запустите =AutoCAD= на выполнение
+
+ #+CAPTION: AutoCAD запущен
+  [[file:image/image006.jpg]]
+
+*** Прекратите работу AutoCAD
+
+Данная манипуляция делает запись в системнои реестре о последней запущенной версии =AutoCAD=, 
+которая используется для подлючения путей.
+** Подключение путей 
+*** Из каталога установки выполните программу MNASoft-Path-Add.exe
+
+ #+CAPTION: Выполните программу MNASoft-Path-Add.exe
+  [[file:image/image007.jpg]]
+
+ #+CAPTION: Программа отражает подключенные пути. Нажмите Enter (Ввод)
+  [[file:image/image008.jpg]]
+
+ Нажмите клавишу Enter
+
+** Подключение меню пакета =MNAS_acad_utils= 
+*** Запустите AutoCAD на выполнение
+
+*** Выполните команду =_CUI=
+
+ #+CAPTION: В командной строке набрана команда =_CUI=
+  [[file:image/image009.jpg]]
+
+ #+CAPTION:  Кликните мышью папку со значком +
+  [[file:image/image010.jpg]]
+
+ Выберите файл адаптации из =.\MNAS_acad_utils-develop\menus\mnasoft.bak.cuix=
+
+ #+CAPTION: Выбор файла адаптпции (меню)
+  [[file:image/image011.jpg]]
+
+ Нажмите на кнопку OK
+
+ #+CAPTION: Подключение меню
+  [[file:image/image012.jpg]]
