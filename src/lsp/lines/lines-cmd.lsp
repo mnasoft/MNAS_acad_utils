@@ -72,7 +72,7 @@
   (setq p21 (polar p2 (+ dir_0 (* zn pi 0.5)) (* zn rad)))
   (setq p11 (polar p1 (+ dir_0 (* zn ang)) (* zn rad)))
   (setq p3 (inters p1 p11 p2 p21 nil))
-  (command "_line" "_non" p1 "_non" p3 "")
+  (command-s "_line" "_non" p1 "_non" p3 "")
   (setq p3 p3))
 
 (defun off_ang_dia  (p0 off ang dia dir_0 / p1 p2 p01) ; Ћини€ в направлении (ang+dir_0) из точки, лежащей на перпедикул€ре к dir_0
@@ -80,7 +80,7 @@
                                         ; равна off ; зеркальна€ к ней ; и лини€ замыкающа€ концы этих линий.
   (setq p1 (off_ang_rad p0 off ang (/ dia 2.) dir_0))
   (setq p2 (off_ang_rad p0 off ang (/ dia -2.) dir_0))
-  (command "_line" "_non" p1 "_non" p2 "")
+  (command-s "_line" "_non" p1 "_non" p2 "")
   (setq p01 (polar p0 dir_0 off))
   (inters p0 p01 p1 p2 nil))
 
@@ -93,20 +93,20 @@
   (setq p11 (polar p1 (+ dir_0 alfa) d))
   (setq p21 (polar p2 (+ dir_0 (- 0 alfa)) d))
   (setq p3 (inters p1 p11 p2 p21 nil))
-  (command "_line" "_non" p1 "_non" p3 "_non" p2 "")
+  (command-s "_line" "_non" p1 "_non" p3 "_non" p2 "")
   (setq p3 p3))
 
 (defun otv  (p0 d l alfa dir_0 / p1 p2)
   (setq p1 (off_ang_rad p0 l 0 (/ d 2.) dir_0))
   (setq p2 (off_ang_rad p0 l 0 (/ d -2.) dir_0))
-  (command "_line" p1 "_non" p2 "_non" "")
+  (command-s "_line" p1 "_non" p2 "_non" "")
   (konus p1 p2 alfa dir_0))
 
 (defun otv_faska  (p0 d l h alfa gamma dir_0 / p1 p2 p3)
   (setq p1 (polar p0 dir_0 h))
   (setq p2 (polar p1 (+ dir_0 (/ pi 2.)) (/ d 2.)))
   (setq p3 (polar p1 (- dir_0 (/ pi 2.)) (/ d 2.)))
-  (command "_line" "_non" p2 "_non" p3 "")
+  (command-s "_line" "_non" p2 "_non" p3 "")
   (otv p1 d (- l h) alfa dir_0)
   (off_ang_rad p1 h gamma (/ d 2.) (+ pi dir_0))
   (off_ang_rad p1 h gamma (/ d -2.) (+ pi dir_0)))
@@ -118,4 +118,4 @@
 
 (defun c:z-point(/ p)
   (setq p (getpoint "”кажите точку:"))
-  (command "_point" ".xy" p ".z" "*0,0,0" ))
+  (command-s "_point" ".xy" p ".z" "*0,0,0" ))

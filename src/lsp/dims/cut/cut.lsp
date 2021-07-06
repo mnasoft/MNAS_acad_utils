@@ -41,7 +41,7 @@
   (setq *error* old_err)
   (if (/= msg "Function cancelled")
     (princ msg))
-  (command "redraw")
+  (command-s "redraw")
   (princ))
 
 (defun dr:arrow  (p_0 p_1 dang / p00 pl ang p_ar1 p_ar2 p_ar3 arr dir_text PTXT P_00 VID_TEXT ; ARR_LEN1
@@ -174,7 +174,7 @@
 ;;;	 )
 ;;;  )
 ;;;  (vlr-pers reactor) ; Для реактора изменения текста
-  (command "redraw"))
+  (command-s "redraw"))
 
 (defun reactor-text  (notifier reactor arg-list)
   (_reactor-make-association-properties-list notifier (VLR-Data reactor) '("txt_vid")))

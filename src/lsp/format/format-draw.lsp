@@ -63,7 +63,7 @@
                    p2  (polar (polar (pp_a p_start p2 (/ pi -2.0)) 0.0 (nth 0 for)) (/ pi 2.0) (+ (nth 1 for) 15.))
                    p3  (polar (polar (pp_a p_start p3 (/ pi -2.0)) 0.0 (nth 0 for)) (/ pi 2.0) (+ (nth 1 for) 15.))
                    p4  (polar (polar (pp_a p_start p4 (/ pi -2.0)) 0.0 (nth 0 for)) (/ pi 2.0) (+ (nth 1 for) 15.))))))
-    (command "_insert" (strcat "*" (findfile (cdr (assoc 2 (cadr ll2))))) "_non" p0 1.0 an0)
+    (command-s "_insert" (strcat "*" (findfile (cdr (assoc 2 (cadr ll2))))) "_non" p0 1.0 an0)
     (setq ss11 (hid_re p1 p2 p3 p4 ss11))))
 
 (defun format:draw-zona  (/ kr ff ff1 en1)
@@ -148,7 +148,7 @@
   (setq s1 (nth f_no f_key))
   (cond
     ((= s1 "1")
-     (command "_insert"
+     (command-s "_insert"
               (strcat "*" (findfile (utils:path-src-lsp "FORMAT/sht_1.dwg")))
               "_non"
               (polar p_start 0.0 (nth 0 for))
@@ -157,34 +157,34 @@
      (if (or (and (= dir_sht 1) (> (nth kr_no kr_val) 1))
              (and (= dir_sht 1) (= (nth kr_no kr_val) 1) (/= (nth for_no for_name) "Р4"))
              (and (= dir_sht 0) (= (nth kr_no kr_val) 1) (= (nth for_no for_name) "Р4")))
-       (command "_insert"
+       (command-s "_insert"
                 (strcat "*" (findfile (utils:path-src-lsp "FORMAT/sht_2.dwg")))
                 "_non"
                 (polar p_start (/ pi 2.0) (nth 1 for))
                 "1"
                 "0")
-       (command "_insert"
+       (command-s "_insert"
                 (strcat "*" (findfile (utils:path-src-lsp "FORMAT/sht_2.dwg")))
                 "_non"
                 (polar (polar (mapcar (function +) p_start '(0.0 15.0 0.0)) 0.0 (nth 0 for)) (/ pi 2.) (nth 1 for))
                 "1"
                 "-90"))
      (if (and (= divzone_no 1) (or (/= for_no 4) (and (= for_no 4) (> kr_no 0))))
-       (command "_insert"
+       (command-s "_insert"
                 (strcat "*" (findfile (utils:path-src-lsp "FORMAT/sht_3.dwg")))
                 "_non"
                 (polar p_start 0.0 (nth 0 for))
                 "1"
                 "0")))
     ((= s1 "2")
-     (command "_insert"
+     (command-s "_insert"
               (strcat "*" (findfile (utils:path-src-lsp "FORMAT/sht_4.dwg")))
               "_non"
               (polar p_start 0.0 (nth 0 for))
               "1"
               "0"))
     ((= s1 "2ру")
-     (command "_insert"
+     (command-s "_insert"
               (strcat "*" (findfile (utils:path-src-lsp "FORMAT/sht_5.dwg")))
               "_non"
               (polar p_start 0.0 (nth 0 for))
@@ -193,39 +193,39 @@
      (if (or (and (= dir_sht 1) (> (nth kr_no kr_val) 1))
              (and (= dir_sht 1) (= (nth kr_no kr_val) 1) (/= (nth for_no for_name) "Р4"))
              (and (= dir_sht 0) (= (nth kr_no kr_val) 1) (= (nth for_no for_name) "Р4")))
-       (command "_insert"
+       (command-s "_insert"
                 (strcat "*" (findfile (utils:path-src-lsp "FORMAT/sht_2.dwg")))
                 "_non"
                 (polar p_start (/ pi 2.0) (nth 1 for))
                 "1"
                 "0")
-       (command "_insert"
+       (command-s "_insert"
                 (strcat "*" (findfile (utils:path-src-lsp "FORMAT/sht_2.dwg")))
                 "_non"
                 (polar (polar (mapcar (function +) p_start '(0.0 15.0 0.0)) 0.0 (nth 0 for)) (/ pi 2.) (nth 1 for))
                 "1"
                 "-90")))
     ((= s1 "2рђ")
-     (command "_insert"
+     (command-s "_insert"
               (strcat "*" (findfile (utils:path-src-lsp "FORMAT/sht_5.dwg")))
               "_non"
               (polar p_start 0.0 (nth 0 for))
               "1"
               "0"))
     ((= s1 "2с")
-     (command "_insert"
+     (command-s "_insert"
               (strcat "*" (findfile (utils:path-src-lsp "FORMAT/SHT_4_S.dwg")))
               "_non"
               (polar p_start 0.0 (nth 0 for))
               "1"
               "0"))
     ((= s1 "2сэ")
-     (command "_insert"
+     (command-s "_insert"
               (strcat "*" (findfile (utils:path-src-lsp "FORMAT/SHT_6_R.dwg")))
               "_non"
               (polar p_start 0.0 (nth 0 for))
               "1"
               "0"))
     ((= s1 "2сї")
-     (command "_insert" (strcat "*" (findfile (utils:path-src-lsp "FORMAT/SHT_6_L.dwg"))) "_non" p_start "1" "0"))
+     (command-s "_insert" (strcat "*" (findfile (utils:path-src-lsp "FORMAT/SHT_6_L.dwg"))) "_non" p_start "1" "0"))
     ((= s1 "3"))))

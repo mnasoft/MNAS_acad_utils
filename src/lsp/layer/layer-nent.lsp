@@ -15,29 +15,29 @@
     (cond ((= str "Set")
            (setq la_l (get_nsel))
            (if la_l
-             (progn (setq la (cdr (assoc 8 (entget (ssname la_l 0))))) (command "_.layer" "_Set" la ""))))
+             (progn (setq la (cdr (assoc 8 (entget (ssname la_l 0))))) (command-s "_.layer" "_Set" la ""))))
           ((= str "Un")
            (setq la_l (get_nsel))
            (if la_l
-             (command "_.layer" "_Unlock" (layer_list la_l) "")))
+             (command-s "_.layer" "_Unlock" (layer_list la_l) "")))
           ((= str "LO")
            (setq la_l (get_nsel))
            (if la_l
-             (command "_.layer" "_lock" (layer_list la_l) "")))
+             (command-s "_.layer" "_lock" (layer_list la_l) "")))
           ((= str "OFF")
            (setq la_l (get_nsel))
            (if la_l
              (if (setq la (layer_cl la_l (getvar "clayer")))
-               (command "_.layer" "_OFF" la ""))))
+               (command-s "_.layer" "_OFF" la ""))))
           ((= str "Col")
            (setq la_l (get_nsel))
            (setq col (getstring "\nEnter color : "))
            (if (and (/= col nil) la_l)
-             (command "_.layer" "_Color" col (layer_list la_l) "")))
+             (command-s "_.layer" "_Color" col (layer_list la_l) "")))
           ((= str "WL")
            (setq la_l (get_nsel))
            (if la_l
-             (command "_.layer"
+             (command-s "_.layer"
                       "_Set"
                       (cdr (assoc 8 (entget (ssname la_l 0))))
                       "_lock"
@@ -48,7 +48,7 @@
           ((= str "WO")
            (setq la_l (get_nsel))
            (if la_l
-             (command "_.layer"
+             (command-s "_.layer"
                       "_Set"
                       (cdr (assoc 8 (entget (ssname la_l 0))))
                       "_Off"
@@ -60,7 +60,7 @@
           ((= str "WFr")
            (setq la_l (get_nsel))
            (if la_l
-             (command "_.layer"
+             (command-s "_.layer"
                       "_Set"
                       (cdr (assoc 8 (entget (ssname la_l 0))))
                       "_freeze"
@@ -72,10 +72,10 @@
            (setq la_l (get_nsel))
            (if la_l
              (if (setq la (layer_cl la_l (getvar "clayer")))
-               (command "_.layer" "_freeze" la ""))))
-          ((= str "AO") (command "_.layer" "_on" "~" ""))
-          ((= str "AU") (command "_.layer" "_unlock" "~" ""))
-          ((= str "AT") (command "_.layer" "_Thaw" "~" ""))))
+               (command-s "_.layer" "_freeze" la ""))))
+          ((= str "AO") (command-s "_.layer" "_on" "~" ""))
+          ((= str "AU") (command-s "_.layer" "_unlock" "~" ""))
+          ((= str "AT") (command-s "_.layer" "_Thaw" "~" ""))))
   (err-handle ""))
 
 (defun get_nsel  (/ en ss)

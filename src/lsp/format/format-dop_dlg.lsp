@@ -183,7 +183,7 @@
         p4 (mapcar (function -) p4 p0))
   (setq ll (list str1 (list (cons 2 str2) (cons 70 j1) (cons 11 p1) (cons 12 p2) (cons 13 p3) (cons 14 p4))))
   (setvar "expert" 5)
-  (command "_wblock" str2 "" p0 ss1 "")
+  (command-s "_wblock" str2 "" p0 ss1 "")
   (setvar "expert" 0)
   (setq dsht_1_val (cons ll dsht_1_val))
   (princ))

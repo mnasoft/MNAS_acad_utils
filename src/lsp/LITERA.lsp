@@ -1,5 +1,5 @@
 (defun ins_lit(p_ins st_1 st_2)
-	(command "_insert" "litera" "non" p_ins "1" "1" "0" st_1 st_2)
+	(command-s "_insert" "litera" "non" p_ins "1" "1" "0" st_1 st_2)
 	(princ)
 )
 ;;;;;;("ins_lit" "not defined" "ֱמכüרמי רנטפע")

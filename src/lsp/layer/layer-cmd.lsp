@@ -56,29 +56,29 @@
     (cond ((= str "Set")
            (setq la_l (ssget))
            (if la_l
-             (progn (setq la (cdr (assoc 8 (entget (ssname la_l 0))))) (command "_.layer" "_set" la ""))))
+             (progn (setq la (cdr (assoc 8 (entget (ssname la_l 0))))) (command-s "_.layer" "_set" la ""))))
           ((= str "Un")
            (setq la_l (ssget))
            (if la_l
-             (command "_.layer" "_Unlock" (layer_list la_l) "")))
+             (command-s "_.layer" "_Unlock" (layer_list la_l) "")))
           ((= str "LO")
            (setq la_l (ssget))
            (if la_l
-             (command "_.layer" "_lock" (layer_list la_l) "")))
+             (command-s "_.layer" "_lock" (layer_list la_l) "")))
           ((= str "OFF")
            (setq la_l (ssget))
            (if la_l
              (if (setq la (layer_cl la_l (getvar "clayer")))
-               (command "_.layer" "_OFF" la ""))))
+               (command-s "_.layer" "_OFF" la ""))))
           ((= str "Col")
            (setq la_l (ssget))
            (setq col (getstring "\nEnter color : "))
            (if (and (/= col nil) la_l)
-             (command "_.layer" "_Color" col (layer_list la_l) "")))
+             (command-s "_.layer" "_Color" col (layer_list la_l) "")))
           ((= str "WL")
            (setq la_l (ssget))
            (if la_l
-             (command "_.layer"
+             (command-s "_.layer"
                       "_Set"
                       (cdr (assoc 8 (entget (ssname la_l 0))))
                       "_lock"
@@ -89,7 +89,7 @@
           ((= str "WO")
            (setq la_l (ssget))
            (if la_l
-             (command "_.layer"
+             (command-s "_.layer"
                       "_Set"
                       (cdr (assoc 8 (entget (ssname la_l 0))))
                       "_Off"
@@ -101,7 +101,7 @@
           ((= str "WFr")
            (setq la_l (ssget))
            (if la_l
-             (command "_.layer"
+             (command-s "_.layer"
                       "_Set"
                       (cdr (assoc 8 (entget (ssname la_l 0))))
                       "_freeze"
@@ -113,30 +113,30 @@
            (setq la_l (ssget))
            (if la_l
              (if (setq la (layer_cl la_l (getvar "clayer")))
-               (command "_.layer" "_freeze" la ""))))
-          ((= str "AO") (command "_.layer" "_on" "~" ""))
-          ((= str "AU") (command "_.layer" "_unlock" "~" ""))
-          ((= str "AT") (command "_.layer" "_Thaw" "~" ""))))
+               (command-s "_.layer" "_freeze" la ""))))
+          ((= str "AO") (command-s "_.layer" "_on" "~" ""))
+          ((= str "AU") (command-s "_.layer" "_unlock" "~" ""))
+          ((= str "AT") (command-s "_.layer" "_Thaw" "~" ""))))
   (err-handle ""))
 
 ;;;;;;("l-Set" "Позволяет устанавливать текущий слой" "Слои")
 (defun c:l-Set  (/ la_l la)
   (setq la_l (ssget))
   (if la_l
-    (progn (setq la (cdr (assoc 8 (entget (ssname la_l 0))))) (command "_.layer" "_set" la ""))))
+    (progn (setq la (cdr (assoc 8 (entget (ssname la_l 0))))) (command-s "_.layer" "_set" la ""))))
 
 ;;;;;;("l-Off" "Позволяет выключать отмеченные слои" "Слои")
 (defun c:l-Off  (/ la_l la)
   (setq la_l (ssget))
   (if la_l
     (if	(setq la (layer_cl la_l (getvar "clayer")))
-      (command "_.layer" "_OFF" la ""))))
+      (command-s "_.layer" "_OFF" la ""))))
 
 ;;;;;;("l-Wo" "Позволяет выключать все слои за исключением отмеченных" "Слои")
 (defun c:l-Wo  (/ la_l)
   (setq la_l (ssget))
   (if la_l
-    (command "_.layer"
+    (command-s "_.layer"
 	     "_Set"
 	     (cdr (assoc 8 (entget (ssname la_l 0))))
 	     "_Off"
@@ -149,26 +149,26 @@
 (defun c:l-Un  (/ la_l)
   (setq la_l (ssget))
   (if la_l
-    (command "_.layer" "_Unlock" (layer_list la_l) "")))
+    (command-s "_.layer" "_Unlock" (layer_list la_l) "")))
 
 ;;;;;;("l-Lo" "Позволяет блокировать отмеченные слои" "Слои")
 (defun c:l-Lo  (/ la_l)
   (setq la_l (ssget))
   (if la_l
-    (command "_.layer" "_lock" (layer_list la_l) "")))
+    (command-s "_.layer" "_lock" (layer_list la_l) "")))
 
 ;;;;;;("l-Col" "Позволяет задавать цвет для отмеченных слоев" "Слои")
 (defun c:l-Col  (/ la_l col)
   (setq la_l (ssget))
   (setq col (getstring "\nEnter color : "))
   (if (and (/= col nil) la_l)
-    (command "_.layer" "_Color" col (layer_list la_l) "")))
+    (command-s "_.layer" "_Color" col (layer_list la_l) "")))
 
 ;;;;;;("l-Wl" "Позволяет блокировать все слои за исключением отмеченных" "Слои")
 (defun c:l-Wl  (/ la_l)
   (setq la_l (ssget))
   (if la_l
-    (command "_.layer"
+    (command-s "_.layer"
 	     "_Set"
 	     (cdr (assoc 8 (entget (ssname la_l 0))))
 	     "_lock"
@@ -181,7 +181,7 @@
 (defun c:l-WFr  (/ la_l)
   (setq la_l (ssget))
   (if la_l
-    (command "_.layer"
+    (command-s "_.layer"
 	     "_Set"
 	     (cdr (assoc 8 (entget (ssname la_l 0))))
 	     "_freeze"
@@ -195,16 +195,16 @@
   (setq la_l (ssget))
   (if la_l
     (if	(setq la (layer_cl la_l (getvar "clayer")))
-      (command "_.layer" "_freeze" la ""))))
+      (command-s "_.layer" "_freeze" la ""))))
 
 ;;;;;;("l-Ao" "Позволяет включать все слои" "Слои")
-(defun c:l-Ao () (command "_.layer" "_on" "~" ""))
+(defun c:l-Ao () (command-s "_.layer" "_on" "~" ""))
 
 ;;;;;;("l-Au" "Позволяет разблокировать все слои" "Слои")
-(defun c:l-Au () (command "_.layer" "_unlock" "~" ""))
+(defun c:l-Au () (command-s "_.layer" "_unlock" "~" ""))
 
 ;;;;;;("l-At" "Позволяет размораживать все слои" "Слои")
-(defun c:l-At () (command "_.layer" "_Thaw" "~" ""))
+(defun c:l-At () (command-s "_.layer" "_Thaw" "~" ""))
 
 ;; (выборка_слоев)
 ;; (((0 . "LAYER") (2 . "0") (70 . 0) (62 . 1) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer1") (70 . 0) (62 . 2) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer2") (70 . 0) (62 . 3) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer3") (70 . 0) (62 . 4) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer4") (70 . 0) (62 . 6) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer5") (70 . 0) (62 . 1) (6 . "Continuous")) ((0 . "LAYER") (2 . "Layer1_d") (70 . 0) (62 . -7) (6 . "Continuous")))
@@ -281,7 +281,7 @@
                       (vl-cmdf "_c" (itoa (nth n схема_раскраски)) ln)
                       (setq n (rem (+ чередование n) количество_цветов))))
           им_сл)
-  (command "")
+  (command-s "")
   (setvar "cmdecho" cmd_echo))
 
 (defun layer_rgb_settings  (/ ex_dialog action dcl_id code_val)
@@ -386,12 +386,12 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (if (null (tblsearch "layer" "d"))
-    (progn (command "_.-layer" "_new" "d" "") (princ "\nLayer d created.")))
+    (progn (command-s "_.-layer" "_new" "d" "") (princ "\nLayer d created.")))
   (if (null (tblsearch "layer" "h"))
-    (progn (command "_.-layer" "_new" "h" "") (princ "\nLayer h created.")))
+    (progn (command-s "_.-layer" "_new" "h" "") (princ "\nLayer h created.")))
   (if (null (tblsearch "layer" "v"))
-    (progn (command "_.-layer" "_new" "v" "")
-           (command "_.-layer" "_color" "5" "v" "")
-           (command "_.-layer" "_plot" "_no" "v" "")
+    (progn (command-s "_.-layer" "_new" "v" "")
+           (command-s "_.-layer" "_color" "5" "v" "")
+           (command-s "_.-layer" "_plot" "_no" "v" "")
            (princ "\nLayer v created.")))
   (err-handle ""))

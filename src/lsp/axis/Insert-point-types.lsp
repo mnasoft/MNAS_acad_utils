@@ -36,9 +36,9 @@
 ;;;f;;;"¬ыполн€ет вставку в текущий чертеж файла Point-Types,
 ;;;f;;;который содержит определени€ блоков, спользуемых как маркеры точек.")
 (defun axis:load-point-types-dwg	()
-  (command "_-insert" "./support/Point-Types/Point-Types.dwg")
+  (command-s "_-insert" "./support/Point-Types/Point-Types.dwg")
   (command)
-  (command "_-purge" "_b" "Point-Types" "_n"))
+  (command-s "_-purge" "_b" "Point-Types" "_n"))
 
 ;;;f;;;("load-point-types"
 ;;;f;;;"¬ыполн€ет вставку в текущий чертеж файла Point-Types,

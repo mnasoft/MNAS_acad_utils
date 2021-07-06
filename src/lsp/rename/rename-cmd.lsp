@@ -19,7 +19,7 @@
         tblname  (strcase (cdr (assoc 0 tbl))))
   (if (/= name new_name)
     (progn (print (strcat tblname " = " name " -> " new_name))
-           (command "_.rename" (strcat "_" tblname) name new_name))))
+           (command-s "_.rename" (strcat "_" tblname) name new_name))))
 
 (defun ch_name  (name / l n4)
   (setq n4 "")

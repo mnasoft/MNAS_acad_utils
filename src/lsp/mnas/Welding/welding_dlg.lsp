@@ -213,7 +213,7 @@
         ed           (subst (cons 340 (tblobjname "dimstyle" dim_stl)) (assoc 340 ed) ed))
   (weld_pp_list_apply)
   (entmod ed)
-  (command "_redraw"))
+  (command-s "_redraw"))
 
 ;;;Применяет к текущей редактируемой позиции изменения, выполненные в диалоге
 (defun ac_apply_do  ()
@@ -227,7 +227,7 @@
         ed           (subst (cons 340 (tblobjname "dimstyle" dim_stl)) (assoc 340 ed) ed))
   (weld_pp_list_apply)
   (entmod ed)
-  (command "_redraw"))
+  (command-s "_redraw"))
 
 (defun arrow_apply  ()
   (setq group_40 (assoc 40 ed)
@@ -266,7 +266,7 @@
              (progn (setq match_prop_ed (subst (assoc 70 ed) (assoc 70 match_prop_ed) match_prop_ed))))
            (entmod match_prop_ed)))
     (setq i (1+ i)))
-  (command "_redraw"))
+  (command-s "_redraw"))
 
 (defun ac_text_color_image (key x y) (done_dialog 5))
 

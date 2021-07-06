@@ -208,12 +208,12 @@
 
 
 (defun dr:layer-new(layer-name)
-  (command "_-layer" "_new" layer-name ""))
+  (command-s "_-layer" "_new" layer-name ""))
 
 (defun dr:layer-set(layer-name)
-  (command "_-layer" "_new" layer-name "_set" layer-name ""))
+  (command-s "_-layer" "_new" layer-name "_set" layer-name ""))
 
-;;;; (defun dr:insert  (pt block-name) (command "_-insert" block-name "_s" 1.0 "_r" 0.0 "_non" pt))
+;;;; (defun dr:insert  (pt block-name) (command-s "_-insert" block-name "_s" 1.0 "_r" 0.0 "_non" pt))
 
 (defun dr:insert  (InsertionPoint Name Xscale Yscale ZScale Rotation )
   (clean-vla-object-list (list *vla-insert))
@@ -235,13 +235,13 @@
   *vla-mtext)
 
 (defun mnas-lines:load-line-types  ()
-  (command "_ltscale" "1")
-  (command "_psltscale" "1")
-  (command "_-linetype" "_load" "*" (findfile (utils:path-src-lsp "lines/eskd.lin")))
-  (while (= 1 (getvar "CMDACTIVE")) (command ""))
-  (command "_regen")
+  (command-s "_ltscale" "1")
+  (command-s "_psltscale" "1")
+  (command-s "_-linetype" "_load" "*" (findfile (utils:path-src-lsp "lines/eskd.lin")))
+  (while (= 1 (getvar "CMDACTIVE")) (command-s ""))
+  (command-s "_regen")
   (princ))
 
 (defun c:z-point (/ р)
   (setq p (getpoint "Укажите точку"))
-  (command "_point" ".z" "*0,0,0" ".xy" p ))
+  (command-s "_point" ".z" "*0,0,0" ".xy" p ))

@@ -4,7 +4,7 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq la (cdr (assoc 8 (entget (car (nentsel "\nВыберите элемент блока, слой которого будет выключен:"))))))
-  (command "-layer" "off" la)
+  (command-s "-layer" "off" la)
   (if_cmd_active)
   (err-handle ""))
 
@@ -15,7 +15,7 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq la (cdr (assoc 8 (entget (car (nentsel "\nВыберите элемент блока, слой которого будет заморожен:"))))))
-  (command "-layer" "fr" la)
+  (command-s "-layer" "fr" la)
   (if_cmd_active)
   (err-handle ""))
 
@@ -24,7 +24,7 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq str (bl_all))
-  (command "-layer" "on" str)
+  (command-s "-layer" "on" str)
   (if_cmd_active)
   (err-handle ""))
 
@@ -33,7 +33,7 @@
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq str (bl_all))
-  (command "-layer" "thaw" str)
+  (command-s "-layer" "thaw" str)
   (if_cmd_active)
   (err-handle ""))
 

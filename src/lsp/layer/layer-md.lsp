@@ -3,7 +3,7 @@
 (defun c:ml_off  ()
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
-  (command "-layer" "off" "*work")
+  (command-s "-layer" "off" "*work")
   (if_cmd_active)
   (err-handle ""))
 
@@ -12,7 +12,7 @@
 (defun c:ml_on  ()
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
-  (command "-layer" "_on" "*work")
+  (command-s "-layer" "_on" "*work")
   (if_cmd_active)
   (err-handle ""))
 
@@ -22,7 +22,7 @@
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq ed      (entget (car (entsel "\nВыберите примитив:")))
         la_name (cdr (assoc 2 ed)))
-  (command "-_layer" "_on" (strcat "*" la_name "*work") "")
+  (command-s "-_layer" "_on" (strcat "*" la_name "*work") "")
   (err-handle ""))
 
 ;;;;;;("ml_off_c" "not defined" "Слои")
@@ -31,12 +31,12 @@
   (set-sys-var-lst '(("cmdecho" 0)))
   (setq ed      (entget (car (entsel "\nВыберите примитив:")))
         la_name (cdr (assoc 2 ed)))
-  (command "-_layer" "_off" (strcat "*" la_name "*work") "")
+  (command-s "-_layer" "_off" (strcat "*" la_name "*work") "")
   (err-handle ""))
 
 ;;;;;;("am_la" "not defined" "Слои")
 (defun c:am_la  ()
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
-  (command "-_layer" "_color" 7 "am_7,am_4,am_pardim" "")
+  (command-s "-_layer" "_color" 7 "am_7,am_4,am_pardim" "")
   (err-handle ""))

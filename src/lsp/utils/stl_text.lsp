@@ -11,8 +11,8 @@
   (if (null (findfile "my_b_f.shx"))
     (progn (alert (strcat msg-01 "\"es_win.shx\"" msg-02)) (exit)))
   (setq os_ver (cadr (str_token (getvar "platform") " ")))
-  (cond ((= os_ver "DOS") (vl-cmdf "_style" "t" "es_dos,my_b_f" "0" "1" "0" "_N" "_N" "_N"))
-        ((= os_ver "Windows") (vl-cmdf "_style" "t" "es_win,my_b_f" "0" "1" "0" "_N" "_N" "_N")))
+  (cond ((= os_ver "DOS") (command-s "_style" "t" "es_dos,my_b_f" "0" "1" "0" "_N" "_N" "_N"))
+        ((= os_ver "Windows") (command-s "_style" "t" "es_win,my_b_f" "0" "1" "0" "_N" "_N" "_N")))
   (princ msg-03)
   (princ (tblsearch "style" "t")))
 

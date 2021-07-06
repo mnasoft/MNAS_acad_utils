@@ -1,51 +1,22 @@
 ;;;;;;("завихритель" "not defined" "Расчеты")
-(defun c:завихритель (/ fn fl_i fl_o )
-  (setq	fn_i (getfiled "Выбор файла для" "" "scr" 0)
-	fn_o "23.scr"
-	fl_i (open fn_i "r")
-        fl_o (open fn_o "w")
-  )
-  (cond
-    ((/= 'str (type fn_i))
-     (alert (princ "Переменная fn_i не содержит имени файла."
-	    )
-     )
-     
-    )
-    ((null fl_i)
-     (alert
-       (princ
-	 (strcat "Не могу открыть файл: " fn_i ".")
-       )
-     )
-     (exit)
-    )
-  )
-  (cond
-    ((/= 'str (type fn_o))
-     (alert (princ "Переменная fn_o не содержит имени файла."
-	    )
-     )
-     
-    )
-    ((null fl_o)
-     (alert
-       (princ
-	 (strcat "Не могу открыть файл: " fn_o ".")
-       )
-     )
-     (exit)
-    )
-  )
-  (while (setq str (read-char  fl_i))
-    (if ( /= str (ascii " "))
-      (write-char str fl_o)
-    )
-  )
+(defun c:завихритель  (/ fn fl_i fl_o)
+  (setq fn_i (getfiled "Выбор файла для" "" "scr" 0)
+        fn_o "23.scr"
+        fl_i (open fn_i "r")
+        fl_o (open fn_o "w"))
+  (cond ((/= 'str (type fn_i))
+         (alert (princ "Переменная fn_i не содержит имени файла.")))
+        ((null fl_i)
+         (alert (princ (strcat "Не могу открыть файл: " fn_i ".")))
+         (exit)))
+  (cond ((/= 'str (type fn_o))
+         (alert (princ "Переменная fn_o не содержит имени файла.")))
+        ((null fl_o)
+         (alert (princ (strcat "Не могу открыть файл: " fn_o ".")))
+         (exit)))
+  (while (setq str (read-char fl_i))
+    (if (/= str (ascii " "))
+      (write-char str fl_o)))
   (close fl_i)
   (close fl_o)
-  (command "script" fn_o)
-)
-;|«Visual LISP© Format Options»
-(72 2 5 2 nil "end of" 60 9 0 0 0 T T nil T)
-;*** DO NOT add text below the comment! ***|;
+  (command-s "script" fn_o))

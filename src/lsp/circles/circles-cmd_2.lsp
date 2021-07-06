@@ -11,8 +11,8 @@
   (setq en_c1 (entlast))
   (entmake c2)
   (setq en_c2 (entlast))
-  (command "_circle" pause rad)
-  (command "_erase" en_c1 en_c2 ""))
+  (command-s "_circle" pause rad)
+  (command-s "_erase" en_c1 en_c2 ""))
 
 ;;;("c_sc" "Масштабирование окружности, путем задания центра масштабирования
 ;;; и ее итогового радиуса.")
@@ -24,7 +24,7 @@
   (setq echo (getvar "cmdecho"))
   (setvar "cmdecho" 0)
   (getvar "cmdech")
-  (command "_scale" (cdr (assoc -1 ed)) "" "_non" pt "_r" rad pause)
+  (command-s "_scale" (cdr (assoc -1 ed)) "" "_non" pt "_r" rad pause)
   (setvar "cmdecho" echo))
 
 (defun p-mid (p1 p2) (mapcar (function (lambda (el_1 el_2) (* 0.5 (+ el_1 el_2)))) p1 p2))

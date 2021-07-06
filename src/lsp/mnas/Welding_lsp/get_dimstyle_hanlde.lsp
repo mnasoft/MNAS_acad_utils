@@ -1,8 +1,8 @@
 (VL-LOAD-COM)
 
 (defun load-w-arrows ()
-  (command "_insert" "weld_arrow_bot" nil)					; Загружаем блок со стрелкой нижней сварки
-  (command "_insert" "weld_arrow_top" nil)					; Загружаем блок со стрелкой верхней сварки
+  (command-s "_insert" "weld_arrow_bot" nil)					; Загружаем блок со стрелкой нижней сварки
+  (command-s "_insert" "weld_arrow_top" nil)					; Загружаем блок со стрелкой верхней сварки
 )
 
 
@@ -19,7 +19,7 @@
     p1 (GETPOINT p0 "Укажите начало полки:")
     p2 (GETPOINT p1 "Укажите конец полки:")
   )
-  (command "_leader" "_non" p0 "_non" p1 "_non" p2 "" "" "_none")
+  (command-s "_leader" "_non" p0 "_non" p1 "_non" p2 "" "" "_none")
   (setq en (entlast))
   (vlax-put-property (vlax-ename->vla-object en) 'ArrowheadBlock "weld_arrow_bot")
   (w-edit-arrow-dir en)

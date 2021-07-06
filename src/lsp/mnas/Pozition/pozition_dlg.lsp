@@ -150,7 +150,7 @@
         ed           (subst (cons 41 (atof (cadr (assoc "line-offset" setup_lst)))) (assoc 41 ed) ed)
         ed           (subst (cons 70 (atoi (cadr (assoc "text_color_image" setup_lst)))) (assoc 70 ed) ed))
   (entmod ed)
-  (command "_redraw"))
+  (command-s "_redraw"))
 
 ;;;Выполняет применение операции mathprop для позиции.
 (defun ac_match_apply  (/ match_prop    ; Набор выбора 
@@ -205,7 +205,7 @@
                                                match_prop_ed))))
            (entmod match_prop_ed)))
     (setq i (1+ i)))
-  (command "_redraw"))
+  (command-s "_redraw"))
 
 (defun ac_text_color_image (key x y) (done_dialog 5))
 

@@ -1,8 +1,8 @@
 ;;move_rot(li p0 p2)
 (defun move_rot  (ss p0 p2)
-  (command "_.move" ss "" "_non" p0 "_non" p2)
-  (command "_.redraw")
-  (command "_.rotate" ss "" "_non" p2))
+  (command-s "_.move" ss "" "_non" p0 "_non" p2)
+  (command-s "_.redraw")
+  (command-s "_.rotate" ss "" "_non" p2))
 
 ;;;;;;("mr" "Перемещение и поворот." "Измени")
 (defun c:mr  (/ ss p0 p2 ang)
@@ -17,7 +17,7 @@
   (setq la_st (entlast))
   (prompt "\nСкопируй и Поверни")
   (setq ss (ssget))
-  (command "_.copy" ss "" "0,0" "0,0")
+  (command-s "_.copy" ss "" "0,0" "0,0")
   (setq n_li (ssadd))
   (while (/= (setq la_st (entnext la_st)) nil) (ssadd la_st n_li))
   (setq p0 (getpoint "\nБазовая точка:"))
@@ -33,9 +33,9 @@
     (setq d (getdist "\nВведите расстояние :"))
     (cond ((null d) (exit)))
     (setq la_st (entlast))
-    (command "_.offset" d)
-    (while (= 1 (getvar "CMDACTIVE")) (command pause))
-    (command "_.chprop"
+    (command-s "_.offset" d)
+    (while (= 1 (getvar "CMDACTIVE")) (command-s pause))
+    (command-s "_.chprop"
              (ss_from_to_last la_st)
              ""
              "_la"
@@ -70,9 +70,9 @@
     (cond ((null d) (exit)))
     (setq la_st (entlast))
     (setq d (/ d 2.))
-    (command "_.offset" d)
-    (while (= 1 (getvar "CMDACTIVE")) (command pause))
-    (command "_.chprop"
+    (command-s "_.offset" d)
+    (while (= 1 (getvar "CMDACTIVE")) (command-s pause))
+    (command-s "_.chprop"
              (ss_from_to_last la_st)
              ""
              "_la"
@@ -97,9 +97,9 @@
     (if (not (setq a3 (getorient p1 "\nПриращение угла:")))
       (setq a3 0.0))
     (setq en1 (entlast))
-    (command "_.copy" ss1 "" "_non" p1 "_non" p1)
+    (command-s "_.copy" ss1 "" "_non" p1 "_non" p1)
     (setq ss2 (ssadd))
-    (command "_rotate"
+    (command-s "_rotate"
              (while (setq en1 (entnext en1)) (setq ss2 (ssadd en1 ss2)))
              ""
              "_non"

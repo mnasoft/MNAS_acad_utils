@@ -5,8 +5,8 @@
   (setq en   (car (entsel "\nВыберите примитив:"))
         ed  (entget en)
         temp (cdr (assoc 0 ed)))
-  (cond ((or (= "MTEXT" temp) (= "TEXT" temp) (= "DIMENSION" temp)) (command "_ddedit" en))
-        ((or (= "INSERT" temp)) (command "_ddatte" en)))
+  (cond ((or (= "MTEXT" temp) (= "TEXT" temp) (= "DIMENSION" temp)) (command-s "_ddedit" en))
+        ((or (= "INSERT" temp)) (command-s "_ddatte" en)))
   (princ))
 
 
@@ -15,8 +15,8 @@
   (setq en   (car (nentsel "\nВыберите примитив:"))
         ed  (entget en)
         temp (cdr (assoc 0 ed)))
-  (cond ((or (= "MTEXT" temp) (= "TEXT" temp) (= "DIMENSION" temp)) (command "_ddedit" en))
-        ((or (= "ATTRIB" temp)) (command "_attedit" "_y" "*" "*" "*" en)))
+  (cond ((or (= "MTEXT" temp) (= "TEXT" temp) (= "DIMENSION" temp)) (command-s "_ddedit" en))
+        ((or (= "ATTRIB" temp)) (command-s "_attedit" "_y" "*" "*" "*" en)))
   (princ))
 
 ;;;;;;("t-tr" "Выполняет транслитерацию с английской раскладки в русскую." "Редактирования текста"

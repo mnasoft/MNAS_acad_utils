@@ -160,7 +160,7 @@
 
 (defun add_xdata  (pick1 / i)
   (make_ublock pick1 p_start p_start)
-  (command "_.erase" pick1 "")
+  (command-s "_.erase" pick1 "")
   (princ "\nШтамп отрисован."))
 
 
@@ -402,5 +402,5 @@
            (setq do_dialog nil))))
   (unload_dialog dcl_id)
   (setq *error* old_err)
-  (command "_.undo" "_end")
+  (command-s "_.undo" "_end")
   (setvar "cmdecho" 1))

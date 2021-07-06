@@ -40,7 +40,7 @@
          (axis:sel "\nВыберите шкалу y:")
         sc_y (axis:get axis-podp:*sc-y-ename*)))
 
-(defun axis-podp:btn-delete () (command "erase" ss_zas ss_text ss_podp_text ""))
+(defun axis-podp:btn-delete () (command-s "erase" ss_zas ss_text ss_podp_text ""))
 
 (defun axis-podp:draw-zas  (ss_zas   sc_x     sc_y     ll_ax_shcala      /        n_div    pt       pt_0     pt_1
                             scx_end  scx_st   scy_end  scy_st   x_max    x_min    en       el       lst      lst-i
