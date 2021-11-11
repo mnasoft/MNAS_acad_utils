@@ -36,3 +36,19 @@
   (setq p3 (rotate_sc p0 point alfa sc))
   (command-s "_point" "_non" p3)
   (setq p3 p3))
+
+(vl-load-com)
+
+(defun c:curve-points (/ obj sp ep i x)
+  (setq fl (open (getfiled "File points" "data" "lisp" 1) "w"))
+  (setq	obj (vlax-ename->vla-object (car (entsel)))
+	sp  (vlax-curve-getStartParam obj)
+	ep  (vlax-curve-getEndParam obj)
+	i   0
+	n   (* 100 (- ep sp))
+  )
+  (while (< (setq x (+ sp (/ (* (- ep sp) i) n))) ep)
+    (print (vlax-curve-getPointAtParam obj x ) fl)
+    (setq i (1+ i))
+  )
+)
