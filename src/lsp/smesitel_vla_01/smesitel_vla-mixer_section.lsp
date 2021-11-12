@@ -1,17 +1,25 @@
-(setq p-0  '(0.0 0.0 0.0)
-      pi/2 (/ pi 2))
+(defun init-vars  ()
+  (setq div 90)
+  (setq	area_lst nil
+	length_lst nil))
 
-(setq R-in    (/ 523.0 2.0)
-      L-1     -26.0
-      L-2     42.5
-      R-1     64.8
-      R-2     47.0
-      R-3     18.5
-      R-4     (/ 636.0 2.0)
-      R-5     58.4
-      alpha-2 (dtr (+ 90.0 30.0))
-      alpha-1 (dtr 15.0)
-      delta   10.0)
+;;;f;;;("(init-profile-const)"
+;;;f;;; "Устанавливает константы, используемые для построения смесителя-улитки. \n")
+(defun init-profile-const  ()
+  (setq	p-0  '(0.0 0.0 0.0)
+	pi/2 (/ pi 2)
+	)
+  (setq	R-in	(/ 523.0 2.0)
+	L-1	-26.0
+	L-2	42.5
+	R-1	64.8
+	R-2	47.0
+	R-3	18.5
+	R-4	(/ 636.0 2.0)
+	R-5	58.4
+	alpha-2	(dtr (+ 90.0 30.0))
+	alpha-1	(dtr 15.0)
+	delta	10.0))
 
 (defun draw-points  ()
   (dr:point p-0 1)
@@ -31,7 +39,10 @@
   (dr:point p-R1 4)
   (dr:point p-R2 5))
 
-(defun draw-profile  ()
+;;;f;;;("(draw-profile)"
+;;;f;;; "Производит отрисовку сечения. \n
+;;;f;;;  Возврвщает список ename примитивов, образующих сечение. \n")
+(defun draw-profile (/ v-a-1 v-l-2 v-a-3 v-l-4 v-a-5 v-l-6 v-a-7)
   (setq v-a-1 (vlax-vla-object->ename (dr:arc p-3 r-5 (+ alpha-2 pi/2) (* 3.0 pi/2) 1)))
   (setq v-l-2 (vlax-vla-object->ename (dr:line p-4 p-8-e 2)))
   (setq v-a-3 (vlax-vla-object->ename (dr:arc p-R1 R-1 pi/2 (+ alpha-2 pi/2) 1)))
@@ -44,10 +55,32 @@
 (mapcar (function (lambda (el) (eval (read el))))
 	  (list	"v-a-1"	"v-l-2"	"v-a-3"	"v-l-4"	"v-a-5"	"v-l-6"	"v-a-7"))
 
-(defun draw-sech-4	(L-b	L-s     /      p-1    p-2    p-3	   p-4
-		 p-5	p-6    p-7    p-7-1  p-8    p-8-b  p-R1
-		 R-1	p-8-e  p-10   p-11   p-12   p-12-b p-13
-		 p-13-1	p-R2   R-2    p-12-e)
+;;;f;;;("(draw-sech-4 L-b L-s)"
+;;;f;;; "Производит отрисовку сечения по форме см. пример ниже \n
+;;;f;;;  _$(draw-sech-4 161.0 78.0) \n
+;;;f;;; \n
+;;;f;;;  Возвращает список из 7-ми элементов типа еname: \n
+;;;f;;; 1. Дуга, соединяющая СА и линию 2; \n
+;;;f;;; 2. Линия, являющаяся левой боковой образующую смесителя; \n
+;;;f;;; 3. Дуга соединеия линии 1 и периферийную образующая смесителя; \n
+;;;f;;; 4. Линия, являющаяся периферийной образующей смесителя; \n
+;;;f;;; 5. Дуга, соединяющая линию 4 и линию 6; \n
+;;;f;;; 6. Линия, являющаяся правой боковой образующую смесителя; \n
+;;;f;;; 7. Дуга, соединяющая СА и линию 6. \n
+;;;f;;;   \n
+;;;f;;; Глобальные переменные: \n
+;;;f;;; area_lst   - Накапливание полу-площадей поперечных сечений; \n
+;;;f;;; per-r_top  - Накапливание периметра r_top (верхний радиус); \n
+;;;f;;; per-r_kt   - Накапливание периметра r_kt (переход от верхнего радиуса к боковой поверхности); \n
+;;;f;;; per-l_bok  - Накапливание периметра l_bok (боковая поверхность); \n
+;;;f;;; per-r_kb   - Накапливание периметра r_kb (переход от боковой поверхности к нижнему радиусу; \n
+;;;f;;; per-r_bot  - Накапливание периметра r_bot (нижний радиус); \n
+;;;f;;; length_lst - Накапливание полу-периметров поперечных сечений.")
+(defun draw-sech-4 (L-b	L-s     /      p-1    p-2    p-3	   p-4
+		    p-5	p-6    p-7    p-7-1  p-8    p-8-b  p-R1
+		    R-1	p-8-e  p-10   p-11   p-12   p-12-b p-13
+		    p-13-1	p-R2   R-2    p-12-e)
+  (init-profile-const)
   (setq p-1 (polar p-0 pi/2 R-in))
   (setq p-2 (polar p-1 pi/2 L-2))
   (setq p-3 (polar p-1 pi/2 R-5))
@@ -72,138 +105,8 @@
   (setq p-12-e (polar p-R2 (- alpha-1 pi/2) R-2))
   (draw-profile))
 
-;;(draw-sech-4 161.0 80.)
-;;(setq L-b 181.0 L-s 114.0) (section L-b L-s)
 
 ;;===================================================================================================
-
-
-;;(draw_sech_3 p_0 y_top r_top y_bot r_bot l_bok alfa_bok r_kt r_kb)
-;;Производит отрисовку сечения по форме см. пример ниже
-;;_$(draw_sech_3 '(0.0 0.0 0.0) 113.6705 229.4598 -86.6927 102.4201 80.0 (* -18.0 (/ pi 180.) ) 30.0 50.)
-;;_$(draw_sech_3 '(0.0 0.0 0.0) 113.6705 229.4598 -86.6927 -102.4201 80.0 (* -18.0 (/ pi 180.) ) 30.0 50.)
-;;Возвращает список из 6-ти элементов:
-;;1. полилиния правой стороны смесителя;
-;;2. нижняя дуга левой стороны сечения смесителя;
-;;3. нижняя боковая дуга левой стороны сечения смесителя;
-;;4. боковая линия левой стороны сечения смесителя;
-;;5. правая боковая дуга левой стороны сечения смесителя;
-;;6. верхняя дуга левой стороны сечения смесителя.
-;;
-;;;Глобальные переменные
-;;;area_lst	- Накапливание полу-площадей поперечных сечений
-;;;per-r_top	- Накапливание периметра r_top	(верхний радиус)
-;;;per-r_kt	- Накапливание периметра r_kt	(переход от верхнего радиуса к боковой поверхности)	
-;;;per-l_bok	- Накапливание периметра l_bok	(боковая поверхность)
-;;;per-r_kb	- Накапливание периметра r_kb	(переход от боковой поверхности к нижнему радиусу
-;;;per-r_bot	- Накапливание периметра r_bot	(нижний радиус)
-;;;length_lst   - Накапливание полу-периметров поперечных сечений
-(defun draw_sech_3  (p_0       y_top	 r_top	   y_bot     r_bot
-		     l_bok     alfa_bok	 r_kt	   r_kb	     /
-		     PB_KB     PB_KT	 PC_BOT	   PC_KB     PC_KT
-		     PC_TOP    P_BOK	 P_BOT	   P_TOP     V_BOK
-		     V_BOK_KB  V_BOK_KT	 V_BOT	   V_BOT_KB  V_KB
-		     V_KT      V_PLY	 V_TOP	   V_TOP_KT  v_bot_mir
-		     v_kb_mir  v_bok_mir v_kt_mir  v_top_mir color_bot
-		     color_top color_kt	 color_kb  color_l)
-  (setq	color_top 1
-	color_bot 2
-	color_kt 3
-	color_kb 4
-	color_l_bok 6
-	color_ply 7)
-  (setq	p_top  (polar p_0 (/ pi 2) y_top)
-	p_bot  (polar p_0 (/ pi 2) y_bot)
-	pc_top (polar p_top (/ pi -2) R_top)
-	pc_bot (polar p_bot (/ pi 2) R_bot)
-	p_bok  (polar p_0 alfa_bok l_bok)
-	pb_kb  (polar p_0 alfa_bok (- l_bok r_kb))
-	pb_kt  (polar p_0 alfa_bok (- l_bok r_kt)))
-  (setq v_top_kt (dr:arc pc_top (- r_top r_kt) 0.0 (/ pi 2) 15))
-  (cond	((> r_bot 0.0)
-	 (setq v_bot_kb (dr:arc pc_bot (- r_bot r_kb) (/ pi -2) 0.0 25)))
-	((< r_bot 0.0)
-	 (setq v_bot_kb
-		(dr:arc pc_bot (+ (abs r_bot) r_kb) 0.0 (/ pi 2) 25))))
-  (setq	v_bok_kb (dr:line pb_kb
-			  (polar pb_kb (+ alfa_bok (/ pi 2)) l_bok)
-			  35)
-	v_bok_kt (dr:line pb_kt
-			  (polar pb_kt (+ alfa_bok (/ pi 2)) l_bok)
-			  45))
-  (setq	pc_kb (vlax-safearray->list
-		(vlax-variant-value
-		  (vlax-invoke-method
-		    v_bot_kb
-		    'IntersectWith
-		    v_bok_kb
-		    acExtendOtherEntity)))
-	pc_kt (vlax-safearray->list
-		(vlax-variant-value
-		  (vlax-invoke-method
-		    v_top_kt
-		    'IntersectWith
-		    v_bok_kt
-		    acExtendOtherEntity))))
-  (setq
-    v_kt (dr:arc pc_kt r_kt alfa_bok (angle pc_top pc_kt) color_kt))
-  (setq	v_top (dr:arc pc_top
-		      r_top
-		      (angle pc_top pc_kt)
-		      (/ pi 2)
-		      color_top))
-  (cond	((> r_bot 0.0)
-	 (setq v_kb  (dr:arc pc_kb r_kb (angle pc_bot pc_kb) alfa_bok color_kb)
-	       v_bot (dr:arc pc_bot
-			     r_bot
-			     (/ pi -2)
-			     (angle pc_bot pc_kb)
-			     color_bot)))
-	((< r_bot 0.0)
-	 (setq v_kb  (dr:arc pc_kb r_kb (angle pc_kb pc_bot) alfa_bok color_kb)
-	       v_bot (dr:arc pc_bot
-			     (abs r_bot)
-			     (angle pc_bot pc_kb)
-			     (/ pi 2)
-			     color_bot))))
-  (setq	v_bok (dr:line (vlax-safearray->list
-			 (vlax-variant-value
-			   (vlax-get-property v_kb 'EndPoint)))
-		       (vlax-safearray->list
-			 (vlax-variant-value
-			   (vlax-get-property v_kt 'StartPoint)))
-		       color_l_bok))
-  (mapcar (function (lambda (el)
-		      (vlax-invoke-method el 'Delete)
-		      (vlax-release-object el)))
-	  (list v_top_kt v_bot_kb v_bok_kt v_bok_kb))
-  (mapcar (function
-	    (lambda (el)
-	      (command-s "_mirror"
-			 (vlax-vla-object->ename (eval (read el)))
-			 ""
-			 p_top
-			 p_bot
-			 "_N")
-	      (set (read (strcat el "_mir"))
-		   (vlax-ename->vla-object (entlast)))))
-	  (list "v_bot" "v_kb" "v_bok" "v_kt" "v_top"))
-  (command-s "_pedit"
-	     (vlax-vla-object->ename v_bot)
-	     "_y"
-	     "_j"
-	     (vlax-vla-object->ename v_kb)
-	     (vlax-vla-object->ename v_bok)
-	     (vlax-vla-object->ename v_kt)
-	     (vlax-vla-object->ename v_top)
-	     ""
-	     "")
-  (setq v_ply (vlax-ename->vla-object (entlast)))
-  (vlax-put-property v_ply 'Color color_ply)
-  (append
-    (list v_ply)
-    (mapcar (function (lambda (el) (eval (read (strcat el "_mir")))))
-	    (list "v_bot" "v_kb" "v_bok" "v_kt" "v_top"))))
 
 
 (defun smesitel_vla_put	 (v_name / handle)
@@ -225,98 +128,84 @@
 
 (defun smesitel_vla_put_lst  ()
   (mapcar (function smesitel_vla_put)
-	  '("v_pl_axis" "v_l_axis" "v_l-b" "v_l-s")))
+	  '("v-pl-axis" "v-l-axis" "v_l-b" "v-l-s")))
 
 
 ;;;;;;("prep:sm" "Подготовка данных для построения смесителя. См. команду dr:sm." "Смеситель")
 (defun c:prep:sm  ()
   (prompt "Выберите ось смесителя:")
-  (vla-obj "v_pl_axis")
+  (vla-obj "v-pl-axis")
   (prompt
     "Ось абсцисс зависимостей, изображающих параметры смесителя:")
-  (vla-obj "v_l_axis")
+  (vla-obj "v-l-axis")
   (prompt "Зависимость для параметра L-b (высота смесителя):")
   (vla-obj "v_l-b")
   (prompt
     "Зависимость для параметра L-s (длина прямолинейного участка):")
-  (vla-obj "v_l-s")
+  (vla-obj "v-l-s")
   (smesitel_vla_put_lst))
 
 ;;;;;;("dr:sm"
-;;;;;;"Проект Smesitel_vla.\n
-;;;;;;	Проект предназначен для проектирования линейчатого каркаса смесителя жаровой трубы.\n
-;;;;;;	Проект определяет следующие команды:\n
-;;;;;;		prep:sm    - подготовка данных для построения сместеля;\n
-;;;;;;		dr:sm      - отрисовка смесителя по подготовленным данным;\n
-;;;;;;		dr:sech    - отрисовка одиночного сечения по длине;\n
-;;;;;;		clear:sm   - очистка списка образующий, сохраняемых в расширенном словаре;
-;;;;;;		vla-obj    - предназначена для замены одной из образующих смесителя.\n
-;;;;;;\n
-;;;;;;	Проект определяет следующие переменные, используемые для хренения образующих и геометрических параметров смесителя:\n
-;;;;;;		v_pl_axis      - ось смесителя;\n
-;;;;;;\n
-;;;;;;		v_spl_top      - верхняя образующая смесителя;\n
-;;;;;;		v_spl_bot      - нижняя образующая смесителя;\n
-;;;;;;\n
-;;;;;;		v_l_axis       - ось абсцисс для зависимостей следующих ниже;\n
-;;;;;;\n
-;;;;;;		v_spl_l_bok    - боковая образующая смесителя;\n
-;;;;;;		v_spl_r_top    - радиус верхней образующей;\n
-;;;;;;		v_spl_kr_bot   - кривизна нижней образующей;\n
-;;;;;;		v_spl_r_kt     - радиус перехода от боковой образующей к верхней образующей;\n
-;;;;;;		v_spl_r_kb     - радиус перехода от боковой образующей к нижней образующей;\n
-;;;;;;		v_spl_alfa_bok - зависимость угла, выраженную в градусах, между осью абсцисс сечения и перпендикуляром, опущенным из центра координат сечения на боковую образующую.\n
-;;;;;;\n
-;;;;;;		Площади поперечных сечений смесителя находятся в переменной area_lst.\n
-;;;;;;		Длины полупериметров поперечных сечений находятся в переменной length_lst.\n
-;;;;;;		Для построения графиков зависимостей площади поперечного сечения и полупериметров следует воспользоваться командой a1.\n
-;;;;;;" "Смеситель")
-(defun c:dr:sm	(/			;
-		 div			; Количество промежутков между сечениями
-		 delta_l_axis-length	; Приращение вдоль оси зависимостей
+;;;;;;"Проект Smesitel_vla_01. \n
+;;;;;;	Проект предназначен для проектирования линейчатого каркаса смесителя жаровой трубы. \n
+;;;;;;	Проект определяет следующие команды: \n
+;;;;;;		prep:sm    - подготовка данных для построения сместеля; \n
+;;;;;;		dr:sm      - отрисовка смесителя по подготовленным данным; \n
+;;;;;;		dr:sech    - отрисовка одиночного сечения по углу; \n
+;;;;;;		clear:sm   - очистка списка образующий, сохраняемых в расширенном словаре; \n
+;;;;;;		vla-obj    - предназначена для замены одной из образующих смесителя. \n
+;;;;;; \ n
+;;;;;;	Проект определяет следующие переменные, используемые для \n
+;;;;;;  хренения образующих и геометрических параметров смесителя: \n
+;;;;;;		v-pl-axis - ось смесителя; \n
+;;;;;;		v-l-axis  - ось абсцисс для зависимостей следующих ниже; \n
+;;;;;;		v_l-b     - расстояние от внутренней части смесителя до верхней образующей; \n
+;;;;;;		v-l-s     - длина верхней образующей; \n
+;;;;;; \n
+;;;;;; Для построения графиков зависимостей можно использовать переменные: \n
+;;;;;;  - area_lst - плошади поперечых сечений смесителя; \n
+;;;;;;  - length_lst - периметра поперечных сечений смесителя, \n
+;;;;;; в сочетании с командой a1. \n"
+;;;;;; "Смеситель")
+(defun c:dr:sm	(/			; area_lst - площади сечений смесителя (доделать);
+					; length_lst - периметры сечений смесителя (доделать);
+					; div - Количество промежутков между сечениями
 		 delta_pl_axis-length	; Приращение вдоль оси полилинии
-		 dist_l			; Текущая координата вдоль оси зависимостей
-		 dist_pl		; Текущая координата вдоль оси полилинии
+		 delta_l_axis-length	; Приращение вдоль оси зависимостей
 		 i			; Текущее сечение
-		 lst			; 
-		 param_alfa_bok		; Угол наклона воковой образующей
-		 param_l_bok		; Расстояние от центра сечения до боковой образующей
-		 param_r_kb		; Радиус перехода от боковой образующей к нижней образующей
-		 param_r_kt		; Радиус перехода от боковой образующей к верхней образующей
-		 param_top		; - Расстояние до верхней образующей
-		 param_bot		; - Расстояние до нижней образующей
-		 param_r_top		; - Верхний радиус
-		 param_kr_bot		; - Кривизна нижнего радиуса
-		 param_r_bot		; - Нижний радиус
-		 par_pl			; - Значение параметра в текущей точке на оси смесителя
-		 par_l			; - Значение параметра в текущей точке на оси зависимостей
-		 par_pnt		; 
-		 par_pntFD		;
+		 dist_pl		; Текущая координата вдоль оси полилинии
+		 par_pl			; Значение параметра в текущей точке на оси смесителя
+		 par_pnt		;
+		 par_pntFD		; Первая производная на оси сечений смесителя
+		 pl-dist		;
+		 param_l-b		; Значение параметра L-b
+		 param_l-s		; Значение параметра L-s
+		 pnt_1		lst	; Список ename примитивов, входящих в сечение
 		 )
-  (setq	area_lst nil
-	length_lst nil)
+  (init-vars)
+  (if (not (and v-pl-axis v-l-axis v_l-b v-l-s))
+    (c:prep:sm))
   (err-init '("cmdecho"))
   (set-sys-var-lst '(("cmdecho" 0)))
-  (setq	div 50
-	delta_pl_axis-length
-	 (/ (vlax-get-property v_pl_axis 'Length) div)
+  (setq	delta_pl_axis-length
+	 (/ (vlax-get-property v-pl-axis 'Length) div)
 	delta_l_axis-length
-	 (/ (vlax-get-property v_l_axis 'Length) div))
+	 (/ (vlax-get-property v-l-axis 'Length) div))
   (setq i (+ 1 div))
-  (while (>= (setq i (1- i)) 1)
+  (while (>= (setq i (1- i)) 0)
     (setq dist_pl   (* i delta_pl_axis-length)
-	  par_pl    (vlax-curve-getParamAtDist v_pl_axis dist_pl)
-	  par_pnt   (vlax-curve-getPointAtParam v_pl_axis par_pl)
-	  par_pntFD (vlax-curve-getFirstDeriv v_pl_axis par_pl)
-	  pl-dist   (vlax-curve-getDistAtParam v_pl_axis par_pl))
+	  par_pl    (vlax-curve-getParamAtDist v-pl-axis dist_pl)
+	  par_pnt   (vlax-curve-getPointAtParam v-pl-axis par_pl)
+	  par_pntFD (vlax-curve-getFirstDeriv v-pl-axis par_pl)
+	  pl-dist   (vlax-curve-getDistAtParam v-pl-axis par_pl))
     (setq param_l-b (distance-from-curve-by-param-to-curve
-		      v_l_axis
+		      v-l-axis
 		      pl-dist
 		      v_l-b))
     (setq param_l-s (distance-from-curve-by-param-to-curve
-		      v_l_axis
+		      v-l-axis
 		      pl-dist
-		      v_l-s))
+		      v-l-s))
     (setq pnt_1 (list 0.0 261.5 0.0))
     (setq lst (draw-sech-4 param_l-b param_l-s))
     (mapcar
@@ -353,10 +242,6 @@
 
 
 
-
-
-	  
-
 ;;	Знак величины
 ;;_$ (digit 10.5564)
 ;;1.0
@@ -366,34 +251,33 @@
 
 (defun c:sm:help  ()
   (princ
-    "Проект Smesitel_vla.
-	Проект предназначен для проектирования линейчатого каркаса смесителя жаровой трубы.
-	Проект определяет следующие команды:
-		prep:sm    - подготовка данных для построения сместеля;
-		dr:sm      - отрисовка смесителя по подготовленным данным;
-		dr:sech    - отрисовка одиночного сечения по длине;
-		clear:sm   - очистка списка образующий, сохраняемых в расширенном словаре;
-		vla-obj    - предназначена для замены одной из образующих смесителя.
-		
-	Проект определяет следующие переменные, используемые для хренения образующих и геометрических параметров смесителя: 
-		v_pl_axis      - ось смесителя;
+    "
+  ===================================================================================
+  Проект Smesitel_vla_01
+  ===================================================================================
+    
+  Проект предназначен для проектирования линейчатого каркаса смесителя жаровой трубы.
+ 
+  Проект определяет следующие команды:
+   prep:sm    - подготовка данных для построения сместеля;
+   dr:sm      - отрисовка смесителя по подготовленным данным;
+   dr:sech    - отрисовка одиночного сечения по углу;
+   clear:sm   - очистка списка образующий, сохраняемых в расширенном словаре;
+   vla-obj    - предназначена для замены одной из образующих смесителя.
+   
+ Проект определяет следующие переменные, используемые для
+ хренения образующих и геометрических параметров смесителя:
+    v-pl-axis - ось смесителя;
+    v-l-axis  - ось абсцисс для зависимостей следующих ниже;
+    v_l-b     - расстояние от внутренней части смесителя до верхней образующей;
+    v-l-s     - длина верхней образующей;
 
-		v_spl_top      - верхняя образующая смесителя; 
-		v_spl_bot      - нижняя образующая смесителя;
-		
-		v_l_axis       - ось абсцисс для зависимостей следующих ниже;
-		
-		v_spl_l_bok    - боковая образующая смесителя;
-		v_spl_r_top    - радиус верхней образующей;
-		v_spl_kr_bot   - кривизна нижней образующей;
-		v_spl_r_kt     - радиус перехода от боковой образующей к верхней образующей;
-		v_spl_r_kb     - радиус перехода от боковой образующей к нижней образующей;
-		v_spl_alfa_bok - зависимость угла, выраженную в градусах, между осью абсцисс сечения и перпендикуляром, опущенным из центра координат сечения на боковую образующую.
+  Для построения графиков зависимостей можно использовать переменные:
+    - area_lst - плошади поперечых сечений смесителя;
+    - length_lst - периметра поперечных сечений смесителя,
+  в сочетании с командой a1.")
+  (princ))
 
-		Площади поперечных сечений смесителя находятся в переменной area_lst.
-		Длины полупериметров поперечных сечений находятся в переменной length_lst.
-		Для построения графиков зависимостей площади поперечного сечения и полупериметров следует воспользоваться командой a1.
-"   ))
 
 (set_vla_name_handle_lst)
 
