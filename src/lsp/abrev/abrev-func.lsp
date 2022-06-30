@@ -10,4 +10,4 @@
 
 (defun explode-all  (ss / i)
   (setq i (sslength ss))
-  (while (>= (setq i (1- i)) 0) (vl-cmdf "_.explode" (ssname ss i) "")))
+  (while (>= (setq i (1- i)) 0) (command-s "_.explode" (ssname ss i) "")))

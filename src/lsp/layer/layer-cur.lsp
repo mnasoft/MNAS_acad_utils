@@ -10,13 +10,13 @@
         la   (cdr (assoc 8 ed))
         la_d (strcat la "_d")
         tm   (getvar "tilemode"))
-  (cond ((wcmatch (strcase la) (strcase "*_d")) (vl-cmdf "_.layer" "_set" la))
-        ((tblsearch "layer" la_d) (vl-cmdf "_.layer" "_set" la_d))
+  (cond ((wcmatch (strcase la) (strcase "*_d")) (command-s "_.layer" "_set" la))
+        ((tblsearch "layer" la_d) (command-s "_.layer" "_set" la_d))
         ((null (tblsearch "layer" la_d))
          (setvar "tilemode" 0)
-         (vl-cmdf "_.vplayer" "_new" la_d)
+         (command-s "_.vplayer" "_new" la_d)
          (if_cmd_active)
-         (vl-cmdf "_.layer" "_set" la_d)))
+         (command-s "_.layer" "_set" la_d)))
   (if_cmd_active)
   (setvar "tilemode" tm)
   (err-handle ""))
@@ -24,7 +24,7 @@
 
 ;;	if_cmd_active()	- Функция производит ввод в командную строку пробелов дотех пор пока
 ;;			команда находится в активном состоянии.
-(defun if_cmd_active () (while (= 1 (getvar "CMDACTIVE")) (vl-cmdf "")))
+(defun if_cmd_active () (while (= 1 (getvar "CMDACTIVE")) (command-s "")))
 
 ;;;;;;("cl_s_d"
 ;;;;;;"Создание и (или) установка в текущее значение слоя
@@ -34,9 +34,9 @@
         ed   (entget en)
         la   (cdr (assoc 8 ed))
         la_d (strcat la "_d"))
-  (cond ((wcmatch (strcase la) (strcase "*_d")) (vl-cmdf "_.layer" "_set" la))
-        ((tblsearch "layer" la_d) (vl-cmdf "_.layer" "_set" la_d))
-        ((null (tblsearch "layer" la_d)) (vl-cmdf "_.layer" "_new" la_d "_set" la_d)))
+  (cond ((wcmatch (strcase la) (strcase "*_d")) (command-s "_.layer" "_set" la))
+        ((tblsearch "layer" la_d) (command-s "_.layer" "_set" la_d))
+        ((null (tblsearch "layer" la_d)) (command-s "_.layer" "_new" la_d "_set" la_d)))
   (if_cmd_active)
   (err-handle ""))
 
@@ -49,12 +49,12 @@
   (setq en   (car (entsel "\nВыберите примитив:"))
         ed   (entget en)
         la_d (cdr (assoc 8 ed)))
-  (vl-cmdf "_.layer" "_set")
+  (command-s "_.layer" "_set")
   (if (wcmatch (strcase la_d) (strcase "*_d"))
     (progn (setq la (substr la_d 1 (- (strlen la_d) (strlen "_d"))))
            (if (tblsearch "layer" la)
-             (vl-cmdf la)
-             (vl-cmdf la_d)))
-    (vl-cmdf la_d))
+             (command-s la)
+             (command-s la_d)))
+    (command-s la_d))
   (if_cmd_active)
   (err-handle ""))

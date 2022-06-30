@@ -31,7 +31,7 @@
         *error* err-handle)
   (setq echo (getvar "cmdecho"))
   (setvar "cmdecho" 0)
-  (vl-cmdf "_undo" "_begin")
+  (command-s "_undo" "_begin")
   (setvar "cmdecho" echo)
   (setq *variable-lst* (get-sys-var-lst variable-lst)))
 
@@ -39,7 +39,7 @@
   (set-sys-var-lst *variable-lst*)
   (setq echo (getvar "cmdecho"))
   (setvar "cmdecho" 0)
-  (vl-cmdf "_undo" "_end")
+  (command-s "_undo" "_end")
   (setvar "cmdecho" echo)
   (setq *error* *old_error*)
   (princ msg)

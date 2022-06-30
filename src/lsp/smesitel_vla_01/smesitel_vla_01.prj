@@ -1,0 +1,27 @@
+;;; VLisp project file [V2.0] smesitel_vla_01 saved to:[D:/home/_namatv/develop/git/mnasoft/MNAS_acad_utils/src/lsp/smesitel_vla_01] at:[11/11/21] 
+(VLISP-PROJECT-LIST
+  :NAME
+  smesitel_vla_01
+  :OWN-LIST
+  ("../UTILS/ACAD_SUP_DIR"
+    "../utils/Debug"		    "../utils/DXF"
+    "../UTILS/Asist"		    "../UTILS/draw"
+    "../UTILS/vla-utils"	    "smesitel_vla-section"
+    "smesitel_vla-sech_by_lenght"   "smesitel_vla-mixer_section"
+    "../UTILS/ERR"		    "../opechatka/rus_cmd_opechatka"
+    "smesitel_vla-rus")
+  :FAS-DIRECTORY
+  "../../../temp"
+  :TMP-DIRECTORY
+  "../../../temp"
+  :PROJECT-KEYS
+  (:BUILD (:OPTIMIZE :LOCALIZE :link)
+	  :MERGED
+	  T
+	  :SAFE-MODE
+	  T
+	  :MSGLEVEL
+	  1)
+  :CONTEXT-ID
+  :AUTOLISP)
+;;; EOF
