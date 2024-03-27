@@ -74,3 +74,24 @@
           ed (cdr (entget en)))
     (print ed fd))
   (close fd))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun incf (=i=) (set =i= (1+ (eval =i=))))
+
+(defun c:export-obj  (/ ss name data i fl)
+  (setq ss (ssget))
+  (setq sslen (sslength ss))
+  (setq i 0)
+  (setq
+    fl (open (getfiled "Выберите имя файла для экспорта объектов"
+		       ""
+		       "lsp"
+		       1)
+	     "w"))
+  (while (<= (incf 'i) sslen)
+    (setq name (ssname ss (1- i)))
+    (setq data (entget name))
+    (print data fl))
+  (close fl)
+  (princ))
