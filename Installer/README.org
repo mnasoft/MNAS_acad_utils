@@ -1,0 +1,10 @@
+
+* Описание
+Данный файл по содержит инструкции созданию установщика для комплекса
+программ MNAS_ACAD_Utils.
+* DONE Зависимости
+1. [[https://nsis-dev.github.io/][NSIS 3.02.1]] или [[https://nsis.sourceforge.io/Main_Page][NSIS 3.10]]
+2. [[https://www.python.org/][Python]]
+
+* TODO Файлы
+* TODO Инструкция по созданию установщика
