@@ -148,31 +148,35 @@
   "Координаты точки эвольвенты"
   (setq x (* rb (+ (cos theta) (* theta (sin theta)))))
   (setq y (* rb (- (sin theta) (* theta (cos theta)))))
-  (list x y))
+  (list x y 0.0))
 
 
-(defun generate-involute (m z alpha da n / params rb ra theta-limit step)
+(defun generate-involute
+       (m z alpha da n / params rb ra theta-limit step i result)
   "Генерирует список точек эвольвенты"
+  (setq i 0)
+  (setq result '())
   (setq params (calc-gear-params m z alpha da))
   (setq rb (cdr (assoc ':base-radius params)))
   (setq ra (cdr (assoc ':addendum-radius params)))
   (setq theta-limit (theta-max ra rb))
-  (setq step (/ theta-limit (max 1 n))))
-(loop :for i :from 0 :to n
-          :for theta = (* i step)
-          :collect (involute-point rb theta))))
-
-;;(calc-gear-params 2. 14 30.0 30.0)
-;;(generate-involute 2 12 30 30 200)
-
-(defun generate-involute (rb step n / i theta result)
-  (setq i 0
-        result '()
-  )
-  (repeat (+ n 1) ; чтобы включить i = n
+  (setq step (/ theta-limit (max 1 n)))
+  (repeat (+ n 1)			; чтобы включить i = n
     (setq theta (* i step))
     (setq result (append result (list (involute-point rb theta))))
-    (setq i (1+ i))
-  )
-  result
-)
+    (setq i (1+ i)))
+  (dr:points result 2))
+
+(defun c:EVOLVENTA  (/ d_out ang teeth module n)
+  (setq d_out (getreal "\nВведите наружный диаметр: "))
+  (setq ang (getreal "\nВведите угол (в градусах): "))
+  (setq teeth (getint "\nВведите количество зубьев: "))
+  (setq module (getreal "\nВведите модуль: "))
+  (setq n (getint "\nКоличество точек: "))
+  (generate-involute module teeth ang d_out n)
+  (calc-gear-params module teeth ang d_out))
+
+;;(calc-gear-params 2. 14 30.0 30.0)
+;;(generate-involute 2 12 30 30 20)
+
+
