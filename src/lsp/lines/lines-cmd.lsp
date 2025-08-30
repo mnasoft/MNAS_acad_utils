@@ -125,30 +125,35 @@
 (defun deg-to-rad (deg)
   (* deg (/ pi 180)))
 
-(defun calc-gear-params (m z alpha da)
+(defun calc-gear-params	 (m z alpha da / d r rb ra)
   "Вычисляет основные параметры шестерни"
-  (let* ((d (* m z))
-         (r (/ d 2.0))
-         (rb (* r (cos (deg-to-rad alpha))))
-         (ra (/ da 2.0)))
-    (list
-     (cons :module m)
-     (cons :teeth z)
-     (cons :pressure-angle alpha)
-     (cons :pitch-diameter d)
-     (cons :pitch-radius r)
-     (cons :base-radius rb)
-     (cons :addendum-radius ra))))
+  (setq d (* m z))
+  (setq r (/ d 2.0))
+  (setq rb (* r (cos (deg-to-rad alpha))))
+  (setq ra (/ da 2.0))
+  (list
+    (cons ':module m)
+    (cons ':teeth z)
+    (cons ':pressure-angle alpha)
+    (cons ':pitch-diameter d)
+    (cons ':pitch-radius r)
+    (cons ':base-radius rb)
+    (cons ':addendum-radius ra)))
+
+
+
+
 
 (defun theta-max (ra rb)
   "Максимальный угол эвольвенты"
   (sqrt (- (expt (/ ra rb) 2) 1)))
 
-(defun involute-point (rb theta)
+(defun involute-point  (rb theta / x y)
   "Координаты точки эвольвенты"
-  (let ((x (* rb (+ (cos theta) (* theta (sin theta)))))
-        (y (* rb (- (sin theta) (* theta (cos theta))))))
-    (list x y)))
+  (setq x (* rb (+ (cos theta) (* theta (sin theta)))))
+  (setq y (* rb (- (sin theta) (* theta (cos theta)))))
+  (list x y))
+
 
 (defun generate-involute (m z alpha da n)
   "Генерирует список точек эвольвенты"
