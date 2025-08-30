@@ -165,3 +165,14 @@
 ;;(calc-gear-params 2. 14 30.0 30.0)
 ;;(generate-involute 2 12 30 30 200)
 
+(defun generate-involute (rb step n / i theta result)
+  (setq i 0
+        result '()
+  )
+  (repeat (+ n 1) ; чтобы включить i = n
+    (setq theta (* i step))
+    (setq result (append result (list (involute-point rb theta))))
+    (setq i (1+ i))
+  )
+  result
+)
