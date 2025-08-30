@@ -140,10 +140,6 @@
     (cons ':base-radius rb)
     (cons ':addendum-radius ra)))
 
-
-
-
-
 (defun theta-max (ra rb)
   "Максимальный угол эвольвенты"
   (sqrt (- (expt (/ ra rb) 2) 1)))
@@ -155,16 +151,17 @@
   (list x y))
 
 
-(defun generate-involute (m z alpha da n)
+(defun generate-involute (m z alpha da n / params rb ra theta-limit step)
   "Генерирует список точек эвольвенты"
-  (let* ((params (calc-gear-params m z alpha da))
-         (rb (cdr (assoc :base-radius params)))
-         (ra (cdr (assoc :addendum-radius params)))
-         (theta-limit (theta-max ra rb))
-         (step (/ theta-limit (max 1 n))))
-    (loop :for i :from 0 :to n
+  (setq params (calc-gear-params m z alpha da))
+  (setq rb (cdr (assoc ':base-radius params)))
+  (setq ra (cdr (assoc ':addendum-radius params)))
+  (setq theta-limit (theta-max ra rb))
+  (setq step (/ theta-limit (max 1 n))))
+(loop :for i :from 0 :to n
           :for theta = (* i step)
           :collect (involute-point rb theta))))
 
 ;;(calc-gear-params 2. 14 30.0 30.0)
 ;;(generate-involute 2 12 30 30 200)
+
