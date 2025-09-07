@@ -237,8 +237,8 @@
 (defun mnas-lines:load-line-types  ()
   (command-s "_ltscale" "1")
   (command-s "_psltscale" "1")
-  (command-s "_-linetype" "_load" "*" (findfile (utils:path-src-lsp "lines/eskd.lin")))
-  (while (= 1 (getvar "CMDACTIVE")) (command-s ""))
+  (command "_-linetype" "_load" "*" (findfile (utils:path-src-lsp "lines/eskd.lin")))
+  (while (= 1 (getvar "CMDACTIVE")) (command ""))
   (command-s "_regen")
   (princ))
 
