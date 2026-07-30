@@ -25,6 +25,8 @@
      "C:/msys32/home/namatv/develop/git/MNAS_acad_utils")
     ((= (ac:machine-instance) "KO11-118383")
      "D:/PRG/msys32/home/namatv/develop/git/mnasoft/MNAS_acad_utils")
+    ((= (ac:machine-instance) "DESKTOP-JVRHMFB")
+     "C:/msys64/home/mnaso/dev/acad/MNAS_acad_utils")
     (t "C:/")))
 
 
