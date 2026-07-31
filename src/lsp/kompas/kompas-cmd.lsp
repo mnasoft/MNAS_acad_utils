@@ -1,4 +1,4 @@
-(vl-arx-import 'startapp)
+;;(vl-arx-import 'startapp)
 
 ;;;;;;("kompas_in" "Импорт из сиситемы КОМПАС V4." "Обмен")
 (defun c:kompas_in  (/ l_str l_func fn fl fn_wo_ext exten eof no_view curr_color)

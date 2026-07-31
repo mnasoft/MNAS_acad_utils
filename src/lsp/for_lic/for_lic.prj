@@ -1,8 +1,8 @@
 ;;; VLisp project file [V2.0] for_lic saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/for_lic] at:[9/27/16] 
-(vlisp-project-list
+(VLISP-PROJECT-LIST
   :name
   for_lic
-  :own-list
+  :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
     "../utils/Debug"		     "for_lic-prover"		      "for_lic-provjerka"
     "for_lic-projekt"		     "for_lic-formuly"		      "../Funktcii/Trigonomjetrichjeskije"
@@ -11,8 +11,8 @@
   "../../../temp"
   :TMP-DIRECTORY
   "../../../temp"
-  :project-keys
+  :PROJECT-KEYS
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
-  :context-id
-  :autolisp)
+  :CONTEXT-ID
+  :AUTOLISP)
 ;;; EOF

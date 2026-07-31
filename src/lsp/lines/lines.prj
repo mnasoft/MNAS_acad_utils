@@ -2,18 +2,18 @@
 (VLISP-PROJECT-LIST
   :name
   lines
-  :own-list
+  :OWN-LIST
   ("../utils/ACAD_SUP_DIR"
     "../utils/Debug"	      "../utils/draw"		"lines-linetype_load"	  "lines-cmd"
     "lines-line_1"	      "lines-concat"		"lines-arc_concat"	  "../UTILS/ASIST"
     "../UTILS/DXF"	      "../utils//ERR"		"../utils/dlg_utils"	  "../opechatka/rus_cmd_opechatka"
     "lines-rus")
-  :fas-directory
+  :FAS-DIRECTORY
   "../../../temp"
-  :tmp-directory
+  :TMP-DIRECTORY
   "../../../temp"
-  :project-keys
+  :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :context-id
+  :CONTEXT-ID
   :AUTOLISP)
 ;;; EOF

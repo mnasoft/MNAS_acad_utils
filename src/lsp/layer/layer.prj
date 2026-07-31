@@ -1,8 +1,8 @@
 ;;; VLisp project file [V2.0] layer saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/layer] at:[9/27/16] 
-(vlisp-project-list
+(VLISP-PROJECT-LIST
   :name
   layer
-  :own-list
+  :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
     "../utils/Debug"	     "layer-cmd"	      "layer-block"	       "layer-cur"
     "layer-md"		     "layer-vp"		      "layer-sh"	       "layer-nent"
@@ -12,8 +12,8 @@
   "../../../temp"
   :TMP-DIRECTORY
   "../../../temp"
-  :project-keys
+  :PROJECT-KEYS
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
-  :context-id
-  :autolisp)
+  :CONTEXT-ID
+  :AUTOLISP)
 ;;; EOF

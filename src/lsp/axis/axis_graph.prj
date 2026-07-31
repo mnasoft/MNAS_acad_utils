@@ -11,5 +11,5 @@
   :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED t :SAFE-MODE t :MSGLEVEL 1)
   :CONTEXT-ID
-  :autolisp)
+  :AUTOLISP)
 ;;; EOF

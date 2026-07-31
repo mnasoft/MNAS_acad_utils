@@ -1,4 +1,4 @@
-(vl-arx-import 'acad_colordlg)
+;;(vl-arx-import 'acad_colordlg)
 
 ;;;;;;("spec" "Функция простановки позиций." "Размеры")
 (defun c:spec  (/                       ;

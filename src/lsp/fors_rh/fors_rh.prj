@@ -1,16 +1,16 @@
 ;;; VLisp project file [V2.0] fors_rh saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/fors_rh] at:[9/27/16] 
-(vlisp-project-list
+(VLISP-PROJECT-LIST
   :name
   fors_rh
-  :own-list
+  :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
     "../utils/Debug" "fors_rh-lic" "fors_rh-gas" "../utils/sub_div" "../opechatka/rus_cmd_opechatka" "fors_rh-rus")
   :FAS-DIRECTORY
   "../../../temp"
   :TMP-DIRECTORY
   "../../../temp"
-  :project-keys
+  :PROJECT-KEYS
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
-  :context-id
-  :autolisp)
+  :CONTEXT-ID
+  :AUTOLISP)
 ;;; EOF

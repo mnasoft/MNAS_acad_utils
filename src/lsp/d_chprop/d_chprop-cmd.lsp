@@ -1,4 +1,4 @@
-(vl-arx-import 'acad_colordlg)
+;;(vl-arx-import 'acad_colordlg)
 
 ;;;;;;("dch" "Программа управления свойствами объектов." "Измени")
 (defun c:dch  (/ *error* action by_block by_layer color1 color4 dcl_id do_dialog ename1 err layer1 layer4 ltype1 ltype4 old_err)

@@ -1,15 +1,15 @@
 ;;; VLisp project file [V2.0] edit saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/edit] at:[9/27/16] 
-(vlisp-project-list
+(VLISP-PROJECT-LIST
   :name
   edit
-  :own-list
+  :OWN-LIST
   ("../utils/ACAD_SUP_DIR" "../utils/Debug" "edit-cmd" "../opechatka/rus_cmd_opechatka" "edit-rus")
   :FAS-DIRECTORY
   "../../../temp"
   :TMP-DIRECTORY
   "../../../temp"
-  :project-keys
+  :PROJECT-KEYS
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
-  :context-id
-  :autolisp)
+  :CONTEXT-ID
+  :AUTOLISP)
 ;;; EOF

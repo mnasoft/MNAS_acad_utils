@@ -2,7 +2,7 @@
 (VLISP-PROJECT-LIST
   :name
   Dopusk
-  :own-list
+  :OWN-LIST
   ("../utils/ACAD_SUP_DIR"
     "../utils/Debug" "dopusk-cmd" "dopusk-data"	"../utils/list"	"../UTILS/DXF" "../opechatka/rus_cmd_opechatka"
     "dopusk-rus")
@@ -10,8 +10,8 @@
   "../../../temp"
   :TMP-DIRECTORY
   "../../../temp"
-  :project-keys
+  :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :context-id
+  :CONTEXT-ID
   :AUTOLISP)
 ;;; EOF

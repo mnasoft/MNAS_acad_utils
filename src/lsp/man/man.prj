@@ -2,7 +2,7 @@
 (VLISP-PROJECT-LIST
   :name
   man
-  :own-list
+  :OWN-LIST
   ("../utils/ACAD_SUP_DIR"
     "../utils/Debug"
     "man-type_command"
@@ -14,8 +14,8 @@
   "../../../temp"
   :TMP-DIRECTORY
   "../../../temp"
-  :project-keys
+  :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :context-id
+  :CONTEXT-ID
   :AUTOLISP)
 ;;; EOF

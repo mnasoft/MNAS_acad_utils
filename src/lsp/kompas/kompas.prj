@@ -2,17 +2,17 @@
 (VLISP-PROJECT-LIST
   :name
   kompas
-  :own-list
+  :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
     "../utils/Debug"		"../utils/draw"		    "kompas-kompas_acad"	"kompas-acad_kompas"
     "kompas-cmd"		"kompas-line-type"	    "../UTILS/STRING"		"../opechatka/rus_cmd_opechatka"
     "kompas-rus")
-  :fas-directory
+  :FAS-DIRECTORY
   "../../../temp"
-  :tmp-directory
+  :TMP-DIRECTORY
   "../../../temp"
-  :project-keys
+  :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
-  :context-id
+  :CONTEXT-ID
   :AUTOLISP)
 ;;; EOF

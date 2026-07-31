@@ -1,4 +1,4 @@
-(vl-arx-import 'acad_colordlg)
+;;(vl-arx-import 'acad_colordlg)
 
 (defun c:pozition_set_text_scale  (/ reg_root setup_lst reg_val text_scale line-offset ed text)
   (select)

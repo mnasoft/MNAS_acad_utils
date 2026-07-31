@@ -2,7 +2,7 @@
 (VLISP-PROJECT-LIST
   :name
   rou_1
-  :own-list
+  :OWN-LIST
   ("../../UTILS/ACAD_SUP_DIR"
     "../../utils/Debug"			       "rou_1-cmd"
     "rou_1-draw"			       "rou_1-update"
@@ -15,8 +15,8 @@
   "../../../../temp"
   :TMP-DIRECTORY
   "../../../../temp"
-  :project-keys
+  :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
-  :context-id
+  :CONTEXT-ID
   :AUTOLISP)
 ;;; EOF

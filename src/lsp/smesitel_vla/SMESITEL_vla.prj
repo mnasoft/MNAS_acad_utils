@@ -1,8 +1,8 @@
 ;;; VLisp project file [V2.0] smesitel_vla saved to:[E:/home/namatv/git/github/mnasoft/mnas_acad_utils/acad_w.sup/smesitel_vla] at:[9/27/16] 
-(vlisp-project-list
+(VLISP-PROJECT-LIST
   :name
   smesitel_vla
-  :own-list
+  :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
     "../utils/Debug"		    "../utils/DXF"		    "smesitel_vla-section"
     "smesitel_vla-sech_by_lenght"   "smesitel_vla-mixer_section"    "../UTILS/vla-utils"
@@ -12,8 +12,8 @@
   "../../../temp"
   :TMP-DIRECTORY
   "../../../temp"
-  :project-keys
+  :PROJECT-KEYS
   (:build (:optimize :localize :link) :merged t :safe-mode t :msglevel 1)
-  :context-id
-  :autolisp)
+  :CONTEXT-ID
+  :AUTOLISP)
 ;;; EOF
