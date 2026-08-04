@@ -49,7 +49,7 @@
   (setq	fname (getfiled "" "" "txt" 1)
 	file  (open fname "W"))
   (if file
-    (progn (setq ss	(ssget '((-4 . "<OR") (0 . "TEXT") (0 . "MTEXT") (0 . "INSERT") (-4 . "OR>")))
+    (progn (setq ss	(ssget '((-4 . "<OR") (0 . "TEXT") (0 . "MTEXT") (0 . "DIMENSION") (0 . "INSERT") (-4 . "OR>")))
 		 ss-len	(sslength ss)
 		 i	-1)
 	   (while (< (setq i (1+ i)) ss-len) (mnas-text-export-ename (ssname ss i) file))
