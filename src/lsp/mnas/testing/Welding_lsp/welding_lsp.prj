@@ -3,17 +3,22 @@
   :NAME
   welding_lsp
   :OWN-LIST
-  ("../../utils/ACAD_SUP_DIR"
-    "../../utils/Debug"		"../../utils/system_registry"
-    "../../utils/dlg_utils"	"../../utils/DXF"
-    "welding_dlg"		"weld_abbrev"
-    "Weld_text_dlg"		"get_dimstyle_hanlde"
-    "../../utils/draw"		"setup_lst"
+  ("../../../utils/ACAD_SUP_DIR"
+    "../../../utils/Debug"
+    "../../../utils/system_registry"
+    "../../../utils/dlg_utils"
+    "../../../utils/DXF"
+    "welding_dlg"
+    "weld_abbrev"
+    "Weld_text_dlg"
+    "get_dimstyle_hanlde"
+    "../../../utils/draw"
+    "setup_lst"
    )
   :FAS-DIRECTORY
-  "../../../../temp"
+  "../../../../../temp"
   :TMP-DIRECTORY
-  "../../../../temp"
+  "../../../../../temp"
   :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID
