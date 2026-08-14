@@ -3,13 +3,22 @@
   :NAME
   format-01
   :OWN-LIST
-  ("../utils/ACAD_SUP_DIR.lsp"
+  ("../utils/ACAD_SUP_DIR"
   "../utils/Debug"
   "format-cmd"
-  "format-draw"		   "format-geom_util"
-    "format-block_create"	 "format-dop_dlg"	      "format-add_dop_sht_dlg"	   "../utils/binary"
-    "../utils/prin"		 "../utils/stl_text"	      "../utils/string"		   "../utils/system_registry"
-    "../utils/dlg_utils"	 "../opechatka/rus_cmd_opechatka"			   "format-rus"
+  "format-draw"
+  "format-geom_util"
+  "format-block_create"
+  "format-dop_dlg"
+  "format-add_dop_sht_dlg"
+  "../utils/binary"
+  "../utils/prin"
+  "../utils/stl_text"
+  "../utils/string"
+  "../utils/system_registry"
+  "../utils/dlg_utils"
+  "../opechatka/rus_cmd_opechatka"
+  "format-rus"
   )
   :FAS-DIRECTORY
   nil

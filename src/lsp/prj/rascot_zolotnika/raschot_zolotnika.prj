@@ -3,11 +3,14 @@
   :NAME
   raschot_zolotnika
   :OWN-LIST
-  ("../../utils/sub_div"
-    "../../MATR/MATR"				     "../../matr/Vychisljenije_osrjednjajuschjej_funktcii"
+  ("../../utils/sub_div"  
+    "../../MATR/MATR"
+    "../../matr/Vychisljenije_osrjednjajuschjej_funktcii"
     "../../mjetod_polovinnogo_djeljenija/Polovinnoje_djeljenije_1"
-    "../../Otvjerstija/f_otv"			     "havisude"
-    "gt25000"					     "dg80L5"
+;;  "../../Otvjerstija/f_otv"
+    "havisude"
+    "gt25000"
+    "dg80L5"
    )
   :FAS-DIRECTORY
   "../../../../temp"
