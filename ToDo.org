@@ -1,47 +1,33 @@
-﻿#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
-#+options: author:t broken-links:nil c:nil creator:nil
-#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
-#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
-#+options: timestamp:t title:t toc:t todo:t |:t
-#+title: ToDo
-#+date: <2022-06-30 Чт>
-#+author:
-#+email: mnaso@UAKAZI-NOTE
-#+language: en
-#+select_tags: export
-#+exclude_tags: noexport
-#+creator: Emacs 28.1 (Org mode 9.5.2)
-#+cite_export:
-#+options: html-link-use-abs-url:nil html-postamble:auto
-#+options: html-preamble:t html-scripts:nil html-style:t
-#+options: html5-fancy:nil tex:t
-#+html_doctype: xhtml-strict
-#+html_container: div
-#+html_content_class: content
-#+description:
-#+keywords:
-#+html_link_home:
-#+html_link_up:
-#+html_mathjax:
-#+html_equation_reference_format: \eqref{%s}
-#+html_head:
-#+html_head_extra:
-#+subtitle:
-#+infojs_opt:
-#+creator: <a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.1 (<a href="https://orgmode.org">Org</a> mode 9.5.2)
-#+latex_header:
-* ToDo
-1. [ ] Написание на AutoLisp приложений аналогичных приложениям,
-   написаным под OARX2009 по вставке:
-   - [ ] позиции;
-   - [ ] сварки.
-2. [ ] Команда c:format
+﻿* ToDo
+1. [ ] Команда c:format
    - [ ] понизить версию для штампов до  AutoCAD_2013
    - [ ] устранение ошибки при делении на зоны для четных листов
      текстовых документов при двусторонней печати;
-   - [ ] добавить локализацию
-     - [ ] украинскую;
-     - [ ] русскую;
+   - [ ] створити заготованки українських корпоративних бланків:
+     - [ ] кресленик конструкторський:
+       - [ ] Перший лист A4. (код 2121)
+       - [ ] Перший лист окрім A4. (код 2122) 
+       - [ ] Наступні листи (код 2123)
+     - [ ] повідомлення про зміни:
+       - [ ] додаток "0". код 2112;
+       - [ ] перший лист. код 2113;
+       - [ ] наступний лист. код 2114;
+   - [ ] створити заготованки російськомовних корпоративних бланків:
+     - [ ] кресленик конструкторський:
+       - [ ] Перший лист A4. (код 121)
+       - [ ] Перший лист окрім A4. (код 122) 
+       - [ ] Наступні листи (код 123)
+     - [ ] повідомлення про зміни:
+       - [ ] додаток "0". код 112;
+       - [ ] перший лист. код 113;
+       - [ ] наступний лист. код 114;
+   - [ ] додати локалізацію
+     - [ ] українську;
+     - [ ] російську;
+2. [ ] Написание на AutoLisp приложений аналогичных приложениям,
+   написаным под OARX2009 по вставке:
+   - [ ] позиции;
+   - [ ] сварки.
 3. [ ] Привязка высоты текста к высоте и стилю текста размеров для
    текущего размерного стиля для:
    - [ ] позиций;
