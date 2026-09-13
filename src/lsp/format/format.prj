@@ -6,6 +6,7 @@
   ("../utils/ACAD_SUP_DIR"
     "../utils/Debug"
     "format-cmd"
+    "format-main"
     "format-draw"
     "format-geom_util"
     "format-block_create"

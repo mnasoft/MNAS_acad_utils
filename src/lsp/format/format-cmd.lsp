@@ -1,36 +1,4 @@
-;;;;;;("format" "Построение форматной рамки." "Размеры")
-(defun c:format  (/                     ;
-                  f_key                 ; Список, содержащий ключи основных надписей: ("1" "2" "2аг" "2ат" "2бн" "2бч" "3")
-                  f_val                 ; Список, содержащий полные наименования основных надписей.
-                  sht1_key              ; Ключи  тегов в основной надписи
-                  sht1_key2             ; Наименования тегов в основной надписи
-                  kr_key                ; Список, содержащий допустимые кратности для форматов (строки).
-                  kr_val                ; Список, содержащий допустимые кратности для форматов (целочисленные).
-                  for_name              ; Список, содержащий имена форматов.
-                  for_val               ; Список, содержащий размеры форматов.
-                  reg_root              ; Корнь реестра для записи переменных параметров.
-                  format_registry       ; Список, содержащий значения параметров диалога по умолчанию.
-                  f_no                  ; Индекс основной надписи.
-                  kr_no                 ; Индекс для нахождения кратности формата.
-                                        ;
-) (setq reg_root "HKEY_CURRENT_USER\\Software\\MNASoft\\Format")
-  (setq format_registry '((p_start (0.0 0.0 0.0))
-                          (sht1_val
-                           ("Устройство горелочное"           "В2М80009993СБ"  "Дораб.черт. Н80038002СБ"
-                            ""               ""               ""               ""               "1:1"
-                            ""               "1"              "ЖАКИ"           "Нач отд"        "Матвеев   "
-                            "Матвеев   "     "Дунаев   "      "Ванцовский"     "Матвеев   "     "Спицын   "
-                            ""               ""))
-                          (f_no 0)
-                          (kr_no 0)
-                          (for_no 1)
-                          (dir_sht 1)
-                          (divzone_no 1)
-                          (zone_ch 65)
-                          (zone_dig 1)))
-  (load_format)
-  (main_format)
-  (princ))
+
 
 (defun format:about () (alert (strcat "Вставка форматной рамки" (about-gpl-string))))
 
@@ -72,15 +40,6 @@
              (and (= r2 0.0) (>= r1 0.0) (>= r3 0.0))
              (and (= r3 0.0) (>= r1 0.0) (>= r1 0.0)))
          1)))
-
-
-(defun point_triang  (p1 p2 p3 pt / d)
-;;;Определяет находится ли точка pt внутри треугольника p1 p2 p3
-;;;Возвращает: находится вне = 2 ;находится на границе = 1 ; внутри = 0.
-  (setq d (dir_ob p1 p2 p3))
-  (cond ((= d 0.0) 2)
-        ((> d 0.0) (assad (dir_ob p1 p2 pt) (dir_ob p2 p3 pt) (dir_ob p3 p1 pt)))
-        ((< d 0.0) (assad (dir_ob p2 p1 pt) (dir_ob p3 p2 pt) (dir_ob p1 p3 pt)))))
 
 (defun load_format_dcl  (/ dcl-name name)
   (setq name     "src/lsp/format/format.dcl"
@@ -173,16 +132,16 @@
   (start_dialog)
   (unload_dialog dcl_id))
 
-;;; Создает набор выбора из элементов следующих за en1 и до конца действующей БД.
-;;; Если en1=nil в набор выбора включаются все элементы БД.
 (defun ss_pick  (en1 / ss1)
+  "Создает набор выбора из элементов следующих за en1 и до конца действующей БД.
+Если en1=nil в набор выбора включаются все элементы БД."  
   (setq ss1 (ssadd))
   (if en1                               ;
-    (setq en1 (entnext en1))
-    (setq en1 (entnext)))
+      (setq en1 (entnext en1))
+      (setq en1 (entnext)))
   (while en1
-    (setq ss1 (ssadd en1 ss1)
-          en1 (entnext en1)))
+         (setq ss1 (ssadd en1 ss1)
+               en1 (entnext en1)))
   ss1)
 
 
@@ -226,25 +185,6 @@
            (mapcar (function -) for '(25.0 10.0))
            (mapcar (function +) '(20.0 5.0 0.0) p_start)
            1))))
-
-(defun format:draw-rect  (for p0 col)
-  (format:draw-line
-    (mapcar (function +) (list (nth 0 for) (nth 1 for) 0.0) p0)
-    (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0)
-    col)
-  (format:draw-line
-    (mapcar (function +) (list (nth 0 for) (nth 1 for) 0.0) p0)
-    (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0)
-    col)
-  (format:draw-line
-    (mapcar (function +) (list 0.0 0.0 0.0) p0)
-    (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0)
-    col)
-  (format:draw-line
-    (mapcar (function +) (list 0.0 0.0 0.0) p0)
-    (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0)
-    col))
-
 
 (defun form_dlg  (/ for_n kr_n dir_sh dcl_id)
   (load_format_dcl)
@@ -398,7 +338,7 @@
           ((= action 3) (ed_4_do))
           ((= action 5) (dop_dlg))
           ((= action 6)
-           (zap_sht str_1 (car (entsel "\nУкажите штамп для заполнения :")))
+           (zap_sht str_1 (car (entsel "\nУкажите штамп для заполнения:")))
            (setq do_dialog nil))))
   (unload_dialog dcl_id)
   (setq *error* old_err)

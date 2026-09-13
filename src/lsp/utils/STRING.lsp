@@ -57,17 +57,14 @@
 )
 
 (defun r-e-m (string-rus string-enu)
-  ;; Возвращает строку, на языке соответствующей локали
-  ;; Пример использования:
-  ;; (r-e-m  "Файл не" "File is not")
+"  Возвращает строку, на языке соответствующей локали
+   Пример использования:
+  (r-e-m  \"Файл не\" \"File is not\")"
   (get-localized-message
     (list
       (cons "rus" string-rus)
       (cons "enu" string-enu)
-      (cons (get-locale) string-enu)
-    )
-  )
-)
+      (cons (get-locale) string-enu))))
 
 (defun e-r-m (string-enu string-rus)
   ;; Возвращает строку, на языке соответствующей локали
@@ -77,10 +74,7 @@
     (list
       (cons "enu" string-enu)
       (cons "rus" string-rus)
-      (cons (get-locale) string-enu)
-    )
-  )
-)
+      (cons (get-locale) string-enu))))
 
 (defun string-subst-all (new-str pattern string / do)
   (setq do t)
@@ -88,8 +82,5 @@
     (setq str-rez (vl-string-subst new-str pattern string))
     (if (/= str-rez string)
       (setq string str-rez)
-      (setq do nil)
-    )
-  )
-  string
-)
+      (setq do nil)))
+  string)
