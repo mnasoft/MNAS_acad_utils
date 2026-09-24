@@ -1,4 +1,19 @@
-(defun format:draw-line  (p1 p2 col)
+(setq *docs* nil)
+
+(defun format:add-doc (name vars description)
+  (setq *docs* (append *docs* (list name vars description))))
+
+   "@b(Описание:) функция @b(format:draw-line) отрисовывает отрезок.
+  
+   @b(Переменые:)
+@begin(list)
+ @item(p1  - начальная точка отрезка;)
+ @item(p2  - конечная точка отрезка;)
+ @item(col - целочисленный цвет.)
+@end(list)"
+
+
+(defun format:draw-line (p1 p2 col)
   (entmake
    (list (cons 0 "LINE")
          (cons 10 p1)
@@ -8,6 +23,20 @@
          (cons 62 col))))
 
 (defun format:draw-rect  (for p0 col)
+  "@b(Описание:) функция @b(format:draw-rect) отрисовывает прямоугольник.
+
+ @b(Переменые:)
+@begin(list)
+ @item(for - список из 2-х значений - длины по оси Х и по оси Y;)
+ @item(p0  - левый нижний угол прямоугольника;)
+ @item(col - целочисленный цвет.)
+@end(list)
+
+ @b(Пример использования:)
+@begin[lang=lisp](code)
+ (format:draw-rect '(255 355) '(10 20 30) 2)
+@end(code)
+"
   (format:draw-line
     (mapcar (function +) (list (nth 0 for) (nth 1 for) 0.0) p0)
     (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0)
@@ -24,6 +53,11 @@
     (mapcar (function +) (list 0.0 0.0 0.0) p0)
     (mapcar (function +) (list 0.0 (nth 1 for) 0.0) p0)
     col))
+
+;;; (symbol-function 'format:draw-rect)
+
+
+
 
 (defun format:draw-text  (p11 gar str_1)
   (entmake (list (cons 0 "TEXT")

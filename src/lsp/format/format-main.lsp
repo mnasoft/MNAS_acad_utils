@@ -33,5 +33,20 @@
   (main_format)
   (princ))
 
-(setq format:locale "");; ru, ua
+
+(setq format:locale "ua");; ru, ua
+
+;;;f;;; ("format:locale-string (key-strings default)"
+;;;f;;;  "Возвращает строку, соответствующую действующей локали.\n
+;;;f;;;    Аргументы:\n
+;;;f;;;    key-strings  - точки;\n
+;;;f;;;    default     - значение по умолчанию.\n
+;;;f;;;    Пример использования:\n
+;;;f;;; _$ (format:locale-string '((\"ua\" \"Альбомна\") (\"ru\" \"Альбомная\") \"Landscape\"))\n
+;;;f;;; ")
+
+(defun format:locale-string (key-strings default)
+  (cond
+    ((cadr (assoc format:locale key-strings)))
+     (t default)))
 

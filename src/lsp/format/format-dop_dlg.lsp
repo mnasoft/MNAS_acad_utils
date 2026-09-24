@@ -201,7 +201,7 @@
 
 
 (defun dop_dlg  (/ dop_dlg_ok f_n action f1 str1 ll1 do_dialog dcl_id)
-  (load_format_dcl)
+  (format:load_format_dcl)
   (setq do_dialog t)
   (reg_read_default_lst reg_root dop_dlg_registry)
   (while do_dialog
