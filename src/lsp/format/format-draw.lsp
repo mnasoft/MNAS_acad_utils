@@ -201,6 +201,10 @@
           (mapcar (function +) '(20 -5.0 0.0) (polar p_start (/ pi 2.) (nth 1 for)))
           pick2))
 
+(defun format:make-shtamp-path  (shtamp)
+  (utils:path-src-lsp
+   (strcat "FORMAT" "/" format:locale "/" shtamp ".dwg")))
+
 (defun format:find-shtamp  (shtamp)
   (strcat
    "*"

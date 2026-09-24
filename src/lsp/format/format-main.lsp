@@ -34,7 +34,7 @@
   (princ))
 
 
-(setq format:locale "ua");; ru, ua
+(setq format:locale "uk");; ru, uk
 
 ;;;f;;; ("format:locale-string (key-strings default)"
 ;;;f;;;  "Возвращает строку, соответствующую действующей локали.\n
@@ -48,5 +48,10 @@
 (defun format:locale-string (key-strings default)
   (cond
     ((cadr (assoc format:locale key-strings)))
+     (t default)))
+
+(defun format:locale-data (key-data default)
+  (cond
+    ((cadr (assoc format:locale key-data)))
      (t default)))
 

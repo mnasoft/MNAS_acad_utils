@@ -1,5 +1,3 @@
-
-
 (defun format:about () (alert (strcat "Вставка форматной рамки" (about-gpl-string))))
 
 (defun load_format  ()
@@ -171,9 +169,9 @@
                     (itoa (nth 1 for))))
   (if (= dir_sht 0)
       (set_tile "dir_sht"
-                (format:locale-string '(("ua" "Портретна") ("ru" "Портретная")) "Portrait"))
+                (format:locale-string '(("uk" "Портретна") ("ru" "Портретная")) "Portrait"))
       (set_tile "dir_sht"
-                (format:locale-string '(("ua" "Альбомна") ("ru" "Альбомная")) "Landscape"))))
+                (format:locale-string '(("uk" "Альбомна") ("ru" "Альбомная")) "Landscape"))))
 
 (defun format:draw-format  (dir_sht for_no for_val f_key f_no kr_no kr_val p_start)
   (princ "\nНачинаю отрисовку штампа...")
@@ -257,7 +255,7 @@
   (setq ename
         (car
          (entsel
-          (format:locale-string '(("ua" "\nВиберіть формат:")
+          (format:locale-string '(("uk" "\nВиберіть формат:")
                                   ("ru" "\nВыберите формат:"))
                                 "\nPick format:"))))
   (if (not (eq ename nil))
@@ -266,7 +264,7 @@
 (defun format:action-pick-point  ()
   (setq p_start
         (getpoint
-         (format:locale-string '(("ua" "\nВкажіть точку:")
+         (format:locale-string '(("uk" "\nВкажіть точку:")
                                  ("ru" "\nУкажите точку:"))
                                "Pick point:")))
   (if (eq p_start nil)

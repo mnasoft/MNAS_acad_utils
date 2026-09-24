@@ -10,6 +10,7 @@
     "format-draw"
     "format-geom_util"
     "format-block_create"
+    "format-dop-data"
     "format-dop_dlg"
     "format-add_dop_sht_dlg"
     "../utils/binary"
