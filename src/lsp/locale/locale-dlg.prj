@@ -1,0 +1,19 @@
+;;; VLisp project file [V2.0] locale-dlg saved to:[E:/PRG/msys64/home/mnaso/dev/acad/MNAS_acad_utils/src/lsp/locale] at:[9/27/26]
+(VLISP-PROJECT-LIST
+  :name
+  locale-dlg
+  :OWN-LIST
+  ("../utils/ACAD_SUP_DIR"
+   "../utils/dlg_utils"
+    "../utils/Debug"
+    "../utils/locale"
+    "locale-dlg")
+  :FAS-DIRECTORY
+  "../../../temp"
+  :TMP-DIRECTORY
+  "../../../temp"
+  :PROJECT-KEYS
+  (:build (:optimize :link) :merged t :safe-mode t :msglevel 1)
+  :CONTEXT-ID
+  :AUTOLISP)
+;;; EOF
