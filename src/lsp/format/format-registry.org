@@ -1,0 +1,162 @@
+* Переменные, сохраняемые в системном реестре определяющие поведением отрисовки
+** TODO dir_sht
+   Расположение основной надписи вдоль 1 - днинной стороны
+
+#+name: dir_sht
+#+begin_src elisp :var var="dir_sht"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var)
+#+end_src
+
+#+RESULTS: dir_sht
+: (setq DIR_SHT '0)
+
+** TODO divzone_no
+
+#+name: divzone_no
+#+begin_src elisp :var var="divzone_no"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: divzone_no
+: (setq DIVZONE_NO '0)
+
+** TODO dsht_1_no
+
+#+name: dsht_1_no
+#+begin_src elisp :var var="dsht_1_no"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: dsht_1_no
+: (setq DSHT_1_NO '8)
+
+** TODO dsht_1_val
+
+#+name: dsht_1_val
+#+begin_src elisp :var var="dsht_1_val"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: dsht_1_val
+: (setq DSHT_1_VAL '(("Специф.:N" ((2 . "src/lsp/FORMAT/uk/speciph_n.dwg") (70 . 3) (11 20.0 20.0 0.0) (12 205.0 20.0 0.0) (13 205.0 292.0 0.0) (14 20.0 292.0 0.0))) ("Специф.:1" ((2 . "src/lsp/FORMAT/uk/speciph_1.dwg") (70 . 3) (11 20.0 45.0 0.0) (12 205.0 45.0 0.0) (13 205.0 292.0 0.0) (14 20.0 292.0 0.0))) ("Л.рег.изм" ((2 . "src/lsp/FORMAT/uk/DOP_PRM.dwg") (70 . 0) (11 -190.0 282.0 0.0) (12 -190.0 20.0 0.0) (13 -5.0 20.0 0.0) (14 -5.0 292.0 0.0))) ("Тех.мет.вед" ((2 . "src/lsp/FORMAT/uk/DOP_TMV.dwg") (70 . 3) (11 0.0 5.0 0.0) (12 8.0 5.0 0.0) (13 8.0 115.0 0.0) (14 0.0 115.0 0.0))) ("Гр. л.верх" ((2 . "src/lsp/FORMAT/uk/DOP_G_LT.dwg") (70 . 2) (11 20.0 -27.0 0.0) (12 160.0 -27.0 0.0) (13 160.0 -5.0 0.0) (14 20.0 -5.0 0.0))) ("Гр.прав.низ." ((2 . "src/lsp/FORMAT/uk/DOP_G_RB.dwg") (70 . 0) (11 -125.0 60.0 0.0) (12 -5.0 60.0 0.0) (13 -5.0 68.0 0.0) (14 -125.0 68.0 0.0))) ("Текст.доп" ((2 . "src/lsp/FORMAT/uk/DOP_TEXT.dwg") (70 . 0) (11 -125.0 45.0 0.0) (12 -5.0 45.0 0.0) (13 -5.0 68.0 0.0) (14 -125.0 68.0 0.0))) ("Перв.прим" ((2 . "src/lsp/FORMAT/uk/DOP_PRIM.dwg") (70 . 3) (11 8.0 182.0 0.0) (12 20.0 182.0 0.0) (13 20.0 292.0 0.0) (14 8.0 292.0 0.0))) ("Арх?в" ((2 . "src/lsp/FORMAT/uk/DOP_ARH.dwg") (70 . 3) (11 8.0 5.0 0.0) (12 20.0 5.0 0.0) (13 20.0 155.0 0.0) (14 8.0 155.0 0.0)))))
+
+** TODO dsht_2_no
+
+#+name: dsht_2_no
+#+begin_src elisp :var var="dsht_2_no"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: dsht_2_no
+: (setq DSHT_2_NO 'nil)
+
+** dsht_2_val
+
+#+name: dsht_2_val
+#+begin_src elisp :var var="dsht_2_val"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: dsht_2_val
+: (setq DSHT_2_VAL '(("Арх?в" ((2 . "src/lsp/FORMAT/uk/DOP_ARH.dwg") (70 . 3) (11 8.0 5.0 0.0) (12 20.0 5.0 0.0) (13 20.0 155.0 0.0) (14 8.0 155.0 0.0))) ("Тех.мет.вед" ((2 . "src/lsp/FORMAT/uk/DOP_TMV.dwg") (70 . 3) (11 0.0 5.0 0.0) (12 8.0 5.0 0.0) (13 8.0 115.0 0.0) (14 0.0 115.0 0.0))) ("Перв.прим" ((2 . "src/lsp/FORMAT/uk/DOP_PRIM.dwg") (70 . 3) (11 8.0 182.0 0.0) (12 20.0 182.0 0.0) (13 20.0 292.0 0.0) (14 8.0 292.0 0.0)))))
+
+** dsht_3_val
+
+#+name: dsht_3_val
+#+begin_src elisp :var var="dsht_3_val"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: dsht_3_val
+: (setq DSHT_3_VAL '(("Арх?в" ((2 . "src/lsp/FORMAT/uk/DOP_ARH.dwg") (70 . 3) (11 8.0 5.0 0.0) (12 20.0 5.0 0.0) (13 20.0 155.0 0.0) (14 8.0 155.0 0.0))) ("Тех.мет.вед" ((2 . "src/lsp/FORMAT/uk/DOP_TMV.dwg") (70 . 3) (11 0.0 5.0 0.0) (12 8.0 5.0 0.0) (13 8.0 115.0 0.0) (14 0.0 115.0 0.0))) ("Перв.прим" ((2 . "src/lsp/FORMAT/uk/DOP_PRIM.dwg") (70 . 3) (11 8.0 182.0 0.0) (12 20.0 182.0 0.0) (13 20.0 292.0 0.0) (14 8.0 292.0 0.0)))))
+
+** f_no
+
+#+name: f_no
+#+begin_src elisp :var var="f_no"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: f_no
+: (setq F_NO '7)
+
+** for_no
+
+#+name: for_no
+#+begin_src elisp :var var="for_no"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: for_no
+: (setq FOR_NO '4)
+
+** kr_no
+Индекс кратности формата. Значение от 0 до (1- (length kr_key));
+Используется для сохранения кратности.
+
+#+name: kr_no
+#+begin_src elisp :var var="kr_no"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: kr_no
+: (setq KR_NO '1)
+
+** kr_key
+Список строковых представлений кратностей формата.
+
+#+begin_src lisp
+  (setq kr_key (list "1" "3" "4" "5" "6" "7" "8" "9"))
+#+end_src
+
+** kr_val
+Список значений кратностей формата.
+#+begin_src lisp
+  (setq kr_val (list 1 3 4 5 6 7 8 9))
+#+end_src
+
+** p_start
+Координаты левого нижнего угла внешней рамки формата.
+#+name: p_start
+#+begin_src elisp :var var="p_start"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: p_start
+: (setq P_START '(0.0 0.0 0.0))
+
+** sht1_val
+
+#+name: sht1_val
+#+begin_src elisp :var var="sht1_val"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: sht1_val
+: (setq SHT1_VAL '("Устройство горелочное" "В2М80009993СБ" "Дораб.черт. Н80038002СБ" "" "" "" "" "1:1" "" "1" "ЖАКИ" "Нач отд" "Матвеев   " "Матвєєв   " "Дунаев   " "Ванцовский" "Матвеев   " "Спицын   " "" ""))
+
+** zone_ch
+Символьный код буквы, с которого начинается нумерация зоны.
+#+begin_src lisp
+  (char-code #\A) ; => 65 
+  (code-char 65) ; => #\A
+#+end_src
+
+#+name: zone_ch
+#+begin_src elisp :var var="zone_ch"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: zone_ch
+: (setq ZONE_CH '65)
+
+** zone_dig
+Цифра, с которой начинается нумерация зон.
+#+name: zone_dig
+#+begin_src elisp :var var="zone_dig"
+(my-reg-query "HKCU\\SOFTWARE\\MNASoft\\Format" var) 
+#+end_src
+
+#+RESULTS: zone_dig
+: (setq ZONE_DIG '1)
+

@@ -1,29 +1,15 @@
 (defun format:about () (alert (strcat "Вставка форматной рамки" (about-gpl-string))))
 
+'(("ru" "Чертежи и Схемы")("uk" "Кресленики та Схеми") ("en" "Drawings and Schematics"))
+'(("ru" "Графический конструкторский документ") ("uk" "Графічний конструкторський документ") ("en" "Graphical Design Document"))
+'(("ru" "Граф.Констр.Док.") ("uk" "Граф.Констр.Док.") ("en" "Graph.Design.Doc."))
+
+'(("ru" "Четный") ("uk" "Парний") ("en" "Even"))
+'(("ru" "Нечетный") ("uk" "Непарний") ("en" "Odd"))
+
 (defun load_format  ()
   (reg_read_default_lst reg_root format_registry)
-  (setq f_key (list "1" "2аг" "2" "2ат" "2б" "2бн" "2бч" "3")) ;Тип штампа
-  (setq f_val (list
-                "1   \tчертежи и схемы    \tЛист=1"
-                "2аг \tчетрежи и схемы    \tЛист=n"
-                "2   \tтекст.констр.док.  \tЛист=1"
-                "2ат \tтекст.констр.док.  \tЛист=n"
-                "2б  \tтекст.констр.док.  \tСтр.=1"
-                "2бн \tтекст.констр.док.  \tСтр.=(2*n+1)"
-                "2бч \tтекст.констр.док.  \tСтр.=(2*n) "
-                "3   \tтолько рамка       \tСтр.=ЛУ"))
-  (setq for_name (list "А0" "А1" "А2" "А3" "А4"))
-  (setq for_val '((1188 840) (840 594) (594 420) (420 297) (297 210)))
-  (setq kr_key (list "1" "3" "4" "5" "6" "7" "8" "9")) ;Кратность
-  (setq kr_val (list 1 3 4 5 6 7 8 9))
-  (setq sht1_key (list "sht1_1"       "sht1_2"       "sht1_3"       "sht1_4_1"     "sht1_4_2"     "sht1_4_3"
-                       "sht1_5"       "sht1_6"       "sht1_7"       "sht1_8"       "sht1_9"       "sht1_10"
-                       "sht1_11_1"    "sht1_11_2"    "sht1_11_3"    "sht1_11_4"    "sht1_11_5"    "sht1_11_6"
-                       "sht1_24"      "sht1_25"))
-  (setq sht1_key2 (list "NAIMEN"      "OBOZNACH"    "MATERIAL"    "L_1"         "L_2"         "L_3"
-                        "MASS"        "MASHT"       "PAPER"       "PAPERS"      "FACTORY"     "RABOTA"
-                        "RAZRAB"      "PROVER"      "TECHN_KONTROL"             "NACH_PODR"   "NORMO_KONTR"
-                        "UTVERD"      "SPRAV_NO"    "PERV_PRIM")))
+)
                                         ;defun load_format
 
 (defun dir_ob  (p1 p2 p3 / a1 a2)
