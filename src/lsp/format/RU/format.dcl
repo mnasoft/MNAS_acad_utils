@@ -34,9 +34,8 @@ form : dialog
 }
 
 sht1 : dialog
-{
-	aspect_ratio = 0;
-	label = "Заполнение штампа";
+{ aspect_ratio = 0;
+  label = "Заполнение штампа";
 	: column
 	{
 		: boxed_column
@@ -157,67 +156,39 @@ add_dop_sht_dlg : dialog
 }
 
 sht_main : dialog
-{
-  aspect_ratio = 0;
+{ aspect_ratio = 0;
   label = "Заполнение штампа";
-  : row
-  {
+  : boxed_row
+  { label = "Формат, кратность, ориентация листа";
     : column
-    {
-    : row
-    {
-    : boxed_column
-    {
-      label = "Формат и кратность";
-    :text { key = "format_text"; width = 25; }
-          :text { key = "dir_sht"; width = 5; }
-          : button { label = "Выбор формта..."; mnemonic = "B"; key = "format"; }
-				}
-				: column
-				{
-
-				: button
-          { key = "ed_1"; label = "Заполнение..."; }
-          : button { key = "ed_3"; label = "Сохранить настр."; }
-          : button { key = "ed_4"; label = "Выбрать"; }
-				}
-			}
-			: boxed_row
-      { label = "Деление на зоны";
-				: radio_column
-					{
-            : radio_button { label ="Есть"; key = "Dz_y"; is_tab_stop = false; }
-            : radio_button { label ="Нет "; key = "Dz_n"; is_tab_stop = false; }
-				}
-				: column
-				{
-          : edit_box { key = "z_1"; label = "Нач. цифра"; }
-          : edit_box { key = "z_A"; label = "Нач. буква"; }
-				}
-			}
-      : boxed_column
-      { label = "Номер формы (тип штампа)";
-        : popup_list {label = "";
-          tabs = "5 22 45"; 
-          key = "sht_list";}
-      }
-      : boxed_row
-      { label = "Начало штампа";
-        : button { label = "Указание..."; key = "pick"; }
-        : edit_box { key = "X0"; label = "X="; }
-        : edit_box { key = "Y0"; label = "Y="; }
-			}
-		}
-		: boxed_column
-    { label = "Дополнительные графы";
-      : list_box { key = "dop_list"; }
-      : button { key = "dop_edit"; label = "Редактирование..."; }
-		}
-	}
+    { :text { key = "format_text"; width = 25;}
+      :text { key = "dir_sht"; width = 25;}}
+    : button { label = "Выбор формта..."; mnemonic = "B"; key = "format";}}
+  : boxed_column
+  { label = "Номер формы (тип штампа)";
+    : popup_list {label = ""; tabs = "4 22 45"; key = "sht_list";}}
+  : boxed_row
+  { label = "Дополнительные графы";
+    : popup_list { key = "dop_list"; width = 25;}
+    : button { key = "dop_edit"; label = "Редактировать...";}}
   : row
-  {
-    : button { label ="Заполнить"; key = "for_zap";}
-    ok_cancel_help_info_errtile;
-  }
-  
-}
+  { : boxed_radio_row
+    { label = "Деление на зоны";
+      : radio_button { label ="Есть"; key = "Dz_y"; is_tab_stop = false;}
+      : radio_button { label ="Нет "; key = "Dz_n"; is_tab_stop = false;}}
+    : boxed_row
+    { label = "Начальная";
+    : edit_box { key = "z_A"; label = "Буква";}
+    : edit_box { key = "z_1"; label = "Цифра";}}}
+  : boxed_row
+  { label = "Левий нижний угол формата";
+    : button { label = "Указать [⌖]"; key = "pick";}
+    : edit_box { key = "X0"; label = "X=";}
+    : edit_box { key = "Y0"; label = "Y=";}}
+  : boxed_row
+  { label = "Выбор и Заполнение форми";
+    : button { key = "ed_1"; label = "Заполнение...";}
+    : button { key = "ed_4"; label = "Выбрать [↖]";}
+    : button { key = "for_zap"; label ="Заполнить [↖]";}}
+  : row { : button { key = "ed_3"; label = "Сохранить настройки";}}
+  : row {ok_cancel_help_info_errtile;}}

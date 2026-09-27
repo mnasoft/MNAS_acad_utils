@@ -1,6 +1,6 @@
 ;;; ./src/lsp/format/format-dop-data.lsp
-;;; (format:locale-string '(("uk" "Альбомна") ("ru" "Альбомная") "Landscape"))
-;;; format:locale-data
+;;; (utils-locale-string '(("uk" "Альбомна") ("ru" "Альбомная") "Landscape"))
+;;; utils-locale-data
 
 
 (defun make-3d-point (point)
@@ -20,7 +20,7 @@
          (cons 13 (make-3d-point p-rt))
          (cons 14 (make-3d-point p-lt)))))
 
-;;; (format:locale-string '(("uk" "Альбомна") ("ru" "Альбомная") "Landscape"))
+;;; (utils-locale-string '(("uk" "Альбомна") ("ru" "Альбомная") "Landscape"))
 '(("ru" "Русский")              ("uk" "Українська")            ("en" "English"))
 '(("ru" "Спецификация")         ("uk" "Специфікація")          ("en" "Specification"))
 '(("ru" "Первичное применение") ("uk" "Первинне застосування") ("en" "First Use"))
@@ -29,13 +29,13 @@
 (progn
   (setq format-dop-sht:speciph_n
         (make-format-dop-sht
-         (format:locale-string '(("uk" "Специф.:N") ("ru" "Специф.:N")) "Specif.:N")
+         (utils-locale-string '(("uk" "Специф.:N") ("ru" "Специф.:N")) "Specif.:N")
          (format:make-shtamp-path "speciph_n")
          3
          '(  20.0   20.0) '( 205.0  20.0) '(205.0 292.0)  '(  20.0 292.0)))
   (setq format-dop-sht:speciph_1
         (make-format-dop-sht
-         (format:locale-string '(("uk" "Специф.:1") ("ru" "Специф.:1")) "Specif.:1")
+         (utils-locale-string '(("uk" "Специф.:1") ("ru" "Специф.:1")) "Specif.:1")
          (format:make-shtamp-path "speciph_1")
          3
          '(  20.0   45.0) '( 205.0  45.0) '(205.0 292.0)  '(  20.0 292.0)))
@@ -47,7 +47,7 @@
   (setq format-dop-sht:DOP_PRIM  (make-format-dop-sht "Перв.прим"    (format:make-shtamp-path "DOP_PRIM")  3 '(   8.0  182.0) '(  20.0 182.0) '(  20.0 292.0) '(   8.0 292.0)))
   (setq format-dop-sht:DOP_ARH
         (make-format-dop-sht
-         (format:locale-string '(("ru" "Архив")("uk" "Архів")) "Archive")
+         (utils-locale-string '(("ru" "Архив")("uk" "Архів")) "Archive")
          (format:make-shtamp-path "DOP_ARH")
          3
          '(   8.0    5.0) '(  20.0   5.0) '(  20.0 155.0) '(   8.0 155.0))))

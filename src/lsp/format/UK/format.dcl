@@ -26,7 +26,7 @@ form : dialog
   : boxed_radio_row
   { label = "Розташування";
     : radio_button {label ="Альбомне"; key = "long_side"; is_tab_stop = false; }
-    : radio_button {label ="Портретне";key = "short_side";is_tab_stop = false; }
+    : radio_button {label ="Книжкове";key = "short_side";is_tab_stop = false; }
   }
   : cluster{: boxed_row {label = "Розмір "; : text { key="razmer"; width = 5;}}}
   ok_cancel;
@@ -157,67 +157,40 @@ add_dop_sht_dlg : dialog
 }
 
 sht_main : dialog
-{
-  aspect_ratio = 0;
+{ aspect_ratio = 0;
   label = "Заповнення штампу";
-  : row
-  {
+  : boxed_row
+  { label = "Формат, кратність, орієнтація аркуша";
     : column
-    {
-    : row
-    {
-    : boxed_column
-    {
-      label = "Формат і кратність";
-    :text { key = "format_text"; width = 25; }
-          :text { key = "dir_sht"; width = 5; }
-          : button { label = "Вибір формату..."; mnemonic = "B"; key = "format"; }
-				}
-				: column
-				{
-
-				: button
-          { key = "ed_1"; label = "Заповнення..."; }
-          : button { key = "ed_3"; label = "Зберегти налашт."; }
-          : button { key = "ed_4"; label = "Вибрати"; }
-				}
-			}
-			: boxed_row
-      { label = "Поділ на зони";
-				: radio_column
-					{
-            : radio_button { label ="Є"; key = "Dz_y"; is_tab_stop = false; }
-            : radio_button { label ="Нема"; key = "Dz_n"; is_tab_stop = false; }
-				}
-				: column
-				{
-          : edit_box { key = "z_1"; label = "Поч. цифра"; }
-          : edit_box { key = "z_A"; label = "Поч. буква"; }
-				}
-			}
-      : boxed_column
-      { label = "Номер форми (тип штампа)";
-        : popup_list {label = "";
-          tabs = "5 22 45"; 
-          key = "sht_list";}
-      }
-      : boxed_row
-      { label = "Лівий нижній кут формату";
-        : button { label = "Вказати..."; key = "pick"; }
-        : edit_box { key = "X0"; label = "X="; }
-        : edit_box { key = "Y0"; label = "Y="; }
-			}
-		}
-		: boxed_column
-    { label = "Додаткові графи";
-      : list_box { key = "dop_list"; }
-      : button { key = "dop_edit"; label = "Редагування..."; }
-		}
-	}
+    { : text { key = "format_text"; width = 25;}
+      : text { key = "dir_sht"; width = 25;}}
+    : button { label = "Вибір формату..."; mnemonic = "B"; key = "format";}}
+  : boxed_column
+  { label = "Номер форми (тип штампу)";
+    : popup_list {label = ""; tabs = "4 22 45"; key = "sht_list";}}
+  : boxed_row
+  { label = "Додаткові графи";
+    : popup_list { key = "dop_list";}
+    : button { key = "dop_edit"; label = "Редагувати...";}}
   : row
-  {
-    : button { label ="Заповнити"; key = "for_zap";}
-    ok_cancel_help_info_errtile;
-  }
-  
-}
+  { : boxed_radio_row
+    { label = "Поділ на зони";
+      : radio_button { label ="Є"; key = "Dz_y"; is_tab_stop = false;}
+      : radio_button { label ="Нема"; key = "Dz_n"; is_tab_stop = false;}}
+    : boxed_row
+    { label = "Початкова";
+    : edit_box { key = "z_A"; label = "Буква";}
+    : edit_box { key = "z_1"; label = "Цифра";}}}
+  : boxed_row
+  { label = "Лівий нижній кут формату";
+    : button { label = "Вказати [⌖]"; key = "pick";}
+    : edit_box { key = "X0"; label = "X=";}
+    : edit_box { key = "Y0"; label = "Y=";}}
+  : boxed_row
+  { label = "Вибір та Заповнення форми";
+    : button { key = "ed_1"; label = "Заповнення...";}
+    : button { key = "ed_4"; label = "Вибрати [↖]";}
+    : button { key = "for_zap"; label ="Заповнити [↖]";}}
+  : row { : button { key = "ed_3"; label = "Зберегти налаштування";}}    
+  : row {ok_cancel_help_info_errtile;}}
+

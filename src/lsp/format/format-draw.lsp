@@ -203,14 +203,14 @@
 
 (defun format:make-shtamp-path  (shtamp)
   (utils:path-src-lsp
-   (strcat "FORMAT" "/" format:locale "/" shtamp ".dwg")))
+   (strcat "FORMAT" "/" utils-locale "/" shtamp ".dwg")))
 
 (defun format:find-shtamp  (shtamp)
   (strcat
    "*"
    (findfile
     (utils:path-src-lsp
-     (strcat "FORMAT" "/" format:locale "/" shtamp ".dwg")))))
+     (strcat "FORMAT" "/" utils-locale "/" shtamp ".dwg")))))
 
 (defun format:draw-shtamp  (/ s1)
   (setq s1 (nth f_no f_key))
