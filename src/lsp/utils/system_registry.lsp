@@ -1,6 +1,6 @@
-                                        ;(vl-registry-write "HKEY_CURRENT_USER\\MNASoft\\format" "key" "(list \"qwe\" \"asdf\")")
-                                        ;(VL-REGISTRY-DELETE "HKEY_CURRENT_USER\\MNASoft\\format" "key" )
-                                        ;(vl-registry-read "HKEY_CURRENT_USER\\MNASoft\\format" "key")
+;;;(vl-registry-write "HKEY_CURRENT_USER\\MNASoft\\format" "key" "(list \"qwe\" \"asdf\")")
+;;;(VL-REGISTRY-DELETE "HKEY_CURRENT_USER\\MNASoft\\format" "key" )
+;;;(vl-registry-read "HKEY_CURRENT_USER\\MNASoft\\format" "key")
 
 ;;;f;;;("print-to-string" "ѕроизводит вывод цитируемого значени€ $val в строку,
 ;;;f;;;в виде пригодном дл€ последующего восстановдени€ значени€ функцией load-from-string.

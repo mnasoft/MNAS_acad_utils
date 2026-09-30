@@ -3,6 +3,37 @@
 (setq *text-edit-dlg-str* "")
 (setq *text-edit-dlg-dcl_te_pos* '(-1 -1))
 
+(defun text-edit-dlg:find-dialog ()
+  (findfile
+   (utils:path-src-lsp
+    (strcat "text/" utils-locale "/text.dcl"))))
+
+(defun text-edit-dlg:load-dialog  (/ dcl-name dcl_id)
+  (setq dcl-name (text-edit-dlg:find-dialog))
+  (if (null dcl-name)
+      (progn
+        (alert
+         (strcat
+          (utils-locale-string '(("ru" "Не могу найти файл диалога")
+                                 ("uk" "Не можу знайти файл діалогу")
+                                 ("en" "Cannot find dialog file"))
+                               "Cannot find dialog file")
+          "\n.../text/"
+          utils-locale
+          "/text.dcl\n" 
+          (utils-locale-string '(("ru" "Проверьте пути доступа к вспомогательным файлам.")
+                                 ("uk" "Перевірте шляхи доступу до допоміжних файлів.")
+                                 ("en" "Check the access paths to the auxiliary files."))
+	                       "Check the access paths to the auxiliary files.")))
+        nil)
+      (progn
+        (setq dcl_id (load_dialog dcl-name))
+        (if (< dcl_id 0)
+            (progn
+              (alert "Не удалось загрузить диалог редактирования текста.")
+              nil)
+            dcl_id))))
+
 ;;;;;;("te"
 ;;;;;;"Производит редактирование текстов и текстов размерных примитивов." "Тексты")
 (defun c:te  (/ dcl_id en i ss_td)
@@ -11,7 +42,7 @@
   (reg_read_default_lst *text-edit-dlg-reg_root* *text-edit-dlg-te_registry*)
   (prompt "\nВыберите тексты или размеры :")
   (setq ss_td  (ssget '((-4 . "<OR") (0 . "DIMENSION") (0 . "TEXT") (0 . "MTEXT") (-4 . "OR>")))
-        dcl_id (load_dialog (findfile (utils:path-src-lsp "text/text.dcl"))))
+        dcl_id (text-edit-dlg:load-dialog))
   (if (null ss_td)
     (progn (alert "Нет выбранных объектов.") (exit)))
   (if (< dcl_id 0)
@@ -47,7 +78,15 @@
   (setq *text-edit-dlg-dcl_te_pos* (done_dialog 0))
   (reg_write_default_lst *text-edit-dlg-reg_root* *text-edit-dlg-te_registry*))
 
-(defun text-edit-dlg-info () (alert (strcat "Редактирование текста " (about-gpl-string))))
+(defun text-edit-dlg-info ()
+  (alert
+   (strcat
+    (utils-locale-string '(("ru" "Редактирование текста")
+                           ("uk" "Редагування тексту")
+                           ("en" "Text Editing"))
+                         "Text Editing")
+     " "
+    (about-gpl-string))))
 
 (defun text-edit-dlg-help () (help (strcat (acad_help) "/te/te.html")))
 

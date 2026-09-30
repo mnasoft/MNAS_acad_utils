@@ -5,10 +5,13 @@
   :OWN-LIST
   ("../utils/ACAD_SUP_DIR"
     "../utils/Debug"
+    "../utils/locale"
     "format-cmd"
+    "format-main"
     "format-draw"
     "format-geom_util"
     "format-block_create"
+    "format-dop-data"
     "format-dop_dlg"
     "format-add_dop_sht_dlg"
     "../utils/binary"

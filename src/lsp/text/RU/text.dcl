@@ -1,0 +1,38 @@
+﻿dcl_settings : default_dcl_settings { audit_level = 3;}
+
+ok_cancel_help_info_errtile : column { ok_cancel_help_info; errtile;}
+
+chgtextt : dialog
+{ aspect_ratio = 0;
+  label = "Редактирование текста";
+  is_bold = true;
+  initial_focus = "dim_string";
+  :row
+  { : boxed_column
+    { label = "Добавить";
+      :row
+      { : button {key = "add-big-round-brackets"; label = "((<>))";}
+        : button {key = "add-round-brackets"; label = "(<>)";}}
+      :row
+      { : button {key = "add-big-square-brackets"; label = "[[<>]]";}
+        : button {key = "add-square-brackets"; label = "[<>]";}}}
+    : edit_box { key = "dim_string"; edit_width = 30; fixed_width = true; allow_accept = true;}
+    : boxed_column
+    { label = "Допуск";
+      : edit_box { key = "upper_tolerance"; edit_width = 5; fixed_width = true; allow_accept = true;}
+      : edit_box { key = "lower_tolerance"; edit_width = 5; fixed_width = true; allow_accept = true;}}
+    : boxed_column
+    { label = "Удалить";
+      : button {key = "delete-round-brackets"; label = "(<>)";}
+      : button {key = "delete-square-brackets"; label = "[<>]";}}}
+  :row
+  { : boxed_row
+    { label = "Добавить";
+      : button {key = "add-diameter-sign"; label = "Ø<>";}
+      : button {key = "add-x45-degrees"; label = "<>x45°";}
+      : button {key = "add-tolerance"; label = "+/-";}}
+    : boxed_row
+    { label = "Удалить";
+      : button {key = "delete-diameter-sign"; label = "Ø<>";}
+      : button {key = "delete-x45-degrees"; label = "<>x45°";}}}
+  ok_cancel_help_info_errtile;}
