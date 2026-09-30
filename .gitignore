@@ -13,7 +13,6 @@ Thumbs.db
 __pycache__
 .directory
 *.lnk
-temp/
 desktop.ini
 .emacs.desktop
 *.dwl
