@@ -6,7 +6,7 @@
 (defun text-edit-dlg:find-dialog ()
   (findfile
    (utils:path-src-lsp
-    (strcat "text/" utils-locale "/text.dcl"))))
+    (strcat "text/" utils-locale "/" utils-locale "-" "text.dcl"))))
 
 (defun text-edit-dlg:load-dialog  (/ dcl-name dcl_id)
   (setq dcl-name (text-edit-dlg:find-dialog))
@@ -19,8 +19,7 @@
                                  ("en" "Cannot find dialog file"))
                                "Cannot find dialog file")
           "\n.../text/"
-          utils-locale
-          "/text.dcl\n" 
+          utils-locale "/" utils-locale "-" "text.dcl\n" 
           (utils-locale-string '(("ru" "Проверьте пути доступа к вспомогательным файлам.")
                                  ("uk" "Перевірте шляхи доступу до допоміжних файлів.")
                                  ("en" "Check the access paths to the auxiliary files."))

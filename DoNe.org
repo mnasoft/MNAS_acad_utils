@@ -24,5 +24,8 @@
    - [X] [[file:src/lsp/prj/prj/rascot_zolotnika/raschot_zolotnika.prj][raschot_zolotnika.prj]] перенесено
 5. [X] Перейменувати імена файлів для локалізованих версій діалогів
    (версія утиліт 3.0.1.2):
-   - [ ] [[file:src/lsp/format/]];
-   - [ ] [[file:src/lsp/locale/]];
+   - [X] [[file:src/lsp/format/]];
+   - [X] [[file:src/lsp/locale/]];
+6. [X] src/lsp/MNASoft.prv - видалено бо він формується автоматично в
+   проєкті progecad на common lisp 3.0.1.3).
+7. [X] Виправлено локалізацію для команди c:te (версія утиліт 3.0.1.3)
