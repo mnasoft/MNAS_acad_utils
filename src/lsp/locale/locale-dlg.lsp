@@ -15,7 +15,7 @@
                                "Cannot find dialog file")
           "\n.../locale/"
           utils-locale
-          "/locale.dcl\n"
+          "/" utils-locale "-" "locale.dcl\n"
           (utils-locale-string '(("ru" "Проверьте пути доступа к вспомогательным файлам.")
                                  ("uk" "Перевірте шляхи доступу до допоміжних файлів.")
                                  ("en" "Check the access paths to the auxiliary files."))

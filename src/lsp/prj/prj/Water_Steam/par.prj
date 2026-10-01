@@ -3,14 +3,14 @@
   :NAME
   par
   :OWN-LIST
-  ("../../MATR/MATR"
-    "../../matr/Vychisljenije_osrjednjajuschjej_funktcii"
-    "../../Funktcii/Fizichjeskije/Par"
+  ("../../../MATR/MATR"
+    "../../../matr/Vychisljenije_osrjednjajuschjej_funktcii"
+    "../../../Funktcii/Fizichjeskije/Par"
   )
   :FAS-DIRECTORY
-  "../../../../temp"
+  "../../../../../temp"
   :TMP-DIRECTORY
-  "../../../../temp"
+  "../../../../../temp"
   :PROJECT-KEYS
   (:BUILD (:OPTIMIZE :LOCALIZE :link) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
   :CONTEXT-ID

@@ -29,7 +29,7 @@
 (defun format:find-dialog  (dialog)
   (findfile
    (utils:path-src-lsp
-    (strcat "format" "/" utils-locale "/" dialog ".dcl"))))
+    (strcat "format" "/" utils-locale "/" utils-locale "-" dialog ".dcl"))))
 
 (defun format:load_format_dcl  (/ dcl-name name)
   (setq name     "format"

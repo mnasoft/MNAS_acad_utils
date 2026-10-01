@@ -18,3 +18,11 @@
    - [X] додати локалізацію
      - [X] українську;
      - [X] російську;
+4. [X] Виключити застосунки, що завантажуються у AutoCAD з помилками
+   (версія утиліт 3.0.1.2)
+   - [X] [[file:src/lsp/prj/prj/Water_Steam/par.prj][par.prj]] перенесено;
+   - [X] [[file:src/lsp/prj/prj/rascot_zolotnika/raschot_zolotnika.prj][raschot_zolotnika.prj]] перенесено
+5. [X] Перейменувати імена файлів для локалізованих версій діалогів
+   (версія утиліт 3.0.1.2):
+   - [ ] [[file:src/lsp/format/]];
+   - [ ] [[file:src/lsp/locale/]];
