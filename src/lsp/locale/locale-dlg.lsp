@@ -1,7 +1,7 @@
 (defun locale:find-dialog ()
   (findfile
    (utils:path-src-lsp
-    (strcat "locale/" utils-locale "/locale.dcl"))))
+    (strcat "locale/" utils-locale "/" utils-locale "-" "locale.dcl"))))
 
 (defun locale:load-dialog  (/ dcl-name dcl_id)
   (setq dcl-name (locale:find-dialog))
