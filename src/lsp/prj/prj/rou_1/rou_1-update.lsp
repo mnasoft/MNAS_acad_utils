@@ -1,6 +1,6 @@
-(defun rou_1-update_ver_rou  (stp_lst / bak0 cur)
-;;; Обновить версию для шероховатости.
-  (setq bak0 (mapcar (function car) rou_1-setup_lst_bak0)
+(defun rou_1:update_ver_rou  (stp_lst / bak0 cur)
+;;; пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+  (setq bak0 (mapcar (function car) rou_1:setup_lst_bak0)
         cur  (mapcar (function car) stp_lst))
   (cond ((equal cur bak0)
          (setq stp_lst (list (list "rb_1_Ra" "1")

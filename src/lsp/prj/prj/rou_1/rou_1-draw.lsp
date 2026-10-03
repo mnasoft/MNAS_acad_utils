@@ -1,7 +1,7 @@
-;;	rou_1-draw_sher(p_top p_bas)	- Отрисовка шероховатости:
+;;	rou_1:draw_sher(p_top p_bas)	- Отрисовка шероховатости:
 ;;				p_top - точка над знаком шероховатости;
 ;;				p_bas - точка в основании знака шероховатости.
-(defun rou_1-draw_sher  (p_top         p_bas         /             a_120         a_60          a_90          bl_name       ed
+(defun rou_1:draw_sher  (p_top         p_bas         /             a_120         a_60          a_90          bl_name       ed
                          en            galka_color   hight_of_left_rou_line      ob            polca_color   p_0           p_1
                          p_10          p_11          p_12          p_120         p_13          p_14          p_15          p_16
                          p_17          p_2           p_3           p_4           p_5           p_6           p_60          p_7
@@ -88,11 +88,11 @@
         p_16 (inters p_15 (polar p_15 a_90 1.0) p_6 (polar p_6 0.0 1.0) nil)
         p_17 (mapcar (function max) p_12 p_16))
   (entmake (list (cons 0 "block") (cons 2 "*U") (list 10 0.0 0.0 0.0) (cons 70 1)))
-  (setq tb (rou_1-point_box (list p_0))) ; Пределение границ прямоугольника
+  (setq tb (rou_1:point_box (list p_0))) ; Пределение границ прямоугольника
 ;;; Отрисовка галочки начало
   (entmake (list (cons 0 "LINE") (cons 8 "0") (cons 62 galka_color) (cons 10 p_0) (cons 11 p_2)))
   (entmake (list (cons 0 "LINE") (cons 8 "0") (cons 62 galka_color) (cons 10 p_0) (cons 11 p_10)))
-  (setq tb (rou_1-point_box (append tb (list p_2) (list p_10))))
+  (setq tb (rou_1:point_box (append tb (list p_2) (list p_10))))
 ;;; Отрисовка галочки конец
 ;;; Без снятия осн. м-ла начало
   (cond ((= (cadr (assoc "rb_1_osn_ml_nesn" setup_lst)) "1")
@@ -117,7 +117,7 @@
                         (cons 62 polca_color)
                         (cons 10 p_10)
                         (cons 40 r_circ_po_konturu)))
-         (setq tb (rou_1-point_box (append tb (list p_13 (polar p_10 (/ pi 2.0) r_circ_po_konturu)))))))
+         (setq tb (rou_1:point_box (append tb (list p_13 (polar p_10 (/ pi 2.0) r_circ_po_konturu)))))))
 ;;; По контуру конец
 ;;; Полка начало
   (entmake (list (cons 0 "LINE") (cons 8 "0") (cons 62 polca_color) (cons 10 p_10) (cons 11 p_17)))
@@ -149,7 +149,7 @@
                         (cons 11 p_9)
                         (cons 40 text_hight)
                         (cons 73 3)))
-         (setq tb (rou_1-point_box (append tb (list p_12)))))
+         (setq tb (rou_1:point_box (append tb (list p_12)))))
 ;;; Максимальное значение конец
         )
 ;;; Текст для значения шероховатости конец
@@ -163,7 +163,7 @@
                         (cons 10 p_14)
                         (cons 11 p_14)
                         (cons 40 text_hight)))
-         (setq tb (rou_1-point_box (append tb (list p_16 (polar p_14 a_90 text_hight)))))))
+         (setq tb (rou_1:point_box (append tb (list p_16 (polar p_14 a_90 text_hight)))))))
 ;;; Текст для обозначения способа получения шероховатости конец
 ;;; Текст для обозначения направления микронеровностей начало
   (cond ((= (cadr (assoc "tgl_1_napr_miko_ner" setup_lst)) "1")
@@ -178,10 +178,10 @@
                         (cons 73 3)))))
 ;;; Текст для обозначения направления микронеровностей конец
 ;;; Скобки круглые начало
-  (cond ((= (cadr (assoc "rb_1_kr_sk" setup_lst)) "1") (rou_1-draw_7 text_over_line tb)))
+  (cond ((= (cadr (assoc "rb_1_kr_sk" setup_lst)) "1") (rou_1:draw_7 text_over_line tb)))
 ;;; Скобки круглые конец
 ;;; Скобки квадратные начало
-  (cond ((= (cadr (assoc "rb_1_kv_sk" setup_lst)) "1") (rou_1-draw_7_1 text_over_line tb)))
+  (cond ((= (cadr (assoc "rb_1_kv_sk" setup_lst)) "1") (rou_1:draw_7_1 text_over_line tb)))
 ;;; Скобки квадратные конец
   (setq bl_name (entmake (list (cons 0 "ENDBLK"))))
   (setq ed (list (cons 0 "insert")
@@ -200,8 +200,8 @@
   (vlax-ldata-put ob "rou-p_top" p_top)
   (vlax-ldata-put ob "rou-p_bas" p_bas))
 
-;;	rou_1-draw_7(d1 tb)	- Отрисовка круглых скобок.
-(defun rou_1-draw_7  (d1 tb / x y r p1 p2)
+;;	rou_1:draw_7(d1 tb)	- Отрисовка круглых скобок.
+(defun rou_1:draw_7  (d1 tb / x y r p1 p2)
   (setq tb (list (polar (polar (car tb) pi d1) (/ pi 2) d1) (polar (cadr tb) 0.0 d1))
         x  (mapcar 'car tb)
         y  (mapcar 'cadr tb)
@@ -223,8 +223,8 @@
                  (cons 50 (/ (* 5.0 pi) 6.0))
                  (cons 51 (/ (* 7.0 pi) 6.0)))))
 
-;;	rou_1-draw_7_1(d1 tb)	- Отрисовка квадратных скобок.
-(defun rou_1-draw_7_1  (d1 tb / x y r p_l_0 p_l_1 p_l_2 p_l_3 p_r_0 p_r_1 p_r_2 p_r_3)
+;;	rou_1:draw_7_1(d1 tb)	- Отрисовка квадратных скобок.
+(defun rou_1:draw_7_1  (d1 tb / x y r p_l_0 p_l_1 p_l_2 p_l_3 p_r_0 p_r_1 p_r_2 p_r_3)
   (setq tb    (list (polar (polar (car tb) pi d1) (/ pi 2) d1) (polar (cadr tb) 0.0 d1))
         x     (mapcar 'car tb)
         y     (mapcar 'cadr tb)
