@@ -5,6 +5,7 @@
   :OWN-LIST
   ("../../UTILS/ACAD_SUP_DIR"
     "../../utils/Debug"
+    "../../utils/locale"
     "rou_1-cmd"
     "rou_1-draw"
     "rou_1-update"

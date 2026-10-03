@@ -45,7 +45,11 @@
     (stl))
   (setq setup_lst (subst (list "eb_1_masht" (rtos (getvar "DIMSCALE") 2 4)) (assoc "eb_1_masht" setup_lst) setup_lst))
   (setq do_dialog t)
-  (setq dcl_id (load_dialog (findfile (utils:path-src-lsp "dims/rou_1/rou_1.dcl"))))
+  (setq dcl_id (load_dialog
+                ;;(findfile (utils:path-src-lsp "dims/rou_1/rou_1.dcl"))
+                (findfile (utils:path-src-lsp
+                        (strcat "dims/rou_1/" utils-locale "/" utils-locale "-rou_1.dcl")))
+                ))
   (while do_dialog
     (if (not (new_dialog "roughness" dcl_id "" rou_1:dia_sher_pos))
       (exit))
