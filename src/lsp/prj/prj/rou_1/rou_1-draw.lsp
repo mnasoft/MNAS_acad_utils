@@ -17,7 +17,7 @@
         hight_of_left_rou_line          ; Высота по y до верха левой линии зн.
          (* 1.25 text_hight)
         r_circ_po_konturu               ; Радиус значка обозначающего по контуру
-         (cond ((= (cadr (assoc "tgl_1_po_konturu" setup_lst)) "1") (* 0.25 text_hight))
+         (cond ((= (cadr (assoc "tgl_1_po_konturu" setup_lst)) "1") (* 0.4 text_hight))
                ((= (cadr (assoc "tgl_1_po_konturu" setup_lst)) "0") 0.0))
         text_color
          (getvar "DIMCLRT")             ; Цвет текста
