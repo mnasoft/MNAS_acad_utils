@@ -38,10 +38,6 @@
          ("error" "")                   ; Поток ошибок
          ))
                                         ;"Шабрить" "Развертывать" "Протягивать" "Шлифовать" "Притереть" "Полировать" "Хонинговать" "Накатать"
-(setq reg_root "HKEY_CURRENT_USER\\Software\\MNASoft\\Dims\\Rou")
-
-
-
 
 (defun rou_1:subst_title_assoc_list  (title lst)
   (subst (append (reverse (cdr (reverse (assoc title setup_lst)))) (list lst))

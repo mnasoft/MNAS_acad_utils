@@ -1,55 +1,113 @@
 ;;;;;;("rou" "Простановка обозначения шероховатости." "Размеры")
-(defun c:rou  (/ dcl_id do_dialog p1 p2 fl fl_nm old_err kw str_kw osm reg_root rou_registry)
+(defun c:rou  (/                        ;
+               dcl_id                   ; id діалогу
+               do_dialog                ; Прапорець виконання діалогу
+               p1                       ; Перша точка
+               p2                       ; Друга точка
+               fl                       ;
+               fl_nm                    ;
+               old_err                  ; Обробник помилок
+               kw
+               str_kw
+               osm
+               reg_root                ; Шлях до налаштувань в реєстрі
+               rou_registry)
   (err-init '("cmdecho" "osmode"))
   (set-sys-var-lst '(("cmdecho" 0)))
-  (setq reg_root "HKEY_CURRENT_USER\\Software\\MNASoft\\Dims\\Rou")
+  (setq reg_root
+        (strcat "HKEY_CURRENT_USER\\Software\\MNASoft\\Dims\\Rou"
+                "\\"
+                utils-locale))
   (setq rou_registry
-        '((rou_1:dia_sher_pos (-1 -1))
-          (setup_lst
-           (("rb_1_Ra" "1")                      ;
-            ("rb_1_Rz" "0")                      ;
-            ("pl_1_RaRz" "1" ("1" "2" "3" "4"))  ;
-            ("tgl_1_max_val" "1")       ;tgl_1_11  ; Проставлять текст
-            ("eb_1_max_val" "10")       ;eb_1_1 ; Значение
-            ("pl_1_max_val" "3" ("80" "40" "20" "10" "5" "2,5" "1,25" "0,63" "0,32" "0,16" "0,08")) ;pl_1_1 ; Значения микронеровностей
-            ("tgl_1_min_val" "0")       ;
-            ("eb_1_min_val" "5")        ;
-            ("pl_1_min_val" "4" ("80" "40" "20" "10" "5" "2,5" "1,25" "0,63" "0,32" "0,16" "0,08")) ;
-            ("tgl_1_spos_pol" "0") ;tgl_1_12 ; Проставлять способ получения
-            ("eb_1_spos_pol" "")   ;eb_1_2 ; Способ получения
-            ("pl_1_spos_pol"
-             "0"
-             ("Шабрить" "Развертывать" "Протягивать" "Шлифовать" "Притереть" "Полировать" "Хонинговать" "Накатать"))
-                                        ;pl_1_2 ; Способ получения шероховатости; "Притереть" "Полировать"
-            ("rb_1_osn_ml_sn" "1")      ;rb_1_1 ; Со снятием осн. м-ла
-            ("rb_1_osn_ml_nesn" "0")    ;rb_1_2 ; Без снятия осн. м-ла
-            ("rb_1_osn_ml_neobr" "0")   ;rb_1_3 ; Необработка
-            ("rb_1_bez_sk" "1")         ;rb_1_4 ; Без скобок
-            ("rb_1_kr_sk" "0")          ;rb_1_5 ; В () скобках
-            ("rb_1_kv_sk" "0")          ;rb_1_6 ; В [] скобках
-            ("tgl_1_po_konturu" "0")    ;tgl_1_2 ; По контуру
-            ("tgl_1_perevern" "0")      ;tgl_1_3 ; Перевернутый
-            ("tgl_1_napr_miko_ner" "0")
-            ("pl_1_napr_miko_ner"
-             "0"
-             ("Параллельное" "Перпендикулярное" "Скрещенное" "Кольчужное" "Концентричное" "Радиальное" "Точечное")) ;ppl_1_1
-            ("eb_1_masht" "1")          ;eb_1_3 ; Маштаб
-            ("pl_1_masht"
-             "11"
-             ("100:1" "50:1" "40:1" "25:1" "20:1" "15:1" "10:1" "5:1" "4:1" "2.5:1" "2:1" "1:1" "1:2" "1:2.5" "1:4" "1:5" "1:10" "1:15" "1:20" "1:25"
-              "1:40" "1:50" "1:100"))   ;
-            ("error" "")                ;error ; Поток ошибок
-            ))))
+      (list
+       (list 'rou_1:dia_sher_pos '(-1 -1))
+       (list 'setup_lst
+             (list (list "rb_1_Ra" "1")
+                   (list "rb_1_Rz" "0")
+                   (list "pl_1_RaRz" "1"
+                         (list "1" "2" "3" "4"))
+                   (list "tgl_1_max_val" "1")
+                   (list "eb_1_max_val" "10")
+                   (list "pl_1_max_val"
+                         "3"
+                         (list
+                          "80"
+                          "40"
+                          "20"
+                          "10"
+                          "5"
+                          "2,5"
+                          "1,25"
+                          "0,63"
+                          "0,32"
+                          "0,16"
+                          "0,08"))
+                   (list "tgl_1_min_val" "0")         
+                   (list "eb_1_min_val" "5")          
+                   (list "pl_1_min_val"
+                         "4"
+                         (list "80"
+                               "40"
+                               "20"
+                               "10"
+                               "5"
+                               "2,5"
+                               "1,25"
+                               "0,63"
+                               "0,32"
+                               "0,16"
+                               "0,08")) 
+                   (list "tgl_1_spos_pol" "0")
+                   (list "eb_1_spos_pol" "")  
+                   (list "pl_1_spos_pol"
+                         "0"
+                         (list
+                          (utils-locale-string '(("ru" "Шабрить")      ("uk" "Шабрувати")      ("en" "Scrape")) "Scrape")
+                          (utils-locale-string '(("ru" "Развертывать") ("uk" "Розвертати")     ("en" "Ream"))   "Ream")
+                          (utils-locale-string '(("ru" "Протягивать")  ("uk" "Протягувати")    ("en" "Broach")) "Broach")
+                          (utils-locale-string '(("ru" "Шлифовать")    ("uk" "Шліфувати")      ("en" "Grind"))  "Grind")
+                          (utils-locale-string '(("ru" "Притереть")    ("uk" "Притирати")      ("en" "Lap"))    "Lap")
+                          (utils-locale-string '(("ru" "Полировать")   ("uk" "Полірувати")     ("en" "Polish")) "Polish")
+                          (utils-locale-string '(("ru" "Хонинговать")  ("uk" "Хонінгувати")    ("en" "Hone"))   "Hone")
+                          (utils-locale-string '(("ru" "Накатать")     ("uk" "Накатувати")     ("en" "Roll"))   "Roll")))
+                   (list "rb_1_osn_ml_sn" "1")        
+                   (list "rb_1_osn_ml_nesn" "0")      
+                   (list "rb_1_osn_ml_neobr" "0")     
+                   (list "rb_1_bez_sk" "1")           
+                   (list "rb_1_kr_sk" "0")            
+                   (list "rb_1_kv_sk" "0")            
+                   (list "tgl_1_po_konturu" "0")      
+                   (list "tgl_1_perevern" "0")        
+                   (list "tgl_1_napr_miko_ner" "0")
+                   (list "pl_1_napr_miko_ner"
+                         "0"
+                         (list
+                          (utils-locale-string '(("ru" "Параллельное")     ("uk" "Паралельне")      ("en" "Parallel"))      "Parallel")
+                          (utils-locale-string '(("ru" "Перпендикулярное") ("uk" "Перпендикулярне") ("en" "Perpendicular")) "Perpendicular")
+                          (utils-locale-string '(("ru" "Скрещенное")       ("uk" "Перехресне")      ("en" "Crossed"))       "Crossed")
+                          (utils-locale-string '(("ru" "Кольчужное")       ("uk" "Кільчужне")       ("en" "Chain"))         "Chain") 
+                          (utils-locale-string '(("ru" "Концентричное")    ("uk" "Концентричне")    ("en" "Concentric"))    "Concentric")
+                          (utils-locale-string '(("ru" "Радиальное")       ("uk" "Радіальне")       ("en" "Radial"))        "Radial")
+                          (utils-locale-string '(("ru" "Точечное")         ("uk" "Точкове")         ("en" "Spot"))          "Spot")))
+                   (list "eb_1_masht" "1") 
+                   (list "pl_1_masht"
+                         "11"
+                         (list "100:1" "50:1" "40:1" "25:1"
+                               "20:1" "15:1" "10:1" "5:1" "4:1" "2.5:1" "2:1"
+                               "1:1"
+                               "1:2" "1:2.5" "1:4" "1:5" "1:10" "1:15"
+                               "1:20" "1:25" "1:40" "1:50" "1:100")) 
+                   (list "error" "")))))
   (reg_read_default_lst reg_root rou_registry)
   (if (null (tblsearch "style" "t"))
       (stl))
   (setq setup_lst (subst (list "eb_1_masht" (rtos (getvar "DIMSCALE") 2 4)) (assoc "eb_1_masht" setup_lst) setup_lst))
   (setq do_dialog t)
-  (setq dcl_id (load_dialog
-                ;;(findfile (utils:path-src-lsp "dims/rou_1/rou_1.dcl"))
-                (findfile (utils:path-src-lsp
-                           (strcat "dims/rou_1/" utils-locale "/" utils-locale "-rou_1.dcl")))
-                ))
+  (setq dcl_id
+        (load_dialog
+         (findfile
+          (utils:path-src-lsp
+           (strcat "dims/rou_1/" utils-locale "/" utils-locale "-rou_1.dcl")))))
   (while do_dialog
          (if (not (new_dialog "roughness" dcl_id "" rou_1:dia_sher_pos))
              (exit))
