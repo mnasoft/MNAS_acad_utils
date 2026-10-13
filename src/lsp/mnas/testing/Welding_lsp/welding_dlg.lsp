@@ -437,8 +437,6 @@
   )
 )
 
-
-litera-from-to-list
 (defun litera-from-to-list (litera from to / i lst)
   (setq i to)
   (repeat (- to from -1)
