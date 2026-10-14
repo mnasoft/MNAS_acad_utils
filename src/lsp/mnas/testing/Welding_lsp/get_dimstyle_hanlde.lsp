@@ -6,33 +6,6 @@
   ;; Загружаем блок со стрелкой нижней сварки
   (load-dwg-as-block (findfile "support/weld_arrow_top.dwg")))
 
-;;;;;;("wlc" "Команда для создания обозначения выноски, обозначающей сварку." "Размеры")
-(defun c:wlc  (/ en                     ; Имя примитива LEADER
-	       p0                       ; Точка началя выноски
-	       p1                       ; Точка начала полки;
-	       p2                       ; Точка конца полки
-               )
-  (load-w-arrows)
-  (setq	p0 (GETPOINT "Укажите начальную точку обозначения сварного шва:")
-	p1 (GETPOINT p0 "Укажите начало полки:")
-	p2 (GETPOINT p1 "Укажите конец полки:"))
-  (command-s "_leader" "_non" p0 "_non" p1 "_non" p2 "" "" "_none")
-  (setq en (entlast))
-  (vlax-put-property (vlax-ename->vla-object en) 'ArrowheadBlock "weld_arrow_bot")
-  (w-edit-arrow-dir en))
-
-;;;;;;("wle" "Команда для редактировани обозначения выноски, обозначающей сварку." "Размеры")
-(defun c:wle  (/				  ;
-	       en				  ; Имя редактируемого примитива LEADER
-	       pnt				  ; Точка в которой был выбран примитив LEADER
-	       sel				  ; Пара имя примитива и точка выбора примитива
-	       )
-  (load-w-arrows)
-  (setq	sel (entsel "Выберите выноску, преобразуемую в сварку:")
-	en  (car sel)
-	pnt (cadr sel))
-  (w-edit-arrow-dir en))
-
 ;;;f;;;("w-edit-arrow-dir")
 ;;;Редактирование направления стрелки для сварного примитива (LEADER с блоком сварки)
 (defun w-edit-arrow-dir	 (en    ; Имя редактируемого примитива LEADER

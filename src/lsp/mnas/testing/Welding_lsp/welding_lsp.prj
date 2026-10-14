@@ -9,6 +9,8 @@
     "../../../utils/dlg_utils"
     "../../../utils/DXF"
     "../../../utils/block"
+    "welding_dlg_main"
+    "welding-commands" 
     "welding_dlg"
     "weld_abbrev"
     "Weld_text_dlg"
