@@ -59,11 +59,58 @@
 (defun c:ewt ()
   (c:ed-weld-txt))
 
-(setq obj
-      (vlax-ename->vla-object
-       (car (entsel ":"))))
-
 (regapp "MNAS-WELDING")
-(vla-setxdata obj
-              (vlax-make-variant
-               (vlax-make-safearray 
+
+(vl-load-com)
+
+(setq obj (vlax-ename->vla-object
+            (car (entsel "\nВыберите Leader: "))))
+
+(vla-SetXData
+  obj
+  (vlax-make-variant
+    (vlax-safearray-fill
+      (vlax-make-safearray vlax-vbInteger '(0 . 1))
+      '(1001 1000)))
+  (vlax-make-variant
+    (vlax-safearray-fill
+      (vlax-make-safearray vlax-vbVariant '(0 . 1))
+      '("MNAS-WELDING" "Моя строка"))))
+
+(entget (car (entsel "\nВыберите Leader: ")) '("MNAS-WELDING"))
+
+(defun xdata->arrays  (data / types values n range)
+  (setq n (length data)
+        range (cons 0 (1- n)))
+  (setq types (vlax-make-safearray vlax-vbInteger range))
+  (vlax-safearray-fill types (mapcar 'car data))
+  (setq values (vlax-make-safearray vlax-vbVariant range))
+  (vlax-safearray-fill values (mapcar 'cadr data))
+  (list types values))
+
+(defun xdata-get  (obj app / types values)
+  (vla-GetXData obj app 'types 'values)
+  (if (and types values)
+    (mapcar 'list
+            (vlax-safearray->list types)
+            (mapcar 'vlax-variant-value (vlax-safearray->list values)))))
+
+
+(setq xdata (xdata->arrays
+              '((1001 "MNAS-WELDING")
+                (1000 "Моя строка 1")
+                (1000 "Моя строка 2")
+                (1071 20789))))
+
+
+(vla-SetXData
+  obj
+  (vlax-make-variant (car xdata))
+  (vlax-make-variant (cadr xdata)))
+
+(xdata-get obj "MNAS-WELDING")
+
+((1001 #<variant 8 MNAS-WELDING>) (1000 #<variant 8 Моя строка 1>) (1000 #<variant 8 Моя строка 2>)) 
+
+
+
