@@ -114,7 +114,8 @@
 	     (lambda (sym)
 	       (list sym (eval sym))))
 	   '(p_start sht1_val f_no kr_no for_no	dir_sht	divzone_no zone_ch zone_dig)))
-;;;;  
+;;;;
+  (format:init-dop-sht)
   (load_format)
   (main_format)
   (princ))

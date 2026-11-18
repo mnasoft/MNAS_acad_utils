@@ -121,6 +121,7 @@ dop_dlg : dialog
       spacer_1;
       : button { label ="<"; key = "dop_dlg_3"; }
       : button { label =">"; key = "dop_dlg_4"; }
+      : button { label =">>"; key = "dop_dlg_8"; }
       spacer_1;    
     }
     : boxed_column

@@ -4,10 +4,21 @@
   dims
   :OWN-LIST
   ("../UTILS/ACAD_SUP_DIR"
-    "../utils/Debug"	    "DIM_FROM"		    "cut/cut"		    "look/look"
-    "welding/welding"	    "../UTILS/ASIST"	    "../UTILS/DXF"	    "../MATR/VECTOR"
-    "../UTILS/STRING"	    "../UTILS/draw"	    "abc_dialog"	    "abc"
-    "../UTILS/stl_text"	    "./leader/leader"	    "../opechatka/rus_cmd_opechatka"
+    "../utils/Debug"
+    "DIM_FROM"
+    "cut/cut"
+    "look/look"
+    ;; "welding/welding"
+    "../UTILS/ASIST"
+    "../UTILS/DXF"
+    "../MATR/VECTOR"
+    "../UTILS/STRING"
+    "../UTILS/draw"
+    "abc_dialog"
+    "abc"
+    "../UTILS/stl_text"
+    "./leader/leader"
+    "../opechatka/rus_cmd_opechatka"
     "dims_rus")
   :FAS-DIRECTORY
   "../../../temp"
