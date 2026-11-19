@@ -1,12 +1,12 @@
 ;;;;;;("format" "Построение форматной рамки." "Размеры")
-(defun c:format  (/             ;
-                  p_start       ;
-                  dir_sht       ;
-                  divzone_no;
-                  zone_ch;
-                  zone_dig;
+(defun c:format  (/                     ;
+                  p_start ; Точка що відповідає лівому-нижньому куту формату.
+                  dir_sht ; Орієнтація формату: 0 - книжкова, 1 - альбомна.
+                  divzone_no    ; Поділ на зони: 0 - нема; 1 - є.  
+                  zone_ch       ; Начальний код букви для зони.
+                  zone_dig      ; Начальна цифра для зони.
                   ;;
-                  for_no        ; Индекс формата.
+                  for_no        ; Индекс формату.
                   for_name      ; Список, содержащий имена форматов.
                   for_val       ; Список, содержащий размеры форматов.
                   ;;                  
@@ -14,9 +14,11 @@
                   f_val ; Список, содержащий наименования  форм основных надписей.
                   f_no  ; Индекс формы основной надписи.
                   ;;
-                  sht1_key_key2_val  ; 
-                  sht1_key           ; Ключи  тегов в основной надписи
-                  sht1_key2    ; Наименования тегов в основной надписи
+                  dlg_key-tag-names-tag-values ; Список з елементами:
+                  ;; (ключ-діалогу, тег-атрібуту, значення-атрібуту)
+                  dlg-keys              ; Список ключів-діалогу
+                  tag-names             ; Список тегів-атрібуту
+                  tag-values            ; Список значень-атрібутів
                   ;;
                   kr_key ; Список, содержащий допустимые кратности для форматов (строки).
                   kr_val ; Список, содержащий допустимые кратности для форматов (целочисленные).
@@ -36,10 +38,10 @@
   (setq for_val '((1188 840) (840 594) (594 420) (420 297) (297 210)))
   ;;
   (setq kr_no 0)
-  (setq kr_key (list "1" "3" "4" "5" "6" "7" "8" "9")) ;Кратность
+  (setq kr_key (list "1" "3" "4" "5" "6" "7" "8" "9")) ; Кратність
   (setq kr_val (list 1 3 4 5 6 7 8 9))
   ;;
-  (setq sht1_key_key2_val
+  (setq dlg_key-tag-names-tag-values
         (list
          (list "sht1_1"    "NAIMEN" (utils-locale-string '(("ru" "Устройство горелочное") ("uk" "Пристрій пальниковий")) "Burner"))
          (list "sht1_2"    "OBOZNACH" "010038001СБ")
@@ -63,9 +65,9 @@
          (list "sht1_24"   "SPRAV_NO" "ХХХХХХХХХ")
          (list "sht1_25"   "PERV_PRIM" "ХХХХХХХХХ")))
 
-  (setq sht1_key  (mapcar 'car   sht1_key_key2_val))
-  (setq sht1_key2 (mapcar 'cadr  sht1_key_key2_val))
-  (setq sht1_val  (mapcar 'caddr sht1_key_key2_val))
+  (setq dlg-keys  (mapcar 'car   dlg_key-tag-names-tag-values))
+  (setq tag-names (mapcar 'cadr  dlg_key-tag-names-tag-values))
+  (setq tag-values  (mapcar 'caddr dlg_key-tag-names-tag-values))
   
   (setq f_no 0)  
   (setq f_key (list "1" "2аг" "2" "2ат" "2б" "2бн" "2бч" "3")) ; Форма основной надписи
@@ -109,11 +111,11 @@
 ;;;;
   (setq reg_root (strcat "HKEY_CURRENT_USER\\Software\\MNASoft\\Format" "\\" utils-locale))
   (setq	format_registry
-	 (mapcar
-	   (function
-	     (lambda (sym)
-	       (list sym (eval sym))))
-	   '(p_start sht1_val f_no kr_no for_no	dir_sht	divzone_no zone_ch zone_dig)))
+	(mapcar
+	 (function
+	  (lambda (sym)
+	   (list sym (eval sym))))
+	 '(p_start tag-values f_no kr_no for_no	dir_sht	divzone_no zone_ch zone_dig)))
 ;;;;
   (format:init-dop-sht)
   (load_format)

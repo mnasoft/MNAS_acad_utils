@@ -48,7 +48,7 @@
   (reg_write_default_lst
    reg_root
    '((p_start (0.0 0.0 0.0))
-     (sht1_val
+     (tag-values
       ("Óñòðîéñòâî ãîðåëî÷íîå"           "Â2Ì80009993ÑÁ"  "Äîðàá.÷åðò. Í80038002ÑÁ"         ""
        ""               ""               ""               "1:1"            ""               "1"
        "ÆÀÊÈ"           "Íà÷ îòä"        "Ìàòâååâ   "     "Ìàòâååâ   "     "Äóíàåâ   "      "Âàíöîâñêèé"
@@ -74,7 +74,7 @@
     (cond ((null en) (setq do nil))
           ((= (cdr (assoc 0 (setq ed (entget en)))) "ATTRIB")
            (setq str_1 (cdr (assoc 2 ed)))
-           (mapcar (function (lambda (el1 el2) (zsht str_1 el1 el2))) sht1_key2 sht1_val))
+           (mapcar (function (lambda (el1 el2) (zsht str_1 el1 el2))) tag-names tag-values))
           (t (setq do nil))))
   (entupd enn))
 
@@ -102,7 +102,7 @@
 (defun zap_val  (en / str_1 ed)
   (while (= (cdr (assoc 0 (entget (setq en (entnext en))))) "ATTRIB")
     (setq str_1 (cdr (assoc 2 (setq ed (entget en)))))
-    (setq sht1_val (mapcar (function zval) sht1_key2 sht1_val))))
+    (setq tag-values (mapcar (function zval) tag-names tag-values))))
 
 
 (defun err (p) (print p) (setq *error* old_err) (princ))
@@ -117,8 +117,8 @@
   (format:load_format_dcl)
   (if (not (new_dialog "sht1" dcl_id))
     (exit))
-  (mapcar (function set_tile) sht1_key sht1_val)
-  (action_tile "accept" "(setq sht1_val(mapcar (function get_tile) sht1_key) )(done_dialog)")
+  (mapcar (function set_tile) dlg-keys tag-values)
+  (action_tile "accept" "(setq tag-values(mapcar (function get_tile) dlg-keys) )(done_dialog)")
   (start_dialog)
   (unload_dialog dcl_id))
 

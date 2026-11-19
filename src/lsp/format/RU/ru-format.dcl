@@ -24,9 +24,9 @@ form : dialog
   	}
   }
   : boxed_radio_row
-  { label = "Расположение вдоль стороны";
-    : radio_button {label ="длинной"; key = "long_side"; is_tab_stop = false; }
-    : radio_button {label ="короткой";key = "short_side";is_tab_stop = false; }
+  { label = "Ориентация формата";
+    : radio_button {label ="Альбомная"; key = "long_side"; is_tab_stop = false; }
+    : radio_button {label ="Книжная";key = "short_side";is_tab_stop = false; }
   }
   : cluster{: boxed_row {label = "Размер "; : text { key="razmer"; width = 5;}}}
   ok_cancel;

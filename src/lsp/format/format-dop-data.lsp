@@ -38,7 +38,20 @@
 '(("ru" "Первичное применение") ("uk" "Первинне застосування") ("en" "First Use"))
 '(("ru" "Архив")                ("uk" "Архів")                 ("en" "Archive"))
 
-(defun format:init-dop-sht  ()
+(defun format:init-dop-sht  (/
+                             format-dop-sht:speciph_n
+                             format-dop-sht:speciph_1
+                             format-dop-sht:DOP_PRM
+                             format-dop-sht:DOP_TMV
+                             format-dop-sht:DOP_G_LT
+                             format-dop-sht:DOP_G_RB
+                             format-dop-sht:DOP_TEXT
+                             format-dop-sht:DOP_PRIM
+                             format-dop-sht:DOP_ARH
+                             format-dop-sht:DOP_FNAME_CONTROL_SUMM
+                             format-dop-sht:DOP_VERSION_UNITS
+                             format-dop-sht:DOP_FORM
+                             )
   (setq format-dop-sht:speciph_n
          (make-format-dop-sht
            (utils-locale-string '(("uk" "Специф.:N") ("ru" "Специф.:N")) "Specif.:N")

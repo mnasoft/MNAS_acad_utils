@@ -24,9 +24,9 @@ form : dialog
   	}
   }
   : boxed_radio_row
-  { label = "Розташування";
-    : radio_button {label ="Альбомне"; key = "long_side"; is_tab_stop = false; }
-    : radio_button {label ="Книжкове";key = "short_side";is_tab_stop = false; }
+  { label = "Оріентація формату";
+    : radio_button {label ="Альбомна"; key = "long_side"; is_tab_stop = false; }
+    : radio_button {label ="Книжкова";key = "short_side";is_tab_stop = false; }
   }
   : cluster{: boxed_row {label = "Розмір "; : text { key="razmer"; width = 5;}}}
   ok_cancel;
