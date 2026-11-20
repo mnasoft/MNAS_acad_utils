@@ -1,7 +1,4 @@
 ;;; ./src/lsp/format/format-dop-data.lsp
-;;; (utils-locale-string '(("uk" "Альбомна") ("ru" "Альбомная") "Landscape"))
-;;; utils-locale-data
-
 
 (defun make-3d-point (point)
   (cond
@@ -30,13 +27,6 @@
           (cons 12 (make-3d-point p-rb))
           (cons 13 (make-3d-point p-rt))
           (cons 14 (make-3d-point p-lt)))))
-
-
-;;; (utils-locale-string '(("uk" "Альбомна") ("ru" "Альбомная") "Landscape"))
-'(("ru" "Русский")              ("uk" "Українська")            ("en" "English"))
-'(("ru" "Спецификация")         ("uk" "Специфікація")          ("en" "Specification"))
-'(("ru" "Первичное применение") ("uk" "Первинне застосування") ("en" "First Use"))
-'(("ru" "Архив")                ("uk" "Архів")                 ("en" "Archive"))
 
 (defun format:init-dop-sht  (/
                              format-dop-sht:speciph_n

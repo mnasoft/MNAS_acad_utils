@@ -1,3 +1,5 @@
+;;;; /src/lsp/format/format-rus.lsp
+
 (setq *format-command-list* '("format" "make_ublock"))
 ;;;; (opech_cmds-str *format-command-list*)
 

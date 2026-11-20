@@ -1,3 +1,5 @@
+;;;; ./src/lsp/format/format-draw.lsp
+
 (setq *docs* nil)
 
 (defun format:add-doc (name vars description)
@@ -12,7 +14,6 @@
  @item(col - целочисленный цвет.)
 @end(list)"
 
-
 (defun format:draw-line (p1 p2 col)
   (entmake
    (list (cons 0 "LINE")
@@ -22,7 +23,6 @@
          (cons 11 p2)
          (cons 62 col))))
 
-(defun format:draw-rect  (for p0 col)
   "@b(Описание:) функция @b(format:draw-rect) отрисовывает прямоугольник.
 
  @b(Переменые:)
@@ -37,6 +37,7 @@
  (format:draw-rect '(255 355) '(10 20 30) 2)
 @end(code)
 "
+(defun format:draw-rect  (for p0 col)
   (format:draw-line
     (mapcar (function +) (list (nth 0 for) (nth 1 for) 0.0) p0)
     (mapcar (function +) (list (nth 0 for) 0.0 0.0) p0)

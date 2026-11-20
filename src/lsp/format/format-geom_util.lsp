@@ -1,3 +1,5 @@
+;;;; ./src/lsp/format/format-geom_util.lsp
+
 ;;;f;;;("format:point-triang (p1 p2 p3 pt)"
 ;;;f;;;   "Определяет находится ли точка pt внутри треугольника p1 p2 p3.\n
 ;;;f;;;    Возвращает:\n

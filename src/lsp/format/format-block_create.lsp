@@ -1,3 +1,5 @@
+;;;; ./src/lsp/format/format-block_create.lsp
+
 ;;;;;;("make_ublock"
 ;;;;;;"Создает непоменованный блок" "Объекты")
 (defun c:make_ublock  (/
@@ -5,13 +7,22 @@
                        pt               ; Точка назначения блока
                        pt_ref           ; Ссылочная точка блока
                        )
-  (setq pt_ref (getpoint "Введите ссылочную точку:")
-        pt     (getpoint "Введите точку назначения:")
+  (setq pt_ref
+        (getpoint
+         (utils-locale-string
+          '(("ru" "Введите ссылочную точку:")
+            ("uk" "Введіть опорну точку:"))
+          "Enter reference point:"))
+        pt
+        (getpoint
+         (utils-locale-string
+          '(("ru" "Введите точку назначения:")
+            ("uk" "Введіть точку призначення:"))
+          "Enter destination point:"))
         ss     (ssget))
   (make_ublock ss pt pt_ref))
 
-
-(defun make_ublock  (ss                 ;
+(defun make_ublock  (ss                 ; Набір вибору
                      pt                 ; Точка назначения блока
                      pt_ref             ; Ссылочная точка блока
                      / ed               ; Данные текущего примитива
@@ -19,7 +30,8 @@
                      len                ; Длина списка примитивов
                      attrib_lst         ; Спислк атрибутов
                      have_attrib        ; Признак наличия атрибутов
-) (setq len (sslength ss)
+                     )
+  (setq len (sslength ss)
         have_attrib 0)
   (ublock+attrib:start pt_ref)
   (while (>= (setq len (1- len)) 0)

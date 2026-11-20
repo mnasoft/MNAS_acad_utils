@@ -1,16 +1,29 @@
-(defun format:about () (alert (strcat "Вставка форматной рамки" (about-gpl-string))))
+;;;; ./src/lsp/format/format-cmd.lsp
 
-'(("ru" "Чертежи и Схемы")("uk" "Кресленики та Схеми") ("en" "Drawings and Schematics"))
-'(("ru" "Графический конструкторский документ") ("uk" "Графічний конструкторський документ") ("en" "Graphical Design Document"))
-'(("ru" "Граф.Констр.Док.") ("uk" "Граф.Констр.Док.") ("en" "Graph.Design.Doc."))
+'(("ru" "Чертежи и Схемы")
+  ("uk" "Кресленики та Схеми")
+  ("en" "Drawings and Schematics"))
+'(("ru" "Графический конструкторский документ")
+  ("uk" "Графічний конструкторський документ")
+  ("en" "Graphical Design Document"))
+'(("ru" "Граф.Констр.Док.")
+  ("uk" "Граф.Констр.Док.")
+  ("en" "Graph.Design.Doc."))
+'(("ru" "Четный")
+  ("uk" "Парний")
+  ("en" "Even"))
+'(("ru" "Нечетный")
+  ("uk" "Непарний")
+  ("en" "Odd"))
 
-'(("ru" "Четный") ("uk" "Парний") ("en" "Even"))
-'(("ru" "Нечетный") ("uk" "Непарний") ("en" "Odd"))
+(defun format:about ()
+  (alert
+   (strcat "Вставка форматной рамки"
+           (about-gpl-string))))
 
 (defun load_format  ()
-  (reg_read_default_lst reg_root format_registry)
-)
-                                        ;defun load_format
+  (reg_read_default_lst reg_root format_registry))
+
 
 (defun dir_ob  (p1 p2 p3 / a1 a2)
   "Определяет векторное произведение векторов (p1->p2) и (p2->p3)."
@@ -107,10 +120,12 @@
 
 (defun err (p) (print p) (setq *error* old_err) (princ))
 
-(defun add_xdata  (pick1 / i)
+(defun format:add_xdata (pick1 / i)
   (make_ublock pick1 p_start p_start)
   (command-s "_.erase" pick1 "")
-  (princ "\nШтамп отрисован."))
+  (princ (utils-locale-string '(("ru" "\nФормат отрисован.")
+                                ("uk" "\nФормат накреслено."))
+                              "The Format rendered.")))
 
 
 (defun f_sht1  (/ dcl_id)
@@ -122,9 +137,10 @@
   (start_dialog)
   (unload_dialog dcl_id))
 
-(defun ss_pick  (en1 / ss1)
+
   "Создает набор выбора из элементов следующих за en1 и до конца действующей БД.
 Если en1=nil в набор выбора включаются все элементы БД."  
+(defun ss_pick  (en1 / ss1)
   (setq ss1 (ssadd))
   (if en1                               ;
       (setq en1 (entnext en1))
@@ -135,7 +151,8 @@
   ss1)
 
 
-(defun f_list_act_no (value) (setq f_no (atoi value)))
+(defun f_list_act_no (value)
+  (setq f_no (atoi value)))
 
 
 (defun set_left  (/ for)
@@ -155,28 +172,38 @@
                     (itoa (nth 1 for))))
   (if (= dir_sht 0)
       (set_tile "dir_sht"
-                (utils-locale-string '(("uk" "Портретна") ("ru" "Портретная")) "Portrait"))
+                (utils-locale-string
+                 '(("uk" "Портретна")
+                   ("ru" "Портретная"))
+                 "Portrait"))
       (set_tile "dir_sht"
-                (utils-locale-string '(("uk" "Альбомна") ("ru" "Альбомная")) "Landscape"))))
+                (utils-locale-string
+                 '(("uk" "Альбомна")
+                   ("ru" "Альбомная"))
+                 "Landscape"))))
 
 (defun format:draw-format  (dir_sht for_no for_val f_key f_no kr_no kr_val p_start)
-  (princ "\nНачинаю отрисовку штампа...")
+  (princ 
+   (utils-locale-string
+    '(("ru" "\nНачинаю отрисовку формата...")
+      ("uk" "\nРозпочинаю креслити формат..."))
+    "Starting to draw the stamp..."))
   (setq for (list (nth 0 (nth for_no for_val)) (* (nth 1 (nth for_no for_val)) (nth kr_no kr_val))))
   (if (< (nth 0 for) (nth 1 for))
-    (setq for (reverse for)))
+      (setq for (reverse for)))
   (if (= dir_sht 0)
-    (setq for (reverse for)))
+      (setq for (reverse for)))
   (format:draw-rect for p_start 7)
   (cond ((= (nth f_no f_key) "2бч")
          (format:draw-rect
-           (mapcar (function -) for '(25.0 10.0))
-           (mapcar (function +) '(5.0 5.0 0.0) p_start)
-           1))
+          (mapcar (function -) for '(25.0 10.0))
+          (mapcar (function +) '(5.0 5.0 0.0) p_start)
+          1))
         (t
          (format:draw-rect
-           (mapcar (function -) for '(25.0 10.0))
-           (mapcar (function +) '(20.0 5.0 0.0) p_start)
-           1))))
+          (mapcar (function -) for '(25.0 10.0))
+          (mapcar (function +) '(20.0 5.0 0.0) p_start)
+          1))))
 
 (defun form_dlg  (/ for_n kr_n dir_sh dcl_id)
   (format:load_format_dcl)
@@ -241,18 +268,20 @@
   (setq ename
         (car
          (entsel
-          (utils-locale-string '(("uk" "\nВиберіть формат:")
-                                  ("ru" "\nВыберите формат:"))
-                                "\nPick format:"))))
+          (utils-locale-string
+           '(("uk" "\nВиберіть формат:")
+             ("ru" "\nВыберите формат:"))
+           "\nPick format:"))))
   (if (not (eq ename nil))
       (zap_val ename)))
 
 (defun format:action-pick-point  ()
   (setq p_start
         (getpoint
-         (utils-locale-string '(("uk" "\nВкажіть точку:")
-                                 ("ru" "\nУкажите точку:"))
-                               "Pick point:")))
+         (utils-locale-string
+          '(("uk" "\nВкажіть точку:")
+            ("ru" "\nУкажите точку:"))
+          "Pick point:")))
   (if (eq p_start nil)
       (setq p_start (list 0.0 0.0 0.0))))
 
@@ -332,7 +361,7 @@
            (cond ((and dsht_3_val (or (= s1 "1") (= s1 "2") (= s1 "2аг") (= s1 "2ат") (= s1 "2бн") (= s1 "3")))
                   (format:draw-dop_sht pick3))
                  ((= s1 "2бч") t))
-           (add_xdata (ss_pick en1))
+           (format:add_xdata (ss_pick en1))
            (zap_sht str_1 (entlast))
            (zap_form (entlast))
            (setq do_dialog nil))
@@ -341,7 +370,13 @@
           ((= action 3) (ed_4_do))
           ((= action 5) (dop_dlg))
           ((= action 6)
-           (zap_sht str_1 (car (entsel "\nУкажите штамп для заполнения:")))
+           (zap_sht str_1
+                    (car
+                     (entsel
+                      (utils-locale-string
+                       '(("ru" "\nУкажите формат для заполнения:")
+                         ("uk" "\nОберіть формат для заповнення:"))
+                       "Select format for populating:"))))
            (setq do_dialog nil))))
   (unload_dialog dcl_id)
   (setq *error* old_err)

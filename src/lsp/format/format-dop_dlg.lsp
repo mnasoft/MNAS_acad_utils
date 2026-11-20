@@ -1,3 +1,5 @@
+;;;; ./src/lsp/format/format-dop_dlg.lsp
+
 (defun dop_ac_1 (value) (setq dsht_1_no (atoi value)))
 
 (defun dop_ac_2 (value) (setq dsht_2_no (atoi value)))
@@ -22,8 +24,24 @@
 (defun c__out  (/ ss1 f1 i1 en1 ed1 old_err p0 j1 p1 p2 p3 p4 str1 str2 ll)
   (while (not (setq ss1 (ssget))))
   (setq i1 (sslength ss1))
-  (while (not (setq str1 (getstring "\nВведите название штампа:"))))
-  (while (not (setq str2 (getfiled "Выбор файла для хранения штампа" "" "dwg" 1))))
+  (while
+   (not
+    (setq str1
+          (getstring
+           (utils-locale-string
+            '(("ru" "\nВведите название штампа:")
+              ("uk" "\nВведіть назву штампa:"))
+            "\nEnter stamp name:")))))
+  (while
+   (not
+    (setq
+     str2
+     (getfiled
+      (utils-locale-string
+       '(("ru" "Выбор файла для хранения штампа")
+         ("uk" "Вибір файлу для зберігання штампa"))
+       "Select file to store stamp:")
+      "" "dwg" 1))))
   (initget "LB LT RB RT")
   (setq wo (getkword "LB LT RB RT<LB>:"))
   (cond ((or (= wo "LB") (= wo nil)) (setq j1 3))
@@ -31,10 +49,18 @@
         ((= wo "RB") (setq j1 0))
         ((= wo "RT") (setq j1 1)))
   (princ j1)
-  (while (not (setq p0 (getpoint "\nВведите базовую точку:"))))
-  (while (not (setq p1 (getpoint "\nПервая точка зоны ограничивающая штамп:"))))
-  (while (not (setq p2 (getpoint "\nВторая точка зоны ограничивающая штамп:"))))
-  (while (not (setq p3 (getpoint "\nТретья точка зоны ограничивающая штамп:"))))
+  (while (not (setq p0
+                    (getpoint
+                     (utils-locale-string
+                      '(("ru" "\nУкажите базовую точку:")
+                        ("uk" "\nВкажіть базову точку:"))
+                      "\nSpecify base pont:")))))
+  (while (not (setq p1
+                    (getpoint "\nПервая точка зоны ограничивающая штамп:"))))
+  (while (not (setq p2
+                    (getpoint "\nВторая точка зоны ограничивающая штамп:"))))
+  (while (not (setq p3
+                    (getpoint "\nТретья точка зоны ограничивающая штамп:"))))
   (while (not (setq p4 (getpoint "\nЧетвертая точка зоны ограничивающая штамп:"))))
   (setq p1 (mapcar (function -) p1 p0)
         p2 (mapcar (function -) p2 p0)

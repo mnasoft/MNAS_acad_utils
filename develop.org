@@ -1,0 +1,4 @@
+
+* Создание prv
+Для создания скомпилированного файла prv можно воспользоваться
+проектом [[file:~/quicklisp/local-projects/acad/progeCAD/progecad.asd][progecad.asd]].
